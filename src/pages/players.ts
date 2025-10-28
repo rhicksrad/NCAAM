@@ -34,8 +34,18 @@ function filterPage(items: PlayerVM[], q: string) {
   });
 }
 
+function linkPlayer(id: string, label: string) {
+  return el('a', { href: `/player.html?player_id=${encodeURIComponent(id)}` }, label);
+}
+
+function linkTeam(id: string | undefined) {
+  if (!id) return '';
+  return el('a', { href: `/team.html?team_id=${encodeURIComponent(id)}` }, id);
+}
+
 async function render() {
-  const root = document.getElementById('app')!;
+  const root = document.getElementById('app');
+  if (!root) return;
   mount(root, el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`),
     nav(),
@@ -64,7 +74,14 @@ async function render() {
 
     const tblWrap = el('div', {});
     const renderTable = (rows: PlayerVM[]) => {
-      const data = rows.map(p => [fullName(p), p.position ?? '', p.teamId ?? '', p.classYear ?? '', p.eligibility ?? '', p.id]);
+      const data = rows.map(p => [
+        linkPlayer(p.id, fullName(p) || p.id),
+        p.position ?? '',
+        p.teamId ? linkTeam(p.teamId) : '',
+        p.classYear ?? '',
+        p.eligibility ?? '',
+        p.id
+      ]);
       const tbl = table(['Name', 'Pos', 'Team ID', 'Class', 'Elig', 'Player ID'], data);
       mount(tblWrap, tbl);
     };
@@ -85,15 +102,15 @@ async function render() {
       renderTable(filtered);
     }
 
-    perSel.addEventListener('change', () => { perPage = Number((perSel as HTMLSelectElement).value); page = 1; load(); });
-    prevBtn.addEventListener('click', () => { if (page > 1) { page--; load(); } });
-    nextBtn.addEventListener('click', () => { page++; load(); });
-    search.addEventListener('input', () => load());
+    perSel.addEventListener('change', () => { perPage = Number((perSel as HTMLSelectElement).value); page = 1; void load(); });
+    prevBtn.addEventListener('click', () => { if (page > 1) { page--; void load(); } });
+    nextBtn.addEventListener('click', () => { page++; void load(); });
+    search.addEventListener('input', () => { void load(); });
 
     await load();
   } catch (err) {
-    mount(document.getElementById('app')!, el('pre', { class: 'error' }, String(err)));
+    mount(document.getElementById('app') ?? root, el('pre', { class: 'error' }, String(err)));
   }
 }
 
-render();
+void render();
