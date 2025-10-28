@@ -31,27 +31,21 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Ensure pnpm
+        uses: ./.github/actions/ensure-pnpm
         with:
           version: 9
-          run_install: false
 
-      - name: Ensure pnpm (Corepack fallback)
+      - name: Tooling diagnostics
         shell: bash
         run: |
-          if ! command -v pnpm >/dev/null 2>&1; then
-            corepack enable
-            corepack prepare pnpm@9 --activate
-          fi
-          pnpm -v
-
-      - name: Tooling sanity
-        run: |
+          set -x
           node -v
+          which node
           pnpm -v
+          which pnpm
+          printenv | sort | sed -n '1,120p'
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
@@ -70,42 +64,23 @@ jobs:
           fi
 
       - name: Typecheck (if present)
-        run: |
-          if jq -e '.scripts.typecheck' package.json >/dev/null 2>&1; then
-            pnpm run typecheck
-          else
-            echo "No typecheck script; skipping."
-          fi
+        run: pnpm run typecheck --if-present
 
       - name: Lint (if present)
-        run: |
-          if jq -e '.scripts.lint' package.json >/dev/null 2>&1; then
-            pnpm run lint
-          else
-            echo "No lint script; skipping."
-          fi
+        run: pnpm run lint --if-present
 
       - name: Build site data (if present)
         env:
-          # Kept for compatibility with any data-build step; prefer NCAAM_BASE in code
-          BDL_PROXY_BASE: ${{ env.NCAAM_BASE }}
-          NCAAM_BASE: ${{ env.NCAAM_BASE }}
-        run: |
-          if jq -e '.scripts["build:data"]' package.json >/dev/null 2>&1; then
-            pnpm run build:data
-          else
-            echo "No build:data script; skipping."
-          fi
+          NCAAM_BASE: https://ncaam.hicksrch.workers.dev/ncaam
+          BDL_PROXY_BASE: https://ncaam.hicksrch.workers.dev/ncaam
+        run: pnpm run build:data --if-present
 
       - name: Build site (if present)
-        run: |
-          if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
-            pnpm run build
-          else
-            echo "No build script; skipping."
-          fi
+        env:
+          VITE_BASE: ${{ env.VITE_BASE }}
+        run: pnpm run build --if-present
 
-      - name: Build sitemap/robots
+      - name: Build sitemap/robots (if script present)
         run: |
           if [ -f scripts/build_sitemap.mjs ]; then
             node scripts/build_sitemap.mjs
