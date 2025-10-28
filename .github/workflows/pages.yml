@@ -1,0 +1,124 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # NCAAM Worker base
+      NCAAM_BASE: https://ncaam.hicksrch.workers.dev/ncaam
+      # Optional: diag endpoint if a script uses it
+      NCAAM_DIAG: https://ncaam.hicksrch.workers.dev/diag
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Tooling sanity
+        run: |
+          node -v
+          pnpm -v
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck (if present)
+        run: |
+          if jq -e '.scripts.typecheck' package.json >/dev/null 2>&1; then
+            pnpm run typecheck
+          else
+            echo "No typecheck script; skipping."
+          fi
+
+      - name: Lint (if present)
+        run: |
+          if jq -e '.scripts.lint' package.json >/dev/null 2>&1; then
+            pnpm run lint
+          else
+            echo "No lint script; skipping."
+          fi
+
+      - name: Build site data (if present)
+        env:
+          # Kept for compatibility with any data-build step; prefer NCAAM_BASE in code
+          BDL_PROXY_BASE: ${{ env.NCAAM_BASE }}
+          NCAAM_BASE: ${{ env.NCAAM_BASE }}
+        run: |
+          if jq -e '.scripts["build:data"]' package.json >/dev/null 2>&1; then
+            pnpm run build:data
+          else
+            echo "No build:data script; skipping."
+          fi
+
+      - name: Build site (if present)
+        run: |
+          if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+            pnpm run build
+          else
+            echo "No build script; skipping."
+          fi
+
+      - name: Select Pages artifact directory
+        id: pickdir
+        shell: bash
+        run: |
+          if [ -d dist ]; then
+            echo "BUILD_DIR=dist" >> "$GITHUB_ENV"
+            echo "dir=dist" >> "$GITHUB_OUTPUT"
+          elif [ -d public ]; then
+            echo "BUILD_DIR=public" >> "$GITHUB_ENV"
+            echo "dir=public" >> "$GITHUB_OUTPUT"
+          else
+            mkdir -p public
+            if [ -f index.html ]; then
+              cp index.html public/index.html
+            else
+              echo '<!doctype html><meta charset="utf-8"><title>NCAA Hub</title><div id="app">Build produced no dist/public. Placeholder deployed.</div>' > public/index.html
+            fi
+            echo "BUILD_DIR=public" >> "$GITHUB_ENV"
+            echo "dir=public" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Using ${{ steps.pickdir.outputs.dir }} as artifact path."
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_DIR }}
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
