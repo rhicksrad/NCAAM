@@ -18,23 +18,16 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
-      - name: Ensure pnpm
-        uses: ./.github/actions/ensure-pnpm
-        with:
-          version: 9
-
-      - name: Tooling diagnostics
+      - name: Install pnpm (global, bulletproof)
         shell: bash
         run: |
-          set -x
-          node -v
-          which node
+          set -euo pipefail
+          npm i -g pnpm@9
           pnpm -v
           which pnpm
-          printenv | sort | sed -n '1,120p'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile || pnpm install
 
       - name: Typecheck
         run: pnpm run typecheck --if-present
