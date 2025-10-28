@@ -2,7 +2,7 @@ const DEFAULT_BASE = (() => {
   if (typeof window !== 'undefined' && typeof (window as unknown as Record<string, unknown>).NCAAM_API_BASE === 'string') {
     return String((window as unknown as Record<string, unknown>).NCAAM_API_BASE);
   }
-  return 'https://ncaam.hicksrch.workers.dev/ncaam';
+  return 'https://ncaam.hicksrch.workers.dev/v1';
 })();
 
 const RETRY_STATUSES = new Set([429, 500, 502, 503, 504]);
