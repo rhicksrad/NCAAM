@@ -47,4 +47,6 @@ export interface RankingsRow {
 export interface Paged<T> {
   data: T[];
   nextPage?: number;
+  nextCursor?: string;
+  prevCursor?: string;
 }

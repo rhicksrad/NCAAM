@@ -21,8 +21,12 @@ async function render(){
     const teamSel = el('select',{id:'team'}) as HTMLSelectElement; teamSel.appendChild(el('option',{value:''},'All Teams'));
     teams.slice().sort((a,b)=> a.shortName.localeCompare(b.shortName)).forEach(t=> teamSel.appendChild(el('option',{value:t.id},t.shortName)));
     const perSel = el('select',{id:'per'}, el('option',{value:'25'},'25'), el('option',{value:'50',selected:'true'},'50'), el('option',{value:'100'},'100')) as HTMLSelectElement;
-    let page=1; const prevBtn = el('button',{id:'prev',disabled:'true'},'Prev') as HTMLButtonElement;
-    const nextBtn = el('button',{id:'next'},'Next') as HTMLButtonElement; const pageLbl = el('span',{id:'page'},`Page ${page}`) as HTMLSpanElement;
+    type PagePointer = { cursor?: string; page?: number };
+    let history: PagePointer[] = [{}];
+    let pointerIndex = 0;
+    let pendingNext: PagePointer | undefined;
+    const prevBtn = el('button',{id:'prev',disabled:'true'},'Prev') as HTMLButtonElement;
+    const nextBtn = el('button',{id:'next'},'Next') as HTMLButtonElement; const pageLbl = el('span',{id:'page'},'Page 1') as HTMLSpanElement;
     const todayBtn = el('button',{id:'today'},'Today') as HTMLButtonElement; const next7Btn = el('button',{id:'next7'},'Next 7 Days') as HTMLButtonElement;
     const controls = el('div',{class:'section controls'}, el('label',{},'Start:'),startInput, el('label',{},'End:'),endInput, el('label',{},'Team:'),teamSel, el('label',{},'Per:'),perSel, prevBtn, nextBtn, pageLbl, todayBtn, next7Btn);
     const tblWrap = el('div',{});
@@ -33,21 +37,53 @@ async function render(){
     }
     const shell = el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Games`), nav(), controls, section('Schedule', tblWrap), footer());
     mount(root, shell);
-    async function load(){
-      const start_date=startInput.value || todayISO(); const end_date=endInput.value || start_date; const team_id = teamSel.value || undefined;
-      const per_page = Number(perSel.value); prevBtn.disabled = page<=1; pageLbl.textContent=`Page ${page}`;
-      const res = await getGames({ start_date, end_date, team_id: team_id as any, per_page, page });
-      renderTable(res.data); nextBtn.disabled = !res.nextPage && res.data.length < per_page;
+    function resetPaging(){
+      history = [{}];
+      pointerIndex = 0;
+      pendingNext = undefined;
+      pageLbl.textContent = 'Page 1';
     }
-    startInput.addEventListener('change',()=>{ page=1; void load(); });
-    endInput.addEventListener('change',()=>{ page=1; void load(); });
-    teamSel.addEventListener('change',()=>{ page=1; void load(); });
-    perSel.addEventListener('change',()=>{ page=1; void load(); });
-    prevBtn.addEventListener('click',()=>{ if(page>1){ page--; void load(); } });
-    nextBtn.addEventListener('click',()=>{ page++; void load(); });
-    todayBtn.addEventListener('click',()=>{ const t=todayISO(); startInput.value=t; endInput.value=t; page=1; void load(); });
+    async function load(){
+      const start_date=startInput.value || todayISO();
+      const end_date=endInput.value || start_date;
+      const team_id = teamSel.value || undefined;
+      const per_page = Number(perSel.value);
+      const pointer = history[pointerIndex] ?? {};
+      const params: Record<string, string | number> = { start_date, end_date, per_page };
+      if (team_id) params.team_id = team_id as any;
+      if (pointer.cursor) params.cursor = pointer.cursor;
+      else if (pointer.page && pointer.page > 1) params.page = pointer.page;
+      pageLbl.textContent = `Page ${pointerIndex + 1}`;
+      prevBtn.disabled = pointerIndex === 0;
+      const res = await getGames(params);
+      renderTable(res.data);
+      const hasNextCursor = res.nextCursor !== undefined && res.nextCursor !== '';
+      const hasNextPage = typeof res.nextPage === 'number' && Number.isFinite(res.nextPage);
+      pendingNext = hasNextCursor ? { cursor: res.nextCursor } : (hasNextPage ? { page: res.nextPage } : undefined);
+      nextBtn.disabled = !pendingNext;
+    }
+    startInput.addEventListener('change',()=>{ resetPaging(); void load(); });
+    endInput.addEventListener('change',()=>{ resetPaging(); void load(); });
+    teamSel.addEventListener('change',()=>{ resetPaging(); void load(); });
+    perSel.addEventListener('change',()=>{ resetPaging(); void load(); });
+    prevBtn.addEventListener('click',()=>{
+      if(pointerIndex>0){
+        pointerIndex -= 1;
+        pendingNext = undefined;
+        void load();
+      }
+    });
+    nextBtn.addEventListener('click',()=>{
+      if(!pendingNext) return;
+      history = history.slice(0, pointerIndex + 1);
+      history.push(pendingNext);
+      pointerIndex += 1;
+      pendingNext = undefined;
+      void load();
+    });
+    todayBtn.addEventListener('click',()=>{ const t=todayISO(); startInput.value=t; endInput.value=t; resetPaging(); void load(); });
     next7Btn.addEventListener('click',()=>{ const t=new Date(); const start=todayISO(); const t2=new Date(t.getFullYear(),t.getMonth(),t.getDate()+7);
-      const end = `${t2.getFullYear()}-${String(t2.getMonth()+1).padStart(2,'0')}-${String(t2.getDate()).padStart(2,'0')}`; startInput.value=start; endInput.value=end; page=1; void load(); });
+      const end = `${t2.getFullYear()}-${String(t2.getMonth()+1).padStart(2,'0')}-${String(t2.getDate()).padStart(2,'0')}`; startInput.value=start; endInput.value=end; resetPaging(); void load(); });
     await load();
   }catch(err){ mount(root, el('pre',{class:'error'}, String(err))); }
 }

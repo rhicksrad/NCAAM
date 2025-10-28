@@ -45,7 +45,10 @@ async function render() {
       .filter(r => r.rank > 0 && r.rank <= 25)
       .sort((a, b) => a.rank - b.rank)
       .map(r => [r.rank, linkTeam(r.teamId, tmap.get(r.teamId) ?? r.teamId), r.poll, r.week ?? ''] as (string | number | Node)[]);
-    const rankingsEl = section('Top 25 Rankings', table(['Rank', 'Team', 'Poll', 'Week'], top25));
+    const rankingsContent = top25.length > 0
+      ? table(['Rank', 'Team', 'Poll', 'Week'], top25)
+      : el('p', { class: 'empty-state' }, 'Rankings are not yet available for this season.');
+    const rankingsEl = section('Top 25 Rankings', rankingsContent);
 
     let games = gamesToday.data;
     if (!games || games.length === 0) {
