@@ -84,6 +84,14 @@ jobs:
             echo "No build script; skipping."
           fi
 
+      - name: Build sitemap (if script present)
+        run: |
+          if [ -f scripts/build_sitemap.mjs ]; then
+            node scripts/build_sitemap.mjs
+          else
+            echo "No sitemap script; skipping."
+          fi
+
       - name: Select Pages artifact directory
         id: pickdir
         shell: bash

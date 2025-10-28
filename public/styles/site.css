@@ -1,0 +1,24 @@
+:root{
+  --fg:#111; --bg:#fff; --muted:#666; --border:#e5e7eb; --accent:#0b5fff;
+  --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+*{box-sizing:border-box}
+html,body{padding:0;margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.45}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{margin:1.5rem}
+.title{margin:0 0 1rem 0;font-size:1.75rem}
+.section{margin:1.25rem 0}
+.section-title{margin:0 0 .5rem 0;font-size:1.25rem}
+.nav{margin:.5rem 0 1rem 0;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.footer{margin:2rem 0 0 0;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+table.data{border-collapse:collapse;width:100%}
+table.data th,table.data td{border:1px solid var(--border);padding:.5rem;text-align:left}
+.spinner{padding:.5rem 0;color:var(--muted)}
+.error{color:#b00020;white-space:pre-wrap;font-family:var(--mono)}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.controls label{color:var(--muted)}
+input[type="date"],input[type="number"],input[type="text"],select,button{font:inherit;padding:.35rem .5rem;border:1px solid var(--border);border-radius:6px}
+button{cursor:pointer;background:#f8f9fb}
+button:disabled{opacity:.6;cursor:not-allowed}
