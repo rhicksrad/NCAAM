@@ -2,12 +2,16 @@ import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
 import { getTeams, getGames, getStandings } from '../lib/ncaam/service';
 import { el, mount, section, spinner, table } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
+import { basePath } from '../lib/ui/base';
 import { qp } from '../lib/ui/url';
 import { fmtYYYYMMDD } from '../lib/ui/date';
 import '../../public/styles/site.css';
 type TeamVM = { id:string; name:string; shortName:string; conference?:string; logo?:string };
 type GameVM = { id:string; date:string; homeTeamId:string; awayTeamId:string; homeScore?:number; awayScore?:number; status?:string };
-function linkTeam(id:string,label:string){ return el('a',{ href:`/team.html?team_id=${encodeURIComponent(id)}` },label); }
+function linkTeam(id: string, label: string) {
+  const base = basePath();
+  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+}
 function wlFor(teamId:string,g:GameVM):string{
   const hs=g.homeScore??0,as=g.awayScore??0; if(!hs && !as) return g.status ?? '';
   const oursHome = g.homeTeamId===teamId; const diff = (oursHome?hs-as:as-hs);

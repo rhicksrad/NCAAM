@@ -1,11 +1,14 @@
+import { basePath } from './base';
+
 export function nav() {
+  const base = basePath();
   return el('nav', { class: 'nav' },
-    a('/', 'Home'), sep(),
-    a('/teams.html', 'Teams'), sep(),
-    a('/players.html', 'Players'), sep(),
-    a('/games.html', 'Games'), sep(),
-    a('/rankings.html', 'Rankings'), sep(),
-    a('/standings.html', 'Standings')
+    a(`${base}`, 'Home'), sep(),
+    a(`${base}teams.html`, 'Teams'), sep(),
+    a(`${base}players.html`, 'Players'), sep(),
+    a(`${base}games.html`, 'Games'), sep(),
+    a(`${base}rankings.html`, 'Rankings'), sep(),
+    a(`${base}standings.html`, 'Standings')
   );
 
   function a(href: string, label: string) {
@@ -17,7 +20,6 @@ export function nav() {
   function sep() { return document.createTextNode(' · '); }
 }
 
-// Minimal DOM helper so this file is standalone if imported early
 function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
   attrs: Partial<Record<string, string>> = {},
@@ -31,7 +33,5 @@ function el<K extends keyof HTMLElementTagNameMap>(
 
 export function footer() {
   const year = new Date().getFullYear();
-  return el('footer', { class: 'footer' },
-    `© ${year} NCAA Men’s Basketball Hub`
-  );
+  return el('footer', { class: 'footer' }, `© ${year} NCAA Men’s Basketball Hub`);
 }

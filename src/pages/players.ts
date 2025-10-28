@@ -2,6 +2,7 @@ import { BRAND } from '../lib/config/ncaam';
 import { getPlayers } from '../lib/ncaam/service';
 import { el, mount, section, spinner, table } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
+import { basePath } from '../lib/ui/base';
 import '../../public/styles/site.css';
 
 type PlayerVM = { id:string; firstName:string; lastName:string; position?:string; teamId?:string; classYear?:string; eligibility?:string };
@@ -10,7 +11,14 @@ function filterPage(items: PlayerVM[], q: string) {
   const qn = q.trim().toLowerCase(); if (!qn) return items;
   return items.filter(p => fullName(p).toLowerCase().includes(qn) || (p.teamId ?? '').toLowerCase().includes(qn));
 }
-function linkPlayer(id: string, label: string) { return el('a', { href: `/player.html?player_id=${encodeURIComponent(id)}` }, label); }
+function linkPlayer(id: string, label: string) {
+  const base = basePath();
+  return el('a', { href: `${base}player.html?player_id=${encodeURIComponent(id)}` }, label);
+}
+function linkTeam(id: string, label: string) {
+  const base = basePath();
+  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+}
 
 async function render() {
   const root = document.getElementById('app')!;
@@ -24,8 +32,15 @@ async function render() {
     const pageLbl = el('span', { id: 'page' }, `Page ${page}`) as HTMLSpanElement;
     const controls = el('div', { class: 'section controls' }, el('label', {}, 'Per page:'), perSel, prevBtn, nextBtn, pageLbl, el('label', {}, 'Filter:'), search);
     const tblWrap = el('div', {});
-    const renderTable = (rows: PlayerVM[]) => mount(tblWrap, table(['Name','Pos','Team ID','Class','Elig','Player ID'],
-      rows.map(p => [linkPlayer(p.id, fullName(p)), p.position ?? '', p.teamId ?? '', p.classYear ?? '', p.eligibility ?? '', p.id])));
+    const renderTable = (rows: PlayerVM[]) => mount(tblWrap, table(['Name','Pos','Team','Class','Elig','Player ID'],
+      rows.map(p => [
+        linkPlayer(p.id, fullName(p)),
+        p.position ?? '',
+        p.teamId ? linkTeam(p.teamId, p.teamId) : '',
+        p.classYear ?? '',
+        p.eligibility ?? '',
+        p.id
+      ])));
     const shell = el('div', { class: 'container' }, el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`), nav(), controls, section('Players', tblWrap), footer());
     mount(root, shell);
     async function load(){ prevBtn.disabled = page <= 1; pageLbl.textContent = `Page ${page}`; const res = await getPlayers({ per_page: perPage, page }); renderTable(filterPage(res, (search as HTMLInputElement).value)); }

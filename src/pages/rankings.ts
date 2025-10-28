@@ -2,10 +2,14 @@ import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
 import { getRankings, getTeams } from '../lib/ncaam/service';
 import { el, mount, section, spinner, table } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
+import { basePath } from '../lib/ui/base';
 import '../../public/styles/site.css';
 type TeamVM = { id:string; shortName:string };
 type RankVM = { rank:number; teamId:string; poll:string; week?:number };
-function linkTeam(id:string,label:string){ return el('a',{ href:`/team.html?team_id=${encodeURIComponent(id)}` },label); }
+function linkTeam(id: string, label: string) {
+  const base = basePath();
+  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+}
 function pollsOf(rows: RankVM[]): string[]{ const s=new Set(rows.map(r=> r.poll || 'AP')); return ['All', ...Array.from(s).sort((a,b)=>a.localeCompare(b))]; }
 async function render(){
   const root=document.getElementById('app')!;

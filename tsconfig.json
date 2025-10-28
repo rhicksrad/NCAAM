@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "strict": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "types": ["node"],
-    "allowImportingTsExtensions": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": []
   },
-  "include": [
-    "scripts/**/*.ts",
-    "content/**/*.ts",
-    "scripts/tests/**/*.ts",
-    "assets/**/*.ts",
-    "types/**/*.ts",
-    "src/**/*.ts"
-  ],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"]
 }

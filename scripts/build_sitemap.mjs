@@ -1,11 +1,11 @@
-/**
- * Build a simple sitemap from known pages. Run:
- *   node scripts/build_sitemap.mjs
- * Emits: sitemap.xml at repo root (or public/) depending on layout.
- */
 import { writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-const BASE = process.env.SITE_BASE || 'https://rhicksrad.github.io';
+
+const OWNER = process.env.GITHUB_REPOSITORY?.split('/')?.[0] || '';
+const REPO = process.env.GITHUB_REPOSITORY?.split('/')?.[1] || '';
+const isUserSite = REPO && REPO.toLowerCase() === `${OWNER.toLowerCase()}.github.io`;
+const BASE = process.env.SITE_BASE || (isUserSite ? `https://${OWNER}.github.io` : `https://${OWNER}.github.io/${REPO}`);
+
 const PAGES = [
   '/', '/index.html',
   '/teams.html', '/players.html',
@@ -19,18 +19,20 @@ function url(loc){
   return `<url><loc>${BASE}${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>`;
 }
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${PAGES.map(url).join('\n')}
 </urlset>
 `;
 
-const targetDir = existsSync('public') ? 'public' : '.';
-if (targetDir === 'public') {
-  await mkdir('public', { recursive: true });
-  await writeFile('public/sitemap.xml', xml, 'utf8');
-  console.log('Wrote public/sitemap.xml');
-} else {
-  await writeFile('sitemap.xml', xml, 'utf8');
-  console.log('Wrote sitemap.xml');
-}
+const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${BASE}/sitemap.xml
+`;
+
+const dir = existsSync('public') ? 'public' : '.';
+await mkdir(dir, { recursive: true });
+await writeFile(`${dir}/sitemap.xml`, sitemap, 'utf8');
+await writeFile(`${dir}/robots.txt`, robots, 'utf8');
+console.log(`Wrote ${dir}/sitemap.xml and ${dir}/robots.txt with BASE=${BASE}`);
