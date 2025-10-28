@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Ensure pnpm
+        shell: bash
+        run: |
+          set -euo pipefail
+          corepack enable
+          corepack prepare pnpm@9 --activate || true
+          if ! command -v pnpm >/dev/null 2>&1; then
+            echo "Corepack prepare failed; installing pnpm globally..."
+            npm i -g pnpm@9
+          fi
+          pnpm -v
+          which pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm run typecheck --if-present
+
+      - name: Lint
+        run: pnpm run lint --if-present
+
+      - name: Test
+        env:
+          CI: "1"
+        run: pnpm run test --if-present
+
+      - name: Build
+        run: pnpm run build --if-present
