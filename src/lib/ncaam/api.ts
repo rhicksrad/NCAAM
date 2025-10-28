@@ -1,5 +1,5 @@
 const ROOT = 'https://ncaam.hicksrch.workers.dev';
-const BASE = ROOT + '/ncaam';
+const BASE = ROOT + '/v1';
 
 export async function diag(): Promise<unknown> {
   const r = await fetch(ROOT + '/diag', { headers: { Accept: 'application/json' } });
