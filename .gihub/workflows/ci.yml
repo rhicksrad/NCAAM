@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck (if script exists)
+        run: |
+          if jq -e '.scripts.typecheck' package.json >/dev/null 2>&1; then
+            pnpm run typecheck
+          else
+            echo "No typecheck script found; skipping."
+          fi
+
+      - name: Lint (if script exists)
+        run: |
+          if jq -e '.scripts.lint' package.json >/dev/null 2>&1; then
+            pnpm run lint
+          else
+            echo "No lint script found; skipping."
+          fi
+
+      - name: Test (if script exists)
+        run: |
+          if jq -e '.scripts.test' package.json >/dev/null 2>&1; then
+            # Common runners: vitest/jest. Respect CI for proper reporters.
+            export CI=1
+            pnpm run test
+          else
+            echo "No test script found; skipping."
+          fi
+
+      - name: Build (if script exists)
+        run: |
+          if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+            pnpm run build
+          else
+            echo "No build script found; skipping."
+          fi
