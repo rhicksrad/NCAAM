@@ -1,0 +1,726 @@
+{
+  "generatedAt": "2025-09-30T19:49:17.142239+00:00",
+  "totals": {
+    "games": 71879,
+    "byType": [
+      {
+        "gameType": "Regular Season",
+        "games": 65538
+      },
+      {
+        "gameType": "Playoffs",
+        "games": 4441
+      },
+      {
+        "gameType": "Preseason",
+        "games": 1802
+      },
+      {
+        "gameType": "NBA Emirates Cup",
+        "games": 66
+      },
+      {
+        "gameType": "Play-in Tournament",
+        "games": 31
+      },
+      {
+        "gameType": "NBA Cup",
+        "games": 1
+      }
+    ],
+    "firstGame": "1946-11-26T19:00:00",
+    "latestGame": "2025-06-22T20:00:00"
+  },
+  "gamesByDecade": [
+    {
+      "decade": "1940s",
+      "games": 176
+    },
+    {
+      "decade": "1950s",
+      "games": 2727
+    },
+    {
+      "decade": "1960s",
+      "games": 4323
+    },
+    {
+      "decade": "1970s",
+      "games": 8151
+    },
+    {
+      "decade": "1980s",
+      "games": 10037
+    },
+    {
+      "decade": "1990s",
+      "games": 11698
+    },
+    {
+      "decade": "2000s",
+      "games": 13553
+    },
+    {
+      "decade": "2010s",
+      "games": 13779
+    },
+    {
+      "decade": "2020s",
+      "games": 7435
+    }
+  ],
+  "highestScoringGames": [
+    {
+      "gameId": "28300255",
+      "date": "1983-12-13 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Denver",
+        "name": "Nuggets",
+        "score": 184
+      },
+      "away": {
+        "city": "Detroit",
+        "name": "Pistons",
+        "score": 186
+      },
+      "totalPoints": 370,
+      "margin": 2,
+      "attendance": 9659
+    },
+    {
+      "gameId": "22200902",
+      "date": "2023-02-24 22:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Los Angeles",
+        "name": "Clippers",
+        "score": 175
+      },
+      "away": {
+        "city": "Sacramento",
+        "name": "Kings",
+        "score": 176
+      },
+      "totalPoints": 351,
+      "margin": 1,
+      "attendance": 19068
+    },
+    {
+      "gameId": "28100679",
+      "date": "1982-03-06 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "San Antonio",
+        "name": "Spurs",
+        "score": 171
+      },
+      "away": {
+        "city": "Milwaukee",
+        "name": "Bucks",
+        "score": 166
+      },
+      "totalPoints": 337,
+      "margin": 5,
+      "attendance": 11764
+    },
+    {
+      "gameId": "21800928",
+      "date": "2019-03-01 19:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Atlanta",
+        "name": "Hawks",
+        "score": 161
+      },
+      "away": {
+        "city": "Chicago",
+        "name": "Bulls",
+        "score": 168
+      },
+      "totalPoints": 329,
+      "margin": 7,
+      "attendance": 15267
+    },
+    {
+      "gameId": "29000002",
+      "date": "1990-11-02 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Denver",
+        "name": "Nuggets",
+        "score": 158
+      },
+      "away": {
+        "city": "Golden State",
+        "name": "Warriors",
+        "score": 162
+      },
+      "totalPoints": 320,
+      "margin": 4,
+      "attendance": 9838
+    },
+    {
+      "gameId": "28300404",
+      "date": "1984-01-11 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Denver",
+        "name": "Nuggets",
+        "score": 163
+      },
+      "away": {
+        "city": "San Antonio",
+        "name": "Spurs",
+        "score": 155
+      },
+      "totalPoints": 318,
+      "margin": 8,
+      "attendance": 9429
+    },
+    {
+      "gameId": "20600271",
+      "date": "2006-12-07 19:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "New Jersey",
+        "name": "Nets",
+        "score": 157
+      },
+      "away": {
+        "city": "Phoenix",
+        "name": "Suns",
+        "score": 161
+      },
+      "totalPoints": 318,
+      "margin": 4,
+      "attendance": 16966
+    },
+    {
+      "gameId": "21900061",
+      "date": "2019-10-30 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Washington",
+        "name": "Wizards",
+        "score": 158
+      },
+      "away": {
+        "city": "Houston",
+        "name": "Rockets",
+        "score": 159
+      },
+      "totalPoints": 317,
+      "margin": 1,
+      "attendance": 20476
+    },
+    {
+      "gameId": "26100329",
+      "date": "1962-03-02 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Philadelphia",
+        "name": "Warriors",
+        "score": 169
+      },
+      "away": {
+        "city": "New York",
+        "name": "Knicks",
+        "score": 147
+      },
+      "totalPoints": 316,
+      "margin": 22,
+      "attendance": 1124
+    },
+    {
+      "gameId": "26900525",
+      "date": "1970-03-12 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Cincinnati",
+        "name": "Royals",
+        "score": 165
+      },
+      "away": {
+        "city": "San Diego",
+        "name": "Rockets",
+        "score": 151
+      },
+      "totalPoints": 316,
+      "margin": 14,
+      "attendance": 2695
+    },
+    {
+      "gameId": "29000065",
+      "date": "1990-11-10 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Phoenix",
+        "name": "Suns",
+        "score": 173
+      },
+      "away": {
+        "city": "Denver",
+        "name": "Nuggets",
+        "score": 143
+      },
+      "totalPoints": 316,
+      "margin": 30,
+      "attendance": 14487
+    },
+    {
+      "gameId": "29000042",
+      "date": "1990-11-07 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "San Antonio",
+        "name": "Spurs",
+        "score": 161
+      },
+      "away": {
+        "city": "Denver",
+        "name": "Nuggets",
+        "score": 153
+      },
+      "totalPoints": 314,
+      "margin": 8,
+      "attendance": 15908
+    }
+  ],
+  "largestMargins": [
+    {
+      "gameId": "22100330",
+      "date": "2021-12-02 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Memphis",
+        "name": "Grizzlies",
+        "score": 152
+      },
+      "away": {
+        "city": "Oklahoma City",
+        "name": "Thunder",
+        "score": 79
+      },
+      "totalPoints": 231,
+      "margin": 73,
+      "attendance": 13103
+    },
+    {
+      "gameId": "29100300",
+      "date": "1991-12-17 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Cleveland",
+        "name": "Cavaliers",
+        "score": 148
+      },
+      "away": {
+        "city": "Miami",
+        "name": "Heat",
+        "score": 80
+      },
+      "totalPoints": 228,
+      "margin": 68,
+      "attendance": 10487
+    },
+    {
+      "gameId": "12100048",
+      "date": "2021-10-13 18:30:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Charlotte",
+        "name": "Hornets",
+        "score": 59
+      },
+      "away": {
+        "city": "Dallas",
+        "name": "Mavericks",
+        "score": 127
+      },
+      "totalPoints": 186,
+      "margin": 68,
+      "attendance": 8583
+    },
+    {
+      "gameId": "29700812",
+      "date": "1998-02-27 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Indiana",
+        "name": "Pacers",
+        "score": 124
+      },
+      "away": {
+        "city": "Portland",
+        "name": "Trail Blazers",
+        "score": 59
+      },
+      "totalPoints": 183,
+      "margin": 65,
+      "attendance": 16560
+    },
+    {
+      "gameId": "27100783",
+      "date": "1972-03-19 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Los Angeles",
+        "name": "Lakers",
+        "score": 162
+      },
+      "away": {
+        "city": "Golden State",
+        "name": "Warriors",
+        "score": 99
+      },
+      "totalPoints": 261,
+      "margin": 63,
+      "attendance": 17505
+    },
+    {
+      "gameId": "26000126",
+      "date": "1960-12-25 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Syracuse",
+        "name": "Nationals",
+        "score": 162
+      },
+      "away": {
+        "city": "New York",
+        "name": "Knicks",
+        "score": 100
+      },
+      "totalPoints": 262,
+      "margin": 62,
+      "attendance": null
+    },
+    {
+      "gameId": "29100021",
+      "date": "1991-11-02 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Golden State",
+        "name": "Warriors",
+        "score": 153
+      },
+      "away": {
+        "city": "Sacramento",
+        "name": "Kings",
+        "score": 91
+      },
+      "totalPoints": 244,
+      "margin": 62,
+      "attendance": 15025
+    },
+    {
+      "gameId": "22300529",
+      "date": "2024-01-11 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Oklahoma City",
+        "name": "Thunder",
+        "score": 139
+      },
+      "away": {
+        "city": "Portland",
+        "name": "Trail Blazers",
+        "score": 77
+      },
+      "totalPoints": 216,
+      "margin": 62,
+      "attendance": 15828
+    },
+    {
+      "gameId": "21701072",
+      "date": "2018-03-22 19:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Charlotte",
+        "name": "Hornets",
+        "score": 140
+      },
+      "away": {
+        "city": "Memphis",
+        "name": "Grizzlies",
+        "score": 79
+      },
+      "totalPoints": 219,
+      "margin": 61,
+      "attendance": 15033
+    },
+    {
+      "gameId": "22301068",
+      "date": "2024-03-29 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Miami",
+        "name": "Heat",
+        "score": 142
+      },
+      "away": {
+        "city": "Portland",
+        "name": "Trail Blazers",
+        "score": 82
+      },
+      "totalPoints": 224,
+      "margin": 60,
+      "attendance": 19839
+    },
+    {
+      "gameId": "27800365",
+      "date": "1978-12-26 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Milwaukee",
+        "name": "Bucks",
+        "score": 143
+      },
+      "away": {
+        "city": "Detroit",
+        "name": "Pistons",
+        "score": 84
+      },
+      "totalPoints": 227,
+      "margin": 59,
+      "attendance": 10938
+    },
+    {
+      "gameId": "22400571",
+      "date": "2025-01-15 22:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Los Angeles",
+        "name": "Clippers",
+        "score": 126
+      },
+      "away": {
+        "city": "Brooklyn",
+        "name": "Nets",
+        "score": 67
+      },
+      "totalPoints": 193,
+      "margin": 59,
+      "attendance": 13091
+    }
+  ],
+  "attendanceLeaders": [
+    {
+      "gameId": "29400853",
+      "date": "1995-03-17 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "New Jersey",
+        "name": "Nets",
+        "score": 98
+      },
+      "away": {
+        "city": "Utah",
+        "name": "Jazz",
+        "score": 103
+      },
+      "totalPoints": 201,
+      "margin": 5,
+      "attendance": 200049
+    },
+    {
+      "gameId": "29401063",
+      "date": "1995-04-18 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Minnesota",
+        "name": "Timberwolves",
+        "score": 94
+      },
+      "away": {
+        "city": "Utah",
+        "name": "Jazz",
+        "score": 113
+      },
+      "totalPoints": 207,
+      "margin": 19,
+      "attendance": 144442
+    },
+    {
+      "gameId": "22200635",
+      "date": "2023-01-13 19:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "San Antonio",
+        "name": "Spurs",
+        "score": 113
+      },
+      "away": {
+        "city": "Golden State",
+        "name": "Warriors",
+        "score": 144
+      },
+      "totalPoints": 257,
+      "margin": 31,
+      "attendance": 68323
+    },
+    {
+      "gameId": "10600119",
+      "date": "2006-10-27 20:30:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Chicago",
+        "name": "Bulls",
+        "score": 108
+      },
+      "away": {
+        "city": "Toronto",
+        "name": "Raptors",
+        "score": 97
+      },
+      "totalPoints": 205,
+      "margin": 11,
+      "attendance": 64768
+    },
+    {
+      "gameId": "10600039",
+      "date": "2006-10-14 20:30:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Milwaukee",
+        "name": "Bucks",
+        "score": 91
+      },
+      "away": {
+        "city": "Dallas",
+        "name": "Mavericks",
+        "score": 78
+      },
+      "totalPoints": 169,
+      "margin": 13,
+      "attendance": 64512
+    },
+    {
+      "gameId": "10600051",
+      "date": "2006-10-17 22:00:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Phoenix",
+        "name": "Suns",
+        "score": 96
+      },
+      "away": {
+        "city": "Los Angeles",
+        "name": "Clippers",
+        "score": 107
+      },
+      "totalPoints": 203,
+      "margin": 11,
+      "attendance": 62976
+    },
+    {
+      "gameId": "10600068",
+      "date": "2006-10-19 22:00:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Phoenix",
+        "name": "Suns",
+        "score": 111
+      },
+      "away": {
+        "city": "Sacramento",
+        "name": "Kings",
+        "score": 94
+      },
+      "totalPoints": 205,
+      "margin": 17,
+      "attendance": 62976
+    },
+    {
+      "gameId": "10600092",
+      "date": "2006-10-23 22:00:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Phoenix",
+        "name": "Suns",
+        "score": 102
+      },
+      "away": {
+        "city": "Seattle",
+        "name": "SuperSonics",
+        "score": 108
+      },
+      "totalPoints": 210,
+      "margin": 6,
+      "attendance": 62976
+    },
+    {
+      "gameId": "29701013",
+      "date": "1998-03-27 19:30:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Atlanta",
+        "name": "Hawks",
+        "score": 74
+      },
+      "away": {
+        "city": "Chicago",
+        "name": "Bulls",
+        "score": 89
+      },
+      "totalPoints": 163,
+      "margin": 15,
+      "attendance": 62046
+    },
+    {
+      "gameId": "28700458",
+      "date": "1988-01-29 20:00:00",
+      "gameType": "Regular Season",
+      "home": {
+        "city": "Detroit",
+        "name": "Pistons",
+        "score": 125
+      },
+      "away": {
+        "city": "Boston",
+        "name": "Celtics",
+        "score": 108
+      },
+      "totalPoints": 233,
+      "margin": 17,
+      "attendance": 61983
+    },
+    {
+      "gameId": "10600077",
+      "date": "2006-10-20 22:30:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Seattle",
+        "name": "SuperSonics",
+        "score": 95
+      },
+      "away": {
+        "city": "Portland",
+        "name": "Trail Blazers",
+        "score": 103
+      },
+      "totalPoints": 198,
+      "margin": 8,
+      "attendance": 60672
+    },
+    {
+      "gameId": "10600069",
+      "date": "2006-10-19 22:00:00",
+      "gameType": "Preseason",
+      "home": {
+        "city": "Los Angeles",
+        "name": "Lakers",
+        "score": 90
+      },
+      "away": {
+        "city": "Los Angeles",
+        "name": "Clippers",
+        "score": 91
+      },
+      "totalPoints": 181,
+      "margin": 1,
+      "attendance": 60416
+    }
+  ]
+}

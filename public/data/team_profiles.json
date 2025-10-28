@@ -1,0 +1,906 @@
+{
+  "season": "1946-2025",
+  "generatedAt": "2025-09-30T18:49:57.678820+00:00",
+  "teams": [
+    {
+      "abbreviation": "ATL",
+      "name": "Atlanta Hawks",
+      "city": "Atlanta, GA",
+      "conference": "East",
+      "division": "Southeast",
+      "latitude": 33.7573,
+      "longitude": -84.3963,
+      "metrics": {
+        "winPct": 0.4893,
+        "avgPointsFor": 103.36,
+        "avgPointsAgainst": 103.92,
+        "netMargin": -0.56,
+        "fieldGoalPct": 0.4558,
+        "threePointPct": 0.3567,
+        "rebounds": 26.91,
+        "assists": 13.46,
+        "turnovers": 8.3,
+        "pointsInPaint": 54.84,
+        "fastBreakPoints": 16.99,
+        "benchPoints": 43.93
+      },
+      "gamesSampled": 6434,
+      "wins": 3148,
+      "losses": 3286,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 13
+      }
+    },
+    {
+      "abbreviation": "BOS",
+      "name": "Boston Celtics",
+      "city": "Boston, MA",
+      "conference": "East",
+      "division": "Atlantic",
+      "latitude": 42.3662,
+      "longitude": -71.0621,
+      "metrics": {
+        "winPct": 0.5967,
+        "avgPointsFor": 106.21,
+        "avgPointsAgainst": 103.18,
+        "netMargin": 3.03,
+        "fieldGoalPct": 0.4674,
+        "threePointPct": 0.3618,
+        "rebounds": 25.97,
+        "assists": 14.22,
+        "turnovers": 8.2,
+        "pointsInPaint": 40.46,
+        "fastBreakPoints": 11.98,
+        "benchPoints": 29.89
+      },
+      "gamesSampled": 6856,
+      "wins": 4091,
+      "losses": 2765,
+      "legacy": {
+        "titles": 18,
+        "hallOfFamers": 41
+      }
+    },
+    {
+      "abbreviation": "BKN",
+      "name": "Brooklyn Nets",
+      "city": "Brooklyn, NY",
+      "conference": "East",
+      "division": "Atlantic",
+      "latitude": 40.6826,
+      "longitude": -73.9754,
+      "metrics": {
+        "winPct": 0.4257,
+        "avgPointsFor": 101.67,
+        "avgPointsAgainst": 103.93,
+        "netMargin": -2.26,
+        "fieldGoalPct": 0.4518,
+        "threePointPct": 0.3511,
+        "rebounds": 38.36,
+        "assists": 20.1,
+        "turnovers": 12.65,
+        "pointsInPaint": 43.26,
+        "fastBreakPoints": 14.3,
+        "benchPoints": 38.97
+      },
+      "gamesSampled": 4231,
+      "wins": 1801,
+      "losses": 2430,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 6
+      }
+    },
+    {
+      "abbreviation": "CHA",
+      "name": "Charlotte Hornets",
+      "city": "Charlotte, NC",
+      "conference": "East",
+      "division": "Southeast",
+      "latitude": 35.2251,
+      "longitude": -80.8392,
+      "metrics": {
+        "winPct": 0.4224,
+        "avgPointsFor": 100.51,
+        "avgPointsAgainst": 103.19,
+        "netMargin": -2.68,
+        "fieldGoalPct": 0.4507,
+        "threePointPct": 0.3561,
+        "rebounds": 41.89,
+        "assists": 23.27,
+        "turnovers": 14.41,
+        "pointsInPaint": 44.86,
+        "fastBreakPoints": 12.04,
+        "benchPoints": 35.54
+      },
+      "gamesSampled": 2985,
+      "wins": 1261,
+      "losses": 1724,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 1
+      }
+    },
+    {
+      "abbreviation": "CHI",
+      "name": "Chicago Bulls",
+      "city": "Chicago, IL",
+      "conference": "East",
+      "division": "Central",
+      "latitude": 41.8807,
+      "longitude": -87.6742,
+      "metrics": {
+        "winPct": 0.5121,
+        "avgPointsFor": 102.54,
+        "avgPointsAgainst": 102.19,
+        "netMargin": 0.35,
+        "fieldGoalPct": 0.4608,
+        "threePointPct": 0.3654,
+        "rebounds": 32.29,
+        "assists": 17.57,
+        "turnovers": 10.29,
+        "pointsInPaint": 50.55,
+        "fastBreakPoints": 18.53,
+        "benchPoints": 37.07
+      },
+      "gamesSampled": 5245,
+      "wins": 2686,
+      "losses": 2559,
+      "legacy": {
+        "titles": 6,
+        "hallOfFamers": 10
+      }
+    },
+    {
+      "abbreviation": "CLE",
+      "name": "Cleveland Cavaliers",
+      "city": "Cleveland, OH",
+      "conference": "East",
+      "division": "Central",
+      "latitude": 41.4965,
+      "longitude": -81.6882,
+      "metrics": {
+        "winPct": 0.4739,
+        "avgPointsFor": 101.5,
+        "avgPointsAgainst": 102.26,
+        "netMargin": -0.76,
+        "fieldGoalPct": 0.46,
+        "threePointPct": 0.3671,
+        "rebounds": 33.83,
+        "assists": 18.29,
+        "turnovers": 10.97,
+        "pointsInPaint": 51.34,
+        "fastBreakPoints": 14.87,
+        "benchPoints": 39.84
+      },
+      "gamesSampled": 4805,
+      "wins": 2277,
+      "losses": 2528,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 7
+      }
+    },
+    {
+      "abbreviation": "DAL",
+      "name": "Dallas Mavericks",
+      "city": "Dallas, TX",
+      "conference": "West",
+      "division": "Southwest",
+      "latitude": 32.7905,
+      "longitude": -96.8104,
+      "metrics": {
+        "winPct": 0.5041,
+        "avgPointsFor": 103.93,
+        "avgPointsAgainst": 103.9,
+        "netMargin": 0.03,
+        "fieldGoalPct": 0.4604,
+        "threePointPct": 0.3594,
+        "rebounds": 41.07,
+        "assists": 21.46,
+        "turnovers": 12.38,
+        "pointsInPaint": 50.62,
+        "fastBreakPoints": 15.51,
+        "benchPoints": 39.17
+      },
+      "gamesSampled": 4001,
+      "wins": 2017,
+      "losses": 1984,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 6
+      }
+    },
+    {
+      "abbreviation": "DEN",
+      "name": "Denver Nuggets",
+      "city": "Denver, CO",
+      "conference": "West",
+      "division": "Northwest",
+      "latitude": 39.7487,
+      "longitude": -105.0077,
+      "metrics": {
+        "winPct": 0.5047,
+        "avgPointsFor": 107.91,
+        "avgPointsAgainst": 108.02,
+        "netMargin": -0.11,
+        "fieldGoalPct": 0.4631,
+        "threePointPct": 0.3508,
+        "rebounds": 38.87,
+        "assists": 21.55,
+        "turnovers": 12.41,
+        "pointsInPaint": 56.12,
+        "fastBreakPoints": 18.85,
+        "benchPoints": 26.11
+      },
+      "gamesSampled": 4333,
+      "wins": 2187,
+      "losses": 2146,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 7
+      }
+    },
+    {
+      "abbreviation": "DET",
+      "name": "Detroit Pistons",
+      "city": "Detroit, MI",
+      "conference": "East",
+      "division": "Central",
+      "latitude": 42.341,
+      "longitude": -83.0551,
+      "metrics": {
+        "winPct": 0.4722,
+        "avgPointsFor": 102.37,
+        "avgPointsAgainst": 103.21,
+        "netMargin": -0.84,
+        "fieldGoalPct": 0.4552,
+        "threePointPct": 0.3588,
+        "rebounds": 26.04,
+        "assists": 13.39,
+        "turnovers": 8.04,
+        "pointsInPaint": 52.2,
+        "fastBreakPoints": 18.45,
+        "benchPoints": 40.36
+      },
+      "gamesSampled": 6461,
+      "wins": 3051,
+      "losses": 3410,
+      "legacy": {
+        "titles": 3,
+        "hallOfFamers": 16
+      }
+    },
+    {
+      "abbreviation": "GSW",
+      "name": "Golden State Warriors",
+      "city": "San Francisco, CA",
+      "conference": "West",
+      "division": "Pacific",
+      "latitude": 37.768,
+      "longitude": -122.3877,
+      "metrics": {
+        "winPct": 0.491,
+        "avgPointsFor": 106.88,
+        "avgPointsAgainst": 107.07,
+        "netMargin": -0.19,
+        "fieldGoalPct": 0.4631,
+        "threePointPct": 0.3622,
+        "rebounds": 26.08,
+        "assists": 14.35,
+        "turnovers": 8.53,
+        "pointsInPaint": 44.3,
+        "fastBreakPoints": 14.54,
+        "benchPoints": 43.75
+      },
+      "gamesSampled": 6474,
+      "wins": 3179,
+      "losses": 3295,
+      "legacy": {
+        "titles": 7,
+        "hallOfFamers": 32
+      }
+    },
+    {
+      "abbreviation": "HOU",
+      "name": "Houston Rockets",
+      "city": "Houston, TX",
+      "conference": "West",
+      "division": "Southwest",
+      "latitude": 29.7508,
+      "longitude": -95.3621,
+      "metrics": {
+        "winPct": 0.5171,
+        "avgPointsFor": 105.41,
+        "avgPointsAgainst": 104.84,
+        "netMargin": 0.57,
+        "fieldGoalPct": 0.4597,
+        "threePointPct": 0.3555,
+        "rebounds": 32.84,
+        "assists": 17.14,
+        "turnovers": 10.85,
+        "pointsInPaint": 51.36,
+        "fastBreakPoints": 16.49,
+        "benchPoints": 33.0
+      },
+      "gamesSampled": 5136,
+      "wins": 2656,
+      "losses": 2480,
+      "legacy": {
+        "titles": 2,
+        "hallOfFamers": 14
+      }
+    },
+    {
+      "abbreviation": "IND",
+      "name": "Indiana Pacers",
+      "city": "Indianapolis, IN",
+      "conference": "East",
+      "division": "Central",
+      "latitude": 39.7634,
+      "longitude": -86.1555,
+      "metrics": {
+        "winPct": 0.5008,
+        "avgPointsFor": 103.32,
+        "avgPointsAgainst": 103.02,
+        "netMargin": 0.3,
+        "fieldGoalPct": 0.4634,
+        "threePointPct": 0.3639,
+        "rebounds": 38.07,
+        "assists": 20.77,
+        "turnovers": 12.57,
+        "pointsInPaint": 49.47,
+        "fastBreakPoints": 16.79,
+        "benchPoints": 40.62
+      },
+      "gamesSampled": 4355,
+      "wins": 2181,
+      "losses": 2174,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 9
+      }
+    },
+    {
+      "abbreviation": "LAC",
+      "name": "LA Clippers",
+      "city": "Los Angeles, CA",
+      "conference": "West",
+      "division": "Pacific",
+      "latitude": 34.043,
+      "longitude": -118.2673,
+      "metrics": {
+        "winPct": 0.4275,
+        "avgPointsFor": 103.62,
+        "avgPointsAgainst": 106.02,
+        "netMargin": -2.4,
+        "fieldGoalPct": 0.4634,
+        "threePointPct": 0.36,
+        "rebounds": 33.57,
+        "assists": 17.97,
+        "turnovers": 11.34,
+        "pointsInPaint": 51.72,
+        "fastBreakPoints": 16.07,
+        "benchPoints": 32.5
+      },
+      "gamesSampled": 4720,
+      "wins": 2018,
+      "losses": 2702,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 2
+      }
+    },
+    {
+      "abbreviation": "LAL",
+      "name": "Los Angeles Lakers",
+      "city": "Los Angeles, CA",
+      "conference": "West",
+      "division": "Pacific",
+      "latitude": 34.043,
+      "longitude": -118.2673,
+      "metrics": {
+        "winPct": 0.5852,
+        "avgPointsFor": 106.73,
+        "avgPointsAgainst": 104.54,
+        "netMargin": 2.19,
+        "fieldGoalPct": 0.4711,
+        "threePointPct": 0.3537,
+        "rebounds": 26.65,
+        "assists": 14.58,
+        "turnovers": 8.1,
+        "pointsInPaint": 47.33,
+        "fastBreakPoints": 14.61,
+        "benchPoints": 26.08
+      },
+      "gamesSampled": 6870,
+      "wins": 4020,
+      "losses": 2850,
+      "legacy": {
+        "titles": 17,
+        "hallOfFamers": 36
+      }
+    },
+    {
+      "abbreviation": "MEM",
+      "name": "Memphis Grizzlies",
+      "city": "Memphis, TN",
+      "conference": "West",
+      "division": "Southwest",
+      "latitude": 35.1382,
+      "longitude": -90.0506,
+      "metrics": {
+        "winPct": 0.4394,
+        "avgPointsFor": 99.7,
+        "avgPointsAgainst": 101.56,
+        "netMargin": -1.86,
+        "fieldGoalPct": 0.4513,
+        "threePointPct": 0.3466,
+        "rebounds": 42.18,
+        "assists": 22.08,
+        "turnovers": 14.91,
+        "pointsInPaint": 54.89,
+        "fastBreakPoints": 16.36,
+        "benchPoints": 43.49
+      },
+      "gamesSampled": 2622,
+      "wins": 1152,
+      "losses": 1470,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 1
+      }
+    },
+    {
+      "abbreviation": "MIA",
+      "name": "Miami Heat",
+      "city": "Miami, FL",
+      "conference": "East",
+      "division": "Southeast",
+      "latitude": 25.7814,
+      "longitude": -80.187,
+      "metrics": {
+        "winPct": 0.5256,
+        "avgPointsFor": 99.45,
+        "avgPointsAgainst": 98.92,
+        "netMargin": 0.53,
+        "fieldGoalPct": 0.4595,
+        "threePointPct": 0.3612,
+        "rebounds": 41.8,
+        "assists": 21.7,
+        "turnovers": 14.81,
+        "pointsInPaint": 47.18,
+        "fastBreakPoints": 14.75,
+        "benchPoints": 37.09
+      },
+      "gamesSampled": 3400,
+      "wins": 1787,
+      "losses": 1613,
+      "legacy": {
+        "titles": 3,
+        "hallOfFamers": 6
+      }
+    },
+    {
+      "abbreviation": "MIL",
+      "name": "Milwaukee Bucks",
+      "city": "Milwaukee, WI",
+      "conference": "East",
+      "division": "Central",
+      "latitude": 43.0437,
+      "longitude": -87.9179,
+      "metrics": {
+        "winPct": 0.5221,
+        "avgPointsFor": 105.15,
+        "avgPointsAgainst": 104.01,
+        "netMargin": 1.15,
+        "fieldGoalPct": 0.4652,
+        "threePointPct": 0.3631,
+        "rebounds": 32.43,
+        "assists": 17.88,
+        "turnovers": 10.51,
+        "pointsInPaint": 43.43,
+        "fastBreakPoints": 13.26,
+        "benchPoints": 37.01
+      },
+      "gamesSampled": 5047,
+      "wins": 2635,
+      "losses": 2412,
+      "legacy": {
+        "titles": 2,
+        "hallOfFamers": 12
+      }
+    },
+    {
+      "abbreviation": "MIN",
+      "name": "Minnesota Timberwolves",
+      "city": "Minneapolis, MN",
+      "conference": "West",
+      "division": "Northwest",
+      "latitude": 44.9795,
+      "longitude": -93.276,
+      "metrics": {
+        "winPct": 0.4219,
+        "avgPointsFor": 101.39,
+        "avgPointsAgainst": 103.28,
+        "netMargin": -1.89,
+        "fieldGoalPct": 0.4564,
+        "threePointPct": 0.3535,
+        "rebounds": 42.11,
+        "assists": 23.31,
+        "turnovers": 14.6,
+        "pointsInPaint": 47.52,
+        "fastBreakPoints": 13.54,
+        "benchPoints": 35.43
+      },
+      "gamesSampled": 3091,
+      "wins": 1304,
+      "losses": 1787,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 1
+      }
+    },
+    {
+      "abbreviation": "NOP",
+      "name": "New Orleans Pelicans",
+      "city": "New Orleans, LA",
+      "conference": "West",
+      "division": "Southwest",
+      "latitude": 29.949,
+      "longitude": -90.0821,
+      "metrics": {
+        "winPct": 0.4597,
+        "avgPointsFor": 101.86,
+        "avgPointsAgainst": 103.06,
+        "netMargin": -1.2,
+        "fieldGoalPct": 0.4554,
+        "threePointPct": 0.3559,
+        "rebounds": 42.89,
+        "assists": 22.68,
+        "turnovers": 14.21,
+        "pointsInPaint": 49.45,
+        "fastBreakPoints": 16.46,
+        "benchPoints": 33.94
+      },
+      "gamesSampled": 2034,
+      "wins": 935,
+      "losses": 1099,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 0
+      }
+    },
+    {
+      "abbreviation": "NYK",
+      "name": "New York Knicks",
+      "city": "New York, NY",
+      "conference": "East",
+      "division": "Atlantic",
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "metrics": {
+        "winPct": 0.4849,
+        "avgPointsFor": 102.58,
+        "avgPointsAgainst": 103.0,
+        "netMargin": -0.42,
+        "fieldGoalPct": 0.4568,
+        "threePointPct": 0.3602,
+        "rebounds": 25.44,
+        "assists": 13.21,
+        "turnovers": 8.29,
+        "pointsInPaint": 51.23,
+        "fastBreakPoints": 14.91,
+        "benchPoints": 22.11
+      },
+      "gamesSampled": 6500,
+      "wins": 3152,
+      "losses": 3348,
+      "legacy": {
+        "titles": 2,
+        "hallOfFamers": 20
+      }
+    },
+    {
+      "abbreviation": "OKC",
+      "name": "Oklahoma City Thunder",
+      "city": "Oklahoma City, OK",
+      "conference": "West",
+      "division": "Northwest",
+      "latitude": 35.4634,
+      "longitude": -97.5151,
+      "metrics": {
+        "winPct": 0.5377,
+        "avgPointsFor": 105.83,
+        "avgPointsAgainst": 104.65,
+        "netMargin": 1.18,
+        "fieldGoalPct": 0.4657,
+        "threePointPct": 0.3584,
+        "rebounds": 32.41,
+        "assists": 17.14,
+        "turnovers": 10.52,
+        "pointsInPaint": 50.36,
+        "fastBreakPoints": 16.05,
+        "benchPoints": 35.4
+      },
+      "gamesSampled": 5163,
+      "wins": 2776,
+      "losses": 2387,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 10
+      }
+    },
+    {
+      "abbreviation": "ORL",
+      "name": "Orlando Magic",
+      "city": "Orlando, FL",
+      "conference": "East",
+      "division": "Southeast",
+      "latitude": 28.5392,
+      "longitude": -81.3839,
+      "metrics": {
+        "winPct": 0.4726,
+        "avgPointsFor": 101.02,
+        "avgPointsAgainst": 101.75,
+        "netMargin": -0.73,
+        "fieldGoalPct": 0.4555,
+        "threePointPct": 0.3542,
+        "rebounds": 42.71,
+        "assists": 21.9,
+        "turnovers": 14.92,
+        "pointsInPaint": 45.21,
+        "fastBreakPoints": 13.47,
+        "benchPoints": 35.45
+      },
+      "gamesSampled": 3153,
+      "wins": 1490,
+      "losses": 1663,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 3
+      }
+    },
+    {
+      "abbreviation": "PHI",
+      "name": "Philadelphia 76ers",
+      "city": "Philadelphia, PA",
+      "conference": "East",
+      "division": "Atlantic",
+      "latitude": 39.9012,
+      "longitude": -75.172,
+      "metrics": {
+        "winPct": 0.5147,
+        "avgPointsFor": 104.8,
+        "avgPointsAgainst": 104.52,
+        "netMargin": 0.28,
+        "fieldGoalPct": 0.4598,
+        "threePointPct": 0.355,
+        "rebounds": 25.93,
+        "assists": 13.62,
+        "turnovers": 9.26,
+        "pointsInPaint": 46.78,
+        "fastBreakPoints": 15.89,
+        "benchPoints": 32.24
+      },
+      "gamesSampled": 6526,
+      "wins": 3359,
+      "losses": 3167,
+      "legacy": {
+        "titles": 3,
+        "hallOfFamers": 18
+      }
+    },
+    {
+      "abbreviation": "PHX",
+      "name": "Phoenix Suns",
+      "city": "Phoenix, AZ",
+      "conference": "West",
+      "division": "Pacific",
+      "latitude": 33.4457,
+      "longitude": -112.0712,
+      "metrics": {
+        "winPct": 0.5326,
+        "avgPointsFor": 107.72,
+        "avgPointsAgainst": 106.58,
+        "netMargin": 1.13,
+        "fieldGoalPct": 0.4748,
+        "threePointPct": 0.3667,
+        "rebounds": 32.75,
+        "assists": 18.87,
+        "turnovers": 10.71,
+        "pointsInPaint": 42.16,
+        "fastBreakPoints": 13.03,
+        "benchPoints": 34.54
+      },
+      "gamesSampled": 5047,
+      "wins": 2688,
+      "losses": 2359,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 7
+      }
+    },
+    {
+      "abbreviation": "POR",
+      "name": "Portland Trail Blazers",
+      "city": "Portland, OR",
+      "conference": "West",
+      "division": "Northwest",
+      "latitude": 45.5316,
+      "longitude": -122.6668,
+      "metrics": {
+        "winPct": 0.5161,
+        "avgPointsFor": 104.98,
+        "avgPointsAgainst": 104.41,
+        "netMargin": 0.57,
+        "fieldGoalPct": 0.462,
+        "threePointPct": 0.3625,
+        "rebounds": 34.49,
+        "assists": 18.07,
+        "turnovers": 11.02,
+        "pointsInPaint": 48.99,
+        "fastBreakPoints": 15.84,
+        "benchPoints": 36.31
+      },
+      "gamesSampled": 4838,
+      "wins": 2497,
+      "losses": 2341,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 6
+      }
+    },
+    {
+      "abbreviation": "SAC",
+      "name": "Sacramento Kings",
+      "city": "Sacramento, CA",
+      "conference": "West",
+      "division": "Pacific",
+      "latitude": 38.5802,
+      "longitude": -121.4996,
+      "metrics": {
+        "winPct": 0.4508,
+        "avgPointsFor": 105.2,
+        "avgPointsAgainst": 106.73,
+        "netMargin": -1.53,
+        "fieldGoalPct": 0.4615,
+        "threePointPct": 0.3636,
+        "rebounds": 25.54,
+        "assists": 13.83,
+        "turnovers": 8.32,
+        "pointsInPaint": 47.86,
+        "fastBreakPoints": 14.56,
+        "benchPoints": 26.9
+      },
+      "gamesSampled": 6280,
+      "wins": 2831,
+      "losses": 3449,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 13
+      }
+    },
+    {
+      "abbreviation": "SAS",
+      "name": "San Antonio Spurs",
+      "city": "San Antonio, TX",
+      "conference": "West",
+      "division": "Southwest",
+      "latitude": 29.427,
+      "longitude": -98.4375,
+      "metrics": {
+        "winPct": 0.5845,
+        "avgPointsFor": 104.9,
+        "avgPointsAgainst": 102.31,
+        "netMargin": 2.59,
+        "fieldGoalPct": 0.4726,
+        "threePointPct": 0.3733,
+        "rebounds": 38.35,
+        "assists": 21.06,
+        "turnovers": 12.04,
+        "pointsInPaint": 47.65,
+        "fastBreakPoints": 16.16,
+        "benchPoints": 44.74
+      },
+      "gamesSampled": 4465,
+      "wins": 2610,
+      "losses": 1855,
+      "legacy": {
+        "titles": 5,
+        "hallOfFamers": 8
+      }
+    },
+    {
+      "abbreviation": "TOR",
+      "name": "Toronto Raptors",
+      "city": "Toronto, ON",
+      "conference": "East",
+      "division": "Atlantic",
+      "latitude": 43.6435,
+      "longitude": -79.3791,
+      "metrics": {
+        "winPct": 0.4768,
+        "avgPointsFor": 101.48,
+        "avgPointsAgainst": 101.93,
+        "netMargin": -0.45,
+        "fieldGoalPct": 0.4515,
+        "threePointPct": 0.3555,
+        "rebounds": 41.97,
+        "assists": 22.25,
+        "turnovers": 14.09,
+        "pointsInPaint": 53.66,
+        "fastBreakPoints": 18.31,
+        "benchPoints": 37.48
+      },
+      "gamesSampled": 2632,
+      "wins": 1255,
+      "losses": 1377,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 2
+      }
+    },
+    {
+      "abbreviation": "UTA",
+      "name": "Utah Jazz",
+      "city": "Salt Lake City, UT",
+      "conference": "West",
+      "division": "Northwest",
+      "latitude": 40.7683,
+      "longitude": -111.9011,
+      "metrics": {
+        "winPct": 0.5289,
+        "avgPointsFor": 103.5,
+        "avgPointsAgainst": 102.52,
+        "netMargin": 0.98,
+        "fieldGoalPct": 0.472,
+        "threePointPct": 0.3674,
+        "rebounds": 36.79,
+        "assists": 20.97,
+        "turnovers": 12.37,
+        "pointsInPaint": 46.85,
+        "fastBreakPoints": 13.67,
+        "benchPoints": 41.0
+      },
+      "gamesSampled": 4526,
+      "wins": 2394,
+      "losses": 2132,
+      "legacy": {
+        "titles": 0,
+        "hallOfFamers": 5
+      }
+    },
+    {
+      "abbreviation": "WAS",
+      "name": "Washington Capitols",
+      "city": "Washington, DC",
+      "conference": "East",
+      "division": "Southeast",
+      "latitude": 38.8981,
+      "longitude": -77.0209,
+      "metrics": {
+        "winPct": 0.4416,
+        "avgPointsFor": 104.52,
+        "avgPointsAgainst": 106.29,
+        "netMargin": -1.76,
+        "fieldGoalPct": 0.4583,
+        "threePointPct": 0.3551,
+        "rebounds": 28.58,
+        "assists": 15.3,
+        "turnovers": 9.38,
+        "pointsInPaint": 45.4,
+        "fastBreakPoints": 15.37,
+        "benchPoints": 40.03
+      },
+      "gamesSampled": 5528,
+      "wins": 2441,
+      "losses": 3087,
+      "legacy": {
+        "titles": 1,
+        "hallOfFamers": 9
+      }
+    }
+  ]
+}

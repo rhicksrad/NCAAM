@@ -1,0 +1,906 @@
+{
+  "season": "2025-26",
+  "generatedAt": "2025-10-02T00:39:44.306Z",
+  "previews": [
+    {
+      "tricode": "ATL",
+      "market": "Atlanta",
+      "name": "Hawks",
+      "heading": "Atlanta Hawks",
+      "introParagraphs": [
+        "Atlanta enters camp fresh off a 36-win and -0.8 SRS finish that sets a retooling tone. guard Trae Young, big Kristaps Porzingis, and wing Jalen Johnson headline the returning core.",
+        "The roster lists 10 guards, 6 wing/forwards, 3 centers, and 1 combo piece, with perimeter creation from Caleb Houstan and Charles Bassey, switchable wings such as Asa Newell and Eli John Ndiaye, interior size via Kristaps Porzingis and N'Faly Dante, and hybrid depth from Kobe Johnson shaping the rotation battles.",
+        "From there, establishing a firmer identity on both ends becomes the focal point. Caleb Houstan's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Trae Young",
+        "Kristaps Porzingis",
+        "Jalen Johnson"
+      ],
+      "returningCoreDescriptors": [
+        "guard Trae Young",
+        "big Kristaps Porzingis",
+        "wing Jalen Johnson"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Caleb Houstan's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.654462,
+        "rank": 21,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "BKN",
+      "market": "Brooklyn",
+      "name": "Nets",
+      "heading": "Brooklyn Nets",
+      "introParagraphs": [
+        "Brooklyn enters camp fresh off a 32-win and -2.7 SRS finish that sets a retooling tone. guard Cam Thomas, wing Michael Porter Jr., and wing Drew Timme headline the returning core.",
+        "The roster lists 9 guards, 9 wing/forwards, 3 centers, and 1 combo piece, with perimeter creation from Ben Saraf and Cam Thomas, switchable wings such as Dariq Whitehead and Drake Powell, interior size via Danny Wolf and Day'Ron Sharpe, and hybrid depth from Haywood Highsmith shaping the rotation battles.",
+        "From there, establishing a firmer identity on both ends becomes the focal point. Ben Saraf's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Cam Thomas",
+        "Michael Porter Jr.",
+        "Drew Timme"
+      ],
+      "returningCoreDescriptors": [
+        "guard Cam Thomas",
+        "wing Michael Porter Jr.",
+        "wing Drew Timme"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Ben Saraf's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.605827,
+        "rank": 22,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "BOS",
+      "market": "Boston",
+      "name": "Celtics",
+      "heading": "Boston Celtics",
+      "introParagraphs": [
+        "Boston enters camp fresh off a 64-win and +10.7 SRS finish that sets a title-or-bust tone. wing Jayson Tatum, guard Jaylen Brown, and guard Anfernee Simons headline the returning core.",
+        "The roster lists 10 guards, 9 wing/forwards, and 3 centers, with perimeter creation from Anfernee Simons and Baylor Scheierman, switchable wings such as Chris Boucher and Hason Ward, and interior size via Amari Williams and Luka Garza shaping the rotation battles.",
+        "From there, honing playoff-ready counters is the chief priority. Anfernee Simons's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Jayson Tatum",
+        "Jaylen Brown",
+        "Anfernee Simons"
+      ],
+      "returningCoreDescriptors": [
+        "wing Jayson Tatum",
+        "guard Jaylen Brown",
+        "guard Anfernee Simons"
+      ],
+      "coreStrength": "An elite efficiency baseline powers everything—expect crisp pace-and-space principles to carry over.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Anfernee Simons's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.951154,
+        "rank": 1,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "CHA",
+      "market": "Charlotte",
+      "name": "Hornets",
+      "heading": "Charlotte Hornets",
+      "introParagraphs": [
+        "Charlotte enters camp fresh off a 21-win and -7.6 SRS finish that sets a development tone. guard LaMelo Ball, wing Brandon Miller, and wing Miles Bridges headline the returning core.",
+        "The roster lists 10 guards, 9 wing/forwards, and 3 centers, with perimeter creation from Antonio Reeves and Collin Sexton, switchable wings such as Brandon Miller and Drew Peterson, and interior size via Ibou Badji and Mason Plumlee shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. Antonio Reeves's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "LaMelo Ball",
+        "Brandon Miller",
+        "Miles Bridges"
+      ],
+      "returningCoreDescriptors": [
+        "guard LaMelo Ball",
+        "wing Brandon Miller",
+        "wing Miles Bridges"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Antonio Reeves's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.477769,
+        "rank": 27,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "CHI",
+      "market": "Chicago",
+      "name": "Bulls",
+      "heading": "Chicago Bulls",
+      "introParagraphs": [
+        "Chicago enters camp fresh off a 39-win and -0.4 SRS finish that sets a retooling tone. guard Coby White, big Nikola Vucevic, and guard Josh Giddey headline the returning core.",
+        "The roster lists 8 guards, 9 wing/forwards, and 4 centers, with perimeter creation from Ayo Dosunmu and Coby White, switchable wings such as Dalen Terry and Emanuel Miller, and interior size via Jalen Smith and Lachlan Olbrich shaping the rotation battles.",
+        "From there, establishing a firmer identity on both ends becomes the focal point. Ayo Dosunmu's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Coby White",
+        "Nikola Vucevic",
+        "Josh Giddey"
+      ],
+      "returningCoreDescriptors": [
+        "guard Coby White",
+        "big Nikola Vucevic",
+        "guard Josh Giddey"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Ayo Dosunmu's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.673,
+        "rank": 20,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "CLE",
+      "market": "Cleveland",
+      "name": "Cavaliers",
+      "heading": "Cleveland Cavaliers",
+      "introParagraphs": [
+        "Cleveland enters camp fresh off a 48-win and +3.5 SRS finish that sets a upper-tier playoff tone. guard Donovan Mitchell, guard Darius Garland, and big Evan Mobley headline the returning core.",
+        "The roster lists 8 guards, 9 wing/forwards, 3 centers, and 2 combo pieces, with perimeter creation from Craig Porter and Darius Garland, switchable wings such as De'Andre Hunter and Dean Wade, interior size via Evan Mobley and Jarrett Allen, and hybrid depth from Chaney Johnson and Darius Brown shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Craig Porter's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Donovan Mitchell",
+        "Darius Garland",
+        "Evan Mobley"
+      ],
+      "returningCoreDescriptors": [
+        "guard Donovan Mitchell",
+        "guard Darius Garland",
+        "big Evan Mobley"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Craig Porter's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.775865,
+        "rank": 10,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "DAL",
+      "market": "Dallas",
+      "name": "Mavericks",
+      "heading": "Dallas Mavericks",
+      "introParagraphs": [
+        "Dallas enters camp fresh off a 50-win and +3.7 SRS finish that sets a upper-tier playoff tone. big Anthony Davis, guard Kyrie Irving, and wing P.J. Washington headline the returning core.",
+        "The roster lists 10 guards, 8 wing/forwards, and 5 centers, with perimeter creation from Brandon Williams and D'Angelo Russell, switchable wings such as Caleb Martin and Cooper Flagg, and interior size via Anthony Davis and Dereck Lively II shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Brandon Williams's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Anthony Davis",
+        "Kyrie Irving",
+        "P.J. Washington"
+      ],
+      "returningCoreDescriptors": [
+        "big Anthony Davis",
+        "guard Kyrie Irving",
+        "wing P.J. Washington"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Brandon Williams's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.787058,
+        "rank": 8,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "DEN",
+      "market": "Denver",
+      "name": "Nuggets",
+      "heading": "Denver Nuggets",
+      "introParagraphs": [
+        "Denver enters camp fresh off a 57-win and +5.4 SRS finish that sets a title-or-bust tone. big Nikola Jokic, guard Jamal Murray, and wing Cameron Johnson headline the returning core.",
+        "The roster lists 10 guards, 6 wing/forwards, and 4 centers, with perimeter creation from Bruce Brown and Christian Braun, switchable wings such as Aaron Gordon and Cameron Johnson, and interior size via Jonas Valanciunas and Moses Brown shaping the rotation battles.",
+        "From there, honing playoff-ready counters is the chief priority. Bruce Brown's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Nikola Jokic",
+        "Jamal Murray",
+        "Cameron Johnson"
+      ],
+      "returningCoreDescriptors": [
+        "big Nikola Jokic",
+        "guard Jamal Murray",
+        "wing Cameron Johnson"
+      ],
+      "coreStrength": "An elite efficiency baseline powers everything—expect crisp pace-and-space principles to carry over.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Bruce Brown's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.843731,
+        "rank": 4,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "DET",
+      "market": "Detroit",
+      "name": "Pistons",
+      "heading": "Detroit Pistons",
+      "introParagraphs": [
+        "Detroit enters camp fresh off a 14-win and -9.3 SRS finish that sets a development tone. wing Cade Cunningham, guard Jaden Ivey, and wing Tolu Smith headline the returning core.",
+        "The roster lists 7 guards, 11 wing/forwards, 3 centers, and 1 combo piece, with perimeter creation from Aaron Estrada and Caris LeVert, switchable wings such as Ausar Thompson and Bobi Klintman, interior size via Charles Bediako and Isaiah Stewart, and hybrid depth from Daniss Jenkins shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. Aaron Estrada's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Cade Cunningham",
+        "Jaden Ivey",
+        "Tolu Smith"
+      ],
+      "returningCoreDescriptors": [
+        "wing Cade Cunningham",
+        "guard Jaden Ivey",
+        "wing Tolu Smith"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Aaron Estrada's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.421096,
+        "rank": 30,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "GSW",
+      "market": "Golden State",
+      "name": "Warriors",
+      "heading": "Golden State Warriors",
+      "introParagraphs": [
+        "Golden State enters camp fresh off a 46-win and +1.7 SRS finish that sets a playoff chase tone. guard Stephen Curry, wing Jimmy Butler, and wing Jonathan Kuminga headline the returning core.",
+        "The roster lists 9 guards, 8 wing/forwards, 3 centers, and 5 combo pieces, with perimeter creation from Brandin Podziemski and Buddy Hield, switchable wings such as Alex Toohey and Blake Hinson, interior size via Al Horford and Marques Bolden, and hybrid depth from Chance McMillian and Gary Payton II shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Brandin Podziemski's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Stephen Curry",
+        "Jimmy Butler",
+        "Jonathan Kuminga"
+      ],
+      "returningCoreDescriptors": [
+        "guard Stephen Curry",
+        "wing Jimmy Butler",
+        "wing Jonathan Kuminga"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Brandin Podziemski's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.736673,
+        "rank": 17,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "HOU",
+      "market": "Houston",
+      "name": "Rockets",
+      "heading": "Houston Rockets",
+      "introParagraphs": [
+        "Houston enters camp fresh off a 41-win and +1.4 SRS finish that sets a playoff chase tone. wing Kevin Durant, big Alperen Sengun, and guard Fred VanVleet headline the returning core.",
+        "The roster lists 6 guards, 9 wing/forwards, and 3 centers, with perimeter creation from Aaron Holiday and Fred VanVleet, switchable wings such as Amen Thompson and Cameron Matthews, and interior size via Alperen Sengun and Clint Capela shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Aaron Holiday's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Kevin Durant",
+        "Alperen Sengun",
+        "Fred VanVleet"
+      ],
+      "returningCoreDescriptors": [
+        "wing Kevin Durant",
+        "big Alperen Sengun",
+        "guard Fred VanVleet"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Aaron Holiday's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.712192,
+        "rank": 19,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "IND",
+      "market": "Indiana",
+      "name": "Pacers",
+      "heading": "Indiana Pacers",
+      "introParagraphs": [
+        "Indiana enters camp fresh off a 47-win and +3.2 SRS finish that sets a playoff chase tone. wing Pascal Siakam, guard Tyrese Haliburton, and wing Bennedict Mathurin headline the returning core.",
+        "The roster lists 9 guards, 9 wing/forwards, and 3 centers, with perimeter creation from Ben Sheppard and Delon Wright, switchable wings such as Aaron Nesmith and Andrew Nembhard, and interior size via James Wiseman and Jay Huff shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Ben Sheppard's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Pascal Siakam",
+        "Tyrese Haliburton",
+        "Bennedict Mathurin"
+      ],
+      "returningCoreDescriptors": [
+        "wing Pascal Siakam",
+        "guard Tyrese Haliburton",
+        "wing Bennedict Mathurin"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Ben Sheppard's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.766769,
+        "rank": 13,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "LAC",
+      "market": "Los Angeles",
+      "name": "Clippers",
+      "heading": "Los Angeles Clippers",
+      "introParagraphs": [
+        "Los Angeles enters camp fresh off a 51-win and +4.5 SRS finish that sets a upper-tier playoff tone. guard James Harden, wing Kawhi Leonard, and big John Collins headline the returning core.",
+        "The roster lists 10 guards, 6 wing/forwards, 4 centers, and 1 combo piece, with perimeter creation from Bogdan Bogdanovic and Bradley Beal, switchable wings such as Derrick Jones Jr. and Kawhi Leonard, interior size via Brook Lopez and Ivica Zubac, and hybrid depth from Jahmyl Telfort shaping the rotation battles.",
+        "From there, honing playoff-ready counters is the chief priority. Bogdan Bogdanovic's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "James Harden",
+        "Kawhi Leonard",
+        "John Collins"
+      ],
+      "returningCoreDescriptors": [
+        "guard James Harden",
+        "wing Kawhi Leonard",
+        "big John Collins"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Bogdan Bogdanovic's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.804904,
+        "rank": 6,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "LAL",
+      "market": "Los Angeles",
+      "name": "Lakers",
+      "heading": "Los Angeles Lakers",
+      "introParagraphs": [
+        "Los Angeles enters camp fresh off a 47-win and +1.7 SRS finish that sets a playoff chase tone. guard Luka Doncic, wing LeBron James, and guard Austin Reaves headline the returning core.",
+        "The roster lists 12 guards, 8 wing/forwards, and 3 centers, with perimeter creation from Adou Thiero and Augustas Marčiulionis, switchable wings such as Anton Watson and Dalton Knecht, and interior size via Christian Koloko and Deandre Ayton shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Adou Thiero's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Luka Doncic",
+        "LeBron James",
+        "Austin Reaves"
+      ],
+      "returningCoreDescriptors": [
+        "guard Luka Doncic",
+        "wing LeBron James",
+        "guard Austin Reaves"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Adou Thiero's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.740519,
+        "rank": 16,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "MEM",
+      "market": "Memphis",
+      "name": "Grizzlies",
+      "heading": "Memphis Grizzlies",
+      "introParagraphs": [
+        "Memphis enters camp fresh off a 27-win and -4.9 SRS finish that sets a development tone. guard Ja Morant, big Jaren Jackson Jr., and guard Ty Jerome headline the returning core.",
+        "The roster lists 9 guards, 7 wing/forwards, 5 centers, and 1 combo piece, with perimeter creation from Braxton Key and Cam Spencer, switchable wings such as Brandon Clarke and GG Jackson, interior size via Armando Bacot and Jaren Jackson Jr., and hybrid depth from Lawson Lovering shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. Braxton Key's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Ja Morant",
+        "Jaren Jackson Jr.",
+        "Ty Jerome"
+      ],
+      "returningCoreDescriptors": [
+        "guard Ja Morant",
+        "big Jaren Jackson Jr.",
+        "guard Ty Jerome"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Braxton Key's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.548096,
+        "rank": 24,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "MIA",
+      "market": "Miami",
+      "name": "Heat",
+      "heading": "Miami Heat",
+      "introParagraphs": [
+        "Miami enters camp fresh off a 46-win and +1.5 SRS finish that sets a playoff chase tone. guard Tyler Herro, wing Norman Powell, and big Bam Adebayo headline the returning core.",
+        "The roster lists 11 guards, 7 wing/forwards, 3 centers, and 2 combo pieces, with perimeter creation from Caleb Daniels and Davion Mitchell, switchable wings such as Andrew Wiggins and Keshad Johnson, interior size via Bam Adebayo and Kel'el Ware, and hybrid depth from Dain Dainja and Warren Washington shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Caleb Daniels's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Tyler Herro",
+        "Norman Powell",
+        "Bam Adebayo"
+      ],
+      "returningCoreDescriptors": [
+        "guard Tyler Herro",
+        "wing Norman Powell",
+        "big Bam Adebayo"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Caleb Daniels's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.733173,
+        "rank": 18,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "MIL",
+      "market": "Milwaukee",
+      "name": "Bucks",
+      "heading": "Milwaukee Bucks",
+      "introParagraphs": [
+        "Milwaukee enters camp fresh off a 49-win and +3 SRS finish that sets a upper-tier playoff tone. wing Giannis Antetokounmpo, big Myles Turner, and wing Kyle Kuzma headline the returning core.",
+        "The roster lists 10 guards, 8 wing/forwards, 1 center, and 3 combo pieces, with perimeter creation from A.J. Green and Amir Coffey, switchable wings such as Bobby Portis and Chris Livingston, interior size via Myles Turner, and hybrid depth from Cormac Ryan and Gary Trent Jr. shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. A.J. Green's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Giannis Antetokounmpo",
+        "Myles Turner",
+        "Kyle Kuzma"
+      ],
+      "returningCoreDescriptors": [
+        "wing Giannis Antetokounmpo",
+        "big Myles Turner",
+        "wing Kyle Kuzma"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "Frontcourt depth is thin, so foul trouble or injuries inside could quickly snowball.",
+      "swingFactor": "A.J. Green's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.770962,
+        "rank": 11,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "MIN",
+      "market": "Minnesota",
+      "name": "Timberwolves",
+      "heading": "Minnesota Timberwolves",
+      "introParagraphs": [
+        "Minnesota enters camp fresh off a 56-win and +6 SRS finish that sets a title-or-bust tone. guard Anthony Edwards, wing Julius Randle, and big Naz Reid headline the returning core.",
+        "The roster lists 10 guards, 8 wing/forwards, and 3 centers, with perimeter creation from Anthony Edwards and Donte DiVincenzo, switchable wings such as Alize Johnson and Enrique Freeman, and interior size via Naz Reid and Rocco Zikarsky shaping the rotation battles.",
+        "From there, honing playoff-ready counters is the chief priority. Anthony Edwards's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Anthony Edwards",
+        "Julius Randle",
+        "Naz Reid"
+      ],
+      "returningCoreDescriptors": [
+        "guard Anthony Edwards",
+        "wing Julius Randle",
+        "big Naz Reid"
+      ],
+      "coreStrength": "An elite efficiency baseline powers everything—expect crisp pace-and-space principles to carry over.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Anthony Edwards's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.850385,
+        "rank": 3,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "NOP",
+      "market": "New Orleans",
+      "name": "Pelicans",
+      "heading": "New Orleans Pelicans",
+      "introParagraphs": [
+        "New Orleans enters camp fresh off a 49-win and +4.6 SRS finish that sets a upper-tier playoff tone. wing Zion Williamson, wing Trey Murphy III, and guard Jordan Poole headline the returning core.",
+        "The roster lists 8 guards, 7 wing/forwards, 5 centers, and 1 combo piece, with perimeter creation from Bryce McGowens and Dejounte Murray, switchable wings such as Herbert Jones and Jalen McDaniels, interior size via Derik Queen and Garrison Brooks, and hybrid depth from Christian Shumate shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Bryce McGowens's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Zion Williamson",
+        "Trey Murphy III",
+        "Jordan Poole"
+      ],
+      "returningCoreDescriptors": [
+        "wing Zion Williamson",
+        "wing Trey Murphy III",
+        "guard Jordan Poole"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Bryce McGowens's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.798962,
+        "rank": 7,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "NYK",
+      "market": "New York",
+      "name": "Knicks",
+      "heading": "New York Knicks",
+      "introParagraphs": [
+        "New York enters camp fresh off a 50-win and +5.6 SRS finish that sets a upper-tier playoff tone. guard Jalen Brunson, big Karl-Anthony Towns, and wing OG Anunoby headline the returning core.",
+        "The roster lists 9 guards, 7 wing/forwards, 5 centers, and 1 combo piece, with perimeter creation from Garrison Mathews and Jalen Brunson, switchable wings such as Guerschon Yabusele and Matt Ryan, interior size via Alex Len and Ariel Hukporti, and hybrid depth from Boo Buie III shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Garrison Mathews's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Jalen Brunson",
+        "Karl-Anthony Towns",
+        "OG Anunoby"
+      ],
+      "returningCoreDescriptors": [
+        "guard Jalen Brunson",
+        "big Karl-Anthony Towns",
+        "wing OG Anunoby"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Garrison Mathews's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.820308,
+        "rank": 5,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "OKC",
+      "market": "Oklahoma City",
+      "name": "Thunder",
+      "heading": "Oklahoma City Thunder",
+      "introParagraphs": [
+        "Oklahoma City enters camp fresh off a 57-win and +6.3 SRS finish that sets a title-or-bust tone. guard Shai Gilgeous-Alexander, wing Jalen Williams, and big Chet Holmgren headline the returning core.",
+        "The roster lists 9 guards, 5 wing/forwards, 4 centers, and 3 combo pieces, with perimeter creation from Aaron Wiggins and Ajay Mitchell, switchable wings such as Jalen Williams and Kenrich Williams, interior size via Branden Carlson and Chet Holmgren, and hybrid depth from Brooks Barnhizer and Chris Youngblood shaping the rotation battles.",
+        "From there, honing playoff-ready counters is the chief priority. Aaron Wiggins's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Shai Gilgeous-Alexander",
+        "Jalen Williams",
+        "Chet Holmgren"
+      ],
+      "returningCoreDescriptors": [
+        "guard Shai Gilgeous-Alexander",
+        "wing Jalen Williams",
+        "big Chet Holmgren"
+      ],
+      "coreStrength": "An elite efficiency baseline powers everything—expect crisp pace-and-space principles to carry over.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Aaron Wiggins's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.859481,
+        "rank": 2,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "ORL",
+      "market": "Orlando",
+      "name": "Magic",
+      "heading": "Orlando Magic",
+      "introParagraphs": [
+        "Orlando enters camp fresh off a 47-win and +2.4 SRS finish that sets a playoff chase tone. wing Paolo Banchero, wing Franz Wagner, and guard Desmond Bane headline the returning core.",
+        "The roster lists 9 guards, 8 wing/forwards, and 4 centers, with perimeter creation from Alex Morales and Anthony Black, switchable wings such as Franz Wagner and Jamal Cain, and interior size via Colin Castleton and Goga Bitadze shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Alex Morales's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Paolo Banchero",
+        "Franz Wagner",
+        "Desmond Bane"
+      ],
+      "returningCoreDescriptors": [
+        "wing Paolo Banchero",
+        "wing Franz Wagner",
+        "guard Desmond Bane"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Alex Morales's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.752769,
+        "rank": 15,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "PHI",
+      "market": "Philadelphia",
+      "name": "76ers",
+      "heading": "Philadelphia 76ers",
+      "introParagraphs": [
+        "Philadelphia enters camp fresh off a 47-win and +4.1 SRS finish that sets a playoff chase tone. guard Tyrese Maxey, big Joel Embiid, and wing Paul George headline the returning core.",
+        "The roster lists 8 guards, 12 wing/forwards, 2 centers, and 2 combo pieces, with perimeter creation from Eric Gordon and Hunter Sallis, switchable wings such as Adem Bona and Dominick Barlow, interior size via Andre Drummond and Joel Embiid, and hybrid depth from Max Fiedler and Saint Thomas shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Eric Gordon's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Tyrese Maxey",
+        "Joel Embiid",
+        "Paul George"
+      ],
+      "returningCoreDescriptors": [
+        "guard Tyrese Maxey",
+        "big Joel Embiid",
+        "wing Paul George"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Eric Gordon's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.782519,
+        "rank": 9,
+        "statusLine": "Uptrend | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "PHX",
+      "market": "Phoenix",
+      "name": "Suns",
+      "heading": "Phoenix Suns",
+      "introParagraphs": [
+        "Phoenix enters camp fresh off a 49-win and +2.4 SRS finish that sets a upper-tier playoff tone. guard Devin Booker, guard Jalen Green, and big Mark Williams headline the returning core.",
+        "The roster lists 8 guards, 8 wing/forwards, 3 centers, and 3 combo pieces, with perimeter creation from Collin Gillespie and Damion Baugh, switchable wings such as CJ Huntley and Dillon Brooks, interior size via Khaman Maluach and Mark Williams, and hybrid depth from Jordan Goodwin and Moses Wood shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Collin Gillespie's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Devin Booker",
+        "Jalen Green",
+        "Mark Williams"
+      ],
+      "returningCoreDescriptors": [
+        "guard Devin Booker",
+        "guard Jalen Green",
+        "big Mark Williams"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Collin Gillespie's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.760462,
+        "rank": 14,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "POR",
+      "market": "Portland",
+      "name": "Trail Blazers",
+      "heading": "Portland Trail Blazers",
+      "introParagraphs": [
+        "Portland enters camp fresh off a 21-win and -7.4 SRS finish that sets a development tone. guard Damian Lillard, guard Shaedon Sharpe, and wing Deni Avdija headline the returning core.",
+        "The roster lists 8 guards, 7 wing/forwards, and 6 centers, with perimeter creation from Blake Wesley and Caleb Love, switchable wings such as Deni Avdija and Jerami Grant, and interior size via Donovan Clingan and Duop Reath shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. Blake Wesley's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Damian Lillard",
+        "Shaedon Sharpe",
+        "Deni Avdija"
+      ],
+      "returningCoreDescriptors": [
+        "guard Damian Lillard",
+        "guard Shaedon Sharpe",
+        "wing Deni Avdija"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Blake Wesley's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.481269,
+        "rank": 26,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "SAC",
+      "market": "Sacramento",
+      "name": "Kings",
+      "heading": "Sacramento Kings",
+      "introParagraphs": [
+        "Sacramento enters camp fresh off a 48-win and +3 SRS finish that sets a upper-tier playoff tone. guard Zach LaVine, guard DeMar DeRozan, and wing Domantas Sabonis headline the returning core.",
+        "The roster lists 12 guards, 8 wing/forwards, and 2 centers, with perimeter creation from Boogie Ellis and DeMar DeRozan, switchable wings such as Daeqwon Plowden and Dario Saric, and interior size via Dylan Cardwell and Maxime Raynaud shaping the rotation battles.",
+        "From there, the staff will refine lineup versatility to climb the standings. Boogie Ellis's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Zach LaVine",
+        "DeMar DeRozan",
+        "Domantas Sabonis"
+      ],
+      "returningCoreDescriptors": [
+        "guard Zach LaVine",
+        "guard DeMar DeRozan",
+        "wing Domantas Sabonis"
+      ],
+      "coreStrength": "A balanced attack with multiple creators keeps the nightly floor high and the ceiling real.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Boogie Ellis's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.767115,
+        "rank": 12,
+        "statusLine": "Holding | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "SAS",
+      "market": "San Antonio",
+      "name": "Spurs",
+      "heading": "San Antonio Spurs",
+      "introParagraphs": [
+        "San Antonio enters camp fresh off a 22-win and -8 SRS finish that sets a development tone. big Victor Wembanyama, guard De'Aaron Fox, and wing Devin Vassell headline the returning core.",
+        "The roster lists 7 guards, 12 wing/forwards, and 3 centers, with perimeter creation from Adam Flagler and De'Aaron Fox, switchable wings such as Carter Bryant and David Jones, and interior size via Bismack Biyombo and Luke Kornet shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. Adam Flagler's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Victor Wembanyama",
+        "De'Aaron Fox",
+        "Devin Vassell"
+      ],
+      "returningCoreDescriptors": [
+        "big Victor Wembanyama",
+        "guard De'Aaron Fox",
+        "wing Devin Vassell"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Adam Flagler's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.474615,
+        "rank": 28,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "TOR",
+      "market": "Toronto",
+      "name": "Raptors",
+      "heading": "Toronto Raptors",
+      "introParagraphs": [
+        "Toronto enters camp fresh off a 25-win and -5.6 SRS finish that sets a development tone. wing Brandon Ingram, wing RJ Barrett, and wing Scottie Barnes headline the returning core.",
+        "The roster lists 9 guards, 9 wing/forwards, and 3 centers, with perimeter creation from AJ Lawson and Alijah Martin, switchable wings such as Brandon Ingram and Collin Murray-Boyles, and interior size via Jakob Poeltl and Olivier Sarr shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. AJ Lawson's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Brandon Ingram",
+        "RJ Barrett",
+        "Scottie Barnes"
+      ],
+      "returningCoreDescriptors": [
+        "wing Brandon Ingram",
+        "wing RJ Barrett",
+        "wing Scottie Barnes"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "AJ Lawson's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.528154,
+        "rank": 25,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "UTA",
+      "market": "Utah",
+      "name": "Jazz",
+      "heading": "Utah Jazz",
+      "introParagraphs": [
+        "Utah enters camp fresh off a 31-win and -4.4 SRS finish that sets a development tone. wing Lauri Markkanen, guard Keyonte George, and big Walker Kessler headline the returning core.",
+        "The roster lists 7 guards, 8 wing/forwards, and 7 centers, with perimeter creation from Elijah Harkless and Isaiah Collier, switchable wings such as Airious Bailey and Babacar Sane, and interior size via Jusuf Nurkic and Kevin Love shaping the rotation battles.",
+        "From there, establishing a firmer identity on both ends becomes the focal point. Elijah Harkless's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "Lauri Markkanen",
+        "Keyonte George",
+        "Walker Kessler"
+      ],
+      "returningCoreDescriptors": [
+        "wing Lauri Markkanen",
+        "guard Keyonte George",
+        "big Walker Kessler"
+      ],
+      "coreStrength": "Depth across the positional spectrum lets the staff mix-and-match without sacrificing identity.",
+      "primaryRisk": "The margin for error tightens if perimeter shooting variance swings the wrong way.",
+      "swingFactor": "Elijah Harkless's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.572231,
+        "rank": 23,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    },
+    {
+      "tricode": "WAS",
+      "market": "Washington",
+      "name": "Wizards",
+      "heading": "Washington Wizards",
+      "introParagraphs": [
+        "Washington enters camp fresh off a 15-win and -8.8 SRS finish that sets a development tone. guard CJ McCollum, guard Bilal Coulibaly, and wing Khris Middleton headline the returning core.",
+        "The roster lists 7 guards, 14 wing/forwards, 1 center, and 2 combo pieces, with perimeter creation from AJ Johnson and Bilal Coulibaly, switchable wings such as Akoldah Gak and Anthony Gill, interior size via Alexandre Sarr, and hybrid depth from Jonathan Pierre and Keshon Gilbert shaping the rotation battles.",
+        "From there, building chemistry and developmental reps sits at the top of the agenda. AJ Johnson's lead guard reps will determine how dynamic the offense looks."
+      ],
+      "returningCore": [
+        "CJ McCollum",
+        "Bilal Coulibaly",
+        "Khris Middleton"
+      ],
+      "returningCoreDescriptors": [
+        "guard CJ McCollum",
+        "guard Bilal Coulibaly",
+        "wing Khris Middleton"
+      ],
+      "coreStrength": "Growth upside is the selling point, with young pieces earning larger responsibilities.",
+      "primaryRisk": "Frontcourt depth is thin, so foul trouble or injuries inside could quickly snowball.",
+      "swingFactor": "AJ Johnson's lead guard reps will determine how dynamic the offense looks.",
+      "seasonLabel": "2025-26",
+      "ranking": {
+        "score": 0.433692,
+        "rank": 29,
+        "statusLine": "Rebuild | Staff intact | Banking on internal growth | Health risk: low"
+      }
+    }
+  ]
+}

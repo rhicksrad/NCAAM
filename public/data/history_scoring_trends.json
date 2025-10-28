@@ -1,0 +1,558 @@
+{
+  "generatedAt": "2025-09-28T02:02:49.281243Z",
+  "seasons": [
+    {
+      "season": 1946,
+      "games": 20,
+      "averagePoints": 123.35,
+      "regularSeasonAverage": 121.67,
+      "playoffAverage": 138.5
+    },
+    {
+      "season": 1947,
+      "games": 24,
+      "averagePoints": 138.33,
+      "regularSeasonAverage": 138.33,
+      "playoffAverage": null
+    },
+    {
+      "season": 1948,
+      "games": 83,
+      "averagePoints": 158.06,
+      "regularSeasonAverage": 158.49,
+      "playoffAverage": 140.5
+    },
+    {
+      "season": 1949,
+      "games": 137,
+      "averagePoints": 158.46,
+      "regularSeasonAverage": 157.91,
+      "playoffAverage": 162.93
+    },
+    {
+      "season": 1950,
+      "games": 221,
+      "averagePoints": 169.31,
+      "regularSeasonAverage": 169.76,
+      "playoffAverage": 165.43
+    },
+    {
+      "season": 1951,
+      "games": 227,
+      "averagePoints": 167.47,
+      "regularSeasonAverage": 166.85,
+      "playoffAverage": 172.91
+    },
+    {
+      "season": 1952,
+      "games": 235,
+      "averagePoints": 165.42,
+      "regularSeasonAverage": 165.5,
+      "playoffAverage": 164.53
+    },
+    {
+      "season": 1953,
+      "games": 275,
+      "averagePoints": 158.18,
+      "regularSeasonAverage": 157.83,
+      "playoffAverage": 162.0
+    },
+    {
+      "season": 1954,
+      "games": 309,
+      "averagePoints": 186.73,
+      "regularSeasonAverage": 186.13,
+      "playoffAverage": 194.95
+    },
+    {
+      "season": 1955,
+      "games": 311,
+      "averagePoints": 198.05,
+      "regularSeasonAverage": 197.92,
+      "playoffAverage": 199.86
+    },
+    {
+      "season": 1956,
+      "games": 307,
+      "averagePoints": 200.47,
+      "regularSeasonAverage": 199.39,
+      "playoffAverage": 219.0
+    },
+    {
+      "season": 1957,
+      "games": 309,
+      "averagePoints": 212.81,
+      "regularSeasonAverage": 213.27,
+      "playoffAverage": 206.43
+    },
+    {
+      "season": 1958,
+      "games": 310,
+      "averagePoints": 217.28,
+      "regularSeasonAverage": 216.49,
+      "playoffAverage": 227.73
+    },
+    {
+      "season": 1959,
+      "games": 325,
+      "averagePoints": 229.7,
+      "regularSeasonAverage": 230.67,
+      "playoffAverage": 218.12
+    },
+    {
+      "season": 1960,
+      "games": 341,
+      "averagePoints": 235.79,
+      "regularSeasonAverage": 236.25,
+      "playoffAverage": 229.96
+    },
+    {
+      "season": 1961,
+      "games": 389,
+      "averagePoints": 236.61,
+      "regularSeasonAverage": 237.53,
+      "playoffAverage": 225.17
+    },
+    {
+      "season": 1962,
+      "games": 389,
+      "averagePoints": 230.56,
+      "regularSeasonAverage": 230.54,
+      "playoffAverage": 230.9
+    },
+    {
+      "season": 1963,
+      "games": 387,
+      "averagePoints": 221.28,
+      "regularSeasonAverage": 222.0,
+      "playoffAverage": 211.67
+    },
+    {
+      "season": 1964,
+      "games": 386,
+      "averagePoints": 221.65,
+      "regularSeasonAverage": 221.22,
+      "playoffAverage": 227.46
+    },
+    {
+      "season": 1965,
+      "games": 387,
+      "averagePoints": 230.75,
+      "regularSeasonAverage": 231.01,
+      "playoffAverage": 227.26
+    },
+    {
+      "season": 1966,
+      "games": 436,
+      "averagePoints": 234.66,
+      "regularSeasonAverage": 234.9,
+      "playoffAverage": 231.61
+    },
+    {
+      "season": 1967,
+      "games": 532,
+      "averagePoints": 232.53,
+      "regularSeasonAverage": 233.21,
+      "playoffAverage": 224.12
+    },
+    {
+      "season": 1968,
+      "games": 613,
+      "averagePoints": 223.63,
+      "regularSeasonAverage": 224.63,
+      "playoffAverage": 208.85
+    },
+    {
+      "season": 1969,
+      "games": 614,
+      "averagePoints": 232.73,
+      "regularSeasonAverage": 233.39,
+      "playoffAverage": 223.2
+    },
+    {
+      "season": 1970,
+      "games": 737,
+      "averagePoints": 223.85,
+      "regularSeasonAverage": 224.82,
+      "playoffAverage": 206.95
+    },
+    {
+      "season": 1971,
+      "games": 734,
+      "averagePoints": 220.04,
+      "regularSeasonAverage": 220.38,
+      "playoffAverage": 213.7
+    },
+    {
+      "season": 1972,
+      "games": 738,
+      "averagePoints": 214.62,
+      "regularSeasonAverage": 215.18,
+      "playoffAverage": 205.0
+    },
+    {
+      "season": 1973,
+      "games": 738,
+      "averagePoints": 210.64,
+      "regularSeasonAverage": 211.48,
+      "playoffAverage": 196.27
+    },
+    {
+      "season": 1974,
+      "games": 785,
+      "averagePoints": 205.01,
+      "regularSeasonAverage": 205.26,
+      "playoffAverage": 201.0
+    },
+    {
+      "season": 1975,
+      "games": 788,
+      "averagePoints": 208.59,
+      "regularSeasonAverage": 208.69,
+      "playoffAverage": 207.16
+    },
+    {
+      "season": 1976,
+      "games": 955,
+      "averagePoints": 212.82,
+      "regularSeasonAverage": 212.94,
+      "playoffAverage": 210.81
+    },
+    {
+      "season": 1977,
+      "games": 953,
+      "averagePoints": 216.77,
+      "regularSeasonAverage": 216.92,
+      "playoffAverage": 214.04
+    },
+    {
+      "season": 1978,
+      "games": 955,
+      "averagePoints": 220.06,
+      "regularSeasonAverage": 220.68,
+      "playoffAverage": 209.43
+    },
+    {
+      "season": 1979,
+      "games": 950,
+      "averagePoints": 218.12,
+      "regularSeasonAverage": 218.67,
+      "playoffAverage": 207.88
+    },
+    {
+      "season": 1980,
+      "games": 996,
+      "averagePoints": 215.38,
+      "regularSeasonAverage": 216.21,
+      "playoffAverage": 200.62
+    },
+    {
+      "season": 1981,
+      "games": 990,
+      "averagePoints": 216.86,
+      "regularSeasonAverage": 217.15,
+      "playoffAverage": 211.04
+    },
+    {
+      "season": 1982,
+      "games": 986,
+      "averagePoints": 216.93,
+      "regularSeasonAverage": 217.03,
+      "playoffAverage": 214.79
+    },
+    {
+      "season": 1983,
+      "games": 1022,
+      "averagePoints": 219.84,
+      "regularSeasonAverage": 220.22,
+      "playoffAverage": 215.24
+    },
+    {
+      "season": 1984,
+      "games": 1011,
+      "averagePoints": 222.19,
+      "regularSeasonAverage": 221.68,
+      "playoffAverage": 229.38
+    },
+    {
+      "season": 1985,
+      "games": 1011,
+      "averagePoints": 220.52,
+      "regularSeasonAverage": 220.45,
+      "playoffAverage": 221.43
+    },
+    {
+      "season": 1986,
+      "games": 1014,
+      "averagePoints": 219.94,
+      "regularSeasonAverage": 219.87,
+      "playoffAverage": 220.82
+    },
+    {
+      "season": 1987,
+      "games": 1023,
+      "averagePoints": 215.72,
+      "regularSeasonAverage": 216.32,
+      "playoffAverage": 208.64
+    },
+    {
+      "season": 1988,
+      "games": 1087,
+      "averagePoints": 217.85,
+      "regularSeasonAverage": 218.34,
+      "playoffAverage": 209.73
+    },
+    {
+      "season": 1989,
+      "games": 1179,
+      "averagePoints": 213.84,
+      "regularSeasonAverage": 214.03,
+      "playoffAverage": 211.04
+    },
+    {
+      "season": 1990,
+      "games": 1175,
+      "averagePoints": 212.37,
+      "regularSeasonAverage": 212.62,
+      "playoffAverage": 208.31
+    },
+    {
+      "season": 1991,
+      "games": 1180,
+      "averagePoints": 210.36,
+      "regularSeasonAverage": 210.62,
+      "playoffAverage": 206.51
+    },
+    {
+      "season": 1992,
+      "games": 1183,
+      "averagePoints": 209.81,
+      "regularSeasonAverage": 210.54,
+      "playoffAverage": 199.04
+    },
+    {
+      "season": 1993,
+      "games": 1184,
+      "averagePoints": 202.04,
+      "regularSeasonAverage": 203.01,
+      "playoffAverage": 188.0
+    },
+    {
+      "season": 1994,
+      "games": 1180,
+      "averagePoints": 202.55,
+      "regularSeasonAverage": 202.82,
+      "playoffAverage": 198.52
+    },
+    {
+      "season": 1995,
+      "games": 1257,
+      "averagePoints": 198.38,
+      "regularSeasonAverage": 199.01,
+      "playoffAverage": 187.46
+    },
+    {
+      "season": 1996,
+      "games": 1261,
+      "averagePoints": 193.47,
+      "regularSeasonAverage": 193.8,
+      "playoffAverage": 188.04
+    },
+    {
+      "season": 1997,
+      "games": 1260,
+      "averagePoints": 190.65,
+      "regularSeasonAverage": 191.14,
+      "playoffAverage": 182.46
+    },
+    {
+      "season": 1998,
+      "games": 791,
+      "averagePoints": 182.5,
+      "regularSeasonAverage": 183.16,
+      "playoffAverage": 175.24
+    },
+    {
+      "season": 1999,
+      "games": 1264,
+      "averagePoints": 194.28,
+      "regularSeasonAverage": 194.94,
+      "playoffAverage": 183.68
+    },
+    {
+      "season": 2000,
+      "games": 1260,
+      "averagePoints": 189.49,
+      "regularSeasonAverage": 189.62,
+      "playoffAverage": 187.23
+    },
+    {
+      "season": 2001,
+      "games": 1260,
+      "averagePoints": 190.81,
+      "regularSeasonAverage": 190.95,
+      "playoffAverage": 188.46
+    },
+    {
+      "season": 2002,
+      "games": 1277,
+      "averagePoints": 190.29,
+      "regularSeasonAverage": 190.16,
+      "playoffAverage": 192.05
+    },
+    {
+      "season": 2003,
+      "games": 1286,
+      "averagePoints": 186.05,
+      "regularSeasonAverage": 186.8,
+      "playoffAverage": 176.87
+    },
+    {
+      "season": 2004,
+      "games": 1362,
+      "averagePoints": 194.01,
+      "regularSeasonAverage": 194.41,
+      "playoffAverage": 190.29
+    },
+    {
+      "season": 2005,
+      "games": 1432,
+      "averagePoints": 193.58,
+      "regularSeasonAverage": 194.02,
+      "playoffAverage": 190.91
+    },
+    {
+      "season": 2006,
+      "games": 1419,
+      "averagePoints": 196.79,
+      "regularSeasonAverage": 197.48,
+      "playoffAverage": 192.33
+    },
+    {
+      "season": 2007,
+      "games": 1410,
+      "averagePoints": 198.84,
+      "regularSeasonAverage": 199.85,
+      "playoffAverage": 192.0
+    },
+    {
+      "season": 2008,
+      "games": 1420,
+      "averagePoints": 198.85,
+      "regularSeasonAverage": 199.9,
+      "playoffAverage": 192.03
+    },
+    {
+      "season": 2009,
+      "games": 1424,
+      "averagePoints": 200.4,
+      "regularSeasonAverage": 200.9,
+      "playoffAverage": 197.27
+    },
+    {
+      "season": 2010,
+      "games": 1422,
+      "averagePoints": 198.14,
+      "regularSeasonAverage": 199.1,
+      "playoffAverage": 191.99
+    },
+    {
+      "season": 2011,
+      "games": 1104,
+      "averagePoints": 191.82,
+      "regularSeasonAverage": 192.52,
+      "playoffAverage": 185.76
+    },
+    {
+      "season": 2012,
+      "games": 1420,
+      "averagePoints": 195.5,
+      "regularSeasonAverage": 196.28,
+      "playoffAverage": 190.48
+    },
+    {
+      "season": 2013,
+      "games": 1427,
+      "averagePoints": 201.0,
+      "regularSeasonAverage": 202.02,
+      "playoffAverage": 194.62
+    },
+    {
+      "season": 2014,
+      "games": 1418,
+      "averagePoints": 199.91,
+      "regularSeasonAverage": 200.03,
+      "playoffAverage": 199.14
+    },
+    {
+      "season": 2015,
+      "games": 1416,
+      "averagePoints": 204.48,
+      "regularSeasonAverage": 205.34,
+      "playoffAverage": 198.75
+    },
+    {
+      "season": 2016,
+      "games": 1405,
+      "averagePoints": 210.72,
+      "regularSeasonAverage": 211.18,
+      "playoffAverage": 207.49
+    },
+    {
+      "season": 2017,
+      "games": 1382,
+      "averagePoints": 212.15,
+      "regularSeasonAverage": 212.67,
+      "playoffAverage": 207.93
+    },
+    {
+      "season": 2018,
+      "games": 1378,
+      "averagePoints": 221.87,
+      "regularSeasonAverage": 222.42,
+      "playoffAverage": 217.3
+    },
+    {
+      "season": 2019,
+      "games": 1036,
+      "averagePoints": 222.59,
+      "regularSeasonAverage": 222.89,
+      "playoffAverage": 218.03
+    },
+    {
+      "season": 2020,
+      "games": 1417,
+      "averagePoints": 223.67,
+      "regularSeasonAverage": 224.72,
+      "playoffAverage": 218.74
+    },
+    {
+      "season": 2021,
+      "games": 1397,
+      "averagePoints": 220.43,
+      "regularSeasonAverage": 221.23,
+      "playoffAverage": 214.53
+    },
+    {
+      "season": 2022,
+      "games": 1385,
+      "averagePoints": 228.22,
+      "regularSeasonAverage": 229.37,
+      "playoffAverage": 219.08
+    },
+    {
+      "season": 2023,
+      "games": 1383,
+      "averagePoints": 227.13,
+      "regularSeasonAverage": 228.34,
+      "playoffAverage": 220.71
+    },
+    {
+      "season": 2024,
+      "games": 1385,
+      "averagePoints": 226.4,
+      "regularSeasonAverage": 227.3,
+      "playoffAverage": 219.48
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+overrides:
+  teams:
+    LAL:
+      roster_add: []
+      roster_drop: []
+      notes: []
+    DAL: {}
+  players:
+    "Anthony Davis":
+      team: "DAL"
+      position: "C"
+    "Luka Doncic":
+      team: "LAL"
+      position: "PG"
+  injuries: []
+  coaches: []

@@ -1,0 +1,69 @@
+{
+  "league": {
+    "standard": [
+      {
+        "personId": "2544",
+        "firstName": "LeBron",
+        "lastName": "James",
+        "temporaryDisplayName": "LeBron James",
+        "teamId": "1610612747",
+        "jersey": "23",
+        "pos": "F",
+        "heightMeters": "2.06",
+        "weightKilograms": "113.4",
+        "heightFeet": "6",
+        "heightInches": "9",
+        "weightPounds": "250",
+        "draft": {
+          "seasonYear": "2003",
+          "roundNum": "1",
+          "pickNum": "1",
+          "teamId": "1610612737"
+        },
+        "isActive": true
+      },
+      {
+        "personId": "201939",
+        "firstName": "Stephen",
+        "lastName": "Curry",
+        "temporaryDisplayName": "Stephen Curry",
+        "teamId": "1610612744",
+        "jersey": "30",
+        "pos": "G",
+        "heightMeters": "1.88",
+        "weightKilograms": "86.2",
+        "heightFeet": "6",
+        "heightInches": "2",
+        "weightPounds": "190",
+        "draft": {
+          "seasonYear": "2009",
+          "roundNum": "1",
+          "pickNum": "7",
+          "teamId": "1610612744"
+        },
+        "isActive": true
+      },
+      {
+        "personId": "999999",
+        "firstName": "New",
+        "lastName": "Prospect",
+        "temporaryDisplayName": "New Prospect",
+        "teamId": "1610612738",
+        "jersey": "11",
+        "pos": "G-F",
+        "heightMeters": "2.01",
+        "weightKilograms": "98",
+        "heightFeet": "6",
+        "heightInches": "7",
+        "weightPounds": "216",
+        "draft": {
+          "seasonYear": "2025",
+          "roundNum": "1",
+          "pickNum": "12",
+          "teamId": "1610612738"
+        },
+        "isActive": true
+      }
+    ]
+  }
+}

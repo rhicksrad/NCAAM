@@ -1,0 +1,7 @@
+# name size_bytes line_count
+Games.csv 9541007 71880
+LeagueSchedule24_25.csv 147173 1409
+PlayerStatistics.7z 306993983 -
+Players.csv 489027 6534
+TeamHistories.csv 6947 141
+TeamStatistics.zip 28290569 -

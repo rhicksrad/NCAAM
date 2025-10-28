@@ -1,0 +1,245 @@
+season: "2025-26"
+games:
+  - id: "PRE2025-01"
+    tipoff: "2025-10-02T16:00:00Z"
+    label: "Preseason"
+    subLabel: "NBA Abu Dhabi Game"
+    notes:
+      - "Neutral Site"
+    venue:
+      name: "Etihad Arena"
+      city: "Abu Dhabi"
+      country: "United Arab Emirates"
+      neutral: true
+    away:
+      tricode: "PHI"
+    home:
+      tricode: "NYK"
+  - id: "PRE2025-02"
+    tipoff: "2025-10-03T09:30:00Z"
+    label: "Preseason"
+    subLabel: "NBA Melbourne Game"
+    notes:
+      - "Neutral Site"
+    venue:
+      name: "Rod Laver Arena"
+      city: "Melbourne"
+      state: "VIC"
+      country: "Australia"
+      neutral: true
+    away:
+      name: "Melbourne United"
+      abbreviation: "MEL"
+      league: "NBL"
+    home:
+      tricode: "NOP"
+  - id: "PRE2025-03"
+    tipoff: "2025-10-04T02:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Crypto.com Arena"
+      city: "Los Angeles"
+      state: "CA"
+      country: "USA"
+    away:
+      tricode: "PHX"
+    home:
+      tricode: "LAL"
+  - id: "PRE2025-04"
+    tipoff: "2025-10-04T15:00:00Z"
+    label: "Preseason"
+    subLabel: "NBA Abu Dhabi Game"
+    notes:
+      - "Neutral Site"
+    venue:
+      name: "Etihad Arena"
+      city: "Abu Dhabi"
+      country: "United Arab Emirates"
+      neutral: true
+    away:
+      tricode: "NYK"
+    home:
+      tricode: "PHI"
+  - id: "PRE2025-05"
+    tipoff: "2025-10-05T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Barclays Center"
+      city: "Brooklyn"
+      state: "NY"
+      country: "USA"
+    away:
+      name: "Hapoel Jerusalem B.C."
+      abbreviation: "JER"
+      league: "Winner League"
+    home:
+      tricode: "BKN"
+  - id: "PRE2025-06"
+    tipoff: "2025-10-05T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Kaseya Center"
+      city: "Miami"
+      state: "FL"
+      country: "USA"
+    away:
+      tricode: "ORL"
+    home:
+      tricode: "MIA"
+  - id: "PRE2025-07"
+    tipoff: "2025-10-05T01:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Ball Arena"
+      city: "Denver"
+      state: "CO"
+      country: "USA"
+    away:
+      tricode: "MIN"
+    home:
+      tricode: "DEN"
+  - id: "PRE2025-08"
+    tipoff: "2025-10-05T03:00:00Z"
+    label: "Preseason"
+    subLabel: "NBA Melbourne Game"
+    notes:
+      - "Neutral Site"
+    venue:
+      name: "John Cain Arena"
+      city: "Melbourne"
+      state: "VIC"
+      country: "Australia"
+      neutral: true
+    away:
+      name: "South East Melbourne Phoenix"
+      abbreviation: "SEM"
+      league: "NBL"
+    home:
+      tricode: "NOP"
+  - id: "PRE2025-09"
+    tipoff: "2025-10-05T21:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Spectrum Center"
+      city: "Charlotte"
+      state: "NC"
+      country: "USA"
+    away:
+      tricode: "OKC"
+    home:
+      tricode: "CHA"
+  - id: "PRE2025-10"
+    tipoff: "2025-10-06T00:30:00Z"
+    label: "Preseason"
+    venue:
+      name: "Chase Center"
+      city: "San Francisco"
+      state: "CA"
+      country: "USA"
+    away:
+      tricode: "LAL"
+    home:
+      tricode: "GSW"
+  - id: "PRE2025-11"
+    tipoff: "2025-10-06T23:30:00Z"
+    label: "Preseason"
+    venue:
+      name: "Kaseya Center"
+      city: "Miami"
+      state: "FL"
+      country: "USA"
+    away:
+      tricode: "MIL"
+    home:
+      tricode: "MIA"
+  - id: "PRE2025-12"
+    tipoff: "2025-10-07T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Toyota Center"
+      city: "Houston"
+      state: "TX"
+      country: "USA"
+    away:
+      tricode: "ATL"
+    home:
+      tricode: "HOU"
+  - id: "PRE2025-13"
+    tipoff: "2025-10-07T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "FedExForum"
+      city: "Memphis"
+      state: "TN"
+      country: "USA"
+    away:
+      tricode: "DET"
+    home:
+      tricode: "MEM"
+  - id: "PRE2025-14"
+    tipoff: "2025-10-07T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Frost Bank Center"
+      city: "San Antonio"
+      state: "TX"
+      country: "USA"
+    away:
+      name: "Guangzhou Loong-Lions"
+      abbreviation: "GUA"
+      league: "CBA"
+    home:
+      tricode: "SAS"
+  - id: "PRE2025-15"
+    tipoff: "2025-10-07T00:30:00Z"
+    label: "Preseason"
+    venue:
+      name: "American Airlines Center"
+      city: "Dallas"
+      state: "TX"
+      country: "USA"
+    away:
+      tricode: "OKC"
+    home:
+      tricode: "DAL"
+  - id: "PRE2025-16"
+    tipoff: "2025-10-07T02:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Scotiabank Arena"
+      city: "Toronto"
+      state: "ON"
+      country: "Canada"
+    away:
+      tricode: "DEN"
+    home:
+      tricode: "TOR"
+  - id: "PRE2025-17"
+    tipoff: "2025-10-07T23:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Rocket Mortgage FieldHouse"
+      city: "Cleveland"
+      state: "OH"
+      country: "USA"
+    away:
+      tricode: "CHI"
+    home:
+      tricode: "CLE"
+  - id: "PRE2025-18"
+    tipoff: "2025-10-08T00:00:00Z"
+    label: "Preseason"
+    venue:
+      name: "Target Center"
+      city: "Minneapolis"
+      state: "MN"
+      country: "USA"
+    away:
+      tricode: "IND"
+    home:
+      tricode: "MIN"
+    coverage:
+      tv:
+        - "FanDuel Sports Network - Indiana"
+      radio:
+        - "93.5/107.5 The Fan"

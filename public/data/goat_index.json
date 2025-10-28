@@ -1,0 +1,364 @@
+{
+  "generatedAt": "2025-09-27T18:42:00Z",
+  "weights": [
+    {
+      "key": "impact",
+      "label": "Prime Impact (RAPM/BPM blend)",
+      "weight": 0.35,
+      "description": "How far a player's best five-year stretch pushes team performance above era-adjusted expectation."
+    },
+    {
+      "key": "stage",
+      "label": "Stage Dominance",
+      "weight": 0.2,
+      "description": "Trophies, Finals equity, and shot creation against top-10 postseason defenses."
+    },
+    {
+      "key": "longevity",
+      "label": "Longevity & Availability",
+      "weight": 0.22,
+      "description": "All-NBA seasons, durable minutes, and value above replacement over 15+ years."
+    },
+    {
+      "key": "versatility",
+      "label": "Versatility & Scalability",
+      "weight": 0.15,
+      "description": "Lineup flexibility, two-way adaptability, and proof of concept across different roster archetypes."
+    },
+    {
+      "key": "culture",
+      "label": "Cultural Capital",
+      "weight": 0.08,
+      "description": "Awards, innovations, and imprint on the sport's global storytelling."
+    }
+  ],
+  "players": [
+    {
+      "rank": 1,
+      "name": "LeBron James",
+      "goatScore": 97.6,
+      "tier": "Pantheon",
+      "status": "Active",
+      "careerSpan": "2003-2024",
+      "primeWindow": "2011-2018",
+      "delta": 0.4,
+      "franchises": ["CLE", "MIA", "LAL"],
+      "resume": "All-time playoff minutes leader with 4 titles and 19 All-NBA nods.",
+      "goatComponents": {
+        "impact": 34.0,
+        "stage": 18.9,
+        "longevity": 24.2,
+        "versatility": 15.5,
+        "culture": 5.0
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Michael Jordan",
+      "goatScore": 96.2,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1984-2003",
+      "primeWindow": "1988-1998",
+      "delta": -0.1,
+      "franchises": ["CHI", "WAS"],
+      "resume": "Six-for-six in the Finals with the highest single-season scoring impact index on record.",
+      "goatComponents": {
+        "impact": 35.1,
+        "stage": 20.0,
+        "longevity": 18.5,
+        "versatility": 15.3,
+        "culture": 7.3
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Kareem Abdul-Jabbar",
+      "goatScore": 94.0,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1969-1989",
+      "primeWindow": "1971-1985",
+      "delta": -0.2,
+      "franchises": ["MIL", "LAL"],
+      "resume": "Six MVP awards, six titles, and 20 seasons anchoring top-five offenses.",
+      "goatComponents": {
+        "impact": 31.6,
+        "stage": 17.8,
+        "longevity": 27.0,
+        "versatility": 11.6,
+        "culture": 6.0
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Tim Duncan",
+      "goatScore": 90.8,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1997-2016",
+      "primeWindow": "1999-2014",
+      "delta": 0.0,
+      "franchises": ["SAS"],
+      "resume": "19 straight winning seasons and the best defensive RAPM decade of the modern era.",
+      "goatComponents": {
+        "impact": 30.4,
+        "stage": 16.4,
+        "longevity": 25.0,
+        "versatility": 12.5,
+        "culture": 6.5
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Magic Johnson",
+      "goatScore": 90.2,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1979-1996",
+      "primeWindow": "1982-1991",
+      "delta": 0.0,
+      "franchises": ["LAL"],
+      "resume": "Five titles and the highest offensive box creation mark for a primary initiator.",
+      "goatComponents": {
+        "impact": 32.2,
+        "stage": 18.6,
+        "longevity": 15.8,
+        "versatility": 17.0,
+        "culture": 6.6
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Bill Russell",
+      "goatScore": 89.6,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1956-1969",
+      "primeWindow": "1958-1969",
+      "delta": -0.4,
+      "franchises": ["BOS"],
+      "resume": "Eleven titles powered by era-best defensive stop rates and leadership metrics.",
+      "goatComponents": {
+        "impact": 29.4,
+        "stage": 20.0,
+        "longevity": 19.0,
+        "versatility": 12.2,
+        "culture": 9.0
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Stephen Curry",
+      "goatScore": 89.2,
+      "tier": "Pantheon",
+      "status": "Active",
+      "careerSpan": "2009-2024",
+      "primeWindow": "2013-2024",
+      "delta": 0.6,
+      "franchises": ["GSW"],
+      "resume": "Four titles, two MVPs, and unrivaled spacing gravity that rewired offensive geometry.",
+      "goatComponents": {
+        "impact": 32.5,
+        "stage": 17.3,
+        "longevity": 17.6,
+        "versatility": 16.0,
+        "culture": 5.8
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Shaquille O'Neal",
+      "goatScore": 88.7,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1992-2011",
+      "primeWindow": "1994-2006",
+      "delta": -0.1,
+      "franchises": ["ORL", "LAL", "MIA", "PHX", "CLE", "BOS"],
+      "resume": "Peak true shooting plus 3 straight Finals MVPs built a dynasty-level apex.",
+      "goatComponents": {
+        "impact": 31.8,
+        "stage": 18.4,
+        "longevity": 18.0,
+        "versatility": 13.0,
+        "culture": 7.5
+      }
+    },
+    {
+      "rank": 9,
+      "name": "Nikola Jokic",
+      "goatScore": 88.4,
+      "tier": "Ascendant",
+      "status": "Active",
+      "careerSpan": "2015-2024",
+      "primeWindow": "2019-2024",
+      "delta": 1.6,
+      "franchises": ["DEN"],
+      "resume": "Three MVPs in four years with all-time offensive EPM runs and a 2023 title.",
+      "goatComponents": {
+        "impact": 34.8,
+        "stage": 15.8,
+        "longevity": 13.4,
+        "versatility": 17.0,
+        "culture": 7.4
+      }
+    },
+    {
+      "rank": 10,
+      "name": "Larry Bird",
+      "goatScore": 88.0,
+      "tier": "Pantheon",
+      "status": "Legend",
+      "careerSpan": "1979-1992",
+      "primeWindow": "1980-1988",
+      "delta": -0.2,
+      "franchises": ["BOS"],
+      "resume": "Three straight MVPs and the league's most efficient wing-driven offenses of the 1980s.",
+      "goatComponents": {
+        "impact": 31.5,
+        "stage": 16.2,
+        "longevity": 15.6,
+        "versatility": 16.3,
+        "culture": 8.4
+      }
+    },
+    {
+      "rank": 11,
+      "name": "Wilt Chamberlain",
+      "goatScore": 87.4,
+      "tier": "Legendary Core",
+      "status": "Legend",
+      "careerSpan": "1959-1973",
+      "primeWindow": "1960-1972",
+      "delta": -0.3,
+      "franchises": ["PHW", "SFW", "PHI", "LAL"],
+      "resume": "Volume records galore with elite durability, tempered by playoff translation gaps.",
+      "goatComponents": {
+        "impact": 30.0,
+        "stage": 14.4,
+        "longevity": 23.0,
+        "versatility": 11.0,
+        "culture": 9.0
+      }
+    },
+    {
+      "rank": 12,
+      "name": "Kevin Durant",
+      "goatScore": 86.8,
+      "tier": "Legendary Core",
+      "status": "Active",
+      "careerSpan": "2007-2024",
+      "primeWindow": "2011-2024",
+      "delta": 0.3,
+      "franchises": ["SEA", "OKC", "GSW", "BKN", "PHX"],
+      "resume": "Scoring champion in four eras with scalable plug-and-play gravity.",
+      "goatComponents": {
+        "impact": 31.0,
+        "stage": 15.0,
+        "longevity": 18.8,
+        "versatility": 16.5,
+        "culture": 5.5
+      }
+    },
+    {
+      "rank": 13,
+      "name": "Kobe Bryant",
+      "goatScore": 86.2,
+      "tier": "Legendary Core",
+      "status": "Legend",
+      "careerSpan": "1996-2016",
+      "primeWindow": "2000-2013",
+      "delta": -0.1,
+      "franchises": ["LAL"],
+      "resume": "Five championships and unparalleled shot-making difficulty, with long-term durability.",
+      "goatComponents": {
+        "impact": 28.4,
+        "stage": 17.2,
+        "longevity": 20.6,
+        "versatility": 14.3,
+        "culture": 5.7
+      }
+    },
+    {
+      "rank": 14,
+      "name": "Hakeem Olajuwon",
+      "goatScore": 85.7,
+      "tier": "Legendary Core",
+      "status": "Legend",
+      "careerSpan": "1984-2002",
+      "primeWindow": "1986-1997",
+      "delta": -0.1,
+      "franchises": ["HOU", "TOR"],
+      "resume": "Back-to-back titles, all-time rim protection metrics, and versatile post play.",
+      "goatComponents": {
+        "impact": 29.6,
+        "stage": 17.8,
+        "longevity": 19.4,
+        "versatility": 13.9,
+        "culture": 5.0
+      }
+    },
+    {
+      "rank": 15,
+      "name": "Giannis Antetokounmpo",
+      "goatScore": 84.8,
+      "tier": "Ascendant",
+      "status": "Active",
+      "careerSpan": "2013-2024",
+      "primeWindow": "2017-2024",
+      "delta": 1.0,
+      "franchises": ["MIL"],
+      "resume": "Two MVPs, a DPOY, and a 50-point Finals closeout before turning 30.",
+      "goatComponents": {
+        "impact": 33.0,
+        "stage": 16.2,
+        "longevity": 13.2,
+        "versatility": 15.1,
+        "culture": 7.3
+      }
+    }
+  ],
+  "rising": [
+    {
+      "name": "Nikola Jokic",
+      "currentRank": 9,
+      "goatScore": 88.4,
+      "delta": 1.6,
+      "trajectory": "Upward",
+      "signal": "Three MVPs in four years with historic offensive efficiency streaks."
+    },
+    {
+      "name": "Giannis Antetokounmpo",
+      "currentRank": 15,
+      "goatScore": 84.8,
+      "delta": 1.0,
+      "trajectory": "Upward",
+      "signal": "Entering age-30 season with peak two-way metrics still trending up."
+    },
+    {
+      "name": "Luka Doncic",
+      "currentRank": 18,
+      "goatScore": 82.1,
+      "delta": 1.8,
+      "trajectory": "Upward",
+      "signal": "2024 postseason heroics pushed his impact curve into Pantheon territory."
+    },
+    {
+      "name": "Anthony Edwards",
+      "currentRank": 42,
+      "goatScore": 68.9,
+      "delta": 2.4,
+      "trajectory": "Accelerating",
+      "signal": "USA Basketball takeover plus elite wing defense improved scalability marks."
+    },
+    {
+      "name": "A'ja Wilson (WNBA cross-index)",
+      "currentRank": null,
+      "goatScore": 71.4,
+      "delta": 3.2,
+      "trajectory": "Emerging",
+      "signal": "Her impact metrics contextualize the women's game for future blended GOAT revisions."
+    }
+  ]
+}

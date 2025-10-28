@@ -1,0 +1,400 @@
+{
+  "generatedAt": "2025-09-27T14:20:25.406Z",
+  "currentYear": 2025,
+  "totals": {
+    "all": 35,
+    "nba": 35,
+    "aba": 0
+  },
+  "leagues": [
+    "NBA"
+  ],
+  "earliestSeason": 1949,
+  "latestSeason": 2100,
+  "activeFranchises": [
+    {
+      "teamId": "1610612738",
+      "city": "Boston",
+      "name": "Celtics",
+      "abbreviation": "BOS",
+      "league": "NBA",
+      "seasonFounded": 1949,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612752",
+      "city": "New York",
+      "name": "Knicks",
+      "abbreviation": "NYK",
+      "league": "NBA",
+      "seasonFounded": 1949,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "9033",
+      "city": "East",
+      "name": "NBA All-Stars",
+      "abbreviation": "EST",
+      "league": "NBA",
+      "seasonFounded": 1951,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "9067",
+      "city": "West",
+      "name": "NBA All-Stars",
+      "abbreviation": "WST",
+      "league": "NBA",
+      "seasonFounded": 1951,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612765",
+      "city": "Detroit",
+      "name": "Pistons",
+      "abbreviation": "DET",
+      "league": "NBA",
+      "seasonFounded": 1957,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612747",
+      "city": "Los Angeles",
+      "name": "Lakers",
+      "abbreviation": "LAL",
+      "league": "NBA",
+      "seasonFounded": 1960,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612755",
+      "city": "Philadelphia",
+      "name": "76ers",
+      "abbreviation": "PHI",
+      "league": "NBA",
+      "seasonFounded": 1963,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612741",
+      "city": "Chicago",
+      "name": "Bulls",
+      "abbreviation": "CHI",
+      "league": "NBA",
+      "seasonFounded": 1966,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612749",
+      "city": "Milwaukee",
+      "name": "Bucks",
+      "abbreviation": "MIL",
+      "league": "NBA",
+      "seasonFounded": 1968,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612737",
+      "city": "Atlanta",
+      "name": "Hawks",
+      "abbreviation": "ATL",
+      "league": "NBA",
+      "seasonFounded": 1968,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612756",
+      "city": "Phoenix",
+      "name": "Suns",
+      "abbreviation": "PHX",
+      "league": "NBA",
+      "seasonFounded": 1968,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612739",
+      "city": "Cleveland",
+      "name": "Cavaliers",
+      "abbreviation": "CLE",
+      "league": "NBA",
+      "seasonFounded": 1970,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612757",
+      "city": "Portland",
+      "name": "Trail Blazers",
+      "abbreviation": "POR",
+      "league": "NBA",
+      "seasonFounded": 1970,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612745",
+      "city": "Houston",
+      "name": "Rockets",
+      "abbreviation": "HOU",
+      "league": "NBA",
+      "seasonFounded": 1971,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612744",
+      "city": "Golden State",
+      "name": "Warriors",
+      "abbreviation": "GSW",
+      "league": "NBA",
+      "seasonFounded": 1971,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612743",
+      "city": "Denver",
+      "name": "Nuggets",
+      "abbreviation": "DEN",
+      "league": "NBA",
+      "seasonFounded": 1976,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612754",
+      "city": "Indiana",
+      "name": "Pacers",
+      "abbreviation": "IND",
+      "league": "NBA",
+      "seasonFounded": 1976,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612759",
+      "city": "San Antonio",
+      "name": "Spurs",
+      "abbreviation": "SAS",
+      "league": "NBA",
+      "seasonFounded": 1976,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612762",
+      "city": "Utah",
+      "name": "Jazz",
+      "abbreviation": "UTA",
+      "league": "NBA",
+      "seasonFounded": 1979,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612742",
+      "city": "Dallas",
+      "name": "Mavericks",
+      "abbreviation": "DAL",
+      "league": "NBA",
+      "seasonFounded": 1980,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612746",
+      "city": "Los Angeles",
+      "name": "Clippers",
+      "abbreviation": "LAC",
+      "league": "NBA",
+      "seasonFounded": 1984,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612758",
+      "city": "Sacramento",
+      "name": "Kings",
+      "abbreviation": "SAC",
+      "league": "NBA",
+      "seasonFounded": 1985,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612748",
+      "city": "Miami",
+      "name": "Heat",
+      "abbreviation": "MIA",
+      "league": "NBA",
+      "seasonFounded": 1988,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612753",
+      "city": "Orlando",
+      "name": "Magic",
+      "abbreviation": "ORL",
+      "league": "NBA",
+      "seasonFounded": 1989,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612750",
+      "city": "Minnesota",
+      "name": "Timberwolves",
+      "abbreviation": "MIN",
+      "league": "NBA",
+      "seasonFounded": 1989,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612761",
+      "city": "Toronto",
+      "name": "Raptors",
+      "abbreviation": "TOR",
+      "league": "NBA",
+      "seasonFounded": 1995,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612764",
+      "city": "Washington",
+      "name": "Wizards",
+      "abbreviation": "WAS",
+      "league": "NBA",
+      "seasonFounded": 1997,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612763",
+      "city": "Memphis",
+      "name": "Grizzlies",
+      "abbreviation": "MEM",
+      "league": "NBA",
+      "seasonFounded": 2001,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612760",
+      "city": "Oklahoma City",
+      "name": "Thunder",
+      "abbreviation": "OKC",
+      "league": "NBA",
+      "seasonFounded": 2008,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612751",
+      "city": "Brooklyn",
+      "name": "Nets",
+      "abbreviation": "BKN",
+      "league": "NBA",
+      "seasonFounded": 2012,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612740",
+      "city": "New Orleans",
+      "name": "Pelicans",
+      "abbreviation": "NOP",
+      "league": "NBA",
+      "seasonFounded": 2013,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "1610612766",
+      "city": "Charlotte",
+      "name": "Hornets",
+      "abbreviation": "CHA",
+      "league": "NBA",
+      "seasonFounded": 2014,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "9040",
+      "city": "All-Star",
+      "name": "All-Star LeBron",
+      "abbreviation": "LBN",
+      "league": "NBA",
+      "seasonFounded": 2018,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "9039",
+      "city": "All-Star",
+      "name": "Team LeBron",
+      "abbreviation": "LBN",
+      "league": "NBA",
+      "seasonFounded": 2018,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    },
+    {
+      "teamId": "9043",
+      "city": "All-Star",
+      "name": "Team Giannis",
+      "abbreviation": "GNS",
+      "league": "NBA",
+      "seasonFounded": 2019,
+      "seasonActiveTill": 2100,
+      "isActive": true
+    }
+  ],
+  "decades": [
+    {
+      "decade": 1940,
+      "total": 2
+    },
+    {
+      "decade": 1950,
+      "total": 3
+    },
+    {
+      "decade": 1960,
+      "total": 6
+    },
+    {
+      "decade": 1970,
+      "total": 8
+    },
+    {
+      "decade": 1980,
+      "total": 6
+    },
+    {
+      "decade": 1990,
+      "total": 2
+    },
+    {
+      "decade": 2000,
+      "total": 2
+    },
+    {
+      "decade": 2010,
+      "total": 6
+    }
+  ]
+}

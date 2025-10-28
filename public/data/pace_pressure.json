@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2025-10-02T00:39:43.219Z",
+  "source": "Ball Don't Lie",
+  "season": "2024-25",
+  "seasonStartYear": 2024,
+  "leagueAveragePace": 97.77840603350381,
+  "sampleStartDate": "2025-02-01",
+  "teams": [
+    {
+      "teamId": 5,
+      "tricode": "CHI",
+      "team": "Chicago Bulls",
+      "abbreviation": "CHI",
+      "paceProjection": 101.38085533545588,
+      "tempoDelta": 3.6024493019520634,
+      "tempoScore": 80,
+      "gamesTracked": 34,
+      "backToBacks": 13,
+      "averageRestDays": 2.18,
+      "roadGames": 43,
+      "note": "Played 3.6 possessions faster than league average last season. Compressed rest windows amplify the physical tax."
+    },
+    {
+      "teamId": 15,
+      "tricode": "MEM",
+      "team": "Memphis Grizzlies",
+      "abbreviation": "MEM",
+      "paceProjection": 100.78902180798548,
+      "tempoDelta": 3.010615774481664,
+      "tempoScore": 68,
+      "gamesTracked": 36,
+      "backToBacks": 15,
+      "averageRestDays": 4.03,
+      "roadGames": 48,
+      "note": "Played 3.0 possessions faster than league average last season. Extra rest should help sustain their transition burst."
+    },
+    {
+      "teamId": 29,
+      "tricode": "UTA",
+      "team": "Utah Jazz",
+      "abbreviation": "UTA",
+      "paceProjection": 100.75833998674807,
+      "tempoDelta": 2.979933953244256,
+      "tempoScore": 85,
+      "gamesTracked": 36,
+      "backToBacks": 15,
+      "averageRestDays": 2.19,
+      "roadGames": 44,
+      "note": "Played 3.0 possessions faster than league average last season. Compressed rest windows amplify the physical tax."
+    },
+    {
+      "teamId": 1,
+      "tricode": "ATL",
+      "team": "Atlanta Hawks",
+      "abbreviation": "ATL",
+      "paceProjection": 100.36059990706707,
+      "tempoDelta": 2.5821938735632557,
+      "tempoScore": 92,
+      "gamesTracked": 36,
+      "backToBacks": 17,
+      "averageRestDays": 2.21,
+      "roadGames": 45,
+      "note": "Played 2.6 possessions faster than league average last season. Compressed rest windows amplify the physical tax. Back-to-back load ranks above the league norm."
+    },
+    {
+      "teamId": 9,
+      "tricode": "DET",
+      "team": "Detroit Pistons",
+      "abbreviation": "DET",
+      "paceProjection": 100.08571015905558,
+      "tempoDelta": 2.3073041255517666,
+      "tempoScore": 80,
+      "gamesTracked": 34,
+      "backToBacks": 15,
+      "averageRestDays": 2.25,
+      "roadGames": 46,
+      "note": "Played 2.3 possessions faster than league average last season. Compressed rest windows amplify the physical tax."
+    }
+  ]
+}

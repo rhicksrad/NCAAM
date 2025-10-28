@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/NBA/" />
+    <title>Insights Lab | NBA Intelligence Hub</title>
+    <meta name="title" content="Insights Lab | NBA Intelligence Hub" />
+    <meta name="description" content="Prototype new NBA data stories with experimental visuals, pace studies, and rest analytics inside the Insights Lab." />
+    <link rel="canonical" href="https://rhicksrad.github.io/NBA/insights.html" />
+    <meta property="og:site_name" content="NBA Intelligence Hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://rhicksrad.github.io/NBA/insights.html" />
+    <meta property="og:title" content="Insights Lab | NBA Intelligence Hub" />
+    <meta property="og:description" content="Prototype new NBA data stories with experimental visuals, pace studies, and rest analytics inside the Insights Lab." />
+    <meta property="og:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:secure_url" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rhicksrad.github.io/NBA/insights.html" />
+    <meta name="twitter:title" content="Insights Lab | NBA Intelligence Hub" />
+    <meta name="twitter:description" content="Prototype new NBA data stories with experimental visuals, pace studies, and rest analytics inside the Insights Lab." />
+    <meta name="twitter:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta name="twitter:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <link rel="icon" type="image/svg+xml" href="assets/logos/nba-logoman.svg" />
+    <link rel="stylesheet" href="styles/hub.css" />
+  </head>
+  <body>
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="hub-nav">
+          <a class="brand" href="index.html">
+            <span class="brand__logo"><img src="assets/logos/nba-logoman.svg" alt="NBA logo" class="brand__logo-icon" /></span>
+            <span class="brand__wordmark"><span class="brand__wordmark-accent">NBA</span> Intelligence Hub</span>
+          </a>
+          <nav class="nav-links">
+            <a href="index.html">2025-2026 Season</a>
+            <a href="rewind.html">2024-2025 Season Rewind</a>
+            <a href="players.html">Players</a>
+            <a href="teams.html">Teams</a>
+            <a href="games.html">Games</a>
+            <a href="history.html">History</a>
+            <a class="active" href="insights.html">Insights Lab</a>
+            <a href="goat.html">GOAT Index</a>
+            <a href="about.html">About</a>
+          </nav>
+        </div>
+        <div class="hero hero--lab">
+          <div class="hero__intro">
+            <span class="eyebrow">Insights Lab Reset</span>
+            <h1>The place where we test data insights</h1>
+            <p class="hero__lead" aria-hidden="true">&nbsp;</p>
+          </div>
+          <dl class="hero-metrics hero-metrics--lab">
+            <div class="hero-metrics__item">
+              <dt>Seasonal scoring swing</dt>
+              <dd data-metric="seasonal-swing">--</dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Road rest advantage</dt>
+              <dd data-metric="rest-gap">--</dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Close game share</dt>
+              <dd data-metric="close-share">--</dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Games studied</dt>
+              <dd data-metric="sample-size">--</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <main class="lab-content">
+        <section class="lab-grid">
+          <article class="lab-module lab-module--wide" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>How does scoring change through the calendar?</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Average points by month</span>
+                <span class="lab-chip lab-chip--accent" data-metric="seasonal-swing-detail">--</span>
+              </div>
+            </header>
+            <p class="lab-module__note" data-metric="seasonal-calendar-note">--</p>
+            <div class="viz-canvas">
+              <canvas id="seasonal-scoring" data-chart-ratio="0.55"></canvas>
+            </div>
+            <p class="lab-module__source" data-source-stamp="seasonal-scoring">Source: Ball Don't Lie API</p>
+          </article>
+
+          <article class="lab-module lab-module--tall" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>How much does rest matter on the road?</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Road win rate by rest edge</span>
+                <span class="lab-chip lab-chip--accent" data-metric="rest-gap-detail">--</span>
+              </div>
+            </header>
+            <p class="lab-module__note" data-metric="rest-travel-note">--</p>
+            <div class="lab-module__viz-grid lab-module__viz-grid--two">
+              <div class="viz-canvas">
+                <canvas id="rest-impact" data-chart-ratio="0.78"></canvas>
+              </div>
+              <div class="viz-canvas viz-canvas--compact">
+                <canvas id="rest-travel" data-chart-ratio="0.9"></canvas>
+              </div>
+            </div>
+            <p class="lab-module__source" data-source-stamp="rest-impact">Source: Ball Don't Lie API</p>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>How often do games stay within reach?</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Share of games by final margin</span>
+                <span class="lab-chip lab-chip--accent" data-metric="close-share-detail">--</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas id="close-margins" data-chart-ratio="0.7"></canvas>
+            </div>
+            <p class="lab-module__source" data-source-stamp="close-margins">Source: Ball Don't Lie API</p>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Overtime heartbeat</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Road win% by overtime length</span>
+                <span class="lab-chip lab-chip--accent" data-metric="overtime-road-boost">--</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas id="overtime-breakdown" data-chart-ratio="0.68"></canvas>
+            </div>
+            <p class="lab-module__source" data-source-stamp="overtime-breakdown">Source: Ball Don't Lie API</p>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>How much does home court still matter?</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Win% split by venue</span>
+                <span class="lab-chip lab-chip--accent" data-metric="home-road-gap">--</span>
+              </div>
+            </header>
+            <p class="lab-module__note" data-metric="home-road-note">--</p>
+            <p class="lab-module__note lab-module__note--subtle" data-metric="home-clutch-note">--</p>
+            <div class="lab-module__viz-grid lab-module__viz-grid--two">
+              <div class="viz-canvas">
+                <canvas id="home-road-splits" data-chart-ratio="0.62"></canvas>
+              </div>
+              <div class="viz-canvas viz-canvas--compact">
+                <canvas id="home-clutch" data-chart-ratio="0.82"></canvas>
+              </div>
+            </div>
+            <p class="lab-module__source" data-source-stamp="home-road-splits">Source: Ball Don't Lie API</p>
+          </article>
+
+          <article class="lab-module lab-module--wide" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>How has scoring evolved by season?</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Average points per season</span>
+                <span class="lab-chip lab-chip--accent" data-metric="season-trend-swing">--</span>
+              </div>
+            </header>
+            <p class="lab-module__note" data-metric="season-range">--</p>
+            <div class="viz-canvas">
+              <canvas id="season-averages" data-chart-ratio="0.6"></canvas>
+            </div>
+            <p class="lab-module__source" data-source-stamp="season-averages">Source: Ball Don't Lie API</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="page-footer">This is where hunches meet datasets &mdash; and occasionally become headlines.</footer>
+    </div>
+    <script src="vendor/chart.umd.js" defer></script>
+    <script type="module" src="scripts/insights.js"></script>
+  </body>
+</html>

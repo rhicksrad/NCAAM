@@ -1,0 +1,39 @@
+{
+  "league": {
+    "standard": [
+      {
+        "teamId": "1610612747",
+        "fullName": "Los Angeles Lakers",
+        "tricode": "LAL",
+        "nickname": "Lakers",
+        "urlName": "lakers",
+        "confName": "West",
+        "divName": "Pacific",
+        "city": "Los Angeles",
+        "isNBAFranchise": true
+      },
+      {
+        "teamId": "1610612744",
+        "fullName": "Golden State Warriors",
+        "tricode": "GSW",
+        "nickname": "Warriors",
+        "urlName": "warriors",
+        "confName": "West",
+        "divName": "Pacific",
+        "city": "San Francisco",
+        "isNBAFranchise": true
+      },
+      {
+        "teamId": "1610612738",
+        "fullName": "Boston Celtics",
+        "tricode": "BOS",
+        "nickname": "Celtics",
+        "urlName": "celtics",
+        "confName": "East",
+        "divName": "Atlantic",
+        "city": "Boston",
+        "isNBAFranchise": true
+      }
+    ]
+  }
+}

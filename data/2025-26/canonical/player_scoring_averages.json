@@ -1,0 +1,4558 @@
+{
+  "season": "2024-25",
+  "generatedAt": "2025-10-01T12:12:51+00:00",
+  "players": [
+    {
+      "playerId": "1628983",
+      "gamesPlayed": 77,
+      "pointsPerGame": 32.53,
+      "firstName": "Shai",
+      "lastName": "Gilgeous-Alexander",
+      "name": "Shai Gilgeous-Alexander"
+    },
+    {
+      "playerId": "203507",
+      "gamesPlayed": 68,
+      "pointsPerGame": 30.32,
+      "firstName": "Giannis",
+      "lastName": "Antetokounmpo",
+      "name": "Giannis Antetokounmpo"
+    },
+    {
+      "playerId": "203999",
+      "gamesPlayed": 70,
+      "pointsPerGame": 29.59,
+      "firstName": "Nikola",
+      "lastName": "Jokic",
+      "name": "Nikola Jokic"
+    },
+    {
+      "playerId": "1629029",
+      "gamesPlayed": 48,
+      "pointsPerGame": 28.6,
+      "firstName": "Luka",
+      "lastName": "Doncic",
+      "name": "Luka Doncic"
+    },
+    {
+      "playerId": "1630162",
+      "gamesPlayed": 79,
+      "pointsPerGame": 27.56,
+      "firstName": "Anthony",
+      "lastName": "Edwards",
+      "name": "Anthony Edwards"
+    },
+    {
+      "playerId": "1628369",
+      "gamesPlayed": 72,
+      "pointsPerGame": 26.83,
+      "firstName": "Jayson",
+      "lastName": "Tatum",
+      "name": "Jayson Tatum"
+    },
+    {
+      "playerId": "201142",
+      "gamesPlayed": 62,
+      "pointsPerGame": 26.56,
+      "firstName": "Kevin",
+      "lastName": "Durant",
+      "name": "Kevin Durant"
+    },
+    {
+      "playerId": "1630178",
+      "gamesPlayed": 52,
+      "pointsPerGame": 26.33,
+      "firstName": "Tyrese",
+      "lastName": "Maxey",
+      "name": "Tyrese Maxey"
+    },
+    {
+      "playerId": "1630595",
+      "gamesPlayed": 70,
+      "pointsPerGame": 26.14,
+      "firstName": "Cade",
+      "lastName": "Cunningham",
+      "name": "Cade Cunningham"
+    },
+    {
+      "playerId": "1631094",
+      "gamesPlayed": 44,
+      "pointsPerGame": 26.05,
+      "firstName": "Paolo",
+      "lastName": "Banchero",
+      "name": "Paolo Banchero"
+    },
+    {
+      "playerId": "1628973",
+      "gamesPlayed": 65,
+      "pointsPerGame": 26.0,
+      "firstName": "Jalen",
+      "lastName": "Brunson",
+      "name": "Jalen Brunson"
+    },
+    {
+      "playerId": "1626164",
+      "gamesPlayed": 75,
+      "pointsPerGame": 25.64,
+      "firstName": "Devin",
+      "lastName": "Booker",
+      "name": "Devin Booker"
+    },
+    {
+      "playerId": "1630163",
+      "gamesPlayed": 45,
+      "pointsPerGame": 25.36,
+      "firstName": "LaMelo",
+      "lastName": "Ball",
+      "name": "LaMelo Ball"
+    },
+    {
+      "playerId": "203081",
+      "gamesPlayed": 59,
+      "pointsPerGame": 24.92,
+      "firstName": "Damian",
+      "lastName": "Lillard",
+      "name": "Damian Lillard"
+    },
+    {
+      "playerId": "203076",
+      "gamesPlayed": 51,
+      "pointsPerGame": 24.73,
+      "firstName": "Anthony",
+      "lastName": "Davis",
+      "name": "Anthony Davis"
+    },
+    {
+      "playerId": "202681",
+      "gamesPlayed": 50,
+      "pointsPerGame": 24.68,
+      "firstName": "Kyrie",
+      "lastName": "Irving",
+      "name": "Kyrie Irving"
+    },
+    {
+      "playerId": "1629627",
+      "gamesPlayed": 30,
+      "pointsPerGame": 24.57,
+      "firstName": "Zion",
+      "lastName": "Williamson",
+      "name": "Zion Williamson"
+    },
+    {
+      "playerId": "201939",
+      "gamesPlayed": 70,
+      "pointsPerGame": 24.54,
+      "firstName": "Stephen",
+      "lastName": "Curry",
+      "name": "Stephen Curry"
+    },
+    {
+      "playerId": "1626157",
+      "gamesPlayed": 72,
+      "pointsPerGame": 24.43,
+      "firstName": "Karl-Anthony",
+      "lastName": "Towns",
+      "name": "Karl-Anthony Towns"
+    },
+    {
+      "playerId": "2544",
+      "gamesPlayed": 69,
+      "pointsPerGame": 24.41,
+      "firstName": "LeBron",
+      "lastName": "James",
+      "name": "LeBron James"
+    },
+    {
+      "playerId": "1629027",
+      "gamesPlayed": 75,
+      "pointsPerGame": 24.27,
+      "firstName": "Trae",
+      "lastName": "Young",
+      "name": "Trae Young"
+    },
+    {
+      "playerId": "1641705",
+      "gamesPlayed": 46,
+      "pointsPerGame": 24.26,
+      "firstName": "Victor",
+      "lastName": "Wembanyama",
+      "name": "Victor Wembanyama"
+    },
+    {
+      "playerId": "1630532",
+      "gamesPlayed": 58,
+      "pointsPerGame": 24.14,
+      "firstName": "Franz",
+      "lastName": "Wagner",
+      "name": "Franz Wagner"
+    },
+    {
+      "playerId": "1628378",
+      "gamesPlayed": 71,
+      "pointsPerGame": 23.96,
+      "firstName": "Donovan",
+      "lastName": "Mitchell",
+      "name": "Donovan Mitchell"
+    },
+    {
+      "playerId": "1630560",
+      "gamesPlayed": 25,
+      "pointsPerGame": 23.96,
+      "firstName": "Cam",
+      "lastName": "Thomas",
+      "name": "Cam Thomas"
+    },
+    {
+      "playerId": "1629639",
+      "gamesPlayed": 77,
+      "pointsPerGame": 23.9,
+      "firstName": "Tyler",
+      "lastName": "Herro",
+      "name": "Tyler Herro"
+    },
+    {
+      "playerId": "203954",
+      "gamesPlayed": 19,
+      "pointsPerGame": 23.79,
+      "firstName": "Joel",
+      "lastName": "Embiid",
+      "name": "Joel Embiid"
+    },
+    {
+      "playerId": "1628368",
+      "gamesPlayed": 62,
+      "pointsPerGame": 23.53,
+      "firstName": "De'Aaron",
+      "lastName": "Fox",
+      "name": "De'Aaron Fox"
+    },
+    {
+      "playerId": "203897",
+      "gamesPlayed": 74,
+      "pointsPerGame": 23.3,
+      "firstName": "Zach",
+      "lastName": "LaVine",
+      "name": "Zach LaVine"
+    },
+    {
+      "playerId": "1629630",
+      "gamesPlayed": 49,
+      "pointsPerGame": 23.18,
+      "firstName": "Ja",
+      "lastName": "Morant",
+      "name": "Ja Morant"
+    },
+    {
+      "playerId": "201935",
+      "gamesPlayed": 78,
+      "pointsPerGame": 22.71,
+      "firstName": "James",
+      "lastName": "Harden",
+      "name": "James Harden"
+    },
+    {
+      "playerId": "1628991",
+      "gamesPlayed": 73,
+      "pointsPerGame": 22.26,
+      "firstName": "Jaren",
+      "lastName": "Jackson Jr.",
+      "name": "Jaren Jackson Jr."
+    },
+    {
+      "playerId": "1627742",
+      "gamesPlayed": 18,
+      "pointsPerGame": 22.22,
+      "firstName": "Brandon",
+      "lastName": "Ingram",
+      "name": "Brandon Ingram"
+    },
+    {
+      "playerId": "201942",
+      "gamesPlayed": 77,
+      "pointsPerGame": 22.21,
+      "firstName": "DeMar",
+      "lastName": "DeRozan",
+      "name": "DeMar DeRozan"
+    },
+    {
+      "playerId": "1627759",
+      "gamesPlayed": 63,
+      "pointsPerGame": 22.19,
+      "firstName": "Jaylen",
+      "lastName": "Brown",
+      "name": "Jaylen Brown"
+    },
+    {
+      "playerId": "1626181",
+      "gamesPlayed": 59,
+      "pointsPerGame": 22.02,
+      "firstName": "Norman",
+      "lastName": "Powell",
+      "name": "Norman Powell"
+    },
+    {
+      "playerId": "1631114",
+      "gamesPlayed": 70,
+      "pointsPerGame": 21.54,
+      "firstName": "Jalen",
+      "lastName": "Williams",
+      "name": "Jalen Williams"
+    },
+    {
+      "playerId": "202695",
+      "gamesPlayed": 36,
+      "pointsPerGame": 21.47,
+      "firstName": "Kawhi",
+      "lastName": "Leonard",
+      "name": "Kawhi Leonard"
+    },
+    {
+      "playerId": "1627750",
+      "gamesPlayed": 67,
+      "pointsPerGame": 21.43,
+      "firstName": "Jamal",
+      "lastName": "Murray",
+      "name": "Jamal Murray"
+    },
+    {
+      "playerId": "1630530",
+      "gamesPlayed": 53,
+      "pointsPerGame": 21.21,
+      "firstName": "Trey",
+      "lastName": "Murphy III",
+      "name": "Trey Murphy III"
+    },
+    {
+      "playerId": "203468",
+      "gamesPlayed": 56,
+      "pointsPerGame": 21.12,
+      "firstName": "CJ",
+      "lastName": "McCollum",
+      "name": "CJ McCollum"
+    },
+    {
+      "playerId": "1629628",
+      "gamesPlayed": 58,
+      "pointsPerGame": 21.09,
+      "firstName": "RJ",
+      "lastName": "Barrett",
+      "name": "RJ Barrett"
+    },
+    {
+      "playerId": "1641706",
+      "gamesPlayed": 27,
+      "pointsPerGame": 21.04,
+      "firstName": "Brandon",
+      "lastName": "Miller",
+      "name": "Brandon Miller"
+    },
+    {
+      "playerId": "1630224",
+      "gamesPlayed": 81,
+      "pointsPerGame": 20.96,
+      "firstName": "Jalen",
+      "lastName": "Green",
+      "name": "Jalen Green"
+    },
+    {
+      "playerId": "1629673",
+      "gamesPlayed": 67,
+      "pointsPerGame": 20.73,
+      "firstName": "Jordan",
+      "lastName": "Poole",
+      "name": "Jordan Poole"
+    },
+    {
+      "playerId": "1629636",
+      "gamesPlayed": 75,
+      "pointsPerGame": 20.59,
+      "firstName": "Darius",
+      "lastName": "Garland",
+      "name": "Darius Garland"
+    },
+    {
+      "playerId": "1629632",
+      "gamesPlayed": 74,
+      "pointsPerGame": 20.39,
+      "firstName": "Coby",
+      "lastName": "White",
+      "name": "Coby White"
+    },
+    {
+      "playerId": "1628970",
+      "gamesPlayed": 62,
+      "pointsPerGame": 20.39,
+      "firstName": "Miles",
+      "lastName": "Bridges",
+      "name": "Miles Bridges"
+    },
+    {
+      "playerId": "1630559",
+      "gamesPlayed": 71,
+      "pointsPerGame": 20.24,
+      "firstName": "Austin",
+      "lastName": "Reaves",
+      "name": "Austin Reaves"
+    },
+    {
+      "playerId": "1627783",
+      "gamesPlayed": 78,
+      "pointsPerGame": 20.23,
+      "firstName": "Pascal",
+      "lastName": "Siakam",
+      "name": "Pascal Siakam"
+    },
+    {
+      "playerId": "204001",
+      "gamesPlayed": 42,
+      "pointsPerGame": 19.48,
+      "firstName": "Kristaps",
+      "lastName": "Porzingis",
+      "name": "Kristaps Porzingis"
+    },
+    {
+      "playerId": "1630217",
+      "gamesPlayed": 68,
+      "pointsPerGame": 19.28,
+      "firstName": "Desmond",
+      "lastName": "Bane",
+      "name": "Desmond Bane"
+    },
+    {
+      "playerId": "1629014",
+      "gamesPlayed": 70,
+      "pointsPerGame": 19.26,
+      "firstName": "Anfernee",
+      "lastName": "Simons",
+      "name": "Anfernee Simons"
+    },
+    {
+      "playerId": "1630567",
+      "gamesPlayed": 65,
+      "pointsPerGame": 19.26,
+      "firstName": "Scottie",
+      "lastName": "Barnes",
+      "name": "Scottie Barnes"
+    },
+    {
+      "playerId": "1630578",
+      "gamesPlayed": 75,
+      "pointsPerGame": 19.11,
+      "firstName": "Alperen",
+      "lastName": "Sengun",
+      "name": "Alperen Sengun"
+    },
+    {
+      "playerId": "1627734",
+      "gamesPlayed": 70,
+      "pointsPerGame": 19.1,
+      "firstName": "Domantas",
+      "lastName": "Sabonis",
+      "name": "Domantas Sabonis"
+    },
+    {
+      "playerId": "1628374",
+      "gamesPlayed": 47,
+      "pointsPerGame": 18.98,
+      "firstName": "Lauri",
+      "lastName": "Markkanen",
+      "name": "Lauri Markkanen"
+    },
+    {
+      "playerId": "1628381",
+      "gamesPlayed": 40,
+      "pointsPerGame": 18.95,
+      "firstName": "John",
+      "lastName": "Collins",
+      "name": "John Collins"
+    },
+    {
+      "playerId": "1630552",
+      "gamesPlayed": 36,
+      "pointsPerGame": 18.89,
+      "firstName": "Jalen",
+      "lastName": "Johnson",
+      "name": "Jalen Johnson"
+    },
+    {
+      "playerId": "1629661",
+      "gamesPlayed": 57,
+      "pointsPerGame": 18.77,
+      "firstName": "Cameron",
+      "lastName": "Johnson",
+      "name": "Cameron Johnson"
+    },
+    {
+      "playerId": "203944",
+      "gamesPlayed": 69,
+      "pointsPerGame": 18.67,
+      "firstName": "Julius",
+      "lastName": "Randle",
+      "name": "Julius Randle"
+    },
+    {
+      "playerId": "1630169",
+      "gamesPlayed": 73,
+      "pointsPerGame": 18.62,
+      "firstName": "Tyrese",
+      "lastName": "Haliburton",
+      "name": "Tyrese Haliburton"
+    },
+    {
+      "playerId": "1631101",
+      "gamesPlayed": 72,
+      "pointsPerGame": 18.54,
+      "firstName": "Shaedon",
+      "lastName": "Sharpe",
+      "name": "Shaedon Sharpe"
+    },
+    {
+      "playerId": "1630596",
+      "gamesPlayed": 71,
+      "pointsPerGame": 18.54,
+      "firstName": "Evan",
+      "lastName": "Mobley",
+      "name": "Evan Mobley"
+    },
+    {
+      "playerId": "202696",
+      "gamesPlayed": 73,
+      "pointsPerGame": 18.48,
+      "firstName": "Nikola",
+      "lastName": "Vucevic",
+      "name": "Nikola Vucevic"
+    },
+    {
+      "playerId": "1629012",
+      "gamesPlayed": 62,
+      "pointsPerGame": 18.4,
+      "firstName": "Collin",
+      "lastName": "Sexton",
+      "name": "Collin Sexton"
+    },
+    {
+      "playerId": "1629008",
+      "gamesPlayed": 77,
+      "pointsPerGame": 18.16,
+      "firstName": "Michael",
+      "lastName": "Porter Jr.",
+      "name": "Michael Porter Jr."
+    },
+    {
+      "playerId": "1628389",
+      "gamesPlayed": 78,
+      "pointsPerGame": 18.06,
+      "firstName": "Bam",
+      "lastName": "Adebayo",
+      "name": "Bam Adebayo"
+    },
+    {
+      "playerId": "1628384",
+      "gamesPlayed": 74,
+      "pointsPerGame": 18.0,
+      "firstName": "OG",
+      "lastName": "Anunoby",
+      "name": "OG Anunoby"
+    },
+    {
+      "playerId": "203952",
+      "gamesPlayed": 60,
+      "pointsPerGame": 17.97,
+      "firstName": "Andrew",
+      "lastName": "Wiggins",
+      "name": "Andrew Wiggins"
+    },
+    {
+      "playerId": "1628969",
+      "gamesPlayed": 82,
+      "pointsPerGame": 17.61,
+      "firstName": "Mikal",
+      "lastName": "Bridges",
+      "name": "Mikal Bridges"
+    },
+    {
+      "playerId": "1631093",
+      "gamesPlayed": 30,
+      "pointsPerGame": 17.6,
+      "firstName": "Jaden",
+      "lastName": "Ivey",
+      "name": "Jaden Ivey"
+    },
+    {
+      "playerId": "202710",
+      "gamesPlayed": 55,
+      "pointsPerGame": 17.53,
+      "firstName": "Jimmy",
+      "lastName": "Butler",
+      "name": "Jimmy Butler"
+    },
+    {
+      "playerId": "1627749",
+      "gamesPlayed": 31,
+      "pointsPerGame": 17.48,
+      "firstName": "Dejounte",
+      "lastName": "Murray",
+      "name": "Dejounte Murray"
+    },
+    {
+      "playerId": "1628370",
+      "gamesPlayed": 65,
+      "pointsPerGame": 17.18,
+      "firstName": "Malik",
+      "lastName": "Monk",
+      "name": "Malik Monk"
+    },
+    {
+      "playerId": "1630193",
+      "gamesPlayed": 33,
+      "pointsPerGame": 17.09,
+      "firstName": "Immanuel",
+      "lastName": "Quickley",
+      "name": "Immanuel Quickley"
+    },
+    {
+      "playerId": "1629631",
+      "gamesPlayed": 63,
+      "pointsPerGame": 17.02,
+      "firstName": "De'Andre",
+      "lastName": "Hunter",
+      "name": "De'Andre Hunter"
+    },
+    {
+      "playerId": "203078",
+      "gamesPlayed": 53,
+      "pointsPerGame": 17.02,
+      "firstName": "Bradley",
+      "lastName": "Beal",
+      "name": "Bradley Beal"
+    },
+    {
+      "playerId": "1630166",
+      "gamesPlayed": 72,
+      "pointsPerGame": 16.93,
+      "firstName": "Deni",
+      "lastName": "Avdija",
+      "name": "Deni Avdija"
+    },
+    {
+      "playerId": "1627826",
+      "gamesPlayed": 79,
+      "pointsPerGame": 16.75,
+      "firstName": "Ivica",
+      "lastName": "Zubac",
+      "name": "Ivica Zubac"
+    },
+    {
+      "playerId": "1641718",
+      "gamesPlayed": 66,
+      "pointsPerGame": 16.74,
+      "firstName": "Keyonte",
+      "lastName": "George",
+      "name": "Keyonte George"
+    },
+    {
+      "playerId": "1628401",
+      "gamesPlayed": 76,
+      "pointsPerGame": 16.42,
+      "firstName": "Derrick",
+      "lastName": "White",
+      "name": "Derrick White"
+    },
+    {
+      "playerId": "1630170",
+      "gamesPlayed": 62,
+      "pointsPerGame": 16.34,
+      "firstName": "Devin",
+      "lastName": "Vassell",
+      "name": "Devin Vassell"
+    },
+    {
+      "playerId": "1627736",
+      "gamesPlayed": 82,
+      "pointsPerGame": 16.29,
+      "firstName": "Malik",
+      "lastName": "Beasley",
+      "name": "Malik Beasley"
+    },
+    {
+      "playerId": "203903",
+      "gamesPlayed": 36,
+      "pointsPerGame": 16.28,
+      "firstName": "Jordan",
+      "lastName": "Clarkson",
+      "name": "Jordan Clarkson"
+    },
+    {
+      "playerId": "202331",
+      "gamesPlayed": 41,
+      "pointsPerGame": 16.22,
+      "firstName": "Paul",
+      "lastName": "George",
+      "name": "Paul George"
+    },
+    {
+      "playerId": "1630591",
+      "gamesPlayed": 35,
+      "pointsPerGame": 16.2,
+      "firstName": "Jalen",
+      "lastName": "Suggs",
+      "name": "Jalen Suggs"
+    },
+    {
+      "playerId": "1631097",
+      "gamesPlayed": 72,
+      "pointsPerGame": 16.06,
+      "firstName": "Bennedict",
+      "lastName": "Mathurin",
+      "name": "Bennedict Mathurin"
+    },
+    {
+      "playerId": "1626167",
+      "gamesPlayed": 72,
+      "pointsPerGame": 15.56,
+      "firstName": "Myles",
+      "lastName": "Turner",
+      "name": "Myles Turner"
+    },
+    {
+      "playerId": "1631128",
+      "gamesPlayed": 79,
+      "pointsPerGame": 15.42,
+      "firstName": "Christian",
+      "lastName": "Braun",
+      "name": "Christian Braun"
+    },
+    {
+      "playerId": "1631109",
+      "gamesPlayed": 42,
+      "pointsPerGame": 15.31,
+      "firstName": "Mark",
+      "lastName": "Williams",
+      "name": "Mark Williams"
+    },
+    {
+      "playerId": "1630228",
+      "gamesPlayed": 47,
+      "pointsPerGame": 15.3,
+      "firstName": "Jonathan",
+      "lastName": "Kuminga",
+      "name": "Jonathan Kuminga"
+    },
+    {
+      "playerId": "1642272",
+      "gamesPlayed": 23,
+      "pointsPerGame": 15.3,
+      "firstName": "Jared",
+      "lastName": "McCain",
+      "name": "Jared McCain"
+    },
+    {
+      "playerId": "1626162",
+      "gamesPlayed": 60,
+      "pointsPerGame": 15.1,
+      "firstName": "Kelly",
+      "lastName": "Oubre Jr.",
+      "name": "Kelly Oubre Jr."
+    },
+    {
+      "playerId": "1631096",
+      "gamesPlayed": 32,
+      "pointsPerGame": 14.97,
+      "firstName": "Chet",
+      "lastName": "Holmgren",
+      "name": "Chet Holmgren"
+    },
+    {
+      "playerId": "1628398",
+      "gamesPlayed": 64,
+      "pointsPerGame": 14.8,
+      "firstName": "Kyle",
+      "lastName": "Kuzma",
+      "name": "Kyle Kuzma"
+    },
+    {
+      "playerId": "1629023",
+      "gamesPlayed": 57,
+      "pointsPerGame": 14.67,
+      "firstName": "P.J.",
+      "lastName": "Washington",
+      "name": "P.J. Washington"
+    },
+    {
+      "playerId": "203932",
+      "gamesPlayed": 51,
+      "pointsPerGame": 14.67,
+      "firstName": "Aaron",
+      "lastName": "Gordon",
+      "name": "Aaron Gordon"
+    },
+    {
+      "playerId": "1630581",
+      "gamesPlayed": 70,
+      "pointsPerGame": 14.6,
+      "firstName": "Josh",
+      "lastName": "Giddey",
+      "name": "Josh Giddey"
+    },
+    {
+      "playerId": "1642264",
+      "gamesPlayed": 79,
+      "pointsPerGame": 14.57,
+      "firstName": "Stephon",
+      "lastName": "Castle",
+      "name": "Stephon Castle"
+    },
+    {
+      "playerId": "1629656",
+      "gamesPlayed": 75,
+      "pointsPerGame": 14.56,
+      "firstName": "Quentin",
+      "lastName": "Grimes",
+      "name": "Quentin Grimes"
+    },
+    {
+      "playerId": "1627751",
+      "gamesPlayed": 57,
+      "pointsPerGame": 14.46,
+      "firstName": "Jakob",
+      "lastName": "Poeltl",
+      "name": "Jakob Poeltl"
+    },
+    {
+      "playerId": "203924",
+      "gamesPlayed": 47,
+      "pointsPerGame": 14.4,
+      "firstName": "Jerami",
+      "lastName": "Grant",
+      "name": "Jerami Grant"
+    },
+    {
+      "playerId": "1629028",
+      "gamesPlayed": 40,
+      "pointsPerGame": 14.4,
+      "firstName": "Deandre",
+      "lastName": "Ayton",
+      "name": "Deandre Ayton"
+    },
+    {
+      "playerId": "1641711",
+      "gamesPlayed": 54,
+      "pointsPerGame": 14.39,
+      "firstName": "Gradey",
+      "lastName": "Dick",
+      "name": "Gradey Dick"
+    },
+    {
+      "playerId": "1630202",
+      "gamesPlayed": 80,
+      "pointsPerGame": 14.3,
+      "firstName": "Payton",
+      "lastName": "Pritchard",
+      "name": "Payton Pritchard"
+    },
+    {
+      "playerId": "1629675",
+      "gamesPlayed": 80,
+      "pointsPerGame": 14.22,
+      "firstName": "Naz",
+      "lastName": "Reid",
+      "name": "Naz Reid"
+    },
+    {
+      "playerId": "1627832",
+      "gamesPlayed": 59,
+      "pointsPerGame": 14.22,
+      "firstName": "Fred",
+      "lastName": "VanVleet",
+      "name": "Fred VanVleet"
+    },
+    {
+      "playerId": "1630700",
+      "gamesPlayed": 75,
+      "pointsPerGame": 14.15,
+      "firstName": "Dyson",
+      "lastName": "Daniels",
+      "name": "Dyson Daniels"
+    },
+    {
+      "playerId": "1641708",
+      "gamesPlayed": 68,
+      "pointsPerGame": 14.1,
+      "firstName": "Amen",
+      "lastName": "Thompson",
+      "name": "Amen Thompson"
+    },
+    {
+      "playerId": "1628415",
+      "gamesPlayed": 74,
+      "pointsPerGame": 14.08,
+      "firstName": "Dillon",
+      "lastName": "Brooks",
+      "name": "Dillon Brooks"
+    },
+    {
+      "playerId": "1630544",
+      "gamesPlayed": 13,
+      "pointsPerGame": 14.08,
+      "firstName": "Tre",
+      "lastName": "Mann",
+      "name": "Tre Mann"
+    },
+    {
+      "playerId": "1642449",
+      "gamesPlayed": 1,
+      "pointsPerGame": 14.0,
+      "firstName": "Tolu",
+      "lastName": "Smith",
+      "name": "Tolu Smith"
+    },
+    {
+      "playerId": "202691",
+      "gamesPlayed": 72,
+      "pointsPerGame": 13.96,
+      "firstName": "Klay",
+      "lastName": "Thompson",
+      "name": "Klay Thompson"
+    },
+    {
+      "playerId": "202699",
+      "gamesPlayed": 73,
+      "pointsPerGame": 13.73,
+      "firstName": "Tobias",
+      "lastName": "Harris",
+      "name": "Tobias Harris"
+    },
+    {
+      "playerId": "1626171",
+      "gamesPlayed": 50,
+      "pointsPerGame": 13.7,
+      "firstName": "Bobby",
+      "lastName": "Portis",
+      "name": "Bobby Portis"
+    },
+    {
+      "playerId": "1628404",
+      "gamesPlayed": 77,
+      "pointsPerGame": 13.65,
+      "firstName": "Josh",
+      "lastName": "Hart",
+      "name": "Josh Hart"
+    },
+    {
+      "playerId": "1628386",
+      "gamesPlayed": 82,
+      "pointsPerGame": 13.45,
+      "firstName": "Jarrett",
+      "lastName": "Allen",
+      "name": "Jarrett Allen"
+    },
+    {
+      "playerId": "1630168",
+      "gamesPlayed": 73,
+      "pointsPerGame": 13.44,
+      "firstName": "Onyeka",
+      "lastName": "Okongwu",
+      "name": "Onyeka Okongwu"
+    },
+    {
+      "playerId": "201566",
+      "gamesPlayed": 75,
+      "pointsPerGame": 13.25,
+      "firstName": "Russell",
+      "lastName": "Westbrook",
+      "name": "Russell Westbrook"
+    },
+    {
+      "playerId": "1630230",
+      "gamesPlayed": 69,
+      "pointsPerGame": 13.25,
+      "firstName": "Naji",
+      "lastName": "Marshall",
+      "name": "Naji Marshall"
+    },
+    {
+      "playerId": "203471",
+      "gamesPlayed": 75,
+      "pointsPerGame": 13.07,
+      "firstName": "Dennis",
+      "lastName": "Schroder",
+      "name": "Dennis Schroder"
+    },
+    {
+      "playerId": "1629060",
+      "gamesPlayed": 58,
+      "pointsPerGame": 13.07,
+      "firstName": "Rui",
+      "lastName": "Hachimura",
+      "name": "Rui Hachimura"
+    },
+    {
+      "playerId": "201572",
+      "gamesPlayed": 80,
+      "pointsPerGame": 12.93,
+      "firstName": "Brook",
+      "lastName": "Lopez",
+      "name": "Brook Lopez"
+    },
+    {
+      "playerId": "1629021",
+      "gamesPlayed": 30,
+      "pointsPerGame": 12.87,
+      "firstName": "Moritz",
+      "lastName": "Wagner",
+      "name": "Moritz Wagner"
+    },
+    {
+      "playerId": "1642259",
+      "gamesPlayed": 66,
+      "pointsPerGame": 12.83,
+      "firstName": "Alex",
+      "lastName": "Sarr",
+      "name": "Alex Sarr"
+    },
+    {
+      "playerId": "1629640",
+      "gamesPlayed": 75,
+      "pointsPerGame": 12.81,
+      "firstName": "Keldon",
+      "lastName": "Johnson",
+      "name": "Keldon Johnson"
+    },
+    {
+      "playerId": "1627763",
+      "gamesPlayed": 24,
+      "pointsPerGame": 12.71,
+      "firstName": "Malcolm",
+      "lastName": "Brogdon",
+      "name": "Malcolm Brogdon"
+    },
+    {
+      "playerId": "1630703",
+      "gamesPlayed": 66,
+      "pointsPerGame": 12.68,
+      "firstName": "Scoot",
+      "lastName": "Henderson",
+      "name": "Scoot Henderson"
+    },
+    {
+      "playerId": "1626156",
+      "gamesPlayed": 58,
+      "pointsPerGame": 12.62,
+      "firstName": "D'Angelo",
+      "lastName": "Russell",
+      "name": "D'Angelo Russell"
+    },
+    {
+      "playerId": "1642258",
+      "gamesPlayed": 75,
+      "pointsPerGame": 12.56,
+      "firstName": "Zaccharie",
+      "lastName": "Risacher",
+      "name": "Zaccharie Risacher"
+    },
+    {
+      "playerId": "1629660",
+      "gamesPlayed": 70,
+      "pointsPerGame": 12.54,
+      "firstName": "Ty",
+      "lastName": "Jerome",
+      "name": "Ty Jerome"
+    },
+    {
+      "playerId": "1630583",
+      "gamesPlayed": 64,
+      "pointsPerGame": 12.53,
+      "firstName": "Santi",
+      "lastName": "Aldama",
+      "name": "Santi Aldama"
+    },
+    {
+      "playerId": "1631099",
+      "gamesPlayed": 76,
+      "pointsPerGame": 12.39,
+      "firstName": "Keegan",
+      "lastName": "Murray",
+      "name": "Keegan Murray"
+    },
+    {
+      "playerId": "1629022",
+      "gamesPlayed": 20,
+      "pointsPerGame": 12.35,
+      "firstName": "Lonnie",
+      "lastName": "Walker IV",
+      "name": "Lonnie Walker IV"
+    },
+    {
+      "playerId": "1641731",
+      "gamesPlayed": 59,
+      "pointsPerGame": 12.32,
+      "firstName": "Bilal",
+      "lastName": "Coulibaly",
+      "name": "Bilal Coulibaly"
+    },
+    {
+      "playerId": "1629655",
+      "gamesPlayed": 57,
+      "pointsPerGame": 12.3,
+      "firstName": "Daniel",
+      "lastName": "Gafford",
+      "name": "Daniel Gafford"
+    },
+    {
+      "playerId": "1630245",
+      "gamesPlayed": 46,
+      "pointsPerGame": 12.3,
+      "firstName": "Ayo",
+      "lastName": "Dosunmu",
+      "name": "Ayo Dosunmu"
+    },
+    {
+      "playerId": "203084",
+      "gamesPlayed": 80,
+      "pointsPerGame": 12.25,
+      "firstName": "Harrison",
+      "lastName": "Barnes",
+      "name": "Harrison Barnes"
+    },
+    {
+      "playerId": "1631095",
+      "gamesPlayed": 57,
+      "pointsPerGame": 12.25,
+      "firstName": "Jabari",
+      "lastName": "Smith Jr.",
+      "name": "Jabari Smith Jr."
+    },
+    {
+      "playerId": "1630183",
+      "gamesPlayed": 82,
+      "pointsPerGame": 12.2,
+      "firstName": "Jaden",
+      "lastName": "McDaniels",
+      "name": "Jaden McDaniels"
+    },
+    {
+      "playerId": "1627747",
+      "gamesPlayed": 64,
+      "pointsPerGame": 12.12,
+      "firstName": "Caris",
+      "lastName": "LeVert",
+      "name": "Caris LeVert"
+    },
+    {
+      "playerId": "1631166",
+      "gamesPlayed": 9,
+      "pointsPerGame": 12.11,
+      "firstName": "Drew",
+      "lastName": "Timme",
+      "name": "Drew Timme"
+    },
+    {
+      "playerId": "1631106",
+      "gamesPlayed": 57,
+      "pointsPerGame": 12.04,
+      "firstName": "Tari",
+      "lastName": "Eason",
+      "name": "Tari Eason"
+    },
+    {
+      "playerId": "203497",
+      "gamesPlayed": 72,
+      "pointsPerGame": 12.03,
+      "firstName": "Rudy",
+      "lastName": "Gobert",
+      "name": "Rudy Gobert"
+    },
+    {
+      "playerId": "1630174",
+      "gamesPlayed": 45,
+      "pointsPerGame": 12.02,
+      "firstName": "Aaron",
+      "lastName": "Nesmith",
+      "name": "Aaron Nesmith"
+    },
+    {
+      "playerId": "203114",
+      "gamesPlayed": 37,
+      "pointsPerGame": 11.89,
+      "firstName": "Khris",
+      "lastName": "Middleton",
+      "name": "Khris Middleton"
+    },
+    {
+      "playerId": "1630598",
+      "gamesPlayed": 77,
+      "pointsPerGame": 11.87,
+      "firstName": "Aaron",
+      "lastName": "Wiggins",
+      "name": "Aaron Wiggins"
+    },
+    {
+      "playerId": "1631105",
+      "gamesPlayed": 78,
+      "pointsPerGame": 11.77,
+      "firstName": "Jalen",
+      "lastName": "Duren",
+      "name": "Jalen Duren"
+    },
+    {
+      "playerId": "1641764",
+      "gamesPlayed": 64,
+      "pointsPerGame": 11.67,
+      "firstName": "Brandin",
+      "lastName": "Podziemski",
+      "name": "Brandin Podziemski"
+    },
+    {
+      "playerId": "1628978",
+      "gamesPlayed": 62,
+      "pointsPerGame": 11.66,
+      "firstName": "Donte",
+      "lastName": "DiVincenzo",
+      "name": "Donte DiVincenzo"
+    },
+    {
+      "playerId": "1630557",
+      "gamesPlayed": 61,
+      "pointsPerGame": 11.56,
+      "firstName": "Corey",
+      "lastName": "Kispert",
+      "name": "Corey Kispert"
+    },
+    {
+      "playerId": "1631110",
+      "gamesPlayed": 53,
+      "pointsPerGame": 11.36,
+      "firstName": "Jeremy",
+      "lastName": "Sochan",
+      "name": "Jeremy Sochan"
+    },
+    {
+      "playerId": "1641739",
+      "gamesPlayed": 78,
+      "pointsPerGame": 11.31,
+      "firstName": "Toumani",
+      "lastName": "Camara",
+      "name": "Toumani Camara"
+    },
+    {
+      "playerId": "1628392",
+      "gamesPlayed": 58,
+      "pointsPerGame": 11.26,
+      "firstName": "Isaiah",
+      "lastName": "Hartenstein",
+      "name": "Isaiah Hartenstein"
+    },
+    {
+      "playerId": "1627741",
+      "gamesPlayed": 82,
+      "pointsPerGame": 11.12,
+      "firstName": "Buddy",
+      "lastName": "Hield",
+      "name": "Buddy Hield"
+    },
+    {
+      "playerId": "1631117",
+      "gamesPlayed": 57,
+      "pointsPerGame": 11.12,
+      "firstName": "Walker",
+      "lastName": "Kessler",
+      "name": "Walker Kessler"
+    },
+    {
+      "playerId": "201950",
+      "gamesPlayed": 62,
+      "pointsPerGame": 11.06,
+      "firstName": "Jrue",
+      "lastName": "Holiday",
+      "name": "Jrue Holiday"
+    },
+    {
+      "playerId": "203915",
+      "gamesPlayed": 79,
+      "pointsPerGame": 11.04,
+      "firstName": "Spencer",
+      "lastName": "Dinwiddie",
+      "name": "Spencer Dinwiddie"
+    },
+    {
+      "playerId": "1629130",
+      "gamesPlayed": 74,
+      "pointsPerGame": 11.04,
+      "firstName": "Duncan",
+      "lastName": "Robinson",
+      "name": "Duncan Robinson"
+    },
+    {
+      "playerId": "1627824",
+      "gamesPlayed": 70,
+      "pointsPerGame": 10.97,
+      "firstName": "Guerschon",
+      "lastName": "Yabusele",
+      "name": "Guerschon Yabusele"
+    },
+    {
+      "playerId": "203501",
+      "gamesPlayed": 77,
+      "pointsPerGame": 10.96,
+      "firstName": "Tim",
+      "lastName": "Hardaway Jr.",
+      "name": "Tim Hardaway Jr."
+    },
+    {
+      "playerId": "1629018",
+      "gamesPlayed": 74,
+      "pointsPerGame": 10.92,
+      "firstName": "Gary",
+      "lastName": "Trent Jr.",
+      "name": "Gary Trent Jr."
+    },
+    {
+      "playerId": "203992",
+      "gamesPlayed": 53,
+      "pointsPerGame": 10.87,
+      "firstName": "Bogdan",
+      "lastName": "Bogdanovic",
+      "name": "Bogdan Bogdanovic"
+    },
+    {
+      "playerId": "1641729",
+      "gamesPlayed": 70,
+      "pointsPerGame": 10.79,
+      "firstName": "Brice",
+      "lastName": "Sensabaugh",
+      "name": "Brice Sensabaugh"
+    },
+    {
+      "playerId": "1641722",
+      "gamesPlayed": 56,
+      "pointsPerGame": 10.79,
+      "firstName": "Jordan",
+      "lastName": "Hawkins",
+      "name": "Jordan Hawkins"
+    },
+    {
+      "playerId": "1631107",
+      "gamesPlayed": 46,
+      "pointsPerGame": 10.74,
+      "firstName": "Nikola",
+      "lastName": "Jovic",
+      "name": "Nikola Jovic"
+    },
+    {
+      "playerId": "1630527",
+      "gamesPlayed": 42,
+      "pointsPerGame": 10.67,
+      "firstName": "Brandon",
+      "lastName": "Boston Jr.",
+      "name": "Brandon Boston Jr."
+    },
+    {
+      "playerId": "1630553",
+      "gamesPlayed": 79,
+      "pointsPerGame": 10.62,
+      "firstName": "Keon",
+      "lastName": "Johnson",
+      "name": "Keon Johnson"
+    },
+    {
+      "playerId": "1628960",
+      "gamesPlayed": 64,
+      "pointsPerGame": 10.62,
+      "firstName": "Grayson",
+      "lastName": "Allen",
+      "name": "Grayson Allen"
+    },
+    {
+      "playerId": "1626179",
+      "gamesPlayed": 64,
+      "pointsPerGame": 10.61,
+      "firstName": "Terry",
+      "lastName": "Rozier",
+      "name": "Terry Rozier"
+    },
+    {
+      "playerId": "1630167",
+      "gamesPlayed": 79,
+      "pointsPerGame": 10.54,
+      "firstName": "Obi",
+      "lastName": "Toppin",
+      "name": "Obi Toppin"
+    },
+    {
+      "playerId": "1630570",
+      "gamesPlayed": 43,
+      "pointsPerGame": 10.47,
+      "firstName": "Trendon",
+      "lastName": "Watford",
+      "name": "Trendon Watford"
+    },
+    {
+      "playerId": "1642377",
+      "gamesPlayed": 78,
+      "pointsPerGame": 10.46,
+      "firstName": "Jaylen",
+      "lastName": "Wells",
+      "name": "Jaylen Wells"
+    },
+    {
+      "playerId": "1630534",
+      "gamesPlayed": 64,
+      "pointsPerGame": 10.42,
+      "firstName": "Ochai",
+      "lastName": "Agbaji",
+      "name": "Ochai Agbaji"
+    },
+    {
+      "playerId": "202685",
+      "gamesPlayed": 81,
+      "pointsPerGame": 10.41,
+      "firstName": "Jonas",
+      "lastName": "Valanciunas",
+      "name": "Jonas Valanciunas"
+    },
+    {
+      "playerId": "1629684",
+      "gamesPlayed": 16,
+      "pointsPerGame": 10.38,
+      "firstName": "Grant",
+      "lastName": "Williams",
+      "name": "Grant Williams"
+    },
+    {
+      "playerId": "1629651",
+      "gamesPlayed": 70,
+      "pointsPerGame": 10.34,
+      "firstName": "Nic",
+      "lastName": "Claxton",
+      "name": "Nic Claxton"
+    },
+    {
+      "playerId": "1630631",
+      "gamesPlayed": 56,
+      "pointsPerGame": 10.34,
+      "firstName": "Jose",
+      "lastName": "Alvarado",
+      "name": "Jose Alvarado"
+    },
+    {
+      "playerId": "1629001",
+      "gamesPlayed": 6,
+      "pointsPerGame": 10.33,
+      "firstName": "De'Anthony",
+      "lastName": "Melton",
+      "name": "De'Anthony Melton"
+    },
+    {
+      "playerId": "1630529",
+      "gamesPlayed": 20,
+      "pointsPerGame": 10.25,
+      "firstName": "Herbert",
+      "lastName": "Jones",
+      "name": "Herbert Jones"
+    },
+    {
+      "playerId": "1626145",
+      "gamesPlayed": 81,
+      "pointsPerGame": 10.23,
+      "firstName": "Tyus",
+      "lastName": "Jones",
+      "name": "Tyus Jones"
+    },
+    {
+      "playerId": "1630198",
+      "gamesPlayed": 75,
+      "pointsPerGame": 10.17,
+      "firstName": "Isaiah",
+      "lastName": "Joe",
+      "name": "Isaiah Joe"
+    },
+    {
+      "playerId": "1629645",
+      "gamesPlayed": 74,
+      "pointsPerGame": 10.15,
+      "firstName": "Kevin",
+      "lastName": "Porter Jr.",
+      "name": "Kevin Porter Jr."
+    },
+    {
+      "playerId": "1627884",
+      "gamesPlayed": 76,
+      "pointsPerGame": 10.12,
+      "firstName": "Derrick",
+      "lastName": "Jones Jr.",
+      "name": "Derrick Jones Jr."
+    },
+    {
+      "playerId": "1642348",
+      "gamesPlayed": 44,
+      "pointsPerGame": 10.11,
+      "firstName": "Justin",
+      "lastName": "Edwards",
+      "name": "Justin Edwards"
+    },
+    {
+      "playerId": "1641709",
+      "gamesPlayed": 59,
+      "pointsPerGame": 10.07,
+      "firstName": "Ausar",
+      "lastName": "Thompson",
+      "name": "Ausar Thompson"
+    },
+    {
+      "playerId": "1629614",
+      "gamesPlayed": 65,
+      "pointsPerGame": 10.05,
+      "firstName": "Andrew",
+      "lastName": "Nembhard",
+      "name": "Andrew Nembhard"
+    },
+    {
+      "playerId": "1629652",
+      "gamesPlayed": 72,
+      "pointsPerGame": 10.04,
+      "firstName": "Luguentz",
+      "lastName": "Dort",
+      "name": "Luguentz Dort"
+    },
+    {
+      "playerId": "1628449",
+      "gamesPlayed": 50,
+      "pointsPerGame": 10.04,
+      "firstName": "Chris",
+      "lastName": "Boucher",
+      "name": "Chris Boucher"
+    },
+    {
+      "playerId": "1630533",
+      "gamesPlayed": 63,
+      "pointsPerGame": 10.03,
+      "firstName": "Ziaire",
+      "lastName": "Williams",
+      "name": "Ziaire Williams"
+    },
+    {
+      "playerId": "1630590",
+      "gamesPlayed": 78,
+      "pointsPerGame": 9.96,
+      "firstName": "Scotty",
+      "lastName": "Pippen Jr.",
+      "name": "Scotty Pippen Jr."
+    },
+    {
+      "playerId": "1627777",
+      "gamesPlayed": 79,
+      "pointsPerGame": 9.92,
+      "firstName": "Georges",
+      "lastName": "Niang",
+      "name": "Georges Niang"
+    },
+    {
+      "playerId": "1631232",
+      "gamesPlayed": 13,
+      "pointsPerGame": 9.92,
+      "firstName": "Keion",
+      "lastName": "Brooks Jr.",
+      "name": "Keion Brooks Jr."
+    },
+    {
+      "playerId": "1642267",
+      "gamesPlayed": 81,
+      "pointsPerGame": 9.89,
+      "firstName": "Bub",
+      "lastName": "Carrington",
+      "name": "Bub Carrington"
+    },
+    {
+      "playerId": "1630577",
+      "gamesPlayed": 80,
+      "pointsPerGame": 9.88,
+      "firstName": "Julian",
+      "lastName": "Champagnie",
+      "name": "Julian Champagnie"
+    },
+    {
+      "playerId": "1628989",
+      "gamesPlayed": 69,
+      "pointsPerGame": 9.87,
+      "firstName": "Kevin",
+      "lastName": "Huerter",
+      "name": "Kevin Huerter"
+    },
+    {
+      "playerId": "1641733",
+      "gamesPlayed": 58,
+      "pointsPerGame": 9.83,
+      "firstName": "Nick",
+      "lastName": "Smith Jr.",
+      "name": "Nick Smith Jr."
+    },
+    {
+      "playerId": "1630541",
+      "gamesPlayed": 74,
+      "pointsPerGame": 9.78,
+      "firstName": "Moses",
+      "lastName": "Moody",
+      "name": "Moses Moody"
+    },
+    {
+      "playerId": "1629599",
+      "gamesPlayed": 71,
+      "pointsPerGame": 9.68,
+      "firstName": "Amir",
+      "lastName": "Coffey",
+      "name": "Amir Coffey"
+    },
+    {
+      "playerId": "1641710",
+      "gamesPlayed": 76,
+      "pointsPerGame": 9.63,
+      "firstName": "Anthony",
+      "lastName": "Black",
+      "name": "Anthony Black"
+    },
+    {
+      "playerId": "1631108",
+      "gamesPlayed": 78,
+      "pointsPerGame": 9.6,
+      "firstName": "Max",
+      "lastName": "Christie",
+      "name": "Max Christie"
+    },
+    {
+      "playerId": "1630540",
+      "gamesPlayed": 64,
+      "pointsPerGame": 9.55,
+      "firstName": "Miles",
+      "lastName": "McBride",
+      "name": "Miles McBride"
+    },
+    {
+      "playerId": "1641787",
+      "gamesPlayed": 28,
+      "pointsPerGame": 9.54,
+      "firstName": "Tosan",
+      "lastName": "Evbuomwan",
+      "name": "Tosan Evbuomwan"
+    },
+    {
+      "playerId": "1641715",
+      "gamesPlayed": 50,
+      "pointsPerGame": 9.5,
+      "firstName": "Cam",
+      "lastName": "Whitmore",
+      "name": "Cam Whitmore"
+    },
+    {
+      "playerId": "1630592",
+      "gamesPlayed": 79,
+      "pointsPerGame": 9.48,
+      "firstName": "Jalen",
+      "lastName": "Wilson",
+      "name": "Jalen Wilson"
+    },
+    {
+      "playerId": "1629638",
+      "gamesPlayed": 82,
+      "pointsPerGame": 9.43,
+      "firstName": "Nickeil",
+      "lastName": "Alexander-Walker",
+      "name": "Nickeil Alexander-Walker"
+    },
+    {
+      "playerId": "1642271",
+      "gamesPlayed": 71,
+      "pointsPerGame": 9.42,
+      "firstName": "Kyle",
+      "lastName": "Filipowski",
+      "name": "Kyle Filipowski"
+    },
+    {
+      "playerId": "1629622",
+      "gamesPlayed": 50,
+      "pointsPerGame": 9.42,
+      "firstName": "Max",
+      "lastName": "Strus",
+      "name": "Max Strus"
+    },
+    {
+      "playerId": "1641744",
+      "gamesPlayed": 65,
+      "pointsPerGame": 9.35,
+      "firstName": "Zach",
+      "lastName": "Edey",
+      "name": "Zach Edey"
+    },
+    {
+      "playerId": "1642276",
+      "gamesPlayed": 64,
+      "pointsPerGame": 9.3,
+      "firstName": "Kel'el",
+      "lastName": "Ware",
+      "name": "Kel'el Ware"
+    },
+    {
+      "playerId": "1630175",
+      "gamesPlayed": 65,
+      "pointsPerGame": 9.29,
+      "firstName": "Cole",
+      "lastName": "Anthony",
+      "name": "Cole Anthony"
+    },
+    {
+      "playerId": "1630208",
+      "gamesPlayed": 57,
+      "pointsPerGame": 9.28,
+      "firstName": "Nick",
+      "lastName": "Richards",
+      "name": "Nick Richards"
+    },
+    {
+      "playerId": "203935",
+      "gamesPlayed": 33,
+      "pointsPerGame": 9.24,
+      "firstName": "Marcus",
+      "lastName": "Smart",
+      "name": "Marcus Smart"
+    },
+    {
+      "playerId": "1641774",
+      "gamesPlayed": 34,
+      "pointsPerGame": 9.21,
+      "firstName": "Tristan",
+      "lastName": "Vukcevic",
+      "name": "Tristan Vukcevic"
+    },
+    {
+      "playerId": "203994",
+      "gamesPlayed": 49,
+      "pointsPerGame": 9.16,
+      "firstName": "Jusuf",
+      "lastName": "Nurkic",
+      "name": "Jusuf Nurkic"
+    },
+    {
+      "playerId": "1641730",
+      "gamesPlayed": 46,
+      "pointsPerGame": 9.13,
+      "firstName": "Noah",
+      "lastName": "Clowney",
+      "name": "Noah Clowney"
+    },
+    {
+      "playerId": "204456",
+      "gamesPlayed": 79,
+      "pointsPerGame": 9.11,
+      "firstName": "T.J.",
+      "lastName": "McConnell",
+      "name": "T.J. McConnell"
+    },
+    {
+      "playerId": "1628976",
+      "gamesPlayed": 66,
+      "pointsPerGame": 9.09,
+      "firstName": "Wendell",
+      "lastName": "Carter Jr.",
+      "name": "Wendell Carter Jr."
+    },
+    {
+      "playerId": "1642261",
+      "gamesPlayed": 76,
+      "pointsPerGame": 9.08,
+      "firstName": "Dalton",
+      "lastName": "Knecht",
+      "name": "Dalton Knecht"
+    },
+    {
+      "playerId": "1630639",
+      "gamesPlayed": 26,
+      "pointsPerGame": 9.08,
+      "firstName": "A.J.",
+      "lastName": "Lawson",
+      "name": "A.J. Lawson"
+    },
+    {
+      "playerId": "1626220",
+      "gamesPlayed": 75,
+      "pointsPerGame": 9.07,
+      "firstName": "Royce",
+      "lastName": "O'Neale",
+      "name": "Royce O'Neale"
+    },
+    {
+      "playerId": "1631124",
+      "gamesPlayed": 65,
+      "pointsPerGame": 9.05,
+      "firstName": "Julian",
+      "lastName": "Strawther",
+      "name": "Julian Strawther"
+    },
+    {
+      "playerId": "1630215",
+      "gamesPlayed": 60,
+      "pointsPerGame": 9.02,
+      "firstName": "Jared",
+      "lastName": "Butler",
+      "name": "Jared Butler"
+    },
+    {
+      "playerId": "203110",
+      "gamesPlayed": 68,
+      "pointsPerGame": 9.01,
+      "firstName": "Draymond",
+      "lastName": "Green",
+      "name": "Draymond Green"
+    },
+    {
+      "playerId": "1630165",
+      "gamesPlayed": 6,
+      "pointsPerGame": 9.0,
+      "firstName": "Killian",
+      "lastName": "Hayes",
+      "name": "Killian Hayes"
+    },
+    {
+      "playerId": "1642274",
+      "gamesPlayed": 72,
+      "pointsPerGame": 8.99,
+      "firstName": "Yves",
+      "lastName": "Missi",
+      "name": "Yves Missi"
+    },
+    {
+      "playerId": "1630172",
+      "gamesPlayed": 63,
+      "pointsPerGame": 8.98,
+      "firstName": "Patrick",
+      "lastName": "Williams",
+      "name": "Patrick Williams"
+    },
+    {
+      "playerId": "201143",
+      "gamesPlayed": 60,
+      "pointsPerGame": 8.97,
+      "firstName": "Al",
+      "lastName": "Horford",
+      "name": "Al Horford"
+    },
+    {
+      "playerId": "1628379",
+      "gamesPlayed": 64,
+      "pointsPerGame": 8.92,
+      "firstName": "Luke",
+      "lastName": "Kennard",
+      "name": "Luke Kennard"
+    },
+    {
+      "playerId": "1630548",
+      "gamesPlayed": 63,
+      "pointsPerGame": 8.92,
+      "firstName": "Johnny",
+      "lastName": "Juzang",
+      "name": "Johnny Juzang"
+    },
+    {
+      "playerId": "203991",
+      "gamesPlayed": 55,
+      "pointsPerGame": 8.87,
+      "firstName": "Clint",
+      "lastName": "Capela",
+      "name": "Clint Capela"
+    },
+    {
+      "playerId": "101108",
+      "gamesPlayed": 80,
+      "pointsPerGame": 8.8,
+      "firstName": "Chris",
+      "lastName": "Paul",
+      "name": "Chris Paul"
+    },
+    {
+      "playerId": "1629004",
+      "gamesPlayed": 38,
+      "pointsPerGame": 8.79,
+      "firstName": "Svi",
+      "lastName": "Mykhailiuk",
+      "name": "Svi Mykhailiuk"
+    },
+    {
+      "playerId": "1630551",
+      "gamesPlayed": 62,
+      "pointsPerGame": 8.77,
+      "firstName": "Justin",
+      "lastName": "Champagnie",
+      "name": "Justin Champagnie"
+    },
+    {
+      "playerId": "203482",
+      "gamesPlayed": 44,
+      "pointsPerGame": 8.73,
+      "firstName": "Kelly",
+      "lastName": "Olynyk",
+      "name": "Kelly Olynyk"
+    },
+    {
+      "playerId": "1631213",
+      "gamesPlayed": 60,
+      "pointsPerGame": 8.72,
+      "firstName": "Tyrese",
+      "lastName": "Martin",
+      "name": "Tyrese Martin"
+    },
+    {
+      "playerId": "1641726",
+      "gamesPlayed": 36,
+      "pointsPerGame": 8.72,
+      "firstName": "Dereck",
+      "lastName": "Lively II",
+      "name": "Dereck Lively II"
+    },
+    {
+      "playerId": "1630702",
+      "gamesPlayed": 57,
+      "pointsPerGame": 8.7,
+      "firstName": "Jaden",
+      "lastName": "Hardy",
+      "name": "Jaden Hardy"
+    },
+    {
+      "playerId": "203957",
+      "gamesPlayed": 20,
+      "pointsPerGame": 8.7,
+      "firstName": "Dante",
+      "lastName": "Exum",
+      "name": "Dante Exum"
+    },
+    {
+      "playerId": "1642273",
+      "gamesPlayed": 68,
+      "pointsPerGame": 8.68,
+      "firstName": "Kyshawn",
+      "lastName": "George",
+      "name": "Kyshawn George"
+    },
+    {
+      "playerId": "1629052",
+      "gamesPlayed": 6,
+      "pointsPerGame": 8.67,
+      "firstName": "Oshae",
+      "lastName": "Brissett",
+      "name": "Oshae Brissett"
+    },
+    {
+      "playerId": "1631170",
+      "gamesPlayed": 66,
+      "pointsPerGame": 8.64,
+      "firstName": "Jaime",
+      "lastName": "Jaquez Jr.",
+      "name": "Jaime Jaquez Jr."
+    },
+    {
+      "playerId": "1642266",
+      "gamesPlayed": 52,
+      "pointsPerGame": 8.63,
+      "firstName": "Ja'Kobe",
+      "lastName": "Walter",
+      "name": "Ja'Kobe Walter"
+    },
+    {
+      "playerId": "1641824",
+      "gamesPlayed": 80,
+      "pointsPerGame": 8.6,
+      "firstName": "Matas",
+      "lastName": "Buzelis",
+      "name": "Matas Buzelis"
+    },
+    {
+      "playerId": "1626204",
+      "gamesPlayed": 23,
+      "pointsPerGame": 8.57,
+      "firstName": "Larry",
+      "lastName": "Nance Jr.",
+      "name": "Larry Nance Jr."
+    },
+    {
+      "playerId": "1642268",
+      "gamesPlayed": 70,
+      "pointsPerGame": 8.56,
+      "firstName": "Isaiah",
+      "lastName": "Collier",
+      "name": "Isaiah Collier"
+    },
+    {
+      "playerId": "1627827",
+      "gamesPlayed": 61,
+      "pointsPerGame": 8.56,
+      "firstName": "Dorian",
+      "lastName": "Finney-Smith",
+      "name": "Dorian Finney-Smith"
+    },
+    {
+      "playerId": "203484",
+      "gamesPlayed": 75,
+      "pointsPerGame": 8.55,
+      "firstName": "Kentavious",
+      "lastName": "Caldwell-Pope",
+      "name": "Kentavious Caldwell-Pope"
+    },
+    {
+      "playerId": "1630573",
+      "gamesPlayed": 71,
+      "pointsPerGame": 8.52,
+      "firstName": "Sam",
+      "lastName": "Hauser",
+      "name": "Sam Hauser"
+    },
+    {
+      "playerId": "1631197",
+      "gamesPlayed": 14,
+      "pointsPerGame": 8.43,
+      "firstName": "Jared",
+      "lastName": "Rhoden",
+      "name": "Jared Rhoden"
+    },
+    {
+      "playerId": "1629669",
+      "gamesPlayed": 8,
+      "pointsPerGame": 8.38,
+      "firstName": "Jaylen",
+      "lastName": "Nowell",
+      "name": "Jaylen Nowell"
+    },
+    {
+      "playerId": "1630625",
+      "gamesPlayed": 67,
+      "pointsPerGame": 8.34,
+      "firstName": "Dalano",
+      "lastName": "Banton",
+      "name": "Dalano Banton"
+    },
+    {
+      "playerId": "1630314",
+      "gamesPlayed": 33,
+      "pointsPerGame": 8.33,
+      "firstName": "Brandon",
+      "lastName": "Williams",
+      "name": "Brandon Williams"
+    },
+    {
+      "playerId": "1631165",
+      "gamesPlayed": 80,
+      "pointsPerGame": 8.32,
+      "firstName": "Keon",
+      "lastName": "Ellis",
+      "name": "Keon Ellis"
+    },
+    {
+      "playerId": "1641717",
+      "gamesPlayed": 69,
+      "pointsPerGame": 8.3,
+      "firstName": "Cason",
+      "lastName": "Wallace",
+      "name": "Cason Wallace"
+    },
+    {
+      "playerId": "1629634",
+      "gamesPlayed": 63,
+      "pointsPerGame": 8.27,
+      "firstName": "Brandon",
+      "lastName": "Clarke",
+      "name": "Brandon Clarke"
+    },
+    {
+      "playerId": "1627752",
+      "gamesPlayed": 80,
+      "pointsPerGame": 8.24,
+      "firstName": "Taurean",
+      "lastName": "Prince",
+      "name": "Taurean Prince"
+    },
+    {
+      "playerId": "201144",
+      "gamesPlayed": 71,
+      "pointsPerGame": 8.2,
+      "firstName": "Mike",
+      "lastName": "Conley",
+      "name": "Mike Conley"
+    },
+    {
+      "playerId": "1630188",
+      "gamesPlayed": 64,
+      "pointsPerGame": 8.19,
+      "firstName": "Jalen",
+      "lastName": "Smith",
+      "name": "Jalen Smith"
+    },
+    {
+      "playerId": "1631212",
+      "gamesPlayed": 68,
+      "pointsPerGame": 8.1,
+      "firstName": "Peyton",
+      "lastName": "Watson",
+      "name": "Peyton Watson"
+    },
+    {
+      "playerId": "1642366",
+      "gamesPlayed": 42,
+      "pointsPerGame": 8.1,
+      "firstName": "Quinten",
+      "lastName": "Post",
+      "name": "Quinten Post"
+    },
+    {
+      "playerId": "1628971",
+      "gamesPlayed": 40,
+      "pointsPerGame": 8.1,
+      "firstName": "Bruce",
+      "lastName": "Brown",
+      "name": "Bruce Brown"
+    },
+    {
+      "playerId": "1630558",
+      "gamesPlayed": 74,
+      "pointsPerGame": 7.95,
+      "firstName": "Davion",
+      "lastName": "Mitchell",
+      "name": "Davion Mitchell"
+    },
+    {
+      "playerId": "1630549",
+      "gamesPlayed": 50,
+      "pointsPerGame": 7.94,
+      "firstName": "Day'Ron",
+      "lastName": "Sharpe",
+      "name": "Day'Ron Sharpe"
+    },
+    {
+      "playerId": "1631131",
+      "gamesPlayed": 13,
+      "pointsPerGame": 7.92,
+      "firstName": "Oscar",
+      "lastName": "Tshiebwe",
+      "name": "Oscar Tshiebwe"
+    },
+    {
+      "playerId": "1628997",
+      "gamesPlayed": 45,
+      "pointsPerGame": 7.91,
+      "firstName": "Caleb",
+      "lastName": "Martin",
+      "name": "Caleb Martin"
+    },
+    {
+      "playerId": "1630623",
+      "gamesPlayed": 7,
+      "pointsPerGame": 7.86,
+      "firstName": "Tyson",
+      "lastName": "Etienne",
+      "name": "Tyson Etienne"
+    },
+    {
+      "playerId": "1642354",
+      "gamesPlayed": 36,
+      "pointsPerGame": 7.83,
+      "firstName": "KJ",
+      "lastName": "Simpson",
+      "name": "KJ Simpson"
+    },
+    {
+      "playerId": "1629611",
+      "gamesPlayed": 67,
+      "pointsPerGame": 7.72,
+      "firstName": "Terance",
+      "lastName": "Mann",
+      "name": "Terance Mann"
+    },
+    {
+      "playerId": "1631255",
+      "gamesPlayed": 41,
+      "pointsPerGame": 7.66,
+      "firstName": "Karlo",
+      "lastName": "Matkovic",
+      "name": "Karlo Matkovic"
+    },
+    {
+      "playerId": "1628366",
+      "gamesPlayed": 35,
+      "pointsPerGame": 7.63,
+      "firstName": "Lonzo",
+      "lastName": "Ball",
+      "name": "Lonzo Ball"
+    },
+    {
+      "playerId": "1629726",
+      "gamesPlayed": 46,
+      "pointsPerGame": 7.61,
+      "firstName": "Garrison",
+      "lastName": "Mathews",
+      "name": "Garrison Mathews"
+    },
+    {
+      "playerId": "1630182",
+      "gamesPlayed": 66,
+      "pointsPerGame": 7.48,
+      "firstName": "Josh",
+      "lastName": "Green",
+      "name": "Josh Green"
+    },
+    {
+      "playerId": "1629680",
+      "gamesPlayed": 15,
+      "pointsPerGame": 7.47,
+      "firstName": "Matisse",
+      "lastName": "Thybulle",
+      "name": "Matisse Thybulle"
+    },
+    {
+      "playerId": "1631260",
+      "gamesPlayed": 73,
+      "pointsPerGame": 7.45,
+      "firstName": "AJ",
+      "lastName": "Green",
+      "name": "AJ Green"
+    },
+    {
+      "playerId": "1626158",
+      "gamesPlayed": 31,
+      "pointsPerGame": 7.42,
+      "firstName": "Richaun",
+      "lastName": "Holmes",
+      "name": "Richaun Holmes"
+    },
+    {
+      "playerId": "203083",
+      "gamesPlayed": 40,
+      "pointsPerGame": 7.33,
+      "firstName": "Andre",
+      "lastName": "Drummond",
+      "name": "Andre Drummond"
+    },
+    {
+      "playerId": "1641741",
+      "gamesPlayed": 73,
+      "pointsPerGame": 7.29,
+      "firstName": "Ricky",
+      "lastName": "Council IV",
+      "name": "Ricky Council IV"
+    },
+    {
+      "playerId": "1629048",
+      "gamesPlayed": 68,
+      "pointsPerGame": 7.29,
+      "firstName": "ga",
+      "lastName": "Bitadze",
+      "name": "ga Bitadze"
+    },
+    {
+      "playerId": "202692",
+      "gamesPlayed": 49,
+      "pointsPerGame": 7.27,
+      "firstName": "Alec",
+      "lastName": "Burks",
+      "name": "Alec Burks"
+    },
+    {
+      "playerId": "1641878",
+      "gamesPlayed": 15,
+      "pointsPerGame": 7.27,
+      "firstName": "Damion",
+      "lastName": "Baugh",
+      "name": "Damion Baugh"
+    },
+    {
+      "playerId": "1641772",
+      "gamesPlayed": 5,
+      "pointsPerGame": 7.2,
+      "firstName": "Nae'Qwan",
+      "lastName": "Tomlin",
+      "name": "Nae'Qwan Tomlin"
+    },
+    {
+      "playerId": "1641783",
+      "gamesPlayed": 73,
+      "pointsPerGame": 7.19,
+      "firstName": "Tristan",
+      "lastName": "da Silva",
+      "name": "Tristan da Silva"
+    },
+    {
+      "playerId": "1630241",
+      "gamesPlayed": 71,
+      "pointsPerGame": 7.17,
+      "firstName": "Sam",
+      "lastName": "Merrill",
+      "name": "Sam Merrill"
+    },
+    {
+      "playerId": "1630200",
+      "gamesPlayed": 46,
+      "pointsPerGame": 7.17,
+      "firstName": "Tre",
+      "lastName": "Jones",
+      "name": "Tre Jones"
+    },
+    {
+      "playerId": "1642358",
+      "gamesPlayed": 29,
+      "pointsPerGame": 7.17,
+      "firstName": "AJ",
+      "lastName": "Johnson",
+      "name": "AJ Johnson"
+    },
+    {
+      "playerId": "1631342",
+      "gamesPlayed": 6,
+      "pointsPerGame": 7.17,
+      "firstName": "Daeqwon",
+      "lastName": "Plowden",
+      "name": "Daeqwon Plowden"
+    },
+    {
+      "playerId": "1630249",
+      "gamesPlayed": 56,
+      "pointsPerGame": 7.12,
+      "firstName": "Vit",
+      "lastName": "Krejci",
+      "name": "Vit Krejci"
+    },
+    {
+      "playerId": "1642347",
+      "gamesPlayed": 75,
+      "pointsPerGame": 7.11,
+      "firstName": "Jamal",
+      "lastName": "Shead",
+      "name": "Jamal Shead"
+    },
+    {
+      "playerId": "1642419",
+      "gamesPlayed": 59,
+      "pointsPerGame": 7.1,
+      "firstName": "Jamison",
+      "lastName": "Battle",
+      "name": "Jamison Battle"
+    },
+    {
+      "playerId": "1629006",
+      "gamesPlayed": 40,
+      "pointsPerGame": 7.08,
+      "firstName": "Josh",
+      "lastName": "Okogie",
+      "name": "Josh Okogie"
+    },
+    {
+      "playerId": "1641720",
+      "gamesPlayed": 15,
+      "pointsPerGame": 7.07,
+      "firstName": "Jalen",
+      "lastName": "Hood-Schifino",
+      "name": "Jalen Hood-Schifino"
+    },
+    {
+      "playerId": "1641713",
+      "gamesPlayed": 28,
+      "pointsPerGame": 7.04,
+      "firstName": "GG",
+      "lastName": "Jackson",
+      "name": "GG Jackson"
+    },
+    {
+      "playerId": "1631301",
+      "gamesPlayed": 6,
+      "pointsPerGame": 7.0,
+      "firstName": "Jaylen",
+      "lastName": "Sims",
+      "name": "Jaylen Sims"
+    },
+    {
+      "playerId": "1630543",
+      "gamesPlayed": 5,
+      "pointsPerGame": 7.0,
+      "firstName": "Isaiah",
+      "lastName": "Jackson",
+      "name": "Isaiah Jackson"
+    },
+    {
+      "playerId": "1630585",
+      "gamesPlayed": 3,
+      "pointsPerGame": 7.0,
+      "firstName": "Marcus",
+      "lastName": "Garrett",
+      "name": "Marcus Garrett"
+    },
+    {
+      "playerId": "1627936",
+      "gamesPlayed": 55,
+      "pointsPerGame": 6.98,
+      "firstName": "Alex",
+      "lastName": "Caruso",
+      "name": "Alex Caruso"
+    },
+    {
+      "playerId": "1630288",
+      "gamesPlayed": 41,
+      "pointsPerGame": 6.95,
+      "firstName": "Jeff",
+      "lastName": "Dowtin Jr.",
+      "name": "Jeff Dowtin Jr."
+    },
+    {
+      "playerId": "1626166",
+      "gamesPlayed": 72,
+      "pointsPerGame": 6.94,
+      "firstName": "Cameron",
+      "lastName": "Payne",
+      "name": "Cameron Payne"
+    },
+    {
+      "playerId": "1631222",
+      "gamesPlayed": 66,
+      "pointsPerGame": 6.94,
+      "firstName": "Jake",
+      "lastName": "LaRavia",
+      "name": "Jake LaRavia"
+    },
+    {
+      "playerId": "1642346",
+      "gamesPlayed": 74,
+      "pointsPerGame": 6.91,
+      "firstName": "Ryan",
+      "lastName": "Dunn",
+      "name": "Ryan Dunn"
+    },
+    {
+      "playerId": "1631115",
+      "gamesPlayed": 44,
+      "pointsPerGame": 6.89,
+      "firstName": "Orlando",
+      "lastName": "Robinson",
+      "name": "Orlando Robinson"
+    },
+    {
+      "playerId": "1630643",
+      "gamesPlayed": 64,
+      "pointsPerGame": 6.86,
+      "firstName": "Jay",
+      "lastName": "Huff",
+      "name": "Jay Huff"
+    },
+    {
+      "playerId": "201569",
+      "gamesPlayed": 39,
+      "pointsPerGame": 6.82,
+      "firstName": "Eric",
+      "lastName": "Gordon",
+      "name": "Eric Gordon"
+    },
+    {
+      "playerId": "1629637",
+      "gamesPlayed": 54,
+      "pointsPerGame": 6.78,
+      "firstName": "Jaxson",
+      "lastName": "Hayes",
+      "name": "Jaxson Hayes"
+    },
+    {
+      "playerId": "1629610",
+      "gamesPlayed": 45,
+      "pointsPerGame": 6.78,
+      "firstName": "DaQuan",
+      "lastName": "Jeffries",
+      "name": "DaQuan Jeffries"
+    },
+    {
+      "playerId": "1629626",
+      "gamesPlayed": 36,
+      "pointsPerGame": 6.78,
+      "firstName": "Bol",
+      "lastName": "Bol",
+      "name": "Bol Bol"
+    },
+    {
+      "playerId": "1628998",
+      "gamesPlayed": 53,
+      "pointsPerGame": 6.75,
+      "firstName": "Cody",
+      "lastName": "Martin",
+      "name": "Cody Martin"
+    },
+    {
+      "playerId": "1630542",
+      "gamesPlayed": 10,
+      "pointsPerGame": 6.7,
+      "firstName": "Marcus",
+      "lastName": "Bagley",
+      "name": "Marcus Bagley"
+    },
+    {
+      "playerId": "1630173",
+      "gamesPlayed": 57,
+      "pointsPerGame": 6.65,
+      "firstName": "Precious",
+      "lastName": "Achiuwa",
+      "name": "Precious Achiuwa"
+    },
+    {
+      "playerId": "1631246",
+      "gamesPlayed": 27,
+      "pointsPerGame": 6.63,
+      "firstName": "Vince",
+      "lastName": "Williams Jr.",
+      "name": "Vince Williams Jr."
+    },
+    {
+      "playerId": "203552",
+      "gamesPlayed": 66,
+      "pointsPerGame": 6.58,
+      "firstName": "Seth",
+      "lastName": "Curry",
+      "name": "Seth Curry"
+    },
+    {
+      "playerId": "1631204",
+      "gamesPlayed": 57,
+      "pointsPerGame": 6.58,
+      "firstName": "Marcus",
+      "lastName": "Sasser",
+      "name": "Marcus Sasser"
+    },
+    {
+      "playerId": "1631218",
+      "gamesPlayed": 62,
+      "pointsPerGame": 6.56,
+      "firstName": "Trayce",
+      "lastName": "Jackson-Davis",
+      "name": "Trayce Jackson-Davis"
+    },
+    {
+      "playerId": "1641810",
+      "gamesPlayed": 43,
+      "pointsPerGame": 6.56,
+      "firstName": "Antonio",
+      "lastName": "Reeves",
+      "name": "Antonio Reeves"
+    },
+    {
+      "playerId": "203995",
+      "gamesPlayed": 41,
+      "pointsPerGame": 6.56,
+      "firstName": "Vasilije",
+      "lastName": "Micic",
+      "name": "Vasilije Micic"
+    },
+    {
+      "playerId": "1626168",
+      "gamesPlayed": 69,
+      "pointsPerGame": 6.54,
+      "firstName": "Trey",
+      "lastName": "Lyles",
+      "name": "Trey Lyles"
+    },
+    {
+      "playerId": "1629659",
+      "gamesPlayed": 58,
+      "pointsPerGame": 6.53,
+      "firstName": "Talen",
+      "lastName": "Horton-Tucker",
+      "name": "Talen Horton-Tucker"
+    },
+    {
+      "playerId": "1642270",
+      "gamesPlayed": 67,
+      "pointsPerGame": 6.51,
+      "firstName": "Donovan",
+      "lastName": "Clingan",
+      "name": "Donovan Clingan"
+    },
+    {
+      "playerId": "1628418",
+      "gamesPlayed": 66,
+      "pointsPerGame": 6.5,
+      "firstName": "Thomas",
+      "lastName": "Bryant",
+      "name": "Thomas Bryant"
+    },
+    {
+      "playerId": "1629312",
+      "gamesPlayed": 74,
+      "pointsPerGame": 6.46,
+      "firstName": "Haywood",
+      "lastName": "Highsmith",
+      "name": "Haywood Highsmith"
+    },
+    {
+      "playerId": "1642349",
+      "gamesPlayed": 37,
+      "pointsPerGame": 6.46,
+      "firstName": "Ajay",
+      "lastName": "Mitchell",
+      "name": "Ajay Mitchell"
+    },
+    {
+      "playerId": "1627780",
+      "gamesPlayed": 62,
+      "pointsPerGame": 6.45,
+      "firstName": "Gary",
+      "lastName": "Payton II",
+      "name": "Gary Payton II"
+    },
+    {
+      "playerId": "1641842",
+      "gamesPlayed": 81,
+      "pointsPerGame": 6.44,
+      "firstName": "Ronald",
+      "lastName": "Holland II",
+      "name": "Ronald Holland II"
+    },
+    {
+      "playerId": "1627739",
+      "gamesPlayed": 74,
+      "pointsPerGame": 6.41,
+      "firstName": "Kris",
+      "lastName": "Dunn",
+      "name": "Kris Dunn"
+    },
+    {
+      "playerId": "1630231",
+      "gamesPlayed": 43,
+      "pointsPerGame": 6.37,
+      "firstName": "Kenyon",
+      "lastName": "Martin Jr.",
+      "name": "Kenyon Martin Jr."
+    },
+    {
+      "playerId": "1628380",
+      "gamesPlayed": 64,
+      "pointsPerGame": 6.36,
+      "firstName": "Zach",
+      "lastName": "Collins",
+      "name": "Zach Collins"
+    },
+    {
+      "playerId": "1630526",
+      "gamesPlayed": 65,
+      "pointsPerGame": 6.35,
+      "firstName": "Jeremiah",
+      "lastName": "Robinson-Earl",
+      "name": "Jeremiah Robinson-Earl"
+    },
+    {
+      "playerId": "1629216",
+      "gamesPlayed": 70,
+      "pointsPerGame": 6.33,
+      "firstName": "Gabe",
+      "lastName": "Vincent",
+      "name": "Gabe Vincent"
+    },
+    {
+      "playerId": "1630572",
+      "gamesPlayed": 59,
+      "pointsPerGame": 6.31,
+      "firstName": "Sandro",
+      "lastName": "Mamukelashvili",
+      "name": "Sandro Mamukelashvili"
+    },
+    {
+      "playerId": "1630696",
+      "gamesPlayed": 14,
+      "pointsPerGame": 6.29,
+      "firstName": "Dru",
+      "lastName": "Smith",
+      "name": "Dru Smith"
+    },
+    {
+      "playerId": "1629026",
+      "gamesPlayed": 70,
+      "pointsPerGame": 6.27,
+      "firstName": "Kenrich",
+      "lastName": "Williams",
+      "name": "Kenrich Williams"
+    },
+    {
+      "playerId": "1630538",
+      "gamesPlayed": 24,
+      "pointsPerGame": 6.21,
+      "firstName": "Bones",
+      "lastName": "Hyland",
+      "name": "Bones Hyland"
+    },
+    {
+      "playerId": "1642367",
+      "gamesPlayed": 63,
+      "pointsPerGame": 6.17,
+      "firstName": "Jonathan",
+      "lastName": "Mogbo",
+      "name": "Jonathan Mogbo"
+    },
+    {
+      "playerId": "1641716",
+      "gamesPlayed": 75,
+      "pointsPerGame": 6.15,
+      "firstName": "Jarace",
+      "lastName": "Walker",
+      "name": "Jarace Walker"
+    },
+    {
+      "playerId": "1630171",
+      "gamesPlayed": 55,
+      "pointsPerGame": 6.13,
+      "firstName": "Isaac",
+      "lastName": "Okoro",
+      "name": "Isaac Okoro"
+    },
+    {
+      "playerId": "1631157",
+      "gamesPlayed": 55,
+      "pointsPerGame": 6.09,
+      "firstName": "Ryan",
+      "lastName": "Rollins",
+      "name": "Ryan Rollins"
+    },
+    {
+      "playerId": "1628436",
+      "gamesPlayed": 73,
+      "pointsPerGame": 6.04,
+      "firstName": "Luke",
+      "lastName": "Kornet",
+      "name": "Luke Kornet"
+    },
+    {
+      "playerId": "1630191",
+      "gamesPlayed": 72,
+      "pointsPerGame": 6.04,
+      "firstName": "Isaiah",
+      "lastName": "Stewart",
+      "name": "Isaiah Stewart"
+    },
+    {
+      "playerId": "1631209",
+      "gamesPlayed": 20,
+      "pointsPerGame": 6.0,
+      "firstName": "Isaiah",
+      "lastName": "Wong",
+      "name": "Isaiah Wong"
+    },
+    {
+      "playerId": "1642368",
+      "gamesPlayed": 4,
+      "pointsPerGame": 6.0,
+      "firstName": "N'Faly",
+      "lastName": "Dante",
+      "name": "N'Faly Dante"
+    },
+    {
+      "playerId": "1630600",
+      "gamesPlayed": 1,
+      "pointsPerGame": 6.0,
+      "firstName": "Isaiah",
+      "lastName": "Mobley",
+      "name": "Isaiah Mobley"
+    },
+    {
+      "playerId": "1630164",
+      "gamesPlayed": 1,
+      "pointsPerGame": 6.0,
+      "firstName": "James",
+      "lastName": "Wiseman",
+      "name": "James Wiseman"
+    },
+    {
+      "playerId": "1631323",
+      "gamesPlayed": 75,
+      "pointsPerGame": 5.95,
+      "firstName": "Simone",
+      "lastName": "Fontecchio",
+      "name": "Simone Fontecchio"
+    },
+    {
+      "playerId": "1642275",
+      "gamesPlayed": 59,
+      "pointsPerGame": 5.93,
+      "firstName": "Tidjane",
+      "lastName": "Salaun",
+      "name": "Tidjane Salaun"
+    },
+    {
+      "playerId": "1631119",
+      "gamesPlayed": 47,
+      "pointsPerGame": 5.91,
+      "firstName": "Jaylin",
+      "lastName": "Williams",
+      "name": "Jaylin Williams"
+    },
+    {
+      "playerId": "1631306",
+      "gamesPlayed": 10,
+      "pointsPerGame": 5.9,
+      "firstName": "Cole",
+      "lastName": "Swider",
+      "name": "Cole Swider"
+    },
+    {
+      "playerId": "1629643",
+      "gamesPlayed": 9,
+      "pointsPerGame": 5.89,
+      "firstName": "Chuma",
+      "lastName": "Okeke",
+      "name": "Chuma Okeke"
+    },
+    {
+      "playerId": "1631221",
+      "gamesPlayed": 33,
+      "pointsPerGame": 5.88,
+      "firstName": "Collin",
+      "lastName": "Gillespie",
+      "name": "Collin Gillespie"
+    },
+    {
+      "playerId": "203937",
+      "gamesPlayed": 61,
+      "pointsPerGame": 5.85,
+      "firstName": "Kyle",
+      "lastName": "Anderson",
+      "name": "Kyle Anderson"
+    },
+    {
+      "playerId": "1629650",
+      "gamesPlayed": 13,
+      "pointsPerGame": 5.85,
+      "firstName": "Moses",
+      "lastName": "Brown",
+      "name": "Moses Brown"
+    },
+    {
+      "playerId": "1641737",
+      "gamesPlayed": 58,
+      "pointsPerGame": 5.81,
+      "firstName": "Adem",
+      "lastName": "Bona",
+      "name": "Adem Bona"
+    },
+    {
+      "playerId": "1631243",
+      "gamesPlayed": 32,
+      "pointsPerGame": 5.81,
+      "firstName": "Mouhamed",
+      "lastName": "Gueye",
+      "name": "Mouhamed Gueye"
+    },
+    {
+      "playerId": "1629057",
+      "gamesPlayed": 20,
+      "pointsPerGame": 5.8,
+      "firstName": "Robert",
+      "lastName": "Williams III",
+      "name": "Robert Williams III"
+    },
+    {
+      "playerId": "1631245",
+      "gamesPlayed": 28,
+      "pointsPerGame": 5.79,
+      "firstName": "Quenton",
+      "lastName": "Jackson",
+      "name": "Quenton Jackson"
+    },
+    {
+      "playerId": "1631311",
+      "gamesPlayed": 12,
+      "pointsPerGame": 5.75,
+      "firstName": "Lester",
+      "lastName": "Quinones",
+      "name": "Lester Quinones"
+    },
+    {
+      "playerId": "1629013",
+      "gamesPlayed": 50,
+      "pointsPerGame": 5.72,
+      "firstName": "Landry",
+      "lastName": "Shamet",
+      "name": "Landry Shamet"
+    },
+    {
+      "playerId": "1641727",
+      "gamesPlayed": 20,
+      "pointsPerGame": 5.7,
+      "firstName": "Dariq",
+      "lastName": "Whitehead",
+      "name": "Dariq Whitehead"
+    },
+    {
+      "playerId": "1631217",
+      "gamesPlayed": 70,
+      "pointsPerGame": 5.67,
+      "firstName": "Moussa",
+      "lastName": "Diabate",
+      "name": "Moussa Diabate"
+    },
+    {
+      "playerId": "1629003",
+      "gamesPlayed": 56,
+      "pointsPerGame": 5.59,
+      "firstName": "Shake",
+      "lastName": "Milton",
+      "name": "Shake Milton"
+    },
+    {
+      "playerId": "1628988",
+      "gamesPlayed": 61,
+      "pointsPerGame": 5.44,
+      "firstName": "Aaron",
+      "lastName": "Holiday",
+      "name": "Aaron Holiday"
+    },
+    {
+      "playerId": "1629731",
+      "gamesPlayed": 59,
+      "pointsPerGame": 5.42,
+      "firstName": "Dean",
+      "lastName": "Wade",
+      "name": "Dean Wade"
+    },
+    {
+      "playerId": "201145",
+      "gamesPlayed": 32,
+      "pointsPerGame": 5.38,
+      "firstName": "Jeff",
+      "lastName": "Green",
+      "name": "Jeff Green"
+    },
+    {
+      "playerId": "1628371",
+      "gamesPlayed": 70,
+      "pointsPerGame": 5.37,
+      "firstName": "Jonathan",
+      "lastName": "Isaac",
+      "name": "Jonathan Isaac"
+    },
+    {
+      "playerId": "1630811",
+      "gamesPlayed": 30,
+      "pointsPerGame": 5.37,
+      "firstName": "Keaton",
+      "lastName": "Wallace",
+      "name": "Keaton Wallace"
+    },
+    {
+      "playerId": "1631288",
+      "gamesPlayed": 36,
+      "pointsPerGame": 5.33,
+      "firstName": "Jamal",
+      "lastName": "Cain",
+      "name": "Jamal Cain"
+    },
+    {
+      "playerId": "201567",
+      "gamesPlayed": 23,
+      "pointsPerGame": 5.3,
+      "firstName": "Kevin",
+      "lastName": "Love",
+      "name": "Kevin Love"
+    },
+    {
+      "playerId": "1641723",
+      "gamesPlayed": 10,
+      "pointsPerGame": 5.3,
+      "firstName": "Kobe",
+      "lastName": "Bufkin",
+      "name": "Kobe Bufkin"
+    },
+    {
+      "playerId": "1641767",
+      "gamesPlayed": 63,
+      "pointsPerGame": 5.27,
+      "firstName": "Ben",
+      "lastName": "Sheppard",
+      "name": "Ben Sheppard"
+    },
+    {
+      "playerId": "1631133",
+      "gamesPlayed": 60,
+      "pointsPerGame": 5.22,
+      "firstName": "Jabari",
+      "lastName": "Walker",
+      "name": "Jabari Walker"
+    },
+    {
+      "playerId": "1630692",
+      "gamesPlayed": 28,
+      "pointsPerGame": 5.21,
+      "firstName": "Jordan",
+      "lastName": "Goodwin",
+      "name": "Jordan Goodwin"
+    },
+    {
+      "playerId": "1628420",
+      "gamesPlayed": 45,
+      "pointsPerGame": 5.18,
+      "firstName": "Monte",
+      "lastName": "Morris",
+      "name": "Monte Morris"
+    },
+    {
+      "playerId": "1626192",
+      "gamesPlayed": 42,
+      "pointsPerGame": 5.14,
+      "firstName": "Pat",
+      "lastName": "Connaughton",
+      "name": "Pat Connaughton"
+    },
+    {
+      "playerId": "1627732",
+      "gamesPlayed": 50,
+      "pointsPerGame": 5.12,
+      "firstName": "Ben",
+      "lastName": "Simmons",
+      "name": "Ben Simmons"
+    },
+    {
+      "playerId": "1629011",
+      "gamesPlayed": 17,
+      "pointsPerGame": 5.12,
+      "firstName": "Mitchell",
+      "lastName": "Robinson",
+      "name": "Mitchell Robinson"
+    },
+    {
+      "playerId": "1631103",
+      "gamesPlayed": 46,
+      "pointsPerGame": 5.11,
+      "firstName": "Malaki",
+      "lastName": "Branham",
+      "name": "Malaki Branham"
+    },
+    {
+      "playerId": "1629750",
+      "gamesPlayed": 68,
+      "pointsPerGame": 5.1,
+      "firstName": "Javonte",
+      "lastName": "Green",
+      "name": "Javonte Green"
+    },
+    {
+      "playerId": "1642024",
+      "gamesPlayed": 15,
+      "pointsPerGame": 5.07,
+      "firstName": "Alex",
+      "lastName": "Reese",
+      "name": "Alex Reese"
+    },
+    {
+      "playerId": "1629674",
+      "gamesPlayed": 62,
+      "pointsPerGame": 5.0,
+      "firstName": "Neemias",
+      "lastName": "Queta",
+      "name": "Neemias Queta"
+    },
+    {
+      "playerId": "1631214",
+      "gamesPlayed": 1,
+      "pointsPerGame": 5.0,
+      "firstName": "Alondes",
+      "lastName": "Williams",
+      "name": "Alondes Williams"
+    },
+    {
+      "playerId": "202687",
+      "gamesPlayed": 26,
+      "pointsPerGame": 4.96,
+      "firstName": "Bismack",
+      "lastName": "Biyombo",
+      "name": "Bismack Biyombo"
+    },
+    {
+      "playerId": "1630539",
+      "gamesPlayed": 40,
+      "pointsPerGame": 4.95,
+      "firstName": "Kai",
+      "lastName": "Jones",
+      "name": "Kai Jones"
+    },
+    {
+      "playerId": "1630322",
+      "gamesPlayed": 52,
+      "pointsPerGame": 4.92,
+      "firstName": "Lindy",
+      "lastName": "Waters III",
+      "name": "Lindy Waters III"
+    },
+    {
+      "playerId": "1630243",
+      "gamesPlayed": 31,
+      "pointsPerGame": 4.9,
+      "firstName": "Trevelin",
+      "lastName": "Queen",
+      "name": "Trevelin Queen"
+    },
+    {
+      "playerId": "1629111",
+      "gamesPlayed": 41,
+      "pointsPerGame": 4.78,
+      "firstName": "Jock",
+      "lastName": "Landale",
+      "name": "Jock Landale"
+    },
+    {
+      "playerId": "1630658",
+      "gamesPlayed": 26,
+      "pointsPerGame": 4.73,
+      "firstName": "Colin",
+      "lastName": "Castleton",
+      "name": "Colin Castleton"
+    },
+    {
+      "playerId": "1628396",
+      "gamesPlayed": 13,
+      "pointsPerGame": 4.69,
+      "firstName": "Tony",
+      "lastName": "Bradley",
+      "name": "Tony Bradley"
+    },
+    {
+      "playerId": "1641707",
+      "gamesPlayed": 3,
+      "pointsPerGame": 4.67,
+      "firstName": "Taylor",
+      "lastName": "Hendricks",
+      "name": "Taylor Hendricks"
+    },
+    {
+      "playerId": "1642262",
+      "gamesPlayed": 49,
+      "pointsPerGame": 4.65,
+      "firstName": "Cody",
+      "lastName": "Williams",
+      "name": "Cody Williams"
+    },
+    {
+      "playerId": "1631223",
+      "gamesPlayed": 33,
+      "pointsPerGame": 4.64,
+      "firstName": "David",
+      "lastName": "Roddy",
+      "name": "David Roddy"
+    },
+    {
+      "playerId": "1641763",
+      "gamesPlayed": 79,
+      "pointsPerGame": 4.63,
+      "firstName": "Julian",
+      "lastName": "Phillips",
+      "name": "Julian Phillips"
+    },
+    {
+      "playerId": "1641796",
+      "gamesPlayed": 55,
+      "pointsPerGame": 4.56,
+      "firstName": "Pelle",
+      "lastName": "Larsson",
+      "name": "Pelle Larsson"
+    },
+    {
+      "playerId": "1629234",
+      "gamesPlayed": 60,
+      "pointsPerGame": 4.55,
+      "firstName": "Drew",
+      "lastName": "Eubanks",
+      "name": "Drew Eubanks"
+    },
+    {
+      "playerId": "1626172",
+      "gamesPlayed": 76,
+      "pointsPerGame": 4.53,
+      "firstName": "Kevon",
+      "lastName": "Looney",
+      "name": "Kevon Looney"
+    },
+    {
+      "playerId": "203486",
+      "gamesPlayed": 74,
+      "pointsPerGame": 4.5,
+      "firstName": "Mason",
+      "lastName": "Plumlee",
+      "name": "Mason Plumlee"
+    },
+    {
+      "playerId": "1631207",
+      "gamesPlayed": 73,
+      "pointsPerGame": 4.47,
+      "firstName": "Dalen",
+      "lastName": "Terry",
+      "name": "Dalen Terry"
+    },
+    {
+      "playerId": "1641724",
+      "gamesPlayed": 59,
+      "pointsPerGame": 4.47,
+      "firstName": "Jett",
+      "lastName": "Howard",
+      "name": "Jett Howard"
+    },
+    {
+      "playerId": "1642265",
+      "gamesPlayed": 49,
+      "pointsPerGame": 4.47,
+      "firstName": "Rob",
+      "lastName": "Dillingham",
+      "name": "Rob Dillingham"
+    },
+    {
+      "playerId": "1641798",
+      "gamesPlayed": 15,
+      "pointsPerGame": 4.47,
+      "firstName": "Jaylen",
+      "lastName": "Martin",
+      "name": "Jaylen Martin"
+    },
+    {
+      "playerId": "1642263",
+      "gamesPlayed": 52,
+      "pointsPerGame": 4.4,
+      "firstName": "Reed",
+      "lastName": "Sheppard",
+      "name": "Reed Sheppard"
+    },
+    {
+      "playerId": "202704",
+      "gamesPlayed": 31,
+      "pointsPerGame": 4.39,
+      "firstName": "Reggie",
+      "lastName": "Jackson",
+      "name": "Reggie Jackson"
+    },
+    {
+      "playerId": "1628963",
+      "gamesPlayed": 31,
+      "pointsPerGame": 4.39,
+      "firstName": "Marvin",
+      "lastName": "Bagley III",
+      "name": "Marvin Bagley III"
+    },
+    {
+      "playerId": "1630695",
+      "gamesPlayed": 37,
+      "pointsPerGame": 4.38,
+      "firstName": "Micah",
+      "lastName": "Potter",
+      "name": "Micah Potter"
+    },
+    {
+      "playerId": "1629646",
+      "gamesPlayed": 36,
+      "pointsPerGame": 4.36,
+      "firstName": "Charles",
+      "lastName": "Bassey",
+      "name": "Charles Bassey"
+    },
+    {
+      "playerId": "1630205",
+      "gamesPlayed": 17,
+      "pointsPerGame": 4.35,
+      "firstName": "Lamar",
+      "lastName": "Stevens",
+      "name": "Lamar Stevens"
+    },
+    {
+      "playerId": "1630545",
+      "gamesPlayed": 32,
+      "pointsPerGame": 4.31,
+      "firstName": "Terrence",
+      "lastName": "Shannon Jr.",
+      "name": "Terrence Shannon Jr."
+    },
+    {
+      "playerId": "1628964",
+      "gamesPlayed": 32,
+      "pointsPerGame": 4.31,
+      "firstName": "Mo",
+      "lastName": "Bamba",
+      "name": "Mo Bamba"
+    },
+    {
+      "playerId": "1628464",
+      "gamesPlayed": 38,
+      "pointsPerGame": 4.26,
+      "firstName": "Daniel",
+      "lastName": "Theis",
+      "name": "Daniel Theis"
+    },
+    {
+      "playerId": "1628975",
+      "gamesPlayed": 36,
+      "pointsPerGame": 4.25,
+      "firstName": "Jevon",
+      "lastName": "Carter",
+      "name": "Jevon Carter"
+    },
+    {
+      "playerId": "1642285",
+      "gamesPlayed": 25,
+      "pointsPerGame": 4.24,
+      "firstName": "Cam",
+      "lastName": "Spencer",
+      "name": "Cam Spencer"
+    },
+    {
+      "playerId": "1631230",
+      "gamesPlayed": 35,
+      "pointsPerGame": 4.23,
+      "firstName": "Dominick",
+      "lastName": "Barlow",
+      "name": "Dominick Barlow"
+    },
+    {
+      "playerId": "1641871",
+      "gamesPlayed": 46,
+      "pointsPerGame": 4.22,
+      "firstName": "Duop",
+      "lastName": "Reath",
+      "name": "Duop Reath"
+    },
+    {
+      "playerId": "1630556",
+      "gamesPlayed": 40,
+      "pointsPerGame": 4.2,
+      "firstName": "Kessler",
+      "lastName": "Edwards",
+      "name": "Kessler Edwards"
+    },
+    {
+      "playerId": "1642345",
+      "gamesPlayed": 61,
+      "pointsPerGame": 4.18,
+      "firstName": "Oso",
+      "lastName": "Ighodaro",
+      "name": "Oso Ighodaro"
+    },
+    {
+      "playerId": "1629020",
+      "gamesPlayed": 34,
+      "pointsPerGame": 4.18,
+      "firstName": "Jarred",
+      "lastName": "Vanderbilt",
+      "name": "Jarred Vanderbilt"
+    },
+    {
+      "playerId": "1631200",
+      "gamesPlayed": 69,
+      "pointsPerGame": 4.16,
+      "firstName": "Kris",
+      "lastName": "Murray",
+      "name": "Kris Murray"
+    },
+    {
+      "playerId": "1628470",
+      "gamesPlayed": 26,
+      "pointsPerGame": 4.15,
+      "firstName": "Torrey",
+      "lastName": "Craig",
+      "name": "Torrey Craig"
+    },
+    {
+      "playerId": "1641721",
+      "gamesPlayed": 28,
+      "pointsPerGame": 4.14,
+      "firstName": "Maxwell",
+      "lastName": "Lewis",
+      "name": "Maxwell Lewis"
+    },
+    {
+      "playerId": "1641757",
+      "gamesPlayed": 37,
+      "pointsPerGame": 4.11,
+      "firstName": "Jordan",
+      "lastName": "Miller",
+      "name": "Jordan Miller"
+    },
+    {
+      "playerId": "1630194",
+      "gamesPlayed": 45,
+      "pointsPerGame": 4.09,
+      "firstName": "Paul",
+      "lastName": "Reed",
+      "name": "Paul Reed"
+    },
+    {
+      "playerId": "1629618",
+      "gamesPlayed": 49,
+      "pointsPerGame": 4.08,
+      "firstName": "Jalen",
+      "lastName": "Pickett",
+      "name": "Jalen Pickett"
+    },
+    {
+      "playerId": "1641740",
+      "gamesPlayed": 40,
+      "pointsPerGame": 4.08,
+      "firstName": "Jaylen",
+      "lastName": "Clark",
+      "name": "Jaylen Clark"
+    },
+    {
+      "playerId": "1631111",
+      "gamesPlayed": 35,
+      "pointsPerGame": 4.06,
+      "firstName": "Wendell",
+      "lastName": "Moore Jr.",
+      "name": "Wendell Moore Jr."
+    },
+    {
+      "playerId": "1630611",
+      "gamesPlayed": 56,
+      "pointsPerGame": 4.05,
+      "firstName": "Gui",
+      "lastName": "Santos",
+      "name": "Gui Santos"
+    },
+    {
+      "playerId": "201587",
+      "gamesPlayed": 77,
+      "pointsPerGame": 4.03,
+      "firstName": "Nicolas",
+      "lastName": "Batum",
+      "name": "Nicolas Batum"
+    },
+    {
+      "playerId": "1626196",
+      "gamesPlayed": 8,
+      "pointsPerGame": 4.0,
+      "firstName": "Josh",
+      "lastName": "Richardson",
+      "name": "Josh Richardson"
+    },
+    {
+      "playerId": "1630201",
+      "gamesPlayed": 4,
+      "pointsPerGame": 4.0,
+      "firstName": "Malachi",
+      "lastName": "Flynn",
+      "name": "Malachi Flynn"
+    },
+    {
+      "playerId": "1631199",
+      "gamesPlayed": 1,
+      "pointsPerGame": 4.0,
+      "firstName": "Ron",
+      "lastName": "Harper Jr.",
+      "name": "Ron Harper Jr."
+    },
+    {
+      "playerId": "1631216",
+      "gamesPlayed": 57,
+      "pointsPerGame": 3.98,
+      "firstName": "Caleb",
+      "lastName": "Houstan",
+      "name": "Caleb Houstan"
+    },
+    {
+      "playerId": "203500",
+      "gamesPlayed": 57,
+      "pointsPerGame": 3.95,
+      "firstName": "Steven",
+      "lastName": "Adams",
+      "name": "Steven Adams"
+    },
+    {
+      "playerId": "200768",
+      "gamesPlayed": 35,
+      "pointsPerGame": 3.94,
+      "firstName": "Kyle",
+      "lastName": "Lowry",
+      "name": "Kyle Lowry"
+    },
+    {
+      "playerId": "1641765",
+      "gamesPlayed": 52,
+      "pointsPerGame": 3.87,
+      "firstName": "Olivier-Maxence",
+      "lastName": "Prosper",
+      "name": "Olivier-Maxence Prosper"
+    },
+    {
+      "playerId": "203901",
+      "gamesPlayed": 22,
+      "pointsPerGame": 3.86,
+      "firstName": "Elfrid",
+      "lastName": "Payton",
+      "name": "Elfrid Payton"
+    },
+    {
+      "playerId": "1631172",
+      "gamesPlayed": 37,
+      "pointsPerGame": 3.84,
+      "firstName": "Ousmane",
+      "lastName": "Dieng",
+      "name": "Ousmane Dieng"
+    },
+    {
+      "playerId": "1642269",
+      "gamesPlayed": 36,
+      "pointsPerGame": 3.83,
+      "firstName": "Devin",
+      "lastName": "Carter",
+      "name": "Devin Carter"
+    },
+    {
+      "playerId": "201988",
+      "gamesPlayed": 28,
+      "pointsPerGame": 3.79,
+      "firstName": "Patty",
+      "lastName": "Mills",
+      "name": "Patty Mills"
+    },
+    {
+      "playerId": "201599",
+      "gamesPlayed": 56,
+      "pointsPerGame": 3.73,
+      "firstName": "DeAndre",
+      "lastName": "Jordan",
+      "name": "DeAndre Jordan"
+    },
+    {
+      "playerId": "202693",
+      "gamesPlayed": 15,
+      "pointsPerGame": 3.73,
+      "firstName": "Markieff",
+      "lastName": "Morris",
+      "name": "Markieff Morris"
+    },
+    {
+      "playerId": "1642382",
+      "gamesPlayed": 33,
+      "pointsPerGame": 3.7,
+      "firstName": "Branden",
+      "lastName": "Carlson",
+      "name": "Branden Carlson"
+    },
+    {
+      "playerId": "1641734",
+      "gamesPlayed": 10,
+      "pointsPerGame": 3.7,
+      "firstName": "Emoni",
+      "lastName": "Bates",
+      "name": "Emoni Bates"
+    },
+    {
+      "playerId": "1641854",
+      "gamesPlayed": 51,
+      "pointsPerGame": 3.69,
+      "firstName": "Craig",
+      "lastName": "Porter Jr.",
+      "name": "Craig Porter Jr."
+    },
+    {
+      "playerId": "1631104",
+      "gamesPlayed": 56,
+      "pointsPerGame": 3.68,
+      "firstName": "Blake",
+      "lastName": "Wesley",
+      "name": "Blake Wesley"
+    },
+    {
+      "playerId": "1642050",
+      "gamesPlayed": 6,
+      "pointsPerGame": 3.67,
+      "firstName": "Jackson",
+      "lastName": "Rowe",
+      "name": "Jackson Rowe"
+    },
+    {
+      "playerId": "1631248",
+      "gamesPlayed": 31,
+      "pointsPerGame": 3.65,
+      "firstName": "Baylor",
+      "lastName": "Scheierman",
+      "name": "Baylor Scheierman"
+    },
+    {
+      "playerId": "1630568",
+      "gamesPlayed": 38,
+      "pointsPerGame": 3.63,
+      "firstName": "Luka",
+      "lastName": "Garza",
+      "name": "Luka Garza"
+    },
+    {
+      "playerId": "1642281",
+      "gamesPlayed": 47,
+      "pointsPerGame": 3.55,
+      "firstName": "Jaylon",
+      "lastName": "Tyson",
+      "name": "Jaylon Tyson"
+    },
+    {
+      "playerId": "203926",
+      "gamesPlayed": 42,
+      "pointsPerGame": 3.5,
+      "firstName": "Doug",
+      "lastName": "McDermott",
+      "name": "Doug McDermott"
+    },
+    {
+      "playerId": "1641732",
+      "gamesPlayed": 38,
+      "pointsPerGame": 3.5,
+      "firstName": "Colby",
+      "lastName": "Jones",
+      "name": "Colby Jones"
+    },
+    {
+      "playerId": "203967",
+      "gamesPlayed": 16,
+      "pointsPerGame": 3.5,
+      "firstName": "Dario",
+      "lastName": "Saric",
+      "name": "Dario Saric"
+    },
+    {
+      "playerId": "202709",
+      "gamesPlayed": 49,
+      "pointsPerGame": 3.49,
+      "firstName": "Cory",
+      "lastName": "Joseph",
+      "name": "Cory Joseph"
+    },
+    {
+      "playerId": "1641748",
+      "gamesPlayed": 67,
+      "pointsPerGame": 3.46,
+      "firstName": "Andre",
+      "lastName": "Jackson Jr.",
+      "name": "Andre Jackson Jr."
+    },
+    {
+      "playerId": "1628981",
+      "gamesPlayed": 17,
+      "pointsPerGame": 3.41,
+      "firstName": "Bruno",
+      "lastName": "Fernando",
+      "name": "Bruno Fernando"
+    },
+    {
+      "playerId": "1631123",
+      "gamesPlayed": 5,
+      "pointsPerGame": 3.4,
+      "firstName": "Jamaree",
+      "lastName": "Bouyea",
+      "name": "Jamaree Bouyea"
+    },
+    {
+      "playerId": "1630256",
+      "gamesPlayed": 51,
+      "pointsPerGame": 3.37,
+      "firstName": "Jae'Sean",
+      "lastName": "Tate",
+      "name": "Jae'Sean Tate"
+    },
+    {
+      "playerId": "1642403",
+      "gamesPlayed": 40,
+      "pointsPerGame": 3.35,
+      "firstName": "Isaac",
+      "lastName": "Jones",
+      "name": "Isaac Jones"
+    },
+    {
+      "playerId": "1627814",
+      "gamesPlayed": 25,
+      "pointsPerGame": 3.32,
+      "firstName": "Damion",
+      "lastName": "Lee",
+      "name": "Damion Lee"
+    },
+    {
+      "playerId": "1630550",
+      "gamesPlayed": 19,
+      "pointsPerGame": 3.32,
+      "firstName": "JT",
+      "lastName": "Thor",
+      "name": "JT Thor"
+    },
+    {
+      "playerId": "1628995",
+      "gamesPlayed": 14,
+      "pointsPerGame": 3.29,
+      "firstName": "Kevin",
+      "lastName": "Knox II",
+      "name": "Kevin Knox II"
+    },
+    {
+      "playerId": "1631466",
+      "gamesPlayed": 20,
+      "pointsPerGame": 3.25,
+      "firstName": "Nate",
+      "lastName": "Williams",
+      "name": "Nate Williams"
+    },
+    {
+      "playerId": "1630192",
+      "gamesPlayed": 57,
+      "pointsPerGame": 3.23,
+      "firstName": "Zeke",
+      "lastName": "Nnaji",
+      "name": "Zeke Nnaji"
+    },
+    {
+      "playerId": "1641989",
+      "gamesPlayed": 10,
+      "pointsPerGame": 3.2,
+      "firstName": "Elijah",
+      "lastName": "Harkless",
+      "name": "Elijah Harkless"
+    },
+    {
+      "playerId": "1629629",
+      "gamesPlayed": 33,
+      "pointsPerGame": 3.18,
+      "firstName": "Cam",
+      "lastName": "Reddish",
+      "name": "Cam Reddish"
+    },
+    {
+      "playerId": "1626153",
+      "gamesPlayed": 40,
+      "pointsPerGame": 3.12,
+      "firstName": "Delon",
+      "lastName": "Wright",
+      "name": "Delon Wright"
+    },
+    {
+      "playerId": "1630283",
+      "gamesPlayed": 11,
+      "pointsPerGame": 3.09,
+      "firstName": "Kylor",
+      "lastName": "Kelley",
+      "name": "Kylor Kelley"
+    },
+    {
+      "playerId": "1628467",
+      "gamesPlayed": 34,
+      "pointsPerGame": 3.03,
+      "firstName": "Maxi",
+      "lastName": "Kleber",
+      "name": "Maxi Kleber"
+    },
+    {
+      "playerId": "203914",
+      "gamesPlayed": 46,
+      "pointsPerGame": 3.0,
+      "firstName": "Gary",
+      "lastName": "Harris",
+      "name": "Gary Harris"
+    },
+    {
+      "playerId": "1631250",
+      "gamesPlayed": 12,
+      "pointsPerGame": 3.0,
+      "firstName": "Pete",
+      "lastName": "Nance",
+      "name": "Pete Nance"
+    },
+    {
+      "playerId": "200782",
+      "gamesPlayed": 3,
+      "pointsPerGame": 3.0,
+      "firstName": "P.J.",
+      "lastName": "Tucker",
+      "name": "P.J. Tucker"
+    },
+    {
+      "playerId": "1631386",
+      "gamesPlayed": 2,
+      "pointsPerGame": 3.0,
+      "firstName": "Taze",
+      "lastName": "Moore",
+      "name": "Taze Moore"
+    },
+    {
+      "playerId": "1641712",
+      "gamesPlayed": 52,
+      "pointsPerGame": 2.98,
+      "firstName": "Rayan",
+      "lastName": "Rupert",
+      "name": "Rayan Rupert"
+    },
+    {
+      "playerId": "1628365",
+      "gamesPlayed": 21,
+      "pointsPerGame": 2.9,
+      "firstName": "Markelle",
+      "lastName": "Fultz",
+      "name": "Markelle Fultz"
+    },
+    {
+      "playerId": "201959",
+      "gamesPlayed": 37,
+      "pointsPerGame": 2.89,
+      "firstName": "Taj",
+      "lastName": "Gibson",
+      "name": "Taj Gibson"
+    },
+    {
+      "playerId": "1641890",
+      "gamesPlayed": 24,
+      "pointsPerGame": 2.79,
+      "firstName": "Tyler",
+      "lastName": "Smith",
+      "name": "Tyler Smith"
+    },
+    {
+      "playerId": "1642484",
+      "gamesPlayed": 11,
+      "pointsPerGame": 2.73,
+      "firstName": "RayJ",
+      "lastName": "Dennis",
+      "name": "RayJ Dennis"
+    },
+    {
+      "playerId": "1642352",
+      "gamesPlayed": 16,
+      "pointsPerGame": 2.69,
+      "firstName": "Keshad",
+      "lastName": "Johnson",
+      "name": "Keshad Johnson"
+    },
+    {
+      "playerId": "1630561",
+      "gamesPlayed": 6,
+      "pointsPerGame": 2.67,
+      "firstName": "David",
+      "lastName": "Duke Jr.",
+      "name": "David Duke Jr."
+    },
+    {
+      "playerId": "1641816",
+      "gamesPlayed": 51,
+      "pointsPerGame": 2.63,
+      "firstName": "Hunter",
+      "lastName": "Tyson",
+      "name": "Hunter Tyson"
+    },
+    {
+      "playerId": "1631169",
+      "gamesPlayed": 46,
+      "pointsPerGame": 2.59,
+      "firstName": "Josh",
+      "lastName": "Minott",
+      "name": "Josh Minott"
+    },
+    {
+      "playerId": "1641736",
+      "gamesPlayed": 36,
+      "pointsPerGame": 2.58,
+      "firstName": "Reece",
+      "lastName": "Beekman",
+      "name": "Reece Beekman"
+    },
+    {
+      "playerId": "203109",
+      "gamesPlayed": 9,
+      "pointsPerGame": 2.56,
+      "firstName": "Jae",
+      "lastName": "Crowder",
+      "name": "Jae Crowder"
+    },
+    {
+      "playerId": "1630531",
+      "gamesPlayed": 43,
+      "pointsPerGame": 2.53,
+      "firstName": "Jaden",
+      "lastName": "Springer",
+      "name": "Jaden Springer"
+    },
+    {
+      "playerId": "1630311",
+      "gamesPlayed": 39,
+      "pointsPerGame": 2.51,
+      "firstName": "Pat",
+      "lastName": "Spencer",
+      "name": "Pat Spencer"
+    },
+    {
+      "playerId": "1641998",
+      "gamesPlayed": 38,
+      "pointsPerGame": 2.5,
+      "firstName": "Trey",
+      "lastName": "Jemison III",
+      "name": "Trey Jemison III"
+    },
+    {
+      "playerId": "1641794",
+      "gamesPlayed": 55,
+      "pointsPerGame": 2.45,
+      "firstName": "Dillon",
+      "lastName": "Jones",
+      "name": "Dillon Jones"
+    },
+    {
+      "playerId": "1629723",
+      "gamesPlayed": 46,
+      "pointsPerGame": 2.43,
+      "firstName": "John",
+      "lastName": "Konchar",
+      "name": "John Konchar"
+    },
+    {
+      "playerId": "1631132",
+      "gamesPlayed": 36,
+      "pointsPerGame": 2.39,
+      "firstName": "Christian",
+      "lastName": "Koloko",
+      "name": "Christian Koloko"
+    },
+    {
+      "playerId": "1630264",
+      "gamesPlayed": 50,
+      "pointsPerGame": 2.38,
+      "firstName": "Anthony",
+      "lastName": "Gill",
+      "name": "Anthony Gill"
+    },
+    {
+      "playerId": "1631098",
+      "gamesPlayed": 34,
+      "pointsPerGame": 2.35,
+      "firstName": "Johnny",
+      "lastName": "Davis",
+      "name": "Johnny Davis"
+    },
+    {
+      "playerId": "1641936",
+      "gamesPlayed": 3,
+      "pointsPerGame": 2.33,
+      "firstName": "Miles",
+      "lastName": "Norris",
+      "name": "Miles Norris"
+    },
+    {
+      "playerId": "1630222",
+      "gamesPlayed": 10,
+      "pointsPerGame": 2.3,
+      "firstName": "Mason",
+      "lastName": "Jones",
+      "name": "Mason Jones"
+    },
+    {
+      "playerId": "1642355",
+      "gamesPlayed": 26,
+      "pointsPerGame": 2.27,
+      "firstName": "Bronny",
+      "lastName": "James",
+      "name": "Bronny James"
+    },
+    {
+      "playerId": "1631116",
+      "gamesPlayed": 24,
+      "pointsPerGame": 2.21,
+      "firstName": "Patrick",
+      "lastName": "Baldwin Jr.",
+      "name": "Patrick Baldwin Jr."
+    },
+    {
+      "playerId": "1630699",
+      "gamesPlayed": 36,
+      "pointsPerGame": 2.19,
+      "firstName": "MarJon",
+      "lastName": "Beauchamp",
+      "name": "MarJon Beauchamp"
+    },
+    {
+      "playerId": "1631102",
+      "gamesPlayed": 16,
+      "pointsPerGame": 2.19,
+      "firstName": "TyTy",
+      "lastName": "Washington Jr.",
+      "name": "TyTy Washington Jr."
+    },
+    {
+      "playerId": "1629162",
+      "gamesPlayed": 45,
+      "pointsPerGame": 2.18,
+      "firstName": "Jordan",
+      "lastName": "McLaughlin",
+      "name": "Jordan McLaughlin"
+    },
+    {
+      "playerId": "1641809",
+      "gamesPlayed": 25,
+      "pointsPerGame": 2.16,
+      "firstName": "Drew",
+      "lastName": "Peterson",
+      "name": "Drew Peterson"
+    },
+    {
+      "playerId": "1630537",
+      "gamesPlayed": 17,
+      "pointsPerGame": 2.12,
+      "firstName": "Chris",
+      "lastName": "Duarte",
+      "name": "Chris Duarte"
+    },
+    {
+      "playerId": "1642402",
+      "gamesPlayed": 22,
+      "pointsPerGame": 2.09,
+      "firstName": "Enrique",
+      "lastName": "Freeman",
+      "name": "Enrique Freeman"
+    },
+    {
+      "playerId": "203939",
+      "gamesPlayed": 55,
+      "pointsPerGame": 2.07,
+      "firstName": "Dwight",
+      "lastName": "Powell",
+      "name": "Dwight Powell"
+    },
+    {
+      "playerId": "1642277",
+      "gamesPlayed": 50,
+      "pointsPerGame": 2.06,
+      "firstName": "Johnny",
+      "lastName": "Furphy",
+      "name": "Johnny Furphy"
+    },
+    {
+      "playerId": "1631120",
+      "gamesPlayed": 16,
+      "pointsPerGame": 2.06,
+      "firstName": "JD",
+      "lastName": "Davison",
+      "name": "JD Davison"
+    },
+    {
+      "playerId": "1630528",
+      "gamesPlayed": 14,
+      "pointsPerGame": 2.0,
+      "firstName": "Josh",
+      "lastName": "Christopher",
+      "name": "Josh Christopher"
+    },
+    {
+      "playerId": "1641766",
+      "gamesPlayed": 4,
+      "pointsPerGame": 2.0,
+      "firstName": "Adama",
+      "lastName": "Sanogo",
+      "name": "Adama Sanogo"
+    },
+    {
+      "playerId": "1642278",
+      "gamesPlayed": 41,
+      "pointsPerGame": 1.98,
+      "firstName": "Tyler",
+      "lastName": "Kolek",
+      "name": "Tyler Kolek"
+    },
+    {
+      "playerId": "1641738",
+      "gamesPlayed": 39,
+      "pointsPerGame": 1.92,
+      "firstName": "Kobe",
+      "lastName": "Brown",
+      "name": "Kobe Brown"
+    },
+    {
+      "playerId": "1630574",
+      "gamesPlayed": 25,
+      "pointsPerGame": 1.92,
+      "firstName": "Ariel",
+      "lastName": "Hukporti",
+      "name": "Ariel Hukporti"
+    },
+    {
+      "playerId": "202066",
+      "gamesPlayed": 28,
+      "pointsPerGame": 1.89,
+      "firstName": "Garrett",
+      "lastName": "Temple",
+      "name": "Garrett Temple"
+    },
+    {
+      "playerId": "1641752",
+      "gamesPlayed": 8,
+      "pointsPerGame": 1.88,
+      "firstName": "Bobi",
+      "lastName": "Klintman",
+      "name": "Bobi Klintman"
+    },
+    {
+      "playerId": "1630579",
+      "gamesPlayed": 53,
+      "pointsPerGame": 1.85,
+      "firstName": "Jericho",
+      "lastName": "Sims",
+      "name": "Jericho Sims"
+    },
+    {
+      "playerId": "1628427",
+      "gamesPlayed": 13,
+      "pointsPerGame": 1.85,
+      "firstName": "Vlatko",
+      "lastName": "Cancar",
+      "name": "Vlatko Cancar"
+    },
+    {
+      "playerId": "1642443",
+      "gamesPlayed": 6,
+      "pointsPerGame": 1.83,
+      "firstName": "Jahmir",
+      "lastName": "Young",
+      "name": "Jahmir Young"
+    },
+    {
+      "playerId": "1642280",
+      "gamesPlayed": 6,
+      "pointsPerGame": 1.83,
+      "firstName": "Trentyn",
+      "lastName": "Flowers",
+      "name": "Trentyn Flowers"
+    },
+    {
+      "playerId": "1641745",
+      "gamesPlayed": 37,
+      "pointsPerGame": 1.76,
+      "firstName": "Adam",
+      "lastName": "Flagler",
+      "name": "Adam Flagler"
+    },
+    {
+      "playerId": "1630604",
+      "gamesPlayed": 12,
+      "pointsPerGame": 1.75,
+      "firstName": "E.J.",
+      "lastName": "Liddell",
+      "name": "E.J. Liddell"
+    },
+    {
+      "playerId": "1641790",
+      "gamesPlayed": 19,
+      "pointsPerGame": 1.74,
+      "firstName": "PJ",
+      "lastName": "Hall",
+      "name": "PJ Hall"
+    },
+    {
+      "playerId": "202684",
+      "gamesPlayed": 40,
+      "pointsPerGame": 1.73,
+      "firstName": "Tristan",
+      "lastName": "Thompson",
+      "name": "Tristan Thompson"
+    },
+    {
+      "playerId": "1642505",
+      "gamesPlayed": 21,
+      "pointsPerGame": 1.71,
+      "firstName": "Alex",
+      "lastName": "Ducas",
+      "name": "Alex Ducas"
+    },
+    {
+      "playerId": "1642359",
+      "gamesPlayed": 18,
+      "pointsPerGame": 1.67,
+      "firstName": "Pacome",
+      "lastName": "Dadiet",
+      "name": "Pacome Dadiet"
+    },
+    {
+      "playerId": "1641801",
+      "gamesPlayed": 6,
+      "pointsPerGame": 1.67,
+      "firstName": "Emanuel",
+      "lastName": "Miller",
+      "name": "Emanuel Miller"
+    },
+    {
+      "playerId": "203458",
+      "gamesPlayed": 45,
+      "pointsPerGame": 1.64,
+      "firstName": "Alex",
+      "lastName": "Len",
+      "name": "Alex Len"
+    },
+    {
+      "playerId": "1642530",
+      "gamesPlayed": 22,
+      "pointsPerGame": 1.64,
+      "firstName": "Yuki",
+      "lastName": "Kawamura",
+      "name": "Yuki Kawamura"
+    },
+    {
+      "playerId": "1630762",
+      "gamesPlayed": 5,
+      "pointsPerGame": 1.6,
+      "firstName": "Phillip",
+      "lastName": "Wheeler",
+      "name": "Phillip Wheeler"
+    },
+    {
+      "playerId": "1641775",
+      "gamesPlayed": 52,
+      "pointsPerGame": 1.58,
+      "firstName": "Jordan",
+      "lastName": "Walsh",
+      "name": "Jordan Walsh"
+    },
+    {
+      "playerId": "1642422",
+      "gamesPlayed": 9,
+      "pointsPerGame": 1.56,
+      "firstName": "Armel",
+      "lastName": "Traore",
+      "name": "Armel Traore"
+    },
+    {
+      "playerId": "1629098",
+      "gamesPlayed": 9,
+      "pointsPerGame": 1.56,
+      "firstName": "Jack",
+      "lastName": "McVeigh",
+      "name": "Jack McVeigh"
+    },
+    {
+      "playerId": "1631159",
+      "gamesPlayed": 13,
+      "pointsPerGame": 1.54,
+      "firstName": "Leonard",
+      "lastName": "Miller",
+      "name": "Leonard Miller"
+    },
+    {
+      "playerId": "1641789",
+      "gamesPlayed": 16,
+      "pointsPerGame": 1.5,
+      "firstName": "Jazian",
+      "lastName": "Gortman",
+      "name": "Jazian Gortman"
+    },
+    {
+      "playerId": "1642353",
+      "gamesPlayed": 12,
+      "pointsPerGame": 1.5,
+      "firstName": "Cam",
+      "lastName": "Christie",
+      "name": "Cam Christie"
+    },
+    {
+      "playerId": "1641755",
+      "gamesPlayed": 4,
+      "pointsPerGame": 1.5,
+      "firstName": "Kevin",
+      "lastName": "McCullar Jr.",
+      "name": "Kevin McCullar Jr."
+    },
+    {
+      "playerId": "1642439",
+      "gamesPlayed": 2,
+      "pointsPerGame": 1.5,
+      "firstName": "Quincy",
+      "lastName": "Olivari",
+      "name": "Quincy Olivari"
+    },
+    {
+      "playerId": "1630346",
+      "gamesPlayed": 19,
+      "pointsPerGame": 1.47,
+      "firstName": "Matt",
+      "lastName": "Ryan",
+      "name": "Matt Ryan"
+    },
+    {
+      "playerId": "1631321",
+      "gamesPlayed": 22,
+      "pointsPerGame": 1.45,
+      "firstName": "Sidy",
+      "lastName": "Cissoko",
+      "name": "Sidy Cissoko"
+    },
+    {
+      "playerId": "1641753",
+      "gamesPlayed": 22,
+      "pointsPerGame": 1.36,
+      "firstName": "Chris",
+      "lastName": "Livingston",
+      "name": "Chris Livingston"
+    },
+    {
+      "playerId": "1631210",
+      "gamesPlayed": 17,
+      "pointsPerGame": 1.35,
+      "firstName": "Jacob",
+      "lastName": "Toppin",
+      "name": "Jacob Toppin"
+    },
+    {
+      "playerId": "1641725",
+      "gamesPlayed": 24,
+      "pointsPerGame": 1.33,
+      "firstName": "Trey",
+      "lastName": "Alexander",
+      "name": "Trey Alexander"
+    },
+    {
+      "playerId": "1642461",
+      "gamesPlayed": 20,
+      "pointsPerGame": 1.3,
+      "firstName": "Spencer",
+      "lastName": "Jones",
+      "name": "Spencer Jones"
+    },
+    {
+      "playerId": "1627746",
+      "gamesPlayed": 4,
+      "pointsPerGame": 1.25,
+      "firstName": "Skal",
+      "lastName": "Labissiere",
+      "name": "Skal Labissiere"
+    },
+    {
+      "playerId": "1641779",
+      "gamesPlayed": 8,
+      "pointsPerGame": 1.12,
+      "firstName": "Jalen",
+      "lastName": "Bridges",
+      "name": "Jalen Bridges"
+    },
+    {
+      "playerId": "1630214",
+      "gamesPlayed": 33,
+      "pointsPerGame": 1.03,
+      "firstName": "Xavier",
+      "lastName": "Tillman",
+      "name": "Xavier Tillman"
+    },
+    {
+      "playerId": "1631121",
+      "gamesPlayed": 13,
+      "pointsPerGame": 1.0,
+      "firstName": "Bryce",
+      "lastName": "McGowens",
+      "name": "Bryce McGowens"
+    },
+    {
+      "playerId": "1631247",
+      "gamesPlayed": 12,
+      "pointsPerGame": 1.0,
+      "firstName": "Luke",
+      "lastName": "Travers",
+      "name": "Luke Travers"
+    },
+    {
+      "playerId": "1642450",
+      "gamesPlayed": 7,
+      "pointsPerGame": 1.0,
+      "firstName": "Daniss",
+      "lastName": "Jenkins",
+      "name": "Daniss Jenkins"
+    },
+    {
+      "playerId": "1630296",
+      "gamesPlayed": 3,
+      "pointsPerGame": 1.0,
+      "firstName": "Braxton",
+      "lastName": "Key",
+      "name": "Braxton Key"
+    },
+    {
+      "playerId": "1641879",
+      "gamesPlayed": 2,
+      "pointsPerGame": 1.0,
+      "firstName": "Yuri",
+      "lastName": "Collins",
+      "name": "Yuri Collins"
+    },
+    {
+      "playerId": "1631303",
+      "gamesPlayed": 19,
+      "pointsPerGame": 0.95,
+      "firstName": "Justin",
+      "lastName": "Minaya",
+      "name": "Justin Minaya"
+    },
+    {
+      "playerId": "1641817",
+      "gamesPlayed": 9,
+      "pointsPerGame": 0.89,
+      "firstName": "Anton",
+      "lastName": "Watson",
+      "name": "Anton Watson"
+    },
+    {
+      "playerId": "1642384",
+      "gamesPlayed": 15,
+      "pointsPerGame": 0.87,
+      "firstName": "Isaiah",
+      "lastName": "Crawford",
+      "name": "Isaiah Crawford"
+    },
+    {
+      "playerId": "1631127",
+      "gamesPlayed": 5,
+      "pointsPerGame": 0.8,
+      "firstName": "Harrison",
+      "lastName": "Ingram",
+      "name": "Harrison Ingram"
+    },
+    {
+      "playerId": "204060",
+      "gamesPlayed": 19,
+      "pointsPerGame": 0.79,
+      "firstName": "Joe",
+      "lastName": "Ingles",
+      "name": "Joe Ingles"
+    },
+    {
+      "playerId": "1628408",
+      "gamesPlayed": 9,
+      "pointsPerGame": 0.78,
+      "firstName": "PJ",
+      "lastName": "Dozier",
+      "name": "PJ Dozier"
+    },
+    {
+      "playerId": "1630618",
+      "gamesPlayed": 4,
+      "pointsPerGame": 0.75,
+      "firstName": "D.J.",
+      "lastName": "Carton",
+      "name": "D.J. Carton"
+    },
+    {
+      "playerId": "1642279",
+      "gamesPlayed": 7,
+      "pointsPerGame": 0.71,
+      "firstName": "Ulrich",
+      "lastName": "Chomche",
+      "name": "Ulrich Chomche"
+    },
+    {
+      "playerId": "1641857",
+      "gamesPlayed": 13,
+      "pointsPerGame": 0.69,
+      "firstName": "Liam",
+      "lastName": "Robbins",
+      "name": "Liam Robbins"
+    },
+    {
+      "playerId": "1630649",
+      "gamesPlayed": 22,
+      "pointsPerGame": 0.68,
+      "firstName": "Stanley",
+      "lastName": "Umude",
+      "name": "Stanley Umude"
+    },
+    {
+      "playerId": "201949",
+      "gamesPlayed": 12,
+      "pointsPerGame": 0.67,
+      "firstName": "James",
+      "lastName": "Johnson",
+      "name": "James Johnson"
+    },
+    {
+      "playerId": "1642385",
+      "gamesPlayed": 5,
+      "pointsPerGame": 0.6,
+      "firstName": "Cui",
+      "lastName": "Yongxi",
+      "name": "Cui Yongxi"
+    },
+    {
+      "playerId": "1641803",
+      "gamesPlayed": 8,
+      "pointsPerGame": 0.38,
+      "firstName": "Tristen",
+      "lastName": "Newton",
+      "name": "Tristen Newton"
+    },
+    {
+      "playerId": "1642502",
+      "gamesPlayed": 6,
+      "pointsPerGame": 0.33,
+      "firstName": "Malevy",
+      "lastName": "Leons",
+      "name": "Malevy Leons"
+    },
+    {
+      "playerId": "1630227",
+      "gamesPlayed": 3,
+      "pointsPerGame": 0.33,
+      "firstName": "Daishen",
+      "lastName": "Nix",
+      "name": "Daishen Nix"
+    },
+    {
+      "playerId": "1629667",
+      "gamesPlayed": 4,
+      "pointsPerGame": 0.0,
+      "firstName": "Jalen",
+      "lastName": "McDaniels",
+      "name": "Jalen McDaniels"
+    },
+    {
+      "playerId": "1642389",
+      "gamesPlayed": 3,
+      "pointsPerGame": 0.0,
+      "firstName": "Zyon",
+      "lastName": "Pullin",
+      "name": "Zyon Pullin"
+    },
+    {
+      "playerId": "1641815",
+      "gamesPlayed": 3,
+      "pointsPerGame": 0.0,
+      "firstName": "Isaiah",
+      "lastName": "Stevens",
+      "name": "Isaiah Stevens"
+    },
+    {
+      "playerId": "1630678",
+      "gamesPlayed": 3,
+      "pointsPerGame": 0.0,
+      "firstName": "Terry",
+      "lastName": "Taylor",
+      "name": "Terry Taylor"
+    },
+    {
+      "playerId": "1642399",
+      "gamesPlayed": 2,
+      "pointsPerGame": 0.0,
+      "firstName": "Jesse",
+      "lastName": "Edwards",
+      "name": "Jesse Edwards"
+    },
+    {
+      "playerId": "1630644",
+      "gamesPlayed": 2,
+      "pointsPerGame": 0.0,
+      "firstName": "Mac",
+      "lastName": "McClung",
+      "name": "Mac McClung"
+    },
+    {
+      "playerId": "1642434",
+      "gamesPlayed": 1,
+      "pointsPerGame": 0.0,
+      "firstName": "Riley",
+      "lastName": "Minix",
+      "name": "Riley Minix"
+    },
+    {
+      "playerId": "1629056",
+      "gamesPlayed": 1,
+      "pointsPerGame": 0.0,
+      "firstName": "Terence",
+      "lastName": "Davis",
+      "name": "Terence Davis"
+    },
+    {
+      "playerId": "1626143",
+      "gamesPlayed": 1,
+      "pointsPerGame": 0.0,
+      "firstName": "Jahlil",
+      "lastName": "Okafor",
+      "name": "Jahlil Okafor"
+    }
+  ]
+}

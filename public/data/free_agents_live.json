@@ -1,0 +1,195 @@
+{
+  "entries": [
+    {
+      "id": 38,
+      "name": "Malik Beasley",
+      "position": "G",
+      "teamLabel": "Detroit Pistons (DET)",
+      "metrics": {
+        "points": 16.64516129032258,
+        "assists": 1.7258064516129032,
+        "rebounds": 2.8225806451612905,
+        "steals": 0.967741935483871,
+        "blocks": 0.04838709677419355,
+        "minutes": 27.387096774193548,
+        "games": 62
+      },
+      "score": 26.551,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 130,
+      "name": "Spencer Dinwiddie",
+      "position": "G",
+      "teamLabel": "Dallas Mavericks (DAL)",
+      "metrics": {
+        "points": 9.806451612903226,
+        "assists": 3.596774193548387,
+        "rebounds": 2.2580645161290325,
+        "steals": 0.7741935483870968,
+        "blocks": 0.1935483870967742,
+        "minutes": 24.241935483870968,
+        "games": 62
+      },
+      "score": 20.199,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 17896022,
+      "name": "Brandon Boston Jr.",
+      "position": "G",
+      "teamLabel": "New Orleans Pelicans (NOP)",
+      "metrics": {
+        "points": 7.344262295081967,
+        "assists": 1.4918032786885247,
+        "rebounds": 2.19672131147541,
+        "steals": 0.8688524590163934,
+        "blocks": 0.14754098360655737,
+        "minutes": 16.278688524590162,
+        "games": 61
+      },
+      "score": 15.357,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 417,
+      "name": "Ben Simmons",
+      "position": "G-F",
+      "teamLabel": "LA Clippers (LAC)",
+      "metrics": {
+        "points": 3.966666666666667,
+        "assists": 4.233333333333333,
+        "rebounds": 3.3,
+        "steals": 0.55,
+        "blocks": 0.31666666666666665,
+        "minutes": 15.5,
+        "games": 60
+      },
+      "score": 14.487,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 17896094,
+      "name": "Dalano Banton",
+      "position": "G",
+      "teamLabel": "Portland Trail Blazers (POR)",
+      "metrics": {
+        "points": 6.67741935483871,
+        "assists": 1.7096774193548387,
+        "rebounds": 1.532258064516129,
+        "steals": 0.5161290322580645,
+        "blocks": 0.3709677419354839,
+        "minutes": 12.225806451612904,
+        "games": 62
+      },
+      "score": 14.158,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 666748,
+      "name": "Cody Martin",
+      "position": "F",
+      "teamLabel": "Phoenix Suns (PHX)",
+      "metrics": {
+        "points": 5.186440677966102,
+        "assists": 1.5084745762711864,
+        "rebounds": 2.983050847457627,
+        "steals": 0.7288135593220338,
+        "blocks": 0.4406779661016949,
+        "minutes": 16.389830508474578,
+        "games": 59
+      },
+      "score": 13.501,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 290,
+      "name": "Trey Lyles",
+      "position": "F",
+      "teamLabel": "Sacramento Kings (SAC)",
+      "metrics": {
+        "points": 5.066666666666666,
+        "assists": 0.8666666666666667,
+        "rebounds": 3.65,
+        "steals": 0.4666666666666667,
+        "blocks": 0.3333333333333333,
+        "minutes": 15.033333333333333,
+        "games": 60
+      },
+      "score": 12.781,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 17896021,
+      "name": "Jeremiah Robinson-Earl",
+      "position": "F",
+      "teamLabel": "New Orleans Pelicans (NOP)",
+      "metrics": {
+        "points": 4.409836065573771,
+        "assists": 0.8688524590163934,
+        "rebounds": 3.4918032786885247,
+        "steals": 0.45901639344262296,
+        "blocks": 0.11475409836065574,
+        "minutes": 13.557377049180328,
+        "games": 61
+      },
+      "score": 11.746,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 4197029,
+      "name": "Vasilije Micic",
+      "position": "G",
+      "teamLabel": "Phoenix Suns (PHX)",
+      "metrics": {
+        "points": 4.559322033898305,
+        "assists": 2.152542372881356,
+        "rebounds": 1.4745762711864407,
+        "steals": 0.288135593220339,
+        "blocks": 0,
+        "minutes": 12.983050847457626,
+        "games": 59
+      },
+      "score": 11.422,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 369,
+      "name": "Elfrid Payton",
+      "position": "G",
+      "teamLabel": "Charlotte Hornets (CHA)",
+      "metrics": {
+        "points": 3.1176470588235294,
+        "assists": 4,
+        "rebounds": 2.176470588235294,
+        "steals": 0.9411764705882353,
+        "blocks": 0.29411764705882354,
+        "minutes": 15.705882352941176,
+        "games": 17
+      },
+      "score": 11.024,
+      "seasonLabel": "2024-25"
+    },
+    {
+      "id": 439,
+      "name": "Daniel Theis",
+      "position": "F",
+      "teamLabel": "Oklahoma City Thunder (OKC)",
+      "metrics": {
+        "points": 3.176470588235294,
+        "assists": 1.1764705882352942,
+        "rebounds": 3.215686274509804,
+        "steals": 0.3333333333333333,
+        "blocks": 0.39215686274509803,
+        "minutes": 12.176470588235293,
+        "games": 51
+      },
+      "score": 10.101,
+      "seasonLabel": "2024-25"
+    }
+  ],
+  "season": 2024,
+  "seasonLabel": "2024-25",
+  "rosterSnapshotFetchedAt": "2025-10-18T03:27:38.772Z",
+  "generated_at": "2025-10-27T02:37:53.097Z"
+}

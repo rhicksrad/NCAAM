@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/NBA/" />
+    <title>Players | NBA Intelligence Hub</title>
+    <meta name="title" content="Players | NBA Intelligence Hub" />
+    <meta name="description" content="Search the full 2025-26 roster pool to surface bespoke scouting cards, GOAT Index snapshots, and percentile breakdowns." />
+    <link rel="canonical" href="https://rhicksrad.github.io/NBA/players.html" />
+    <meta property="og:site_name" content="NBA Intelligence Hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://rhicksrad.github.io/NBA/players.html" />
+    <meta property="og:title" content="Players | NBA Intelligence Hub" />
+    <meta property="og:description" content="Search the full 2025-26 roster pool to surface bespoke scouting cards, GOAT Index snapshots, and percentile breakdowns." />
+    <meta property="og:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:secure_url" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rhicksrad.github.io/NBA/players.html" />
+    <meta name="twitter:title" content="Players | NBA Intelligence Hub" />
+    <meta name="twitter:description" content="Search the full 2025-26 roster pool to surface bespoke scouting cards, GOAT Index snapshots, and percentile breakdowns." />
+    <meta name="twitter:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta name="twitter:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <link rel="icon" type="image/svg+xml" href="assets/logos/nba-logoman.svg" />
+    <link rel="stylesheet" href="styles/hub.css" />
+    <meta name="rumble-module" content="assets/js/players-rumble.4f01c6ec25e3baa5.js" />
+  </head>
+  <body>
+    <div class="site-frame">
+      <header class="site-header site-header--compact">
+        <div class="hub-nav">
+          <a class="brand" href="index.html">
+            <span class="brand__logo"><img src="assets/logos/nba-logoman.svg" alt="NBA logo" class="brand__logo-icon" /></span>
+            <span class="brand__wordmark"><span class="brand__wordmark-accent">NBA</span> Intelligence Hub</span>
+          </a>
+          <nav class="nav-links">
+            <a href="index.html">2025-2026 Season</a>
+            <a href="rewind.html">2024-2025 Season Rewind</a>
+            <a class="active" href="players.html">Players</a>
+            <a href="teams.html">Teams</a>
+            <a href="games.html">Games</a>
+            <a href="history.html">History</a>
+            <a href="insights.html">Insights Lab</a>
+            <a href="goat.html">GOAT Index</a>
+            <a href="about.html">About</a>
+          </nav>
+        </div>
+        <div class="hero hero--compact">
+          <span class="eyebrow">Player Intelligence</span>
+        </div>
+      </header>
+
+      <main id="players-app" class="players-lab">
+        <section class="players-lab__section player-atlas" data-player-profiles>
+          <header class="players-lab__section-header">
+            <h2>Player scouting atlas</h2>
+            <a class="rumble-launch" href="#players-rumble" data-rumble-launch>Explore Roster Rumble — 5v5</a>
+            <p class="players-lab__lede">
+              Search the active 2025-26 roster pool to surface bespoke scouting percentiles for every player. Choose a
+              player to instantly render his GOAT index snapshot, vitals, and twelve curated visual reads.
+            </p>
+          </header>
+          <div class="player-atlas__layout">
+            <section
+              class="player-atlas__search player-atlas__panel"
+              aria-labelledby="player-atlas-search-label"
+            >
+              <div class="player-atlas__searchbox">
+                <label class="player-atlas__label" id="player-atlas-search-label" for="player-atlas-search">
+                  Search the scouting atlas
+                </label>
+                <div class="player-atlas__field">
+                  <input
+                    id="player-atlas-search"
+                    class="player-atlas__input"
+                    type="search"
+                    inputmode="search"
+                    autocomplete="off"
+                    spellcheck="false"
+                    enterkeyhint="search"
+                    placeholder="Search by player, jersey, or franchise"
+                    data-player-search
+                    aria-autocomplete="list"
+                    aria-controls="player-atlas-search-results"
+                    aria-expanded="false"
+                  />
+                  <button type="button" class="player-atlas__clear" data-player-clear hidden>
+                    Clear
+                  </button>
+                </div>
+                <ul
+                  id="player-atlas-search-results"
+                  class="player-atlas__results"
+                  role="listbox"
+                  data-player-results
+                  hidden
+                ></ul>
+              </div>
+              <p class="player-atlas__hint" data-player-hint>
+                Start typing a player's name, jersey number, or franchise to surface his scouting capsule.
+              </p>
+              <p class="player-atlas__empty" data-player-empty hidden>
+                No matches found. Try another player, jersey number, or team.
+              </p>
+              <p class="player-atlas__error" data-player-error hidden>
+                We couldn't load the scouting atlas right now. Refresh to try again soon.
+              </p>
+            </section>
+            <div class="player-atlas__teams" data-player-teams hidden>
+              <h3 class="player-atlas__teams-title">Browse by franchise</h3>
+              <p class="player-atlas__teams-copy">
+                Expand a team to scan its 2025-26 roster and jump straight to a player's scouting card.
+              </p>
+              <div class="player-atlas__teams-tree" data-player-team-tree></div>
+            </div>
+            <article class="player-card" data-player-profile hidden aria-live="polite">
+              <header class="player-card__header">
+                <div class="player-card__identity">
+                  <h3 class="player-card__name" data-player-name></h3>
+                  <p class="player-card__meta" data-player-meta></p>
+                </div>
+                <div class="player-card__goat">
+                  <span class="player-card__goat-label">GOAT scores</span>
+                  <div class="player-card__goat-grid">
+                    <div class="player-card__goat-entry">
+                      <span
+                        class="player-card__goat-value"
+                        data-player-goat-recent
+                        aria-label="GOAT score over the last three seasons"
+                      >
+                        <span class="player-card__goat-number" data-player-goat-recent-score>—</span>
+                        <span class="player-card__goat-rank" data-player-goat-recent-rank>No. —</span>
+                      </span>
+                      <span class="player-card__goat-context">Last 3 seasons (2022-23 to 2024-25)</span>
+                    </div>
+                    <div class="player-card__goat-entry">
+                      <span
+                        class="player-card__goat-value"
+                        data-player-goat-historic
+                        aria-label="Career GOAT score"
+                      >
+                        <span class="player-card__goat-number" data-player-goat-historic-score>—</span>
+                        <span class="player-card__goat-rank" data-player-goat-historic-rank>No. —</span>
+                      </span>
+                      <span class="player-card__goat-context">All-time GOAT resume</span>
+                    </div>
+                  </div>
+                </div>
+              </header>
+              <div class="player-card__body">
+                <p class="player-card__bio" data-player-bio></p>
+                <dl class="player-card__facts">
+                  <div class="player-card__fact">
+                    <dt>Archetype</dt>
+                    <dd data-player-archetype>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Team</dt>
+                    <dd data-player-team>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Position</dt>
+                    <dd data-player-position>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Jersey</dt>
+                    <dd data-player-jersey>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Height</dt>
+                    <dd data-player-height>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Weight</dt>
+                    <dd data-player-weight>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Vitals</dt>
+                    <dd data-player-vitals>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Origin</dt>
+                    <dd data-player-origin>—</dd>
+                  </div>
+                  <div class="player-card__fact">
+                    <dt>Draft</dt>
+                    <dd data-player-draft>—</dd>
+                  </div>
+                </dl>
+              </div>
+              <section
+                class="player-card__stats"
+                data-player-stats
+                aria-live="polite"
+                aria-busy="false"
+              >
+                <header class="player-card__stats-header">
+                  <h3>
+                    Season averages
+                    <span class="player-card__stats-season" data-player-stats-season>—</span>
+                  </h3>
+                  <p class="player-card__stats-meta" data-player-stats-meta></p>
+                </header>
+                <p class="player-card__stats-empty" data-player-stats-empty hidden>
+                  Season averages are not available right now.
+                </p>
+                <p class="player-card__stats-error" data-player-stats-error hidden>
+                  We couldn't load season averages right now.
+                </p>
+                <dl class="player-card__stats-grid">
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Games</dt>
+                    <dd class="player-card__stat-value" data-player-stat-games>—</dd>
+                  </div>
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Points</dt>
+                    <dd class="player-card__stat-value" data-player-stat-points>—</dd>
+                  </div>
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Rebounds</dt>
+                    <dd class="player-card__stat-value" data-player-stat-rebounds>—</dd>
+                  </div>
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Assists</dt>
+                    <dd class="player-card__stat-value" data-player-stat-assists>—</dd>
+                  </div>
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Steals</dt>
+                    <dd class="player-card__stat-value" data-player-stat-steals>—</dd>
+                  </div>
+                  <div class="player-card__stat">
+                    <dt class="player-card__stat-label">Blocks</dt>
+                    <dd class="player-card__stat-value" data-player-stat-blocks>—</dd>
+                  </div>
+                </dl>
+              </section>
+              <section
+                class="player-card__visuals-section"
+                aria-labelledby="player-card-visuals-title"
+              >
+                <header class="player-card__visuals-header">
+                  <h4 id="player-card-visuals-title">Percentile visual reads</h4>
+                  <p>
+                    Twelve scouting gauges anchor the 2025-26 outlook on each player's 2024-25
+                    production — a quick scan of creation, feel, and defensive range.
+                  </p>
+                </header>
+                <div
+                  class="player-card__visuals"
+                  data-player-metrics
+                  aria-label="Percentile visualizations"
+                ></div>
+                <p class="player-card__visuals-empty" data-player-metrics-empty hidden>
+                  Percentile visuals are coming soon for this player.
+                </p>
+              </section>
+              <footer class="player-card__footer">
+                <p data-player-updated></p>
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <section class="players-goat-averages" data-player-teams-goat hidden>
+          <header class="players-lab__section-header players-goat-averages__header">
+            <h2>GOAT roster averages</h2>
+            <p class="players-lab__lede players-goat-averages__lede">
+              Ranking each franchise by average GOAT score per roster spot, normalized for current roster sizes.
+            </p>
+          </header>
+          <ol class="player-atlas__teams-goat-list players-goat-averages__list" data-player-teams-goat-list></ol>
+          <p class="player-atlas__teams-goat-empty players-goat-averages__empty" data-player-teams-goat-empty hidden>
+            Team GOAT averages are warming up.
+          </p>
+        </section>
+
+        <section class="players-lab__section players-rumble" id="players-rumble">
+          <header class="players-lab__section-header">
+            <h2>Roster Rumble — 5v5</h2>
+            <p class="players-lab__lede">
+              Draft dream matchups from the full historical player universe, balance archetypes with chemistry graphs,
+              and simulate a hundred games to see which lineup reigns.
+            </p>
+          </header>
+          <div class="players-rumble__body" data-rumble-root aria-live="polite">
+            <p class="players-rumble__loading" role="status">Loading Roster Rumble lineups…</p>
+          </div>
+        </section>
+
+        <section class="players-rankings">
+          <div class="players-rankings__intro">
+            <h2>Who's the Man Right Now?</h2>
+            <p>
+              Using our GOAT ranking system of active players and production over the last three
+              seasons, here's how we stack the game's current apex performers.
+            </p>
+          </div>
+          <ol class="players-rankings__list" data-recent-leaderboard aria-live="polite"></ol>
+          <p class="players-rankings__empty" data-recent-placeholder hidden>
+            Recent GOAT rankings are warming up. Refresh to try again soon.
+          </p>
+        </section>
+
+        <section class="players-lab__section">
+          <header class="players-lab__section-header">
+            <h2>Morphology lab</h2>
+            <p class="players-lab__lede">
+              Track how body types and roles stretch across eras — from the tallest towers ever
+              logged to the shape of today's positionless rotations.
+            </p>
+          </header>
+          <div class="players-lab__grid viz-grid viz-grid--dense">
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">League height distribution</header>
+              <div class="viz-canvas">
+                <canvas data-chart="league-heights" aria-describedby="league-heights-caption"></canvas>
+              </div>
+              <figcaption id="league-heights-caption" class="viz-card__caption">
+                Density curve of roster heights sourced from <code>Players.csv</code> buckets — a quick
+                way to spot outlier size archetypes.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Skyline mass bubbles</header>
+              <div class="viz-canvas">
+                <canvas data-chart="tallest-bubbles" aria-describedby="tallest-bubbles-caption"></canvas>
+              </div>
+              <figcaption id="tallest-bubbles-caption" class="viz-card__caption">
+                Bubble chart of every 7-foot-plus player in league history — bubble size mirrors
+                listed weight to show which giants carried the most mass.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Roster height stacks</header>
+              <div class="viz-canvas">
+                <canvas
+                  data-chart="team-height-averages"
+                  aria-describedby="team-height-averages-caption"
+                  data-chart-ratio="0.9"
+                ></canvas>
+              </div>
+              <figcaption id="team-height-averages-caption" class="viz-card__caption">
+                Horizontal bars rank every franchise from the shortest to tallest average listed
+                height using the current active roster snapshot.
+              </figcaption>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="players-lab__section">
+          <header class="players-lab__section-header">
+            <h2>Global &amp; collegiate pipelines</h2>
+            <p class="players-lab__lede">
+              Follow the journeys that feed the league — from international launch pads to the
+              college programs producing the deepest alumni pools.
+            </p>
+          </header>
+          <div class="players-lab__grid viz-grid viz-grid--dense">
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Global talent spectrum</header>
+              <div class="viz-canvas">
+                <canvas data-chart="country-spectrum" aria-describedby="country-spectrum-caption"></canvas>
+              </div>
+              <figcaption id="country-spectrum-caption" class="viz-card__caption">
+                Polar area bloom of the top international contributors — each petal encodes how many
+                pros hail from that nation.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">College pipeline power grid</header>
+              <div class="viz-canvas">
+                <canvas data-chart="college-pipeline" aria-describedby="college-pipeline-caption"></canvas>
+              </div>
+              <figcaption id="college-pipeline-caption" class="viz-card__caption">
+                Horizontal bar ranks for the collegiate programs that have launched the most NBA
+                talent.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Draft cadence stream</header>
+              <div class="viz-canvas">
+                <canvas data-chart="draft-timeline" aria-describedby="draft-timeline-caption"></canvas>
+              </div>
+              <figcaption id="draft-timeline-caption" class="viz-card__caption">
+                Smoothed line of draft counts by decade — a pulse check on how the pipeline has
+                swollen and contracted over time.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="players-lab__section">
+          <header class="players-lab__section-header">
+            <h2>Momentum &amp; mythology</h2>
+            <p class="players-lab__lede">
+              Dive into production rhythms, legendary streaks, and single-game supernovas that define
+              the lore of NBA players.
+            </p>
+          </header>
+          <div class="players-lab__grid viz-grid viz-grid--dense" data-viz-grid="momentum">
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Scoring era waveform</header>
+              <div class="viz-canvas">
+                <canvas data-chart="season-trends" aria-describedby="season-trends-caption"></canvas>
+              </div>
+              <figcaption id="season-trends-caption" class="viz-card__caption">
+                Multi-line stream of league-wide scoring, assisting, and rebounding averages from
+                1946 onward.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Triple-double nebula</header>
+              <div class="viz-canvas">
+                <canvas data-chart="triple-double-cloud" aria-describedby="triple-double-cloud-caption"></canvas>
+              </div>
+              <figcaption id="triple-double-cloud-caption" class="viz-card__caption">
+                Bubble timeline of career triple-double totals — bubble radius scales with how many
+                seasons featured the feat.
+              </figcaption>
+            </figure>
+
+            <figure class="viz-card viz-card--inline" data-chart-wrapper>
+              <header class="viz-card__title">Scoring supernovas</header>
+              <div class="viz-canvas">
+                <canvas data-chart="scoring-eruptions" aria-describedby="scoring-eruptions-caption"></canvas>
+              </div>
+              <figcaption id="scoring-eruptions-caption" class="viz-card__caption">
+                Scatter of the biggest single-game point totals — hover to see rebounds, assists, and
+                the minute loads required.
+              </figcaption>
+            </figure>
+
+          </div>
+        </section>
+      </main>
+
+      <footer class="page-footer">Player insights are the heartbeat of the hub — more soon.</footer>
+    </div>
+    <script src="vendor/chart.umd.js" defer></script>
+    <script type="module" src="scripts/players.js"></script>
+
+<!-- BUILD:PLAYERS -->
+<script id="players-bundle" type="module" src="assets/js/players.06978a7b8e5ae01e.js"></script>
+<!-- /BUILD:PLAYERS -->
+</body>
+</html>

@@ -1,0 +1,4543 @@
+{
+  "fetched_at": "2025-09-29T13:47:09.758Z",
+  "source": "rosters.json",
+  "count": 504,
+  "players": [
+    {
+      "id": 203992,
+      "name": "Bogdan Bogdanovic",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203991,
+      "name": "Clint Capela",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628381,
+      "name": "John Collins",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627739,
+      "name": "Kris Dunn",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628981,
+      "name": "Bruno Fernando",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201568,
+      "name": "Danilo Gallinari",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629164,
+      "name": "Brandon Goodwin",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203524,
+      "name": "Solomon Hill",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628989,
+      "name": "Kevin Huerter",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629631,
+      "name": "De'Andre Hunter",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630233,
+      "name": "Nathan Knight",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630219,
+      "name": "Skylar Mays",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630168,
+      "name": "Onyeka Okongwu",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629629,
+      "name": "Cam Reddish",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203503,
+      "name": "Tony Snell",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 101150,
+      "name": "Lou Williams",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629027,
+      "name": "Trae Young",
+      "team_abbr": "ATL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629185,
+      "name": "Chris Chiozza",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629651,
+      "name": "Nicolas Claxton",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203915,
+      "name": "Spencer Dinwiddie",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201142,
+      "name": "Kevin Durant",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201145,
+      "name": "Jeff Green",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201933,
+      "name": "Blake Griffin",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201935,
+      "name": "James Harden",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203925,
+      "name": "Joe Harris",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202681,
+      "name": "Kyrie Irving",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628455,
+      "name": "Mike James",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204020,
+      "name": "Tyler Johnson",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201599,
+      "name": "DeAndre Jordan",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627789,
+      "name": "Timothe Luwawu-Cabarrot",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629001,
+      "name": "De'Anthony Melton",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629617,
+      "name": "Reggie Perry",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629013,
+      "name": "Landry Shamet",
+      "team_abbr": "BKN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627759,
+      "name": "Jaylen Brown",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629035,
+      "name": "Carsen Edwards",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629605,
+      "name": "Tacko Fall",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203095,
+      "name": "Evan Fournier",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201143,
+      "name": "Al Horford",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629057,
+      "name": "Robert Williams III",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628436,
+      "name": "Luke Kornet",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629641,
+      "name": "Romeo Langford",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630174,
+      "name": "Aaron Nesmith",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628400,
+      "name": "Semi Ojeleye",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203953,
+      "name": "Jabari Parker",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630202,
+      "name": "Payton Pritchard",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629014,
+      "name": "Anfernee Simons",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203935,
+      "name": "Marcus Smart",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628369,
+      "name": "Jayson Tatum",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202684,
+      "name": "Tristan Thompson",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202689,
+      "name": "Kemba Walker",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629682,
+      "name": "Tremont Waters",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629684,
+      "name": "Grant Williams",
+      "team_abbr": "BOS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630163,
+      "name": "LaMelo Ball",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202687,
+      "name": "Bismack Biyombo",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628970,
+      "name": "Miles Bridges",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630268,
+      "name": "Nate Darling",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628984,
+      "name": "Devonte' Graham",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202330,
+      "name": "Gordon Hayward",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630176,
+      "name": "Vernon Carey Jr.",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628997,
+      "name": "Caleb Martin",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628998,
+      "name": "Cody Martin",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629667,
+      "name": "Jalen McDaniels",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628370,
+      "name": "Malik Monk",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630208,
+      "name": "Nick Richards",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630203,
+      "name": "Grant Riller",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626179,
+      "name": "Terry Rozier",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629012,
+      "name": "Collin Sexton",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202954,
+      "name": "Brad Wanamaker",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629023,
+      "name": "P.J. Washington",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203469,
+      "name": "Cody Zeller",
+      "team_abbr": "CHA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627853,
+      "name": "Ryan Arcidiacono",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629653,
+      "name": "Devon Dotson",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626245,
+      "name": "Cristiano Felicio",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629750,
+      "name": "Javonte Green",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628972,
+      "name": "Troy Brown Jr.",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203897,
+      "name": "Zach LaVine",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628374,
+      "name": "Lauri Markkanen",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628035,
+      "name": "Alfonzo McKinnie",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629690,
+      "name": "Adam Mokoka",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203107,
+      "name": "Tomas Satoransky",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628464,
+      "name": "Daniel Theis",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202696,
+      "name": "Nikola Vucevic",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629632,
+      "name": "Coby White",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630172,
+      "name": "Patrick Williams",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201152,
+      "name": "Thaddeus Young",
+      "team_abbr": "CHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628386,
+      "name": "Jarrett Allen",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203521,
+      "name": "Matthew Dellavedova",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628422,
+      "name": "Damyean Dotson",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629636,
+      "name": "Darius Garland",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628392,
+      "name": "Isaiah Hartenstein",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626204,
+      "name": "Larry Nance Jr.",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629662,
+      "name": "Mfiondu Kabengele",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201567,
+      "name": "Kevin Love",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629725,
+      "name": "Jeremiah Martin",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630171,
+      "name": "Isaac Okoro",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626224,
+      "name": "Cedi Osman",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627752,
+      "name": "Taurean Prince",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630205,
+      "name": "Lamar Stevens",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630271,
+      "name": "Brodric Thomas",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2760,
+      "name": "Anderson Varejao",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629731,
+      "name": "Dean Wade",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629685,
+      "name": "Dylan Windler",
+      "team_abbr": "CLE",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630189,
+      "name": "Tyler Bey",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628973,
+      "name": "Jalen Brunson",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203504,
+      "name": "Trey Burke",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626161,
+      "name": "Willie Cauley-Stein",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203076,
+      "name": "Anthony Davis",
+      "team_abbr": "DAL",
+      "position": "C",
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627827,
+      "name": "Dorian Finney-Smith",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630182,
+      "name": "Josh Green",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630207,
+      "name": "Nate Hinton",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203501,
+      "name": "Tim Hardaway Jr.",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628467,
+      "name": "Maxi Kleber",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626246,
+      "name": "Boban Marjanovic",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629740,
+      "name": "Nicolo Melli",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204001,
+      "name": "Kristaps Porzingis",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203939,
+      "name": "Dwight Powell",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200755,
+      "name": "JJ Redick",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626196,
+      "name": "Josh Richardson",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630179,
+      "name": "Tyrell Terry",
+      "team_abbr": "DAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203115,
+      "name": "Will Barton",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629626,
+      "name": "Bol Bol",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628971,
+      "name": "Bruce Brown",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630267,
+      "name": "Facundo Campazzo",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628427,
+      "name": "Vlatko Cancar",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628408,
+      "name": "PJ Dozier",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203932,
+      "name": "Aaron Gordon",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203210,
+      "name": "JaMychal Green",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627885,
+      "name": "Shaquille Harrison",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630210,
+      "name": "Markus Howard",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203999,
+      "name": "Nikola Jokic",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629008,
+      "name": "Michael Porter Jr.",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201580,
+      "name": "JaVale McGee",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200794,
+      "name": "Paul Millsap",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628420,
+      "name": "Monte Morris",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627750,
+      "name": "Jamal Murray",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630192,
+      "name": "Zeke Nnaji",
+      "team_abbr": "DEN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203382,
+      "name": "Aron Baynes",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630180,
+      "name": "Saddiq Bey",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629076,
+      "name": "Tyler Cook",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628977,
+      "name": "Hamidou Diallo",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629635,
+      "name": "Sekou Doumbouya",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201961,
+      "name": "Wayne Ellington",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203924,
+      "name": "Jerami Grant",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630165,
+      "name": "Killian Hayes",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628402,
+      "name": "Frank Jackson",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628367,
+      "name": "Josh Jackson",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628372,
+      "name": "Dennis Smith Jr.",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630240,
+      "name": "Saben Lee",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627747,
+      "name": "Caris LeVert",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203585,
+      "name": "Rodney McGruder",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626143,
+      "name": "Jahlil Okafor",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203486,
+      "name": "Mason Plumlee",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629686,
+      "name": "Deividas Sirvydis",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630191,
+      "name": "Isaiah Stewart",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201229,
+      "name": "Anthony Tolliver",
+      "team_abbr": "DET",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203145,
+      "name": "Kent Bazemore",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628395,
+      "name": "Jordan Bell",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201939,
+      "name": "Stephen Curry",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203110,
+      "name": "Draymond Green",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2738,
+      "name": "Andre Iguodala",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626162,
+      "name": "Kelly Oubre Jr.",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626172,
+      "name": "Kevon Looney",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630185,
+      "name": "Nico Mannion",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628539,
+      "name": "Mychal Mulder",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629672,
+      "name": "Eric Paschall",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629673,
+      "name": "Jordan Poole",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629346,
+      "name": "Alen Smailagic",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202691,
+      "name": "Klay Thompson",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629308,
+      "name": "Juan Toscano-Anderson",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203952,
+      "name": "Andrew Wiggins",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630164,
+      "name": "James Wiseman",
+      "team_abbr": "GSW",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201571,
+      "name": "D.J. Augustin",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629717,
+      "name": "Armoni Brooks",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628425,
+      "name": "Sterling Brown",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203957,
+      "name": "Dante Exum",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201569,
+      "name": "Eric Gordon",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628988,
+      "name": "Aaron Holiday",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627863,
+      "name": "Danuel House Jr.",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630231,
+      "name": "Kenyon Martin Jr.",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629645,
+      "name": "Kevin Porter Jr.",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630237,
+      "name": "Anthony Lamb",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628021,
+      "name": "David Nwaba",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628419,
+      "name": "Cameron Oliver",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203482,
+      "name": "Kelly Olynyk",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629244,
+      "name": "Cameron Reynolds",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630256,
+      "name": "Jae'Sean Tate",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629017,
+      "name": "Khyri Thomas",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202322,
+      "name": "John Wall",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628391,
+      "name": "D.J. Wilson",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626174,
+      "name": "Christian Wood",
+      "team_abbr": "HOU",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629048,
+      "name": "Goga Bitadze",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628578,
+      "name": "Amida Brimah",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629052,
+      "name": "Oshae Brissett",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627763,
+      "name": "Malcolm Brogdon",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203200,
+      "name": "Justin Holiday",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203087,
+      "name": "Jeremy Lamb",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629103,
+      "name": "Kelan Martin",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204456,
+      "name": "T.J. McConnell",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203926,
+      "name": "Doug McDermott",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627734,
+      "name": "Domantas Sabonis",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203960,
+      "name": "JaKarr Sampson",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630199,
+      "name": "Cassius Stanley",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628410,
+      "name": "Edmond Sumner",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626167,
+      "name": "Myles Turner",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203933,
+      "name": "T.J. Warren",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626153,
+      "name": "Delon Wright",
+      "team_abbr": "IND",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201587,
+      "name": "Nicolas Batum",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201976,
+      "name": "Patrick Beverley",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629599,
+      "name": "Amir Coffey",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202326,
+      "name": "DeMarcus Cousins",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627812,
+      "name": "Yogi Ferrell",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202331,
+      "name": "Paul George",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201586,
+      "name": "Serge Ibaka",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202704,
+      "name": "Reggie Jackson",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628379,
+      "name": "Luke Kennard",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202695,
+      "name": "Kawhi Leonard",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629611,
+      "name": "Terance Mann",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630187,
+      "name": "Daniel Oturu",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202335,
+      "name": "Patrick Patterson",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200765,
+      "name": "Rajon Rondo",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630206,
+      "name": "Jay Scrubb",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627732,
+      "name": "Ben Simmons",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202694,
+      "name": "Marcus Morris Sr.",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627826,
+      "name": "Ivica Zubac",
+      "team_abbr": "LAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628961,
+      "name": "Kostas Antetokounmpo",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202340,
+      "name": "Avery Bradley",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629719,
+      "name": "Devontae Cacok",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203484,
+      "name": "Kentavious Caldwell-Pope",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627936,
+      "name": "Alex Caruso",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629029,
+      "name": "Luka Doncic",
+      "team_abbr": "LAL",
+      "position": "PG",
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201162,
+      "name": "Jared Dudley",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201188,
+      "name": "Marc Gasol",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626149,
+      "name": "Montrezl Harrell",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629659,
+      "name": "Talen Horton-Tucker",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2544,
+      "name": "LeBron James",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628398,
+      "name": "Kyle Kuzma",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202083,
+      "name": "Wesley Matthews",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203463,
+      "name": "Ben McLemore",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202693,
+      "name": "Markieff Morris",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203471,
+      "name": "Dennis Schroder",
+      "team_abbr": "LAL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628960,
+      "name": "Grayson Allen",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203937,
+      "name": "Kyle Anderson",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630217,
+      "name": "Desmond Bane",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628415,
+      "name": "Dillon Brooks",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629634,
+      "name": "Brandon Clarke",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204025,
+      "name": "Tim Frazier",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626145,
+      "name": "Tyus Jones",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628991,
+      "name": "Jaren Jackson Jr.",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629723,
+      "name": "John Konchar",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630253,
+      "name": "Sean McDermott",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629630,
+      "name": "Ja Morant",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629007,
+      "name": "Jontay Porter",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629681,
+      "name": "Killian Tillie",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630214,
+      "name": "Xavier Tillman",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202685,
+      "name": "Jonas Valanciunas",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626159,
+      "name": "Justise Winslow",
+      "team_abbr": "MEM",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630173,
+      "name": "Precious Achiuwa",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628389,
+      "name": "Bam Adebayo",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2772,
+      "name": "Trevor Ariza",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202357,
+      "name": "Nemanja Bjelica",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202692,
+      "name": "Alec Burks",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202710,
+      "name": "Jimmy Butler",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203473,
+      "name": "Dewayne Dedmon",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201609,
+      "name": "Goran Dragic",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2617,
+      "name": "Udonis Haslem",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629639,
+      "name": "Tyler Herro",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629134,
+      "name": "Kendrick Nunn",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629644,
+      "name": "KZ Okpala",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203506,
+      "name": "Victor Oladipo",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629130,
+      "name": "Duncan Robinson",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629622,
+      "name": "Max Strus",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629216,
+      "name": "Gabe Vincent",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630209,
+      "name": "Omer Yurtseven",
+      "team_abbr": "MIA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203507,
+      "name": "Giannis Antetokounmpo",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203648,
+      "name": "Thanasis Antetokounmpo",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629091,
+      "name": "Elijah Bryant",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626192,
+      "name": "Pat Connaughton",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629603,
+      "name": "Mamadi Diakite",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628978,
+      "name": "Donte DiVincenzo",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627854,
+      "name": "Bryn Forbes",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201950,
+      "name": "Jrue Holiday",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628382,
+      "name": "Justin Jackson",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201572,
+      "name": "Brook Lopez",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630241,
+      "name": "Sam Merrill",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203114,
+      "name": "Khris Middleton",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629670,
+      "name": "Jordan Nwora",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626171,
+      "name": "Bobby Portis",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201952,
+      "name": "Jeff Teague",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626253,
+      "name": "Axel Toupane",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200782,
+      "name": "P.J. Tucker",
+      "team_abbr": "MIL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627736,
+      "name": "Malik Beasley",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629633,
+      "name": "Jarrett Culver",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202334,
+      "name": "Ed Davis",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630162,
+      "name": "Anthony Edwards",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627823,
+      "name": "Juancho Hernangomez",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628993,
+      "name": "Alize Johnson",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627774,
+      "name": "Jake Layman",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630183,
+      "name": "Jaden McDaniels",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629162,
+      "name": "Jordan McLaughlin",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629669,
+      "name": "Jaylen Nowell",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629006,
+      "name": "Josh Okogie",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629675,
+      "name": "Naz Reid",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203085,
+      "name": "Austin Rivers",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201937,
+      "name": "Ricky Rubio",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626156,
+      "name": "D'Angelo Russell",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626157,
+      "name": "Karl-Anthony Towns",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629020,
+      "name": "Jarred Vanderbilt",
+      "team_abbr": "MIN",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203500,
+      "name": "Steven Adams",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629638,
+      "name": "Nickeil Alexander-Walker",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628366,
+      "name": "Lonzo Ball",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202339,
+      "name": "Eric Bledsoe",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629117,
+      "name": "Wenyen Gabriel",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628404,
+      "name": "Josh Hart",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629637,
+      "name": "Jaxson Hayes",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626195,
+      "name": "Willy Hernangomez",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627742,
+      "name": "Brandon Ingram",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628411,
+      "name": "Wes Iwundu",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201949,
+      "name": "James Johnson",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630184,
+      "name": "Kira Lewis Jr.",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629712,
+      "name": "Didi Louzada",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630230,
+      "name": "Naji Marshall",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627749,
+      "name": "Dejounte Murray",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203263,
+      "name": "James Nunnally",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629627,
+      "name": "Zion Williamson",
+      "team_abbr": "NOP",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629628,
+      "name": "RJ Barrett",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203493,
+      "name": "Reggie Bullock",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201959,
+      "name": "Taj Gibson",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629607,
+      "name": "Jared Harper",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628995,
+      "name": "Kevin Knox II",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203458,
+      "name": "Alex Len",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203457,
+      "name": "Nerlens Noel",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628373,
+      "name": "Frank Ntilikina",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203901,
+      "name": "Elfrid Payton",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203658,
+      "name": "Norvel Pelle",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629033,
+      "name": "Theo Pinson",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630193,
+      "name": "Immanuel Quickley",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203944,
+      "name": "Julius Randle",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629011,
+      "name": "Mitchell Robinson",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201565,
+      "name": "Derrick Rose",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630167,
+      "name": "Obi Toppin",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630492,
+      "name": "Luca Vildoza",
+      "team_abbr": "NYK",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629647,
+      "name": "Darius Bazley",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628396,
+      "name": "Tony Bradley",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629650,
+      "name": "Moses Brown",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630466,
+      "name": "Gabriel Deck",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629652,
+      "name": "Luguentz Dort",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628983,
+      "name": "Shai Gilgeous-Alexander",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630221,
+      "name": "Josh Hall",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629658,
+      "name": "Jaylen Hoard",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629660,
+      "name": "Ty Jerome",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629718,
+      "name": "Charlie Brown Jr.",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630177,
+      "name": "Theo Maledon",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203488,
+      "name": "Mike Muscala",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629004,
+      "name": "Svi Mykhailiuk",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630197,
+      "name": "Aleksej Pokusevski",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629676,
+      "name": "Isaiah Roby",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629026,
+      "name": "Kenrich Williams",
+      "team_abbr": "OKC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630175,
+      "name": "Cole Anthony",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628407,
+      "name": "Dwayne Bacon",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628964,
+      "name": "Mo Bamba",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629649,
+      "name": "Ignas Brazdeikis",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203487,
+      "name": "Michael Carter-Williams",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628365,
+      "name": "Markelle Fultz",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629743,
+      "name": "Donta Hall",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630181,
+      "name": "R.J. Hampton",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203914,
+      "name": "Gary Harris",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203516,
+      "name": "James Ennis III",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628371,
+      "name": "Jonathan Isaac",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202709,
+      "name": "Cory Joseph",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203490,
+      "name": "Otto Porter Jr.",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628976,
+      "name": "Wendell Carter Jr.",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629643,
+      "name": "Chuma Okeke",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626184,
+      "name": "Chasson Randle",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203082,
+      "name": "Terrence Ross",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628414,
+      "name": "Sindarius Thornwell",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629021,
+      "name": "Moritz Wagner",
+      "team_abbr": "ORL",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629109,
+      "name": "Gary Clark",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203552,
+      "name": "Seth Curry",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203083,
+      "name": "Andre Drummond",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203954,
+      "name": "Joel Embiid",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201980,
+      "name": "Danny Green",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202699,
+      "name": "Tobias Harris",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201588,
+      "name": "George Hill",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630198,
+      "name": "Isaiah Joe",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627788,
+      "name": "Furkan Korkmaz",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630178,
+      "name": "Tyrese Maxey",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629003,
+      "name": "Shake Milton",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630194,
+      "name": "Paul Reed",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203118,
+      "name": "Mike Scott",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629680,
+      "name": "Matisse Thybulle",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629730,
+      "name": "Rayjon Tucker",
+      "team_abbr": "PHI",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630234,
+      "name": "Ty-Shon Alexander",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629028,
+      "name": "Deandre Ayton",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626164,
+      "name": "Devin Booker",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628969,
+      "name": "Mikal Bridges",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628975,
+      "name": "Jevon Carter",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628470,
+      "name": "Torrey Craig",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203109,
+      "name": "Jae Crowder",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204038,
+      "name": "Langston Galloway",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629661,
+      "name": "Cameron Johnson",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626163,
+      "name": "Frank Kaminsky",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627814,
+      "name": "Damion Lee",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202734,
+      "name": "E'Twaun Moore",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627846,
+      "name": "Abdel Nader",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 101108,
+      "name": "Chris Paul",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626166,
+      "name": "Cameron Payne",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203967,
+      "name": "Dario Saric",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630188,
+      "name": "Jalen Smith",
+      "team_abbr": "PHX",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202329,
+      "name": "Al-Farouq Aminu",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 2546,
+      "name": "Carmelo Anthony",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629833,
+      "name": "Keljin Blevins",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628380,
+      "name": "Zach Collins",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203496,
+      "name": "Robert Covington",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629604,
+      "name": "CJ Elleby",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626178,
+      "name": "Rondae Hollis-Jefferson",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628385,
+      "name": "Harry Giles III",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627884,
+      "name": "Derrick Jones Jr.",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202683,
+      "name": "Enes Kanter",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628388,
+      "name": "T.J. Leaf",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203081,
+      "name": "Damian Lillard",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629642,
+      "name": "Nassir Little",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203468,
+      "name": "CJ McCollum",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203994,
+      "name": "Jusuf Nurkic",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626181,
+      "name": "Norman Powell",
+      "team_abbr": "POR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203084,
+      "name": "Harrison Barnes",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629056,
+      "name": "Terence Davis",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201942,
+      "name": "DeMar DeRozan",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629657,
+      "name": "Kyle Guy",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630169,
+      "name": "Tyrese Haliburton",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203090,
+      "name": "Maurice Harkless",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627741,
+      "name": "Buddy Hield",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626158,
+      "name": "Richaun Holmes",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630218,
+      "name": "Robert Woodard II",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628963,
+      "name": "Marvin Bagley III",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629713,
+      "name": "Justin James",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627745,
+      "name": "Damian Jones",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629663,
+      "name": "Louis King",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629002,
+      "name": "Chimezie Metu",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630186,
+      "name": "Jahmi'us Ramsey",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202355,
+      "name": "Hassan Whiteside",
+      "team_abbr": "SAC",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628966,
+      "name": "Keita Bates-Diop",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203476,
+      "name": "Gorgui Dieng",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629234,
+      "name": "Drew Eubanks",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628368,
+      "name": "De'Aaron Fox",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200752,
+      "name": "Rudy Gay",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629022,
+      "name": "Lonnie Walker IV",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629640,
+      "name": "Keldon Johnson",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630200,
+      "name": "Tre Jones",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626168,
+      "name": "Trey Lyles",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201988,
+      "name": "Patty Mills",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627751,
+      "name": "Jakob Poeltl",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629677,
+      "name": "Luka Samanic",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630170,
+      "name": "Devin Vassell",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629683,
+      "name": "Quinndary Weatherspoon",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628401,
+      "name": "Derrick White",
+      "team_abbr": "SAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628384,
+      "name": "OG Anunoby",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627761,
+      "name": "DeAndre' Bembry",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203920,
+      "name": "Khem Birch",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628449,
+      "name": "Chris Boucher",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630201,
+      "name": "Malachi Flynn",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630273,
+      "name": "Freddie Gillespie",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630223,
+      "name": "Jalen Harris",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203918,
+      "name": "Rodney Hood",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626169,
+      "name": "Stanley Johnson",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629018,
+      "name": "Gary Trent Jr.",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 200768,
+      "name": "Kyle Lowry",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627783,
+      "name": "Pascal Siakam",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202066,
+      "name": "Garrett Temple",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627832,
+      "name": "Fred VanVleet",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629139,
+      "name": "Yuta Watanabe",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628778,
+      "name": "Paul Watson",
+      "team_abbr": "TOR",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628962,
+      "name": "Udoka Azubuike",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202711,
+      "name": "Bojan Bogdanovic",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629714,
+      "name": "Jarrell Brantley",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203903,
+      "name": "Jordan Clarkson",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201144,
+      "name": "Mike Conley",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202324,
+      "name": "Derrick Favors",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630235,
+      "name": "Trent Forrest",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203497,
+      "name": "Rudy Gobert",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630190,
+      "name": "Elijah Hughes",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 101141,
+      "name": "Ersan Ilyasova",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 204060,
+      "name": "Joe Ingles",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628378,
+      "name": "Donovan Mitchell",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629752,
+      "name": "Juwan Morgan",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627777,
+      "name": "Georges Niang",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1626220,
+      "name": "Royce O'Neale",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629671,
+      "name": "Miye Oni",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629744,
+      "name": "Matt Thomas",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1627756,
+      "name": "Denzel Valentine",
+      "team_abbr": "UTA",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630166,
+      "name": "Deni Avdija",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203078,
+      "name": "Bradley Beal",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202722,
+      "name": "Davis Bertans",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629067,
+      "name": "Isaac Bonga",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628418,
+      "name": "Thomas Bryant",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629655,
+      "name": "Daniel Gafford",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630264,
+      "name": "Anthony Gill",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629060,
+      "name": "Rui Hachimura",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1628990,
+      "name": "Chandler Hutchison",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201577,
+      "name": "Robin Lopez",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1629726,
+      "name": "Garrison Mathews",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 203526,
+      "name": "Raul Neto",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 202397,
+      "name": "Ish Smith",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 201566,
+      "name": "Russell Westbrook",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    },
+    {
+      "id": 1630216,
+      "name": "Cassius Winston",
+      "team_abbr": "WAS",
+      "position": null,
+      "jersey": null,
+      "height": null,
+      "weight": null
+    }
+  ]
+}

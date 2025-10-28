@@ -1,0 +1,118 @@
+{
+  "release": {
+    "phase": "Phase 3 — Storytelling",
+    "version": "Release 03",
+    "updated": "2024-10-05",
+    "summary": "Narrative walkthroughs that combine metrics with editorial context."
+  },
+  "stories": [
+    {
+      "id": "schedule-pulse",
+      "title": "Back-to-back gauntlet shaping rotations",
+      "lede": "A tighter cadence forces rotation planning before Thanksgiving.",
+      "metric": {
+        "label": "Back-to-back windows",
+        "value": "446",
+        "unit": "intervals",
+        "context": "16% of the 2,779 rest windows logged for 2025-26."
+      },
+      "editorial": [
+        "The 2025-26 schedule tracks 2,779 rest windows, and 446 of them arrive with zero recovery days. That keeps average downtime at 3.0 days and pushes staffs to coordinate recovery blocks weeks in advance.",
+        "One-day turnarounds (1,664 instances) dominate nearly 60% of the cadence, so even clubs with generous travel support must rehearse short-notice scouting and sports-science workflows.",
+        "Atlanta faces a league-high 17 back-to-backs, while the Clippers and Wizards both absorb seven-game road stretches—the longest gauntlets on the 2025-26 board."
+      ],
+      "spotlights": [
+        {
+          "label": "Average rest",
+          "value": "3.0 days",
+          "context": "The league-wide rhythm across 2,779 tracked intervals."
+        },
+        {
+          "label": "1-day turnarounds",
+          "value": "1,664",
+          "context": "59.9% of schedule gaps demand single-day prep."
+        },
+        {
+          "label": "Longest road stretch",
+          "value": "7 games",
+          "context": "Shared by the Clippers and Wizards according to schedule manifest."
+        }
+      ],
+      "sources": [
+        "season_25_26_schedule.json"
+      ]
+    },
+    {
+      "id": "efficiency-dynasties",
+      "title": "Efficiency dynasties hold the analytics high ground",
+      "lede": "Top programs pair scoring punch with stingy defense across eras.",
+      "metric": {
+        "label": "Best historical win rate",
+        "value": "59.7%",
+        "unit": "win rate",
+        "context": "Boston's mark with a +3.0 scoring margin per night."
+      },
+      "editorial": [
+        "Boston's 4,091 wins in 6,856 games deliver a 59.7% clip while outscoring opponents 106.2 to 103.2. That +3.0 differential is the anchor metric for this week's dynasty spotlight.",
+        "Los Angeles tracks just 71 wins behind at 58.5% and keeps pace with 106.7 points per game. San Antonio's 21.1 assists per night showcase ball movement as a path to sustained efficiency.",
+        "Within the top 12, Miami is the only club below 100 points per game, yet still clears a 52.6% win rate thanks to holding opponents under 99."
+      ],
+      "spotlights": [
+        {
+          "label": "Games logged",
+          "value": "6,856",
+          "context": "Boston's sample size powering the win-rate lead."
+        },
+        {
+          "label": "Assist leaders",
+          "value": "21.1 apg",
+          "context": "San Antonio's average among top-12 efficiency franchises."
+        },
+        {
+          "label": "Defensive squeeze",
+          "value": "98.9 opp ppg",
+          "context": "Miami's pressure benchmark while maintaining 52.6% wins."
+        }
+      ],
+      "sources": [
+        "team_performance.json"
+      ]
+    },
+    {
+      "id": "triple-double-era",
+      "title": "Triple-double era keeps compounding",
+      "lede": "Playmaking surges continue even as workloads normalize.",
+      "metric": {
+        "label": "Peak triple-doubles",
+        "value": "192",
+        "unit": "games",
+        "context": "Set during the 2021 season with 45,847 player-game logs."
+      },
+      "editorial": [
+        "League tracking shows triple-doubles jumping from 60 in 2015 to 96 in 2016, a 60% year-over-year surge that reset baseline expectations.",
+        "The 2021 campaign produced 192 triple-doubles across 45,847 player-game logs; even with fewer games in 2024 (37,584), the pace held at 175, signalling sustained versatility.",
+        "The current 2025 snapshot already counts 96 triple-doubles in 22,216 logged player games, keeping the narrative alive for another spike once the full season closes."
+      ],
+      "spotlights": [
+        {
+          "label": "2015 season",
+          "value": "60 triple-doubles",
+          "context": "Baseline before the era of nightly versatility."
+        },
+        {
+          "label": "2016 spike",
+          "value": "+36 YoY",
+          "context": "A 96 total that marked a 60% leap from 2015."
+        },
+        {
+          "label": "2024 tally",
+          "value": "175",
+          "context": "Delivered across 37,584 player-game logs."
+        }
+      ],
+      "sources": [
+        "player_season_insights.json"
+      ]
+    }
+  ]
+}

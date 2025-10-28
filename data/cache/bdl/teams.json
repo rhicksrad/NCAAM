@@ -1,0 +1,365 @@
+{
+  "cachedAt": "2025-09-29T12:21:22.760Z",
+  "value": [
+    {
+      "id": 1,
+      "abbreviation": "ATL",
+      "full_name": "Atlanta Hawks",
+      "city": "Atlanta",
+      "division": "Southeast",
+      "conference": "East"
+    },
+    {
+      "id": 2,
+      "abbreviation": "BOS",
+      "full_name": "Boston Celtics",
+      "city": "Boston",
+      "division": "Atlantic",
+      "conference": "East"
+    },
+    {
+      "id": 3,
+      "abbreviation": "BKN",
+      "full_name": "Brooklyn Nets",
+      "city": "Brooklyn",
+      "division": "Atlantic",
+      "conference": "East"
+    },
+    {
+      "id": 4,
+      "abbreviation": "CHA",
+      "full_name": "Charlotte Hornets",
+      "city": "Charlotte",
+      "division": "Southeast",
+      "conference": "East"
+    },
+    {
+      "id": 5,
+      "abbreviation": "CHI",
+      "full_name": "Chicago Bulls",
+      "city": "Chicago",
+      "division": "Central",
+      "conference": "East"
+    },
+    {
+      "id": 6,
+      "abbreviation": "CLE",
+      "full_name": "Cleveland Cavaliers",
+      "city": "Cleveland",
+      "division": "Central",
+      "conference": "East"
+    },
+    {
+      "id": 7,
+      "abbreviation": "DAL",
+      "full_name": "Dallas Mavericks",
+      "city": "Dallas",
+      "division": "Southwest",
+      "conference": "West"
+    },
+    {
+      "id": 8,
+      "abbreviation": "DEN",
+      "full_name": "Denver Nuggets",
+      "city": "Denver",
+      "division": "Northwest",
+      "conference": "West"
+    },
+    {
+      "id": 9,
+      "abbreviation": "DET",
+      "full_name": "Detroit Pistons",
+      "city": "Detroit",
+      "division": "Central",
+      "conference": "East"
+    },
+    {
+      "id": 10,
+      "abbreviation": "GSW",
+      "full_name": "Golden State Warriors",
+      "city": "Golden State",
+      "division": "Pacific",
+      "conference": "West"
+    },
+    {
+      "id": 11,
+      "abbreviation": "HOU",
+      "full_name": "Houston Rockets",
+      "city": "Houston",
+      "division": "Southwest",
+      "conference": "West"
+    },
+    {
+      "id": 12,
+      "abbreviation": "IND",
+      "full_name": "Indiana Pacers",
+      "city": "Indiana",
+      "division": "Central",
+      "conference": "East"
+    },
+    {
+      "id": 13,
+      "abbreviation": "LAC",
+      "full_name": "LA Clippers",
+      "city": "LA",
+      "division": "Pacific",
+      "conference": "West"
+    },
+    {
+      "id": 14,
+      "abbreviation": "LAL",
+      "full_name": "Los Angeles Lakers",
+      "city": "Los Angeles",
+      "division": "Pacific",
+      "conference": "West"
+    },
+    {
+      "id": 15,
+      "abbreviation": "MEM",
+      "full_name": "Memphis Grizzlies",
+      "city": "Memphis",
+      "division": "Southwest",
+      "conference": "West"
+    },
+    {
+      "id": 16,
+      "abbreviation": "MIA",
+      "full_name": "Miami Heat",
+      "city": "Miami",
+      "division": "Southeast",
+      "conference": "East"
+    },
+    {
+      "id": 17,
+      "abbreviation": "MIL",
+      "full_name": "Milwaukee Bucks",
+      "city": "Milwaukee",
+      "division": "Central",
+      "conference": "East"
+    },
+    {
+      "id": 18,
+      "abbreviation": "MIN",
+      "full_name": "Minnesota Timberwolves",
+      "city": "Minnesota",
+      "division": "Northwest",
+      "conference": "West"
+    },
+    {
+      "id": 19,
+      "abbreviation": "NOP",
+      "full_name": "New Orleans Pelicans",
+      "city": "New Orleans",
+      "division": "Southwest",
+      "conference": "West"
+    },
+    {
+      "id": 20,
+      "abbreviation": "NYK",
+      "full_name": "New York Knicks",
+      "city": "New York",
+      "division": "Atlantic",
+      "conference": "East"
+    },
+    {
+      "id": 21,
+      "abbreviation": "OKC",
+      "full_name": "Oklahoma City Thunder",
+      "city": "Oklahoma City",
+      "division": "Northwest",
+      "conference": "West"
+    },
+    {
+      "id": 22,
+      "abbreviation": "ORL",
+      "full_name": "Orlando Magic",
+      "city": "Orlando",
+      "division": "Southeast",
+      "conference": "East"
+    },
+    {
+      "id": 23,
+      "abbreviation": "PHI",
+      "full_name": "Philadelphia 76ers",
+      "city": "Philadelphia",
+      "division": "Atlantic",
+      "conference": "East"
+    },
+    {
+      "id": 24,
+      "abbreviation": "PHX",
+      "full_name": "Phoenix Suns",
+      "city": "Phoenix",
+      "division": "Pacific",
+      "conference": "West"
+    },
+    {
+      "id": 25,
+      "abbreviation": "POR",
+      "full_name": "Portland Trail Blazers",
+      "city": "Portland",
+      "division": "Northwest",
+      "conference": "West"
+    },
+    {
+      "id": 26,
+      "abbreviation": "SAC",
+      "full_name": "Sacramento Kings",
+      "city": "Sacramento",
+      "division": "Pacific",
+      "conference": "West"
+    },
+    {
+      "id": 27,
+      "abbreviation": "SAS",
+      "full_name": "San Antonio Spurs",
+      "city": "San Antonio",
+      "division": "Southwest",
+      "conference": "West"
+    },
+    {
+      "id": 28,
+      "abbreviation": "TOR",
+      "full_name": "Toronto Raptors",
+      "city": "Toronto",
+      "division": "Atlantic",
+      "conference": "East"
+    },
+    {
+      "id": 29,
+      "abbreviation": "UTA",
+      "full_name": "Utah Jazz",
+      "city": "Utah",
+      "division": "Northwest",
+      "conference": "West"
+    },
+    {
+      "id": 30,
+      "abbreviation": "WAS",
+      "full_name": "Washington Wizards",
+      "city": "Washington",
+      "division": "Southeast",
+      "conference": "East"
+    },
+    {
+      "id": 37,
+      "abbreviation": "CHS",
+      "full_name": "Chicago Stags",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 38,
+      "abbreviation": "BOM",
+      "full_name": "St. Louis Bombers",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 39,
+      "abbreviation": "CLR",
+      "full_name": "Cleveland Rebels",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 40,
+      "abbreviation": "DEF",
+      "full_name": "Detroit Falcons",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 41,
+      "abbreviation": "HUS",
+      "full_name": "Toronto Huskies",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 42,
+      "abbreviation": "WAS",
+      "full_name": "Washington Capitols",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 43,
+      "abbreviation": "PRO",
+      "full_name": "Providence Steamrollers",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 44,
+      "abbreviation": "PIT",
+      "full_name": "Pittsburgh Ironmen",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 45,
+      "abbreviation": "BAL",
+      "full_name": "Baltimore Bullets",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 46,
+      "abbreviation": "JET",
+      "full_name": "Indianapolis Jets",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 47,
+      "abbreviation": "AND",
+      "full_name": "Anderson Packers",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 48,
+      "abbreviation": "WAT",
+      "full_name": "Waterloo Hawks",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 49,
+      "abbreviation": "INO",
+      "full_name": "Indianapolis Olympians",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 50,
+      "abbreviation": "DN",
+      "full_name": "Denver Nuggets",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    },
+    {
+      "id": 51,
+      "abbreviation": "SHE",
+      "full_name": "Sheboygan Redskins",
+      "city": "",
+      "division": "",
+      "conference": "    "
+    }
+  ]
+}

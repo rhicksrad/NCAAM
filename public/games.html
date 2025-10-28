@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/NBA/" />
+    <title>Games Observatory | NBA Intelligence Hub</title>
+    <meta name="title" content="Games Observatory | NBA Intelligence Hub" />
+    <meta name="description" content="Track the scoreboard lab for the 2025-26 NBA buildup with rolling metrics, filters, and historical context." />
+    <link rel="canonical" href="https://rhicksrad.github.io/NBA/games.html" />
+    <meta property="og:site_name" content="NBA Intelligence Hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://rhicksrad.github.io/NBA/games.html" />
+    <meta property="og:title" content="Games Observatory | NBA Intelligence Hub" />
+    <meta property="og:description" content="Track the scoreboard lab for the 2025-26 NBA buildup with rolling metrics, filters, and historical context." />
+    <meta property="og:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:secure_url" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rhicksrad.github.io/NBA/games.html" />
+    <meta name="twitter:title" content="Games Observatory | NBA Intelligence Hub" />
+    <meta name="twitter:description" content="Track the scoreboard lab for the 2025-26 NBA buildup with rolling metrics, filters, and historical context." />
+    <meta name="twitter:image" content="https://rhicksrad.github.io/NBA/assets/social/nba-intelligence-hub-card.svg" />
+    <meta name="twitter:image:alt" content="NBA Intelligence Hub share artwork with midnight gradients, glowing court map, and season intelligence headline." />
+    <link rel="icon" type="image/svg+xml" href="assets/logos/nba-logoman.svg" />
+    <link rel="stylesheet" href="styles/hub.css" />
+  </head>
+  <body>
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="hub-nav">
+          <a class="brand" href="index.html">
+            <span class="brand__logo"><img src="assets/logos/nba-logoman.svg" alt="NBA logo" class="brand__logo-icon" /></span>
+            <span class="brand__wordmark"><span class="brand__wordmark-accent">NBA</span> Intelligence Hub</span>
+          </a>
+          <nav class="nav-links">
+            <a href="index.html">2025-2026 Season</a>
+            <a href="rewind.html">2024-2025 Season Rewind</a>
+            <a href="players.html">Players</a>
+            <a href="teams.html">Teams</a>
+            <a class="active" href="games.html">Games</a>
+            <a href="history.html">History</a>
+            <a href="insights.html">Insights Lab</a>
+            <a href="goat.html">GOAT Index</a>
+            <a href="about.html">About</a>
+          </nav>
+        </div>
+        <div class="hero hero--lab">
+          <div class="hero__intro">
+            <span class="eyebrow">Games Observatory</span>
+            <h1>Scoreboard lab</h1>
+            <div class="games-toolbar">
+              <label for="game-date-start">Game dates</label>
+              <div class="games-toolbar__range">
+                <input
+                  id="game-date-start"
+                  type="date"
+                  name="game-date-start"
+                  data-game-date-start
+                  aria-label="Start date"
+                />
+                <span class="games-toolbar__separator" aria-hidden="true">to</span>
+                <input
+                  id="game-date-end"
+                  type="date"
+                  name="game-date-end"
+                  data-game-date-end
+                  aria-label="End date"
+                />
+              </div>
+              <button type="button" class="games-toolbar__refresh" data-manual-refresh>
+                Refresh now
+              </button>
+            </div>
+          </div>
+          <dl class="hero-metrics hero-metrics--lab">
+            <div class="hero-metrics__item">
+              <dt>Games tracked</dt>
+              <dd>
+                <span data-metric="games-total">—</span>
+                <small>for <span data-selected-date>—</span></small>
+              </dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Live right now</dt>
+              <dd>
+                <span data-metric="live-count">—</span>
+                <small>auto-pinging every 2½ minutes</small>
+              </dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Finals logged</dt>
+              <dd>
+                <span data-metric="final-count">—</span>
+                <small>completed on the slate</small>
+              </dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Average final margin</dt>
+              <dd>
+                <span data-metric="avg-margin">—</span>
+                <small data-metric="avg-detail">Awaiting results</small>
+              </dd>
+            </div>
+            <div class="hero-metrics__item">
+              <dt>Highest scoring output</dt>
+              <dd>
+                <span data-metric="top-total">—</span>
+                <small data-metric="top-detail">No scores yet</small>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <main class="lab-content">
+        <section class="lab-grid">
+          <article class="lab-module lab-module--wide scoreboard-module">
+            <header class="lab-module__header">
+              <h2>Scoreboard pulse</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Powered by the live games feed</span>
+                <span class="lab-chip lab-chip--accent" data-metric="scoreboard-summary">—</span>
+                <div class="team-mode-toggle scoreboard-view-toggle" role="group" aria-label="Scoreboard view">
+                  <button
+                    type="button"
+                    class="team-mode-toggle__button"
+                    data-scoreboard-view="all"
+                    aria-pressed="true"
+                  >
+                    All games
+                  </button>
+                  <button
+                    type="button"
+                    class="team-mode-toggle__button"
+                    data-scoreboard-view="live"
+                    aria-pressed="false"
+                  >
+                    Live only
+                  </button>
+                  <button
+                    type="button"
+                    class="team-mode-toggle__button"
+                    data-scoreboard-view="upcoming"
+                    aria-pressed="false"
+                  >
+                    Upcoming only
+                  </button>
+                </div>
+              </div>
+            </header>
+            <div class="scoreboard-grid" data-scoreboard aria-live="polite"></div>
+            <p class="lab-module__caption">
+              Data syncs directly from the live games endpoint. Auto-refreshes every 2½ minutes when today's slate is
+              active.
+              <span class="games-caption-meta">Last update: <span data-refresh>—</span></span>
+              <span class="games-caption-meta" data-fetch-state></span>
+            </p>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Slate scorers</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Top player points</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="player-point-leaders"
+                data-chart-ratio="0.72"
+                aria-label="Top point totals across the games in view"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Assist engines</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Playmakers on the slate</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="assist-leaders"
+                data-chart-ratio="0.72"
+                aria-label="Assist leaders across the selected games"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Glass cleaners</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Top rebound totals</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="rebound-leaders"
+                data-chart-ratio="0.72"
+                aria-label="Leading rebounders across the selected slate"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Stocks hawks</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Steals + blocks leaders</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="stocks-leaders"
+                data-chart-ratio="0.72"
+                aria-label="Steal and block totals for the slate"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module lab-module--wide" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Margin spread</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Absolute margin buckets</span>
+                <span class="lab-chip lab-chip--accent" data-metric="margin-annotation">—</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="margin-spread"
+                data-chart-ratio="0.5"
+                aria-label="Point margin distribution across finals and live games"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Single-game scoring leaders</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Team points</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="scoring-leaders"
+                data-chart-ratio="0.72"
+                aria-label="Top team point totals from the slate"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Score balance</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Home edge vs. road edge</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="score-balance"
+                data-chart-ratio="0.78"
+                aria-label="Home versus road scoring balance for each game"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Glass battle</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Offensive vs. defensive boards</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="rebound-battle"
+                data-chart-ratio="0.68"
+                aria-label="Team offensive and defensive rebound mix"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module lab-module--wide" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Shooting efficiency lanes</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Team FG% • 3P% • FT%</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="shooting-efficiency"
+                data-chart-ratio="0.54"
+                aria-label="Field goal, three-point, and free-throw accuracy by team"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Stripe pressure</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Free throw volume leaders</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="free-throw-volume"
+                data-chart-ratio="0.72"
+                aria-label="Players generating the most free throw attempts"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Disruption index</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Steals and blocks by team</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="defense-plays"
+                data-chart-ratio="0.68"
+                aria-label="Team steal and block production"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="lab-module lab-module--wide" data-chart-wrapper>
+            <header class="lab-module__header">
+              <h2>Usage vs. payoff</h2>
+              <div class="lab-module__meta">
+                <span class="lab-chip">Player involvement vs. points</span>
+              </div>
+            </header>
+            <div class="viz-canvas">
+              <canvas
+                id="usage-efficiency"
+                data-chart-ratio="0.56"
+                aria-label="Usage involvement versus point production"
+              ></canvas>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="page-footer">Powered by the live games feed with a 2024-25 context lens.</footer>
+    </div>
+
+    <script src="vendor/chart.umd.js" defer></script>
+    <script type="module" src="scripts/games.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`state encoding > round-trips state via base64 1`] = `"eyJhIjpbImFscGhhIiwiYmV0YSIsImdhbW1hIl0sImIiOlsiZGVsdGEiLCJvbWVnYSJdLCJlcmFOb3JtIjp0cnVlfQ=="`;

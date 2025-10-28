@@ -1,0 +1,6532 @@
+[
+  {
+    "name": "A.J. Green",
+    "playerId": "38017733",
+    "position": "G",
+    "firstName": "A.J.",
+    "lastName": "Green",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Aaron Estrada",
+    "playerId": "1028264291",
+    "position": "G",
+    "firstName": "Aaron",
+    "lastName": "Estrada",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Aaron Gordon",
+    "playerId": "177",
+    "position": "F",
+    "firstName": "Aaron",
+    "lastName": "Gordon",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Aaron Holiday",
+    "playerId": "213",
+    "position": "G",
+    "firstName": "Aaron",
+    "lastName": "Holiday",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Aaron Nesmith",
+    "playerId": "3547250",
+    "position": "G-F",
+    "firstName": "Aaron",
+    "lastName": "Nesmith",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Aaron Wiggins",
+    "playerId": "17896078",
+    "position": "G",
+    "firstName": "Aaron",
+    "lastName": "Wiggins",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Adam Flagler",
+    "playerId": "436846673",
+    "position": "G",
+    "firstName": "Adam",
+    "lastName": "Flagler",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Adem Bona",
+    "playerId": "1028034846",
+    "position": "F",
+    "firstName": "Adem",
+    "lastName": "Bona",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Adou Thiero",
+    "playerId": "1057386376",
+    "position": "G",
+    "firstName": "Adou",
+    "lastName": "Thiero",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Airious Bailey",
+    "playerId": "1057260888",
+    "position": "F",
+    "firstName": "Airious",
+    "lastName": "Bailey",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "AJ Johnson",
+    "playerId": "1028026717",
+    "position": "G",
+    "firstName": "AJ",
+    "lastName": "Johnson",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "AJ Lawson",
+    "playerId": "17554004",
+    "position": "G",
+    "firstName": "AJ",
+    "lastName": "Lawson",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ajay Mitchell",
+    "playerId": "1028037477",
+    "position": "G",
+    "firstName": "Ajay",
+    "lastName": "Mitchell",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Akoldah Gak",
+    "playerId": "1058092439",
+    "position": "F",
+    "firstName": "Akoldah",
+    "lastName": "Gak",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Al Horford",
+    "playerId": "219",
+    "position": "C-F",
+    "firstName": "Al",
+    "lastName": "Horford",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alex Caruso",
+    "playerId": "89",
+    "position": "G",
+    "firstName": "Alex",
+    "lastName": "Caruso",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alex Len",
+    "playerId": "273",
+    "position": "C",
+    "firstName": "Alex",
+    "lastName": "Len",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alex Morales",
+    "playerId": "1028271147",
+    "position": "G",
+    "firstName": "Alex",
+    "lastName": "Morales",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alex Toohey",
+    "playerId": "1057396605",
+    "position": "F",
+    "firstName": "Alex",
+    "lastName": "Toohey",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alexandre Sarr",
+    "playerId": "1028028405",
+    "position": "C",
+    "firstName": "Alexandre",
+    "lastName": "Sarr",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alijah Martin",
+    "playerId": "1057389862",
+    "position": "G",
+    "firstName": "Alijah",
+    "lastName": "Martin",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alize Johnson",
+    "playerId": "240",
+    "position": "F",
+    "firstName": "Alize",
+    "lastName": "Johnson",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Alperen Sengun",
+    "playerId": "17896062",
+    "position": "F-C",
+    "firstName": "Alperen",
+    "lastName": "Sengun",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Amari Williams",
+    "playerId": "1057396966",
+    "position": "F-C",
+    "firstName": "Amari",
+    "lastName": "Williams",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Amen Thompson",
+    "playerId": "56677825",
+    "position": "G-F",
+    "firstName": "Amen",
+    "lastName": "Thompson",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Amir Coffey",
+    "playerId": "666511",
+    "position": "G",
+    "firstName": "Amir",
+    "lastName": "Coffey",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Andre Drummond",
+    "playerId": "137",
+    "position": "C",
+    "firstName": "Andre",
+    "lastName": "Drummond",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Andre Jackson Jr.",
+    "playerId": "56677852",
+    "position": "G",
+    "firstName": "Andre Jackson",
+    "lastName": "Jr.",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Andrew Nembhard",
+    "playerId": "38017507",
+    "position": "G-F",
+    "firstName": "Andrew",
+    "lastName": "Nembhard",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Andrew Wiggins",
+    "playerId": "475",
+    "position": "F-G",
+    "firstName": "Andrew",
+    "lastName": "Wiggins",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anfernee Simons",
+    "playerId": "419",
+    "position": "G",
+    "firstName": "Anfernee",
+    "lastName": "Simons",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anthony Black",
+    "playerId": "56677827",
+    "position": "G",
+    "firstName": "Anthony",
+    "lastName": "Black",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anthony Davis",
+    "playerId": "117",
+    "position": "C",
+    "firstName": "Anthony",
+    "lastName": "Davis",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anthony Edwards",
+    "playerId": "3547238",
+    "position": "G",
+    "firstName": "Anthony",
+    "lastName": "Edwards",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anthony Gill",
+    "playerId": "3547302",
+    "position": "F",
+    "firstName": "Anthony",
+    "lastName": "Gill",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Anton Watson",
+    "playerId": "1028049017",
+    "position": "F",
+    "firstName": "Anton",
+    "lastName": "Watson",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Antonio Reeves",
+    "playerId": "1028038100",
+    "position": "G",
+    "firstName": "Antonio",
+    "lastName": "Reeves",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ariel Hukporti",
+    "playerId": "1028046422",
+    "position": "C",
+    "firstName": "Ariel",
+    "lastName": "Hukporti",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Armando Bacot",
+    "playerId": "1028263166",
+    "position": "C",
+    "firstName": "Armando",
+    "lastName": "Bacot",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Asa Newell",
+    "playerId": "1057279093",
+    "position": "F",
+    "firstName": "Asa",
+    "lastName": "Newell",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Augustas Marčiulionis",
+    "playerId": "1057847467",
+    "position": "G",
+    "firstName": "Augustas",
+    "lastName": "Marčiulionis",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ausar Thompson",
+    "playerId": "56677826",
+    "position": "G-F",
+    "firstName": "Ausar",
+    "lastName": "Thompson",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Austin Reaves",
+    "playerId": "17553995",
+    "position": "G",
+    "firstName": "Austin",
+    "lastName": "Reaves",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ayo Dosunmu",
+    "playerId": "17895983",
+    "position": "G",
+    "firstName": "Ayo",
+    "lastName": "Dosunmu",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Babacar Sane",
+    "playerId": "1028256864",
+    "position": "F",
+    "firstName": "Babacar",
+    "lastName": "Sane",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bam Adebayo",
+    "playerId": "4",
+    "position": "C-F",
+    "firstName": "Bam",
+    "lastName": "Adebayo",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Baylor Scheierman",
+    "playerId": "1028028434",
+    "position": "G",
+    "firstName": "Baylor",
+    "lastName": "Scheierman",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ben Saraf",
+    "playerId": "1057279760",
+    "position": "G",
+    "firstName": "Ben",
+    "lastName": "Saraf",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ben Sheppard",
+    "playerId": "56677861",
+    "position": "G",
+    "firstName": "Ben",
+    "lastName": "Sheppard",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bennedict Mathurin",
+    "playerId": "38017686",
+    "position": "G-F",
+    "firstName": "Bennedict",
+    "lastName": "Mathurin",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bilal Coulibaly",
+    "playerId": "56677844",
+    "position": "G",
+    "firstName": "Bilal",
+    "lastName": "Coulibaly",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bismack Biyombo",
+    "playerId": "48",
+    "position": "C",
+    "firstName": "Bismack",
+    "lastName": "Biyombo",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Blake Hinson",
+    "playerId": "1028214958",
+    "position": "F",
+    "firstName": "Blake",
+    "lastName": "Hinson",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Blake Wesley",
+    "playerId": "38017693",
+    "position": "G",
+    "firstName": "Blake",
+    "lastName": "Wesley",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bobby Portis",
+    "playerId": "377",
+    "position": "F",
+    "firstName": "Bobby",
+    "lastName": "Portis",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bobi Klintman",
+    "playerId": "1028036878",
+    "position": "F",
+    "firstName": "Bobi",
+    "lastName": "Klintman",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bogdan Bogdanovic",
+    "playerId": "53",
+    "position": "G",
+    "firstName": "Bogdan",
+    "lastName": "Bogdanovic",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Boo Buie III",
+    "playerId": "1029959785",
+    "position": "",
+    "firstName": "Boo Buie",
+    "lastName": "III",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Boogie Ellis",
+    "playerId": "1028264254",
+    "position": "G",
+    "firstName": "Boogie",
+    "lastName": "Ellis",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bradley Beal",
+    "playerId": "37",
+    "position": "G",
+    "firstName": "Bradley",
+    "lastName": "Beal",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Branden Carlson",
+    "playerId": "1028218679",
+    "position": "C",
+    "firstName": "Branden",
+    "lastName": "Carlson",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brandin Podziemski",
+    "playerId": "56677858",
+    "position": "G",
+    "firstName": "Brandin",
+    "lastName": "Podziemski",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brandon Clarke",
+    "playerId": "666505",
+    "position": "F",
+    "firstName": "Brandon",
+    "lastName": "Clarke",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brandon Ingram",
+    "playerId": "227",
+    "position": "F",
+    "firstName": "Brandon",
+    "lastName": "Ingram",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brandon Miller",
+    "playerId": "56677823",
+    "position": "F",
+    "firstName": "Brandon",
+    "lastName": "Miller",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brandon Williams",
+    "playerId": "24489167",
+    "position": "G",
+    "firstName": "Brandon",
+    "lastName": "Williams",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Braxton Key",
+    "playerId": "17896007",
+    "position": "G",
+    "firstName": "Braxton",
+    "lastName": "Key",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brice Sensabaugh",
+    "playerId": "56677842",
+    "position": "F",
+    "firstName": "Brice",
+    "lastName": "Sensabaugh",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brice Williams",
+    "playerId": "1057849497",
+    "position": "G-F",
+    "firstName": "Brice",
+    "lastName": "Williams",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bronny James",
+    "playerId": "1028046517",
+    "position": "G",
+    "firstName": "Bronny",
+    "lastName": "James",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brook Lopez",
+    "playerId": "283",
+    "position": "C",
+    "firstName": "Brook",
+    "lastName": "Lopez",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Brooks Barnhizer",
+    "playerId": "1057392335",
+    "position": "",
+    "firstName": "Brooks",
+    "lastName": "Barnhizer",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bruce Brown",
+    "playerId": "69",
+    "position": "G",
+    "firstName": "Bruce",
+    "lastName": "Brown",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Bryce McGowens",
+    "playerId": "38017708",
+    "position": "G",
+    "firstName": "Bryce",
+    "lastName": "McGowens",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Buddy Hield",
+    "playerId": "210",
+    "position": "G",
+    "firstName": "Buddy",
+    "lastName": "Hield",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cade Cunningham",
+    "playerId": "17896075",
+    "position": "G-F",
+    "firstName": "Cade",
+    "lastName": "Cunningham",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Caleb Daniels",
+    "playerId": "1028263966",
+    "position": "G",
+    "firstName": "Caleb",
+    "lastName": "Daniels",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Caleb Houstan",
+    "playerId": "38017724",
+    "position": "G",
+    "firstName": "Caleb",
+    "lastName": "Houstan",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Caleb Love",
+    "playerId": "1057847330",
+    "position": "G",
+    "firstName": "Caleb",
+    "lastName": "Love",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Caleb Martin",
+    "playerId": "666747",
+    "position": "F",
+    "firstName": "Caleb",
+    "lastName": "Martin",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cam Christie",
+    "playerId": "1028035215",
+    "position": "G",
+    "firstName": "Cam",
+    "lastName": "Christie",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cam Spencer",
+    "playerId": "1028048549",
+    "position": "G",
+    "firstName": "Cam",
+    "lastName": "Spencer",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cam Thomas",
+    "playerId": "17896048",
+    "position": "G",
+    "firstName": "Cam",
+    "lastName": "Thomas",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cam Whitmore",
+    "playerId": "56677831",
+    "position": "F",
+    "firstName": "Cam",
+    "lastName": "Whitmore",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cameron Johnson",
+    "playerId": "666679",
+    "position": "F",
+    "firstName": "Cameron",
+    "lastName": "Johnson",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cameron Matthews",
+    "playerId": "1057847482",
+    "position": "F",
+    "firstName": "Cameron",
+    "lastName": "Matthews",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Caris LeVert",
+    "playerId": "277",
+    "position": "G",
+    "firstName": "Caris",
+    "lastName": "LeVert",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Carlton Carrington",
+    "playerId": "1028025235",
+    "position": "G",
+    "firstName": "Carlton",
+    "lastName": "Carrington",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Carter Bryant",
+    "playerId": "1057271360",
+    "position": "F",
+    "firstName": "Carter",
+    "lastName": "Bryant",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cason Wallace",
+    "playerId": "56677833",
+    "position": "G",
+    "firstName": "Cason",
+    "lastName": "Wallace",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cedric Coward",
+    "playerId": "1057266649",
+    "position": "G",
+    "firstName": "Cedric",
+    "lastName": "Coward",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chance McMillian",
+    "playerId": "1057970707",
+    "position": "",
+    "firstName": "Chance",
+    "lastName": "McMillian",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chaney Johnson",
+    "playerId": "1057846840",
+    "position": "",
+    "firstName": "Chaney",
+    "lastName": "Johnson",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Charles Bassey",
+    "playerId": "17895854",
+    "position": "G",
+    "firstName": "Charles",
+    "lastName": "Bassey",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Charles Bediako",
+    "playerId": "56677865",
+    "position": "C",
+    "firstName": "Charles",
+    "lastName": "Bediako",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chaz Lanier",
+    "playerId": "1057389625",
+    "position": "G",
+    "firstName": "Chaz",
+    "lastName": "Lanier",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chet Holmgren",
+    "playerId": "38017685",
+    "position": "C-F",
+    "firstName": "Chet",
+    "lastName": "Holmgren",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chris Boucher",
+    "playerId": "58",
+    "position": "F",
+    "firstName": "Chris",
+    "lastName": "Boucher",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chris Livingston",
+    "playerId": "56677854",
+    "position": "F",
+    "firstName": "Chris",
+    "lastName": "Livingston",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chris Mañon",
+    "playerId": "1057847504",
+    "position": "G",
+    "firstName": "Chris",
+    "lastName": "Mañon",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chris Paul",
+    "playerId": "367",
+    "position": "G",
+    "firstName": "Chris",
+    "lastName": "Paul",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chris Youngblood",
+    "playerId": "1057849685",
+    "position": "",
+    "firstName": "Chris",
+    "lastName": "Youngblood",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Christian Braun",
+    "playerId": "38017709",
+    "position": "G",
+    "firstName": "Christian",
+    "lastName": "Braun",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Christian Koloko",
+    "playerId": "38017710",
+    "position": "C",
+    "firstName": "Christian",
+    "lastName": "Koloko",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Christian Shumate",
+    "playerId": "1057848715",
+    "position": "",
+    "firstName": "Christian",
+    "lastName": "Shumate",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Chucky Hepburn",
+    "playerId": "1057846535",
+    "position": "G",
+    "firstName": "Chucky",
+    "lastName": "Hepburn",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "CJ Huntley",
+    "playerId": "1057846700",
+    "position": "F",
+    "firstName": "CJ",
+    "lastName": "Huntley",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "CJ McCollum",
+    "playerId": "303",
+    "position": "G",
+    "firstName": "CJ",
+    "lastName": "McCollum",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Clint Capela",
+    "playerId": "83",
+    "position": "C",
+    "firstName": "Clint",
+    "lastName": "Capela",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Coby White",
+    "playerId": "666956",
+    "position": "G",
+    "firstName": "Coby",
+    "lastName": "White",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cody Williams",
+    "playerId": "1028029291",
+    "position": "F",
+    "firstName": "Cody",
+    "lastName": "Williams",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Colby Jones",
+    "playerId": "56677845",
+    "position": "G",
+    "firstName": "Colby",
+    "lastName": "Jones",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cole Anthony",
+    "playerId": "3547251",
+    "position": "G",
+    "firstName": "Cole",
+    "lastName": "Anthony",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Colin Castleton",
+    "playerId": "56677738",
+    "position": "C",
+    "firstName": "Colin",
+    "lastName": "Castleton",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Collin Gillespie",
+    "playerId": "38017727",
+    "position": "G",
+    "firstName": "Collin",
+    "lastName": "Gillespie",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Collin Murray-Boyles",
+    "playerId": "1057268940",
+    "position": "F",
+    "firstName": "Collin",
+    "lastName": "Murray-Boyles",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Collin Sexton",
+    "playerId": "413",
+    "position": "G",
+    "firstName": "Collin",
+    "lastName": "Sexton",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cooper Flagg",
+    "playerId": "1057262088",
+    "position": "F",
+    "firstName": "Cooper",
+    "lastName": "Flagg",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Corey Kispert",
+    "playerId": "17896045",
+    "position": "F",
+    "firstName": "Corey",
+    "lastName": "Kispert",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Cormac Ryan",
+    "playerId": "1028266882",
+    "position": "",
+    "firstName": "Cormac",
+    "lastName": "Ryan",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Craig Porter",
+    "playerId": "56677872",
+    "position": "G",
+    "firstName": "Craig",
+    "lastName": "Porter",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Curtis Jones",
+    "playerId": "1057846921",
+    "position": "G",
+    "firstName": "Curtis",
+    "lastName": "Jones",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "D'Angelo Russell",
+    "playerId": "405",
+    "position": "G",
+    "firstName": "D'Angelo",
+    "lastName": "Russell",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Daeqwon Plowden",
+    "playerId": "1028246478",
+    "position": "G-F",
+    "firstName": "Daeqwon",
+    "lastName": "Plowden",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dain Dainja",
+    "playerId": "1057845569",
+    "position": "",
+    "firstName": "Dain",
+    "lastName": "Dainja",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dalen Terry",
+    "playerId": "38017719",
+    "position": "F",
+    "firstName": "Dalen",
+    "lastName": "Terry",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dalton Knecht",
+    "playerId": "1028026974",
+    "position": "F",
+    "firstName": "Dalton",
+    "lastName": "Knecht",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Damian Lillard",
+    "playerId": "278",
+    "position": "G",
+    "firstName": "Damian",
+    "lastName": "Lillard",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Damion Baugh",
+    "playerId": "1041623858",
+    "position": "G",
+    "firstName": "Damion",
+    "lastName": "Baugh",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Daniel Gafford",
+    "playerId": "666577",
+    "position": "F",
+    "firstName": "Daniel",
+    "lastName": "Gafford",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "playerId": "1028240128",
+    "position": "",
+    "firstName": "Daniss",
+    "lastName": "Jenkins",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Danny Wolf",
+    "playerId": "1057280779",
+    "position": "F-C",
+    "firstName": "Danny",
+    "lastName": "Wolf",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dante Exum",
+    "playerId": "151",
+    "position": "G",
+    "firstName": "Dante",
+    "lastName": "Exum",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dario Saric",
+    "playerId": "407",
+    "position": "F",
+    "firstName": "Dario",
+    "lastName": "Saric",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dariq Whitehead",
+    "playerId": "56677841",
+    "position": "F",
+    "firstName": "Dariq",
+    "lastName": "Whitehead",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Darius Brown",
+    "playerId": "1028268560",
+    "position": "",
+    "firstName": "Darius",
+    "lastName": "Brown",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Darius Garland",
+    "playerId": "666581",
+    "position": "G",
+    "firstName": "Darius",
+    "lastName": "Garland",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "DaRon Holmes II",
+    "playerId": "1028026514",
+    "position": "F",
+    "firstName": "DaRon Holmes",
+    "lastName": "II",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "David Duke Jr.",
+    "playerId": "17896049",
+    "position": "G",
+    "firstName": "David Duke",
+    "lastName": "Jr.",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "David Jones",
+    "playerId": "1028245237",
+    "position": "F",
+    "firstName": "David",
+    "lastName": "Jones",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "David Roddy",
+    "playerId": "38017729",
+    "position": "F",
+    "firstName": "David",
+    "lastName": "Roddy",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Davion Mitchell",
+    "playerId": "17553994",
+    "position": "G",
+    "firstName": "Davion",
+    "lastName": "Mitchell",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dawson Garcia",
+    "playerId": "1057846106",
+    "position": "F",
+    "firstName": "Dawson",
+    "lastName": "Garcia",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Day'Ron Sharpe",
+    "playerId": "17896038",
+    "position": "C",
+    "firstName": "Day'Ron",
+    "lastName": "Sharpe",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "De'Aaron Fox",
+    "playerId": "161",
+    "position": "G",
+    "firstName": "De'Aaron",
+    "lastName": "Fox",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "De'Andre Hunter",
+    "playerId": "666656",
+    "position": "F",
+    "firstName": "De'Andre",
+    "lastName": "Hunter",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "De'Anthony Melton",
+    "playerId": "313",
+    "position": "G",
+    "firstName": "De'Anthony",
+    "lastName": "Melton",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dean Wade",
+    "playerId": "666940",
+    "position": "F",
+    "firstName": "Dean",
+    "lastName": "Wade",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Deandre Ayton",
+    "playerId": "22",
+    "position": "C",
+    "firstName": "Deandre",
+    "lastName": "Ayton",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dejounte Murray",
+    "playerId": "334",
+    "position": "G",
+    "firstName": "Dejounte",
+    "lastName": "Murray",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Delon Wright",
+    "playerId": "487",
+    "position": "G",
+    "firstName": "Delon",
+    "lastName": "Wright",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "DeMar DeRozan",
+    "playerId": "125",
+    "position": "G",
+    "firstName": "DeMar",
+    "lastName": "DeRozan",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Deni Avdija",
+    "playerId": "3547242",
+    "position": "F",
+    "firstName": "Deni",
+    "lastName": "Avdija",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dennis Schroder",
+    "playerId": "409",
+    "position": "G",
+    "firstName": "Dennis",
+    "lastName": "Schroder",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dennis Smith Jr.",
+    "playerId": "421",
+    "position": "G",
+    "firstName": "Dennis Smith",
+    "lastName": "Jr.",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dereck Lively II",
+    "playerId": "56677840",
+    "position": "C",
+    "firstName": "Dereck Lively",
+    "lastName": "II",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Derik Queen",
+    "playerId": "1057274415",
+    "position": "C",
+    "firstName": "Derik",
+    "lastName": "Queen",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Derrick Jones Jr.",
+    "playerId": "247",
+    "position": "F-G",
+    "firstName": "Derrick Jones",
+    "lastName": "Jr.",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Derrick White",
+    "playerId": "473",
+    "position": "G",
+    "firstName": "Derrick",
+    "lastName": "White",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Desmond Bane",
+    "playerId": "3547287",
+    "position": "G",
+    "firstName": "Desmond",
+    "lastName": "Bane",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Devin Booker",
+    "playerId": "57",
+    "position": "G",
+    "firstName": "Devin",
+    "lastName": "Booker",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Devin Carter",
+    "playerId": "1028025242",
+    "position": "G",
+    "firstName": "Devin",
+    "lastName": "Carter",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Devin Vassell",
+    "playerId": "3547246",
+    "position": "G-F",
+    "firstName": "Devin",
+    "lastName": "Vassell",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dexter Dennis",
+    "playerId": "56677873",
+    "position": "G",
+    "firstName": "Dexter",
+    "lastName": "Dennis",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dillon Brooks",
+    "playerId": "66",
+    "position": "G-F",
+    "firstName": "Dillon",
+    "lastName": "Brooks",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dillon Jones",
+    "playerId": "1028026812",
+    "position": "F",
+    "firstName": "Dillon",
+    "lastName": "Jones",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "DJ Rodman",
+    "playerId": "1058094827",
+    "position": "G",
+    "firstName": "DJ",
+    "lastName": "Rodman",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "DJ Steward",
+    "playerId": "17553996",
+    "position": "G",
+    "firstName": "DJ",
+    "lastName": "Steward",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Domantas Sabonis",
+    "playerId": "406",
+    "position": "F",
+    "firstName": "Domantas",
+    "lastName": "Sabonis",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dominick Barlow",
+    "playerId": "38017730",
+    "position": "F",
+    "firstName": "Dominick",
+    "lastName": "Barlow",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Donovan Clingan",
+    "playerId": "1028025344",
+    "position": "C",
+    "firstName": "Donovan",
+    "lastName": "Clingan",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Donovan Mitchell",
+    "playerId": "322",
+    "position": "G",
+    "firstName": "Donovan",
+    "lastName": "Mitchell",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Donte DiVincenzo",
+    "playerId": "131",
+    "position": "G",
+    "firstName": "Donte",
+    "lastName": "DiVincenzo",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dorian Finney-Smith",
+    "playerId": "158",
+    "position": "F",
+    "firstName": "Dorian",
+    "lastName": "Finney-Smith",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Doug McDermott",
+    "playerId": "305",
+    "position": "F",
+    "firstName": "Doug",
+    "lastName": "McDermott",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Drake Powell",
+    "playerId": "1057279425",
+    "position": "F",
+    "firstName": "Drake",
+    "lastName": "Powell",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Draymond Green",
+    "playerId": "185",
+    "position": "F",
+    "firstName": "Draymond",
+    "lastName": "Green",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Drew Eubanks",
+    "playerId": "147",
+    "position": "F",
+    "firstName": "Drew",
+    "lastName": "Eubanks",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Drew Peterson",
+    "playerId": "64270311",
+    "position": "F",
+    "firstName": "Drew",
+    "lastName": "Peterson",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Drew Timme",
+    "playerId": "1046672580",
+    "position": "F",
+    "firstName": "Drew",
+    "lastName": "Timme",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dru Smith",
+    "playerId": "19465585",
+    "position": "G",
+    "firstName": "Dru",
+    "lastName": "Smith",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Duncan Robinson",
+    "playerId": "397",
+    "position": "F",
+    "firstName": "Duncan",
+    "lastName": "Robinson",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Duop Reath",
+    "playerId": "56783340",
+    "position": "C",
+    "firstName": "Duop",
+    "lastName": "Reath",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dwight Powell",
+    "playerId": "379",
+    "position": "F-C",
+    "firstName": "Dwight",
+    "lastName": "Powell",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dylan Cardwell",
+    "playerId": "1057845274",
+    "position": "C",
+    "firstName": "Dylan",
+    "lastName": "Cardwell",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dylan Harper",
+    "playerId": "1057262518",
+    "position": "G",
+    "firstName": "Dylan",
+    "lastName": "Harper",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Dyson Daniels",
+    "playerId": "38017677",
+    "position": "G",
+    "firstName": "Dyson",
+    "lastName": "Daniels",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "E.J. Liddell",
+    "playerId": "38017663",
+    "position": "F",
+    "firstName": "E.J.",
+    "lastName": "Liddell",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Egor Demin",
+    "playerId": "1057266813",
+    "position": "G",
+    "firstName": "Egor",
+    "lastName": "Demin",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Eli John Ndiaye",
+    "playerId": "1057847875",
+    "position": "F",
+    "firstName": "Eli John",
+    "lastName": "Ndiaye",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Elijah Harkless",
+    "playerId": "1028264794",
+    "position": "G",
+    "firstName": "Elijah",
+    "lastName": "Harkless",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Emanuel Miller",
+    "playerId": "1028245974",
+    "position": "F",
+    "firstName": "Emanuel",
+    "lastName": "Miller",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Emoni Bates",
+    "playerId": "56677847",
+    "position": "F",
+    "firstName": "Emoni",
+    "lastName": "Bates",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Enrique Freeman",
+    "playerId": "1028045812",
+    "position": "F",
+    "firstName": "Enrique",
+    "lastName": "Freeman",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Eric Dixon",
+    "playerId": "1057845724",
+    "position": "F",
+    "firstName": "Eric",
+    "lastName": "Dixon",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Eric Gordon",
+    "playerId": "178",
+    "position": "G",
+    "firstName": "Eric",
+    "lastName": "Gordon",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Erik Stevenson",
+    "playerId": "1028267244",
+    "position": "G",
+    "firstName": "Erik",
+    "lastName": "Stevenson",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ethan Thompson",
+    "playerId": "17896117",
+    "position": "G",
+    "firstName": "Ethan",
+    "lastName": "Thompson",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Evan Mobley",
+    "playerId": "17896076",
+    "position": "F-C",
+    "firstName": "Evan",
+    "lastName": "Mobley",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Franz Wagner",
+    "playerId": "17896026",
+    "position": "F",
+    "firstName": "Franz",
+    "lastName": "Wagner",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Fred VanVleet",
+    "playerId": "458",
+    "position": "G",
+    "firstName": "Fred",
+    "lastName": "VanVleet",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gabe McGlothan",
+    "playerId": "1028255881",
+    "position": "F",
+    "firstName": "Gabe",
+    "lastName": "McGlothan",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gabe Vincent",
+    "playerId": "1603383",
+    "position": "G",
+    "firstName": "Gabe",
+    "lastName": "Vincent",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Garrett Temple",
+    "playerId": "436",
+    "position": "G-F",
+    "firstName": "Garrett",
+    "lastName": "Temple",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Garrison Brooks",
+    "playerId": "1057845114",
+    "position": "C",
+    "firstName": "Garrison",
+    "lastName": "Brooks",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Garrison Mathews",
+    "playerId": "666754",
+    "position": "G",
+    "firstName": "Garrison",
+    "lastName": "Mathews",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gary Harris",
+    "playerId": "196",
+    "position": "G",
+    "firstName": "Gary",
+    "lastName": "Harris",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gary Payton II",
+    "playerId": "2189",
+    "position": "",
+    "firstName": "Gary Payton",
+    "lastName": "II",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gary Trent Jr.",
+    "playerId": "3089",
+    "position": "",
+    "firstName": "Gary Trent",
+    "lastName": "Jr.",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Georges Niang",
+    "playerId": "344",
+    "position": "F",
+    "firstName": "Georges",
+    "lastName": "Niang",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "GG Jackson",
+    "playerId": "56677830",
+    "position": "F",
+    "firstName": "GG",
+    "lastName": "Jackson",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Giannis Antetokounmpo",
+    "playerId": "15",
+    "position": "F",
+    "firstName": "Giannis",
+    "lastName": "Antetokounmpo",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Goga Bitadze",
+    "playerId": "666442",
+    "position": "C",
+    "firstName": "Goga",
+    "lastName": "Bitadze",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gradey Dick",
+    "playerId": "56677828",
+    "position": "G",
+    "firstName": "Gradey",
+    "lastName": "Dick",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Grant Williams",
+    "playerId": "666965",
+    "position": "F",
+    "firstName": "Grant",
+    "lastName": "Williams",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Grayson Allen",
+    "playerId": "8",
+    "position": "G",
+    "firstName": "Grayson",
+    "lastName": "Allen",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Guerschon Yabusele",
+    "playerId": "488",
+    "position": "F",
+    "firstName": "Guerschon",
+    "lastName": "Yabusele",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Gui Santos",
+    "playerId": "57875092",
+    "position": "F",
+    "firstName": "Gui",
+    "lastName": "Santos",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hansen Yang",
+    "playerId": "1057275769",
+    "position": "C",
+    "firstName": "Hansen",
+    "lastName": "Yang",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Harrison Barnes",
+    "playerId": "30",
+    "position": "F",
+    "firstName": "Harrison",
+    "lastName": "Barnes",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Harrison Ingram",
+    "playerId": "1028046464",
+    "position": "F",
+    "firstName": "Harrison",
+    "lastName": "Ingram",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hason Ward",
+    "playerId": "1028272676",
+    "position": "F",
+    "firstName": "Hason",
+    "lastName": "Ward",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Haywood Highsmith",
+    "playerId": "3092",
+    "position": "",
+    "firstName": "Haywood",
+    "lastName": "Highsmith",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Herbert Jones",
+    "playerId": "17896024",
+    "position": "F",
+    "firstName": "Herbert",
+    "lastName": "Jones",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hugo González",
+    "playerId": "1057277425",
+    "position": "G",
+    "firstName": "Hugo",
+    "lastName": "González",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hunter Dickinson",
+    "playerId": "1057845705",
+    "position": "C",
+    "firstName": "Hunter",
+    "lastName": "Dickinson",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hunter Sallis",
+    "playerId": "1057848561",
+    "position": "G",
+    "firstName": "Hunter",
+    "lastName": "Sallis",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Hunter Tyson",
+    "playerId": "56677871",
+    "position": "F",
+    "firstName": "Hunter",
+    "lastName": "Tyson",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ibou Badji",
+    "playerId": "39613724",
+    "position": "C",
+    "firstName": "Ibou",
+    "lastName": "Badji",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Igor Miličić, Jr.",
+    "playerId": "1057847674",
+    "position": "F",
+    "firstName": "Igor Miličić,",
+    "lastName": "Jr.",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Immanuel Quickley",
+    "playerId": "3547269",
+    "position": "G",
+    "firstName": "Immanuel",
+    "lastName": "Quickley",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaac Jones",
+    "playerId": "1028205331",
+    "position": "F",
+    "firstName": "Isaac",
+    "lastName": "Jones",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaac Okoro",
+    "playerId": "3547247",
+    "position": "F-G",
+    "firstName": "Isaac",
+    "lastName": "Okoro",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Collier",
+    "playerId": "1028025362",
+    "position": "G",
+    "firstName": "Isaiah",
+    "lastName": "Collier",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Crawford",
+    "playerId": "1028203948",
+    "position": "F",
+    "firstName": "Isaiah",
+    "lastName": "Crawford",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Hartenstein",
+    "playerId": "201",
+    "position": "F-C",
+    "firstName": "Isaiah",
+    "lastName": "Hartenstein",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Jackson",
+    "playerId": "17896035",
+    "position": "F",
+    "firstName": "Isaiah",
+    "lastName": "Jackson",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Joe",
+    "playerId": "3547272",
+    "position": "G",
+    "firstName": "Isaiah",
+    "lastName": "Joe",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Livers",
+    "playerId": "17896071",
+    "position": "F",
+    "firstName": "Isaiah",
+    "lastName": "Livers",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Stevens",
+    "playerId": "1028242168",
+    "position": "G",
+    "firstName": "Isaiah",
+    "lastName": "Stevens",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaiah Stewart",
+    "playerId": "3547267",
+    "position": "F-C",
+    "firstName": "Isaiah",
+    "lastName": "Stewart",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Isaih Moore",
+    "playerId": "1057847758",
+    "position": "F",
+    "firstName": "Isaih",
+    "lastName": "Moore",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ivica Zubac",
+    "playerId": "493",
+    "position": "C",
+    "firstName": "Ivica",
+    "lastName": "Zubac",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ja Morant",
+    "playerId": "666786",
+    "position": "G",
+    "firstName": "Ja",
+    "lastName": "Morant",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ja'Kobe Walter",
+    "playerId": "1028029111",
+    "position": "G",
+    "firstName": "Ja'Kobe",
+    "lastName": "Walter",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ja'Vier Francis",
+    "playerId": "1057969148",
+    "position": "",
+    "firstName": "Ja'Vier",
+    "lastName": "Francis",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jabari Smith Jr.",
+    "playerId": "38017684",
+    "position": "F",
+    "firstName": "Jabari Smith",
+    "lastName": "Jr.",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jabari Walker",
+    "playerId": "38017711",
+    "position": "F",
+    "firstName": "Jabari",
+    "lastName": "Walker",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jacksen Moni",
+    "playerId": "1057970845",
+    "position": "",
+    "firstName": "Jacksen",
+    "lastName": "Moni",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jackson Rowe",
+    "playerId": "1028246784",
+    "position": "F",
+    "firstName": "Jackson",
+    "lastName": "Rowe",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jacob Toppin",
+    "playerId": "56677795",
+    "position": "F",
+    "firstName": "Jacob",
+    "lastName": "Toppin",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaden Hardy",
+    "playerId": "38017679",
+    "position": "G",
+    "firstName": "Jaden",
+    "lastName": "Hardy",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaden Ivey",
+    "playerId": "38017682",
+    "position": "G",
+    "firstName": "Jaden",
+    "lastName": "Ivey",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaden McDaniels",
+    "playerId": "3547259",
+    "position": "F",
+    "firstName": "Jaden",
+    "lastName": "McDaniels",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaden Springer",
+    "playerId": "17896025",
+    "position": "G",
+    "firstName": "Jaden",
+    "lastName": "Springer",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jae'Sean Tate",
+    "playerId": "3547301",
+    "position": "F",
+    "firstName": "Jae'Sean",
+    "lastName": "Tate",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jahmir Young",
+    "playerId": "1028257937",
+    "position": "G",
+    "firstName": "Jahmir",
+    "lastName": "Young",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jahmyl Telfort",
+    "playerId": "1057849029",
+    "position": "",
+    "firstName": "Jahmyl",
+    "lastName": "Telfort",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaime Jaquez Jr.",
+    "playerId": "56677785",
+    "position": "G",
+    "firstName": "Jaime Jaquez",
+    "lastName": "Jr.",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jake LaRavia",
+    "playerId": "38017728",
+    "position": "F",
+    "firstName": "Jake",
+    "lastName": "LaRavia",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jakob Poeltl",
+    "playerId": "373",
+    "position": "C",
+    "firstName": "Jakob",
+    "lastName": "Poeltl",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Bridges",
+    "playerId": "1028178629",
+    "position": "F",
+    "firstName": "Jalen",
+    "lastName": "Bridges",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Brunson",
+    "playerId": "73",
+    "position": "G",
+    "firstName": "Jalen",
+    "lastName": "Brunson",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Duren",
+    "playerId": "38017694",
+    "position": "C",
+    "firstName": "Jalen",
+    "lastName": "Duren",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Green",
+    "playerId": "17895966",
+    "position": "G",
+    "firstName": "Jalen",
+    "lastName": "Green",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Johnson",
+    "playerId": "17896040",
+    "position": "F",
+    "firstName": "Jalen",
+    "lastName": "Johnson",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen McDaniels",
+    "playerId": "666762",
+    "position": "F",
+    "firstName": "Jalen",
+    "lastName": "McDaniels",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Pickett",
+    "playerId": "56677582",
+    "position": "G",
+    "firstName": "Jalen",
+    "lastName": "Pickett",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Slawson",
+    "playerId": "56677862",
+    "position": "F",
+    "firstName": "Jalen",
+    "lastName": "Slawson",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Smith",
+    "playerId": "3547264",
+    "position": "F-C",
+    "firstName": "Jalen",
+    "lastName": "Smith",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Suggs",
+    "playerId": "17896073",
+    "position": "G",
+    "firstName": "Jalen",
+    "lastName": "Suggs",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Williams",
+    "playerId": "38017703",
+    "position": "G-F",
+    "firstName": "Jalen",
+    "lastName": "Williams",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jalen Wilson",
+    "playerId": "56677722",
+    "position": "F",
+    "firstName": "Jalen",
+    "lastName": "Wilson",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamal Cain",
+    "playerId": "38017734",
+    "position": "F",
+    "firstName": "Jamal",
+    "lastName": "Cain",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamal Murray",
+    "playerId": "335",
+    "position": "G",
+    "firstName": "Jamal",
+    "lastName": "Murray",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamal Shead",
+    "playerId": "1028038426",
+    "position": "G",
+    "firstName": "Jamal",
+    "lastName": "Shead",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamaree Bouyea",
+    "playerId": "44477062",
+    "position": "G",
+    "firstName": "Jamaree",
+    "lastName": "Bouyea",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamarion Sharp",
+    "playerId": "1028256970",
+    "position": "C",
+    "firstName": "Jamarion",
+    "lastName": "Sharp",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jameer Nelson Jr.",
+    "playerId": "1057847891",
+    "position": "G",
+    "firstName": "Jameer Nelson",
+    "lastName": "Jr.",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "James Akinjo",
+    "playerId": "1028263023",
+    "position": "G",
+    "firstName": "James",
+    "lastName": "Akinjo",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "James Harden",
+    "playerId": "192",
+    "position": "G",
+    "firstName": "James",
+    "lastName": "Harden",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "James Wiseman",
+    "playerId": "3547240",
+    "position": "C",
+    "firstName": "James",
+    "lastName": "Wiseman",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamir Watkins",
+    "playerId": "1057391756",
+    "position": "F",
+    "firstName": "Jamir",
+    "lastName": "Watkins",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jamison Battle",
+    "playerId": "1028243201",
+    "position": "F",
+    "firstName": "Jamison",
+    "lastName": "Battle",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jarace Walker",
+    "playerId": "56677832",
+    "position": "F",
+    "firstName": "Jarace",
+    "lastName": "Walker",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jared Butler",
+    "playerId": "18677954",
+    "position": "G",
+    "firstName": "Jared",
+    "lastName": "Butler",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jared McCain",
+    "playerId": "1028027372",
+    "position": "G",
+    "firstName": "Jared",
+    "lastName": "McCain",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jared Rhoden",
+    "playerId": "42097199",
+    "position": "G",
+    "firstName": "Jared",
+    "lastName": "Rhoden",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaren Jackson Jr.",
+    "playerId": "231",
+    "position": "F-C",
+    "firstName": "Jaren Jackson",
+    "lastName": "Jr.",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jarred Vanderbilt",
+    "playerId": "457",
+    "position": "F",
+    "firstName": "Jarred",
+    "lastName": "Vanderbilt",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jarrett Allen",
+    "playerId": "9",
+    "position": "C",
+    "firstName": "Jarrett",
+    "lastName": "Allen",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jase Richardson",
+    "playerId": "1057279571",
+    "position": "G",
+    "firstName": "Jase",
+    "lastName": "Richardson",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jason Preston",
+    "playerId": "17896042",
+    "position": "G",
+    "firstName": "Jason",
+    "lastName": "Preston",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Javante McCoy",
+    "playerId": "1028265891",
+    "position": "G",
+    "firstName": "Javante",
+    "lastName": "McCoy",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Javon Small",
+    "playerId": "1057396260",
+    "position": "G",
+    "firstName": "Javon",
+    "lastName": "Small",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Javonte Cooke",
+    "playerId": "1058091815",
+    "position": "G",
+    "firstName": "Javonte",
+    "lastName": "Cooke",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Javonte Green",
+    "playerId": "666604",
+    "position": "G-F",
+    "firstName": "Javonte",
+    "lastName": "Green",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaxson Hayes",
+    "playerId": "666626",
+    "position": "C",
+    "firstName": "Jaxson",
+    "lastName": "Hayes",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jay Huff",
+    "playerId": "17896103",
+    "position": "F-C",
+    "firstName": "Jay",
+    "lastName": "Huff",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylen Brown",
+    "playerId": "70",
+    "position": "G",
+    "firstName": "Jaylen",
+    "lastName": "Brown",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylen Clark",
+    "playerId": "56677851",
+    "position": "G",
+    "firstName": "Jaylen",
+    "lastName": "Clark",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylen Wells",
+    "playerId": "1028039105",
+    "position": "F",
+    "firstName": "Jaylen",
+    "lastName": "Wells",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylin Williams",
+    "playerId": "38017706",
+    "position": "F",
+    "firstName": "Jaylin",
+    "lastName": "Williams",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylin Williams",
+    "playerId": "1028257789",
+    "position": "F",
+    "firstName": "Jaylin",
+    "lastName": "Williams",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jaylon Tyson",
+    "playerId": "1028028993",
+    "position": "G-F",
+    "firstName": "Jaylon",
+    "lastName": "Tyson",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jayson Tatum",
+    "playerId": "434",
+    "position": "F",
+    "firstName": "Jayson",
+    "lastName": "Tatum",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jazian Gortman",
+    "playerId": "1028244547",
+    "position": "G",
+    "firstName": "Jazian",
+    "lastName": "Gortman",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "JD Davison",
+    "playerId": "38017707",
+    "position": "G",
+    "firstName": "JD",
+    "lastName": "Davison",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jeenathan Williams",
+    "playerId": "47738533",
+    "position": "G",
+    "firstName": "Jeenathan",
+    "lastName": "Williams",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jeff Green",
+    "playerId": "188",
+    "position": "F",
+    "firstName": "Jeff",
+    "lastName": "Green",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jerami Grant",
+    "playerId": "182",
+    "position": "F",
+    "firstName": "Jerami",
+    "lastName": "Grant",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jeremiah Fears",
+    "playerId": "1057267077",
+    "position": "G",
+    "firstName": "Jeremiah",
+    "lastName": "Fears",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jeremiah Robinson-Earl",
+    "playerId": "17896021",
+    "position": "F",
+    "firstName": "Jeremiah",
+    "lastName": "Robinson-Earl",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jeremy Sochan",
+    "playerId": "38017699",
+    "position": "F",
+    "firstName": "Jeremy",
+    "lastName": "Sochan",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jericho Sims",
+    "playerId": "17896063",
+    "position": "F",
+    "firstName": "Jericho",
+    "lastName": "Sims",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jett Howard",
+    "playerId": "56677839",
+    "position": "G",
+    "firstName": "Jett",
+    "lastName": "Howard",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jevon Carter",
+    "playerId": "87",
+    "position": "G",
+    "firstName": "Jevon",
+    "lastName": "Carter",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jimmy Butler",
+    "playerId": "79",
+    "position": "G-F",
+    "firstName": "Jimmy",
+    "lastName": "Butler",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Joan Beringer",
+    "playerId": "1057271099",
+    "position": "F",
+    "firstName": "Joan",
+    "lastName": "Beringer",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jock Landale",
+    "playerId": "19465326",
+    "position": "C",
+    "firstName": "Jock",
+    "lastName": "Landale",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Joe Ingles",
+    "playerId": "226",
+    "position": "F",
+    "firstName": "Joe",
+    "lastName": "Ingles",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Joel Embiid",
+    "playerId": "145",
+    "position": "F-C",
+    "firstName": "Joel",
+    "lastName": "Embiid",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "John Collins",
+    "playerId": "101",
+    "position": "F-C",
+    "firstName": "John",
+    "lastName": "Collins",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "John Konchar",
+    "playerId": "666703",
+    "position": "G-F",
+    "firstName": "John",
+    "lastName": "Konchar",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "John Poulakidas",
+    "playerId": "1057848244",
+    "position": "G",
+    "firstName": "John",
+    "lastName": "Poulakidas",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "John Tonje",
+    "playerId": "1057396603",
+    "position": "G",
+    "firstName": "John",
+    "lastName": "Tonje",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Johni Broome",
+    "playerId": "1057382509",
+    "position": "F",
+    "firstName": "Johni",
+    "lastName": "Broome",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Johnny Furphy",
+    "playerId": "1028035897",
+    "position": "G",
+    "firstName": "Johnny",
+    "lastName": "Furphy",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Johnny Juzang",
+    "playerId": "38017630",
+    "position": "G",
+    "firstName": "Johnny",
+    "lastName": "Juzang",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jonas Valanciunas",
+    "playerId": "455",
+    "position": "C",
+    "firstName": "Jonas",
+    "lastName": "Valanciunas",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jonathan Isaac",
+    "playerId": "229",
+    "position": "F",
+    "firstName": "Jonathan",
+    "lastName": "Isaac",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jonathan Kuminga",
+    "playerId": "17553979",
+    "position": "F",
+    "firstName": "Jonathan",
+    "lastName": "Kuminga",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jonathan Mogbo",
+    "playerId": "1028037494",
+    "position": "F",
+    "firstName": "Jonathan",
+    "lastName": "Mogbo",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jonathan Pierre",
+    "playerId": "1057848187",
+    "position": "",
+    "firstName": "Jonathan",
+    "lastName": "Pierre",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Clarkson",
+    "playerId": "100",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "Clarkson",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Goodwin",
+    "playerId": "18678058",
+    "position": "",
+    "firstName": "Jordan",
+    "lastName": "Goodwin",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Hawkins",
+    "playerId": "56677837",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "Hawkins",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan McLaughlin",
+    "playerId": "666767",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "McLaughlin",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Miller",
+    "playerId": "56677856",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "Miller",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Poole",
+    "playerId": "666848",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "Poole",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Tucker",
+    "playerId": "1028267489",
+    "position": "F",
+    "firstName": "Jordan",
+    "lastName": "Tucker",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jordan Walsh",
+    "playerId": "56677864",
+    "position": "G",
+    "firstName": "Jordan",
+    "lastName": "Walsh",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jose Alvarado",
+    "playerId": "17896097",
+    "position": "G",
+    "firstName": "Jose",
+    "lastName": "Alvarado",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Josh Giddey",
+    "playerId": "17896065",
+    "position": "G",
+    "firstName": "Josh",
+    "lastName": "Giddey",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Josh Green",
+    "playerId": "3547258",
+    "position": "G",
+    "firstName": "Josh",
+    "lastName": "Green",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Josh Hart",
+    "playerId": "202",
+    "position": "G",
+    "firstName": "Josh",
+    "lastName": "Hart",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Josh Minott",
+    "playerId": "38017715",
+    "position": "F",
+    "firstName": "Josh",
+    "lastName": "Minott",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Josh Okogie",
+    "playerId": "356",
+    "position": "G",
+    "firstName": "Josh",
+    "lastName": "Okogie",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jrue Holiday",
+    "playerId": "214",
+    "position": "G",
+    "firstName": "Jrue",
+    "lastName": "Holiday",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Juan Nunez",
+    "playerId": "1028037710",
+    "position": "G",
+    "firstName": "Juan",
+    "lastName": "Nunez",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Judah Mintz",
+    "playerId": "1028266060",
+    "position": "G",
+    "firstName": "Judah",
+    "lastName": "Mintz",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jules Bernard",
+    "playerId": "64267203",
+    "position": "G",
+    "firstName": "Jules",
+    "lastName": "Bernard",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Julian Champagnie",
+    "playerId": "38017649",
+    "position": "F",
+    "firstName": "Julian",
+    "lastName": "Champagnie",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Julian Phillips",
+    "playerId": "56677857",
+    "position": "F",
+    "firstName": "Julian",
+    "lastName": "Phillips",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Julian Strawther",
+    "playerId": "56677776",
+    "position": "G",
+    "firstName": "Julian",
+    "lastName": "Strawther",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Julius Randle",
+    "playerId": "387",
+    "position": "F",
+    "firstName": "Julius",
+    "lastName": "Randle",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Justin Champagnie",
+    "playerId": "17896039",
+    "position": "F",
+    "firstName": "Justin",
+    "lastName": "Champagnie",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Justin Edwards",
+    "playerId": "1028214238",
+    "position": "F",
+    "firstName": "Justin",
+    "lastName": "Edwards",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Justin Minaya",
+    "playerId": "47957121",
+    "position": "F",
+    "firstName": "Justin",
+    "lastName": "Minaya",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Jusuf Nurkic",
+    "playerId": "349",
+    "position": "C",
+    "firstName": "Jusuf",
+    "lastName": "Nurkic",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "K.J. Simpson",
+    "playerId": "1028038474",
+    "position": "G",
+    "firstName": "K.J.",
+    "lastName": "Simpson",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kam Jones",
+    "playerId": "1057389374",
+    "position": "G",
+    "firstName": "Kam",
+    "lastName": "Jones",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Karl-Anthony Towns",
+    "playerId": "447",
+    "position": "C",
+    "firstName": "Karl-Anthony",
+    "lastName": "Towns",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Karlo Matkovic",
+    "playerId": "1028245777",
+    "position": "F-C",
+    "firstName": "Karlo",
+    "lastName": "Matkovic",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kasparas Jakučionis",
+    "playerId": "1057272939",
+    "position": "G",
+    "firstName": "Kasparas",
+    "lastName": "Jakučionis",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kawhi Leonard",
+    "playerId": "274",
+    "position": "F",
+    "firstName": "Kawhi",
+    "lastName": "Leonard",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keaton Wallace",
+    "playerId": "45088184",
+    "position": "G",
+    "firstName": "Keaton",
+    "lastName": "Wallace",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keegan Murray",
+    "playerId": "38017688",
+    "position": "F",
+    "firstName": "Keegan",
+    "lastName": "Murray",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kel'el Ware",
+    "playerId": "1028029127",
+    "position": "C",
+    "firstName": "Kel'el",
+    "lastName": "Ware",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keldon Johnson",
+    "playerId": "666682",
+    "position": "F",
+    "firstName": "Keldon",
+    "lastName": "Johnson",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kelly Olynyk",
+    "playerId": "358",
+    "position": "F",
+    "firstName": "Kelly",
+    "lastName": "Olynyk",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kelly Oubre Jr.",
+    "playerId": "360",
+    "position": "F",
+    "firstName": "Kelly Oubre",
+    "lastName": "Jr.",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kendall Brown",
+    "playerId": "38017701",
+    "position": "G",
+    "firstName": "Kendall",
+    "lastName": "Brown",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kennedy Chandler",
+    "playerId": "38017702",
+    "position": "G",
+    "firstName": "Kennedy",
+    "lastName": "Chandler",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kenrich Williams",
+    "playerId": "480",
+    "position": "G-F",
+    "firstName": "Kenrich",
+    "lastName": "Williams",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kentavious Caldwell-Pope",
+    "playerId": "81",
+    "position": "G",
+    "firstName": "Kentavious",
+    "lastName": "Caldwell-Pope",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keon Ellis",
+    "playerId": "38017714",
+    "position": "G",
+    "firstName": "Keon",
+    "lastName": "Ellis",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keshad Johnson",
+    "playerId": "1028125584",
+    "position": "F",
+    "firstName": "Keshad",
+    "lastName": "Johnson",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keshon Gilbert",
+    "playerId": "1057846172",
+    "position": "",
+    "firstName": "Keshon",
+    "lastName": "Gilbert",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kessler Edwards",
+    "playerId": "17896044",
+    "position": "F",
+    "firstName": "Kessler",
+    "lastName": "Edwards",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevin Durant",
+    "playerId": "140",
+    "position": "F",
+    "firstName": "Kevin",
+    "lastName": "Durant",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevin Huerter",
+    "playerId": "221",
+    "position": "G",
+    "firstName": "Kevin",
+    "lastName": "Huerter",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevin Love",
+    "playerId": "285",
+    "position": "F-C",
+    "firstName": "Kevin",
+    "lastName": "Love",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevin McCullar Jr.",
+    "playerId": "1028047255",
+    "position": "G",
+    "firstName": "Kevin McCullar",
+    "lastName": "Jr.",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevin Porter Jr.",
+    "playerId": "666849",
+    "position": "G",
+    "firstName": "Kevin Porter",
+    "lastName": "Jr.",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevon Harris",
+    "playerId": "38017607",
+    "position": "G",
+    "firstName": "Kevon",
+    "lastName": "Harris",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kevon Looney",
+    "playerId": "282",
+    "position": "F",
+    "firstName": "Kevon",
+    "lastName": "Looney",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Keyonte George",
+    "playerId": "56677834",
+    "position": "G",
+    "firstName": "Keyonte",
+    "lastName": "George",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Khaman Maluach",
+    "playerId": "1057268513",
+    "position": "C",
+    "firstName": "Khaman",
+    "lastName": "Maluach",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Khris Middleton",
+    "playerId": "315",
+    "position": "F",
+    "firstName": "Khris",
+    "lastName": "Middleton",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Killian Hayes",
+    "playerId": "3547241",
+    "position": "G",
+    "firstName": "Killian",
+    "lastName": "Hayes",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Klay Thompson",
+    "playerId": "443",
+    "position": "G",
+    "firstName": "Klay",
+    "lastName": "Thompson",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kobe Brown",
+    "playerId": "56677849",
+    "position": "F",
+    "firstName": "Kobe",
+    "lastName": "Brown",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kobe Bufkin",
+    "playerId": "56677838",
+    "position": "G",
+    "firstName": "Kobe",
+    "lastName": "Bufkin",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kobe Johnson",
+    "playerId": "1057846878",
+    "position": "",
+    "firstName": "Kobe",
+    "lastName": "Johnson",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kobe Sanders",
+    "playerId": "1057396055",
+    "position": "G",
+    "firstName": "Kobe",
+    "lastName": "Sanders",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Koby Brea",
+    "playerId": "1057387526",
+    "position": "G",
+    "firstName": "Koby",
+    "lastName": "Brea",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kon Knueppel",
+    "playerId": "1057263194",
+    "position": "G-F",
+    "firstName": "Kon",
+    "lastName": "Knueppel",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kris Dunn",
+    "playerId": "139",
+    "position": "G",
+    "firstName": "Kris",
+    "lastName": "Dunn",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kris Murray",
+    "playerId": "56677791",
+    "position": "F",
+    "firstName": "Kris",
+    "lastName": "Murray",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kristaps Porzingis",
+    "playerId": "378",
+    "position": "F-C",
+    "firstName": "Kristaps",
+    "lastName": "Porzingis",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kyle Anderson",
+    "playerId": "12",
+    "position": "F",
+    "firstName": "Kyle",
+    "lastName": "Anderson",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kyle Filipowski",
+    "playerId": "1028035794",
+    "position": "C",
+    "firstName": "Kyle",
+    "lastName": "Filipowski",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kyle Kuzma",
+    "playerId": "265",
+    "position": "F",
+    "firstName": "Kyle",
+    "lastName": "Kuzma",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kyle Lowry",
+    "playerId": "286",
+    "position": "G",
+    "firstName": "Kyle",
+    "lastName": "Lowry",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Kyrie Irving",
+    "playerId": "228",
+    "position": "G",
+    "firstName": "Kyrie",
+    "lastName": "Irving",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "KyShawn George",
+    "playerId": "1028026060",
+    "position": "F",
+    "firstName": "KyShawn",
+    "lastName": "George",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lachlan Olbrich",
+    "playerId": "1057395493",
+    "position": "C",
+    "firstName": "Lachlan",
+    "lastName": "Olbrich",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "LaMelo Ball",
+    "playerId": "3547239",
+    "position": "G",
+    "firstName": "LaMelo",
+    "lastName": "Ball",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lamont Butler",
+    "playerId": "1057845228",
+    "position": "G",
+    "firstName": "Lamont",
+    "lastName": "Butler",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Landry Shamet",
+    "playerId": "414",
+    "position": "G",
+    "firstName": "Landry",
+    "lastName": "Shamet",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Larry Nance Jr.",
+    "playerId": "340",
+    "position": "F",
+    "firstName": "Larry Nance",
+    "lastName": "Jr.",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lauri Markkanen",
+    "playerId": "297",
+    "position": "F",
+    "firstName": "Lauri",
+    "lastName": "Markkanen",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lawson Lovering",
+    "playerId": "1057847334",
+    "position": "",
+    "firstName": "Lawson",
+    "lastName": "Lovering",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "LeBron James",
+    "playerId": "237",
+    "position": "F",
+    "firstName": "LeBron",
+    "lastName": "James",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Leonard Miller",
+    "playerId": "56677782",
+    "position": "F",
+    "firstName": "Leonard",
+    "lastName": "Miller",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lester Quinones",
+    "playerId": "45658838",
+    "position": "G",
+    "firstName": "Lester",
+    "lastName": "Quinones",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Liam McNeeley",
+    "playerId": "1057278805",
+    "position": "F",
+    "firstName": "Liam",
+    "lastName": "McNeeley",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Liam Robbins",
+    "playerId": "1028266759",
+    "position": "C",
+    "firstName": "Liam",
+    "lastName": "Robbins",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lindy Waters III",
+    "playerId": "27924547",
+    "position": "F",
+    "firstName": "Lindy Waters",
+    "lastName": "III",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "LJ Cryer",
+    "playerId": "1057968644",
+    "position": "",
+    "firstName": "LJ",
+    "lastName": "Cryer",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Lonzo Ball",
+    "playerId": "27",
+    "position": "G",
+    "firstName": "Lonzo",
+    "lastName": "Ball",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luguentz Dort",
+    "playerId": "666541",
+    "position": "G",
+    "firstName": "Luguentz",
+    "lastName": "Dort",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luka Doncic",
+    "playerId": "132",
+    "position": "PG",
+    "firstName": "Luka",
+    "lastName": "Doncic",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luka Garza",
+    "playerId": "17896056",
+    "position": "C",
+    "firstName": "Luka",
+    "lastName": "Garza",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luke Kennard",
+    "playerId": "254",
+    "position": "G",
+    "firstName": "Luke",
+    "lastName": "Kennard",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luke Kornet",
+    "playerId": "261",
+    "position": "F-C",
+    "firstName": "Luke",
+    "lastName": "Kornet",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Luke Travers",
+    "playerId": "1028267470",
+    "position": "F",
+    "firstName": "Luke",
+    "lastName": "Travers",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Malaki Branham",
+    "playerId": "38017692",
+    "position": "F",
+    "firstName": "Malaki",
+    "lastName": "Branham",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Malcolm Brogdon",
+    "playerId": "65",
+    "position": "G",
+    "firstName": "Malcolm",
+    "lastName": "Brogdon",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Malcolm Hill",
+    "playerId": "24102469",
+    "position": "F",
+    "firstName": "Malcolm",
+    "lastName": "Hill",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Malevy Leons",
+    "playerId": "1028265620",
+    "position": "F",
+    "firstName": "Malevy",
+    "lastName": "Leons",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Malik Monk",
+    "playerId": "324",
+    "position": "G",
+    "firstName": "Malik",
+    "lastName": "Monk",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Marcus Domask",
+    "playerId": "1028244064",
+    "position": "G-F",
+    "firstName": "Marcus",
+    "lastName": "Domask",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Marcus Sasser",
+    "playerId": "56677792",
+    "position": "G",
+    "firstName": "Marcus",
+    "lastName": "Sasser",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Marcus Smart",
+    "playerId": "420",
+    "position": "G",
+    "firstName": "Marcus",
+    "lastName": "Smart",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "MarJon Beauchamp",
+    "playerId": "38017676",
+    "position": "F",
+    "firstName": "MarJon",
+    "lastName": "Beauchamp",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mark Armstrong",
+    "playerId": "1028263126",
+    "position": "G",
+    "firstName": "Mark",
+    "lastName": "Armstrong",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mark Sears",
+    "playerId": "1057848654",
+    "position": "G",
+    "firstName": "Mark",
+    "lastName": "Sears",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mark Williams",
+    "playerId": "38017698",
+    "position": "C",
+    "firstName": "Mark",
+    "lastName": "Williams",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Marques Bolden",
+    "playerId": "666453",
+    "position": "C",
+    "firstName": "Marques",
+    "lastName": "Bolden",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Marvin Bagley III",
+    "playerId": "24",
+    "position": "F",
+    "firstName": "Marvin Bagley",
+    "lastName": "III",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mason Plumlee",
+    "playerId": "371",
+    "position": "F-C",
+    "firstName": "Mason",
+    "lastName": "Plumlee",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Matas Buzelis",
+    "playerId": "1028025177",
+    "position": "F",
+    "firstName": "Matas",
+    "lastName": "Buzelis",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Matisse Thybulle",
+    "playerId": "666923",
+    "position": "G-F",
+    "firstName": "Matisse",
+    "lastName": "Thybulle",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Matt Ryan",
+    "playerId": "17896017",
+    "position": "F",
+    "firstName": "Matt",
+    "lastName": "Ryan",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Matthew Cleveland",
+    "playerId": "1057845405",
+    "position": "G-F",
+    "firstName": "Matthew",
+    "lastName": "Cleveland",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Matthew Murrell",
+    "playerId": "1057847840",
+    "position": "G",
+    "firstName": "Matthew",
+    "lastName": "Murrell",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Max Christie",
+    "playerId": "38017697",
+    "position": "G",
+    "firstName": "Max",
+    "lastName": "Christie",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Max Fiedler",
+    "playerId": "1028264354",
+    "position": "",
+    "firstName": "Max",
+    "lastName": "Fiedler",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Max Shulga",
+    "playerId": "1057396191",
+    "position": "G",
+    "firstName": "Max",
+    "lastName": "Shulga",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Max Strus",
+    "playerId": "666908",
+    "position": "G",
+    "firstName": "Max",
+    "lastName": "Strus",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Maxi Kleber",
+    "playerId": "257",
+    "position": "F",
+    "firstName": "Maxi",
+    "lastName": "Kleber",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Maxime Raynaud",
+    "playerId": "1057390745",
+    "position": "C",
+    "firstName": "Maxime",
+    "lastName": "Raynaud",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Melvin Ajinca",
+    "playerId": "1028044409",
+    "position": "F",
+    "firstName": "Melvin",
+    "lastName": "Ajinca",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Micah Peavy",
+    "playerId": "1057390538",
+    "position": "G-F",
+    "firstName": "Micah",
+    "lastName": "Peavy",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Micah Potter",
+    "playerId": "19465584",
+    "position": "F",
+    "firstName": "Micah",
+    "lastName": "Potter",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Michael Porter Jr.",
+    "playerId": "375",
+    "position": "F",
+    "firstName": "Michael Porter",
+    "lastName": "Jr.",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mikal Bridges",
+    "playerId": "61",
+    "position": "F",
+    "firstName": "Mikal",
+    "lastName": "Bridges",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mike Conley",
+    "playerId": "104",
+    "position": "G",
+    "firstName": "Mike",
+    "lastName": "Conley",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Miles Bridges",
+    "playerId": "62",
+    "position": "F",
+    "firstName": "Miles",
+    "lastName": "Bridges",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Miles Kelly",
+    "playerId": "1057847026",
+    "position": "G",
+    "firstName": "Miles",
+    "lastName": "Kelly",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Miles McBride",
+    "playerId": "17896033",
+    "position": "G",
+    "firstName": "Miles",
+    "lastName": "McBride",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Miller Kopp",
+    "playerId": "1028265485",
+    "position": "F",
+    "firstName": "Miller",
+    "lastName": "Kopp",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mitchell Robinson",
+    "playerId": "399",
+    "position": "C",
+    "firstName": "Mitchell",
+    "lastName": "Robinson",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mo Bamba",
+    "playerId": "28",
+    "position": "C",
+    "firstName": "Mo",
+    "lastName": "Bamba",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mohamed Diawara",
+    "playerId": "1057393207",
+    "position": "F",
+    "firstName": "Mohamed",
+    "lastName": "Diawara",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moritz Wagner",
+    "playerId": "462",
+    "position": "C",
+    "firstName": "Moritz",
+    "lastName": "Wagner",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moses Brown",
+    "playerId": "666476",
+    "position": "C",
+    "firstName": "Moses",
+    "lastName": "Brown",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moses Moody",
+    "playerId": "17553992",
+    "position": "G",
+    "firstName": "Moses",
+    "lastName": "Moody",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moses Wood",
+    "playerId": "1028267940",
+    "position": "",
+    "firstName": "Moses",
+    "lastName": "Wood",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mouhamadou Gueye",
+    "playerId": "377705601",
+    "position": "F",
+    "firstName": "Mouhamadou",
+    "lastName": "Gueye",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Mouhamed Gueye",
+    "playerId": "56677806",
+    "position": "F",
+    "firstName": "Mouhamed",
+    "lastName": "Gueye",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moussa Cisse",
+    "playerId": "1057845382",
+    "position": "C",
+    "firstName": "Moussa",
+    "lastName": "Cisse",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Moussa Diabate",
+    "playerId": "38017725",
+    "position": "F",
+    "firstName": "Moussa",
+    "lastName": "Diabate",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Myles Turner",
+    "playerId": "452",
+    "position": "C-F",
+    "firstName": "Myles",
+    "lastName": "Turner",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Myron Gardner",
+    "playerId": "1057846109",
+    "position": "F",
+    "firstName": "Myron",
+    "lastName": "Gardner",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "N'Faly Dante",
+    "playerId": "1028243921",
+    "position": "C",
+    "firstName": "N'Faly",
+    "lastName": "Dante",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nae'Qwan Tomlin",
+    "playerId": "1042560902",
+    "position": "F",
+    "firstName": "Nae'Qwan",
+    "lastName": "Tomlin",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nah'Shon Hyland",
+    "playerId": "17896031",
+    "position": "G",
+    "firstName": "Nah'Shon",
+    "lastName": "Hyland",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Naji Marshall",
+    "playerId": "3547293",
+    "position": "F",
+    "firstName": "Naji",
+    "lastName": "Marshall",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Naz Reid",
+    "playerId": "667378",
+    "position": "F-C",
+    "firstName": "Naz",
+    "lastName": "Reid",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Neemias Queta",
+    "playerId": "17553967",
+    "position": "C",
+    "firstName": "Neemias",
+    "lastName": "Queta",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nick Muszynski",
+    "playerId": "1028271224",
+    "position": "C",
+    "firstName": "Nick",
+    "lastName": "Muszynski",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nick Richards",
+    "playerId": "3547282",
+    "position": "C",
+    "firstName": "Nick",
+    "lastName": "Richards",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nick Smith Jr.",
+    "playerId": "56677846",
+    "position": "G",
+    "firstName": "Nick Smith",
+    "lastName": "Jr.",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nickeil Alexander-Walker",
+    "playerId": "666400",
+    "position": "G",
+    "firstName": "Nickeil",
+    "lastName": "Alexander-Walker",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nicolas Batum",
+    "playerId": "33",
+    "position": "F-G",
+    "firstName": "Nicolas",
+    "lastName": "Batum",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nicolas Claxton",
+    "playerId": "666508",
+    "position": "F-C",
+    "firstName": "Nicolas",
+    "lastName": "Claxton",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nigel Hayes",
+    "playerId": "2221",
+    "position": "",
+    "firstName": "Nigel",
+    "lastName": "Hayes",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nikola Durisic",
+    "playerId": "1028035632",
+    "position": "G",
+    "firstName": "Nikola",
+    "lastName": "Durisic",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nikola Jokic",
+    "playerId": "246",
+    "position": "C",
+    "firstName": "Nikola",
+    "lastName": "Jokic",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nikola Jovic",
+    "playerId": "38017696",
+    "position": "F",
+    "firstName": "Nikola",
+    "lastName": "Jovic",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nikola Topic",
+    "playerId": "1028028932",
+    "position": "G",
+    "firstName": "Nikola",
+    "lastName": "Topic",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nikola Vucevic",
+    "playerId": "460",
+    "position": "C",
+    "firstName": "Nikola",
+    "lastName": "Vucevic",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nique Clifford",
+    "playerId": "1057276634",
+    "position": "G",
+    "firstName": "Nique",
+    "lastName": "Clifford",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Noa Essengue",
+    "playerId": "1057272081",
+    "position": "F",
+    "firstName": "Noa",
+    "lastName": "Essengue",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Noah Clowney",
+    "playerId": "56677843",
+    "position": "F",
+    "firstName": "Noah",
+    "lastName": "Clowney",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Noah Penda",
+    "playerId": "1057385481",
+    "position": "G-F",
+    "firstName": "Noah",
+    "lastName": "Penda",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Nolan Traoré",
+    "playerId": "1057275262",
+    "position": "G",
+    "firstName": "Nolan",
+    "lastName": "Traoré",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Norchad Omier",
+    "playerId": "1057848025",
+    "position": "F",
+    "firstName": "Norchad",
+    "lastName": "Omier",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Norman Powell",
+    "playerId": "380",
+    "position": "F-G",
+    "firstName": "Norman",
+    "lastName": "Powell",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Obi Toppin",
+    "playerId": "3547243",
+    "position": "F",
+    "firstName": "Obi",
+    "lastName": "Toppin",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ochai Agbaji",
+    "playerId": "38017620",
+    "position": "G",
+    "firstName": "Ochai",
+    "lastName": "Agbaji",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "OG Anunoby",
+    "playerId": "18",
+    "position": "F",
+    "firstName": "OG",
+    "lastName": "Anunoby",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Olivier Sarr",
+    "playerId": "24572055",
+    "position": "C",
+    "firstName": "Olivier",
+    "lastName": "Sarr",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Olivier-Maxence Prosper",
+    "playerId": "56677859",
+    "position": "F",
+    "firstName": "Olivier-Maxence",
+    "lastName": "Prosper",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Onyeka Okongwu",
+    "playerId": "3547244",
+    "position": "F-C",
+    "firstName": "Onyeka",
+    "lastName": "Okongwu",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Orlando Robinson",
+    "playerId": "39398582",
+    "position": "C",
+    "firstName": "Orlando",
+    "lastName": "Robinson",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Oscar Tshiebwe",
+    "playerId": "56677778",
+    "position": "F-C",
+    "firstName": "Oscar",
+    "lastName": "Tshiebwe",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Oso Ighodaro",
+    "playerId": "1028036515",
+    "position": "F",
+    "firstName": "Oso",
+    "lastName": "Ighodaro",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ousmane Dieng",
+    "playerId": "38017716",
+    "position": "F",
+    "firstName": "Ousmane",
+    "lastName": "Dieng",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "P.J. Washington",
+    "playerId": "666950",
+    "position": "F",
+    "firstName": "P.J.",
+    "lastName": "Washington",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pacome Dadiet",
+    "playerId": "1028025498",
+    "position": "F",
+    "firstName": "Pacome",
+    "lastName": "Dadiet",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Paolo Banchero",
+    "playerId": "38017683",
+    "position": "F",
+    "firstName": "Paolo",
+    "lastName": "Banchero",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pascal Siakam",
+    "playerId": "416",
+    "position": "F",
+    "firstName": "Pascal",
+    "lastName": "Siakam",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pat Connaughton",
+    "playerId": "105",
+    "position": "G",
+    "firstName": "Pat",
+    "lastName": "Connaughton",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pat Spencer",
+    "playerId": "795959473",
+    "position": "G",
+    "firstName": "Pat",
+    "lastName": "Spencer",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Patrick Baldwin Jr.",
+    "playerId": "38017704",
+    "position": "F",
+    "firstName": "Patrick Baldwin",
+    "lastName": "Jr.",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Patrick Williams",
+    "playerId": "3547248",
+    "position": "F",
+    "firstName": "Patrick",
+    "lastName": "Williams",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Paul George",
+    "playerId": "172",
+    "position": "F",
+    "firstName": "Paul",
+    "lastName": "George",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Paul Reed",
+    "playerId": "3547270",
+    "position": "F",
+    "firstName": "Paul",
+    "lastName": "Reed",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Payton Pritchard",
+    "playerId": "3547276",
+    "position": "G",
+    "firstName": "Payton",
+    "lastName": "Pritchard",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pelle Larsson",
+    "playerId": "1028036986",
+    "position": "G",
+    "firstName": "Pelle",
+    "lastName": "Larsson",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Pete Nance",
+    "playerId": "64270026",
+    "position": "F",
+    "firstName": "Pete",
+    "lastName": "Nance",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Peyton Watson",
+    "playerId": "38017721",
+    "position": "G",
+    "firstName": "Peyton",
+    "lastName": "Watson",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "PJ Hall",
+    "playerId": "1028244692",
+    "position": "C",
+    "firstName": "PJ",
+    "lastName": "Hall",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Precious Achiuwa",
+    "playerId": "3547249",
+    "position": "F",
+    "firstName": "Precious",
+    "lastName": "Achiuwa",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Quenton Jackson",
+    "playerId": "44477085",
+    "position": "G",
+    "firstName": "Quenton",
+    "lastName": "Jackson",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Quinten Post",
+    "playerId": "1028047928",
+    "position": "C",
+    "firstName": "Quinten",
+    "lastName": "Post",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "R.J. Davis",
+    "playerId": "1057845629",
+    "position": "G",
+    "firstName": "R.J.",
+    "lastName": "Davis",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rasheer Fleming",
+    "playerId": "1057383369",
+    "position": "F",
+    "firstName": "Rasheer",
+    "lastName": "Fleming",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rayan Rupert",
+    "playerId": "56677829",
+    "position": "G-F",
+    "firstName": "Rayan",
+    "lastName": "Rupert",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "RayJ Dennis",
+    "playerId": "1028274126",
+    "position": "G",
+    "firstName": "RayJ",
+    "lastName": "Dennis",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Reece Beekman",
+    "playerId": "1028203324",
+    "position": "G",
+    "firstName": "Reece",
+    "lastName": "Beekman",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Reed Sheppard",
+    "playerId": "1028028519",
+    "position": "G",
+    "firstName": "Reed",
+    "lastName": "Sheppard",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Riley Minix",
+    "playerId": "1028245994",
+    "position": "F",
+    "firstName": "Riley",
+    "lastName": "Minix",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "RJ Barrett",
+    "playerId": "666423",
+    "position": "F-G",
+    "firstName": "RJ",
+    "lastName": "Barrett",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "RJ Luis Jr.",
+    "playerId": "1057847347",
+    "position": "F",
+    "firstName": "RJ Luis",
+    "lastName": "Jr.",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rob Dillingham",
+    "playerId": "1028025639",
+    "position": "G",
+    "firstName": "Rob",
+    "lastName": "Dillingham",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Robert Williams III",
+    "playerId": "476",
+    "position": "C-F",
+    "firstName": "Robert Williams",
+    "lastName": "III",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rocco Zikarsky",
+    "playerId": "1057397172",
+    "position": "C",
+    "firstName": "Rocco",
+    "lastName": "Zikarsky",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ron Harper Jr.",
+    "playerId": "38017717",
+    "position": "F",
+    "firstName": "Ron Harper",
+    "lastName": "Jr.",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ronald Holland II",
+    "playerId": "1028026508",
+    "position": "F",
+    "firstName": "Ronald Holland",
+    "lastName": "II",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Royce O'Neale",
+    "playerId": "351",
+    "position": "F",
+    "firstName": "Royce",
+    "lastName": "O'Neale",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rudy Gobert",
+    "playerId": "176",
+    "position": "C",
+    "firstName": "Rudy",
+    "lastName": "Gobert",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Rui Hachimura",
+    "playerId": "666609",
+    "position": "F",
+    "firstName": "Rui",
+    "lastName": "Hachimura",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ryan Dunn",
+    "playerId": "1028025723",
+    "position": "F",
+    "firstName": "Ryan",
+    "lastName": "Dunn",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ryan Kalkbrenner",
+    "playerId": "1057384362",
+    "position": "C",
+    "firstName": "Ryan",
+    "lastName": "Kalkbrenner",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ryan Nembhard",
+    "playerId": "1057847894",
+    "position": "G",
+    "firstName": "Ryan",
+    "lastName": "Nembhard",
+    "teamId": "1610612742",
+    "teamTricode": "DAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ryan Rollins",
+    "playerId": "38017712",
+    "position": "G",
+    "firstName": "Ryan",
+    "lastName": "Rollins",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Saddiq Bey",
+    "playerId": "3547256",
+    "position": "F",
+    "firstName": "Saddiq",
+    "lastName": "Bey",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Saint Thomas",
+    "playerId": "1057849072",
+    "position": "",
+    "firstName": "Saint",
+    "lastName": "Thomas",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sam Hauser",
+    "playerId": "17896060",
+    "position": "F",
+    "firstName": "Sam",
+    "lastName": "Hauser",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sam Merrill",
+    "playerId": "3547299",
+    "position": "G",
+    "firstName": "Sam",
+    "lastName": "Merrill",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sandro Mamukelashvili",
+    "playerId": "17896059",
+    "position": "F",
+    "firstName": "Sandro",
+    "lastName": "Mamukelashvili",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Santi Aldama",
+    "playerId": "17896067",
+    "position": "F",
+    "firstName": "Santi",
+    "lastName": "Aldama",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Scoot Henderson",
+    "playerId": "56677747",
+    "position": "G",
+    "firstName": "Scoot",
+    "lastName": "Henderson",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Scottie Barnes",
+    "playerId": "17896055",
+    "position": "G-F",
+    "firstName": "Scottie",
+    "lastName": "Barnes",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Scotty Pippen Jr.",
+    "playerId": "38017656",
+    "position": "G",
+    "firstName": "Scotty Pippen",
+    "lastName": "Jr.",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Seth Curry",
+    "playerId": "114",
+    "position": "G",
+    "firstName": "Seth",
+    "lastName": "Curry",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Shaedon Sharpe",
+    "playerId": "38017690",
+    "position": "G",
+    "firstName": "Shaedon",
+    "lastName": "Sharpe",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Shai Gilgeous-Alexander",
+    "playerId": "175",
+    "position": "G",
+    "firstName": "Shai",
+    "lastName": "Gilgeous-Alexander",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sharife Cooper",
+    "playerId": "17896029",
+    "position": "G",
+    "firstName": "Sharife",
+    "lastName": "Cooper",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sidy Cissoko",
+    "playerId": "56677817",
+    "position": "G",
+    "firstName": "Sidy",
+    "lastName": "Cissoko",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Simone Fontecchio",
+    "playerId": "38017739",
+    "position": "F",
+    "firstName": "Simone",
+    "lastName": "Fontecchio",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Sion James",
+    "playerId": "1057384156",
+    "position": "G",
+    "firstName": "Sion",
+    "lastName": "James",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Spencer Dinwiddie",
+    "playerId": "130",
+    "position": "G",
+    "firstName": "Spencer",
+    "lastName": "Dinwiddie",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Spencer Jones",
+    "playerId": "1028255289",
+    "position": "F",
+    "firstName": "Spencer",
+    "lastName": "Jones",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Stanley Umude",
+    "playerId": "44477024",
+    "position": "G",
+    "firstName": "Stanley",
+    "lastName": "Umude",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Stephen Curry",
+    "playerId": "115",
+    "position": "G",
+    "firstName": "Stephen",
+    "lastName": "Curry",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Stephon Castle",
+    "playerId": "1028025261",
+    "position": "G",
+    "firstName": "Stephon",
+    "lastName": "Castle",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Steven Adams",
+    "playerId": "3",
+    "position": "C",
+    "firstName": "Steven",
+    "lastName": "Adams",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Steven Crowl",
+    "playerId": "1057845539",
+    "position": "C",
+    "firstName": "Steven",
+    "lastName": "Crowl",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Svi Mykhailiuk",
+    "playerId": "338",
+    "position": "G",
+    "firstName": "Svi",
+    "lastName": "Mykhailiuk",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "T.J. McConnell",
+    "playerId": "304",
+    "position": "G",
+    "firstName": "T.J.",
+    "lastName": "McConnell",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Taelon Peter",
+    "playerId": "1057395638",
+    "position": "G",
+    "firstName": "Taelon",
+    "lastName": "Peter",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Taevion Kinsey",
+    "playerId": "1016082149",
+    "position": "G",
+    "firstName": "Taevion",
+    "lastName": "Kinsey",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tamar Bates",
+    "playerId": "1057844839",
+    "position": "G",
+    "firstName": "Tamar",
+    "lastName": "Bates",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tari Eason",
+    "playerId": "38017695",
+    "position": "F",
+    "firstName": "Tari",
+    "lastName": "Eason",
+    "teamId": "1610612745",
+    "teamTricode": "HOU",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Taurean Prince",
+    "playerId": "383",
+    "position": "F",
+    "firstName": "Taurean",
+    "lastName": "Prince",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Taylor Funk",
+    "playerId": "1028269491",
+    "position": "F",
+    "firstName": "Taylor",
+    "lastName": "Funk",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Taylor Hendricks",
+    "playerId": "56677824",
+    "position": "F",
+    "firstName": "Taylor",
+    "lastName": "Hendricks",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Terance Mann",
+    "playerId": "666743",
+    "position": "G",
+    "firstName": "Terance",
+    "lastName": "Mann",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Terence Davis",
+    "playerId": "666530",
+    "position": "G",
+    "firstName": "Terence",
+    "lastName": "Davis",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Terrence Shannon Jr.",
+    "playerId": "1028028501",
+    "position": "G-F",
+    "firstName": "Terrence Shannon",
+    "lastName": "Jr.",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Terry Rozier",
+    "playerId": "403",
+    "position": "G",
+    "firstName": "Terry",
+    "lastName": "Rozier",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tevian Jones",
+    "playerId": "1057846964",
+    "position": "G",
+    "firstName": "Tevian",
+    "lastName": "Jones",
+    "teamId": "1610612747",
+    "teamTricode": "LAL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Thanasis Antetokounmpo",
+    "playerId": "2148",
+    "position": "",
+    "firstName": "Thanasis",
+    "lastName": "Antetokounmpo",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Thomas Bryant",
+    "playerId": "74",
+    "position": "C",
+    "firstName": "Thomas",
+    "lastName": "Bryant",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Thomas Sorber",
+    "playerId": "1057274983",
+    "position": "C",
+    "firstName": "Thomas",
+    "lastName": "Sorber",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tidjane Salaun",
+    "playerId": "1028028379",
+    "position": "F",
+    "firstName": "Tidjane",
+    "lastName": "Salaun",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tim Hardaway Jr.",
+    "playerId": "191",
+    "position": "G",
+    "firstName": "Tim Hardaway",
+    "lastName": "Jr.",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tobias Harris",
+    "playerId": "200",
+    "position": "F",
+    "firstName": "Tobias",
+    "lastName": "Harris",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tolu Smith",
+    "playerId": "1028267166",
+    "position": "F",
+    "firstName": "Tolu",
+    "lastName": "Smith",
+    "teamId": "1610612765",
+    "teamTricode": "DET",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tony Bradley",
+    "playerId": "60",
+    "position": "C",
+    "firstName": "Tony",
+    "lastName": "Bradley",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tosan Evbuomwan",
+    "playerId": "64268165",
+    "position": "F",
+    "firstName": "Tosan",
+    "lastName": "Evbuomwan",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Toumani Camara",
+    "playerId": "56677850",
+    "position": "F",
+    "firstName": "Toumani",
+    "lastName": "Camara",
+    "teamId": "1610612757",
+    "teamTricode": "POR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trae Young",
+    "playerId": "490",
+    "position": "G",
+    "firstName": "Trae",
+    "lastName": "Young",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trayce Jackson-Davis",
+    "playerId": "56677799",
+    "position": "F",
+    "firstName": "Trayce",
+    "lastName": "Jackson-Davis",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tre Johnson",
+    "playerId": "1057262985",
+    "position": "G",
+    "firstName": "Tre",
+    "lastName": "Johnson",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tre Jones",
+    "playerId": "3547274",
+    "position": "G",
+    "firstName": "Tre",
+    "lastName": "Jones",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tre Mann",
+    "playerId": "17896036",
+    "position": "G",
+    "firstName": "Tre",
+    "lastName": "Mann",
+    "teamId": "1610612766",
+    "teamTricode": "CHA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trendon Watford",
+    "playerId": "17896058",
+    "position": "F",
+    "firstName": "Trendon",
+    "lastName": "Watford",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trentyn Flowers",
+    "playerId": "1028254340",
+    "position": "F",
+    "firstName": "Trentyn",
+    "lastName": "Flowers",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trevor Keels",
+    "playerId": "38017720",
+    "position": "G",
+    "firstName": "Trevor",
+    "lastName": "Keels",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trey Alexander",
+    "playerId": "1028203085",
+    "position": "G",
+    "firstName": "Trey",
+    "lastName": "Alexander",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trey Jemison",
+    "playerId": "64269023",
+    "position": "C",
+    "firstName": "Trey",
+    "lastName": "Jemison",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Trey Murphy III",
+    "playerId": "18677986",
+    "position": "F",
+    "firstName": "Trey Murphy",
+    "lastName": "III",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tristan Da Silva",
+    "playerId": "1028025497",
+    "position": "F",
+    "firstName": "Tristan Da",
+    "lastName": "Silva",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tristan Enaruna",
+    "playerId": "1028244219",
+    "position": "F",
+    "firstName": "Tristan",
+    "lastName": "Enaruna",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tristan Vukcevic",
+    "playerId": "1016384149",
+    "position": "F",
+    "firstName": "Tristan",
+    "lastName": "Vukcevic",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tristen Newton",
+    "playerId": "1028047609",
+    "position": "G",
+    "firstName": "Tristen",
+    "lastName": "Newton",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ty Jerome",
+    "playerId": "666676",
+    "position": "G",
+    "firstName": "Ty",
+    "lastName": "Jerome",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyler Burton",
+    "playerId": "1057845216",
+    "position": "F",
+    "firstName": "Tyler",
+    "lastName": "Burton",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyler Herro",
+    "playerId": "666633",
+    "position": "G",
+    "firstName": "Tyler",
+    "lastName": "Herro",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyler Kolek",
+    "playerId": "1028036898",
+    "position": "G",
+    "firstName": "Tyler",
+    "lastName": "Kolek",
+    "teamId": "1610612752",
+    "teamTricode": "NYK",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyler Smith",
+    "playerId": "1028038570",
+    "position": "F",
+    "firstName": "Tyler",
+    "lastName": "Smith",
+    "teamId": "1610612749",
+    "teamTricode": "MIL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyrese Haliburton",
+    "playerId": "3547245",
+    "position": "G",
+    "firstName": "Tyrese",
+    "lastName": "Haliburton",
+    "teamId": "1610612754",
+    "teamTricode": "IND",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyrese Martin",
+    "playerId": "38017722",
+    "position": "G",
+    "firstName": "Tyrese",
+    "lastName": "Martin",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyrese Maxey",
+    "playerId": "3547254",
+    "position": "G",
+    "firstName": "Tyrese",
+    "lastName": "Maxey",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyrese Proctor",
+    "playerId": "1057395754",
+    "position": "G",
+    "firstName": "Tyrese",
+    "lastName": "Proctor",
+    "teamId": "1610612739",
+    "teamTricode": "CLE",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyrese Samuel",
+    "playerId": "1057848571",
+    "position": "F",
+    "firstName": "Tyrese",
+    "lastName": "Samuel",
+    "teamId": "1610612756",
+    "teamTricode": "PHX",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyson Etienne",
+    "playerId": "1043947937",
+    "position": "G",
+    "firstName": "Tyson",
+    "lastName": "Etienne",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Tyus Jones",
+    "playerId": "249",
+    "position": "G",
+    "firstName": "Tyus",
+    "lastName": "Jones",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ulrich Chomche",
+    "playerId": "1028045145",
+    "position": "C",
+    "firstName": "Ulrich",
+    "lastName": "Chomche",
+    "teamId": "1610612761",
+    "teamTricode": "TOR",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Victor Wembanyama",
+    "playerId": "56677822",
+    "position": "F-C",
+    "firstName": "Victor",
+    "lastName": "Wembanyama",
+    "teamId": "1610612759",
+    "teamTricode": "SAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Vince Williams Jr.",
+    "playerId": "38017731",
+    "position": "G",
+    "firstName": "Vince Williams",
+    "lastName": "Jr.",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Vit Krejci",
+    "playerId": "4197387",
+    "position": "G",
+    "firstName": "Vit",
+    "lastName": "Krejci",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "VJ Edgecombe",
+    "playerId": "1057261935",
+    "position": "G",
+    "firstName": "VJ",
+    "lastName": "Edgecombe",
+    "teamId": "1610612755",
+    "teamTricode": "PHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Vladislav Goldin",
+    "playerId": "1057846206",
+    "position": "C",
+    "firstName": "Vladislav",
+    "lastName": "Goldin",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Walker Kessler",
+    "playerId": "38017705",
+    "position": "C",
+    "firstName": "Walker",
+    "lastName": "Kessler",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Walter Clayton Jr.",
+    "playerId": "1057271583",
+    "position": "G",
+    "firstName": "Walter Clayton",
+    "lastName": "Jr.",
+    "teamId": "1610612762",
+    "teamTricode": "UTA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Warren Washington",
+    "playerId": "1028272702",
+    "position": "",
+    "firstName": "Warren",
+    "lastName": "Washington",
+    "teamId": "1610612748",
+    "teamTricode": "MIA",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Wendell Carter Jr.",
+    "playerId": "85",
+    "position": "F",
+    "firstName": "Wendell Carter",
+    "lastName": "Jr.",
+    "teamId": "1610612753",
+    "teamTricode": "ORL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Wendell Moore Jr.",
+    "playerId": "38017700",
+    "position": "G",
+    "firstName": "Wendell Moore",
+    "lastName": "Jr.",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Will Richard",
+    "playerId": "1057395872",
+    "position": "G",
+    "firstName": "Will",
+    "lastName": "Richard",
+    "teamId": "1610612744",
+    "teamTricode": "GSW",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Will Richardson",
+    "playerId": "1028266733",
+    "position": "G",
+    "firstName": "Will",
+    "lastName": "Richardson",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Will Riley",
+    "playerId": "1057279594",
+    "position": "F",
+    "firstName": "Will",
+    "lastName": "Riley",
+    "teamId": "1610612764",
+    "teamTricode": "WAS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Xavier Tillman",
+    "playerId": "3547285",
+    "position": "F",
+    "firstName": "Xavier",
+    "lastName": "Tillman",
+    "teamId": "1610612738",
+    "teamTricode": "BOS",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Yanic Konan Niederhauser",
+    "playerId": "1057279105",
+    "position": "C",
+    "firstName": "Yanic Konan",
+    "lastName": "Niederhauser",
+    "teamId": "1610612746",
+    "teamTricode": "LAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Yuki Kawamura",
+    "playerId": "1028265377",
+    "position": "G",
+    "firstName": "Yuki",
+    "lastName": "Kawamura",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Yves Missi",
+    "playerId": "1028027567",
+    "position": "C",
+    "firstName": "Yves",
+    "lastName": "Missi",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zaccharie Risacher",
+    "playerId": "1028028244",
+    "position": "F",
+    "firstName": "Zaccharie",
+    "lastName": "Risacher",
+    "teamId": "1610612737",
+    "teamTricode": "ATL",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zach Collins",
+    "playerId": "102",
+    "position": "F-C",
+    "firstName": "Zach",
+    "lastName": "Collins",
+    "teamId": "1610612741",
+    "teamTricode": "CHI",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zach Edey",
+    "playerId": "1028025754",
+    "position": "C",
+    "firstName": "Zach",
+    "lastName": "Edey",
+    "teamId": "1610612763",
+    "teamTricode": "MEM",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zach LaVine",
+    "playerId": "268",
+    "position": "G",
+    "firstName": "Zach",
+    "lastName": "LaVine",
+    "teamId": "1610612758",
+    "teamTricode": "SAC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zack Austin",
+    "playerId": "1057844738",
+    "position": "",
+    "firstName": "Zack",
+    "lastName": "Austin",
+    "teamId": "1610612760",
+    "teamTricode": "OKC",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zeke Nnaji",
+    "playerId": "3547268",
+    "position": "F-C",
+    "firstName": "Zeke",
+    "lastName": "Nnaji",
+    "teamId": "1610612743",
+    "teamTricode": "DEN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zeng Fanbo",
+    "playerId": "1057845931",
+    "position": "F",
+    "firstName": "Zeng",
+    "lastName": "Fanbo",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Ziaire Williams",
+    "playerId": "17896027",
+    "position": "G-F",
+    "firstName": "Ziaire",
+    "lastName": "Williams",
+    "teamId": "1610612751",
+    "teamTricode": "BKN",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zion Williamson",
+    "playerId": "666969",
+    "position": "F",
+    "firstName": "Zion",
+    "lastName": "Williamson",
+    "teamId": "1610612740",
+    "teamTricode": "NOP",
+    "source": "ball_dont_lie"
+  },
+  {
+    "name": "Zyon Pullin",
+    "playerId": "1028112004",
+    "position": "G",
+    "firstName": "Zyon",
+    "lastName": "Pullin",
+    "teamId": "1610612750",
+    "teamTricode": "MIN",
+    "source": "ball_dont_lie"
+  }
+]

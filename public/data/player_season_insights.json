@@ -1,0 +1,2134 @@
+{
+  "generatedAt": "2025-10-02T01:29:22.430427+00:00",
+  "totals": {
+    "playerGameRows": 1627438,
+    "playersTracked": 5428,
+    "seasonsTracked": 80,
+    "seasonCoverage": {
+      "start": 1946,
+      "end": 2025
+    },
+    "tripleDoubleGames": 3618,
+    "playersWithTripleDouble": 498,
+    "averagePlayerLine": {
+      "points": 9.19,
+      "assists": 1.96,
+      "rebounds": 3.78
+    },
+    "mostTripleDoubleSeason": {
+      "season": 2021,
+      "tripleDoubles": 194
+    }
+  },
+  "seasonAverages": {
+    "points": [
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1962,
+        "games": 91,
+        "pointsPerGame": 48.07,
+        "totalPoints": 4374.0,
+        "teams": [
+          "Philadelphia Warriors",
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1961,
+        "games": 84,
+        "pointsPerGame": 43.76,
+        "totalPoints": 3676.0,
+        "teams": [
+          "Philadelphia Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1963,
+        "games": 78,
+        "pointsPerGame": 38.83,
+        "totalPoints": 3029.0,
+        "teams": [
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1964,
+        "games": 91,
+        "pointsPerGame": 38.19,
+        "totalPoints": 3475.0,
+        "teams": [
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1960,
+        "games": 85,
+        "pointsPerGame": 37.25,
+        "totalPoints": 3166.0,
+        "teams": [
+          "Philadelphia Warriors"
+        ]
+      },
+      {
+        "personId": "76127",
+        "name": "Elgin Baylor",
+        "season": 1961,
+        "games": 89,
+        "pointsPerGame": 37.07,
+        "totalPoints": 3299.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "201935",
+        "name": "James Harden",
+        "season": 2019,
+        "games": 95,
+        "pointsPerGame": 36.91,
+        "totalPoints": 3506.0,
+        "teams": [
+          "Houston Rockets"
+        ]
+      },
+      {
+        "personId": "76127",
+        "name": "Elgin Baylor",
+        "season": 1962,
+        "games": 57,
+        "pointsPerGame": 36.28,
+        "totalPoints": 2068.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "893",
+        "name": "Michael Jordan",
+        "season": 1988,
+        "games": 92,
+        "pointsPerGame": 35.85,
+        "totalPoints": 3298.0,
+        "teams": [
+          "Chicago Bulls"
+        ]
+      },
+      {
+        "personId": "893",
+        "name": "Michael Jordan",
+        "season": 1987,
+        "games": 84,
+        "pointsPerGame": 35.54,
+        "totalPoints": 2985.0,
+        "teams": [
+          "Chicago Bulls"
+        ]
+      },
+      {
+        "personId": "600013",
+        "name": "Rick Barry",
+        "season": 1966,
+        "games": 73,
+        "pointsPerGame": 34.26,
+        "totalPoints": 2501.0,
+        "teams": [
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "77498",
+        "name": "Bob McAdoo",
+        "season": 1975,
+        "games": 84,
+        "pointsPerGame": 34.21,
+        "totalPoints": 2874.0,
+        "teams": [
+          "Buffalo Braves"
+        ]
+      }
+    ],
+    "assists": [
+      {
+        "personId": "304",
+        "name": "John Stockton",
+        "season": 1988,
+        "games": 94,
+        "assistsPerGame": 14.69,
+        "totalAssists": 1381.0,
+        "teams": [
+          "Utah Jazz"
+        ]
+      },
+      {
+        "personId": "304",
+        "name": "John Stockton",
+        "season": 1990,
+        "games": 86,
+        "assistsPerGame": 14.36,
+        "totalAssists": 1235.0,
+        "teams": [
+          "Utah Jazz"
+        ]
+      },
+      {
+        "personId": "304",
+        "name": "John Stockton",
+        "season": 1991,
+        "games": 93,
+        "assistsPerGame": 14.15,
+        "totalAssists": 1316.0,
+        "teams": [
+          "Utah Jazz"
+        ]
+      },
+      {
+        "personId": "304",
+        "name": "John Stockton",
+        "season": 1989,
+        "games": 82,
+        "assistsPerGame": 13.94,
+        "totalAssists": 1143.0,
+        "teams": [
+          "Utah Jazz"
+        ]
+      },
+      {
+        "personId": "78318",
+        "name": "Isiah Thomas",
+        "season": 1985,
+        "games": 90,
+        "assistsPerGame": 13.43,
+        "totalAssists": 1209.0,
+        "teams": [
+          "Detroit Pistons"
+        ]
+      },
+      {
+        "personId": "304",
+        "name": "John Stockton",
+        "season": 1992,
+        "games": 93,
+        "assistsPerGame": 13.4,
+        "totalAssists": 1246.0,
+        "teams": [
+          "Utah Jazz"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1985,
+        "games": 93,
+        "assistsPerGame": 13.27,
+        "totalAssists": 1234.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1984,
+        "games": 102,
+        "assistsPerGame": 12.69,
+        "totalAssists": 1294.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1988,
+        "games": 99,
+        "assistsPerGame": 12.56,
+        "totalAssists": 1243.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1986,
+        "games": 86,
+        "assistsPerGame": 12.5,
+        "totalAssists": 1075.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1983,
+        "games": 80,
+        "assistsPerGame": 12.35,
+        "totalAssists": 988.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      },
+      {
+        "personId": "77142",
+        "name": "Magic Johnson",
+        "season": 1990,
+        "games": 87,
+        "assistsPerGame": 12.29,
+        "totalAssists": 1069.0,
+        "teams": [
+          "Los Angeles Lakers"
+        ]
+      }
+    ],
+    "rebounds": [
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1960,
+        "games": 85,
+        "reboundsPerGame": 26.6,
+        "totalRebounds": 2261.0,
+        "teams": [
+          "Philadelphia Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1961,
+        "games": 84,
+        "reboundsPerGame": 25.52,
+        "totalRebounds": 2144.0,
+        "teams": [
+          "Philadelphia Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1962,
+        "games": 91,
+        "reboundsPerGame": 25.3,
+        "totalRebounds": 2302.0,
+        "teams": [
+          "Philadelphia Warriors",
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1967,
+        "games": 97,
+        "reboundsPerGame": 25.04,
+        "totalRebounds": 2429.0,
+        "teams": [
+          "Philadelphia 76ers"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1966,
+        "games": 88,
+        "reboundsPerGame": 24.5,
+        "totalRebounds": 2156.0,
+        "teams": [
+          "Philadelphia 76ers"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1965,
+        "games": 83,
+        "reboundsPerGame": 24.43,
+        "totalRebounds": 2028.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1963,
+        "games": 86,
+        "reboundsPerGame": 24.24,
+        "totalRebounds": 2085.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      },
+      {
+        "personId": "76375",
+        "name": "Wilt Chamberlain",
+        "season": 1965,
+        "games": 85,
+        "reboundsPerGame": 24.22,
+        "totalRebounds": 2059.0,
+        "teams": [
+          "Philadelphia 76ers",
+          "San Francisco Warriors"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1964,
+        "games": 98,
+        "reboundsPerGame": 23.9,
+        "totalRebounds": 2342.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1960,
+        "games": 89,
+        "reboundsPerGame": 23.9,
+        "totalRebounds": 2127.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1961,
+        "games": 87,
+        "reboundsPerGame": 23.56,
+        "totalRebounds": 2050.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      },
+      {
+        "personId": "78049",
+        "name": "Bill Russell",
+        "season": 1962,
+        "games": 89,
+        "reboundsPerGame": 23.46,
+        "totalRebounds": 2088.0,
+        "teams": [
+          "Boston Celtics"
+        ]
+      }
+    ]
+  },
+  "tripleDoubleLeaders": [
+    {
+      "personId": "201566",
+      "name": "Russell Westbrook",
+      "tripleDoubles": 216,
+      "seasonsWithTripleDouble": 16,
+      "careerSpan": {
+        "start": 2008,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 45
+      }
+    },
+    {
+      "personId": "600015",
+      "name": "Oscar Robertson",
+      "tripleDoubles": 187,
+      "seasonsWithTripleDouble": 13,
+      "careerSpan": {
+        "start": 1960,
+        "end": 1974
+      },
+      "bestSeason": {
+        "season": 1961,
+        "tripleDoubles": 33
+      }
+    },
+    {
+      "personId": "203999",
+      "name": "Nikola Jokic",
+      "tripleDoubles": 185,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 2015,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2023,
+        "tripleDoubles": 42
+      }
+    },
+    {
+      "personId": "77142",
+      "name": "Magic Johnson",
+      "tripleDoubles": 169,
+      "seasonsWithTripleDouble": 14,
+      "careerSpan": {
+        "start": 1979,
+        "end": 1996
+      },
+      "bestSeason": {
+        "season": 1984,
+        "tripleDoubles": 22
+      }
+    },
+    {
+      "personId": "2544",
+      "name": "LeBron James",
+      "tripleDoubles": 151,
+      "seasonsWithTripleDouble": 21,
+      "careerSpan": {
+        "start": 2003,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2017,
+        "tripleDoubles": 20
+      }
+    },
+    {
+      "personId": "467",
+      "name": "Jason Kidd",
+      "tripleDoubles": 118,
+      "seasonsWithTripleDouble": 17,
+      "careerSpan": {
+        "start": 1994,
+        "end": 2013
+      },
+      "bestSeason": {
+        "season": 2007,
+        "tripleDoubles": 15
+      }
+    },
+    {
+      "personId": "1629029",
+      "name": "Luka Doncic",
+      "tripleDoubles": 92,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 2018,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2024,
+        "tripleDoubles": 25
+      }
+    },
+    {
+      "personId": "76375",
+      "name": "Wilt Chamberlain",
+      "tripleDoubles": 87,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 1959,
+        "end": 1973
+      },
+      "bestSeason": {
+        "season": 1968,
+        "tripleDoubles": 26
+      }
+    },
+    {
+      "personId": "201935",
+      "name": "James Harden",
+      "tripleDoubles": 84,
+      "seasonsWithTripleDouble": 13,
+      "careerSpan": {
+        "start": 2009,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 19
+      }
+    },
+    {
+      "personId": "1627734",
+      "name": "Domantas Sabonis",
+      "tripleDoubles": 69,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 2016,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2024,
+        "tripleDoubles": 24
+      }
+    },
+    {
+      "personId": "1449",
+      "name": "Larry Bird",
+      "tripleDoubles": 69,
+      "seasonsWithTripleDouble": 14,
+      "careerSpan": {
+        "start": 1979,
+        "end": 1992
+      },
+      "bestSeason": {
+        "season": 1986,
+        "tripleDoubles": 11
+      }
+    },
+    {
+      "personId": "203507",
+      "name": "Giannis Antetokounmpo",
+      "tripleDoubles": 62,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 2013,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2024,
+        "tripleDoubles": 12
+      }
+    },
+    {
+      "personId": "77376",
+      "name": "Lafayette Lever",
+      "tripleDoubles": 46,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1982,
+        "end": 1994
+      },
+      "bestSeason": {
+        "season": 1987,
+        "tripleDoubles": 17
+      }
+    },
+    {
+      "personId": "203110",
+      "name": "Draymond Green",
+      "tripleDoubles": 44,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 2012,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2016,
+        "tripleDoubles": 10
+      }
+    },
+    {
+      "personId": "200765",
+      "name": "Rajon Rondo",
+      "tripleDoubles": 42,
+      "seasonsWithTripleDouble": 12,
+      "careerSpan": {
+        "start": 2006,
+        "end": 2022
+      },
+      "bestSeason": {
+        "season": 2012,
+        "tripleDoubles": 11
+      }
+    },
+    {
+      "personId": "1627732",
+      "name": "Ben Simmons",
+      "tripleDoubles": 36,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 2016,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2018,
+        "tripleDoubles": 14
+      }
+    },
+    {
+      "personId": "76970",
+      "name": "John Havlicek",
+      "tripleDoubles": 34,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1962,
+        "end": 1978
+      },
+      "bestSeason": {
+        "season": 1970,
+        "tripleDoubles": 11
+      }
+    },
+    {
+      "personId": "893",
+      "name": "Michael Jordan",
+      "tripleDoubles": 30,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 1984,
+        "end": 2003
+      },
+      "bestSeason": {
+        "season": 1989,
+        "tripleDoubles": 16
+      }
+    },
+    {
+      "personId": "255",
+      "name": "Grant Hill",
+      "tripleDoubles": 29,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1994,
+        "end": 2013
+      },
+      "bestSeason": {
+        "season": 1997,
+        "tripleDoubles": 14
+      }
+    },
+    {
+      "personId": "17",
+      "name": "Clyde Drexler",
+      "tripleDoubles": 28,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 1983,
+        "end": 1998
+      },
+      "bestSeason": {
+        "season": 1985,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "76750",
+      "name": "Walt Frazier",
+      "tripleDoubles": 27,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 1967,
+        "end": 1979
+      },
+      "bestSeason": {
+        "season": 1969,
+        "tripleDoubles": 9
+      }
+    },
+    {
+      "personId": "76127",
+      "name": "Elgin Baylor",
+      "tripleDoubles": 27,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 1958,
+        "end": 1971
+      },
+      "bestSeason": {
+        "season": 1969,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "787",
+      "name": "Charles Barkley",
+      "tripleDoubles": 24,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 1984,
+        "end": 2000
+      },
+      "bestSeason": {
+        "season": 1993,
+        "tripleDoubles": 7
+      }
+    },
+    {
+      "personId": "185",
+      "name": "Chris Webber",
+      "tripleDoubles": 23,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 1993,
+        "end": 2008
+      },
+      "bestSeason": {
+        "season": 1995,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "76828",
+      "name": "Tom Gola",
+      "tripleDoubles": 23,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1955,
+        "end": 1966
+      },
+      "bestSeason": {
+        "season": 1960,
+        "tripleDoubles": 10
+      }
+    },
+    {
+      "personId": "202710",
+      "name": "Jimmy Butler",
+      "tripleDoubles": 22,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 2011,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 6
+      }
+    },
+    {
+      "personId": "200768",
+      "name": "Kyle Lowry",
+      "tripleDoubles": 22,
+      "seasonsWithTripleDouble": 13,
+      "careerSpan": {
+        "start": 2006,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "76003",
+      "name": "Kareem Abdul-Jabbar",
+      "tripleDoubles": 22,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 1969,
+        "end": 1989
+      },
+      "bestSeason": {
+        "season": 1976,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "1627749",
+      "name": "Dejounte Murray",
+      "tripleDoubles": 21,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 2016,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 10
+      }
+    },
+    {
+      "personId": "101108",
+      "name": "Chris Paul",
+      "tripleDoubles": 21,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 2005,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2008,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "977",
+      "name": "Kobe Bryant",
+      "tripleDoubles": 21,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 1996,
+        "end": 2016
+      },
+      "bestSeason": {
+        "season": 2004,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "937",
+      "name": "Scottie Pippen",
+      "tripleDoubles": 21,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 1987,
+        "end": 2004
+      },
+      "bestSeason": {
+        "season": 1993,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "77952",
+      "name": "Micheal Ray Richardson",
+      "tripleDoubles": 21,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1978,
+        "end": 1986
+      },
+      "bestSeason": {
+        "season": 1980,
+        "tripleDoubles": 6
+      }
+    },
+    {
+      "personId": "201142",
+      "name": "Kevin Durant",
+      "tripleDoubles": 20,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 2007,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2018,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "78003",
+      "name": "Guy Rodgers",
+      "tripleDoubles": 20,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 1958,
+        "end": 1970
+      },
+      "bestSeason": {
+        "season": 1962,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "708",
+      "name": "Kevin Garnett",
+      "tripleDoubles": 19,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 1995,
+        "end": 2016
+      },
+      "bestSeason": {
+        "season": 2003,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "349",
+      "name": "Mark Jackson",
+      "tripleDoubles": 19,
+      "seasonsWithTripleDouble": 11,
+      "careerSpan": {
+        "start": 1987,
+        "end": 2004
+      },
+      "bestSeason": {
+        "season": 1997,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "78049",
+      "name": "Bill Russell",
+      "tripleDoubles": 19,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 1956,
+        "end": 1969
+      },
+      "bestSeason": {
+        "season": 1966,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "1630581",
+      "name": "Josh Giddey",
+      "tripleDoubles": 18,
+      "seasonsWithTripleDouble": 4,
+      "careerSpan": {
+        "start": 2021,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2025,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "600003",
+      "name": "Bob Cousy",
+      "tripleDoubles": 18,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1950,
+        "end": 1970
+      },
+      "bestSeason": {
+        "season": 1959,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "203901",
+      "name": "Elfrid Payton",
+      "tripleDoubles": 17,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 2014,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2019,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "56",
+      "name": "Gary Payton",
+      "tripleDoubles": 17,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 1990,
+        "end": 2007
+      },
+      "bestSeason": {
+        "season": 2000,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "78497",
+      "name": "Jerry West",
+      "tripleDoubles": 17,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 1960,
+        "end": 1974
+      },
+      "bestSeason": {
+        "season": 1961,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "1628404",
+      "name": "Josh Hart",
+      "tripleDoubles": 16,
+      "seasonsWithTripleDouble": 2,
+      "careerSpan": {
+        "start": 2017,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2024,
+        "tripleDoubles": 9
+      }
+    },
+    {
+      "personId": "78406",
+      "name": "Norm Van Lier",
+      "tripleDoubles": 16,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1969,
+        "end": 1979
+      },
+      "bestSeason": {
+        "season": 1971,
+        "tripleDoubles": 6
+      }
+    },
+    {
+      "personId": "78530",
+      "name": "Lenny Wilkens",
+      "tripleDoubles": 16,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 1960,
+        "end": 1975
+      },
+      "bestSeason": {
+        "season": 1969,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "76902",
+      "name": "Richie Guerin",
+      "tripleDoubles": 16,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1956,
+        "end": 1970
+      },
+      "bestSeason": {
+        "season": 1961,
+        "tripleDoubles": 6
+      }
+    },
+    {
+      "personId": "203944",
+      "name": "Julius Randle",
+      "tripleDoubles": 15,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 2014,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2021,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "952",
+      "name": "Antoine Walker",
+      "tripleDoubles": 15,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1996,
+        "end": 2008
+      },
+      "bestSeason": {
+        "season": 2002,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "165",
+      "name": "Hakeem Olajuwon",
+      "tripleDoubles": 15,
+      "seasonsWithTripleDouble": 9,
+      "careerSpan": {
+        "start": 1984,
+        "end": 2002
+      },
+      "bestSeason": {
+        "season": 1990,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "764",
+      "name": "David Robinson",
+      "tripleDoubles": 15,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1989,
+        "end": 2003
+      },
+      "bestSeason": {
+        "season": 1993,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "78437",
+      "name": "Darrell Walker",
+      "tripleDoubles": 15,
+      "seasonsWithTripleDouble": 3,
+      "careerSpan": {
+        "start": 1983,
+        "end": 1993
+      },
+      "bestSeason": {
+        "season": 1990,
+        "tripleDoubles": 9
+      }
+    },
+    {
+      "personId": "76487",
+      "name": "Billy Cunningham",
+      "tripleDoubles": 14,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1965,
+        "end": 1975
+      },
+      "bestSeason": {
+        "season": 1972,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "1629630",
+      "name": "Ja Morant",
+      "tripleDoubles": 13,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 2019,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2022,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "201939",
+      "name": "Stephen Curry",
+      "tripleDoubles": 13,
+      "seasonsWithTripleDouble": 10,
+      "careerSpan": {
+        "start": 2009,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2022,
+        "tripleDoubles": 2
+      }
+    },
+    {
+      "personId": "201933",
+      "name": "Blake Griffin",
+      "tripleDoubles": 13,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 2009,
+        "end": 2023
+      },
+      "bestSeason": {
+        "season": 2018,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "134",
+      "name": "Kevin Johnson",
+      "tripleDoubles": 13,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1987,
+        "end": 2000
+      },
+      "bestSeason": {
+        "season": 1989,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "926",
+      "name": "Alvin Robertson",
+      "tripleDoubles": 13,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1984,
+        "end": 1996
+      },
+      "bestSeason": {
+        "season": 1990,
+        "tripleDoubles": 5
+      }
+    },
+    {
+      "personId": "1630595",
+      "name": "Cade Cunningham",
+      "tripleDoubles": 12,
+      "seasonsWithTripleDouble": 4,
+      "careerSpan": {
+        "start": 2021,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2024,
+        "tripleDoubles": 6
+      }
+    },
+    {
+      "personId": "1884",
+      "name": "Baron Davis",
+      "tripleDoubles": 12,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1999,
+        "end": 2012
+      },
+      "bestSeason": {
+        "season": 2002,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "1885",
+      "name": "Lamar Odom",
+      "tripleDoubles": 12,
+      "seasonsWithTripleDouble": 7,
+      "careerSpan": {
+        "start": 1999,
+        "end": 2013
+      },
+      "bestSeason": {
+        "season": 2001,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "76011",
+      "name": "Alvan Adams",
+      "tripleDoubles": 12,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1975,
+        "end": 1988
+      },
+      "bestSeason": {
+        "season": 1985,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "2200",
+      "name": "Pau Gasol",
+      "tripleDoubles": 11,
+      "seasonsWithTripleDouble": 8,
+      "careerSpan": {
+        "start": 2001,
+        "end": 2019
+      },
+      "bestSeason": {
+        "season": 2013,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "1630163",
+      "name": "LaMelo Ball",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 3,
+      "careerSpan": {
+        "start": 2020,
+        "end": 2025
+      },
+      "bestSeason": {
+        "season": 2022,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "1718",
+      "name": "Paul Pierce",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1999,
+        "end": 2017
+      },
+      "bestSeason": {
+        "season": 2013,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "87",
+      "name": "Dikembe Mutombo",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 5,
+      "careerSpan": {
+        "start": 1991,
+        "end": 2009
+      },
+      "bestSeason": {
+        "season": 1994,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "302",
+      "name": "Mookie Blaylock",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1989,
+        "end": 2002
+      },
+      "bestSeason": {
+        "season": 1994,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "77326",
+      "name": "Sam Lacey",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1970,
+        "end": 1983
+      },
+      "bestSeason": {
+        "season": 1981,
+        "tripleDoubles": 3
+      }
+    },
+    {
+      "personId": "77418",
+      "name": "Jerry Lucas",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 6,
+      "careerSpan": {
+        "start": 1963,
+        "end": 1974
+      },
+      "bestSeason": {
+        "season": 1972,
+        "tripleDoubles": 4
+      }
+    },
+    {
+      "personId": "600016",
+      "name": "Maurice Stokes",
+      "tripleDoubles": 10,
+      "seasonsWithTripleDouble": 3,
+      "careerSpan": {
+        "start": 1955,
+        "end": 1958
+      },
+      "bestSeason": {
+        "season": 1957,
+        "tripleDoubles": 6
+      }
+    }
+  ],
+  "seasonTrends": [
+    {
+      "season": 1946,
+      "playerGames": 143,
+      "avgPoints": 6.29,
+      "avgAssists": 0.0,
+      "avgRebounds": 0.0,
+      "avgMinutes": 0.0,
+      "tripleDoubles": 0
+    },
+    {
+      "season": 1947,
+      "playerGames": 483,
+      "avgPoints": 6.88,
+      "avgAssists": 0.06,
+      "avgRebounds": 0.0,
+      "avgMinutes": 0.0,
+      "tripleDoubles": 0
+    },
+    {
+      "season": 1948,
+      "playerGames": 935,
+      "avgPoints": 7.65,
+      "avgAssists": 0.0,
+      "avgRebounds": 0.0,
+      "avgMinutes": 0.0,
+      "tripleDoubles": 0
+    },
+    {
+      "season": 1949,
+      "playerGames": 1950,
+      "avgPoints": 7.88,
+      "avgAssists": 0.06,
+      "avgRebounds": 0.0,
+      "avgMinutes": 0.0,
+      "tripleDoubles": 0
+    },
+    {
+      "season": 1950,
+      "playerGames": 3249,
+      "avgPoints": 8.2,
+      "avgAssists": 0.38,
+      "avgRebounds": 0.11,
+      "avgMinutes": 0.0,
+      "tripleDoubles": 1
+    },
+    {
+      "season": 1951,
+      "playerGames": 4285,
+      "avgPoints": 9.01,
+      "avgAssists": 0.61,
+      "avgRebounds": 0.75,
+      "avgMinutes": 1.31,
+      "tripleDoubles": 7
+    },
+    {
+      "season": 1952,
+      "playerGames": 4200,
+      "avgPoints": 9.25,
+      "avgAssists": 0.42,
+      "avgRebounds": 0.69,
+      "avgMinutes": 2.94,
+      "tripleDoubles": 4
+    },
+    {
+      "season": 1953,
+      "playerGames": 4617,
+      "avgPoints": 8.78,
+      "avgAssists": 0.57,
+      "avgRebounds": 0.92,
+      "avgMinutes": 5.06,
+      "tripleDoubles": 0
+    },
+    {
+      "season": 1954,
+      "playerGames": 5068,
+      "avgPoints": 9.26,
+      "avgAssists": 0.88,
+      "avgRebounds": 1.68,
+      "avgMinutes": 7.02,
+      "tripleDoubles": 2
+    },
+    {
+      "season": 1955,
+      "playerGames": 5793,
+      "avgPoints": 10.06,
+      "avgAssists": 0.94,
+      "avgRebounds": 1.93,
+      "avgMinutes": 6.2,
+      "tripleDoubles": 9
+    },
+    {
+      "season": 1956,
+      "playerGames": 6304,
+      "avgPoints": 10.24,
+      "avgAssists": 1.14,
+      "avgRebounds": 2.73,
+      "avgMinutes": 6.48,
+      "tripleDoubles": 14
+    },
+    {
+      "season": 1957,
+      "playerGames": 5991,
+      "avgPoints": 10.89,
+      "avgAssists": 0.75,
+      "avgRebounds": 2.86,
+      "avgMinutes": 5.43,
+      "tripleDoubles": 9
+    },
+    {
+      "season": 1958,
+      "playerGames": 5913,
+      "avgPoints": 11.02,
+      "avgAssists": 0.84,
+      "avgRebounds": 3.5,
+      "avgMinutes": 5.41,
+      "tripleDoubles": 14
+    },
+    {
+      "season": 1959,
+      "playerGames": 6130,
+      "avgPoints": 11.64,
+      "avgAssists": 0.85,
+      "avgRebounds": 4.28,
+      "avgMinutes": 5.51,
+      "tripleDoubles": 10
+    },
+    {
+      "season": 1960,
+      "playerGames": 6362,
+      "avgPoints": 12.17,
+      "avgAssists": 1.12,
+      "avgRebounds": 5.09,
+      "avgMinutes": 5.6,
+      "tripleDoubles": 39
+    },
+    {
+      "season": 1961,
+      "playerGames": 6878,
+      "avgPoints": 12.49,
+      "avgAssists": 1.11,
+      "avgRebounds": 4.91,
+      "avgMinutes": 8.45,
+      "tripleDoubles": 57
+    },
+    {
+      "season": 1962,
+      "playerGames": 7357,
+      "avgPoints": 12.42,
+      "avgAssists": 1.0,
+      "avgRebounds": 4.5,
+      "avgMinutes": 9.13,
+      "tripleDoubles": 44
+    },
+    {
+      "season": 1963,
+      "playerGames": 7282,
+      "avgPoints": 11.84,
+      "avgAssists": 1.34,
+      "avgRebounds": 4.84,
+      "avgMinutes": 12.67,
+      "tripleDoubles": 41
+    },
+    {
+      "season": 1964,
+      "playerGames": 7537,
+      "avgPoints": 11.65,
+      "avgAssists": 1.55,
+      "avgRebounds": 5.17,
+      "avgMinutes": 12.44,
+      "tripleDoubles": 44
+    },
+    {
+      "season": 1965,
+      "playerGames": 7278,
+      "avgPoints": 11.89,
+      "avgAssists": 1.9,
+      "avgRebounds": 5.68,
+      "avgMinutes": 15.29,
+      "tripleDoubles": 30
+    },
+    {
+      "season": 1966,
+      "playerGames": 7880,
+      "avgPoints": 12.03,
+      "avgAssists": 1.88,
+      "avgRebounds": 5.41,
+      "avgMinutes": 13.89,
+      "tripleDoubles": 40
+    },
+    {
+      "season": 1967,
+      "playerGames": 9159,
+      "avgPoints": 12.35,
+      "avgAssists": 1.91,
+      "avgRebounds": 5.39,
+      "avgMinutes": 14.92,
+      "tripleDoubles": 47
+    },
+    {
+      "season": 1968,
+      "playerGames": 10646,
+      "avgPoints": 12.23,
+      "avgAssists": 2.16,
+      "avgRebounds": 5.57,
+      "avgMinutes": 19.59,
+      "tripleDoubles": 53
+    },
+    {
+      "season": 1969,
+      "playerGames": 11515,
+      "avgPoints": 12.16,
+      "avgAssists": 2.35,
+      "avgRebounds": 5.7,
+      "avgMinutes": 20.68,
+      "tripleDoubles": 47
+    },
+    {
+      "season": 1970,
+      "playerGames": 13023,
+      "avgPoints": 11.96,
+      "avgAssists": 2.43,
+      "avgRebounds": 5.35,
+      "avgMinutes": 22.41,
+      "tripleDoubles": 53
+    },
+    {
+      "season": 1971,
+      "playerGames": 13843,
+      "avgPoints": 11.55,
+      "avgAssists": 2.35,
+      "avgRebounds": 5.24,
+      "avgMinutes": 23.03,
+      "tripleDoubles": 37
+    },
+    {
+      "season": 1972,
+      "playerGames": 13874,
+      "avgPoints": 11.48,
+      "avgAssists": 2.4,
+      "avgRebounds": 5.04,
+      "avgMinutes": 22.44,
+      "tripleDoubles": 35
+    },
+    {
+      "season": 1973,
+      "playerGames": 14291,
+      "avgPoints": 11.19,
+      "avgAssists": 2.41,
+      "avgRebounds": 4.83,
+      "avgMinutes": 21.79,
+      "tripleDoubles": 27
+    },
+    {
+      "season": 1974,
+      "playerGames": 13958,
+      "avgPoints": 10.74,
+      "avgAssists": 2.32,
+      "avgRebounds": 4.71,
+      "avgMinutes": 21.58,
+      "tripleDoubles": 27
+    },
+    {
+      "season": 1975,
+      "playerGames": 15069,
+      "avgPoints": 10.42,
+      "avgAssists": 2.3,
+      "avgRebounds": 4.65,
+      "avgMinutes": 22.2,
+      "tripleDoubles": 25
+    },
+    {
+      "season": 1976,
+      "playerGames": 17523,
+      "avgPoints": 10.47,
+      "avgAssists": 2.26,
+      "avgRebounds": 4.62,
+      "avgMinutes": 23.06,
+      "tripleDoubles": 22
+    },
+    {
+      "season": 1977,
+      "playerGames": 19279,
+      "avgPoints": 10.68,
+      "avgAssists": 2.4,
+      "avgRebounds": 4.66,
+      "avgMinutes": 23.6,
+      "tripleDoubles": 19
+    },
+    {
+      "season": 1978,
+      "playerGames": 19108,
+      "avgPoints": 11.18,
+      "avgAssists": 2.53,
+      "avgRebounds": 4.68,
+      "avgMinutes": 24.16,
+      "tripleDoubles": 16
+    },
+    {
+      "season": 1979,
+      "playerGames": 19435,
+      "avgPoints": 11.13,
+      "avgAssists": 2.59,
+      "avgRebounds": 4.6,
+      "avgMinutes": 24.32,
+      "tripleDoubles": 29
+    },
+    {
+      "season": 1980,
+      "playerGames": 19202,
+      "avgPoints": 11.01,
+      "avgAssists": 2.58,
+      "avgRebounds": 4.45,
+      "avgMinutes": 24.31,
+      "tripleDoubles": 25
+    },
+    {
+      "season": 1981,
+      "playerGames": 17657,
+      "avgPoints": 10.72,
+      "avgAssists": 2.45,
+      "avgRebounds": 4.27,
+      "avgMinutes": 23.82,
+      "tripleDoubles": 27
+    },
+    {
+      "season": 1982,
+      "playerGames": 20519,
+      "avgPoints": 10.67,
+      "avgAssists": 2.51,
+      "avgRebounds": 4.29,
+      "avgMinutes": 23.51,
+      "tripleDoubles": 47
+    },
+    {
+      "season": 1983,
+      "playerGames": 20438,
+      "avgPoints": 10.59,
+      "avgAssists": 2.52,
+      "avgRebounds": 4.26,
+      "avgMinutes": 23.34,
+      "tripleDoubles": 39
+    },
+    {
+      "season": 1984,
+      "playerGames": 21233,
+      "avgPoints": 10.67,
+      "avgAssists": 2.5,
+      "avgRebounds": 4.16,
+      "avgMinutes": 23.39,
+      "tripleDoubles": 44
+    },
+    {
+      "season": 1985,
+      "playerGames": 20752,
+      "avgPoints": 10.87,
+      "avgAssists": 2.56,
+      "avgRebounds": 4.24,
+      "avgMinutes": 23.42,
+      "tripleDoubles": 57
+    },
+    {
+      "season": 1986,
+      "playerGames": 19992,
+      "avgPoints": 10.73,
+      "avgAssists": 2.54,
+      "avgRebounds": 4.27,
+      "avgMinutes": 23.62,
+      "tripleDoubles": 49
+    },
+    {
+      "season": 1987,
+      "playerGames": 20008,
+      "avgPoints": 10.76,
+      "avgAssists": 2.56,
+      "avgRebounds": 4.29,
+      "avgMinutes": 23.71,
+      "tripleDoubles": 64
+    },
+    {
+      "season": 1988,
+      "playerGames": 21643,
+      "avgPoints": 10.64,
+      "avgAssists": 2.5,
+      "avgRebounds": 4.25,
+      "avgMinutes": 23.72,
+      "tripleDoubles": 59
+    },
+    {
+      "season": 1989,
+      "playerGames": 22925,
+      "avgPoints": 10.54,
+      "avgAssists": 2.46,
+      "avgRebounds": 4.26,
+      "avgMinutes": 23.63,
+      "tripleDoubles": 85
+    },
+    {
+      "season": 1990,
+      "playerGames": 24124,
+      "avgPoints": 10.56,
+      "avgAssists": 2.47,
+      "avgRebounds": 4.24,
+      "avgMinutes": 23.72,
+      "tripleDoubles": 63
+    },
+    {
+      "season": 1991,
+      "playerGames": 23896,
+      "avgPoints": 10.44,
+      "avgAssists": 2.4,
+      "avgRebounds": 4.29,
+      "avgMinutes": 23.97,
+      "tripleDoubles": 39
+    },
+    {
+      "season": 1992,
+      "playerGames": 23237,
+      "avgPoints": 10.41,
+      "avgAssists": 2.44,
+      "avgRebounds": 4.27,
+      "avgMinutes": 23.87,
+      "tripleDoubles": 38
+    },
+    {
+      "season": 1993,
+      "playerGames": 24164,
+      "avgPoints": 10.2,
+      "avgAssists": 2.41,
+      "avgRebounds": 4.23,
+      "avgMinutes": 23.85,
+      "tripleDoubles": 42
+    },
+    {
+      "season": 1994,
+      "playerGames": 24097,
+      "avgPoints": 9.98,
+      "avgAssists": 2.36,
+      "avgRebounds": 4.18,
+      "avgMinutes": 23.76,
+      "tripleDoubles": 29
+    },
+    {
+      "season": 1995,
+      "playerGames": 24700,
+      "avgPoints": 9.99,
+      "avgAssists": 2.28,
+      "avgRebounds": 4.09,
+      "avgMinutes": 23.94,
+      "tripleDoubles": 39
+    },
+    {
+      "season": 1996,
+      "playerGames": 26959,
+      "avgPoints": 9.16,
+      "avgAssists": 2.1,
+      "avgRebounds": 3.87,
+      "avgMinutes": 22.59,
+      "tripleDoubles": 42
+    },
+    {
+      "season": 1997,
+      "playerGames": 30040,
+      "avgPoints": 8.13,
+      "avgAssists": 1.85,
+      "avgRebounds": 3.47,
+      "avgMinutes": 19.9,
+      "tripleDoubles": 48
+    },
+    {
+      "season": 1998,
+      "playerGames": 19939,
+      "avgPoints": 8.02,
+      "avgAssists": 1.85,
+      "avgRebounds": 3.46,
+      "avgMinutes": 19.89,
+      "tripleDoubles": 18
+    },
+    {
+      "season": 1999,
+      "playerGames": 29320,
+      "avgPoints": 7.72,
+      "avgAssists": 1.74,
+      "avgRebounds": 3.49,
+      "avgMinutes": 19.56,
+      "tripleDoubles": 30
+    },
+    {
+      "season": 2000,
+      "playerGames": 30622,
+      "avgPoints": 8.02,
+      "avgAssists": 1.83,
+      "avgRebounds": 3.55,
+      "avgMinutes": 19.81,
+      "tripleDoubles": 46
+    },
+    {
+      "season": 2001,
+      "playerGames": 29961,
+      "avgPoints": 7.96,
+      "avgAssists": 1.84,
+      "avgRebounds": 3.57,
+      "avgMinutes": 19.82,
+      "tripleDoubles": 37
+    },
+    {
+      "season": 2002,
+      "playerGames": 30569,
+      "avgPoints": 7.94,
+      "avgAssists": 1.79,
+      "avgRebounds": 3.54,
+      "avgMinutes": 19.78,
+      "tripleDoubles": 47
+    },
+    {
+      "season": 2003,
+      "playerGames": 31099,
+      "avgPoints": 7.87,
+      "avgAssists": 1.79,
+      "avgRebounds": 3.52,
+      "avgMinutes": 19.55,
+      "tripleDoubles": 43
+    },
+    {
+      "season": 2004,
+      "playerGames": 30981,
+      "avgPoints": 7.87,
+      "avgAssists": 1.76,
+      "avgRebounds": 3.51,
+      "avgMinutes": 19.28,
+      "tripleDoubles": 30
+    },
+    {
+      "season": 2005,
+      "playerGames": 34556,
+      "avgPoints": 8.05,
+      "avgAssists": 1.73,
+      "avgRebounds": 3.45,
+      "avgMinutes": 19.69,
+      "tripleDoubles": 30
+    },
+    {
+      "season": 2006,
+      "playerGames": 34921,
+      "avgPoints": 8.13,
+      "avgAssists": 1.71,
+      "avgRebounds": 3.39,
+      "avgMinutes": 19.76,
+      "tripleDoubles": 49
+    },
+    {
+      "season": 2007,
+      "playerGames": 33718,
+      "avgPoints": 8.19,
+      "avgAssists": 1.78,
+      "avgRebounds": 3.45,
+      "avgMinutes": 19.74,
+      "tripleDoubles": 41
+    },
+    {
+      "season": 2008,
+      "playerGames": 34450,
+      "avgPoints": 8.28,
+      "avgAssists": 1.77,
+      "avgRebounds": 3.48,
+      "avgMinutes": 19.77,
+      "tripleDoubles": 34
+    },
+    {
+      "season": 2009,
+      "playerGames": 34218,
+      "avgPoints": 8.35,
+      "avgAssists": 1.74,
+      "avgRebounds": 3.45,
+      "avgMinutes": 19.78,
+      "tripleDoubles": 30
+    },
+    {
+      "season": 2010,
+      "playerGames": 34382,
+      "avgPoints": 8.32,
+      "avgAssists": 1.77,
+      "avgRebounds": 3.46,
+      "avgMinutes": 19.75,
+      "tripleDoubles": 37
+    },
+    {
+      "season": 2011,
+      "playerGames": 22046,
+      "avgPoints": 8.2,
+      "avgAssists": 1.76,
+      "avgRebounds": 3.43,
+      "avgMinutes": 19.68,
+      "tripleDoubles": 27
+    },
+    {
+      "season": 2012,
+      "playerGames": 40464,
+      "avgPoints": 7.53,
+      "avgAssists": 1.65,
+      "avgRebounds": 3.3,
+      "avgMinutes": 18.53,
+      "tripleDoubles": 38
+    },
+    {
+      "season": 2013,
+      "playerGames": 36613,
+      "avgPoints": 7.71,
+      "avgAssists": 1.71,
+      "avgRebounds": 3.32,
+      "avgMinutes": 18.55,
+      "tripleDoubles": 47
+    },
+    {
+      "season": 2014,
+      "playerGames": 37777,
+      "avgPoints": 7.7,
+      "avgAssists": 1.67,
+      "avgRebounds": 3.24,
+      "avgMinutes": 18.06,
+      "tripleDoubles": 48
+    },
+    {
+      "season": 2015,
+      "playerGames": 37248,
+      "avgPoints": 7.63,
+      "avgAssists": 1.67,
+      "avgRebounds": 3.34,
+      "avgMinutes": 18.01,
+      "tripleDoubles": 62
+    },
+    {
+      "season": 2016,
+      "playerGames": 37507,
+      "avgPoints": 7.9,
+      "avgAssists": 1.7,
+      "avgRebounds": 3.33,
+      "avgMinutes": 18.03,
+      "tripleDoubles": 98
+    },
+    {
+      "season": 2017,
+      "playerGames": 36949,
+      "avgPoints": 8.11,
+      "avgAssists": 1.74,
+      "avgRebounds": 3.32,
+      "avgMinutes": 18.1,
+      "tripleDoubles": 125
+    },
+    {
+      "season": 2018,
+      "playerGames": 35521,
+      "avgPoints": 8.23,
+      "avgAssists": 1.8,
+      "avgRebounds": 3.36,
+      "avgMinutes": 17.96,
+      "tripleDoubles": 120
+    },
+    {
+      "season": 2019,
+      "playerGames": 34295,
+      "avgPoints": 8.62,
+      "avgAssists": 1.9,
+      "avgRebounds": 3.52,
+      "avgMinutes": 18.36,
+      "tripleDoubles": 149
+    },
+    {
+      "season": 2020,
+      "playerGames": 20816,
+      "avgPoints": 8.5,
+      "avgAssists": 1.85,
+      "avgRebounds": 3.38,
+      "avgMinutes": 17.68,
+      "tripleDoubles": 77
+    },
+    {
+      "season": 2021,
+      "playerGames": 45847,
+      "avgPoints": 8.19,
+      "avgAssists": 1.8,
+      "avgRebounds": 3.3,
+      "avgMinutes": 17.47,
+      "tripleDoubles": 194
+    },
+    {
+      "season": 2022,
+      "playerGames": 36623,
+      "avgPoints": 8.64,
+      "avgAssists": 1.91,
+      "avgRebounds": 3.37,
+      "avgMinutes": 18.16,
+      "tripleDoubles": 124
+    },
+    {
+      "season": 2023,
+      "playerGames": 35252,
+      "avgPoints": 8.6,
+      "avgAssists": 1.93,
+      "avgRebounds": 3.26,
+      "avgMinutes": 17.66,
+      "tripleDoubles": 127
+    },
+    {
+      "season": 2024,
+      "playerGames": 37584,
+      "avgPoints": 8.34,
+      "avgAssists": 1.96,
+      "avgRebounds": 3.24,
+      "avgMinutes": 17.58,
+      "tripleDoubles": 176
+    },
+    {
+      "season": 2025,
+      "playerGames": 22216,
+      "avgPoints": 8.5,
+      "avgAssists": 1.97,
+      "avgRebounds": 3.28,
+      "avgMinutes": 17.84,
+      "tripleDoubles": 96
+    }
+  ]
+}
