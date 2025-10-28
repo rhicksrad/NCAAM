@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>Not found · NCAA Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/site.css">
+  <div class="container">
+    <h1 class="title">Page not found</h1>
+    <p>Trying to find something? You can head back to the <a href="/">Home page</a> or use the navigation below.</p>
+    <div id="nav"></div>
+    <pre id="dbg" class="error" style="display:none"></pre>
+  </div>
+  <script>
+    // Lightweight legacy redirect handler for old NBA routes a user might hit from bookmarks.
+    (function(){
+      const path = location.pathname.replace(/\/+$/,'').toLowerCase();
+      const map = new Map([
+        ['/nba','/'],
+        ['/nba/index.html','/'],
+        ['/players.html','/players.html'],
+        ['/teams.html','/teams.html'],
+        ['/history.html','/'],          // no history page now
+        ['/insights.html','/'],         // folded into home for now
+      ]);
+      // Redirect /nba/* to sane targets if possible
+      if (path.startsWith('/nba/')) {
+        const tail = path.slice(4);
+        if (tail === '' || tail === '/index.html') return location.replace('/');
+        // Try to infer by filename
+        if (tail.includes('players')) return location.replace('/players.html');
+        if (tail.includes('teams')) return location.replace('/teams.html');
+        if (tail.includes('games')) return location.replace('/games.html');
+        if (tail.includes('rankings')) return location.replace('/rankings.html');
+        if (tail.includes('standings')) return location.replace('/standings.html');
+        return location.replace('/');
+      }
+      if (map.has(path)) return location.replace(map.get(path));
+      // Mount a minimal nav to help users recover on arbitrary 404s
+      const nav = document.getElementById('nav');
+      nav.innerHTML = [
+        '<div class="nav">',
+        '<a href="/">Home</a> · ',
+        '<a href="/teams.html">Teams</a> · ',
+        '<a href="/players.html">Players</a> · ',
+        '<a href="/games.html">Games</a> · ',
+        '<a href="/rankings.html">Rankings</a> · ',
+        '<a href="/standings.html">Standings</a>',
+        '</div>'
+      ].join('');
+      const dbg = document.getElementById('dbg');
+      dbg.style.display = 'block';
+      dbg.textContent = `Requested: ${location.href}`;
+    }());
+  </script>
