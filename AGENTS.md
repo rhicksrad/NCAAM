@@ -6,7 +6,7 @@ This project never ships API keys to the browser. All NCAA Men’s Basketball (B
 - Do not add `Authorization` headers in browser code.
 - Do not re-introduce any client-side key injection, meta tags, or `.env` lookups for vendor APIs.
 - All network calls must use the Worker base:
-  - Data: `https://ncaam.hicksrch.workers.dev/ncaam`
+- Data: `https://ncaam.hicksrch.workers.dev/v1`
   - Diag: `https://ncaam.hicksrch.workers.dev/diag`
 - Keep requests idempotent. Only `GET`/`HEAD` to the proxy. No `POST`/`PUT`/`PATCH`/`DELETE`.
 
@@ -15,7 +15,7 @@ Create and use the helper:
 
 ```js
 // public/assets/js/ncaam.js
-export const NCAAM_BASE = "https://ncaam.hicksrch.workers.dev/ncaam";
+export const NCAAM_BASE = "https://ncaam.hicksrch.workers.dev/v1";
 
 export async function ncaam(path, init = {}) {
   const url = `${NCAAM_BASE}${path.startsWith('/') ? '' : '/'}${path}`;
@@ -78,7 +78,7 @@ Optional controls (can be enabled in the Worker or Cloudflare):
 * Authorization header added by habit
   Fix: remove it. Auth is server-side.
 * CORS error
-  Fix: ensure requests hit the Worker `https://ncaam.hicksrch.workers.dev/ncaam/...`.
+  Fix: ensure requests hit the Worker `https://ncaam.hicksrch.workers.dev/v1/...`.
 * 429 Too Many Requests
   Fix: back off; respect `Retry-After`. Verify rate limit configuration.
 * 403 Forbidden
@@ -93,7 +93,7 @@ Optional controls (can be enabled in the Worker or Cloudflare):
 
 ## Testing checklist (run after edits)
 
-* DevTools Network on `home`, `teams`, `players`, `games`, `standings`, `rankings` shows requests to `ncaam.hicksrch.workers.dev/ncaam/...`.
+* DevTools Network on `home`, `teams`, `players`, `games`, `standings`, `rankings` shows requests to `ncaam.hicksrch.workers.dev/v1/...`.
 * No browser request carries an `Authorization` header.
 * No fetches to legacy key files or meta tags.
 * Sanity calls:

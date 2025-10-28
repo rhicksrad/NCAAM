@@ -6,7 +6,7 @@ Fast, multi-page web app for NCAA Men’s Basketball. All data flows through a C
 
 - Multi-page app with a shared look/feel and light JS modules.
 - Pages fetch JSON from the NCAAM Worker:
-  - Data base: `https://ncaam.hicksrch.workers.dev/ncaam`
+  - Data base: `https://ncaam.hicksrch.workers.dev/v1`
   - Diagnostics: `https://ncaam.hicksrch.workers.dev/diag`
 - No client Authorization headers or `.env` keys. See `agents.md`.
 
@@ -29,7 +29,7 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
 - Browser helper (example):
   ```js
   // public/assets/js/ncaam.js
-  export const NCAAM_BASE = "https://ncaam.hicksrch.workers.dev/ncaam";
+  export const NCAAM_BASE = "https://ncaam.hicksrch.workers.dev/v1";
   export async function ncaam(path, init = {}) {
     const url = `${NCAAM_BASE}${path.startsWith('/') ? '' : '/'}${path}`;
     const res = await fetch(url, { ...init, method: 'GET', headers: { Accept: 'application/json', ...(init.headers || {}) } });
@@ -117,22 +117,22 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
 * Teams:
 
   ```bash
-  curl -sS "https://ncaam.hicksrch.workers.dev/ncaam/teams?per_page=5" | jq ".data[0]"
+  curl -sS "https://ncaam.hicksrch.workers.dev/v1/teams?per_page=5" | jq ".data[0]"
   ```
 * Standings:
 
   ```bash
-  curl -sS "https://ncaam.hicksrch.workers.dev/ncaam/standings?season=2025" | jq ".data[0]"
+  curl -sS "https://ncaam.hicksrch.workers.dev/v1/standings?season=2025" | jq ".data[0]"
   ```
 * Rankings:
 
   ```bash
-  curl -sS "https://ncaam.hicksrch.workers.dev/ncaam/rankings?season=2025&week=1" | jq ".data[0]"
+  curl -sS "https://ncaam.hicksrch.workers.dev/v1/rankings?season=2025&week=1" | jq ".data[0]"
   ```
 * Games (window):
 
   ```bash
-  curl -sS "https://ncaam.hicksrch.workers.dev/ncaam/games?start_date=2025-11-05&end_date=2025-11-10&per_page=5" | jq ".data[0]"
+  curl -sS "https://ncaam.hicksrch.workers.dev/v1/games?start_date=2025-11-05&end_date=2025-11-10&per_page=5" | jq ".data[0]"
   ```
 
 ## Contribution checklist
