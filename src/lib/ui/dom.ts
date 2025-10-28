@@ -42,7 +42,10 @@ export function list(items: string[]) {
   return ul;
 }
 
-export function table(headers: string[], rows: (string | number | null | undefined)[][]) {
+export function table(
+  headers: string[],
+  rows: Array<Array<string | number | null | undefined | Node>>
+) {
   const tbl = el('table', { class: 'data' });
   const thead = el('thead');
   const trh = el('tr');
@@ -51,7 +54,15 @@ export function table(headers: string[], rows: (string | number | null | undefin
   const tbody = el('tbody');
   rows.forEach(r => {
     const tr = el('tr');
-    r.forEach(c => tr.appendChild(el('td', {}, c == null ? '' : String(c))));
+    r.forEach(c => {
+      const td = el('td', {});
+      if (c instanceof Node) {
+        td.appendChild(c);
+      } else {
+        td.textContent = c == null ? '' : String(c);
+      }
+      tr.appendChild(td);
+    });
     tbody.appendChild(tr);
   });
   tbl.appendChild(thead);

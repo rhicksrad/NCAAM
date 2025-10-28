@@ -34,8 +34,13 @@ function applyFilters(teams: TeamVM[], conf: string, q: string): TeamVM[] {
   });
 }
 
+function linkTeam(id: string, label: string) {
+  return el('a', { href: `/team.html?team_id=${encodeURIComponent(id)}` }, label);
+}
+
 async function render() {
-  const root = document.getElementById('app')!;
+  const root = document.getElementById('app');
+  if (!root) return;
   mount(root, el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Teams`),
     nav(),
@@ -56,7 +61,7 @@ async function render() {
 
     const tblWrap = el('div', {});
     const renderTable = (rows: TeamVM[]) => {
-      const data = rows.map(t => [t.name, t.shortName, t.conference ?? '', t.id]);
+      const data = rows.map(t => [linkTeam(t.id, t.name), t.shortName, t.conference ?? '', t.id]);
       const tbl = table(['Team', 'Short', 'Conference', 'Team ID'], data);
       mount(tblWrap, tbl);
     };
@@ -74,8 +79,8 @@ async function render() {
     search.addEventListener('input', sync);
     sync();
   } catch (err) {
-    mount(document.getElementById('app')!, el('pre', { class: 'error' }, String(err)));
+    mount(document.getElementById('app') ?? root, el('pre', { class: 'error' }, String(err)));
   }
 }
 
-render();
+void render();
