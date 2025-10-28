@@ -1,41 +1,93 @@
 import { BRAND } from '../lib/config/ncaam';
-import { getTeams } from '../lib/ncaam/service';
-import { el, mount, section, spinner, table } from '../lib/ui/dom';
+import { teams as fetchTeams } from '../lib/sdk/ncaam';
+import type { Team } from '../lib/sdk/types';
+import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { basePath } from '../lib/ui/base';
+import { teamLink } from '../lib/ui/components';
 import '../../public/styles/site.css';
 
-type TeamVM = { id:string; name:string; shortName:string; conference?:string; logo?:string };
+function skeletonList(): HTMLElement {
+  const wrap = el('ul', { class: 'team-list' });
+  for (let i = 0; i < 12; i += 1) {
+    const li = el('li', { class: 'team-card' });
+    li.appendChild(el('span', { class: 'skeleton', style: 'height:1.2rem;display:block;' }));
+    wrap.appendChild(li);
+  }
+  return wrap;
+}
 
-function uniqueConferences(teams: TeamVM[]): string[] {
-  const set = new Set<string>(); for (const t of teams) if (t.conference) set.add(t.conference);
-  return Array.from(set).sort((a, b) => a.localeCompare(b));
+function errorCard(message: string): HTMLElement {
+  return el('div', { class: 'error-card' }, message);
 }
-function applyFilters(teams: TeamVM[], conf: string, q: string): TeamVM[] {
-  const qn = q.trim().toLowerCase();
-  return teams.filter(t => (conf === 'All' || t.conference === conf) && (!qn || t.name.toLowerCase().includes(qn) || t.shortName.toLowerCase().includes(qn)));
-}
-function linkTeam(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+
+function renderTeams(container: HTMLElement, list: Team[]): void {
+  if (!list.length) {
+    container.replaceChildren(el('p', { class: 'empty-state' }, 'No teams match your search.'));
+    return;
+  }
+  const ul = el('ul', { class: 'team-list' });
+  list.forEach(team => {
+    const li = el('li', { class: 'team-card', id: team.id });
+    if (team.logo) {
+      const img = document.createElement('img');
+      img.src = team.logo;
+      img.alt = `${team.displayName} logo`;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 32;
+      img.height = 32;
+      img.className = 'team-logo';
+      li.appendChild(img);
+    }
+    li.appendChild(teamLink(team.id, team.displayName));
+    if (team.conference) {
+      li.appendChild(el('span', { class: 'team-conf' }, team.conference));
+    }
+    ul.appendChild(li);
+  });
+  container.replaceChildren(ul);
 }
 
 async function render() {
-  const root = document.getElementById('app')!;
-  mount(root, el('div', { class: 'container' }, el('h1', { class: 'title' }, `${BRAND.siteTitle} — Teams`), nav(), spinner()));
+  const root = document.getElementById('app');
+  if (!root) return;
+
+  const search = el('input', { type: 'text', placeholder: 'Search Division I teams…' });
+  const listContainer = el('div', {}, skeletonList());
+  const sectionEl = section('Teams', listContainer as HTMLElement);
+
+  const shell = el('div', { class: 'container' },
+    el('h1', { class: 'title' }, `${BRAND.siteTitle} — Teams`),
+    nav(),
+    el('div', { class: 'controls' }, search),
+    sectionEl,
+    footer()
+  );
+  mount(root, shell);
+
   try {
-    const raw = await getTeams({ per_page: 500 });
-    const teams = raw.map(t => ({ ...t })) as TeamVM[];
-    const conferences = ['All', ...uniqueConferences(teams)];
-    const confSel = el('select', { id: 'conf' }, ...conferences.map(c => el('option', { value: c }, c)));
-    const search = el('input', { id: 'q', placeholder: 'Filter by team name...' });
-    const controls = el('div', { class: 'section controls' }, el('label', {}, 'Conference:'), confSel, el('label', {}, 'Filter:'), search);
-    const tblWrap = el('div', {});
-    const renderTable = (rows: TeamVM[]) => mount(tblWrap, table(['Team','Short','Conference','Team ID'], rows.map(t => [linkTeam(t.id, t.name), t.shortName, t.conference ?? '', t.id])));
-    const shell = el('div', { class: 'container' }, el('h1', { class: 'title' }, `${BRAND.siteTitle} — Teams`), nav(), controls, section('All Teams', tblWrap), footer());
-    mount(root, shell);
-    const sync = () => renderTable(applyFilters(teams, (confSel as HTMLSelectElement).value, (search as HTMLInputElement).value));
-    confSel.addEventListener('change', sync); search.addEventListener('input', sync); sync();
-  } catch (err) { mount(document.getElementById('app')!, el('pre', { class: 'error' }, String(err))); }
+    const allTeams = await fetchTeams();
+    const divisionOne = allTeams.filter(team => team.conferenceId != null);
+    divisionOne.sort((a, b) => a.displayName.localeCompare(b.displayName));
+
+    function applyFilter() {
+      const term = (search as HTMLInputElement).value.trim().toLowerCase();
+      if (!term) {
+        renderTeams(listContainer as HTMLElement, divisionOne);
+        return;
+      }
+      const filtered = divisionOne.filter(team => {
+        const values = [team.displayName, team.shortName, team.abbreviation].filter(Boolean) as string[];
+        return values.some(value => value.toLowerCase().includes(term));
+      });
+      renderTeams(listContainer as HTMLElement, filtered);
+    }
+
+    search.addEventListener('input', applyFilter);
+    renderTeams(listContainer as HTMLElement, divisionOne);
+  } catch (err) {
+    listContainer.replaceChildren(errorCard(`Unable to load teams: ${err instanceof Error ? err.message : String(err)}`));
+  }
 }
-render();
+
+void render();

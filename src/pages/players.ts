@@ -1,54 +1,185 @@
 import { BRAND } from '../lib/config/ncaam';
-import { getPlayers } from '../lib/ncaam/service';
-import { el, mount, section, spinner, table } from '../lib/ui/dom';
+import { teams as fetchTeams, teamRoster } from '../lib/sdk/ncaam';
+import type { Player, Team } from '../lib/sdk/types';
+import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { basePath } from '../lib/ui/base';
+import { teamLink } from '../lib/ui/components';
 import '../../public/styles/site.css';
 
-type PlayerVM = { id:string; firstName:string; lastName:string; position?:string; teamId?:string; classYear?:string; eligibility?:string };
-function fullName(p: PlayerVM){ return `${p.firstName ?? ''} ${p.lastName ?? ''}`.trim(); }
-function filterPage(items: PlayerVM[], q: string) {
-  const qn = q.trim().toLowerCase(); if (!qn) return items;
-  return items.filter(p => fullName(p).toLowerCase().includes(qn) || (p.teamId ?? '').toLowerCase().includes(qn));
+interface PlayerIndexEntry {
+  id: string;
+  name: string;
+  position?: string;
+  teamId?: string;
+  teamName?: string;
 }
-function linkPlayer(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}player.html?player_id=${encodeURIComponent(id)}` }, label);
+
+const INDEX_KEY = 'ncaam-player-index';
+const INDEX_TTL = 6 * 60 * 60 * 1000; // 6 hours
+const CONCURRENCY = 6;
+
+function readIndex(): PlayerIndexEntry[] | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = localStorage.getItem(INDEX_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { expires: number; data: PlayerIndexEntry[] };
+    if (!parsed || typeof parsed !== 'object') return null;
+    if (parsed.expires <= Date.now()) return null;
+    return parsed.data;
+  } catch {
+    return null;
+  }
 }
-function linkTeam(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+
+function writeIndex(data: PlayerIndexEntry[]): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(INDEX_KEY, JSON.stringify({ expires: Date.now() + INDEX_TTL, data }));
+  } catch {
+    /* ignore */
+  }
+}
+
+function skeleton(): HTMLElement {
+  return el('div', { class: 'rows' },
+    el('div', { class: 'skeleton-row' },
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' })
+    )
+  );
+}
+
+function resultRow(entry: PlayerIndexEntry): HTMLElement {
+  const row = el('div', { class: 'row row-standings' });
+  row.appendChild(el('span', { class: 'standings-team' }, entry.name));
+  row.appendChild(el('span', {}, entry.position ?? '')); 
+  if (entry.teamId && entry.teamName) {
+    row.appendChild(teamLink(entry.teamId, entry.teamName));
+  }
+  return row;
+}
+
+function renderResults(container: HTMLElement, results: PlayerIndexEntry[]) {
+  if (!results.length) {
+    container.replaceChildren(el('p', { class: 'empty-state' }, 'No players match the current search.'));
+    return;
+  }
+  const rows = el('div', { class: 'rows' });
+  results.slice(0, 50).forEach(entry => rows.appendChild(resultRow(entry)));
+  container.replaceChildren(rows);
+}
+
+function buildEntry(player: Player, team?: Team): PlayerIndexEntry {
+  return {
+    id: player.id,
+    name: `${player.firstName ?? ''} ${player.lastName ?? ''}`.trim(),
+    position: player.position,
+    teamId: player.teamId ?? team?.id,
+    teamName: player.teamName ?? team?.displayName,
+  };
+}
+
+async function buildIndex(teams: Team[], progress: (completed: number, total: number) => void): Promise<PlayerIndexEntry[]> {
+  const entries: PlayerIndexEntry[] = [];
+  let index = 0;
+  let completed = 0;
+
+  async function worker(): Promise<void> {
+    while (true) {
+      const current = index;
+      if (current >= teams.length) break;
+      index += 1;
+      const team = teams[current];
+      try {
+        const roster = await teamRoster(team.id);
+        roster.forEach(player => entries.push(buildEntry(player, team)));
+      } catch {
+        // ignore failures for individual teams
+      }
+      completed += 1;
+      progress(completed, teams.length);
+    }
+  }
+
+  const workers = Array.from({ length: CONCURRENCY }, () => worker());
+  await Promise.all(workers);
+  return entries.filter(entry => entry.name);
 }
 
 async function render() {
-  const root = document.getElementById('app')!;
-  mount(root, el('div', { class: 'container' }, el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`), nav(), spinner()));
-  try {
-    let page = 1; let perPage = 50;
-    const search = el('input', { id: 'q', placeholder: 'Filter current page by name or team ID...' });
-    const perSel = el('select', { id: 'per' }, el('option', { value: '25' }, '25'), el('option', { value: '50', selected: 'true' }, '50'), el('option', { value: '100' }, '100')) as HTMLSelectElement;
-    const prevBtn = el('button', { id: 'prev', disabled: 'true' }, 'Prev') as HTMLButtonElement;
-    const nextBtn = el('button', { id: 'next' }, 'Next') as HTMLButtonElement;
-    const pageLbl = el('span', { id: 'page' }, `Page ${page}`) as HTMLSpanElement;
-    const controls = el('div', { class: 'section controls' }, el('label', {}, 'Per page:'), perSel, prevBtn, nextBtn, pageLbl, el('label', {}, 'Filter:'), search);
-    const tblWrap = el('div', {});
-    const renderTable = (rows: PlayerVM[]) => mount(tblWrap, table(['Name','Pos','Team','Class','Elig','Player ID'],
-      rows.map(p => [
-        linkPlayer(p.id, fullName(p)),
-        p.position ?? '',
-        p.teamId ? linkTeam(p.teamId, p.teamId) : '',
-        p.classYear ?? '',
-        p.eligibility ?? '',
-        p.id
-      ])));
-    const shell = el('div', { class: 'container' }, el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`), nav(), controls, section('Players', tblWrap), footer());
-    mount(root, shell);
-    async function load(){ prevBtn.disabled = page <= 1; pageLbl.textContent = `Page ${page}`; const res = await getPlayers({ per_page: perPage, page }); renderTable(filterPage(res, (search as HTMLInputElement).value)); }
-    perSel.addEventListener('change', () => { perPage = Number(perSel.value); page = 1; void load(); });
-    prevBtn.addEventListener('click', () => { if (page > 1) { page--; void load(); } });
-    nextBtn.addEventListener('click', () => { page++; void load(); });
-    search.addEventListener('input', () => void load());
-    await load();
-  } catch (err) { mount(document.getElementById('app')!, el('pre', { class: 'error' }, String(err))); }
+  const root = document.getElementById('app');
+  if (!root) return;
+
+  const search = el('input', { type: 'text', placeholder: 'Search players…' }) as HTMLInputElement;
+  const status = el('p', { class: 'empty-state' }, 'First search may take a few seconds while rosters load.');
+  const resultsContainer = el('div', {}, skeleton());
+
+  const shell = el('div', { class: 'container' },
+    el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`),
+    nav(),
+    el('div', { class: 'controls' }, search),
+    status,
+    resultsContainer,
+    footer()
+  );
+  mount(root, shell);
+
+  const cached = readIndex();
+  let indexData: PlayerIndexEntry[] | null = cached;
+  if (cached) {
+    status.textContent = `Index loaded from cache (${cached.length} players).`;
+    renderResults(resultsContainer, cached.slice(0, 50));
+  }
+
+  let building = false;
+
+  async function ensureIndex() {
+    if (indexData) return indexData;
+    if (building) {
+      await new Promise(resolve => setTimeout(resolve, 500));
+      return ensureIndex();
+    }
+    building = true;
+    status.textContent = 'Building player index…';
+    try {
+      const teams = (await fetchTeams()).filter(team => team.conferenceId != null);
+      const entries = await buildIndex(teams, (completed, total) => {
+        status.textContent = `Building player index… ${completed}/${total}`;
+      });
+      entries.sort((a, b) => a.name.localeCompare(b.name));
+      writeIndex(entries);
+      indexData = entries;
+      status.textContent = `Index ready (${entries.length} players).`;
+      return entries;
+    } catch (err) {
+      status.replaceChildren(el('span', { class: 'error-card' }, `Index build failed: ${err instanceof Error ? err.message : String(err)}`));
+      indexData = [];
+      return indexData;
+    } finally {
+      building = false;
+    }
+  }
+
+  async function handleSearch() {
+    const term = search.value.trim().toLowerCase();
+    const data = await ensureIndex();
+    if (!term) {
+      renderResults(resultsContainer, data.slice(0, 50));
+      return;
+    }
+    const filtered = data.filter(entry => entry.name.toLowerCase().includes(term) || (entry.teamName ?? '').toLowerCase().includes(term));
+    renderResults(resultsContainer, filtered);
+  }
+
+  search.addEventListener('focus', () => { void ensureIndex(); });
+  search.addEventListener('input', () => { void handleSearch(); });
+
+  if (!cached) {
+    renderResults(resultsContainer, []);
+  }
 }
-render();
+
+void render();

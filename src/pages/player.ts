@@ -1,43 +1,106 @@
 import { BRAND } from '../lib/config/ncaam';
-import { getPlayer, getGames, getTeams } from '../lib/ncaam/service';
-import { el, mount, section, spinner, table } from '../lib/ui/dom';
+import { player as fetchPlayer, scoreboard } from '../lib/sdk/ncaam';
+import type { Game } from '../lib/sdk/types';
+import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { basePath } from '../lib/ui/base';
-import { qp } from '../lib/ui/url';
-import { fmtYYYYMMDD } from '../lib/ui/date';
+import { gamesList, teamLink } from '../lib/ui/components';
 import '../../public/styles/site.css';
-type GameVM = { id:string; date:string; homeTeamId:string; awayTeamId:string; homeScore?:number; awayScore?:number; status?:string };
-function linkTeam(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+
+function getPlayerId(): string | null {
+  const url = new URL(window.location.href);
+  return url.searchParams.get('player_id');
 }
-async function render(){
-  const playerId = qp('player_id'); const root = document.getElementById('app')!;
-  if(!playerId){ return mount(root, el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Player`), nav(), el('p',{},'Missing player_id'), footer())); }
-  mount(root, el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Player`), nav(), spinner()));
-  try{
-    const player = await getPlayer(playerId);
-    const name = `${player.firstName ?? ''} ${player.lastName ?? ''}`.trim();
-    let games: GameVM[] = []; let teamName = '';
-    let tmap: Map<string, { shortName?: string }> | null = null;
-    if (player.teamId) {
-      const [gamesRes, teams] = await Promise.all([ getGames({ team_id: player.teamId, per_page: 50 }), getTeams({ per_page: 5000 }) ]);
-      games = gamesRes.data as GameVM[];
-      tmap = new Map(teams.map(t => [t.id, { shortName: t.shortName }]));
-      teamName = tmap.get(player.teamId)?.shortName ?? player.teamId;
+
+function skeleton(): HTMLElement {
+  return el('div', { class: 'rows' },
+    el('div', { class: 'skeleton-row' },
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' })
+    )
+  );
+}
+
+function errorCard(message: string): HTMLElement {
+  return el('div', { class: 'error-card' }, message);
+}
+
+async function recentTeamGames(teamId: string): Promise<Game[]> {
+  const today = new Date();
+  const games: Game[] = [];
+  for (let offset = 0; offset < 10; offset += 1) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - offset);
+    const iso = d.toISOString().slice(0, 10);
+    try {
+      const slate = await scoreboard(iso);
+      slate
+        .filter(game => game.home.team.id === teamId || game.away.team.id === teamId)
+        .forEach(game => games.push(game));
+    } catch {
+      /* ignore */
     }
-    const head = el('div',{class:'section'}, el('h2',{}, name || `Player ${player.id}`),
-      el('div',{}, `Player ID: ${player.id}`), el('div',{}, `Position: ${player.position ?? ''}`),
-      player.teamId ? el('div',{}, 'Team: ', linkTeam(player.teamId, teamName)) : el('div',{}, 'Team:'),
-      el('div',{}, `Class: ${player.classYear ?? ''}`), el('div',{}, `Eligibility: ${player.eligibility ?? ''}`));
-    const rows = games.sort((a,b)=> (a.date??'').localeCompare(b.date??'')).reverse().slice(0,15).map(g=> {
-      const awayLabel = tmap?.get(g.awayTeamId)?.shortName ?? g.awayTeamId;
-      const homeLabel = tmap?.get(g.homeTeamId)?.shortName ?? g.homeTeamId;
-      return [fmtYYYYMMDD(g.date), linkTeam(g.awayTeamId, awayLabel), '@', linkTeam(g.homeTeamId, homeLabel), g.awayScore ?? '', g.homeScore ?? '', g.status ?? ''] as (string|number|Node)[];
-    });
-    const gamesEl = section('Recent Team Games', table(['Date','Away','','Home','Away','Home','Status'], rows));
-    const shell = el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Player`), nav(), head, gamesEl, footer());
-    mount(root, shell);
-  }catch(err){ mount(root, el('pre',{class:'error'}, String(err))); }
+    if (games.length >= 5) break;
+  }
+  games.sort((a, b) => b.dateUTC.localeCompare(a.dateUTC));
+  return games.slice(0, 5);
 }
-render();
+
+async function render() {
+  const root = document.getElementById('app');
+  if (!root) return;
+
+  const playerId = getPlayerId();
+  if (!playerId) {
+    mount(root, el('div', { class: 'container' },
+      el('h1', { class: 'title' }, `${BRAND.siteTitle} — Player`),
+      nav(),
+      errorCard('Missing player_id query parameter.'),
+      footer()
+    ));
+    return;
+  }
+
+  const bioSection = section('Profile', skeleton());
+  const gamesSection = section('Recent Team Games', skeleton());
+
+  const shell = el('div', { class: 'container' },
+    el('h1', { class: 'title' }, `${BRAND.siteTitle} — Player`),
+    nav(),
+    bioSection,
+    gamesSection,
+    footer()
+  );
+  mount(root, shell);
+
+  try {
+    const data = await fetchPlayer(playerId);
+    const name = `${data.firstName ?? ''} ${data.lastName ?? ''}`.trim() || `Player ${data.id}`;
+    const items = el('div', { class: 'rows' },
+      el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Name'), el('span', {}, name)),
+      el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Position'), el('span', {}, data.position ?? '—')),
+      el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Height'), el('span', {}, data.height ?? '—')),
+      el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Weight'), el('span', {}, data.weight ?? '—')),
+      el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Class'), el('span', {}, data.classYear ?? '—')),
+      data.teamId ? el('div', { class: 'row row-standings' }, el('span', { class: 'standings-team' }, 'Team'), teamLink(data.teamId, data.teamName ?? 'View team')) : null
+    );
+    bioSection.replaceChildren(el('h2', { class: 'section-title' }, 'Profile'), items);
+
+    if (data.teamId) {
+      const games = await recentTeamGames(data.teamId);
+      if (games.length) {
+        gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), gamesList(games));
+      } else {
+        gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), el('p', { class: 'empty-state' }, 'No recent games found.'));
+      }
+    } else {
+      gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), el('p', { class: 'empty-state' }, 'No team information available.'));
+    }
+  } catch (err) {
+    bioSection.replaceChildren(el('h2', { class: 'section-title' }, 'Profile'), errorCard(`Unable to load player: ${err instanceof Error ? err.message : String(err)}`));
+    gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), errorCard('Unable to load schedule.'));
+  }
+}
+
+void render();

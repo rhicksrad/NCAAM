@@ -1,40 +1,75 @@
 import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
-import { getStandings, getTeams } from '../lib/ncaam/service';
-import { el, mount, section, spinner, table } from '../lib/ui/dom';
+import { standings } from '../lib/sdk/ncaam';
+import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { basePath } from '../lib/ui/base';
+import { standingsGroups } from '../lib/ui/components';
 import '../../public/styles/site.css';
-type TeamVM = { id:string; shortName:string; conference?:string };
-type RowVM = { teamId:string; wins:number; losses:number; confWins?:number; confLosses?:number };
-function linkTeam(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+
+function seasonsList(current: number, count = 5): number[] {
+  const seasons: number[] = [];
+  for (let i = 0; i < count; i += 1) seasons.push(current - i);
+  return seasons;
 }
-function uniqueConferences(teams: TeamVM[]): string[]{ const s=new Set<string>(); for(const t of teams) if(t.conference) s.add(t.conference); return Array.from(s).sort((a,b)=>a.localeCompare(b)); }
-async function render(){
-  const root = document.getElementById('app')!;
-  mount(root, el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Standings`), nav(), spinner()));
-  try{
-    const [teams, rows] = await Promise.all([ getTeams({ per_page: 5000 }), getStandings(DEFAULT_SEASON) ]);
-    const tmap = new Map<string,TeamVM>(teams.map(t=>[t.id,{id:t.id, shortName:t.shortName, conference:t.conference}]));
-    const conferences = ['All', ...uniqueConferences(teams as TeamVM[])];
-    const seasonInput = el('input', { id: 'season', type: 'number', value: String(DEFAULT_SEASON), min: '2015', max: '2100' }) as HTMLInputElement;
-    const confSel = el('select', { id: 'conf' }, ...conferences.map(c => el('option', { value: c }, c))) as HTMLSelectElement;
-    const controls = el('div', { class: 'section controls' }, el('label', {}, 'Season:'), seasonInput, el('label', {}, 'Conference:'), confSel);
-    const tblWrap = el('div', {});
-    function renderTable(allRows: RowVM[]){
-      const conf = confSel.value;
-      const filtered = allRows.filter(r => conf === 'All' ? true : tmap.get(r.teamId)?.conference === conf);
-      filtered.sort((a,b)=> (b.wins - a.wins) || (a.losses - b.losses));
-      const data = filtered.map(r => { const t=tmap.get(r.teamId); const label=t?.shortName ?? r.teamId;
-        return [linkTeam(r.teamId, label), r.wins, r.losses, r.confWins ?? '', r.confLosses ?? ''] as (string|number|Node)[]; });
-      mount(tblWrap, table(['Team','W','L','Conf W','Conf L'], data));
+
+function skeleton(): HTMLElement {
+  return el('div', { class: 'rows' },
+    el('div', { class: 'skeleton-row' },
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' })
+    )
+  );
+}
+
+function errorCard(message: string): HTMLElement {
+  return el('div', { class: 'error-card' }, message);
+}
+
+async function render() {
+  const root = document.getElementById('app');
+  if (!root) return;
+
+  let season = DEFAULT_SEASON;
+  const select = el('select');
+  seasonsList(DEFAULT_SEASON).forEach(value => {
+    const option = el('option', { value: String(value) }, String(value));
+    if (value === season) option.selected = true;
+    select.appendChild(option);
+  });
+
+  const content = el('div', {}, skeleton());
+
+  const shell = el('div', { class: 'container' },
+    el('h1', { class: 'title' }, `${BRAND.siteTitle} — Standings`),
+    nav(),
+    el('div', { class: 'controls' }, el('label', {}, 'Season:'), select),
+    content,
+    footer()
+  );
+  mount(root, shell);
+
+  async function load() {
+    content.replaceChildren(skeleton());
+    try {
+      const data = await standings(season);
+      const filtered = data.filter(group => group.rows.length);
+      if (!filtered.length) {
+        content.replaceChildren(el('p', { class: 'empty-state' }, 'No standings available for this season.'));
+        return;
+      }
+      content.replaceChildren(standingsGroups(filtered));
+    } catch (err) {
+      content.replaceChildren(errorCard(`Unable to load standings: ${err instanceof Error ? err.message : String(err)}`));
     }
-    const shell = el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Standings`), nav(), controls, section('Standings', tblWrap), footer());
-    mount(root, shell);
-    renderTable(rows as RowVM[]);
-    seasonInput.addEventListener('change', async ()=>{ const season=Number(seasonInput.value)||DEFAULT_SEASON; const newRows=await getStandings(season); renderTable(newRows as RowVM[]); });
-    confSel.addEventListener('change', ()=> renderTable(rows as RowVM[]));
-  }catch(err){ mount(root, el('pre',{class:'error'}, String(err))); }
+  }
+
+  select.addEventListener('change', () => {
+    season = Number((select as HTMLSelectElement).value);
+    void load();
+  });
+
+  await load();
 }
-render();
+
+void render();

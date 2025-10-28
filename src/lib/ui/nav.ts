@@ -8,7 +8,8 @@ export function nav() {
     a(`${base}players.html`, 'Players'), sep(),
     a(`${base}games.html`, 'Games'), sep(),
     a(`${base}rankings.html`, 'Rankings'), sep(),
-    a(`${base}standings.html`, 'Standings')
+    a(`${base}standings.html`, 'Standings'), sep(),
+    a(`${base}diag.html`, 'Diagnostics')
   );
 
   function a(href: string, label: string) {

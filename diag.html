@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NCAA Hub — Games</title>
-    <meta name="description" content="NCAA Men's Basketball schedule explorer with date range and team filter." />
+    <title>NCAA Hub — Diagnostics</title>
+    <meta name="description" content="Diagnostics for NCAA Men's Basketball hub data sources." />
     <script>
       window.NCAAM_API_BASE =
         window.NCAAM_API_BASE || (location.hostname === 'localhost' ? '/api' : 'https://ncaam.hicksrch.workers.dev/ncaam');
@@ -12,6 +12,6 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/pages/games.ts"></script>
+    <script type="module" src="/src/pages/diag.ts"></script>
   </body>
 </html>
