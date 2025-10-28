@@ -2,10 +2,14 @@ import { BRAND } from '../lib/config/ncaam';
 import { getGames, getTeams } from '../lib/ncaam/service';
 import { el, mount, section, spinner, table } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
+import { basePath } from '../lib/ui/base';
 import '../../public/styles/site.css';
 type TeamVM = { id:string; shortName:string };
 function todayISO(): string { const d=new Date(); const y=d.getFullYear(); const m=String(d.getMonth()+1).padStart(2,'0'); const day=String(d.getDate()).padStart(2,'0'); return `${y}-${m}-${day}`; }
-function linkTeam(id:string,label:string){ return el('a',{ href:`/team.html?team_id=${encodeURIComponent(id)}` },label); }
+function linkTeam(id: string, label: string) {
+  const base = basePath();
+  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+}
 async function render(){
   const root=document.getElementById('app')!;
   mount(root, el('div',{class:'container'}, el('h1',{class:'title'},`${BRAND.siteTitle} — Games`), nav(), spinner()));

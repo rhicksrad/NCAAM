@@ -48,6 +48,19 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
+      - name: Set Vite base for GitHub Pages
+        shell: bash
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          OWNER="${{ github.repository_owner }}"
+          if [[ "$REPO" == "${OWNER}.github.io" ]]; then
+            echo "VITE_BASE=/" >> "$GITHUB_ENV"
+            echo "SITE_BASE=https://${OWNER}.github.io" >> "$GITHUB_ENV"
+          else
+            echo "VITE_BASE=/${REPO}/" >> "$GITHUB_ENV"
+            echo "SITE_BASE=https://${OWNER}.github.io/${REPO}" >> "$GITHUB_ENV"
+          fi
+
       - name: Typecheck (if present)
         run: |
           if jq -e '.scripts.typecheck' package.json >/dev/null 2>&1; then
@@ -84,7 +97,7 @@ jobs:
             echo "No build script; skipping."
           fi
 
-      - name: Build sitemap (if script present)
+      - name: Build sitemap/robots
         run: |
           if [ -f scripts/build_sitemap.mjs ]; then
             node scripts/build_sitemap.mjs

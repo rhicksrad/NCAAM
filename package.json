@@ -1,5 +1,5 @@
 {
-  "name": "nba-previews",
+  "name": "ncaam-hub",
   "private": true,
   "type": "module",
   "version": "0.1.0",
@@ -8,25 +8,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "esbuild components/main.ts --bundle --format=esm --target=es2019 --minify --outfile=assets/js/main.tmp.js && node scripts/finalize-hash.js && node scripts/build-players.js",
-    "fetch:active-rosters": "tsx scripts/fetch/bdl_active_rosters.ts",
-    "fetch:injuries": "tsx scripts/fetch_injuries.ts",
-    "build:data": "pnpm fetch:active-rosters && pnpm fetch:injuries && tsx scripts/data/build_canonical.ts && tsx scripts/data/build_pace_pressure.ts",
-    "build:pace-pressure": "tsx scripts/data/build_pace_pressure.ts",
-    "build:players-index": "tsx scripts/build_players_index.ts",
-    "build:free-agents": "node scripts/data/build_free_agents.js",
-    "build:history:catalog": "tsx scripts/history/build_player_catalog.ts",
-    "build:history:birthplaces": "tsx scripts/history/build_birthplace_lookup.ts",
-    "build:history": "pnpm build:history:catalog && pnpm build:history:birthplaces",
-    "validate:rosters": "tsx scripts/validate/rosters.ts",
-    "dev": "node scripts/dev/serve-public.js",
-    "predeploy": "pnpm fetch:active-rosters && pnpm fetch:injuries",
-    "deploy": "echo 'static site build only'",
-    "test": "vitest run",
-    "verify:bdl": "tsx scripts/dev/verify_bdl.ts",
-    "verify:history": "tsx scripts/history/verify_history_assets.ts",
-    "prewarm:player": "tsx scripts/prewarm_bdl.ts",
-    "prewarm:demo": "tsx scripts/prewarm_bdl.ts 237 1997 2024"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
@@ -38,9 +23,9 @@
   "devDependencies": {
     "@types/cheerio": "0.22.35",
     "@types/node": "20.12.7",
-    "esbuild": "^0.23.0",
     "tsx": "^4.19.0",
-    "typescript": "5.4.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.0",
     "vitest": "1.4.0"
   }
 }
