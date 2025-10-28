@@ -1,84 +1,102 @@
 import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
-import { getRankings, getGames, getTeams } from '../lib/ncaam/service';
-import { el, mount, section, spinner, table } from '../lib/ui/dom';
+import { scoreboard, rankings } from '../lib/sdk/ncaam';
+import type { Game } from '../lib/sdk/types';
+import { el, mount, section, spinner } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { basePath } from '../lib/ui/base';
+import { gamesList, pollBlock } from '../lib/ui/components';
 import '../../public/styles/site.css';
 
 function todayISO(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
 }
-function addDaysISO(startISO: string, days: number): string {
-  const d = new Date(startISO + 'T00:00:00Z');
-  d.setUTCDate(d.getUTCDate() + days);
-  const y = d.getUTCFullYear();
-  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
-  const day = String(d.getUTCDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+
+function skeletonRows(count: number): HTMLElement {
+  const wrapper = el('div', { class: 'rows' });
+  for (let i = 0; i < count; i += 1) {
+    wrapper.appendChild(el('div', { class: 'skeleton-row' },
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' }),
+      el('span', { class: 'skeleton' })
+    ));
+  }
+  return wrapper;
 }
-function linkTeam(id: string, label: string) {
-  const base = basePath();
-  return el('a', { href: `${base}team.html?team_id=${encodeURIComponent(id)}` }, label);
+
+function errorCard(message: string): HTMLElement {
+  return el('div', { class: 'error-card' }, message);
+}
+
+async function loadRankings(container: HTMLElement) {
+  try {
+    const polls = await rankings(DEFAULT_SEASON);
+    if (!polls.length) {
+      container.replaceChildren(
+        el('h2', { class: 'section-title' }, 'Top 25'),
+        el('p', { class: 'empty-state' }, 'No rankings available yet.')
+      );
+      return;
+    }
+    const poll = polls[0];
+    const top25 = poll.entries.filter(entry => entry.rank <= 25);
+    const block = pollBlock({ ...poll, entries: top25 });
+    container.replaceChildren(...Array.from(block.childNodes));
+  } catch (err) {
+    container.replaceChildren(
+      el('h2', { class: 'section-title' }, 'Top 25'),
+      errorCard(`Rankings failed: ${err instanceof Error ? err.message : String(err)}`)
+    );
+  }
+}
+
+function summarizeGames(games: Game[]): HTMLElement {
+  if (!games.length) return el('p', { class: 'empty-state' }, 'No games scheduled today.');
+  return gamesList(games);
+}
+
+async function loadScoreboard(container: HTMLElement) {
+  try {
+    const games = await scoreboard(todayISO());
+    container.replaceChildren(
+      el('h2', { class: 'section-title' }, 'Today’s Games'),
+      summarizeGames(games)
+    );
+  } catch (err) {
+    container.replaceChildren(
+      el('h2', { class: 'section-title' }, 'Today’s Games'),
+      errorCard(`Scoreboard failed: ${err instanceof Error ? err.message : String(err)}`)
+    );
+  }
 }
 
 async function render() {
-  const root = document.getElementById('app')!;
-  mount(root, el('div', { class: 'container' },
+  const root = document.getElementById('app');
+  if (!root) return;
+
+  const rankingsSection = section('Top 25', spinner());
+  const gamesSection = section('Today’s Games', spinner());
+
+  const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, BRAND.siteTitle),
     nav(),
-    spinner()
-  ));
+    rankingsSection,
+    gamesSection,
+    footer()
+  );
 
-  try {
-    const [teams, ranks, gamesToday] = await Promise.all([
-      getTeams({ per_page: 5000 }),
-      getRankings(DEFAULT_SEASON, 1),
-      getGames({ start_date: todayISO(), end_date: todayISO(), per_page: 200 })
-    ]);
-    const tmap = new Map(teams.map(t => [t.id, t.shortName ?? t.name]));
+  mount(root, shell);
 
-    const top25 = ranks
-      .filter(r => r.rank > 0 && r.rank <= 25)
-      .sort((a, b) => a.rank - b.rank)
-      .map(r => [r.rank, linkTeam(r.teamId, tmap.get(r.teamId) ?? r.teamId), r.poll, r.week ?? ''] as (string | number | Node)[]);
-    const rankingsContent = top25.length > 0
-      ? table(['Rank', 'Team', 'Poll', 'Week'], top25)
-      : el('p', { class: 'empty-state' }, 'Rankings are not yet available for this season.');
-    const rankingsEl = section('Top 25 Rankings', rankingsContent);
+  rankingsSection.replaceChildren(el('h2', { class: 'section-title' }, 'Top 25'), skeletonRows(4));
+  gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Today’s Games'), skeletonRows(5));
 
-    let games = gamesToday.data;
-    if (!games || games.length === 0) {
-      for (let i = 1; i <= 7 && (!games || games.length === 0); i++) {
-        const start = addDaysISO(todayISO(), i);
-        const res = await getGames({ start_date: start, end_date: start, per_page: 200 });
-        games = res.data;
-      }
-    }
-    const gameRows = (games || []).slice(0, 25).map(g => [
-      g.date?.slice(0, 10) ?? '',
-      linkTeam(g.awayTeamId, tmap.get(g.awayTeamId) ?? g.awayTeamId),
-      '@',
-      linkTeam(g.homeTeamId, tmap.get(g.homeTeamId) ?? g.homeTeamId),
-      g.awayScore ?? '',
-      g.homeScore ?? '',
-      g.status ?? ''
-    ] as (string | number | Node)[]);
-    const gamesEl = section('Games', table(['Date','Away','','Home','Away','Home','Status'], gameRows));
-
-    const shell = el('div', { class: 'container' },
-      el('h1', { class: 'title' }, BRAND.siteTitle),
-      nav(),
-      rankingsEl,
-      gamesEl,
-      footer()
-    );
-    mount(root, shell);
-  } catch (err) {
-    mount(root, el('pre', { class: 'error' }, String(err)));
-  }
+  await Promise.all([
+    loadRankings(rankingsSection),
+    loadScoreboard(gamesSection)
+  ]);
 }
-render();
+
+void render();
