@@ -18,9 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # NCAAM Worker base
       NCAAM_BASE: https://ncaam.hicksrch.workers.dev/ncaam
-      # Optional: diag endpoint if a script uses it
       NCAAM_DIAG: https://ncaam.hicksrch.workers.dev/diag
     steps:
       - name: Checkout
@@ -33,19 +31,17 @@ jobs:
           cache: 'pnpm'
 
       - name: Ensure pnpm
-        uses: ./.github/actions/ensure-pnpm
-        with:
-          version: 9
-
-      - name: Tooling diagnostics
         shell: bash
         run: |
-          set -x
-          node -v
-          which node
+          set -euo pipefail
+          corepack enable
+          corepack prepare pnpm@9 --activate || true
+          if ! command -v pnpm >/dev/null 2>&1; then
+            echo "Corepack prepare failed; installing pnpm globally..."
+            npm i -g pnpm@9
+          fi
           pnpm -v
           which pnpm
-          printenv | sort | sed -n '1,120p'
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
@@ -71,22 +67,14 @@ jobs:
 
       - name: Build site data (if present)
         env:
-          NCAAM_BASE: https://ncaam.hicksrch.workers.dev/ncaam
-          BDL_PROXY_BASE: https://ncaam.hicksrch.workers.dev/ncaam
+          NCAAM_BASE: ${{ env.NCAAM_BASE }}
+          BDL_PROXY_BASE: ${{ env.NCAAM_BASE }}
         run: pnpm run build:data --if-present
 
       - name: Build site (if present)
         env:
           VITE_BASE: ${{ env.VITE_BASE }}
         run: pnpm run build --if-present
-
-      - name: Build sitemap/robots (if script present)
-        run: |
-          if [ -f scripts/build_sitemap.mjs ]; then
-            node scripts/build_sitemap.mjs
-          else
-            echo "No sitemap script; skipping."
-          fi
 
       - name: Select Pages artifact directory
         id: pickdir
@@ -100,15 +88,19 @@ jobs:
             echo "dir=public" >> "$GITHUB_OUTPUT"
           else
             mkdir -p public
-            if [ -f index.html ]; then
-              cp index.html public/index.html
-            else
-              echo '<!doctype html><meta charset="utf-8"><title>NCAA Hub</title><div id="app">Build produced no dist/public. Placeholder deployed.</div>' > public/index.html
-            fi
+            echo '<!doctype html><meta charset="utf-8"><title>NCAA Hub</title><div id="app">No build output found. Placeholder deployed.</div>' > public/index.html
             echo "BUILD_DIR=public" >> "$GITHUB_ENV"
             echo "dir=public" >> "$GITHUB_OUTPUT"
           fi
           echo "Using ${{ steps.pickdir.outputs.dir }} as artifact path."
+
+      - name: Build sitemap/robots (if script present)
+        run: |
+          if [ -f scripts/build_sitemap.mjs ]; then
+            node scripts/build_sitemap.mjs
+          else
+            echo "No sitemap script; skipping."
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
