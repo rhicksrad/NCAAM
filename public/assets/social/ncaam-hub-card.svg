@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">NCAA Men's Basketball Hub Social Share Card</title>
+  <desc id="desc">Gradient card featuring NCAA Men's Basketball Hub branding and data-driven coverage highlights.</desc>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04153b" />
+      <stop offset="55%" stop-color="#0b1f66" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <radialGradient id="spotlight" cx="0.78" cy="0.28" r="0.75">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#67e8f9" />
+    </linearGradient>
+    <linearGradient id="stat-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#a3e635" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg-gradient)" rx="32" />
+  <rect width="1200" height="630" fill="url(#spotlight)" />
+
+  <g opacity="0.3">
+    <circle cx="1050" cy="90" r="140" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" fill="none" />
+    <circle cx="1050" cy="90" r="220" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" fill="none" />
+    <circle cx="150" cy="520" r="160" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" fill="none" />
+    <path d="M80 90h200v200H80z" fill="url(#accent)" opacity="0.35" />
+    <path d="M930 430l190-110v220z" fill="#38bdf8" fill-opacity="0.22" />
+  </g>
+
+  <g transform="translate(120 120)">
+    <rect x="0" y="0" width="160" height="160" rx="24" fill="#ffffff" opacity="0.12" />
+    <circle cx="80" cy="80" r="62" fill="#0b1d4a" stroke="#38bdf8" stroke-width="6" />
+    <text x="80" y="95" fill="#ffffff" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">NCAA</text>
+  </g>
+
+  <g transform="translate(320 180)">
+    <text fill="#a5b4fc" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="28" letter-spacing="0.32em" text-transform="uppercase">Season Intel</text>
+    <text y="86" fill="#ffffff" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="86" font-weight="700" letter-spacing="-0.02em">Men's Basketball Hub</text>
+    <text y="150" fill="#c7d2fe" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="32" letter-spacing="0.01em">Rankings, matchups, and storylines powered by the NCAAM data service.</text>
+  </g>
+
+  <g transform="translate(320 380)">
+    <text fill="#bbf7d0" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="20" letter-spacing="0.25em" text-transform="uppercase">Spotlight</text>
+    <g transform="translate(0 36)">
+      <rect width="320" height="10" rx="5" fill="url(#stat-bar)" />
+      <text x="340" y="12" fill="#dcfce7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26">Top 25 rankings updated nightly</text>
+    </g>
+    <g transform="translate(0 100)">
+      <rect width="260" height="10" rx="5" fill="url(#stat-bar)" opacity="0.7" />
+      <text x="280" y="12" fill="#dcfce7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26">Today's games with live status</text>
+    </g>
+    <g transform="translate(0 164)">
+      <rect width="300" height="10" rx="5" fill="url(#stat-bar)" opacity="0.45" />
+      <text x="320" y="12" fill="#dcfce7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26">Data-forward insights across the season</text>
+    </g>
+  </g>
+
+  <g transform="translate(120 510)">
+    <rect width="960" height="4" fill="#1e3a8a" />
+    <text y="48" fill="#bfdbfe" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26" letter-spacing="0.08em">rhicksrad.github.io/NCAAM</text>
+  </g>
+</svg>
