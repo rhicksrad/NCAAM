@@ -12,17 +12,25 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      # IMPORTANT: install pnpm BEFORE setup-node when using cache: 'pnpm'
+      - name: Setup pnpm (standalone)
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          standalone: true
+          run_install: false
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            **/pnpm-lock.yaml
 
-      - name: Install pnpm (global, bulletproof)
-        shell: bash
+      - name: Verify pnpm on PATH
         run: |
-          set -euo pipefail
-          npm i -g pnpm@9
           pnpm -v
           which pnpm
 
