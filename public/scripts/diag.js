@@ -1,0 +1,1 @@
+import "./pages/diag.js";

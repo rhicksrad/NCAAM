@@ -8,12 +8,12 @@
     "node": ">=20"
   },
   "scripts": {
-    "predev": "node scripts/build-ncaa-logo-map.mjs",
-    "dev": "vite",
-    "prebuild": "node scripts/build-ncaa-logo-map.mjs",
-    "build": "vite build",
-    "preview": "vite preview --port 5173",
-    "typecheck": "tsc -p tsconfig.json"
+    "clean": "rm -rf public/scripts",
+    "build:ts": "tsc -p tsconfig.json",
+    "build:pages": "node scripts/dev/ensure-pages.mjs",
+    "build:sitemap": "node scripts/build_sitemap.mjs || true",
+    "build": "pnpm run clean && pnpm run build:ts && pnpm run build:pages && pnpm run build:sitemap",
+    "dev": "node scripts/dev/serve-public.js"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
