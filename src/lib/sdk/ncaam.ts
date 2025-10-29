@@ -23,12 +23,21 @@ async function get<T=JSONV>(path:string, params:Record<string,string|number>={})
   return v as T;
 }
 
-export type Team = { id:number; full_name:string; name:string; conference?:string; abbreviation?:string };
+export type Team = {
+  id: number;
+  full_name: string;
+  name: string;
+  conference_id?: number;
+  conference?: string;
+  abbreviation?: string;
+};
 export type Player = { id:number; first_name:string; last_name:string; team?:Team; position?:string; };
 export type Game = { id:number; date:string; status:string; home_team:Team; visitor_team:Team; home_team_score?:number; visitor_team_score?:number; };
+export type Conference = { id:number; name:string; short_name?:string };
 
 export const NCAAM = {
   teams: (page=1, per_page=200) => get<{data:Team[]}>("/teams", { page, per_page }),
   players: (page=1, per_page=200, search="") => get<{data:Player[]}>("/players", { page, per_page, search }),
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
+  conferences: () => get<{data:Conference[]}>("/conferences"),
 };
