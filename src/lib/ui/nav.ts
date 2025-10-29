@@ -2,23 +2,35 @@ import { basePath } from './base';
 
 export function nav() {
   const base = basePath();
-  return el('nav', { class: 'nav' },
-    a(`${base}`, 'Home'), sep(),
-    a(`${base}teams.html`, 'Teams'), sep(),
-    a(`${base}players.html`, 'Players'), sep(),
-    a(`${base}games.html`, 'Games'), sep(),
-    a(`${base}rankings.html`, 'Rankings'), sep(),
-    a(`${base}standings.html`, 'Standings'), sep(),
-    a(`${base}diag.html`, 'Diagnostics')
-  );
+  const navEl = el('nav', { class: 'nav' });
+  const routes = [
+    { href: `${base}`, label: 'Home' },
+    { href: `${base}teams.html`, label: 'Teams' },
+    { href: `${base}players.html`, label: 'Players' },
+    { href: `${base}games.html`, label: 'Games' },
+    { href: `${base}rankings.html`, label: 'Rankings' },
+    { href: `${base}standings.html`, label: 'Standings' },
+    { href: `${base}diag.html`, label: 'Diagnostics' }
+  ];
 
-  function a(href: string, label: string) {
-    const link = document.createElement('a');
-    link.href = href;
-    link.textContent = label;
-    return link;
+  const current = normalizePath(location.pathname);
+
+  routes.forEach(({ href, label }) => {
+    const link = el('a', { href, class: 'nav-link' }, label);
+    const resolved = new URL(href, location.origin).pathname;
+    if (normalizePath(resolved) === current) link.classList.add('is-active');
+    navEl.appendChild(link);
+  });
+
+  return navEl;
+
+  function normalizePath(path: string) {
+    let normalized = path;
+    if (normalized.endsWith('index.html')) normalized = normalized.slice(0, -'index.html'.length);
+    if (normalized !== '/' && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+    if (!normalized) normalized = '/';
+    return normalized;
   }
-  function sep() { return document.createTextNode(' · '); }
 }
 
 function el<K extends keyof HTMLElementTagNameMap>(
