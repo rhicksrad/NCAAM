@@ -28,6 +28,13 @@ async function get(path, params = {}) {
 }
 export const NCAAM = {
     teams: (page = 1, per_page = 200) => get("/teams", { page, per_page }),
+    conferences: (page = 1, per_page = 200) => get("/conferences", { page, per_page }),
     players: (page = 1, per_page = 200, search = "") => get("/players", { page, per_page, search }),
+    activeRoster: (teamId, per_page = 100, cursor = "") => {
+        const params = { "team_ids[]": teamId, per_page };
+        if (cursor)
+            params.cursor = cursor;
+        return get("/players/active", params);
+    },
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
 };

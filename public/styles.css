@@ -10,3 +10,33 @@ body{font:16px/1.5 ui-sans-serif,system-ui;margin:0;background:#0b1220;color:#e6
 ul.clean{list-style:none;padding-left:0}
 table{width:100%;border-collapse:collapse}th,td{padding:.5rem;border-bottom:1px solid #223048}th{text-align:left}
 input.search{width:100%;padding:.5rem .75rem;border-radius:8px;border:1px solid #223048;background:#0f1724;color:#e6edf3}
+.roster-tree{display:grid;gap:1rem;margin-top:1.5rem}
+.roster-conference{background:#141d2b;border:1px solid #223048;border-radius:10px;overflow:hidden}
+.roster-conference__summary,.roster-team__summary{list-style:none;display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;font-weight:600;cursor:pointer}
+.roster-conference__meta,.roster-team__meta{display:flex;align-items:center;gap:.5rem;margin-left:auto}
+.roster-conference__count{font-size:.85rem;color:#aebcd2}
+.roster-conference__teams{padding:.75rem 1rem 1rem;display:grid;gap:.75rem}
+.roster-conference[open]>.roster-conference__summary{border-bottom:1px solid #223048}
+.roster-team{border:1px solid #223048;border-radius:8px;background:#101826}
+.roster-team__name{margin:0;font-size:1rem}
+.roster-team__abbr{font-size:.85rem;color:#aebcd2}
+.roster-team__body{padding:.5rem 1rem 1rem}
+.roster-status{background:#141d2b;border:1px dashed #2a3548;border-radius:8px;padding:.75rem;color:#aebcd2;display:grid;gap:.5rem}
+.roster-status--error{border-color:#c5545d;color:#f3a6ab}
+.roster-status--empty{border-style:solid}
+.roster-status button{justify-self:start;background:#223048;color:#e6edf3;border:none;border-radius:6px;padding:.4rem .75rem;font-weight:600;cursor:pointer}
+.roster-status button:hover,.roster-status button:focus-visible{background:#2f4057;outline:none}
+.roster-player-grid{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.player-card{background:#141d2b;border:1px solid #223048;border-radius:8px;padding:.75rem;display:grid;gap:.5rem}
+.player-card__header{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.player-card__name{margin:0;font-size:1rem;font-weight:600}
+.player-card__badge{background:#223048;border-radius:999px;padding:.1rem .55rem;font-size:.8rem}
+.player-card__meta{display:grid;gap:.35rem .75rem;grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.player-card__meta-item{display:grid;gap:.15rem}
+.player-card__meta dt{margin:0;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#7a8aa1}
+.player-card__meta dd{margin:0;font-size:.95rem;color:#e6edf3}
+.roster-summary__caret{color:#7a8aa1;transition:transform .2s ease}
+.roster-conference[open] .roster-summary__caret,.roster-team[open] .roster-summary__caret{transform:rotate(90deg);color:#e6edf3}
+.roster-conference__summary::-webkit-details-marker,.roster-team__summary::-webkit-details-marker{display:none}
+.roster-conference__summary::marker,.roster-team__summary::marker{display:none}
+@media (max-width:700px){.roster-player-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}}

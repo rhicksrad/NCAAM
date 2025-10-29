@@ -23,12 +23,34 @@ async function get<T=JSONV>(path:string, params:Record<string,string|number>={})
   return v as T;
 }
 
-export type Team = { id:number; full_name:string; name:string; conference?:string; abbreviation?:string };
+export type Team = {
+  id:number;
+  full_name:string;
+  name:string;
+  conference?:string | null;
+  conference_id?:number | null;
+  abbreviation?:string | null;
+  college?:string | null;
+};
+export type Conference = { id:number; name:string; short_name?:string | null };
 export type Player = { id:number; first_name:string; last_name:string; team?:Team; position?:string; };
+export type ActivePlayer = Player & {
+  height?:string | null;
+  weight?:string | null;
+  jersey_number?:string | null;
+  team?: Team & { conference_id?:number | null; college?:string | null };
+};
 export type Game = { id:number; date:string; status:string; home_team:Team; visitor_team:Team; home_team_score?:number; visitor_team_score?:number; };
+type ActiveRosterResponse = { data:ActivePlayer[]; meta?:{ next_cursor?:string | null } };
 
 export const NCAAM = {
   teams: (page=1, per_page=200) => get<{data:Team[]}>("/teams", { page, per_page }),
+  conferences: (page=1, per_page=200) => get<{data:Conference[]}>("/conferences", { page, per_page }),
   players: (page=1, per_page=200, search="") => get<{data:Player[]}>("/players", { page, per_page, search }),
+  activeRoster: (teamId:number, per_page=100, cursor="") => {
+    const params: Record<string, string | number> = { "team_ids[]": teamId, per_page };
+    if (cursor) (params as Record<string, string>).cursor = cursor;
+    return get<ActiveRosterResponse>("/players/active", params);
+  },
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
 };
