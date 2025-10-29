@@ -19,3 +19,7 @@ body{font:16px/1.5 ui-sans-serif,system-ui;margin:0;background:#0b1220;color:#e6
 ul.clean{list-style:none;padding-left:0}
 table{width:100%;border-collapse:collapse}th,td{padding:.5rem;border-bottom:1px solid #223048}th{text-align:left}
 input.search{width:100%;padding:.5rem .75rem;border-radius:8px;border:1px solid #223048;background:#0f1724;color:#e6edf3}
+.card.team-card{display:flex;align-items:center;gap:12px}
+.team-card__logo{width:52px;height:52px;border-radius:14px;border:1px solid #223048;background:#0b1220;padding:6px;object-fit:contain}
+.team-card__body{display:flex;flex-direction:column;gap:4px}
+.team-card__body .badge{align-self:flex-start}

@@ -1,5 +1,16 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
+import { getTeamLogo } from "../lib/ui/logos.js";
+const ESCAPE_ATTR_PATTERN = /[&"<>]/g;
+const ESCAPE_ATTR_REPLACEMENTS = {
+    "&": "&amp;",
+    '"': "&quot;",
+    "<": "&lt;",
+    ">": "&gt;",
+};
+function escapeAttribute(value) {
+    return value.replace(ESCAPE_ATTR_PATTERN, match => ESCAPE_ATTR_REPLACEMENTS[match]);
+}
 const app = document.getElementById("app");
 app.innerHTML = `<h1>Teams</h1>
 <input class="search" placeholder="Filter name or conference">
@@ -50,7 +61,17 @@ function render(q = "") {
   <summary><span>${conference}</span><span class="count">${teams.length}</span></summary>
   <div class="group grid cols-3">
     ${teams
-            .map(team => `<div class="card"><strong>${team.full_name}</strong><div class="badge">${team.conference ?? "N/A"}</div></div>`)
+            .map(team => {
+            const logoPath = getTeamLogo(team);
+            const altText = escapeAttribute(`${team.full_name} logo`);
+            return `<div class="card team-card">
+    <img class="team-card__logo" src="${logoPath}" alt="${altText}" loading="lazy">
+    <div class="team-card__body">
+      <strong>${team.full_name}</strong>
+      <div class="badge">${team.conference ?? "N/A"}</div>
+    </div>
+  </div>`;
+        })
             .join("")}
   </div>
 </details>`;

@@ -193,9 +193,6 @@ async function build() {
   const tsEntries = JSON.stringify(entries, null, 2).replace(/"([^("]+)":/g, '"$1":');
   const tsContent = `${header}export interface LogoEntry {\n  readonly name: string;\n  readonly slug: string;\n  readonly tokens: readonly string[];\n  readonly path: string;\n}\n\nexport const NCAA_LOGOS: readonly LogoEntry[] = ${tsEntries} as const;\n\nexport const NCAA_LOGO_INDEX: Readonly<Record<string, LogoEntry>> = Object.fromEntries(NCAA_LOGOS.map(entry => [entry.slug, entry]));\n\nexport const NCAA_LOGO_ALIASES: Readonly<Record<string, string>> = ${JSON.stringify(Object.fromEntries(explicitAliases), null, 2)};\n`;
   await fs.writeFile(path.join(ROOT, 'src/lib/data/ncaa-logo-map.ts'), tsContent, 'utf8');
-
-  const jsContent = `${header}export const NCAA_LOGOS = ${JSON.stringify(entries, null, 2)};\n\nexport const NCAA_LOGO_ALIASES = ${JSON.stringify(Object.fromEntries(explicitAliases), null, 2)};\n`;
-  await fs.writeFile(path.join(ROOT, 'public/scripts/ncaa-logo-map.js'), jsContent, 'utf8');
 }
 
 await build();
