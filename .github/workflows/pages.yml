@@ -96,6 +96,19 @@ jobs:
           fi
           echo "Using ${{ steps.pickdir.outputs.dir }} as artifact path."
 
+      - name: Copy root HTML entry pages into artifact
+        shell: bash
+        run: |
+          shopt -s nullglob
+          mkdir -p "${BUILD_DIR}"
+          for page in *.html; do
+            if [[ "$page" == "index.html" ]]; then
+              continue
+            fi
+            echo "Including $page in ${BUILD_DIR}/$page"
+            cp "$page" "${BUILD_DIR}/$page"
+          done
+
       - name: Build sitemap/robots (if script present)
         run: |
           if [ -f scripts/build_sitemap.mjs ]; then
