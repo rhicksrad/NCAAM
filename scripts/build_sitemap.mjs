@@ -12,8 +12,7 @@ const PAGES = [
   '/players.html',
   '/games.html',
   '/rankings.html',
-  '/standings.html',
-  '/diag.html'
+  '/standings.html'
 ];
 
 function url(loc){
