@@ -7,11 +7,13 @@ const isUserSite = REPO && REPO.toLowerCase() === `${OWNER.toLowerCase()}.github
 const BASE = process.env.SITE_BASE || (isUserSite ? `https://${OWNER}.github.io` : `https://${OWNER}.github.io/${REPO}`);
 
 const PAGES = [
-  '/', '/index.html',
-  '/teams.html', '/players.html',
-  '/team.html', '/player.html',
-  '/games.html', '/standings.html', '/rankings.html',
-  '/404.html'
+  '/index.html',
+  '/teams.html',
+  '/players.html',
+  '/games.html',
+  '/rankings.html',
+  '/standings.html',
+  '/diag.html'
 ];
 
 function url(loc){

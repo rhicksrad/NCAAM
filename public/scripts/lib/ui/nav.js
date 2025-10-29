@@ -8,17 +8,16 @@ const links = [
     ["standings.html", "Standings"],
     ["diag.html", "Diag"]
 ];
-function current(pathname, href) {
-    return pathname.endsWith(href) ? ' class="active"' : "";
+function isCurrent(href) {
+    const here = location.pathname.replace(BASE, "") || "index.html";
+    return here === href ? ' class="active"' : "";
 }
 export function mountNav() {
     const el = document.getElementById("site-nav");
     if (!el)
         return;
-    const here = location.pathname.replace(BASE, "");
-    const html = links
-        .map(([href, label]) => `<a href="${BASE}${href}"${current(here, href)}>${label}</a>`)
-        .join(" · ");
-    el.innerHTML = `<nav class="nav">${html}</nav>`;
+    el.innerHTML = `<nav class="nav">` +
+        links.map(([href, label]) => `<a href="${BASE}${href}"${isCurrent(href)}>${label}</a>`).join(" · ") +
+        `</nav>`;
 }
 mountNav();

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://rhicksrad.github.io/NCAAM/</loc><lastmod>2025-10-29T01:29:17.252Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/index.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/teams.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/players.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/team.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/player.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/games.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/standings.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/rankings.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-<url><loc>https://rhicksrad.github.io/NCAAM/404.html</loc><lastmod>2025-10-29T01:29:17.253Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//index.html</loc><lastmod>2025-10-29T02:07:39.956Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//teams.html</loc><lastmod>2025-10-29T02:07:39.957Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//players.html</loc><lastmod>2025-10-29T02:07:39.958Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//games.html</loc><lastmod>2025-10-29T02:07:39.958Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//rankings.html</loc><lastmod>2025-10-29T02:07:39.958Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//standings.html</loc><lastmod>2025-10-29T02:07:39.958Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://.github.io//diag.html</loc><lastmod>2025-10-29T02:07:39.958Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
 </urlset>

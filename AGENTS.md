@@ -260,3 +260,12 @@ For pull requests:
 * Open http://localhost:8787/index.html
 * Provide a screenshot showing the nav and the Teams list with at least 10 items.
 * Attach the screenshot to the PR.
+
+## Build Verification
+
+- pnpm install
+- pnpm run build
+- pnpm run dev
+- Open http://localhost:8787/index.html
+- Click Teams and Players; verify populated lists
+- Attach a screenshot of Home and Teams pages in the PR

@@ -11,8 +11,9 @@
     "clean": "rm -rf public/scripts",
     "build:ts": "tsc -p tsconfig.json",
     "build:pages": "node scripts/dev/ensure-pages.mjs",
+    "build:data": "python3 scripts/build_site.py || true",
     "build:sitemap": "node scripts/build_sitemap.mjs || true",
-    "build": "pnpm run clean && pnpm run build:ts && pnpm run build:pages && pnpm run build:sitemap",
+    "build": "pnpm run clean && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:sitemap",
     "dev": "node scripts/dev/serve-public.js"
   },
   "dependencies": {
