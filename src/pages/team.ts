@@ -3,7 +3,7 @@ import { team as fetchTeam, teamRoster, standings, scoreboard } from '../lib/sdk
 import type { Game, Player, StandingGroup } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { gamesList } from '../lib/ui/components';
+import { gamesList, teamLogo } from '../lib/ui/components';
 import '../../public/styles/site.css';
 
 function getTeamIdFromHash(): string | null {
@@ -122,10 +122,15 @@ async function render() {
       standings(DEFAULT_SEASON)
     ]);
 
-    const header = el('div', { class: 'section' },
-      el('h2', { class: 'section-title' }, teamInfo.displayName),
-      teamInfo.conference ? el('p', {}, `Conference: ${teamInfo.conference}`) : null,
-      el('p', {}, `Team ID: ${teamInfo.id}`)
+    const headerLogo = teamLogo(teamInfo, 'medium');
+    const headerTitle = el('h2', { class: 'section-title' }, teamInfo.displayName);
+    const header = el('div', { class: 'section team-header' },
+      headerLogo,
+      el('div', { class: 'team-header-meta' },
+        headerTitle,
+        teamInfo.conference ? el('p', {}, `Conference: ${teamInfo.conference}`) : null,
+        el('p', {}, `Team ID: ${teamInfo.id}`)
+      )
     );
     shell.insertBefore(header, rosterSection);
 

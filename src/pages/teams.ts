@@ -3,7 +3,7 @@ import { teams as fetchTeams } from '../lib/sdk/ncaam';
 import type { Team } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
-import { teamLink } from '../lib/ui/components';
+import { teamLink, teamLogo } from '../lib/ui/components';
 import '../../public/styles/site.css';
 
 function skeletonList(): HTMLElement {
@@ -28,17 +28,8 @@ function renderTeams(container: HTMLElement, list: Team[]): void {
   const ul = el('ul', { class: 'team-list' });
   list.forEach(team => {
     const li = el('li', { class: 'team-card', id: team.id });
-    if (team.logo) {
-      const img = document.createElement('img');
-      img.src = team.logo;
-      img.alt = `${team.displayName} logo`;
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.width = 32;
-      img.height = 32;
-      img.className = 'team-logo';
-      li.appendChild(img);
-    }
+    const logo = teamLogo(team, 'small');
+    if (logo) li.appendChild(logo);
     li.appendChild(teamLink(team.id, team.displayName));
     if (team.conference) {
       li.appendChild(el('span', { class: 'team-conf' }, team.conference));
