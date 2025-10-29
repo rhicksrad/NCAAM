@@ -1,5 +1,5 @@
 import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
-import { API_BASE } from '../lib/sdk/fetch';
+import { buildApiUrl } from '../lib/sdk/fetch';
 import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import '../../public/styles/site.css';
@@ -7,7 +7,7 @@ import '../../public/styles/site.css';
 type Check = {
   label: string;
   path: string;
-  params?: Record<string, string>;
+  params?: Record<string, string | number | boolean | Array<string | number | boolean> | undefined>;
 };
 
 type Result = {
@@ -29,19 +29,8 @@ function todayISO(): string {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 }
 
-function buildUrl(path: string, params?: Record<string, string>): string {
-  const base = API_BASE.endsWith('/') ? API_BASE.slice(0, -1) : API_BASE;
-  const url = new URL(path.startsWith('/') ? path : `/${path}`, base);
-  if (params) {
-    for (const [key, value] of Object.entries(params)) {
-      if (value != null) url.searchParams.set(key, value);
-    }
-  }
-  return url.toString();
-}
-
 async function runCheck(check: Check): Promise<Result> {
-  const url = buildUrl(check.path, check.params);
+  const url = buildApiUrl(check.path, check.params);
   const started = performance.now();
   try {
     const res = await fetch(url, { headers: { Accept: 'application/json' } });
