@@ -1,5 +1,6 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
+import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
 app.innerHTML = `<h1>Teams</h1>
 <input class="search" placeholder="Filter name or conference">
@@ -15,9 +16,14 @@ const data = teamsResponse.data.map(team => {
         const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
         return lookup?.short_name ?? lookup?.name;
     })();
+    const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
     return {
         ...team,
         conference: conference ?? "N/A",
+        logoUrl: getTeamLogoUrl(team),
+        accentPrimary,
+        accentSecondary,
+        monogram: getTeamMonogram(team),
     };
 });
 function render(q = "") {
@@ -50,7 +56,19 @@ function render(q = "") {
   <summary><span>${conference}</span><span class="count">${teams.length}</span></summary>
   <div class="group grid cols-3">
     ${teams
-            .map(team => `<div class="card"><strong>${team.full_name}</strong><div class="badge">${team.conference ?? "N/A"}</div></div>`)
+            .map(team => {
+            const logo = team.logoUrl
+                ? `<img class="team-card__logo-image" src="${team.logoUrl}" alt="${team.full_name} logo" loading="lazy" decoding="async">`
+                : `<span class="team-card__logo-placeholder" aria-hidden="true" style="--team-accent:${team.accentPrimary}; --team-accent-secondary:${team.accentSecondary};">${team.monogram}</span>`;
+            const meta = team.abbreviation ? `${team.conference} · ${team.abbreviation}` : team.conference;
+            return `<article class="card team-card">
+  <div class="team-card__logo">${logo}</div>
+  <div class="team-card__body">
+    <strong class="team-card__name">${team.full_name}</strong>
+    <span class="team-card__meta">${meta}</span>
+  </div>
+</article>`;
+        })
             .join("")}
   </div>
 </details>`;

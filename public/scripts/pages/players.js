@@ -1,50 +1,32 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
-function deriveInitials(team) {
-    if (team.abbreviation) {
-        const trimmed = team.abbreviation.replace(/[^0-9A-Za-z]/g, "");
-        if (trimmed) {
-            return trimmed.slice(0, 3).toUpperCase();
-        }
-    }
-    const source = team.full_name ?? team.college ?? team.name;
-    if (!source)
-        return "NCAAM";
-    const words = source
-        .replace(/[^0-9A-Za-z\s]/g, "")
-        .split(/\s+/)
-        .filter(Boolean);
-    if (words.length === 0) {
-        const fallback = source.replace(/[^0-9A-Za-z]/g, "");
-        return fallback.slice(0, 3).toUpperCase() || "NCAAM";
-    }
-    const initials = [];
-    for (const word of words) {
-        initials.push(word[0]);
-        if (initials.length === 3)
-            break;
-    }
-    return initials.join("").toUpperCase();
-}
-function computeHue(team) {
-    const basis = `${team.id}:${team.full_name ?? team.name ?? ""}`;
-    let hash = 0;
-    for (let i = 0; i < basis.length; i += 1) {
-        hash = (hash * 31 + basis.charCodeAt(i)) % 360;
-    }
-    return hash;
-}
-function getAccentColors(team) {
-    const hue = computeHue(team);
-    const primary = `hsl(${hue}, 70%, 48%)`;
-    const secondary = `hsl(${(hue + 35) % 360}, 72%, 40%)`;
-    return [primary, secondary];
-}
+import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 function decorateAvatar(el, team) {
-    const [primary, secondary] = getAccentColors(team);
-    el.textContent = deriveInitials(team);
+    const logoUrl = getTeamLogoUrl(team);
+    el.innerHTML = "";
+    el.classList.toggle("roster-team__logo--image", Boolean(logoUrl));
+    el.classList.toggle("roster-team__logo--placeholder", !logoUrl);
+    el.style.removeProperty("--team-accent");
+    el.style.removeProperty("--team-accent-secondary");
+    if (logoUrl) {
+        el.removeAttribute("aria-hidden");
+        el.removeAttribute("role");
+        const img = document.createElement("img");
+        img.src = logoUrl;
+        img.alt = `${team.full_name} logo`;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.width = 44;
+        img.height = 44;
+        el.append(img);
+        return;
+    }
+    el.setAttribute("aria-hidden", "true");
+    el.setAttribute("role", "presentation");
+    const [primary, secondary] = getTeamAccentColors(team);
     el.style.setProperty("--team-accent", primary);
     el.style.setProperty("--team-accent-secondary", secondary);
+    el.textContent = getTeamMonogram(team);
 }
 const app = document.getElementById("app");
 if (!app) {
@@ -131,8 +113,6 @@ function createTeamDetails(team, group) {
     identity.className = "roster-team__identity";
     const logo = document.createElement("div");
     logo.className = "roster-team__logo";
-    logo.setAttribute("aria-hidden", "true");
-    logo.setAttribute("role", "presentation");
     decorateAvatar(logo, team);
     const text = document.createElement("div");
     text.className = "roster-team__text";
