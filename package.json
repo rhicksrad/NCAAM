@@ -9,12 +9,13 @@
   },
   "scripts": {
     "clean": "rm -rf public/scripts",
+    "build:logos": "node scripts/build-ncaa-logo-map.mjs",
     "build:ts": "tsc -p tsconfig.json",
     "build:pages": "node scripts/dev/ensure-pages.mjs",
     "build:data": "python3 scripts/build_site.py || true",
     "build:sitemap": "node scripts/build_sitemap.mjs || true",
-    "build": "pnpm run clean && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:sitemap",
-    "dev": "node scripts/dev/serve-public.js"
+    "build": "pnpm run clean && pnpm run build:logos && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:sitemap",
+    "dev": "pnpm run build:logos && node scripts/dev/serve-public.js"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",

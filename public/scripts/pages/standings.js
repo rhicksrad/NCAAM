@@ -23,7 +23,7 @@ function bump(id, team, conf, win) {
 const resolveConference = (teamConf, conferenceId) => {
     if (teamConf && teamConf !== "N/A")
         return teamConf;
-    if (!conferenceId)
+    if (conferenceId === undefined || conferenceId === null)
         return "Unknown";
     const conf = conferenceMap.get(conferenceId);
     return conf?.short_name ?? conf?.name ?? "Unknown";

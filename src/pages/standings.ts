@@ -18,9 +18,9 @@ function bump(id:number, team:string, conf:string, win:boolean) {
   if (win) cur.w++; else cur.l++;
   table.set(id, cur);
 }
-const resolveConference = (teamConf?:string, conferenceId?:number) => {
+const resolveConference = (teamConf?:string, conferenceId?:number | null) => {
   if (teamConf && teamConf !== "N/A") return teamConf;
-  if (!conferenceId) return "Unknown";
+  if (conferenceId === undefined || conferenceId === null) return "Unknown";
   const conf = conferenceMap.get(conferenceId);
   return conf?.short_name ?? conf?.name ?? "Unknown";
 };

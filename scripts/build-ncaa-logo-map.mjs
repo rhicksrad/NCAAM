@@ -195,7 +195,9 @@ async function build() {
   await fs.writeFile(path.join(ROOT, 'src/lib/data/ncaa-logo-map.ts'), tsContent, 'utf8');
 
   const jsContent = `${header}export const NCAA_LOGOS = ${JSON.stringify(entries, null, 2)};\n\nexport const NCAA_LOGO_ALIASES = ${JSON.stringify(Object.fromEntries(explicitAliases), null, 2)};\n`;
-  await fs.writeFile(path.join(ROOT, 'public/scripts/ncaa-logo-map.js'), jsContent, 'utf8');
+  const outputDir = path.join(ROOT, 'public/scripts/lib/data');
+  await fs.mkdir(outputDir, { recursive: true });
+  await fs.writeFile(path.join(outputDir, 'ncaa-logo-map.js'), jsContent, 'utf8');
 }
 
 await build();
