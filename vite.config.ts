@@ -12,8 +12,7 @@ const pages = [
   'rankings',
   'standings',
   'team',
-  'player',
-  'diag'
+  'player'
 ];
 
 export default defineConfig({

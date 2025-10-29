@@ -6,8 +6,7 @@ const links: [string,string][] = [
   ["players.html","Players"],
   ["games.html","Games"],
   ["rankings.html","Rankings"],
-  ["standings.html","Standings"],
-  ["diag.html","Diag"]
+  ["standings.html","Standings"]
 ];
 
 function isCurrent(href: string) {

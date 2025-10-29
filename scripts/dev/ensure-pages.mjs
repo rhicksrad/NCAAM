@@ -8,8 +8,7 @@ const PAGES = [
   ["players.html","players.js","Players"],
   ["games.html","games.js","Games"],
   ["rankings.html","rankings.js","Rankings"],
-  ["standings.html","standings.js","Standings"],
-  ["diag.html","diag.js","Diag"]
+  ["standings.html","standings.js","Standings"]
 ];
 
 const shell = (title, script) => `<!doctype html>
