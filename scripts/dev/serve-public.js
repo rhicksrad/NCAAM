@@ -2,6 +2,8 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
 
+import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
+
 const DEFAULT_PORT = 4173;
 const PUBLIC_ROOT = resolve(new URL('../../public', import.meta.url).pathname);
 
@@ -87,6 +89,8 @@ function sendJson(res, statusCode, payload) {
   const body = JSON.stringify(payload, null, 2);
   send(res, statusCode, body, { 'Content-Type': 'application/json; charset=utf-8' });
 }
+
+await ensureNcaALogos();
 
 const server = createServer(async (req, res) => {
   if (!req.url) {
