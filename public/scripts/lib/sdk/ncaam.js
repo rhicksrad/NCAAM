@@ -30,4 +30,5 @@ export const NCAAM = {
     teams: (page = 1, per_page = 200) => get("/teams", { page, per_page }),
     players: (page = 1, per_page = 200, search = "") => get("/players", { page, per_page, search }),
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
+    conferences: () => get("/conferences"),
 };

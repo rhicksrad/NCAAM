@@ -1,11 +1,16 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
+import { getConferenceMap } from "../lib/sdk/directory.js";
 const app = document.getElementById("app")!;
 app.innerHTML = `<h1>Standings</h1><div id="wrap"></div>`;
 const wrap = document.getElementById("wrap")!;
 const today = new Date();
 const start = new Date(today.getFullYear(), 10, 1); // Nov 1
 const iso = (d:Date)=>d.toISOString().slice(0,10);
-const { data: games } = await NCAAM.games(1, 1000, iso(start), iso(today));
+const [gamesResponse, conferenceMap] = await Promise.all([
+  NCAAM.games(1, 1000, iso(start), iso(today)),
+  getConferenceMap(),
+]);
+const games = gamesResponse.data;
 type Row = { team:string; conf:string; w:number; l:number };
 const table = new Map<number, Row>();
 function bump(id:number, team:string, conf:string, win:boolean) {
@@ -13,11 +18,27 @@ function bump(id:number, team:string, conf:string, win:boolean) {
   if (win) cur.w++; else cur.l++;
   table.set(id, cur);
 }
+const resolveConference = (teamConf?:string, conferenceId?:number) => {
+  if (teamConf && teamConf !== "N/A") return teamConf;
+  if (!conferenceId) return "Unknown";
+  const conf = conferenceMap.get(conferenceId);
+  return conf?.short_name ?? conf?.name ?? "Unknown";
+};
 for (const g of games) {
   const hs = g.home_team_score ?? 0, vs = g.visitor_team_score ?? 0;
   if (!hs && !vs) continue;
-  bump(g.home_team.id, g.home_team.full_name, g.home_team.conference ?? "Unknown", hs > vs);
-  bump(g.visitor_team.id, g.visitor_team.full_name, g.visitor_team.conference ?? "Unknown", vs > hs);
+  bump(
+    g.home_team.id,
+    g.home_team.full_name,
+    resolveConference(g.home_team.conference, g.home_team.conference_id),
+    hs > vs,
+  );
+  bump(
+    g.visitor_team.id,
+    g.visitor_team.full_name,
+    resolveConference(g.visitor_team.conference, g.visitor_team.conference_id),
+    vs > hs,
+  );
 }
 const byConf = new Map<string, Row[]>();
 for (const r of table.values()) {

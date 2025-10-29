@@ -1,4 +1,5 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
+import { getConferenceMap } from "../lib/sdk/directory.js";
 
 const app = document.getElementById("app")!;
 app.innerHTML = `<h1>Teams</h1>
@@ -8,7 +9,21 @@ app.innerHTML = `<h1>Teams</h1>
 const input = app.querySelector("input.search") as HTMLInputElement;
 const list = app.querySelector("#list") as HTMLElement;
 
-const { data } = await NCAAM.teams(1, 400);
+const [teamsResponse, conferenceMap] = await Promise.all([
+  NCAAM.teams(1, 400),
+  getConferenceMap(),
+]);
+
+const data = teamsResponse.data.map(team => {
+  const conference = team.conference ?? (() => {
+    const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
+    return lookup?.short_name ?? lookup?.name;
+  })();
+  return {
+    ...team,
+    conference: conference ?? "N/A",
+  };
+});
 
 function render(q = "") {
   const ql = q.trim().toLowerCase();
