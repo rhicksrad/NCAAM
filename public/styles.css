@@ -18,4 +18,5 @@ body{font:16px/1.5 ui-sans-serif,system-ui;margin:0;background:#0b1220;color:#e6
 .empty-state{padding:24px;text-align:center;background:#141d2b;border:1px dashed #223048;border-radius:10px;color:#9da5b4}
 ul.clean{list-style:none;padding-left:0}
 table{width:100%;border-collapse:collapse}th,td{padding:.5rem;border-bottom:1px solid #223048}th{text-align:left}
+.standings-table td.numeric,.standings-table th.numeric{text-align:right;font-variant-numeric:tabular-nums}
 input.search{width:100%;padding:.5rem .75rem;border-radius:8px;border:1px solid #223048;background:#0f1724;color:#e6edf3}

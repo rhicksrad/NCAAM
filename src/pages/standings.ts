@@ -1,31 +1,42 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
+
 const app = document.getElementById("app")!;
-app.innerHTML = `<h1>Standings</h1><div id="wrap"></div>`;
-const wrap = document.getElementById("wrap")!;
-const today = new Date();
-const start = new Date(today.getFullYear(), 10, 1); // Nov 1
-const iso = (d:Date)=>d.toISOString().slice(0,10);
-const { data: games } = await NCAAM.games(1, 1000, iso(start), iso(today));
-type Row = { team:string; conf:string; w:number; l:number };
-const table = new Map<number, Row>();
-function bump(id:number, team:string, conf:string, win:boolean) {
-  const cur = table.get(id) ?? { team, conf, w:0, l:0 };
-  if (win) cur.w++; else cur.l++;
-  table.set(id, cur);
+app.innerHTML = `<h1>Standings</h1><div id="standings" class="conference-groups"></div>`;
+
+const container = document.getElementById("standings")!;
+const { data: teams } = await NCAAM.teams(1, 400);
+
+const groups = new Map<string, typeof teams>();
+for (const team of teams) {
+  const conference = team.conference?.trim() || "N/A";
+  if (!groups.has(conference)) {
+    groups.set(conference, []);
+  }
+  groups.get(conference)!.push(team);
 }
-for (const g of games) {
-  const hs = g.home_team_score ?? 0, vs = g.visitor_team_score ?? 0;
-  if (!hs && !vs) continue;
-  bump(g.home_team.id, g.home_team.full_name, g.home_team.conference ?? "Unknown", hs > vs);
-  bump(g.visitor_team.id, g.visitor_team.full_name, g.visitor_team.conference ?? "Unknown", vs > hs);
+
+if (!groups.size) {
+  container.innerHTML = `<p class="empty-state">Standings are unavailable right now.</p>`;
+} else {
+  const sections = Array.from(groups.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([conference, members]) => {
+      members.sort((a, b) => a.full_name.localeCompare(b.full_name));
+      const rows = members
+        .map(
+          (team) =>
+            `<tr><td>${team.full_name}</td><td class="numeric">0-0</td><td class="numeric">0.000</td></tr>`
+        )
+        .join("");
+      return `<details class="conference" data-conference="${conference}">
+  <summary><span>${conference}</span><span class="count">${members.length}</span></summary>
+  <div class="group">
+    <table class="standings-table">
+      <thead><tr><th>Team</th><th class="numeric">Record</th><th class="numeric">Win%</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>
+</details>`;
+    });
+  container.innerHTML = sections.join("");
 }
-const byConf = new Map<string, Row[]>();
-for (const r of table.values()) {
-  const k = r.conf;
-  byConf.set(k, [...(byConf.get(k) ?? []), r].sort((a,b)=>(b.w-b.l)-(a.w-a.l)));
-}
-wrap.innerHTML = [...byConf.entries()].sort().map(([conf, rows]) => `
-  <section class="card"><h3>${conf}</h3>
-  <table><thead><tr><th>Team</th><th>W</th><th>L</th></tr></thead>
-  <tbody>${rows.map(r=>`<tr><td>${r.team}</td><td>${r.w}</td><td>${r.l}</td></tr>`).join("")}</tbody></table>
-  </section>`).join("");
