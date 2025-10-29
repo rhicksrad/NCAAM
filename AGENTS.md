@@ -253,3 +253,10 @@ For pull requests:
 * Prefer idempotent, cacheable reads.
 * Validate data before render.
 * Simplicity > complexity — the proxy exists to keep things secure, fast, and uniform.
+
+## Build Verification
+
+* Serve locally: `pnpm run dev`
+* Open http://localhost:8787/index.html
+* Provide a screenshot showing the nav and the Teams list with at least 10 items.
+* Attach the screenshot to the PR.
