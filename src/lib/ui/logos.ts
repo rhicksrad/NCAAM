@@ -1,4 +1,5 @@
 import type { Team } from "../sdk/ncaam.js";
+import { BASE } from "../config.js";
 import {
   NCAA_LOGOS,
   NCAA_LOGO_ALIASES,
@@ -145,7 +146,13 @@ export function getTeamLogo(team: Team): LogoEntry | undefined {
 
 export function getTeamLogoUrl(team: Team): string | undefined {
   const logo = getTeamLogo(team);
-  return logo ? `/${logo.path}` : undefined;
+  if (!logo) {
+    return undefined;
+  }
+
+  const trimmedPath = logo.path.replace(/^\/+/, "");
+  const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
+  return `${base}${trimmedPath}`;
 }
 
 export function getTeamMonogram(team: Team): string {
