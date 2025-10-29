@@ -2,6 +2,7 @@ import { BRAND, DEFAULT_SEASON } from '../lib/config/ncaam';
 import { buildApiUrl } from '../lib/sdk/fetch';
 import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
+import { emptyState, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 type Check = {
@@ -62,12 +63,12 @@ async function render() {
   const root = document.getElementById('app');
   if (!root) return;
 
-  const resultsContainer = el('div', { class: 'rows' }, el('div', { class: 'skeleton-row' }, el('span', { class: 'skeleton' })));
+  const resultsContainer = skeletonRows(1);
 
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Diagnostics`),
     nav(),
-    el('p', { class: 'empty-state' }, 'Fetches are live; append ?diag=1 to log debug info.'),
+    emptyState('Fetches are live; append ?diag=1 to log debug info.'),
     resultsContainer,
     footer()
   );

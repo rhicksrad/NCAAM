@@ -4,26 +4,12 @@ import type { Game } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { gamesList, teamLink } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 function getPlayerId(): string | null {
   const url = new URL(window.location.href);
   return url.searchParams.get('player_id');
-}
-
-function skeleton(): HTMLElement {
-  return el('div', { class: 'rows' },
-    el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    )
-  );
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
 }
 
 async function recentTeamGames(teamId: string): Promise<Game[]> {
@@ -62,8 +48,8 @@ async function render() {
     return;
   }
 
-  const bioSection = section('Profile', skeleton());
-  const gamesSection = section('Recent Team Games', skeleton());
+  const bioSection = section('Profile', skeletonRows(1));
+  const gamesSection = section('Recent Team Games', skeletonRows(1));
 
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Player`),
@@ -92,10 +78,10 @@ async function render() {
       if (games.length) {
         gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), gamesList(games));
       } else {
-        gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), el('p', { class: 'empty-state' }, 'No recent games found.'));
+        gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), emptyState('No recent games found.'));
       }
     } else {
-      gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), el('p', { class: 'empty-state' }, 'No team information available.'));
+      gamesSection.replaceChildren(el('h2', { class: 'section-title' }, 'Recent Team Games'), emptyState('No team information available.'));
     }
   } catch (err) {
     bioSection.replaceChildren(el('h2', { class: 'section-title' }, 'Profile'), errorCard(`Unable to load player: ${err instanceof Error ? err.message : String(err)}`));

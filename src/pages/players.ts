@@ -4,6 +4,7 @@ import type { Player, Team } from '../lib/sdk/types';
 import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { teamLink } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 interface PlayerIndexEntry {
@@ -41,21 +42,10 @@ function writeIndex(data: PlayerIndexEntry[]): void {
   }
 }
 
-function skeleton(): HTMLElement {
-  return el('div', { class: 'rows' },
-    el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    )
-  );
-}
-
 function resultRow(entry: PlayerIndexEntry): HTMLElement {
   const row = el('div', { class: 'row row-standings' });
   row.appendChild(el('span', { class: 'standings-team' }, entry.name));
-  row.appendChild(el('span', {}, entry.position ?? '')); 
+  row.appendChild(el('span', {}, entry.position ?? ''));
   if (entry.teamId && entry.teamName) {
     row.appendChild(teamLink(entry.teamId, entry.teamName));
   }
@@ -64,7 +54,7 @@ function resultRow(entry: PlayerIndexEntry): HTMLElement {
 
 function renderResults(container: HTMLElement, results: PlayerIndexEntry[]) {
   if (!results.length) {
-    container.replaceChildren(el('p', { class: 'empty-state' }, 'No players match the current search.'));
+    container.replaceChildren(emptyState('No players match the current search.'));
     return;
   }
   const rows = el('div', { class: 'rows' });
@@ -114,8 +104,8 @@ async function render() {
   if (!root) return;
 
   const search = el('input', { type: 'text', placeholder: 'Search players…' }) as HTMLInputElement;
-  const status = el('p', { class: 'empty-state' }, 'First search may take a few seconds while rosters load.');
-  const resultsContainer = el('div', {}, skeleton());
+  const status = el('div', { class: 'status-block' }, emptyState('First search may take a few seconds while rosters load.'));
+  const resultsContainer = skeletonRows(1);
 
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Players`),
@@ -129,8 +119,20 @@ async function render() {
 
   const cached = readIndex();
   let indexData: PlayerIndexEntry[] | null = cached;
+  function setStatus(node: Node): void {
+    status.replaceChildren(node);
+  }
+
+  function setStatusText(message: string): void {
+    setStatus(emptyState(message));
+  }
+
+  function setStatusError(message: string): void {
+    setStatus(errorCard(message));
+  }
+
   if (cached) {
-    status.textContent = `Index loaded from cache (${cached.length} players).`;
+    setStatusText(`Index loaded from cache (${cached.length} players).`);
     renderResults(resultsContainer, cached.slice(0, 50));
   }
 
@@ -143,19 +145,19 @@ async function render() {
       return ensureIndex();
     }
     building = true;
-    status.textContent = 'Building player index…';
+    setStatusText('Building player index…');
     try {
       const teams = (await fetchTeams()).filter(team => team.conferenceId != null);
       const entries = await buildIndex(teams, (completed, total) => {
-        status.textContent = `Building player index… ${completed}/${total}`;
+        setStatusText(`Building player index… ${completed}/${total}`);
       });
       entries.sort((a, b) => a.name.localeCompare(b.name));
       writeIndex(entries);
       indexData = entries;
-      status.textContent = `Index ready (${entries.length} players).`;
+      setStatusText(`Index ready (${entries.length} players).`);
       return entries;
     } catch (err) {
-      status.replaceChildren(el('span', { class: 'error-card' }, `Index build failed: ${err instanceof Error ? err.message : String(err)}`));
+      setStatusError(`Index build failed: ${err instanceof Error ? err.message : String(err)}`);
       indexData = [];
       return indexData;
     } finally {

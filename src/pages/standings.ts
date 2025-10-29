@@ -3,27 +3,13 @@ import { standings } from '../lib/sdk/ncaam';
 import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { standingsGroups } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 function seasonsList(current: number, count = 5): number[] {
   const seasons: number[] = [];
   for (let i = 0; i < count; i += 1) seasons.push(current - i);
   return seasons;
-}
-
-function skeleton(): HTMLElement {
-  return el('div', { class: 'rows' },
-    el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    )
-  );
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
 }
 
 async function render() {
@@ -38,7 +24,7 @@ async function render() {
     select.appendChild(option);
   });
 
-  const content = el('div', {}, skeleton());
+  const content = skeletonRows(1);
 
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Standings`),
@@ -50,12 +36,12 @@ async function render() {
   mount(root, shell);
 
   async function load() {
-    content.replaceChildren(skeleton());
+    content.replaceChildren(skeletonRows(1));
     try {
       const data = await standings(season);
       const filtered = data.filter(group => group.rows.length);
       if (!filtered.length) {
-        content.replaceChildren(el('p', { class: 'empty-state' }, 'No standings available for this season.'));
+        content.replaceChildren(emptyState('No standings available for this season.'));
         return;
       }
       content.replaceChildren(standingsGroups(filtered));

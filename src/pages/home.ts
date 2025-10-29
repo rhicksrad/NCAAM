@@ -5,6 +5,7 @@ import { resolveTeamLogo } from '../lib/logos';
 import { el, mount, section, spinner } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { gamesList, pollBlock, teamLogo } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import { POWER_POLL_ENTRIES, POWER_POLL_CONTEXT, type PowerPollEntry } from './home-power-poll';
 import '../../public/styles/site.css';
 
@@ -14,23 +15,6 @@ function todayISO(): string {
   const m = String(now.getMonth() + 1).padStart(2, '0');
   const d = String(now.getDate()).padStart(2, '0');
   return `${y}-${m}-${d}`;
-}
-
-function skeletonRows(count: number): HTMLElement {
-  const wrapper = el('div', { class: 'rows' });
-  for (let i = 0; i < count; i += 1) {
-    wrapper.appendChild(el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    ));
-  }
-  return wrapper;
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
 }
 
 function slugify(value: string): string {
@@ -117,7 +101,7 @@ async function loadRankings(container: HTMLElement) {
     if (!polls.length) {
       container.replaceChildren(
         el('h2', { class: 'section-title' }, 'Top 25'),
-        el('p', { class: 'empty-state' }, 'No rankings available yet.')
+        emptyState('No rankings available yet.')
       );
       return;
     }
@@ -134,7 +118,7 @@ async function loadRankings(container: HTMLElement) {
 }
 
 function summarizeGames(games: Game[]): HTMLElement {
-  if (!games.length) return el('p', { class: 'empty-state' }, 'No games scheduled today.');
+  if (!games.length) return emptyState('No games scheduled today.');
   return gamesList(games);
 }
 
