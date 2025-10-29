@@ -1,6 +1,7 @@
 import { fetchJSON } from './fetch';
 import { clearCache, withCache } from './cache';
 import type { Game, GameStage, Player, Poll, PollEntry, StandingGroup, StandingRow, Team } from './types';
+import { resolveTeamLogo } from '../logos';
 
 const debugEnabled = (() => {
   if (typeof window === 'undefined') return false;
@@ -43,7 +44,7 @@ function mapTeam(raw: unknown): Team {
   const displayName = asString(rec['full_name']) ?? asString(rec['college']) ?? asString(rec['name']) ?? 'Unknown';
   const shortName = asString(rec['name']) ?? displayName;
   const abbreviation = asString(rec['abbreviation']) ?? shortName.slice(0, 6).toUpperCase();
-  return {
+  const team: Team = {
     id: idValue ?? displayName.toLowerCase(),
     name: displayName,
     displayName,
@@ -53,6 +54,9 @@ function mapTeam(raw: unknown): Team {
     conference: asString(rec['conference']) ?? asString(rec['conference_name']) ?? undefined,
     logo: asString(rec['logo']) ?? undefined,
   };
+  const localLogo = resolveTeamLogo(team);
+  if (localLogo) team.logo = localLogo;
+  return team;
 }
 
 function mapPlayer(raw: unknown): Player {

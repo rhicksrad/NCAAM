@@ -1,6 +1,19 @@
 import { el } from './dom';
 import { basePath } from './base';
-import type { Game, Poll, StandingGroup } from '../sdk/types';
+import type { Game, Poll, StandingGroup, Team } from '../sdk/types';
+
+type LogoSize = 'tiny' | 'small' | 'medium' | 'large';
+
+export function teamLogo(team: Team, size: LogoSize = 'small'): HTMLImageElement | null {
+  if (!team.logo) return null;
+  const img = document.createElement('img');
+  img.src = team.logo;
+  img.alt = `${team.displayName} logo`;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.className = size ? `team-logo team-logo--${size}` : 'team-logo';
+  return img;
+}
 
 export function teamLink(teamId: string, label: string, attrs: Record<string, string> = {}): HTMLAnchorElement {
   const base = basePath();
@@ -9,14 +22,38 @@ export function teamLink(teamId: string, label: string, attrs: Record<string, st
   return anchor;
 }
 
+export function teamIdentity(
+  team: Team,
+  options: { className?: string; logoSize?: LogoSize; linkClassName?: string } = {}
+): HTMLElement {
+  const { className, logoSize = 'small', linkClassName } = options;
+  const container = el('span', { class: ['team-identity', className].filter(Boolean).join(' ') });
+  const logo = teamLogo(team, logoSize);
+  if (logo) container.appendChild(logo);
+  container.appendChild(teamLink(team.id, team.displayName, linkClassName ? { class: linkClassName } : {}));
+  return container;
+}
+
 export function gameRow(game: Game): HTMLElement {
   const row = el('div', { class: `row row-stage-${game.stage}` });
   const time = el('div', { class: 'row-time', title: game.tipLabel }, game.tipLocal);
   const matchup = el('div', { class: 'row-matchup' });
-  const awayLabel = game.away.team.abbreviation || game.away.team.shortName || game.away.team.displayName;
-  const homeLabel = game.home.team.abbreviation || game.home.team.shortName || game.home.team.displayName;
-  const away = teamLink(game.away.team.id, awayLabel, { class: 'team-away' });
-  const home = teamLink(game.home.team.id, homeLabel, { class: 'team-home' });
+  const away = el('span', { class: 'team-entry team-away' });
+  const awayLogo = teamLogo(game.away.team, 'tiny');
+  if (awayLogo) away.appendChild(awayLogo);
+  away.appendChild(teamLink(
+    game.away.team.id,
+    game.away.team.abbreviation || game.away.team.shortName || game.away.team.displayName,
+    { class: 'team-name' }
+  ));
+  const home = el('span', { class: 'team-entry team-home' });
+  const homeLogo = teamLogo(game.home.team, 'tiny');
+  if (homeLogo) home.appendChild(homeLogo);
+  home.appendChild(teamLink(
+    game.home.team.id,
+    game.home.team.abbreviation || game.home.team.shortName || game.home.team.displayName,
+    { class: 'team-name' }
+  ));
   matchup.appendChild(away);
   matchup.appendChild(el('span', { class: 'at' }, '@'));
   matchup.appendChild(home);
@@ -54,7 +91,11 @@ export function pollBlock(poll: Poll): HTMLElement {
   const list = el('ol', { class: 'poll-list' });
   poll.entries.forEach(entry => {
     const li = el('li', { class: 'poll-entry' });
-    li.appendChild(teamLink(entry.team.id, entry.team.displayName));
+    const block = el('span', { class: 'poll-team' });
+    const logo = teamLogo(entry.team, 'tiny');
+    if (logo) block.appendChild(logo);
+    block.appendChild(teamLink(entry.team.id, entry.team.displayName));
+    li.appendChild(block);
     if (entry.record) li.appendChild(el('span', { class: 'poll-record' }, ` (${entry.record})`));
     list.appendChild(li);
   });
@@ -70,7 +111,11 @@ export function standingsGroups(groups: StandingGroup[]): HTMLElement {
     const list = el('div', { class: 'rows standings-rows' });
     group.rows.forEach(row => {
       const item = el('div', { class: 'row row-standings' });
-      item.appendChild(teamLink(row.team.id, row.team.displayName, { class: 'standings-team' }));
+      const identity = el('span', { class: 'standings-team' });
+      const logo = teamLogo(row.team, 'tiny');
+      if (logo) identity.appendChild(logo);
+      identity.appendChild(teamLink(row.team.id, row.team.displayName));
+      item.appendChild(identity);
       item.appendChild(el('span', { class: 'standings-record' }, `${row.wins}-${row.losses}`));
       if (row.conferenceWins !== undefined && row.conferenceLosses !== undefined) {
         item.appendChild(el('span', { class: 'standings-conf' }, `${row.conferenceWins}-${row.conferenceLosses}`));

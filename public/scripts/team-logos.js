@@ -1,97 +1,90 @@
-const fallbackLogo = 'assets/logos/nba-logoman.svg';
+import { NCAA_LOGOS, NCAA_LOGO_ALIASES } from './ncaa-logo-map.js';
 
-const teamLogoLookup = new Map([
-  ['atlanta hawks', 'assets/logos/teams/atlanta-hawks.svg'],
-  ['boston celtics', 'assets/logos/teams/boston-celtics.svg'],
-  ['brooklyn nets', 'assets/logos/teams/brooklyn-nets.svg'],
-  ['charlotte hornets', 'assets/logos/teams/charlotte-hornets.svg'],
-  ['charlotte bobcats', 'assets/logos/teams/charlotte-hornets.svg'],
-  ['chicago bulls', 'assets/logos/teams/chicago-bulls.svg'],
-  ['cleveland cavaliers', 'assets/logos/teams/cleveland-cavaliers.svg'],
-  ['dallas mavericks', 'assets/logos/teams/dallas-mavericks.svg'],
-  ['denver nuggets', 'assets/logos/teams/denver-nuggets.svg'],
-  ['detroit pistons', 'assets/logos/teams/detroit-pistons.svg'],
-  ['golden state warriors', 'assets/logos/teams/golden-state-warriors.svg'],
-  ['houston rockets', 'assets/logos/teams/houston-rockets.svg'],
-  ['indiana pacers', 'assets/logos/teams/indiana-pacers.svg'],
-  ['los angeles clippers', 'assets/logos/teams/los-angeles-clippers.svg'],
-  ['la clippers', 'assets/logos/teams/los-angeles-clippers.svg'],
-  ['los angeles lakers', 'assets/logos/teams/los-angeles-lakers.svg'],
-  ['la lakers', 'assets/logos/teams/los-angeles-lakers.svg'],
-  ['memphis grizzlies', 'assets/logos/teams/memphis-grizzlies.svg'],
-  ['miami heat', 'assets/logos/teams/miami-heat.svg'],
-  ['milwaukee bucks', 'assets/logos/teams/milwaukee-bucks.svg'],
-  ['minnesota timberwolves', 'assets/logos/teams/minnesota-timberwolves.svg'],
-  ['new orleans pelicans', 'assets/logos/teams/new-orleans-pelicans.svg'],
-  ['new orleans hornets', 'assets/logos/teams/new-orleans-pelicans.svg'],
-  ['new york knicks', 'assets/logos/teams/new-york-knicks.svg'],
-  ['oklahoma city thunder', 'assets/logos/teams/oklahoma-city-thunder.svg'],
-  ['orlando magic', 'assets/logos/teams/orlando-magic.svg'],
-  ['philadelphia 76ers', 'assets/logos/teams/philadelphia-76ers.svg'],
-  ['phoenix suns', 'assets/logos/teams/phoenix-suns.svg'],
-  ['portland trail blazers', 'assets/logos/teams/portland-trail-blazers.svg'],
-  ['portland trailblazers', 'assets/logos/teams/portland-trail-blazers.svg'],
-  ['sacramento kings', 'assets/logos/teams/sacramento-kings.svg'],
-  ['san antonio spurs', 'assets/logos/teams/san-antonio-spurs.svg'],
-  ['toronto raptors', 'assets/logos/teams/toronto-raptors.svg'],
-  ['utah jazz', 'assets/logos/teams/utah-jazz.svg'],
-  ['washington wizards', 'assets/logos/teams/washington-wizards.svg'],
-]);
+const fallbackLogo = 'assets/logos/ncaam-mark.svg';
+const stopwords = new Set(['and', 'of', 'the', 'university', 'college', 'for', 'at', 'in']);
+const logoIndex = new Map(NCAA_LOGOS.map(entry => [entry.slug, entry]));
 
-const abbreviationLookup = new Map([
-  ['ATL', 'assets/logos/teams/atlanta-hawks.svg'],
-  ['BOS', 'assets/logos/teams/boston-celtics.svg'],
-  ['BKN', 'assets/logos/teams/brooklyn-nets.svg'],
-  ['BRK', 'assets/logos/teams/brooklyn-nets.svg'],
-  ['CHA', 'assets/logos/teams/charlotte-hornets.svg'],
-  ['CHO', 'assets/logos/teams/charlotte-hornets.svg'],
-  ['CHI', 'assets/logos/teams/chicago-bulls.svg'],
-  ['CLE', 'assets/logos/teams/cleveland-cavaliers.svg'],
-  ['DAL', 'assets/logos/teams/dallas-mavericks.svg'],
-  ['DEN', 'assets/logos/teams/denver-nuggets.svg'],
-  ['DET', 'assets/logos/teams/detroit-pistons.svg'],
-  ['GSW', 'assets/logos/teams/golden-state-warriors.svg'],
-  ['HOU', 'assets/logos/teams/houston-rockets.svg'],
-  ['IND', 'assets/logos/teams/indiana-pacers.svg'],
-  ['LAC', 'assets/logos/teams/los-angeles-clippers.svg'],
-  ['LAL', 'assets/logos/teams/los-angeles-lakers.svg'],
-  ['MEM', 'assets/logos/teams/memphis-grizzlies.svg'],
-  ['MIA', 'assets/logos/teams/miami-heat.svg'],
-  ['MIL', 'assets/logos/teams/milwaukee-bucks.svg'],
-  ['MIN', 'assets/logos/teams/minnesota-timberwolves.svg'],
-  ['NOP', 'assets/logos/teams/new-orleans-pelicans.svg'],
-  ['NOH', 'assets/logos/teams/new-orleans-pelicans.svg'],
-  ['NYK', 'assets/logos/teams/new-york-knicks.svg'],
-  ['OKC', 'assets/logos/teams/oklahoma-city-thunder.svg'],
-  ['ORL', 'assets/logos/teams/orlando-magic.svg'],
-  ['PHI', 'assets/logos/teams/philadelphia-76ers.svg'],
-  ['PHL', 'assets/logos/teams/philadelphia-76ers.svg'],
-  ['PHX', 'assets/logos/teams/phoenix-suns.svg'],
-  ['POR', 'assets/logos/teams/portland-trail-blazers.svg'],
-  ['SAC', 'assets/logos/teams/sacramento-kings.svg'],
-  ['SAS', 'assets/logos/teams/san-antonio-spurs.svg'],
-  ['SA', 'assets/logos/teams/san-antonio-spurs.svg'],
-  ['TOR', 'assets/logos/teams/toronto-raptors.svg'],
-  ['UTA', 'assets/logos/teams/utah-jazz.svg'],
-  ['WAS', 'assets/logos/teams/washington-wizards.svg'],
-  ['WSH', 'assets/logos/teams/washington-wizards.svg'],
-]);
+function normalize(value) {
+  return typeof value === 'string'
+    ? value
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/&/g, ' and ')
+        .replace(/[^a-z0-9\s]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+    : '';
+}
 
-function normalizeName(value) {
-  return typeof value === 'string' ? value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim() : '';
+function tokenize(value) {
+  const norm = normalize(value);
+  if (!norm) return [];
+  return norm.split(' ').filter(token => token && !stopwords.has(token));
+}
+
+function slugFromTokens(tokens) {
+  return tokens.join('-');
+}
+
+function getEntry(slug) {
+  const alias = NCAA_LOGO_ALIASES[slug];
+  if (alias && logoIndex.has(alias)) return logoIndex.get(alias);
+  return logoIndex.get(slug);
+}
+
+function bestMatch(tokens) {
+  if (!tokens.length) return undefined;
+  const tokenSet = new Set(tokens);
+  let best = null;
+  let bestScore = 0;
+  for (const entry of NCAA_LOGOS) {
+    let matches = 0;
+    for (const token of entry.tokens) {
+      if (tokenSet.has(token)) matches += 1;
+    }
+    if (!matches) continue;
+    const coverage = matches / entry.tokens.length;
+    if (coverage < 0.6) {
+      if (!(coverage > 0.4 && matches >= 2)) continue;
+    }
+    if (coverage > bestScore) {
+      bestScore = coverage;
+      best = entry;
+      continue;
+    }
+    if (coverage === bestScore && best) {
+      if (entry.tokens.length < best.tokens.length) {
+        best = entry;
+      } else if (entry.tokens.length === best.tokens.length && entry.name < best.name) {
+        best = entry;
+      }
+    }
+  }
+  return best || undefined;
+}
+
+function resolveLogo(value) {
+  const tokens = tokenize(value);
+  if (!tokens.length) return undefined;
+  const slug = slugFromTokens(tokens);
+  const direct = getEntry(slug);
+  if (direct) return direct.path;
+  const entry = bestMatch(tokens);
+  return entry ? entry.path : undefined;
 }
 
 export function getTeamLogo(identifier) {
-  if (!identifier) {
-    return fallbackLogo;
+  if (!identifier) return fallbackLogo;
+  const candidates = [];
+  if (Array.isArray(identifier)) {
+    candidates.push(...identifier);
+  } else {
+    candidates.push(identifier);
   }
-  const normalized = normalizeName(identifier);
-  if (normalized && teamLogoLookup.has(normalized)) {
-    return teamLogoLookup.get(normalized);
-  }
-  const abbreviation = typeof identifier === 'string' ? identifier.toUpperCase().replace(/[^A-Z]/g, '') : '';
-  if (abbreviation && abbreviationLookup.has(abbreviation)) {
-    return abbreviationLookup.get(abbreviation);
+  for (const value of candidates) {
+    const logo = resolveLogo(value);
+    if (logo) return logo;
   }
   return fallbackLogo;
 }
@@ -99,7 +92,7 @@ export function getTeamLogo(identifier) {
 export function createTeamLogo(identifier, className = 'team-logo') {
   const logo = document.createElement('img');
   logo.src = getTeamLogo(identifier);
-  logo.alt = identifier ? `${identifier} logo` : 'NBA logo';
+  logo.alt = identifier ? `${identifier} logo` : 'NCAA logo';
   logo.loading = 'lazy';
   logo.decoding = 'async';
   if (className) {
