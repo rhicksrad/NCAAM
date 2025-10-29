@@ -4,9 +4,9 @@
   <title>Not found · NCAA Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root{--fg:#111;--muted:#666;--border:#e5e7eb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans";}
-    body{margin:0;color:var(--fg)}
-    .container{margin:1.5rem}
+    :root{--fg:#111;--muted:#666;--border:#e5e7eb;--basketball-texture:url('/assets/textures/basketball-texture.svg');font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans";}
+    body{margin:0;color:var(--fg);min-height:100vh;background-color:#3b1504;background-image:radial-gradient(circle at 24% 22%,rgba(255,213,168,0.92) 0%,rgba(247,130,34,0.82) 48%,rgba(128,46,6,0.76) 100%),radial-gradient(circle at 78% 84%,rgba(255,255,255,0.14) 0%,rgba(41,10,0,0.56) 78%),var(--basketball-texture);background-repeat:no-repeat,no-repeat,repeat;background-size:1400px 1400px,1200px 1200px,260px 260px;background-position:center,center,center;background-blend-mode:screen,multiply,normal;display:flex;align-items:flex-start;justify-content:center;}
+    .container{margin:2.5rem;background-color:rgba(255,255,255,0.88);border:1px solid rgba(17,17,17,0.08);border-radius:18px;box-shadow:0 24px 60px -30px rgba(17,17,17,0.45);padding:1.75rem 2rem;backdrop-filter:blur(6px);max-width:720px;width:calc(100% - 3rem);}
     .title{margin:0 0 1rem 0;font-size:1.75rem}
     .nav{margin:.5rem 0 1rem 0;padding:.5rem 0;border-bottom:1px solid var(--border)}
     .error{color:#b00020;white-space:pre-wrap}

@@ -16,6 +16,7 @@
   --sans: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans';
   --shadow-lg: 0 28px 60px -35px rgba(15, 23, 42, 0.55);
   --shadow-sm: 0 18px 40px -30px rgba(15, 23, 42, 0.4);
+  --basketball-texture: url('/assets/textures/basketball-texture.svg');
 }
 
 * {
@@ -27,7 +28,15 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: radial-gradient(circle at top left, #fef9f5 0%, var(--bg-accent) 50%, var(--bg) 100%);
+  background-color: #4d1f04;
+  background-image:
+    radial-gradient(circle at 25% 18%, rgba(255, 219, 180, 0.95) 0%, rgba(255, 148, 52, 0.85) 46%, rgba(148, 55, 6, 0.78) 100%),
+    radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.16) 0%, rgba(38, 10, 0, 0.62) 78%),
+    var(--basketball-texture);
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: 1600px 1600px, 1400px 1400px, 280px 280px;
+  background-position: center, center, center;
+  background-blend-mode: screen, multiply, normal;
   color: var(--fg);
   font-family: var(--sans);
   line-height: 1.55;
