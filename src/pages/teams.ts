@@ -4,6 +4,7 @@ import type { Team } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { teamLink, teamLogo } from '../lib/ui/components';
+import { emptyState, errorCard } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 function skeletonList(): HTMLElement {
@@ -16,13 +17,9 @@ function skeletonList(): HTMLElement {
   return wrap;
 }
 
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
-}
-
 function renderTeams(container: HTMLElement, list: Team[]): void {
   if (!list.length) {
-    container.replaceChildren(el('p', { class: 'empty-state' }, 'No teams match your search.'));
+    container.replaceChildren(emptyState('No teams match your search.'));
     return;
   }
   const ul = el('ul', { class: 'team-list' });

@@ -4,28 +4,12 @@ import type { Game, Player, StandingGroup } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { gamesList, teamLogo } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 function getTeamIdFromHash(): string | null {
   const hash = window.location.hash.slice(1).trim();
   return hash || null;
-}
-
-function skeleton(rows = 6): HTMLElement {
-  const wrap = el('div', { class: 'rows' });
-  for (let i = 0; i < rows; i += 1) {
-    wrap.appendChild(el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    ));
-  }
-  return wrap;
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
 }
 
 function playerName(player: Player): string {
@@ -100,9 +84,9 @@ async function render() {
     return;
   }
 
-  const rosterSection = section('Roster', skeleton(8));
-  const statsSection = section('Season Snapshot', skeleton(1));
-  const scheduleSection = section('Next Game', skeleton(1));
+  const rosterSection = section('Roster', skeletonRows(8));
+  const statsSection = section('Season Snapshot', skeletonRows(1));
+  const scheduleSection = section('Next Game', skeletonRows(1));
 
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Team`),
@@ -160,7 +144,7 @@ async function render() {
     if (upcoming) {
       scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Next Game'), gamesList([upcoming]));
     } else {
-      scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Next Game'), el('p', { class: 'empty-state' }, 'No upcoming games found in the next two weeks.'));
+      scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Next Game'), emptyState('No upcoming games found in the next two weeks.'));
     }
   } catch (err) {
     rosterSection.replaceChildren(el('h2', { class: 'section-title' }, 'Roster'), errorCard(`Unable to load team: ${err instanceof Error ? err.message : String(err)}`));

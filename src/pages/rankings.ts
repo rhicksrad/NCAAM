@@ -4,28 +4,12 @@ import type { Poll } from '../lib/sdk/types';
 import { el, mount } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { pollBlock } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
-
-function skeleton(count: number): HTMLElement {
-  const wrap = el('div', { class: 'rows' });
-  for (let i = 0; i < count; i += 1) {
-    wrap.appendChild(el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    ));
-  }
-  return wrap;
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
-}
 
 function renderPolls(container: HTMLElement, polls: Poll[]) {
   if (!polls.length) {
-    container.replaceChildren(el('p', { class: 'empty-state' }, 'No rankings available for this season yet.'));
+    container.replaceChildren(emptyState('No rankings available for this season yet.'));
     return;
   }
   container.replaceChildren(...polls.map(poll => pollBlock(poll)));
@@ -35,7 +19,7 @@ async function render() {
   const root = document.getElementById('app');
   if (!root) return;
 
-  const content = el('div', { class: 'rows' }, skeleton(3));
+  const content = skeletonRows(3);
   const shell = el('div', { class: 'container' },
     el('h1', { class: 'title' }, `${BRAND.siteTitle} — Rankings`),
     nav(),

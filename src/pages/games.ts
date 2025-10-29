@@ -4,6 +4,7 @@ import type { Game } from '../lib/sdk/types';
 import { el, mount, section } from '../lib/ui/dom';
 import { nav, footer } from '../lib/ui/nav';
 import { gamesList } from '../lib/ui/components';
+import { emptyState, errorCard, skeletonRows } from '../lib/ui/feedback';
 import '../../public/styles/site.css';
 
 interface PageState {
@@ -61,23 +62,6 @@ function pushState(state: PageState) {
   persistState(state);
 }
 
-function skeleton(count: number): HTMLElement {
-  const wrap = el('div', { class: 'rows' });
-  for (let i = 0; i < count; i += 1) {
-    wrap.appendChild(el('div', { class: 'skeleton-row' },
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' }),
-      el('span', { class: 'skeleton' })
-    ));
-  }
-  return wrap;
-}
-
-function errorCard(message: string): HTMLElement {
-  return el('div', { class: 'error-card' }, message);
-}
-
 function filterGames(games: Game[], state: PageState, top25Ids: Set<string>): Game[] {
   let filtered = games;
   if (state.filter) {
@@ -122,8 +106,6 @@ async function render() {
   if (!root) return;
 
   let state = parseState();
-  const title = el('h1', { class: 'title' }, `${BRAND.siteTitle} — Games`);
-
   const dateLabel = el('div', { class: 'controls-date' }, formatDateLabel(state.date));
   const prevBtn = el('button', { type: 'button' }, 'Prev Day');
   const todayBtn = el('button', { type: 'button' }, 'Today');
@@ -143,7 +125,9 @@ async function render() {
     top25Toggle
   );
 
-  const listContainer = el('div', { class: 'rows' }, skeleton(6));
+  const title = el('h1', { class: 'title' }, `${BRAND.siteTitle} — Games`);
+
+  const listContainer = skeletonRows(6);
   const scheduleSection = section('Scoreboard', listContainer);
 
   const shell = el('div', { class: 'container' }, title, nav(), controls, scheduleSection, footer());
@@ -153,14 +137,14 @@ async function render() {
   const top25Ids = await buildTop25Ids();
 
   async function loadGames() {
-    scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Scoreboard'), skeleton(6));
+    scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Scoreboard'), skeletonRows(6));
     try {
       const games = await scoreboard(state.date);
       const filtered = filterGames(games, state, top25Ids);
       if (filtered.length === 0) {
         scheduleSection.replaceChildren(
           el('h2', { class: 'section-title' }, 'Scoreboard'),
-          el('p', { class: 'empty-state' }, 'No games match the current filters.')
+          emptyState('No games match the current filters.')
         );
       } else {
         scheduleSection.replaceChildren(el('h2', { class: 'section-title' }, 'Scoreboard'), gamesList(filtered));
