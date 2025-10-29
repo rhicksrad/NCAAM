@@ -1,8 +1,8 @@
-const DEFAULT_BASE = (() => {
+const DEFAULT_ORIGIN = (() => {
   if (typeof window !== 'undefined' && typeof (window as unknown as Record<string, unknown>).NCAAM_API_BASE === 'string') {
     return String((window as unknown as Record<string, unknown>).NCAAM_API_BASE);
   }
-  return 'https://ncaam.hicksrch.workers.dev/v1';
+  return 'https://ncaam.hicksrch.workers.dev';
 })();
 
 const RETRY_STATUSES = new Set([429, 500, 502, 503, 504]);
@@ -16,9 +16,16 @@ export interface FetchOptions {
   signal?: AbortSignal;
 }
 
-function buildUrl(path: string, params?: FetchOptions['params']): string {
-  const base = DEFAULT_BASE.endsWith('/') ? DEFAULT_BASE.slice(0, -1) : DEFAULT_BASE;
-  const url = new URL(path.startsWith('/') ? path : `/${path}`, base);
+function normalizePath(path: string): string {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  if (normalized === '/diag' || normalized.startsWith('/diag')) return normalized;
+  if (normalized === '/v1' || normalized.startsWith('/v1/')) return normalized;
+  return `/v1${normalized}`;
+}
+
+export function buildApiUrl(path: string, params?: FetchOptions['params']): string {
+  const origin = DEFAULT_ORIGIN.endsWith('/') ? DEFAULT_ORIGIN.slice(0, -1) : DEFAULT_ORIGIN;
+  const url = new URL(`${origin}${normalizePath(path)}`);
   if (params) {
     for (const [key, value] of Object.entries(params)) {
       if (value === undefined || value === null) continue;
@@ -33,7 +40,7 @@ function buildUrl(path: string, params?: FetchOptions['params']): string {
 }
 
 export async function fetchJSON<T = unknown>(path: string, options: FetchOptions = {}): Promise<T> {
-  const url = buildUrl(path, options.params);
+  const url = buildApiUrl(path, options.params);
   const headers: Record<string, string> = { Accept: 'application/json' };
   let attempt = 0;
   const maxAttempts = 3;
@@ -65,4 +72,4 @@ export async function fetchJSON<T = unknown>(path: string, options: FetchOptions
   }
 }
 
-export { DEFAULT_BASE as API_BASE };
+export { DEFAULT_ORIGIN as API_BASE };
