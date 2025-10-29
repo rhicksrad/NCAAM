@@ -24,6 +24,7 @@
   --content-max: 1180px;
   background-color: var(--surface-soft);
   color: var(--text-strong);
+  --basketball-texture: url('/assets/textures/basketball-texture.svg');
 }
 
 * { box-sizing: border-box; }
@@ -63,6 +64,14 @@ body {
   position: relative;
   z-index: 0;
   color: var(--text-strong);
+  background-color: #4d1f04;
+  background-image:
+    radial-gradient(circle at 24% 20%, rgba(255, 210, 160, 0.9) 0%, rgba(250, 140, 42, 0.82) 45%, rgba(141, 48, 6, 0.76) 100%),
+    radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.15) 0%, rgba(41, 10, 0, 0.55) 78%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 1500px 1500px, 1300px 1300px;
+  background-position: center, center;
+  background-blend-mode: screen, multiply;
 }
 
 body::before,
@@ -75,12 +84,13 @@ body::after {
 }
 
 body::before {
-  background: var(--court-floor-base);
-  background-image: var(--court-floor-pattern);
-  background-size: 720px 720px;
-  background-repeat: repeat;
-  background-position: center;
-  filter: saturate(1.05) brightness(1.02);
+  background:
+    linear-gradient(135deg, rgba(255, 173, 66, 0.3), rgba(124, 41, 4, 0.42)),
+    var(--basketball-texture);
+  background-size: 1400px 1400px, 260px 260px;
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  opacity: 0.92;
 }
 
 body::after {
