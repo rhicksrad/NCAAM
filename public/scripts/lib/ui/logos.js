@@ -1,3 +1,4 @@
+import { BASE } from "../config.js";
 import { NCAA_LOGOS, NCAA_LOGO_ALIASES, NCAA_LOGO_INDEX, } from "../data/ncaa-logo-map.js";
 const STOPWORDS = new Set([
     "and",
@@ -119,7 +120,12 @@ export function getTeamLogo(team) {
 }
 export function getTeamLogoUrl(team) {
     const logo = getTeamLogo(team);
-    return logo ? `/${logo.path}` : undefined;
+    if (!logo) {
+        return undefined;
+    }
+    const trimmedPath = logo.path.replace(/^\/+/, "");
+    const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
+    return `${base}${trimmedPath}`;
 }
 export function getTeamMonogram(team) {
     if (team.abbreviation) {
