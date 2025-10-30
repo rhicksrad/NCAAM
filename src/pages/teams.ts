@@ -14,6 +14,48 @@ type TeamLocation = {
   elevation_ft?: number | null;
 };
 
+type TeamSummary = {
+  team: string;
+  seasons: number;
+  firstYear: number | null;
+  lastYear: number | null;
+  conferences: string[];
+  averages: {
+    wins: number | null;
+    losses: number | null;
+    adjO: number | null;
+    adjD: number | null;
+    barthag: number | null;
+    tempo: number | null;
+  };
+  postseason: {
+    appearances: number;
+    bestFinish: string | null;
+  };
+  bestSeason: {
+    year: number | null;
+    wins: number | null;
+    losses: number | null;
+    postseason: string | null;
+    seed: number | null;
+    wab: number | null;
+    adjO: number | null;
+    adjD: number | null;
+    barthag: number | null;
+  } | null;
+  recentSeason: {
+    year: number | null;
+    wins: number | null;
+    losses: number | null;
+    postseason: string | null;
+    seed: number | null;
+    wab: number | null;
+    adjO: number | null;
+    adjD: number | null;
+    barthag: number | null;
+  } | null;
+};
+
 type TeamCardData = Team & {
   conference: string;
   logoUrl?: string;
@@ -21,6 +63,7 @@ type TeamCardData = Team & {
   accentSecondary: string;
   monogram: string;
   location?: TeamLocation;
+  stats?: TeamSummary;
 };
 
 const app = document.getElementById("app")!;
@@ -48,7 +91,7 @@ const mapCount = app.querySelector(".teams-map__count") as HTMLElement | null;
 
 const dataUrl = (path: string) => new URL(path, import.meta.url).toString();
 
-const [teamsResponse, conferenceMap, locationRecords] = await Promise.all([
+const [teamsResponse, conferenceMap, locationRecords, teamSummaries] = await Promise.all([
   NCAAM.teams(1, 400),
   getConferenceMap(),
   fetch(dataUrl("../../data/team_home_locations.json"))
@@ -57,6 +100,12 @@ const [teamsResponse, conferenceMap, locationRecords] = await Promise.all([
       return res.json() as Promise<TeamLocation[]>;
     })
     .catch(() => []),
+  fetch(dataUrl("../../data/cbb/cbb-summary.json"))
+    .then(res => {
+      if (!res.ok) throw new Error(`Failed to load team stat summaries (${res.status})`);
+      return res.json() as Promise<Record<string, TeamSummary>>;
+    })
+    .catch(() => ({} as Record<string, TeamSummary>)),
 ]);
 
 const locationTransforms = [
@@ -152,6 +201,17 @@ for (const record of locationRecords) {
 }
 const locationKeys = Array.from(locationIndex.keys());
 
+const summaryIndex = new Map<string, TeamSummary>();
+for (const [label, summary] of Object.entries(teamSummaries)) {
+  const keys = buildLocationKeys(label);
+  for (const key of keys) {
+    if (!summaryIndex.has(key)) {
+      summaryIndex.set(key, summary);
+    }
+  }
+}
+const summaryKeys = Array.from(summaryIndex.keys());
+
 const data: TeamCardData[] = teamsResponse.data.map(team => {
   const conference = team.conference ?? (() => {
     const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
@@ -160,6 +220,7 @@ const data: TeamCardData[] = teamsResponse.data.map(team => {
   const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
   const keys = buildTeamKeys(team);
   let location: TeamLocation | undefined;
+  let stats: TeamSummary | undefined;
   for (const key of keys) {
     const hit = locationIndex.get(key);
     if (hit) {
@@ -176,6 +237,22 @@ const data: TeamCardData[] = teamsResponse.data.map(team => {
       }
     }
   }
+  for (const key of keys) {
+    const hit = summaryIndex.get(key);
+    if (hit) {
+      stats = hit;
+      break;
+    }
+  }
+  if (!stats) {
+    for (const key of keys) {
+      const fallbackKey = summaryKeys.find(summaryKey => summaryKey.endsWith(key) || key.endsWith(summaryKey));
+      if (fallbackKey) {
+        stats = summaryIndex.get(fallbackKey);
+        break;
+      }
+    }
+  }
   return {
     ...team,
     conference: conference ?? "N/A",
@@ -184,8 +261,139 @@ const data: TeamCardData[] = teamsResponse.data.map(team => {
     accentSecondary,
     monogram: getTeamMonogram(team),
     location,
+    stats,
   };
 });
+
+const integerFormatter = new Intl.NumberFormat();
+const oneDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const twoDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const threeDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+
+function formatNumber(value: number | null | undefined, formatter: Intl.NumberFormat) {
+  return value == null ? null : formatter.format(value);
+}
+
+function formatRecord(wins: number | null | undefined, losses: number | null | undefined, { decimals = 0 } = {}) {
+  const formatter = decimals > 0 ? oneDecimalFormatter : integerFormatter;
+  const winsLabel = wins == null ? null : formatter.format(wins);
+  const lossesLabel = losses == null ? null : formatter.format(losses);
+  if (winsLabel && lossesLabel) {
+    return `${winsLabel}-${lossesLabel}`;
+  }
+  if (winsLabel) {
+    return `${winsLabel}-?`;
+  }
+  if (lossesLabel) {
+    return `?- ${lossesLabel}`;
+  }
+  return null;
+}
+
+function formatSeasonRange(stats?: TeamSummary) {
+  if (!stats) {
+    return null;
+  }
+  const { firstYear, lastYear, seasons } = stats;
+  let label: string | null = null;
+  if (firstYear && lastYear && firstYear !== lastYear) {
+    label = `${firstYear}–${lastYear}`;
+  } else if (firstYear) {
+    label = String(firstYear);
+  } else if (lastYear) {
+    label = String(lastYear);
+  }
+  if (label && seasons) {
+    return `${label} · ${integerFormatter.format(seasons)} season${seasons === 1 ? "" : "s"}`;
+  }
+  if (seasons) {
+    return `${integerFormatter.format(seasons)} season${seasons === 1 ? "" : "s"}`;
+  }
+  return label;
+}
+
+type SeasonSnapshot = TeamSummary["bestSeason"];
+
+function formatSeasonSummary(season: SeasonSnapshot) {
+  if (!season) {
+    return null;
+  }
+  const parts: string[] = [];
+  if (season.year != null) {
+    parts.push(String(season.year));
+  }
+  const record = formatRecord(season.wins, season.losses);
+  if (record) {
+    parts.push(record);
+  }
+  if (season.postseason) {
+    parts.push(season.postseason);
+  }
+  if (season.seed != null) {
+    parts.push(`Seed ${integerFormatter.format(season.seed)}`);
+  }
+  if (season.wab != null) {
+    const wab = formatNumber(season.wab, twoDecimalFormatter);
+    if (wab) {
+      parts.push(`${wab} WAB`);
+    }
+  }
+  if (season.barthag != null) {
+    const barthag = formatNumber(season.barthag, threeDecimalFormatter);
+    if (barthag) {
+      parts.push(`${barthag} BARTHAG`);
+    }
+  }
+  return parts.join(" · ");
+}
+
+function renderStat(label: string, value: string | null | undefined) {
+  const display = typeof value === "string" ? value.trim() : value;
+  const content = display != null && display !== "" ? display : "—";
+  return `<div class="team-card__stat"><dt>${label}</dt><dd>${content}</dd></div>`;
+}
+
+function renderTeamStats(team: TeamCardData) {
+  const stats = team.stats;
+  if (!stats) {
+    return `<p class="team-card__stats team-card__stats--empty">No archived efficiency data for this program.</p>`;
+  }
+  const seasons = formatSeasonRange(stats);
+  const averageRecord = formatRecord(stats.averages.wins, stats.averages.losses, { decimals: 1 });
+  const efficiencyParts: string[] = [];
+  const adjO = formatNumber(stats.averages.adjO, oneDecimalFormatter);
+  const adjD = formatNumber(stats.averages.adjD, oneDecimalFormatter);
+  if (adjO && adjD) {
+    efficiencyParts.push(`${adjO} / ${adjD} AdjO·AdjD`);
+  } else if (adjO) {
+    efficiencyParts.push(`${adjO} AdjO`);
+  } else if (adjD) {
+    efficiencyParts.push(`${adjD} AdjD`);
+  }
+  const barthag = formatNumber(stats.averages.barthag, threeDecimalFormatter);
+  if (barthag) {
+    efficiencyParts.push(`${barthag} BARTHAG`);
+  }
+  const tempo = formatNumber(stats.averages.tempo, oneDecimalFormatter);
+  if (tempo) {
+    efficiencyParts.push(`${tempo} tempo`);
+  }
+  const efficiency = efficiencyParts.join(" · ") || null;
+  const postseasonSummary = stats.postseason.appearances > 0
+    ? `${integerFormatter.format(stats.postseason.appearances)} NCAA bid${stats.postseason.appearances === 1 ? "" : "s"}${stats.postseason.bestFinish ? ` · Best: ${stats.postseason.bestFinish}` : ""}`
+    : (stats.postseason.bestFinish ? `Best finish: ${stats.postseason.bestFinish}` : null);
+  const bestSeason = formatSeasonSummary(stats.bestSeason);
+  const recentSeason = formatSeasonSummary(stats.recentSeason);
+
+  return `<dl class="team-card__stats">
+    ${renderStat("Seasons tracked", seasons)}
+    ${renderStat("Average record", averageRecord)}
+    ${renderStat("Average efficiency", efficiency)}
+    ${renderStat("Tournament resume", postseasonSummary)}
+    ${renderStat("Best season", bestSeason)}
+    ${renderStat("Most recent season", recentSeason)}
+  </dl>`;
+}
 
 const teamsWithLocations = data.filter(team => team.location);
 if (mapCount) {
@@ -265,11 +473,13 @@ function render(q = "") {
           ? `<img class="team-card__logo-image" src="${team.logoUrl}" alt="${team.full_name} logo" loading="lazy" decoding="async">`
           : `<span class="team-card__logo-placeholder" aria-hidden="true" style="--team-accent:${team.accentPrimary}; --team-accent-secondary:${team.accentSecondary};">${team.monogram}</span>`;
         const meta = team.abbreviation ? `${team.conference} · ${team.abbreviation}` : team.conference;
+        const stats = renderTeamStats(team);
         return `<article class="card team-card" tabindex="-1" data-team-id="${team.id}" id="team-${team.id}">
   <div class="team-card__logo">${logo}</div>
   <div class="team-card__body">
     <strong class="team-card__name">${team.full_name}</strong>
     <span class="team-card__meta">${meta}</span>
+    ${stats}
   </div>
 </article>`;
       })
