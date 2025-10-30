@@ -98,12 +98,18 @@ const emptyState = emptyStateEl;
 
 const rosterState = new Map<number, RosterState>();
 
-const dataUrl = (path: string) => new URL(path, import.meta.url).toString();
+const assetUrl = (path: string) => {
+  const base = typeof document !== "undefined" ? document.baseURI : undefined;
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const root = base ?? origin ?? "";
+  const normalisedPath = path.startsWith("/") ? path.slice(1) : path;
+  return new URL(normalisedPath, root).toString();
+};
 
 const [conferenceMap, teamsResponse, statsIndex] = await Promise.all([
   getConferenceMap(),
   NCAAM.teams(1, 400),
-  fetch(dataUrl("../../data/player_stats.json"))
+  fetch(assetUrl("data/player_stats.json"))
     .then(res => {
       if (!res.ok) throw new Error(`Failed to load player stats index (${res.status})`);
       return res.json() as Promise<PlayerStatsIndex>;
@@ -361,15 +367,11 @@ function renderPlayerStatsSection(player: Player): HTMLElement {
 }
 
 function createStatEntry(label: string, value: string): HTMLElement {
-  const stat = document.createElement("div");
+  const stat = document.createElement("span");
   stat.className = "player-card__stat";
-  const statValue = document.createElement("span");
-  statValue.className = "player-card__stat-value";
-  statValue.textContent = value;
-  const statLabel = document.createElement("span");
-  statLabel.className = "player-card__stat-label";
-  statLabel.textContent = label;
-  stat.append(statValue, statLabel);
+  stat.dataset.label = label;
+  stat.textContent = value;
+  stat.setAttribute("aria-label", `${label}: ${value}`);
   return stat;
 }
 
