@@ -17,6 +17,8 @@ html {
 
 html[data-theme="dark"] {
   color-scheme: dark;
+  --color-ink: #F4F7FF;
+  --color-ink-2: #DDE5FA;
   --color-paper: #0B1024;
   --color-cream: #0B1024;
   --color-slate: #111827;
@@ -164,5 +166,5 @@ main > h1:first-child {
 }
 
 [data-theme="dark"] body {
-  color: color-mix(in oklab, white 92%, var(--color-ink) 8%);
+  color: var(--color-ink);
 }

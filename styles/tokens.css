@@ -29,6 +29,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-ink: #F4F7FF;
+    --color-ink-2: #DDE5FA;
     --color-paper: #0B1024;
     --color-cream: #0B1024;
     --color-slate: #141A2B;
