@@ -1,12 +1,50 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teams</title>
-<link rel="stylesheet" href="./styles.css">
-<script>window.NCAAM_WORKER_URL = "https://ncaam.hicksrch.workers.dev/v1";</script>
-</head><body>
-<header id="site-nav"></header>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teams · NCAAM Hub</title>
+<meta name="description" content="Browse every Division I program with conference groupings and visual identities.">
+<meta property="og:title" content="Teams · NCAAM Hub" />
+<meta property="og:description" content="Browse every Division I program with conference groupings and visual identities." />
+<meta property="og:image" content="./og-base.svg" />
+<meta name="theme-color" content="#0B1024" />
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="stylesheet" href="./styles/index.css">
+<script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="./index.html">
+      <span class="site-brand__title">NCAAM Hub</span>
+      <span class="site-brand__sub">Men's College Basketball</span>
+    </a>
+    <div class="site-header__tools">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5A6.5 6.5 0 0 1 12 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32 2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32 2.12-2.12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"></path>
+        </svg>
+        <span>Theme</span>
+      </button>
+    </div>
+  </div>
+  <div class="container site-header__nav">
+    <div id="site-nav"></div>
+  </div>
+</header>
+<section class="hero hero--compact">
+  <div class="container hero__inner">
+    <div class="stack" data-gap="sm">
+      <h1>Teams</h1>
+      <p class="hero__lede">Browse the D-I landscape by conference, colors, and rosters to find your next bracket pick.</p>
+    </div>
+  </div>
+</section>
 <main id="app" class="container"></main>
+<script type="module" src="./scripts/theme-toggle.js"></script>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/teams.js"></script>
-</body></html>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">NCAAM Hub Open Graph Artwork</title>
+  <desc id="desc">Editorial background with NCAA-inspired bracket lines and court shading.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6F3EB" />
+      <stop offset="100%" stop-color="#E9E4D6" />
+    </linearGradient>
+    <linearGradient id="arc-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF6A00" stop-opacity="0.2" />
+    </linearGradient>
+    <pattern id="parquet" patternUnits="userSpaceOnUse" width="48" height="48" patternTransform="rotate(4)">
+      <rect width="48" height="48" fill="none" stroke="#D8D2C5" stroke-width="2" opacity="0.45" />
+      <path d="M0 24h48M24 0v48" stroke="#E3DCCE" stroke-width="3" opacity="0.35" />
+    </pattern>
+    <mask id="fade">
+      <rect width="1200" height="630" fill="url(#arc-glow)" />
+    </mask>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#parquet)" opacity="0.4" />
+  <g stroke="#2B3240" stroke-opacity="0.2" stroke-width="5" fill="none">
+    <path d="M120 120h160v120H120zm200 0h160v120H320zm-80 160h160v120H240zm200 0h160v120H440z" />
+    <path d="M720 120h160v120H720zm200 0h160v120H920zm-80 160h160v120H840zm200 0h160v120H1040z" />
+  </g>
+  <g mask="url(#fade)">
+    <circle cx="180" cy="-60" r="260" fill="#FF6A00" opacity="0.7" />
+    <circle cx="1050" cy="690" r="300" fill="#FF6A00" opacity="0.4" />
+  </g>
+  <g fill="#0B1024">
+    <text x="120" y="330" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-0.02em">NCAAM HUB</text>
+    <text x="120" y="390" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="400" fill="#2B3240">Men's College Basketball Intelligence</text>
+  </g>
+  <path d="M600 510c120 0 210-30 270-90" stroke="#FF6A00" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+</svg>

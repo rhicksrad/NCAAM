@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="court-wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f3eb" />
+      <stop offset="100%" stop-color="#efe7d4" />
+    </linearGradient>
+    <pattern id="parquet" patternUnits="userSpaceOnUse" width="240" height="240" patternTransform="rotate(4 120 120)">
+      <rect width="240" height="240" fill="url(#court-wood)" />
+      <path d="M0 80h240M0 160h240M80 0v240M160 0v240" stroke="#d9ccb8" stroke-width="8" stroke-opacity="0.18" />
+      <path d="M0 0l240 240M240 0L0 240" stroke="#e5d9c4" stroke-width="6" stroke-opacity="0.12" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#parquet)" />
+  <g stroke="#ff6a00" stroke-opacity="0.14" stroke-width="12" fill="none">
+    <circle cx="600" cy="600" r="180" />
+    <path d="M80 280h200v640H80M1120 280H920v640h200" />
+    <path d="M0 600h1200" stroke-width="8" stroke-opacity="0.08" />
+  </g>
+</svg>
