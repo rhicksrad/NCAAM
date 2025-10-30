@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <pattern id="bracket" width="400" height="300" patternUnits="userSpaceOnUse">
+      <path d="M0 40h100v80h160v80h140" stroke="#0b1024" stroke-opacity="0.08" stroke-width="3" fill="none" />
+      <path d="M0 140h160v80h120v80h120" stroke="#0b1024" stroke-opacity="0.05" stroke-width="2" fill="none" />
+      <path d="M400 260h-120v-80h-120v-80h-160" stroke="#0b1024" stroke-opacity="0.08" stroke-width="3" fill="none" />
+      <path d="M400 160h-140v-80h-160v-80h-100" stroke="#0b1024" stroke-opacity="0.05" stroke-width="2" fill="none" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bracket)" />
+</svg>
