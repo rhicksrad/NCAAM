@@ -1,11 +1,11 @@
 :root {
   color-scheme: light dark;
-  --color-ink: #0B1024;
-  --color-ink-2: #111827;
+  --color-ink: #000000;
+  --color-ink-2: #1F2937;
   --color-arc: #FF6A00;
-  --color-cream: #F6F3EB;
-  --color-slate: #2B3240;
-  --color-steel: #93A3B0;
+  --color-cream: #F9FAFB;
+  --color-slate: #334155;
+  --color-steel: #94A3B8;
   --color-paper: #FFFFFF;
   --color-muted: color-mix(in oklab, var(--color-steel) 70%, transparent);
   --color-accent-teal: color-mix(in oklab, #4BA8A2 55%, var(--color-ink) 45%);
@@ -29,14 +29,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-ink: #F4F7FF;
-    --color-ink-2: #DDE5FA;
-    --color-paper: #0B1024;
-    --color-cream: #0B1024;
-    --color-slate: #141A2B;
-    --color-steel: #C2CCD9;
-    --color-muted: color-mix(in oklab, var(--color-steel) 45%, transparent);
-    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.35);
-    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.45), 0 20px 48px rgba(0, 0, 0, 0.45);
+    --color-ink: #FFFFFF;
+    --color-ink-2: #E2E8F0;
+    --color-paper: #050A1A;
+    --color-cream: #050A1A;
+    --color-slate: #0F172A;
+    --color-steel: #94A3B8;
+    --color-muted: color-mix(in oklab, var(--color-steel) 35%, transparent);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.45);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.5), 0 20px 48px rgba(0, 0, 0, 0.55);
   }
 }
