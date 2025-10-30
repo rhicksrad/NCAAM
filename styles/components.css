@@ -672,6 +672,68 @@ html[data-theme="dark"] .teams-map__tooltip {
   letter-spacing: 0.05em;
 }
 
+.player-card__stats {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.player-card__stats-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  font-size: 0.85rem;
+  color: color-mix(in oklab, var(--color-steel) 85%, var(--color-ink) 15%);
+}
+
+.player-card__stats-header strong {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.player-card__stats-header span {
+  font-variant-numeric: tabular-nums;
+}
+
+.player-card__stats-grid {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+}
+
+.player-card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--color-cream) 90%, transparent);
+}
+
+.player-card__stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--color-ink) 85%, var(--color-steel) 15%);
+}
+
+.player-card__stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--color-steel) 80%, var(--color-ink) 20%);
+}
+
+.player-card__stats-empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: color-mix(in oklab, var(--color-steel) 82%, var(--color-ink) 18%);
+}
+
 [data-theme="dark"] .site-header {
   background: color-mix(in oklab, var(--color-slate) 75%, transparent);
   border-bottom-color: color-mix(in oklab, white 7%, transparent);
@@ -697,6 +759,26 @@ html[data-theme="dark"] .teams-map__tooltip {
   background: color-mix(in oklab, var(--color-slate) 80%, transparent);
   border-color: color-mix(in oklab, white 12%, transparent);
   color: color-mix(in oklab, white 90%, transparent);
+}
+
+[data-theme="dark"] .player-card__stats {
+  border-top-color: color-mix(in oklab, white 14%, transparent);
+}
+
+[data-theme="dark"] .player-card__stat {
+  background: color-mix(in oklab, var(--color-slate) 68%, transparent);
+}
+
+[data-theme="dark"] .player-card__stat-value {
+  color: color-mix(in oklab, white 88%, transparent);
+}
+
+[data-theme="dark"] .player-card__stat-label {
+  color: color-mix(in oklab, white 72%, transparent);
+}
+
+[data-theme="dark"] .player-card__stats-empty {
+  color: color-mix(in oklab, white 75%, transparent);
 }
 
 [data-theme="dark"] .conference-groups .count {

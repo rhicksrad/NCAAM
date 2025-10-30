@@ -55,10 +55,32 @@ const searchInput = searchInputEl;
 const rosterGroups = rosterGroupsEl;
 const emptyState = emptyStateEl;
 const rosterState = new Map();
-const [conferenceMap, teamsResponse] = await Promise.all([
+const dataUrl = (path) => new URL(path, import.meta.url).toString();
+const [conferenceMap, teamsResponse, statsIndex] = await Promise.all([
     getConferenceMap(),
     NCAAM.teams(1, 400),
+    fetch(dataUrl("../../data/player_stats.json"))
+        .then(res => {
+        if (!res.ok)
+            throw new Error(`Failed to load player stats index (${res.status})`);
+        return res.json();
+    })
+        .catch(error => {
+        console.warn("Unable to load player stats index", error);
+        return null;
+    }),
 ]);
+const playerStatsById = new Map();
+let playerStatsSeasonLabel = undefined;
+if (statsIndex && statsIndex.players) {
+    playerStatsSeasonLabel = statsIndex.season_label;
+    for (const [key, value] of Object.entries(statsIndex.players)) {
+        const id = Number(key);
+        if (!Number.isFinite(id))
+            continue;
+        playerStatsById.set(id, value);
+    }
+}
 const seenTeams = new Map();
 for (const team of teamsResponse.data) {
     if (!team.conference_id)
@@ -203,7 +225,8 @@ function renderPlayerCard(player) {
     meta.append(createMetaRow("Position", player.position ?? "—"));
     meta.append(createMetaRow("Height", player.height ?? "—"));
     meta.append(createMetaRow("Weight", player.weight ?? "—"));
-    card.append(header, meta);
+    const statsSection = renderPlayerStatsSection(player);
+    card.append(header, meta, statsSection);
     return card;
 }
 function createMetaRow(label, value) {
@@ -212,11 +235,94 @@ function createMetaRow(label, value) {
     row.innerHTML = `<dt>${label}</dt><dd>${value}</dd>`;
     return row;
 }
+function renderPlayerStatsSection(player) {
+    const section = document.createElement("section");
+    section.className = "player-card__stats";
+    if (playerStatsById.size === 0) {
+        section.innerHTML = `<p class="player-card__stats-empty">Season averages are loading.</p>`;
+        return section;
+    }
+    const stats = playerStatsById.get(player.id);
+    if (!stats || stats.games_played <= 0) {
+        section.innerHTML = `<p class="player-card__stats-empty">No stats available for this player.</p>`;
+        return section;
+    }
+    const header = document.createElement("div");
+    header.className = "player-card__stats-header";
+    const title = document.createElement("strong");
+    title.textContent = playerStatsSeasonLabel ?? "Season averages";
+    header.append(title);
+    const summary = document.createElement("span");
+    summary.textContent = `${stats.games_played} GP`;
+    header.append(summary);
+    const grid = document.createElement("div");
+    grid.className = "player-card__stats-grid";
+    const statsList = [
+        ["MIN", formatMinutes(stats.avg_seconds)],
+        ["PTS", formatAverage(stats.pts)],
+        ["REB", formatAverage(stats.reb)],
+        ["AST", formatAverage(stats.ast)],
+        ["STL", formatAverage(stats.stl)],
+        ["BLK", formatAverage(stats.blk)],
+        ["TOV", formatAverage(stats.tov)],
+        ["FG%", formatPercent(stats.fg_pct)],
+        ["3P%", formatPercent(stats.fg3_pct)],
+        ["FT%", formatPercent(stats.ft_pct)],
+    ];
+    for (const [label, value] of statsList) {
+        grid.append(createStatEntry(label, value));
+    }
+    section.append(header, grid);
+    return section;
+}
+function createStatEntry(label, value) {
+    const stat = document.createElement("div");
+    stat.className = "player-card__stat";
+    const statValue = document.createElement("span");
+    statValue.className = "player-card__stat-value";
+    statValue.textContent = value;
+    const statLabel = document.createElement("span");
+    statLabel.className = "player-card__stat-label";
+    statLabel.textContent = label;
+    stat.append(statValue, statLabel);
+    return stat;
+}
 function formatJersey(value) {
     if (!value)
         return "—";
     const trimmed = value.trim();
     return trimmed ? `#${trimmed.replace(/^#/, "")}` : "—";
+}
+function formatAverage(value) {
+    if (value === undefined || value === null)
+        return "—";
+    if (!Number.isFinite(value))
+        return "—";
+    const fixed = value.toFixed(1);
+    return fixed.replace(/\.0$/, "");
+}
+function formatPercent(value) {
+    if (value === undefined || value === null)
+        return "—";
+    if (!Number.isFinite(value))
+        return "—";
+    const pct = value * 100;
+    if (!Number.isFinite(pct))
+        return "—";
+    const fixed = pct.toFixed(1);
+    return `${fixed.replace(/\.0$/, "")}%`;
+}
+function formatMinutes(value) {
+    if (value === undefined || value === null)
+        return "—";
+    if (!Number.isFinite(value))
+        return "—";
+    const total = Math.round(value);
+    if (total <= 0)
+        return "—";
+    const minutes = Math.floor(total / 60);
+    const seconds = Math.max(0, total - minutes * 60);
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 function buildSearchIndex(team, group) {
     return [

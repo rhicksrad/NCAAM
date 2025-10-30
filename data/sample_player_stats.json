@@ -1,0 +1,72 @@
+{
+  "season": 2025,
+  "season_label": "2025-26",
+  "generated": "2025-10-30T00:00:00.000Z",
+  "player_count": 4,
+  "players": {
+    "52366": {
+      "player_id": 52366,
+      "team_id": 1,
+      "team_abbreviation": "BC",
+      "games_played": 28,
+      "avg_seconds": 1986,
+      "pts": 12.4,
+      "reb": 6.8,
+      "ast": 2.1,
+      "stl": 1.0,
+      "blk": 1.4,
+      "tov": 1.9,
+      "fg_pct": 0.482,
+      "fg3_pct": 0.331,
+      "ft_pct": 0.774
+    },
+    "53816": {
+      "player_id": 53816,
+      "team_id": 1,
+      "team_abbreviation": "BC",
+      "games_played": 30,
+      "avg_seconds": 1860,
+      "pts": 9.7,
+      "reb": 3.1,
+      "ast": 4.8,
+      "stl": 1.6,
+      "blk": 0.2,
+      "tov": 2.4,
+      "fg_pct": 0.418,
+      "fg3_pct": 0.359,
+      "ft_pct": 0.798
+    },
+    "54564": {
+      "player_id": 54564,
+      "team_id": 1,
+      "team_abbreviation": "BC",
+      "games_played": 29,
+      "avg_seconds": 1725,
+      "pts": 8.9,
+      "reb": 2.7,
+      "ast": 3.9,
+      "stl": 1.3,
+      "blk": 0.1,
+      "tov": 1.7,
+      "fg_pct": 0.401,
+      "fg3_pct": 0.348,
+      "ft_pct": 0.812
+    },
+    "57150": {
+      "player_id": 57150,
+      "team_id": 1,
+      "team_abbreviation": "BC",
+      "games_played": 31,
+      "avg_seconds": 2042,
+      "pts": 14.5,
+      "reb": 5.4,
+      "ast": 2.8,
+      "stl": 1.1,
+      "blk": 0.4,
+      "tov": 2.1,
+      "fg_pct": 0.467,
+      "fg3_pct": 0.362,
+      "ft_pct": 0.821
+    }
+  }
+}
