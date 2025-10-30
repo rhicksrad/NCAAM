@@ -397,6 +397,115 @@ input.search:focus-visible {
   padding: var(--space-md);
 }
 
+.teams-map {
+  position: relative;
+  overflow: hidden;
+}
+
+.teams-map__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.teams-map__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.65rem);
+}
+
+.teams-map__subtitle {
+  margin: 0;
+  color: var(--color-steel);
+  max-width: 38ch;
+}
+
+.teams-map__count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, var(--color-ink) 6%, transparent);
+  color: color-mix(in oklab, var(--color-ink) 75%, var(--color-steel) 25%);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.teams-map__viewport {
+  position: relative;
+  min-height: 420px;
+}
+
+.teams-map__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.teams-map__state {
+  fill: color-mix(in oklab, var(--color-sand) 72%, transparent);
+  stroke: color-mix(in oklab, var(--color-ink) 18%, transparent);
+  stroke-width: 0.6;
+}
+
+html[data-theme="dark"] .teams-map__state {
+  fill: color-mix(in oklab, var(--color-slate) 70%, transparent);
+  stroke: color-mix(in oklab, white 18%, transparent);
+}
+
+html[data-theme="dark"] .teams-map__count {
+  background: color-mix(in oklab, white 12%, transparent);
+  color: color-mix(in oklab, white 82%, transparent);
+}
+
+html[data-theme="dark"] .teams-map__tooltip {
+  background: color-mix(in oklab, var(--color-slate) 85%, transparent);
+  color: white;
+}
+
+.teams-map__dot {
+  fill: var(--color-arc);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 1.25px;
+  cursor: pointer;
+  transition: transform 120ms ease, r 120ms ease, stroke-width 120ms ease;
+}
+
+.teams-map__dot.is-hovered,
+.teams-map__dot:focus-visible {
+  r: 7.5;
+  stroke-width: 1.8px;
+}
+
+.teams-map__tooltip {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -120%);
+  background: color-mix(in oklab, var(--color-ink) 92%, transparent);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--border-soft);
+  box-shadow: var(--shadow-2);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.teams-map__fallback {
+  margin: 0;
+  padding: var(--space-md);
+  color: var(--color-steel);
+}
+
+.team-card--active {
+  outline: 3px solid color-mix(in oklab, var(--color-arc) 45%, transparent);
+  outline-offset: 2px;
+  box-shadow: 0 12px 36px rgba(255, 106, 0, 0.15);
+}
+
 .team-card__logo,
 .player-card__header {
   display: flex;
