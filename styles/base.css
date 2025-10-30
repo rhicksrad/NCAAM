@@ -17,12 +17,12 @@ html {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --color-ink: #F4F7FF;
-  --color-ink-2: #DDE5FA;
-  --color-paper: #0B1024;
-  --color-cream: #0B1024;
-  --color-slate: #111827;
-  --color-steel: #D0DAE7;
+  --color-ink: #FFFFFF;
+  --color-ink-2: #E2E8F0;
+  --color-paper: #050A1A;
+  --color-cream: #050A1A;
+  --color-slate: #0F172A;
+  --color-steel: #94A3B8;
   --color-muted: color-mix(in oklab, var(--color-steel) 35%, transparent);
 }
 
