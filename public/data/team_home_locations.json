@@ -1,0 +1,2550 @@
+[
+  {
+    "team": "A&M-Commerce",
+    "arena": "Texas A&M\u2013Commerce Field House",
+    "latitude": 33.245337,
+    "longitude": -95.907619,
+    "elevation_ft": 557.0
+  },
+  {
+    "team": "A&M-Corpus Christi",
+    "arena": "American Bank Center",
+    "latitude": 27.807339,
+    "longitude": -97.393561,
+    "elevation_ft": 14.0
+  },
+  {
+    "team": "Abilene Christian",
+    "arena": "Moody Coliseum",
+    "latitude": 32.4703333333333,
+    "longitude": -99.70925,
+    "elevation_ft": 1721.0
+  },
+  {
+    "team": "Air Force",
+    "arena": "Clune Arena",
+    "latitude": 39.0137,
+    "longitude": -104.8837,
+    "elevation_ft": 7076.0
+  },
+  {
+    "team": "Akron",
+    "arena": "James A. Rhodes Arena",
+    "latitude": 41.07551,
+    "longitude": -81.508797,
+    "elevation_ft": 1073.0
+  },
+  {
+    "team": "Alabama",
+    "arena": "Coleman Coliseum",
+    "latitude": 33.2029,
+    "longitude": -87.5397,
+    "elevation_ft": 220.0
+  },
+  {
+    "team": "Alabama A&M",
+    "arena": "Alabama A&M Events Center",
+    "latitude": 34.781139,
+    "longitude": -86.580528,
+    "elevation_ft": 705.0
+  },
+  {
+    "team": "Alabama St.",
+    "arena": "Dunn\u2013Oliver Acadome",
+    "latitude": 32.36185,
+    "longitude": -86.293158,
+    "elevation_ft": 269.0
+  },
+  {
+    "team": "Albany (NY)",
+    "arena": "SEFCU Arena",
+    "latitude": 42.6819,
+    "longitude": -73.8283,
+    "elevation_ft": 226.0
+  },
+  {
+    "team": "Alcorn",
+    "arena": "Davey Whitney Complex",
+    "latitude": 31.8733,
+    "longitude": -91.1333,
+    "elevation_ft": 262.0
+  },
+  {
+    "team": "American",
+    "arena": "Bender Arena",
+    "latitude": 38.9378,
+    "longitude": -77.09,
+    "elevation_ft": 344.0
+  },
+  {
+    "team": "App State",
+    "arena": "George M. Holmes Convocation Center",
+    "latitude": 36.2107,
+    "longitude": -81.6759,
+    "elevation_ft": 3153.0
+  },
+  {
+    "team": "Arizona",
+    "arena": "McKale Center",
+    "latitude": 32.2303,
+    "longitude": -110.946,
+    "elevation_ft": 2448.0
+  },
+  {
+    "team": "Arizona St.",
+    "arena": "Desert Financial Arena",
+    "latitude": 33.4245,
+    "longitude": -111.931,
+    "elevation_ft": 1181.0
+  },
+  {
+    "team": "Ark.-Pine Bluff",
+    "arena": "K. L. Johnson Complex",
+    "latitude": 34.2438,
+    "longitude": -92.0174,
+    "elevation_ft": 220.0
+  },
+  {
+    "team": "Arkansas",
+    "arena": "Bud Walton Arena",
+    "latitude": 36.0615,
+    "longitude": -94.178,
+    "elevation_ft": 1283.0
+  },
+  {
+    "team": "Arkansas St.",
+    "arena": "First National Bank Arena",
+    "latitude": 35.8454,
+    "longitude": -90.6701,
+    "elevation_ft": 302.0
+  },
+  {
+    "team": "Army West Point",
+    "arena": "Christl Arena",
+    "latitude": 41.3864,
+    "longitude": -73.9655,
+    "elevation_ft": 351.0
+  },
+  {
+    "team": "Auburn",
+    "arena": "Neville Arena",
+    "latitude": 32.6027,
+    "longitude": -85.4925,
+    "elevation_ft": 650.0
+  },
+  {
+    "team": "Austin Peay",
+    "arena": "F&M Bank Arena",
+    "latitude": 36.5296,
+    "longitude": -87.3606,
+    "elevation_ft": 446.0
+  },
+  {
+    "team": "Ball St.",
+    "arena": "Worthen Arena",
+    "latitude": 40.2071,
+    "longitude": -85.4061,
+    "elevation_ft": 938.0
+  },
+  {
+    "team": "Baylor",
+    "arena": "Ferrell Center",
+    "latitude": 31.5479,
+    "longitude": -97.1057,
+    "elevation_ft": 390.0
+  },
+  {
+    "team": "Bellarmine",
+    "arena": "Freedom Hall",
+    "latitude": 38.1998,
+    "longitude": -85.7418,
+    "elevation_ft": 482.0
+  },
+  {
+    "team": "Belmont",
+    "arena": "Curb Event Center",
+    "latitude": 36.1321,
+    "longitude": -86.7934,
+    "elevation_ft": 656.0
+  },
+  {
+    "team": "Bethune-Cookman",
+    "arena": "Moore Gymnasium",
+    "latitude": 29.2109,
+    "longitude": -81.0309,
+    "elevation_ft": 7.0
+  },
+  {
+    "team": "Binghamton",
+    "arena": "Binghamton University Events Center",
+    "latitude": 42.0933,
+    "longitude": -75.972,
+    "elevation_ft": 889.0
+  },
+  {
+    "team": "Boise St.",
+    "arena": "ExtraMile Arena",
+    "latitude": 43.6036,
+    "longitude": -116.1986,
+    "elevation_ft": 2697.0
+  },
+  {
+    "team": "Boston College",
+    "arena": "Conte Forum",
+    "latitude": 42.3351,
+    "longitude": -71.1677,
+    "elevation_ft": 135.0
+  },
+  {
+    "team": "Boston U.",
+    "arena": "Case Gym",
+    "latitude": 42.354,
+    "longitude": -71.1203,
+    "elevation_ft": 30.0
+  },
+  {
+    "team": "Bowling Green",
+    "arena": "Stroh Center",
+    "latitude": 41.3752,
+    "longitude": -83.6261,
+    "elevation_ft": 673.0
+  },
+  {
+    "team": "Bradley",
+    "arena": "Peoria Civic Center",
+    "latitude": 40.6942,
+    "longitude": -89.5945,
+    "elevation_ft": 518.0
+  },
+  {
+    "team": "Brown",
+    "arena": "Pizzitola Sports Center",
+    "latitude": 41.8317,
+    "longitude": -71.3981,
+    "elevation_ft": 141.0
+  },
+  {
+    "team": "Bryant",
+    "arena": "Chace Athletic Center",
+    "latitude": 41.9211,
+    "longitude": -71.5395,
+    "elevation_ft": 413.0
+  },
+  {
+    "team": "Bucknell",
+    "arena": "Sojka Pavilion",
+    "latitude": 40.9568,
+    "longitude": -76.887,
+    "elevation_ft": 469.0
+  },
+  {
+    "team": "Buffalo",
+    "arena": "Alumni Arena (University at Buffalo)",
+    "latitude": 43.0005,
+    "longitude": -78.7804,
+    "elevation_ft": 587.0
+  },
+  {
+    "team": "Butler",
+    "arena": "Hinkle Fieldhouse",
+    "latitude": 39.8431,
+    "longitude": -86.1659,
+    "elevation_ft": 755.0
+  },
+  {
+    "team": "BYU",
+    "arena": "Marriott Center",
+    "latitude": 40.2541,
+    "longitude": -111.6493,
+    "elevation_ft": 4682.0
+  },
+  {
+    "team": "Cal Poly",
+    "arena": "Robert A. Mott Athletics Center",
+    "latitude": 35.2987,
+    "longitude": -120.6591,
+    "elevation_ft": 344.0
+  },
+  {
+    "team": "Cal St. Fullerton",
+    "arena": "Titan Gym",
+    "latitude": 33.8831,
+    "longitude": -117.8876,
+    "elevation_ft": 249.0
+  },
+  {
+    "team": "California",
+    "arena": "Haas Pavilion",
+    "latitude": 37.8694,
+    "longitude": -122.2622,
+    "elevation_ft": 243.0
+  },
+  {
+    "team": "California Baptist",
+    "arena": "CBU Events Center",
+    "latitude": 33.9272,
+    "longitude": -117.4229,
+    "elevation_ft": 823.0
+  },
+  {
+    "team": "Campbell",
+    "arena": "John W. Pope Jr. Convocation Center",
+    "latitude": 35.4078,
+    "longitude": -78.7368,
+    "elevation_ft": 190.0
+  },
+  {
+    "team": "Canisius",
+    "arena": "Koessler Athletic Center",
+    "latitude": 42.9217,
+    "longitude": -78.8569,
+    "elevation_ft": 630.0
+  },
+  {
+    "team": "Central Ark.",
+    "arena": "Farris Center",
+    "latitude": 35.0819,
+    "longitude": -92.4596,
+    "elevation_ft": 312.0
+  },
+  {
+    "team": "Central Conn. St.",
+    "arena": "William H. Detrick Gymnasium",
+    "latitude": 41.6927,
+    "longitude": -72.7649,
+    "elevation_ft": 138.0
+  },
+  {
+    "team": "Central Mich.",
+    "arena": "McGuirk Arena",
+    "latitude": 43.5815,
+    "longitude": -84.7742,
+    "elevation_ft": 801.0
+  },
+  {
+    "team": "Charleston So.",
+    "arena": "Buccaneer Field House",
+    "latitude": 32.9808,
+    "longitude": -80.0671,
+    "elevation_ft": 49.0
+  },
+  {
+    "team": "Charlotte",
+    "arena": "Dale F. Halton Arena",
+    "latitude": 35.3062,
+    "longitude": -80.7344,
+    "elevation_ft": 676.0
+  },
+  {
+    "team": "Chattanooga",
+    "arena": "McKenzie Arena",
+    "latitude": 35.0503,
+    "longitude": -85.3009,
+    "elevation_ft": 679.0
+  },
+  {
+    "team": "Chicago St.",
+    "arena": "Emil and Patricia Jones Convocation Center",
+    "latitude": 41.7165,
+    "longitude": -87.6084,
+    "elevation_ft": 597.0
+  },
+  {
+    "team": "Cincinnati",
+    "arena": "Fifth Third Arena",
+    "latitude": 39.1311,
+    "longitude": -84.514,
+    "elevation_ft": 807.0
+  },
+  {
+    "team": "Clemson",
+    "arena": "Littlejohn Coliseum",
+    "latitude": 34.6803,
+    "longitude": -82.8464,
+    "elevation_ft": 676.0
+  },
+  {
+    "team": "Cleveland St.",
+    "arena": "Wolstein Center",
+    "latitude": 41.4993,
+    "longitude": -81.677,
+    "elevation_ft": 676.0
+  },
+  {
+    "team": "Coastal Carolina",
+    "arena": "HTC Center",
+    "latitude": 33.7989,
+    "longitude": -79.0155,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "Col. of Charleston",
+    "arena": "TD Arena",
+    "latitude": 32.7854,
+    "longitude": -79.9344,
+    "elevation_ft": 20.0
+  },
+  {
+    "team": "Colgate",
+    "arena": "Cotterell Court",
+    "latitude": 42.8149,
+    "longitude": -75.5427,
+    "elevation_ft": 1115.0
+  },
+  {
+    "team": "Colorado",
+    "arena": "CU Events Center",
+    "latitude": 40.0048,
+    "longitude": -105.2608,
+    "elevation_ft": 5371.0
+  },
+  {
+    "team": "Colorado St.",
+    "arena": "Moby Arena",
+    "latitude": 40.5756,
+    "longitude": -105.0932,
+    "elevation_ft": 5016.0
+  },
+  {
+    "team": "Columbia",
+    "arena": "Francis S. Levien Gymnasium",
+    "latitude": 40.81,
+    "longitude": -73.962,
+    "elevation_ft": 118.0
+  },
+  {
+    "team": "Coppin St.",
+    "arena": "Physical Education Complex",
+    "latitude": 39.3155,
+    "longitude": -76.6574,
+    "elevation_ft": 272.0
+  },
+  {
+    "team": "Cornell",
+    "arena": "Newman Arena",
+    "latitude": 42.4457,
+    "longitude": -76.4762,
+    "elevation_ft": 876.0
+  },
+  {
+    "team": "Creighton",
+    "arena": "CHI Health Center Omaha",
+    "latitude": 41.2638,
+    "longitude": -95.9279,
+    "elevation_ft": 981.0
+  },
+  {
+    "team": "CSU Bakersfield",
+    "arena": "Icardo Center",
+    "latitude": 35.3475,
+    "longitude": -119.1026,
+    "elevation_ft": 377.0
+  },
+  {
+    "team": "CSUN",
+    "arena": "Premier America Credit Union Arena",
+    "latitude": 34.2362,
+    "longitude": -118.528,
+    "elevation_ft": 853.0
+  },
+  {
+    "team": "Dartmouth",
+    "arena": "Leede Arena",
+    "latitude": 43.703,
+    "longitude": -72.2828,
+    "elevation_ft": 509.0
+  },
+  {
+    "team": "Davidson",
+    "arena": "John M. Belk Arena",
+    "latitude": 35.4993,
+    "longitude": -80.8404,
+    "elevation_ft": 797.0
+  },
+  {
+    "team": "Dayton",
+    "arena": "UD Arena",
+    "latitude": 39.7354,
+    "longitude": -84.1996,
+    "elevation_ft": 732.0
+  },
+  {
+    "team": "Delaware",
+    "arena": "Bob Carpenter Center",
+    "latitude": 39.6605,
+    "longitude": -75.7487,
+    "elevation_ft": 98.0
+  },
+  {
+    "team": "Delaware St.",
+    "arena": "Memorial Hall (Delaware State)",
+    "latitude": 39.1876,
+    "longitude": -75.5434,
+    "elevation_ft": 33.0
+  },
+  {
+    "team": "Denver",
+    "arena": "Magness Arena",
+    "latitude": 39.682,
+    "longitude": -104.9621,
+    "elevation_ft": 5354.0
+  },
+  {
+    "team": "DePaul",
+    "arena": "Wintrust Arena",
+    "latitude": 41.8537,
+    "longitude": -87.6212,
+    "elevation_ft": 594.0
+  },
+  {
+    "team": "Detroit Mercy",
+    "arena": "Calihan Hall",
+    "latitude": 42.4144,
+    "longitude": -83.136,
+    "elevation_ft": 646.0
+  },
+  {
+    "team": "Drake",
+    "arena": "Knapp Center",
+    "latitude": 41.6048,
+    "longitude": -93.6522,
+    "elevation_ft": 945.0
+  },
+  {
+    "team": "Drexel",
+    "arena": "Daskalakis Athletic Center",
+    "latitude": 39.9563,
+    "longitude": -75.1906,
+    "elevation_ft": 59.0
+  },
+  {
+    "team": "Duke",
+    "arena": "Cameron Indoor Stadium",
+    "latitude": 35.9975,
+    "longitude": -78.9422,
+    "elevation_ft": 394.0
+  },
+  {
+    "team": "Duquesne",
+    "arena": "UPMC Cooper Fieldhouse",
+    "latitude": 40.4372,
+    "longitude": -79.9879,
+    "elevation_ft": 823.0
+  },
+  {
+    "team": "East Carolina",
+    "arena": "Williams Arena at Minges Coliseum",
+    "latitude": 35.5974,
+    "longitude": -77.3672,
+    "elevation_ft": 59.0
+  },
+  {
+    "team": "Eastern Ill.",
+    "arena": "Lantz Arena",
+    "latitude": 39.4806,
+    "longitude": -88.1811,
+    "elevation_ft": 696.0
+  },
+  {
+    "team": "Eastern Ky.",
+    "arena": "Alumni Coliseum",
+    "latitude": 37.7372,
+    "longitude": -84.3013,
+    "elevation_ft": 1010.0
+  },
+  {
+    "team": "Eastern Mich.",
+    "arena": "George Gervin GameAbove Center",
+    "latitude": 42.2543,
+    "longitude": -83.6474,
+    "elevation_ft": 804.0
+  },
+  {
+    "team": "Eastern Wash.",
+    "arena": "Reese Court",
+    "latitude": 47.4914,
+    "longitude": -117.5894,
+    "elevation_ft": 2467.0
+  },
+  {
+    "team": "Elon",
+    "arena": "Schar Center",
+    "latitude": 36.1081,
+    "longitude": -79.5109,
+    "elevation_ft": 712.0
+  },
+  {
+    "team": "ETSU",
+    "arena": "Freedom Hall Civic Center",
+    "latitude": 36.3245,
+    "longitude": -82.3751,
+    "elevation_ft": 1778.0
+  },
+  {
+    "team": "Evansville",
+    "arena": "Ford Center (Evansville)",
+    "latitude": 37.9722,
+    "longitude": -87.5678,
+    "elevation_ft": 384.0
+  },
+  {
+    "team": "Fairfield",
+    "arena": "Leo D. Mahoney Arena",
+    "latitude": 41.1592,
+    "longitude": -73.2578,
+    "elevation_ft": 125.0
+  },
+  {
+    "team": "Fairleigh Dickinson",
+    "arena": "Rothman Center",
+    "latitude": 40.8967,
+    "longitude": -74.0324,
+    "elevation_ft": 7.0
+  },
+  {
+    "team": "FGCU",
+    "arena": "Alico Arena",
+    "latitude": 26.471,
+    "longitude": -81.7647,
+    "elevation_ft": 20.0
+  },
+  {
+    "team": "FIU",
+    "arena": "Ocean Bank Convocation Center",
+    "latitude": 25.7568,
+    "longitude": -80.3796,
+    "elevation_ft": 3.0
+  },
+  {
+    "team": "Fla. Atlantic",
+    "arena": "FAU Arena",
+    "latitude": 26.3724,
+    "longitude": -80.1094,
+    "elevation_ft": 7.0
+  },
+  {
+    "team": "Florida",
+    "arena": "O'Connell Center",
+    "latitude": 29.6494,
+    "longitude": -82.3511,
+    "elevation_ft": 151.0
+  },
+  {
+    "team": "Florida A&M",
+    "arena": "Al Lawson Center",
+    "latitude": 30.4243,
+    "longitude": -84.2905,
+    "elevation_ft": 95.0
+  },
+  {
+    "team": "Florida St.",
+    "arena": "Donald L. Tucker Civic Center",
+    "latitude": 30.4378,
+    "longitude": -84.2866,
+    "elevation_ft": 108.0
+  },
+  {
+    "team": "Fordham",
+    "arena": "Rose Hill Gymnasium",
+    "latitude": 40.8622,
+    "longitude": -73.8838,
+    "elevation_ft": 98.0
+  },
+  {
+    "team": "Fresno St.",
+    "arena": "Save Mart Center",
+    "latitude": 36.8097,
+    "longitude": -119.7386,
+    "elevation_ft": 338.0
+  },
+  {
+    "team": "Furman",
+    "arena": "Timmons Arena",
+    "latitude": 34.918,
+    "longitude": -82.4373,
+    "elevation_ft": 1010.0
+  },
+  {
+    "team": "Ga. Southern",
+    "arena": "Hanner Fieldhouse",
+    "latitude": 32.4276,
+    "longitude": -81.7792,
+    "elevation_ft": 230.0
+  },
+  {
+    "team": "Gardner-Webb",
+    "arena": "Paul Porter Arena",
+    "latitude": 35.2466,
+    "longitude": -81.6695,
+    "elevation_ft": 896.0
+  },
+  {
+    "team": "George Mason",
+    "arena": "EagleBank Arena",
+    "latitude": 38.8268,
+    "longitude": -77.3097,
+    "elevation_ft": 410.0
+  },
+  {
+    "team": "George Washington",
+    "arena": "Charles E. Smith Center",
+    "latitude": 38.8978,
+    "longitude": -77.0493,
+    "elevation_ft": 69.0
+  },
+  {
+    "team": "Georgetown",
+    "arena": "Capital One Arena",
+    "latitude": 38.8981,
+    "longitude": -77.0209,
+    "elevation_ft": 43.0
+  },
+  {
+    "team": "Georgia",
+    "arena": "Stegeman Coliseum",
+    "latitude": 33.9427,
+    "longitude": -83.3781,
+    "elevation_ft": 692.0
+  },
+  {
+    "team": "Georgia St.",
+    "arena": "Georgia State Convocation Center",
+    "latitude": 33.7426,
+    "longitude": -84.3886,
+    "elevation_ft": 1014.0
+  },
+  {
+    "team": "Georgia Tech",
+    "arena": "McCamish Pavilion",
+    "latitude": 33.7804,
+    "longitude": -84.3927,
+    "elevation_ft": 915.0
+  },
+  {
+    "team": "Gonzaga",
+    "arena": "McCarthey Athletic Center",
+    "latitude": 47.6654,
+    "longitude": -117.3991,
+    "elevation_ft": 1890.0
+  },
+  {
+    "team": "Grambling",
+    "arena": "Fredrick C. Hobdy Assembly Center",
+    "latitude": 32.5203,
+    "longitude": -92.7239,
+    "elevation_ft": 305.0
+  },
+  {
+    "team": "Grand Canyon",
+    "arena": "GCU Arena",
+    "latitude": 33.5101,
+    "longitude": -112.1307,
+    "elevation_ft": 1145.0
+  },
+  {
+    "team": "Green Bay",
+    "arena": "Resch Center",
+    "latitude": 44.4996,
+    "longitude": -88.0549,
+    "elevation_ft": 614.0
+  },
+  {
+    "team": "Hampton",
+    "arena": "Hampton Convocation Center",
+    "latitude": 37.0199,
+    "longitude": -76.3311,
+    "elevation_ft": 0.0
+  },
+  {
+    "team": "Hartford",
+    "arena": "Chase Arena (Hartford)",
+    "latitude": 41.802,
+    "longitude": -72.717,
+    "elevation_ft": 75.0
+  },
+  {
+    "team": "Harvard",
+    "arena": "Lavietes Pavilion",
+    "latitude": 42.3682,
+    "longitude": -71.1253,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "Hawaii",
+    "arena": "Stan Sheriff Center",
+    "latitude": 21.2939,
+    "longitude": -157.8192,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "High Point",
+    "arena": "Nido & Mariana Qubein Arena and Conference Center",
+    "latitude": 35.9783,
+    "longitude": -79.9967,
+    "elevation_ft": 853.0
+  },
+  {
+    "team": "Hofstra",
+    "arena": "Mack Sports Complex",
+    "latitude": 40.7195,
+    "longitude": -73.5967,
+    "elevation_ft": 79.0
+  },
+  {
+    "team": "Holy Cross",
+    "arena": "Hart Center",
+    "latitude": 42.2353,
+    "longitude": -71.8061,
+    "elevation_ft": 702.0
+  },
+  {
+    "team": "Houston",
+    "arena": "Fertitta Center",
+    "latitude": 29.7244,
+    "longitude": -95.3473,
+    "elevation_ft": 39.0
+  },
+  {
+    "team": "Houston Christian",
+    "arena": "Sharp Gymnasium",
+    "latitude": 29.695,
+    "longitude": -95.5169,
+    "elevation_ft": 69.0
+  },
+  {
+    "team": "Howard",
+    "arena": "Burr Gymnasium",
+    "latitude": 38.9265,
+    "longitude": -77.0221,
+    "elevation_ft": 190.0
+  },
+  {
+    "team": "Idaho",
+    "arena": "Idaho Central Credit Union Arena",
+    "latitude": 43.4929,
+    "longitude": -112.0527,
+    "elevation_ft": 4715.0
+  },
+  {
+    "team": "Idaho St.",
+    "arena": "Holt Arena",
+    "latitude": 42.87,
+    "longitude": -112.4286,
+    "elevation_ft": 4567.0
+  },
+  {
+    "team": "Illinois",
+    "arena": "State Farm Center",
+    "latitude": 40.0963,
+    "longitude": -88.2359,
+    "elevation_ft": 748.0
+  },
+  {
+    "team": "Illinois St.",
+    "arena": "CEFCU Arena",
+    "latitude": 40.5107,
+    "longitude": -88.9988,
+    "elevation_ft": 784.0
+  },
+  {
+    "team": "Indiana",
+    "arena": "Assembly Hall",
+    "latitude": 39.1807,
+    "longitude": -86.5222,
+    "elevation_ft": 774.0
+  },
+  {
+    "team": "Indiana St.",
+    "arena": "Hulman Center",
+    "latitude": 39.4685,
+    "longitude": -87.405,
+    "elevation_ft": 499.0
+  },
+  {
+    "team": "Iona",
+    "arena": "Hynes Athletic Center",
+    "latitude": 40.9267,
+    "longitude": -73.7843,
+    "elevation_ft": 59.0
+  },
+  {
+    "team": "Iowa",
+    "arena": "Carver\u2013Hawkeye Arena",
+    "latitude": 41.6638,
+    "longitude": -91.5546,
+    "elevation_ft": 676.0
+  },
+  {
+    "team": "Iowa St.",
+    "arena": "Hilton Coliseum",
+    "latitude": 42.021,
+    "longitude": -93.6348,
+    "elevation_ft": 896.0
+  },
+  {
+    "team": "IUPUI",
+    "arena": "Indiana Farmers Coliseum",
+    "latitude": 39.8276,
+    "longitude": -86.135,
+    "elevation_ft": 738.0
+  },
+  {
+    "team": "Jackson St.",
+    "arena": "Williams Assembly Center",
+    "latitude": 32.2997,
+    "longitude": -90.2119,
+    "elevation_ft": 308.0
+  },
+  {
+    "team": "Jacksonville",
+    "arena": "Swisher Gymnasium",
+    "latitude": 30.3524,
+    "longitude": -81.6066,
+    "elevation_ft": 39.0
+  },
+  {
+    "team": "Jacksonville St.",
+    "arena": "Pete Mathews Coliseum",
+    "latitude": 33.824,
+    "longitude": -85.7738,
+    "elevation_ft": 650.0
+  },
+  {
+    "team": "James Madison",
+    "arena": "Atlantic Union Bank Center",
+    "latitude": 38.4307,
+    "longitude": -78.8594,
+    "elevation_ft": 1467.0
+  },
+  {
+    "team": "Kansas",
+    "arena": "Allen Fieldhouse",
+    "latitude": 38.9545,
+    "longitude": -95.2529,
+    "elevation_ft": 909.0
+  },
+  {
+    "team": "Kansas City",
+    "arena": "Swinney Recreation Center",
+    "latitude": 39.0355,
+    "longitude": -94.5787,
+    "elevation_ft": 896.0
+  },
+  {
+    "team": "Kansas St.",
+    "arena": "Bramlage Coliseum",
+    "latitude": 39.2004,
+    "longitude": -96.5939,
+    "elevation_ft": 1132.0
+  },
+  {
+    "team": "Kennesaw St.",
+    "arena": "KSU Convocation Center",
+    "latitude": 34.0373,
+    "longitude": -84.5801,
+    "elevation_ft": 1060.0
+  },
+  {
+    "team": "Kent St.",
+    "arena": "Memorial Athletic and Convocation Center",
+    "latitude": 41.1482,
+    "longitude": -81.344,
+    "elevation_ft": 1155.0
+  },
+  {
+    "team": "Kentucky",
+    "arena": "Rupp Arena",
+    "latitude": 38.0493,
+    "longitude": -84.5025,
+    "elevation_ft": 945.0
+  },
+  {
+    "team": "La Salle",
+    "arena": "Tom Gola Arena",
+    "latitude": 40.04,
+    "longitude": -75.1566,
+    "elevation_ft": 230.0
+  },
+  {
+    "team": "Lafayette",
+    "arena": "Kirby Sports Center",
+    "latitude": 40.7018,
+    "longitude": -75.2102,
+    "elevation_ft": 266.0
+  },
+  {
+    "team": "Lamar University",
+    "arena": "Montagne Center",
+    "latitude": 30.0441,
+    "longitude": -94.0707,
+    "elevation_ft": 20.0
+  },
+  {
+    "team": "Lehigh",
+    "arena": "Stabler Arena",
+    "latitude": 40.5853,
+    "longitude": -75.3574,
+    "elevation_ft": 302.0
+  },
+  {
+    "team": "Liberty",
+    "arena": "Liberty Arena",
+    "latitude": 37.3495,
+    "longitude": -79.1802,
+    "elevation_ft": 833.0
+  },
+  {
+    "team": "Lindenwood",
+    "arena": "Robert F. Hyland Performance Arena",
+    "latitude": 38.7892,
+    "longitude": -90.5033,
+    "elevation_ft": 531.0
+  },
+  {
+    "team": "Lipscomb",
+    "arena": "Allen Arena",
+    "latitude": 36.1037,
+    "longitude": -86.7989,
+    "elevation_ft": 558.0
+  },
+  {
+    "team": "Little Rock",
+    "arena": "Jack Stephens Center",
+    "latitude": 34.7285,
+    "longitude": -92.3404,
+    "elevation_ft": 295.0
+  },
+  {
+    "team": "LIU",
+    "arena": "Steinberg Wellness Center",
+    "latitude": 40.6907,
+    "longitude": -73.9792,
+    "elevation_ft": 30.0
+  },
+  {
+    "team": "LMU (CA)",
+    "arena": "Gersten Pavilion",
+    "latitude": 33.9677,
+    "longitude": -118.4156,
+    "elevation_ft": 151.0
+  },
+  {
+    "team": "Long Beach St.",
+    "arena": "Walter Pyramid",
+    "latitude": 33.7875,
+    "longitude": -118.1144,
+    "elevation_ft": 13.0
+  },
+  {
+    "team": "Longwood",
+    "arena": "Joan Perry Brock Center",
+    "latitude": 37.3016,
+    "longitude": -78.3956,
+    "elevation_ft": 358.0
+  },
+  {
+    "team": "Louisiana",
+    "arena": "Cajundome",
+    "latitude": 30.2185,
+    "longitude": -92.0388,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "Louisiana Tech",
+    "arena": "Thomas Assembly Center",
+    "latitude": 32.5323,
+    "longitude": -92.6592,
+    "elevation_ft": 272.0
+  },
+  {
+    "team": "Louisville",
+    "arena": "KFC Yum! Center",
+    "latitude": 38.2577,
+    "longitude": -85.754,
+    "elevation_ft": 430.0
+  },
+  {
+    "team": "Loyola Chicago",
+    "arena": "Joseph J. Gentile Arena",
+    "latitude": 42.0006,
+    "longitude": -87.6591,
+    "elevation_ft": 600.0
+  },
+  {
+    "team": "Loyola Maryland",
+    "arena": "Reitz Arena",
+    "latitude": 39.3468,
+    "longitude": -76.6187,
+    "elevation_ft": 325.0
+  },
+  {
+    "team": "LSU",
+    "arena": "Pete Maravich Assembly Center",
+    "latitude": 30.4142,
+    "longitude": -91.1844,
+    "elevation_ft": 23.0
+  },
+  {
+    "team": "Maine",
+    "arena": "Cross Insurance Center",
+    "latitude": 44.7898,
+    "longitude": -68.7803,
+    "elevation_ft": 85.0
+  },
+  {
+    "team": "Manhattan",
+    "arena": "Draddy Gymnasium",
+    "latitude": 40.8907,
+    "longitude": -73.9003,
+    "elevation_ft": 135.0
+  },
+  {
+    "team": "Marist",
+    "arena": "McCann Arena",
+    "latitude": 41.7176,
+    "longitude": -73.9349,
+    "elevation_ft": 72.0
+  },
+  {
+    "team": "Marquette",
+    "arena": "Fiserv Forum",
+    "latitude": 43.045,
+    "longitude": -87.9174,
+    "elevation_ft": 600.0
+  },
+  {
+    "team": "Marshall",
+    "arena": "Cam Henderson Center",
+    "latitude": 38.4248,
+    "longitude": -82.4256,
+    "elevation_ft": 545.0
+  },
+  {
+    "team": "Maryland",
+    "arena": "Xfinity Center",
+    "latitude": 41.9925,
+    "longitude": -71.2202,
+    "elevation_ft": 135.0
+  },
+  {
+    "team": "Massachusetts",
+    "arena": "Mullins Center",
+    "latitude": 42.3896,
+    "longitude": -72.5335,
+    "elevation_ft": 171.0
+  },
+  {
+    "team": "McNeese St.",
+    "arena": "The Legacy Center",
+    "latitude": 30.1757,
+    "longitude": -93.21,
+    "elevation_ft": 13.0
+  },
+  {
+    "team": "Memphis",
+    "arena": "FedExForum",
+    "latitude": 35.1382,
+    "longitude": -90.0505,
+    "elevation_ft": 253.0
+  },
+  {
+    "team": "Mercer",
+    "arena": "Hawkins Arena",
+    "latitude": 32.8298,
+    "longitude": -83.651,
+    "elevation_ft": 466.0
+  },
+  {
+    "team": "Merrimack",
+    "arena": "Merrimack Athletics Complex",
+    "latitude": 42.6695,
+    "longitude": -71.1231,
+    "elevation_ft": 233.0
+  },
+  {
+    "team": "Miami (FL)",
+    "arena": "Watsco Center",
+    "latitude": 25.7153,
+    "longitude": -80.2793,
+    "elevation_ft": 3.0
+  },
+  {
+    "team": "Miami (OH)",
+    "arena": "Millett Hall",
+    "latitude": 39.5173,
+    "longitude": -84.7346,
+    "elevation_ft": 853.0
+  },
+  {
+    "team": "Michigan",
+    "arena": "Crisler Center",
+    "latitude": 42.265,
+    "longitude": -83.7467,
+    "elevation_ft": 856.0
+  },
+  {
+    "team": "Michigan St.",
+    "arena": "Breslin Student Events Center",
+    "latitude": 42.728,
+    "longitude": -84.4923,
+    "elevation_ft": 850.0
+  },
+  {
+    "team": "Middle Tenn.",
+    "arena": "Murphy Center",
+    "latitude": 35.8523,
+    "longitude": -86.3695,
+    "elevation_ft": 630.0
+  },
+  {
+    "team": "Milwaukee",
+    "arena": "UW\u2013Milwaukee Panther Arena",
+    "latitude": 43.0423,
+    "longitude": -87.9169,
+    "elevation_ft": 594.0
+  },
+  {
+    "team": "Minnesota",
+    "arena": "Williams Arena and Sports Pavilion",
+    "latitude": 44.977,
+    "longitude": -93.2284,
+    "elevation_ft": 837.0
+  },
+  {
+    "team": "Mississippi St.",
+    "arena": "Humphrey Coliseum",
+    "latitude": 33.4617,
+    "longitude": -88.7944,
+    "elevation_ft": 381.0
+  },
+  {
+    "team": "Mississippi Val.",
+    "arena": "Harrison HPER Complex",
+    "latitude": 33.5105,
+    "longitude": -90.341,
+    "elevation_ft": 128.0
+  },
+  {
+    "team": "Missouri",
+    "arena": "Mizzou Arena",
+    "latitude": 38.9324,
+    "longitude": -92.3338,
+    "elevation_ft": 722.0
+  },
+  {
+    "team": "Missouri St.",
+    "arena": "Great Southern Bank Arena",
+    "latitude": 37.2021,
+    "longitude": -93.283,
+    "elevation_ft": 1316.0
+  },
+  {
+    "team": "Monmouth",
+    "arena": "OceanFirst Bank Center",
+    "latitude": 40.2796,
+    "longitude": -74.0076,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "Montana",
+    "arena": "Dahlberg Arena",
+    "latitude": 46.8639,
+    "longitude": -113.9833,
+    "elevation_ft": 3212.0
+  },
+  {
+    "team": "Montana St.",
+    "arena": "Brick Breeden Fieldhouse",
+    "latitude": 45.6634,
+    "longitude": -111.0506,
+    "elevation_ft": 4925.0
+  },
+  {
+    "team": "Morehead St.",
+    "arena": "Ellis Johnson Arena",
+    "latitude": 38.1888,
+    "longitude": -83.429,
+    "elevation_ft": 732.0
+  },
+  {
+    "team": "Morgan St.",
+    "arena": "Talmadge L. Hill Field House",
+    "latitude": 39.3423,
+    "longitude": -76.5852,
+    "elevation_ft": 240.0
+  },
+  {
+    "team": "Mount St. Mary's",
+    "arena": "Knott Arena",
+    "latitude": 39.6796,
+    "longitude": -77.3463,
+    "elevation_ft": 515.0
+  },
+  {
+    "team": "Murray St.",
+    "arena": "CFSB Center",
+    "latitude": 36.6227,
+    "longitude": -88.3199,
+    "elevation_ft": 528.0
+  },
+  {
+    "team": "N.C. A&T",
+    "arena": "Corbett Sports Center",
+    "latitude": 36.0767,
+    "longitude": -79.769,
+    "elevation_ft": 797.0
+  },
+  {
+    "team": "N.C. Central",
+    "arena": "McDougald\u2013McLendon Arena",
+    "latitude": 35.9759,
+    "longitude": -78.8977,
+    "elevation_ft": 358.0
+  },
+  {
+    "team": "Navy",
+    "arena": "Alumni Hall",
+    "latitude": 38.9846,
+    "longitude": -76.4894,
+    "elevation_ft": 3.0
+  },
+  {
+    "team": "NC State",
+    "arena": "PNC Arena",
+    "latitude": 35.8033,
+    "longitude": -78.7218,
+    "elevation_ft": 430.0
+  },
+  {
+    "team": "Nebraska",
+    "arena": "Pinnacle Bank Arena",
+    "latitude": 40.818,
+    "longitude": -96.7123,
+    "elevation_ft": 1148.0
+  },
+  {
+    "team": "Nevada",
+    "arena": "Lawlor Events Center",
+    "latitude": 39.5451,
+    "longitude": -119.8184,
+    "elevation_ft": 4593.0
+  },
+  {
+    "team": "New Hampshire",
+    "arena": "Lundholm Gym",
+    "latitude": 43.1387,
+    "longitude": -70.9378,
+    "elevation_ft": 79.0
+  },
+  {
+    "team": "New Mexico",
+    "arena": "The Pit",
+    "latitude": 35.0654,
+    "longitude": -106.6295,
+    "elevation_ft": 5105.0
+  },
+  {
+    "team": "New Mexico St.",
+    "arena": "Pan American Center",
+    "latitude": 32.2841,
+    "longitude": -106.7423,
+    "elevation_ft": 3999.0
+  },
+  {
+    "team": "New Orleans",
+    "arena": "Lakefront Arena",
+    "latitude": 30.0301,
+    "longitude": -90.0505,
+    "elevation_ft": 7.0
+  },
+  {
+    "team": "Niagara",
+    "arena": "Gallagher Center",
+    "latitude": 43.1387,
+    "longitude": -79.0391,
+    "elevation_ft": 587.0
+  },
+  {
+    "team": "Nicholls",
+    "arena": "Stopher Gymnasium",
+    "latitude": 29.7923,
+    "longitude": -90.8013,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "NJIT",
+    "arena": "Wellness and Events Center",
+    "latitude": 40.7423,
+    "longitude": -74.1804,
+    "elevation_ft": 98.0
+  },
+  {
+    "team": "Norfolk St.",
+    "arena": "Joseph G. Echols Memorial Hall",
+    "latitude": 36.848,
+    "longitude": -76.2582,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "North Ala.",
+    "arena": "Flowers Hall",
+    "latitude": 34.8069,
+    "longitude": -87.6799,
+    "elevation_ft": 581.0
+  },
+  {
+    "team": "North Carolina",
+    "arena": "Dean Dome",
+    "latitude": 35.8995,
+    "longitude": -79.0439,
+    "elevation_ft": 390.0
+  },
+  {
+    "team": "North Dakota",
+    "arena": "Betty Engelstad Sioux Center",
+    "latitude": 47.9276,
+    "longitude": -97.0732,
+    "elevation_ft": 830.0
+  },
+  {
+    "team": "North Dakota St.",
+    "arena": "Scheels Center",
+    "latitude": 46.9,
+    "longitude": -96.7992,
+    "elevation_ft": 899.0
+  },
+  {
+    "team": "North Florida",
+    "arena": "UNF Arena",
+    "latitude": 30.2736,
+    "longitude": -81.508,
+    "elevation_ft": 39.0
+  },
+  {
+    "team": "North Texas",
+    "arena": "UNT Coliseum",
+    "latitude": 33.2087,
+    "longitude": -97.1544,
+    "elevation_ft": 699.0
+  },
+  {
+    "team": "Northeastern",
+    "arena": "Matthews Arena",
+    "latitude": 42.3412,
+    "longitude": -71.0846,
+    "elevation_ft": 13.0
+  },
+  {
+    "team": "Northern Ariz.",
+    "arena": "Walkup Skydome",
+    "latitude": 35.1805,
+    "longitude": -111.6529,
+    "elevation_ft": 6883.0
+  },
+  {
+    "team": "Northern Colo.",
+    "arena": "Bank of Colorado Arena",
+    "latitude": 40.4023,
+    "longitude": -104.703,
+    "elevation_ft": 4757.0
+  },
+  {
+    "team": "Northern Ill.",
+    "arena": "Convocation Center (Northern Illinois University)",
+    "latitude": 41.9352,
+    "longitude": -88.7856,
+    "elevation_ft": 883.0
+  },
+  {
+    "team": "Northern Ky.",
+    "arena": "Truist Arena",
+    "latitude": 39.032,
+    "longitude": -84.4591,
+    "elevation_ft": 850.0
+  },
+  {
+    "team": "Northwestern",
+    "arena": "Welsh\u2013Ryan Arena",
+    "latitude": 42.0669,
+    "longitude": -87.6925,
+    "elevation_ft": 604.0
+  },
+  {
+    "team": "Northwestern St.",
+    "arena": "Prather Coliseum",
+    "latitude": 31.7441,
+    "longitude": -93.0952,
+    "elevation_ft": 112.0
+  },
+  {
+    "team": "Notre Dame",
+    "arena": "Edmund P. Joyce Center",
+    "latitude": 41.6979,
+    "longitude": -86.2312,
+    "elevation_ft": 735.0
+  },
+  {
+    "team": "Oakland",
+    "arena": "Athletics Center O'rena",
+    "latitude": 42.674,
+    "longitude": -83.2131,
+    "elevation_ft": 892.0
+  },
+  {
+    "team": "Ohio",
+    "arena": "Convocation Center (Ohio University)",
+    "latitude": 39.3232,
+    "longitude": -82.1058,
+    "elevation_ft": 640.0
+  },
+  {
+    "team": "Ohio St.",
+    "arena": "Value City Arena",
+    "latitude": 40.0076,
+    "longitude": -83.0249,
+    "elevation_ft": 732.0
+  },
+  {
+    "team": "Oklahoma",
+    "arena": "Lloyd Noble Center",
+    "latitude": 35.1874,
+    "longitude": -97.4441,
+    "elevation_ft": 1142.0
+  },
+  {
+    "team": "Oklahoma St.",
+    "arena": "Gallagher-Iba Arena",
+    "latitude": 36.1258,
+    "longitude": -97.065,
+    "elevation_ft": 902.0
+  },
+  {
+    "team": "Old Dominion",
+    "arena": "Chartway Arena",
+    "latitude": 36.8839,
+    "longitude": -76.3013,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "Ole Miss",
+    "arena": "The Sandy and John Black Pavilion at Ole Miss",
+    "latitude": 34.363,
+    "longitude": -89.5359,
+    "elevation_ft": 486.0
+  },
+  {
+    "team": "Omaha",
+    "arena": "Baxter Arena",
+    "latitude": 41.2363,
+    "longitude": -96.013,
+    "elevation_ft": 1020.0
+  },
+  {
+    "team": "Oral Roberts",
+    "arena": "Mabee Center",
+    "latitude": 36.048,
+    "longitude": -95.9557,
+    "elevation_ft": 630.0
+  },
+  {
+    "team": "Oregon",
+    "arena": "Matthew Knight Arena",
+    "latitude": 44.0449,
+    "longitude": -123.0668,
+    "elevation_ft": 440.0
+  },
+  {
+    "team": "Oregon St.",
+    "arena": "Gill Coliseum",
+    "latitude": 44.5613,
+    "longitude": -123.2805,
+    "elevation_ft": 236.0
+  },
+  {
+    "team": "Pacific",
+    "arena": "Alex G. Spanos Center",
+    "latitude": 37.9766,
+    "longitude": -121.3153,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "Penn",
+    "arena": "The Palestra",
+    "latitude": 39.9514,
+    "longitude": -75.1886,
+    "elevation_ft": 26.0
+  },
+  {
+    "team": "Penn St.",
+    "arena": "Bryce Jordan Center",
+    "latitude": 40.8085,
+    "longitude": -77.8555,
+    "elevation_ft": 1152.0
+  },
+  {
+    "team": "Pepperdine",
+    "arena": "Firestone Fieldhouse",
+    "latitude": 34.0386,
+    "longitude": -118.7096,
+    "elevation_ft": 236.0
+  },
+  {
+    "team": "Pittsburgh",
+    "arena": "The Pete",
+    "latitude": 40.4439,
+    "longitude": -79.9623,
+    "elevation_ft": 1050.0
+  },
+  {
+    "team": "Portland",
+    "arena": "Chiles Center",
+    "latitude": 28.0682,
+    "longitude": -82.4238,
+    "elevation_ft": 39.0
+  },
+  {
+    "team": "Portland St.",
+    "arena": "Viking Pavilion",
+    "latitude": 45.5108,
+    "longitude": -122.6865,
+    "elevation_ft": 180.0
+  },
+  {
+    "team": "Prairie View",
+    "arena": "William J. Nicks Building",
+    "latitude": 30.0922,
+    "longitude": -95.993,
+    "elevation_ft": 256.0
+  },
+  {
+    "team": "Presbyterian",
+    "arena": "Templeton Physical Education Center",
+    "latitude": 34.4651,
+    "longitude": -81.869,
+    "elevation_ft": 650.0
+  },
+  {
+    "team": "Princeton",
+    "arena": "Jadwin Gymnasium",
+    "latitude": 40.3433,
+    "longitude": -74.6486,
+    "elevation_ft": 102.0
+  },
+  {
+    "team": "Providence",
+    "arena": "Amica Mutual Pavilion",
+    "latitude": 41.8236,
+    "longitude": -71.4183,
+    "elevation_ft": 16.0
+  },
+  {
+    "team": "Purdue",
+    "arena": "Mackey Arena",
+    "latitude": 40.4333,
+    "longitude": -86.9162,
+    "elevation_ft": 636.0
+  },
+  {
+    "team": "Purdue Fort Wayne",
+    "arena": "Hilliard Gates Sports Center",
+    "latitude": 41.1154,
+    "longitude": -85.1118,
+    "elevation_ft": 778.0
+  },
+  {
+    "team": "Queens (NC)",
+    "arena": "Curry Arena",
+    "latitude": 35.1888,
+    "longitude": -80.8323,
+    "elevation_ft": 692.0
+  },
+  {
+    "team": "Quinnipiac",
+    "arena": "People's United Sports Center",
+    "latitude": 41.4139,
+    "longitude": -72.9107,
+    "elevation_ft": 404.0
+  },
+  {
+    "team": "Radford",
+    "arena": "Dedmon Center",
+    "latitude": 37.1386,
+    "longitude": -80.5418,
+    "elevation_ft": 1755.0
+  },
+  {
+    "team": "Rhode Island",
+    "arena": "Ryan Center",
+    "latitude": 41.4881,
+    "longitude": -71.5359,
+    "elevation_ft": 108.0
+  },
+  {
+    "team": "Rice",
+    "arena": "Tudor Fieldhouse",
+    "latitude": 29.7151,
+    "longitude": -95.4039,
+    "elevation_ft": 49.0
+  },
+  {
+    "team": "Richmond",
+    "arena": "Robins Center",
+    "latitude": 37.5807,
+    "longitude": -77.5389,
+    "elevation_ft": 223.0
+  },
+  {
+    "team": "Rider",
+    "arena": "Alumni Gymnasium (Rider University)",
+    "latitude": 40.2789,
+    "longitude": -74.7361,
+    "elevation_ft": 95.0
+  },
+  {
+    "team": "Robert Morris",
+    "arena": "UPMC Events Center",
+    "latitude": 40.5203,
+    "longitude": -80.2147,
+    "elevation_ft": 1165.0
+  },
+  {
+    "team": "Rutgers",
+    "arena": "Jersey Mike's Arena",
+    "latitude": 40.5252,
+    "longitude": -74.4413,
+    "elevation_ft": 115.0
+  },
+  {
+    "team": "Sacramento St.",
+    "arena": "Hornets Nest",
+    "latitude": 38.5619,
+    "longitude": -121.4269,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "Sacred Heart",
+    "arena": "William H. Pitt Center",
+    "latitude": 41.2194,
+    "longitude": -73.2446,
+    "elevation_ft": 295.0
+  },
+  {
+    "team": "Saint Francis (PA)",
+    "arena": "DeGol Arena",
+    "latitude": 40.5045,
+    "longitude": -78.641,
+    "elevation_ft": 1952.0
+  },
+  {
+    "team": "Saint Joseph's",
+    "arena": "Hagan Arena",
+    "latitude": 39.996,
+    "longitude": -75.2349,
+    "elevation_ft": 249.0
+  },
+  {
+    "team": "Saint Louis",
+    "arena": "Chaifetz Arena",
+    "latitude": 38.6324,
+    "longitude": -90.2279,
+    "elevation_ft": 489.0
+  },
+  {
+    "team": "Saint Mary's (CA)",
+    "arena": "University Credit Union Pavilion",
+    "latitude": 37.8413,
+    "longitude": -122.1065,
+    "elevation_ft": 627.0
+  },
+  {
+    "team": "Saint Peter's",
+    "arena": "Yanitelli Center",
+    "latitude": 40.7277,
+    "longitude": -74.0732,
+    "elevation_ft": 59.0
+  },
+  {
+    "team": "Sam Houston",
+    "arena": "Bernard Johnson Coliseum",
+    "latitude": 30.7129,
+    "longitude": -95.5463,
+    "elevation_ft": 423.0
+  },
+  {
+    "team": "Samford",
+    "arena": "Pete Hanna Center",
+    "latitude": 33.4638,
+    "longitude": -86.7972,
+    "elevation_ft": 715.0
+  },
+  {
+    "team": "San Diego",
+    "arena": "Jenny Craig Pavilion",
+    "latitude": 32.7743,
+    "longitude": -117.1838,
+    "elevation_ft": 230.0
+  },
+  {
+    "team": "San Diego St.",
+    "arena": "Viejas Arena",
+    "latitude": 32.7738,
+    "longitude": -117.0745,
+    "elevation_ft": 427.0
+  },
+  {
+    "team": "San Francisco",
+    "arena": "The Sobrato Center",
+    "latitude": 37.7773,
+    "longitude": -122.4501,
+    "elevation_ft": 312.0
+  },
+  {
+    "team": "San Jose St.",
+    "arena": "Provident Credit Union Event Center",
+    "latitude": 37.3352,
+    "longitude": -121.8801,
+    "elevation_ft": 92.0
+  },
+  {
+    "team": "Santa Clara",
+    "arena": "Leavey Center",
+    "latitude": 37.3492,
+    "longitude": -121.9352,
+    "elevation_ft": 75.0
+  },
+  {
+    "team": "Seattle U",
+    "arena": "Redhawk Center",
+    "latitude": 47.6073,
+    "longitude": -122.3134,
+    "elevation_ft": 295.0
+  },
+  {
+    "team": "Seton Hall",
+    "arena": "Prudential Center",
+    "latitude": 40.7336,
+    "longitude": -74.1711,
+    "elevation_ft": 30.0
+  },
+  {
+    "team": "SFA",
+    "arena": "William R. Johnson Coliseum",
+    "latitude": 31.6223,
+    "longitude": -94.6408,
+    "elevation_ft": 292.0
+  },
+  {
+    "team": "Siena",
+    "arena": "MVP Arena",
+    "latitude": 42.6486,
+    "longitude": -73.7551,
+    "elevation_ft": 49.0
+  },
+  {
+    "team": "SIUE",
+    "arena": "Vadalabene Center",
+    "latitude": 38.7963,
+    "longitude": -89.9999,
+    "elevation_ft": 551.0
+  },
+  {
+    "team": "SMU",
+    "arena": "Moody Coliseum",
+    "latitude": 32.8405,
+    "longitude": -96.7806,
+    "elevation_ft": 594.0
+  },
+  {
+    "team": "South Alabama",
+    "arena": "Mitchell Center",
+    "latitude": 30.6922,
+    "longitude": -88.1796,
+    "elevation_ft": 236.0
+  },
+  {
+    "team": "South Carolina",
+    "arena": "Colonial Life Arena",
+    "latitude": 33.9948,
+    "longitude": -81.0374,
+    "elevation_ft": 217.0
+  },
+  {
+    "team": "South Carolina St.",
+    "arena": "Smith\u2013Hammond\u2013Middleton Memorial Center",
+    "latitude": 33.501,
+    "longitude": -80.8465,
+    "elevation_ft": 226.0
+  },
+  {
+    "team": "South Dakota",
+    "arena": "Sanford Coyote Sports Center",
+    "latitude": 42.7901,
+    "longitude": -96.9277,
+    "elevation_ft": 1230.0
+  },
+  {
+    "team": "South Dakota St.",
+    "arena": "Frost Arena",
+    "latitude": 44.3181,
+    "longitude": -96.7791,
+    "elevation_ft": 1637.0
+  },
+  {
+    "team": "South Fla.",
+    "arena": "Yuengling Center",
+    "latitude": 28.0589,
+    "longitude": -82.4061,
+    "elevation_ft": 56.0
+  },
+  {
+    "team": "Southeast Mo. St.",
+    "arena": "Show Me Center",
+    "latitude": 37.3199,
+    "longitude": -89.527,
+    "elevation_ft": 430.0
+  },
+  {
+    "team": "Southeastern La.",
+    "arena": "University Center (Southeastern Louisiana)",
+    "latitude": 30.5199,
+    "longitude": -90.4702,
+    "elevation_ft": 46.0
+  },
+  {
+    "team": "Southern California",
+    "arena": "Galen Center",
+    "latitude": 34.0212,
+    "longitude": -118.2797,
+    "elevation_ft": 197.0
+  },
+  {
+    "team": "Southern Ill.",
+    "arena": "Banterra Center",
+    "latitude": 37.7083,
+    "longitude": -89.2187,
+    "elevation_ft": 433.0
+  },
+  {
+    "team": "Southern Ind.",
+    "arena": "Screaming Eagles Arena",
+    "latitude": 37.9621,
+    "longitude": -87.6748,
+    "elevation_ft": 466.0
+  },
+  {
+    "team": "Southern Miss.",
+    "arena": "Reed Green Coliseum",
+    "latitude": 31.331,
+    "longitude": -89.338,
+    "elevation_ft": 236.0
+  },
+  {
+    "team": "Southern U.",
+    "arena": "F. G. Clark Center",
+    "latitude": 30.522,
+    "longitude": -91.1855,
+    "elevation_ft": 69.0
+  },
+  {
+    "team": "Southern Utah",
+    "arena": "America First Event Center",
+    "latitude": 37.6755,
+    "longitude": -113.0729,
+    "elevation_ft": 5810.0
+  },
+  {
+    "team": "St. Bonaventure",
+    "arena": "Reilly Center",
+    "latitude": 42.0795,
+    "longitude": -78.4849,
+    "elevation_ft": 1421.0
+  },
+  {
+    "team": "St. Francis Brooklyn",
+    "arena": "The ARC",
+    "latitude": 40.6902,
+    "longitude": -73.9619,
+    "elevation_ft": 66.0
+  },
+  {
+    "team": "St. John's (NY)",
+    "arena": "Carnesecca Arena",
+    "latitude": 40.7242,
+    "longitude": -73.7945,
+    "elevation_ft": 92.0
+  },
+  {
+    "team": "St. John's (NY)",
+    "arena": "Madison Square Garden",
+    "latitude": 40.7505,
+    "longitude": -73.9936,
+    "elevation_ft": 36.0
+  },
+  {
+    "team": "St. Thomas (MN)",
+    "arena": "Schoenecker Arena",
+    "latitude": 44.9439,
+    "longitude": -93.1915,
+    "elevation_ft": 876.0
+  },
+  {
+    "team": "Stanford",
+    "arena": "Maples Pavilion",
+    "latitude": 37.4296,
+    "longitude": -122.1605,
+    "elevation_ft": 62.0
+  },
+  {
+    "team": "Stetson",
+    "arena": "Edmunds Center",
+    "latitude": 29.0396,
+    "longitude": -81.3018,
+    "elevation_ft": 69.0
+  },
+  {
+    "team": "Stonehill",
+    "arena": "Merkert Gymnasium",
+    "latitude": 42.0575,
+    "longitude": -71.0788,
+    "elevation_ft": 108.0
+  },
+  {
+    "team": "Stony Brook",
+    "arena": "Island Federal Arena",
+    "latitude": 40.9174,
+    "longitude": -73.1259,
+    "elevation_ft": 125.0
+  },
+  {
+    "team": "Syracuse",
+    "arena": "JMA Wireless Dome",
+    "latitude": 43.0362,
+    "longitude": -76.1363,
+    "elevation_ft": 548.0
+  },
+  {
+    "team": "Tarleton St.",
+    "arena": "Wisdom Gymnasium",
+    "latitude": 32.2154,
+    "longitude": -98.2206,
+    "elevation_ft": 1348.0
+  },
+  {
+    "team": "TCU",
+    "arena": "Schollmaier Arena",
+    "latitude": 32.7088,
+    "longitude": -97.3667,
+    "elevation_ft": 640.0
+  },
+  {
+    "team": "Temple",
+    "arena": "Liacouras Center",
+    "latitude": 39.9786,
+    "longitude": -75.1548,
+    "elevation_ft": 82.0
+  },
+  {
+    "team": "Tennessee",
+    "arena": "Thompson\u2013Boling Arena",
+    "latitude": 35.9511,
+    "longitude": -83.925,
+    "elevation_ft": 853.0
+  },
+  {
+    "team": "Tennessee St.",
+    "arena": "Gentry Complex",
+    "latitude": 36.1689,
+    "longitude": -86.8295,
+    "elevation_ft": 495.0
+  },
+  {
+    "team": "Tennessee Tech",
+    "arena": "Eblen Center",
+    "latitude": 36.1784,
+    "longitude": -85.51,
+    "elevation_ft": 1115.0
+  },
+  {
+    "team": "Texas",
+    "arena": "Moody Center",
+    "latitude": 30.2809,
+    "longitude": -97.7306,
+    "elevation_ft": 558.0
+  },
+  {
+    "team": "Texas A&M",
+    "arena": "Reed Arena",
+    "latitude": 30.6058,
+    "longitude": -96.3464,
+    "elevation_ft": 335.0
+  },
+  {
+    "team": "Texas Southern",
+    "arena": "Health and Physical Education Arena",
+    "latitude": 29.7231,
+    "longitude": -95.3657,
+    "elevation_ft": 43.0
+  },
+  {
+    "team": "Texas St.",
+    "arena": "Strahan Arena",
+    "latitude": 29.8887,
+    "longitude": -97.9327,
+    "elevation_ft": 574.0
+  },
+  {
+    "team": "Texas Tech",
+    "arena": "United Supermarkets Arena",
+    "latitude": 33.5814,
+    "longitude": -101.8866,
+    "elevation_ft": 3225.0
+  },
+  {
+    "team": "The Citadel",
+    "arena": "McAlister Field House",
+    "latitude": 32.7985,
+    "longitude": -79.9625,
+    "elevation_ft": 10.0
+  },
+  {
+    "team": "Toledo",
+    "arena": "Savage Arena",
+    "latitude": 41.6603,
+    "longitude": -83.6094,
+    "elevation_ft": 604.0
+  },
+  {
+    "team": "Towson",
+    "arena": "SECU Arena",
+    "latitude": 39.3874,
+    "longitude": -76.6171,
+    "elevation_ft": 427.0
+  },
+  {
+    "team": "Troy",
+    "arena": "Trojan Arena",
+    "latitude": 31.8022,
+    "longitude": -85.9523,
+    "elevation_ft": 495.0
+  },
+  {
+    "team": "Tulane",
+    "arena": "Devlin Fieldhouse",
+    "latitude": 29.9391,
+    "longitude": -90.1207,
+    "elevation_ft": 3.0
+  },
+  {
+    "team": "Tulsa",
+    "arena": "Reynolds Center",
+    "latitude": 36.1491,
+    "longitude": -95.9422,
+    "elevation_ft": 764.0
+  },
+  {
+    "team": "UAB",
+    "arena": "Bartow Arena",
+    "latitude": 33.5022,
+    "longitude": -86.8093,
+    "elevation_ft": 610.0
+  },
+  {
+    "team": "UC Davis",
+    "arena": "The Pavilion at ARC",
+    "latitude": 38.5419,
+    "longitude": -121.7595,
+    "elevation_ft": 56.0
+  },
+  {
+    "team": "UC Irvine",
+    "arena": "Bren Events Center",
+    "latitude": 33.6492,
+    "longitude": -117.8469,
+    "elevation_ft": 52.0
+  },
+  {
+    "team": "UC Riverside",
+    "arena": "SRC Arena",
+    "latitude": 43.0063,
+    "longitude": -76.1952,
+    "elevation_ft": 922.0
+  },
+  {
+    "team": "UC San Diego",
+    "arena": "RIMAC Arena",
+    "latitude": 32.8854,
+    "longitude": -117.2394,
+    "elevation_ft": 420.0
+  },
+  {
+    "team": "UC Santa Barbara",
+    "arena": "Thunderdome Events Center",
+    "latitude": 34.4138,
+    "longitude": -119.8513,
+    "elevation_ft": 46.0
+  },
+  {
+    "team": "UCF",
+    "arena": "Addition Financial Arena",
+    "latitude": 28.6074,
+    "longitude": -81.1973,
+    "elevation_ft": 66.0
+  },
+  {
+    "team": "UCLA",
+    "arena": "Pauley Pavilion",
+    "latitude": 34.0704,
+    "longitude": -118.4467,
+    "elevation_ft": 390.0
+  },
+  {
+    "team": "UConn",
+    "arena": "Harry A. Gampel Pavilion",
+    "latitude": 41.8053,
+    "longitude": -72.2545,
+    "elevation_ft": 643.0
+  },
+  {
+    "team": "UIC",
+    "arena": "Credit Union 1 Arena",
+    "latitude": 41.8748,
+    "longitude": -87.6561,
+    "elevation_ft": 587.0
+  },
+  {
+    "team": "UIW",
+    "arena": "McDermott Center",
+    "latitude": 29.4681,
+    "longitude": -98.4693,
+    "elevation_ft": 686.0
+  },
+  {
+    "team": "ULM",
+    "arena": "Fant\u2013Ewing Coliseum",
+    "latitude": 32.5311,
+    "longitude": -92.0694,
+    "elevation_ft": 79.0
+  },
+  {
+    "team": "UMass Lowell",
+    "arena": "Costello Athletic Center",
+    "latitude": 42.6554,
+    "longitude": -71.324,
+    "elevation_ft": 92.0
+  },
+  {
+    "team": "UMBC",
+    "arena": "Chesapeake Employers Insurance Arena",
+    "latitude": 39.2519,
+    "longitude": -76.707,
+    "elevation_ft": 157.0
+  },
+  {
+    "team": "UMES",
+    "arena": "Hytche Athletic Center",
+    "latitude": 38.2111,
+    "longitude": -75.687,
+    "elevation_ft": 13.0
+  },
+  {
+    "team": "UNC Asheville",
+    "arena": "Kimmel Arena",
+    "latitude": 35.6182,
+    "longitude": -82.5688,
+    "elevation_ft": 2113.0
+  },
+  {
+    "team": "UNC Greensboro",
+    "arena": "Greensboro Coliseum",
+    "latitude": 36.0585,
+    "longitude": -79.8261,
+    "elevation_ft": 596.0
+  },
+  {
+    "team": "UNCW",
+    "arena": "Trask Coliseum",
+    "latitude": 34.225,
+    "longitude": -77.8783,
+    "elevation_ft": 39.0
+  },
+  {
+    "team": "UNI",
+    "arena": "McLeod Center",
+    "latitude": 42.5143,
+    "longitude": -92.4673,
+    "elevation_ft": 935.0
+  },
+  {
+    "team": "UNLV",
+    "arena": "Thomas & Mack Center",
+    "latitude": 36.1049,
+    "longitude": -115.1443,
+    "elevation_ft": 2051.0
+  },
+  {
+    "team": "USC Upstate",
+    "arena": "G. B. Hodge Center",
+    "latitude": 34.9957,
+    "longitude": -81.9689,
+    "elevation_ft": 843.0
+  },
+  {
+    "team": "UT Arlington",
+    "arena": "College Park Center",
+    "latitude": 32.7305,
+    "longitude": -97.1081,
+    "elevation_ft": 604.0
+  },
+  {
+    "team": "UT Martin",
+    "arena": "Kathleen and Tom Elam Center",
+    "latitude": 36.3436,
+    "longitude": -88.868,
+    "elevation_ft": 387.0
+  },
+  {
+    "team": "Utah",
+    "arena": "Jon M. Huntsman Center",
+    "latitude": 40.762,
+    "longitude": -111.8389,
+    "elevation_ft": 4800.0
+  },
+  {
+    "team": "Utah St.",
+    "arena": "Smith Spectrum",
+    "latitude": 41.7476,
+    "longitude": -111.812,
+    "elevation_ft": 4777.0
+  },
+  {
+    "team": "Utah Tech",
+    "arena": "Burns Arena",
+    "latitude": 37.1014,
+    "longitude": -113.567,
+    "elevation_ft": 2680.0
+  },
+  {
+    "team": "Utah Valley",
+    "arena": "UCCU Center",
+    "latitude": 40.2786,
+    "longitude": -111.717,
+    "elevation_ft": 4587.0
+  },
+  {
+    "team": "UTEP",
+    "arena": "Don Haskins Center",
+    "latitude": 31.7776,
+    "longitude": -106.5057,
+    "elevation_ft": 3930.0
+  },
+  {
+    "team": "UTRGV",
+    "arena": "UTRGV Fieldhouse",
+    "latitude": 26.3069,
+    "longitude": -98.1698,
+    "elevation_ft": 95.0
+  },
+  {
+    "team": "UTSA",
+    "arena": "Convocation Center (UTSA)",
+    "latitude": 29.5822,
+    "longitude": -98.6214,
+    "elevation_ft": 984.0
+  },
+  {
+    "team": "Valparaiso",
+    "arena": "Athletics\u2013Recreation Center",
+    "latitude": 41.4643,
+    "longitude": -87.0485,
+    "elevation_ft": 801.0
+  },
+  {
+    "team": "Vanderbilt",
+    "arena": "Memorial Gymnasium",
+    "latitude": 36.1446,
+    "longitude": -86.8074,
+    "elevation_ft": 531.0
+  },
+  {
+    "team": "VCU",
+    "arena": "Siegel Center",
+    "latitude": 37.553,
+    "longitude": -77.4529,
+    "elevation_ft": 190.0
+  },
+  {
+    "team": "Vermont",
+    "arena": "Patrick Gym",
+    "latitude": 44.4703,
+    "longitude": -73.1947,
+    "elevation_ft": 449.0
+  },
+  {
+    "team": "Villanova",
+    "arena": "Finneran Pavilion",
+    "latitude": 40.0341,
+    "longitude": -75.3366,
+    "elevation_ft": 427.0
+  },
+  {
+    "team": "Virginia",
+    "arena": "John Paul Jones Arena",
+    "latitude": 38.046,
+    "longitude": -78.5068,
+    "elevation_ft": 512.0
+  },
+  {
+    "team": "Virginia Tech",
+    "arena": "Cassell Coliseum",
+    "latitude": 37.2226,
+    "longitude": -80.4192,
+    "elevation_ft": 2096.0
+  },
+  {
+    "team": "VMI",
+    "arena": "Cameron Hall",
+    "latitude": 37.7885,
+    "longitude": -79.4366,
+    "elevation_ft": 971.0
+  },
+  {
+    "team": "Wagner",
+    "arena": "Spiro Sports Center",
+    "latitude": 40.615,
+    "longitude": -74.0957,
+    "elevation_ft": 308.0
+  },
+  {
+    "team": "Wake Forest",
+    "arena": "Lawrence Joel Veterans Memorial Coliseum",
+    "latitude": 36.1274,
+    "longitude": -80.2576,
+    "elevation_ft": 968.0
+  },
+  {
+    "team": "Washington",
+    "arena": "Alaska Airlines Arena at Hec Edmundson Pavilion",
+    "latitude": 47.6521,
+    "longitude": -122.3021,
+    "elevation_ft": 49.0
+  },
+  {
+    "team": "Washington St.",
+    "arena": "Beasley Coliseum",
+    "latitude": 46.7352,
+    "longitude": -117.1581,
+    "elevation_ft": 2566.0
+  },
+  {
+    "team": "Weber St.",
+    "arena": "Dee Events Center",
+    "latitude": 41.1824,
+    "longitude": -111.945,
+    "elevation_ft": 4797.0
+  },
+  {
+    "team": "West Virginia",
+    "arena": "WVU Coliseum",
+    "latitude": 39.6493,
+    "longitude": -79.9817,
+    "elevation_ft": 1083.0
+  },
+  {
+    "team": "Western Caro.",
+    "arena": "Ramsey Center",
+    "latitude": 35.3037,
+    "longitude": -83.1824,
+    "elevation_ft": 2100.0
+  },
+  {
+    "team": "Western Ill.",
+    "arena": "Western Hall",
+    "latitude": 40.4711,
+    "longitude": -90.6853,
+    "elevation_ft": 640.0
+  },
+  {
+    "team": "Western Ky.",
+    "arena": "E. A. Diddle Arena",
+    "latitude": 36.9863,
+    "longitude": -86.4576,
+    "elevation_ft": 515.0
+  },
+  {
+    "team": "Western Mich.",
+    "arena": "University Arena",
+    "latitude": 42.2834,
+    "longitude": -85.6086,
+    "elevation_ft": 817.0
+  },
+  {
+    "team": "Wichita St.",
+    "arena": "Charles Koch Arena",
+    "latitude": 37.7217,
+    "longitude": -97.2975,
+    "elevation_ft": 1368.0
+  },
+  {
+    "team": "William & Mary",
+    "arena": "Kaplan Arena",
+    "latitude": 37.2734,
+    "longitude": -76.7197,
+    "elevation_ft": 75.0
+  },
+  {
+    "team": "Winthrop",
+    "arena": "Winthrop Coliseum",
+    "latitude": 34.9481,
+    "longitude": -81.0149,
+    "elevation_ft": 659.0
+  },
+  {
+    "team": "Wisconsin",
+    "arena": "Kohl Center",
+    "latitude": 43.0694,
+    "longitude": -89.3968,
+    "elevation_ft": 850.0
+  },
+  {
+    "team": "Wofford",
+    "arena": "Jerry Richardson Indoor Stadium",
+    "latitude": 34.9634,
+    "longitude": -81.9335,
+    "elevation_ft": 761.0
+  },
+  {
+    "team": "Wright St.",
+    "arena": "Nutter Center",
+    "latitude": 39.7815,
+    "longitude": -84.0532,
+    "elevation_ft": 909.0
+  },
+  {
+    "team": "Wyoming",
+    "arena": "Arena-Auditorium",
+    "latitude": 41.3134,
+    "longitude": -105.5695,
+    "elevation_ft": 7221.0
+  },
+  {
+    "team": "Xavier",
+    "arena": "Cintas Center",
+    "latitude": 39.1502,
+    "longitude": -84.4719,
+    "elevation_ft": 610.0
+  },
+  {
+    "team": "Yale",
+    "arena": "Payne Whitney Gymnasium",
+    "latitude": 41.3136,
+    "longitude": -72.931,
+    "elevation_ft": 89.0
+  },
+  {
+    "team": "Youngstown St.",
+    "arena": "Beeghly Center",
+    "latitude": 41.1081,
+    "longitude": -80.649,
+    "elevation_ft": 961.0
+  }
+]
