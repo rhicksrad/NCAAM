@@ -105,6 +105,7 @@ const shell = (page) => `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="./">
 <title>${page.title}</title>
 <meta name="description" content="${page.description}">
 <meta property="og:title" content="${page.ogTitle}" />
@@ -131,7 +132,7 @@ for (const page of PAGES) {
 
 // unify 404
 if (!existsSync("public/404.html")) {
-  writeFileSync("public/404.html", `<!doctype html><meta charset="utf-8"><title>404</title>\n<link rel="stylesheet" href="./styles/index.css">\n<header class=\"site-header\"></header>\n<main class=\"container\"><h1>Page not found</h1><p>Use the nav above to continue.</p></main>\n<script type=\"module\" src=\"./scripts/nav.js\"></script>`);
+  writeFileSync("public/404.html", `<!doctype html><meta charset="utf-8"><base href="./"><title>404</title>\n<link rel="stylesheet" href="./styles/index.css">\n<header class=\"site-header\"></header>\n<main class=\"container\"><h1>Page not found</h1><p>Use the nav above to continue.</p></main>\n<script type=\"module\" src=\"./scripts/nav.js\"></script>`);
 }
 
 // remove any root-level duplicates that confuse Pages
