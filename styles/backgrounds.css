@@ -3,8 +3,8 @@
 body {
   background-image:
     radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--color-arc) 20%, transparent), transparent),
-    url("/bg-bracket.svg"),
-    url("/bg-court.svg");
+    url("../bg-bracket.svg"),
+    url("../bg-court.svg");
   background-color: var(--color-cream);
   background-repeat: no-repeat, repeat, repeat;
   background-size: auto, cover, 1200px;
@@ -13,8 +13,8 @@ body {
 html[data-theme="dark"] body {
   background-image:
     radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--color-arc) 20%, transparent), transparent),
-    url("/bg-bracket.svg"),
-    url("/bg-court.svg");
+    url("../bg-bracket.svg"),
+    url("../bg-court.svg");
   background-color: var(--color-cream);
   color: color-mix(in oklab, white 92%, var(--color-ink) 8%);
 }
@@ -25,7 +25,7 @@ html[data-theme="dark"] body {
   color: color-mix(in oklab, var(--color-ink) 92%, var(--color-steel) 8%);
   background-image:
     linear-gradient(180deg, color-mix(in oklab, var(--color-ink) 8%, transparent), transparent 65%),
-    url("/dot-grid.svg");
+    url("../dot-grid.svg");
   background-repeat: no-repeat, repeat;
   background-size: cover, 800px;
 }
