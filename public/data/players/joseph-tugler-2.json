@@ -1,0 +1,48 @@
+{
+  "slug": "joseph-tugler-2",
+  "name": "Joseph Tugler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Houston",
+      "conf": "Big 12",
+      "gp": 28,
+      "gs": 1,
+      "mp_g": 16,
+      "fg_pct": 0.5512820513,
+      "fg3_pct": 0,
+      "ft_pct": 0.4634146341,
+      "orb_g": 1.8928571429,
+      "drb_g": 2.2142857143,
+      "trb_g": 4.1071428571,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.9285714286,
+      "blk_g": 1.0714285714,
+      "tov_g": 0.4642857143,
+      "pf_g": 3.0357142857,
+      "pts_g": 3.75
+    },
+    {
+      "season": "2024-25",
+      "team": "Houston",
+      "conf": "Big 12",
+      "gp": 40,
+      "gs": 33,
+      "mp_g": 21.65,
+      "fg_pct": 0.523255814,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.5384615385,
+      "orb_g": 2.675,
+      "drb_g": 3.2,
+      "trb_g": 5.875,
+      "ast_g": 0.925,
+      "stl_g": 0.95,
+      "blk_g": 1.925,
+      "tov_g": 0.95,
+      "pf_g": 3.075,
+      "pts_g": 5.45
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joseph-tugler-2.html",
+  "last_scraped": "2025-10-31T22:44:48.448Z"
+}

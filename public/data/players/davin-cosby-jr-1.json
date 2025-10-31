@@ -1,0 +1,48 @@
+{
+  "slug": "davin-cosby-jr-1",
+  "name": "Davin Cosby Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Alabama",
+      "conf": "SEC",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 7.9545454545,
+      "fg_pct": 0.3661971831,
+      "fg3_pct": 0.34375,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.0909090909,
+      "drb_g": 0.7727272727,
+      "trb_g": 0.8636363636,
+      "ast_g": 0.4545454545,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.3636363636,
+      "pf_g": 0.6363636364,
+      "pts_g": 3.5909090909
+    },
+    {
+      "season": "2024-25",
+      "team": "Wake Forest",
+      "conf": "ACC",
+      "gp": 17,
+      "gs": 9,
+      "mp_g": 15.6470588235,
+      "fg_pct": 0.3510638298,
+      "fg3_pct": 0.313253012,
+      "ft_pct": 0.5,
+      "orb_g": 0.2941176471,
+      "drb_g": 1.0588235294,
+      "trb_g": 1.3529411765,
+      "ast_g": 0.9411764706,
+      "stl_g": 0.5294117647,
+      "blk_g": 0.0588235294,
+      "tov_g": 0.6470588235,
+      "pf_g": 0.9411764706,
+      "pts_g": 5.5882352941
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/davin-cosby-jr-1.html",
+  "last_scraped": "2025-10-31T22:44:28.427Z"
+}

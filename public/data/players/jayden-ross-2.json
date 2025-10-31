@@ -1,0 +1,48 @@
+{
+  "slug": "jayden-ross-2",
+  "name": "Jayden Ross",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 4.4347826087,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.0909090909,
+      "ft_pct": 0.4,
+      "orb_g": 0.2173913043,
+      "drb_g": 0.5217391304,
+      "trb_g": 0.7391304348,
+      "ast_g": 0.2173913043,
+      "stl_g": 0.1739130435,
+      "blk_g": 0,
+      "tov_g": 0.0869565217,
+      "pf_g": 0.2608695652,
+      "pts_g": 0.652173913
+    },
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 1,
+      "mp_g": 11.3636363636,
+      "fg_pct": 0.4050632911,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2727272727,
+      "drb_g": 1.2121212121,
+      "trb_g": 1.4848484848,
+      "ast_g": 0.8181818182,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.3939393939,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.303030303,
+      "pts_g": 2.3636363636
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jayden-ross-2.html",
+  "last_scraped": "2025-10-31T22:44:43.184Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "johnny-furphy-1",
+  "name": "Johnny Furphy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kansas",
+      "conf": "Big 12",
+      "gp": 33,
+      "gs": 19,
+      "mp_g": 24.0909090909,
+      "fg_pct": 0.4660194175,
+      "fg3_pct": 0.352,
+      "ft_pct": 0.7654320988,
+      "orb_g": 1.303030303,
+      "drb_g": 3.6060606061,
+      "trb_g": 4.9090909091,
+      "ast_g": 1,
+      "stl_g": 0.8787878788,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.8484848485,
+      "pf_g": 2.1212121212,
+      "pts_g": 9.0303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/johnny-furphy-1.html",
+  "last_scraped": "2025-10-31T22:44:47.466Z"
+}
