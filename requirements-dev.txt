@@ -1,3 +1,4 @@
 pytest>=7.4
 ruff>=0.3.0
 pycountry>=24.0
+py7zr>=1.0.0
