@@ -1,0 +1,48 @@
+{
+  "slug": "mouhamed-dioubate-1",
+  "name": "Mouhamed Dioubate",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Alabama",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 7.7575757576,
+      "fg_pct": 0.4736842105,
+      "fg3_pct": 0.0909090909,
+      "ft_pct": 0.4705882353,
+      "orb_g": 1.0303030303,
+      "drb_g": 1.3636363636,
+      "trb_g": 2.3939393939,
+      "ast_g": 0.4242424242,
+      "stl_g": 0.303030303,
+      "blk_g": 0.4848484848,
+      "tov_g": 0.3939393939,
+      "pf_g": 1.1818181818,
+      "pts_g": 2.9393939394
+    },
+    {
+      "season": "2024-25",
+      "team": "Alabama",
+      "conf": "SEC",
+      "gp": 37,
+      "gs": 0,
+      "mp_g": 15.972972973,
+      "fg_pct": 0.6172839506,
+      "fg3_pct": 0.4615384615,
+      "ft_pct": 0.6086956522,
+      "orb_g": 1.8918918919,
+      "drb_g": 4.027027027,
+      "trb_g": 5.9189189189,
+      "ast_g": 1.1351351351,
+      "stl_g": 0.9459459459,
+      "blk_g": 0.6756756757,
+      "tov_g": 1.0810810811,
+      "pf_g": 2.4054054054,
+      "pts_g": 7.2432432432
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mouhamed-dioubate-1.html",
+  "last_scraped": "2025-10-31T22:45:01.819Z"
+}

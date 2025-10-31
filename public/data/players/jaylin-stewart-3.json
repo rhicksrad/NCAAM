@@ -1,0 +1,48 @@
+{
+  "slug": "jaylin-stewart-3",
+  "name": "Jaylin Stewart",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 37,
+      "gs": 0,
+      "mp_g": 8.9189189189,
+      "fg_pct": 0.4743589744,
+      "fg3_pct": 0.2702702703,
+      "ft_pct": 0.4375,
+      "orb_g": 0.4594594595,
+      "drb_g": 0.7567567568,
+      "trb_g": 1.2162162162,
+      "ast_g": 0.3243243243,
+      "stl_g": 0.1351351351,
+      "blk_g": 0.1621621622,
+      "tov_g": 0.2432432432,
+      "pf_g": 0.8108108108,
+      "pts_g": 2.4594594595
+    },
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 35,
+      "gs": 12,
+      "mp_g": 17.8285714286,
+      "fg_pct": 0.5447761194,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.72,
+      "orb_g": 0.8571428571,
+      "drb_g": 1.5142857143,
+      "trb_g": 2.3714285714,
+      "ast_g": 0.9428571429,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.3428571429,
+      "tov_g": 0.7142857143,
+      "pf_g": 1.6571428571,
+      "pts_g": 5.3714285714
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylin-stewart-3.html",
+  "last_scraped": "2025-10-31T22:44:45.080Z"
+}

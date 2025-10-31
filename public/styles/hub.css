@@ -5662,6 +5662,38 @@ section h2 { margin-top: 0; font-size: clamp(1.35rem, 3vw, 1.8rem); letter-spaci
   gap: 0.75rem;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
+.player-card__stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background-color: transparent;
+}
+.player-card__stats-table thead th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--text-subtle) 80%, var(--navy) 20%);
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+}
+.player-card__stats-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  color: color-mix(in srgb, var(--text) 90%, var(--navy) 10%);
+}
+.player-card__stats-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.player-card__stats-table th.numeric,
+.player-card__stats-table td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.player-card__stats-table tbody tr:nth-child(even) td {
+  background-color: color-mix(in srgb, rgba(17, 181, 198, 0.12) 45%, transparent);
+}
 .player-card__stat {
   display: grid;
   gap: 0.25rem;

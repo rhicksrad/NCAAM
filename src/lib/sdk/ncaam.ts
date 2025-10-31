@@ -66,64 +66,10 @@ export type Player = {
 };
 export type Game = { id:number; date:string; status:string; home_team:Team; visitor_team:Team; home_team_score?:number; visitor_team_score?:number; };
 export type Conference = { id:number; name:string; short_name?:string };
-export type PlayerStatLine = {
-  id: number;
-  min?: string | null;
-  fgm?: number;
-  fga?: number;
-  fg3m?: number;
-  fg3a?: number;
-  ftm?: number;
-  fta?: number;
-  oreb?: number;
-  dreb?: number;
-  reb?: number;
-  ast?: number;
-  stl?: number;
-  blk?: number;
-  turnover?: number;
-  pf?: number;
-  pts?: number;
-  season?: number;
-  game?: Game & { season?: number; postseason?: boolean };
-  team?: Team;
-  player?: Player;
-};
-
-export type PlayerStatsOptions = {
-  season?: number;
-  postseason?: boolean;
-  teamIds?: number[];
-  playerIds?: number[];
-  page?: number;
-  perPage?: number;
-  cursor?: string | number;
-};
-
 export const NCAAM = {
   teams: (page=1, per_page=200) => get<{data:Team[]}>("/teams", { page, per_page }),
   players: (page=1, per_page=200, search="") => get<{data:Player[]}>("/players", { page, per_page, search }),
   activePlayersByTeam: (teamId:number) => get<{data:Player[]}>("/players/active", { "team_ids[]": teamId, per_page: 100 }),
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
   conferences: () => get<{data:Conference[]}>("/conferences"),
-  playerStats: ({
-    season,
-    postseason,
-    teamIds,
-    playerIds,
-    page = 1,
-    perPage = 100,
-    cursor,
-  }: PlayerStatsOptions = {}) => {
-    const params: Record<string, QueryValue> = { page, per_page: perPage };
-    if (typeof season === "number" && Number.isFinite(season)) params.season = season;
-    if (postseason) params.postseason = true;
-    if (cursor !== undefined && cursor !== null) params.cursor = cursor;
-    if (Array.isArray(teamIds) && teamIds.length > 0) params["team_ids[]"] = teamIds;
-    if (Array.isArray(playerIds) && playerIds.length > 0) params["player_ids[]"] = playerIds;
-    return get<{ data: PlayerStatLine[]; meta?: { next_page?: number | null; next_cursor?: string | number | null } }>(
-      "/stats",
-      params,
-    );
-  },
 };

@@ -1,0 +1,48 @@
+{
+  "slug": "cedric-lath-1",
+  "name": "Cedric Lath",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Houston",
+      "conf": "Big 12",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 5.56,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": null,
+      "ft_pct": 0.2,
+      "orb_g": 0.52,
+      "drb_g": 0.28,
+      "trb_g": 0.8,
+      "ast_g": 0,
+      "stl_g": 0.04,
+      "blk_g": 0.32,
+      "tov_g": 0.2,
+      "pf_g": 0.88,
+      "pts_g": 0.2
+    },
+    {
+      "season": "2024-25",
+      "team": "Houston",
+      "conf": "Big 12",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 5.6,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": null,
+      "ft_pct": 0.2727272727,
+      "orb_g": 0.95,
+      "drb_g": 0.3,
+      "trb_g": 1.25,
+      "ast_g": 0.05,
+      "stl_g": 0.05,
+      "blk_g": 0.3,
+      "tov_g": 0.15,
+      "pf_g": 1,
+      "pts_g": 0.65
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cedric-lath-1.html",
+  "last_scraped": "2025-10-31T22:44:22.077Z"
+}

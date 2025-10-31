@@ -53,18 +53,4 @@ export const NCAAM = {
     activePlayersByTeam: (teamId) => get("/players/active", { "team_ids[]": teamId, per_page: 100 }),
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
     conferences: () => get("/conferences"),
-    playerStats: ({ season, postseason, teamIds, playerIds, page = 1, perPage = 100, cursor, } = {}) => {
-        const params = { page, per_page: perPage };
-        if (typeof season === "number" && Number.isFinite(season))
-            params.season = season;
-        if (postseason)
-            params.postseason = true;
-        if (cursor !== undefined && cursor !== null)
-            params.cursor = cursor;
-        if (Array.isArray(teamIds) && teamIds.length > 0)
-            params["team_ids[]"] = teamIds;
-        if (Array.isArray(playerIds) && playerIds.length > 0)
-            params["player_ids[]"] = playerIds;
-        return get("/stats", params);
-    },
 };

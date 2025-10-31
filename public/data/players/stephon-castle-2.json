@@ -1,0 +1,28 @@
+{
+  "slug": "stephon-castle-2",
+  "name": "Stephon Castle",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 30,
+      "mp_g": 27,
+      "fg_pct": 0.4724137931,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.7545454545,
+      "orb_g": 1.6764705882,
+      "drb_g": 3,
+      "trb_g": 4.6764705882,
+      "ast_g": 2.9117647059,
+      "stl_g": 0.7941176471,
+      "blk_g": 0.5294117647,
+      "tov_g": 1.5,
+      "pf_g": 2.4117647059,
+      "pts_g": 11.0882352941
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/stephon-castle-2.html",
+  "last_scraped": "2025-10-31T22:45:18.488Z"
+}

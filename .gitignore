@@ -1,5 +1,6 @@
 node_modules/
 dist/
+.cache/
 # NCAA logos are generated from the bundled archive at build time.
 # Keep the directory in version control for documentation only.
 public/assets/logos/ncaa/*

@@ -62,39 +62,42 @@ const assetUrl = (path) => {
     const normalisedPath = path.startsWith("/") ? path.slice(1) : path;
     return new URL(normalisedPath, root).toString();
 };
-const [conferenceMap, teamsResponse, statsIndex] = await Promise.all([
+const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
     getConferenceMap(),
     NCAAM.teams(1, 400),
-    fetch(assetUrl("data/player_stats.json"))
+    fetch(assetUrl("data/players_index.json"))
         .then(res => {
         if (!res.ok)
-            throw new Error(`Failed to load player stats index (${res.status})`);
+            throw new Error(`Failed to load player index (${res.status})`);
         return res.json();
     })
         .catch(error => {
-        console.warn("Unable to load player stats index", error);
+        console.warn("Unable to load player index", error);
         return null;
     }),
 ]);
-const playerStatsById = new Map();
-let playerStatsSeasonLabel = undefined;
-if (statsIndex && statsIndex.players) {
-    playerStatsSeasonLabel = statsIndex.season_label;
-    for (const [key, value] of Object.entries(statsIndex.players)) {
-        const id = Number(key);
-        if (!Number.isFinite(id))
-            continue;
-        playerStatsById.set(id, value);
-    }
+const playerIndexEntries = Array.isArray(playersIndexDoc?.players) ? playersIndexDoc.players : [];
+const playerIndexSeasonsRaw = Array.isArray(playersIndexDoc?.seasons) ? playersIndexDoc.seasons : [];
+const playerIndexSeasons = playerIndexSeasonsRaw.filter((value) => typeof value === "string");
+playerIndexSeasons.sort((a, b) => seasonLabelToYear(a) - seasonLabelToYear(b));
+const latestPlayerIndexSeason = playerIndexSeasons[playerIndexSeasons.length - 1] ?? null;
+const playerIndexByKey = new Map();
+const playerIndexByName = new Map();
+for (const entry of playerIndexEntries) {
+    const nameKey = entry.name_key ?? normaliseName(entry.name);
+    const teamKey = entry.team_key ?? normaliseTeam(entry.team);
+    const lookupKey = `${entry.season}|${teamKey}|${nameKey}`;
+    playerIndexByKey.set(lookupKey, entry);
+    const bucket = playerIndexByName.get(nameKey) ?? [];
+    bucket.push(entry);
+    playerIndexByName.set(nameKey, bucket);
 }
-const playerStatsSeason = statsIndex?.season ?? inferCurrentSeason();
-if (!playerStatsSeasonLabel && Number.isFinite(playerStatsSeason)) {
-    playerStatsSeasonLabel = formatSeasonLabel(playerStatsSeason);
+for (const bucket of playerIndexByName.values()) {
+    bucket.sort((a, b) => seasonLabelToYear(a.season) - seasonLabelToYear(b.season));
 }
-const livePlayerStatsCache = new Map();
-const livePlayerStatsRequests = new Map();
-const PLAYER_STATS_PAGE_SIZE = 100;
-const PLAYER_STATS_MAX_STEPS = 12;
+const playerSlugCache = new Map();
+const playerStatsCache = new Map();
+const playerStatsRequests = new Map();
 const seenTeams = new Map();
 for (const team of teamsResponse.data) {
     if (!team.conference_id)
@@ -252,66 +255,135 @@ function createMetaRow(label, value) {
 function renderPlayerStatsSection(player) {
     const section = document.createElement("section");
     section.className = "player-card__stats";
-    const stats = playerStatsById.get(player.id);
-    if (stats && stats.games_played > 0) {
-        populatePlayerStatsSection(section, stats);
+    const slug = resolvePlayerSlug(player);
+    if (!slug) {
+        section.innerHTML = `<p class="player-card__stats-empty">College stats are not available for this player.</p>`;
         return section;
     }
-    const cached = livePlayerStatsCache.get(player.id);
-    if (cached) {
-        populatePlayerStatsSection(section, cached);
+    const cached = playerStatsCache.get(slug);
+    if (cached !== undefined) {
+        updatePlayerStatsSection(section, slug, cached);
         return section;
     }
-    if (cached === null) {
-        section.innerHTML = `<p class="player-card__stats-empty">No stats available for this player.</p>`;
-        return section;
-    }
-    section.innerHTML = `<p class="player-card__stats-empty">Fetching season averages…</p>`;
-    ensurePlayerStats(player).then(result => {
-        if (result && result.games_played > 0) {
-            populatePlayerStatsSection(section, result);
-            return;
-        }
-        section.innerHTML = `<p class="player-card__stats-empty">No stats available for this player.</p>`;
+    section.innerHTML = `<p class="player-card__stats-empty">Loading college stats…</p>`;
+    ensureStatsForSlug(slug)
+        .then(doc => {
+        updatePlayerStatsSection(section, slug, doc);
+    })
+        .catch(error => {
+        console.error(`Unable to load college stats for ${slug}`, error);
+        section.innerHTML = `<p class="player-card__stats-error">Unable to load college stats right now.</p>`;
     });
     return section;
 }
-function createStatEntry(label, value) {
-    const stat = document.createElement("span");
-    stat.className = "player-card__stat";
-    stat.dataset.label = label;
-    stat.textContent = value;
-    stat.setAttribute("aria-label", `${label}: ${value}`);
-    return stat;
-}
-function populatePlayerStatsSection(section, stats) {
+function updatePlayerStatsSection(section, slug, doc) {
+    if (doc === null) {
+        section.innerHTML = `<p class="player-card__stats-error">Unable to load college stats right now.</p>`;
+        return;
+    }
+    const seasons = Array.isArray(doc.seasons) ? doc.seasons : [];
+    if (seasons.length === 0) {
+        section.innerHTML = `<p class="player-card__stats-empty">College stats are not available for this player.</p>`;
+        return;
+    }
     section.innerHTML = "";
     const header = document.createElement("div");
     header.className = "player-card__stats-header";
-    const title = document.createElement("strong");
-    title.textContent = playerStatsSeasonLabel ?? "Season averages";
+    const title = document.createElement("h3");
+    title.textContent = "College stats";
     header.append(title);
-    const summary = document.createElement("span");
-    summary.textContent = `${stats.games_played} GP`;
-    header.append(summary);
-    const grid = document.createElement("div");
-    grid.className = "player-card__stats-grid";
-    const statsList = [
-        ["MIN", formatMinutes(stats.avg_seconds)],
-        ["PTS", formatAverage(stats.pts)],
-        ["REB", formatAverage(stats.reb)],
-        ["AST", formatAverage(stats.ast)],
-        ["STL", formatAverage(stats.stl)],
-        ["BLK", formatAverage(stats.blk)],
-        ["TOV", formatAverage(stats.tov)],
-        ["FG%", formatPercent(stats.fg_pct)],
-        ["3P%", formatPercent(stats.fg3_pct)],
-        ["FT%", formatPercent(stats.ft_pct)],
-    ];
-    for (const [label, value] of statsList) {
-        grid.append(createStatEntry(label, value));
+    const source = document.createElement("p");
+    source.className = "player-card__stats-meta";
+    source.textContent = "Source: College Basketball Reference";
+    header.append(source);
+    section.append(header);
+    const table = createPlayerStatsTable(seasons);
+    section.append(table);
+    const updated = lastUpdatedLabel(doc.last_scraped);
+    if (updated) {
+        const updatedRow = document.createElement("p");
+        updatedRow.className = "player-card__stats-meta";
+        updatedRow.textContent = `Last updated ${updated}`;
+        section.append(updatedRow);
     }
-    section.append(header, grid);
+    const linkRow = document.createElement("p");
+    linkRow.className = "player-card__stats-meta";
+    const anchor = document.createElement("a");
+    anchor.href = doc.source;
+    anchor.target = "_blank";
+    anchor.rel = "noopener";
+    anchor.textContent = "View on College Basketball Reference";
+    linkRow.append(anchor);
+    section.append(linkRow);
+}
+function createPlayerStatsTable(seasons) {
+    const table = document.createElement("table");
+    table.className = "player-card__stats-table";
+    const thead = document.createElement("thead");
+    const headRow = document.createElement("tr");
+    const headers = [
+        ["Season", false],
+        ["Team", false],
+        ["Conf", false],
+        ["GP", true],
+        ["GS", true],
+        ["MP", true],
+        ["FG%", true],
+        ["3P%", true],
+        ["FT%", true],
+        ["ORB", true],
+        ["DRB", true],
+        ["TRB", true],
+        ["AST", true],
+        ["STL", true],
+        ["BLK", true],
+        ["TOV", true],
+        ["PF", true],
+        ["PTS", true],
+    ];
+    for (const [label, numeric] of headers) {
+        const th = document.createElement("th");
+        th.textContent = label;
+        if (numeric) {
+            th.classList.add("numeric");
+        }
+        headRow.append(th);
+    }
+    thead.append(headRow);
+    table.append(thead);
+    const tbody = document.createElement("tbody");
+    for (const season of seasons) {
+        const row = document.createElement("tr");
+        appendTableCell(row, season.season);
+        appendTableCell(row, season.team || "—");
+        appendTableCell(row, season.conf || "—");
+        appendTableCell(row, formatInteger(season.gp), true);
+        appendTableCell(row, formatInteger(season.gs), true);
+        appendTableCell(row, formatDecimal(season.mp_g), true);
+        appendTableCell(row, formatPercentValue(season.fg_pct), true);
+        appendTableCell(row, formatPercentValue(season.fg3_pct), true);
+        appendTableCell(row, formatPercentValue(season.ft_pct), true);
+        appendTableCell(row, formatDecimal(season.orb_g), true);
+        appendTableCell(row, formatDecimal(season.drb_g), true);
+        appendTableCell(row, formatDecimal(season.trb_g), true);
+        appendTableCell(row, formatDecimal(season.ast_g), true);
+        appendTableCell(row, formatDecimal(season.stl_g), true);
+        appendTableCell(row, formatDecimal(season.blk_g), true);
+        appendTableCell(row, formatDecimal(season.tov_g), true);
+        appendTableCell(row, formatDecimal(season.pf_g), true);
+        appendTableCell(row, formatDecimal(season.pts_g), true);
+        tbody.append(row);
+    }
+    table.append(tbody);
+    return table;
+}
+function appendTableCell(row, value, numeric = false) {
+    const cell = document.createElement("td");
+    cell.textContent = value;
+    if (numeric) {
+        cell.classList.add("numeric");
+    }
+    row.append(cell);
 }
 function formatJersey(value) {
     if (!value)
@@ -319,16 +391,23 @@ function formatJersey(value) {
     const trimmed = value.trim();
     return trimmed ? `#${trimmed.replace(/^#/, "")}` : "—";
 }
-function formatAverage(value) {
-    if (value === undefined || value === null)
+function formatInteger(value) {
+    if (value === null || value === undefined)
         return "—";
     if (!Number.isFinite(value))
         return "—";
-    const fixed = value.toFixed(1);
-    return fixed.replace(/\.0$/, "");
+    return String(Math.round(value));
 }
-function formatPercent(value) {
-    if (value === undefined || value === null)
+function formatDecimal(value, digits = 1) {
+    if (value === null || value === undefined)
+        return "—";
+    if (!Number.isFinite(value))
+        return "—";
+    const fixed = value.toFixed(digits);
+    return fixed.replace(/\.0+$/, "");
+}
+function formatPercentValue(value) {
+    if (value === null || value === undefined)
         return "—";
     if (!Number.isFinite(value))
         return "—";
@@ -338,191 +417,114 @@ function formatPercent(value) {
     const fixed = pct.toFixed(1);
     return `${fixed.replace(/\.0$/, "")}%`;
 }
-function formatMinutes(value) {
-    if (value === undefined || value === null)
-        return "—";
-    if (!Number.isFinite(value))
-        return "—";
-    const total = Math.round(value);
-    if (total <= 0)
-        return "—";
-    const minutes = Math.floor(total / 60);
-    const seconds = Math.max(0, total - minutes * 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+function resolvePlayerSlug(player) {
+    const cached = playerSlugCache.get(player.id);
+    if (cached !== undefined) {
+        return cached;
+    }
+    const fullName = `${player.first_name ?? ""} ${player.last_name ?? ""}`.trim();
+    if (!fullName) {
+        playerSlugCache.set(player.id, null);
+        return null;
+    }
+    const nameKey = normaliseName(fullName);
+    const teamName = player.team?.full_name ?? player.team?.name ?? "";
+    const teamKey = normaliseTeam(teamName);
+    let match;
+    if (teamKey) {
+        if (latestPlayerIndexSeason) {
+            match = playerIndexByKey.get(`${latestPlayerIndexSeason}|${teamKey}|${nameKey}`);
+        }
+        if (!match) {
+            for (let i = playerIndexSeasons.length - 1; i >= 0; i -= 1) {
+                const season = playerIndexSeasons[i];
+                const candidate = playerIndexByKey.get(`${season}|${teamKey}|${nameKey}`);
+                if (candidate) {
+                    match = candidate;
+                    break;
+                }
+            }
+        }
+    }
+    if (!match) {
+        const bucket = playerIndexByName.get(nameKey) ?? [];
+        if (bucket.length > 0) {
+            match = bucket[bucket.length - 1];
+        }
+    }
+    if (!match) {
+        playerSlugCache.set(player.id, null);
+        console.warn(`No College Basketball Reference slug for ${fullName} (${teamName || "unknown team"})`);
+        return null;
+    }
+    playerSlugCache.set(player.id, match.slug);
+    return match.slug;
 }
-function ensurePlayerStats(player) {
-    const existing = playerStatsById.get(player.id);
-    if (existing && existing.games_played > 0) {
-        return Promise.resolve(existing);
+function ensureStatsForSlug(slug) {
+    const cached = playerStatsCache.get(slug);
+    if (cached !== undefined) {
+        return Promise.resolve(cached);
     }
-    if (livePlayerStatsCache.has(player.id)) {
-        return Promise.resolve(livePlayerStatsCache.get(player.id) ?? null);
-    }
-    const pending = livePlayerStatsRequests.get(player.id);
+    const pending = playerStatsRequests.get(slug);
     if (pending) {
         return pending;
     }
     const request = (async () => {
         try {
-            const fetched = await fetchPlayerStatsFromApi(player.id);
-            if (fetched && fetched.games_played > 0) {
-                playerStatsById.set(player.id, fetched);
-                livePlayerStatsCache.set(player.id, fetched);
-                return fetched;
+            const response = await fetch(assetUrl(`data/players/${slug}.json`));
+            if (!response.ok) {
+                console.error(`Failed to fetch local stats for ${slug} (${response.status})`);
+                playerStatsCache.set(slug, null);
+                return null;
             }
-            livePlayerStatsCache.set(player.id, null);
-            return null;
+            const json = (await response.json());
+            json.seasons = Array.isArray(json.seasons) ? json.seasons : [];
+            playerStatsCache.set(slug, json);
+            return json;
         }
         catch (error) {
-            livePlayerStatsCache.set(player.id, null);
-            console.warn(`Unable to fetch stats for player ${player.id}`, error);
+            console.error(`Network error while fetching stats for ${slug}`, error);
+            playerStatsCache.set(slug, null);
             return null;
         }
         finally {
-            livePlayerStatsRequests.delete(player.id);
+            playerStatsRequests.delete(slug);
         }
     })();
-    livePlayerStatsRequests.set(player.id, request);
+    playerStatsRequests.set(slug, request);
     return request;
 }
-async function fetchPlayerStatsFromApi(playerId) {
-    const totals = createPlayerTotals(playerId);
-    const season = playerStatsSeason;
-    let page = 1;
-    let cursor;
-    for (let attempts = 0; attempts < PLAYER_STATS_MAX_STEPS; attempts += 1) {
-        const response = await NCAAM.playerStats({
-            playerIds: [playerId],
-            perPage: PLAYER_STATS_PAGE_SIZE,
-            page,
-            cursor,
-            ...(Number.isFinite(season) ? { season } : {}),
-        });
-        const rows = Array.isArray(response.data) ? response.data : [];
-        if (rows.length === 0 && attempts === 0) {
-            break;
-        }
-        for (const row of rows) {
-            const rowPlayerId = Number(row.player?.id ?? playerId);
-            if (!Number.isFinite(rowPlayerId) || rowPlayerId !== playerId) {
-                continue;
-            }
-            accumulatePlayerTotals(totals, row);
-        }
-        const meta = response.meta ?? {};
-        const nextCursor = meta.next_cursor;
-        if (nextCursor !== undefined && nextCursor !== null && String(nextCursor).length > 0) {
-            cursor = nextCursor;
-            continue;
-        }
-        if (typeof meta.next_page === "number" && meta.next_page > page) {
-            page = meta.next_page;
-            cursor = undefined;
-            continue;
-        }
-        if (rows.length < PLAYER_STATS_PAGE_SIZE) {
-            break;
-        }
-        page += 1;
-        cursor = undefined;
-    }
-    if (totals.games === 0) {
-        return null;
-    }
-    const average = totalsToAverage(totals);
-    if (!playerStatsSeasonLabel && Number.isFinite(season)) {
-        playerStatsSeasonLabel = formatSeasonLabel(season);
-    }
-    return average;
-}
-function createPlayerTotals(playerId) {
-    return {
-        playerId,
-        games: 0,
-        seconds: 0,
-        pts: 0,
-        reb: 0,
-        ast: 0,
-        stl: 0,
-        blk: 0,
-        tov: 0,
-        fgm: 0,
-        fga: 0,
-        fg3m: 0,
-        fg3a: 0,
-        ftm: 0,
-        fta: 0,
-        teamId: null,
-        teamAbbreviation: null,
-    };
-}
-function accumulatePlayerTotals(totals, line) {
-    totals.games += 1;
-    totals.seconds += parseMinutesToSeconds(line.min ?? null);
-    totals.pts += safeStatNumber(line.pts);
-    totals.reb += safeStatNumber(line.reb);
-    totals.ast += safeStatNumber(line.ast);
-    totals.stl += safeStatNumber(line.stl);
-    totals.blk += safeStatNumber(line.blk);
-    totals.tov += safeStatNumber(line.turnover);
-    totals.fgm += safeStatNumber(line.fgm);
-    totals.fga += safeStatNumber(line.fga);
-    totals.fg3m += safeStatNumber(line.fg3m);
-    totals.fg3a += safeStatNumber(line.fg3a);
-    totals.ftm += safeStatNumber(line.ftm);
-    totals.fta += safeStatNumber(line.fta);
-    if (line.team && Number.isFinite(line.team.id)) {
-        totals.teamId = line.team.id;
-    }
-    if (line.team?.abbreviation) {
-        totals.teamAbbreviation = line.team.abbreviation;
-    }
-}
-function totalsToAverage(totals) {
-    const games = Math.max(1, totals.games);
-    return {
-        player_id: totals.playerId,
-        team_id: totals.teamId,
-        team_abbreviation: totals.teamAbbreviation,
-        games_played: totals.games,
-        avg_seconds: totals.seconds / games,
-        pts: totals.pts / games,
-        reb: totals.reb / games,
-        ast: totals.ast / games,
-        stl: totals.stl / games,
-        blk: totals.blk / games,
-        tov: totals.tov / games,
-        fg_pct: totals.fga > 0 ? totals.fgm / totals.fga : null,
-        fg3_pct: totals.fg3a > 0 ? totals.fg3m / totals.fg3a : null,
-        ft_pct: totals.fta > 0 ? totals.ftm / totals.fta : null,
-    };
-}
-function safeStatNumber(value) {
-    return typeof value === "number" && Number.isFinite(value) ? value : 0;
-}
-function parseMinutesToSeconds(value) {
+function lastUpdatedLabel(value) {
     if (!value)
-        return 0;
-    const trimmed = value.trim();
-    if (!trimmed)
-        return 0;
-    const [minutePart, secondPart] = trimmed.split(":");
-    const minutes = Number.parseInt(minutePart ?? "0", 10);
-    const seconds = Number.parseInt(secondPart ?? "0", 10);
-    if (!Number.isFinite(minutes) || !Number.isFinite(seconds)) {
-        return 0;
-    }
-    return Math.max(0, minutes * 60 + seconds);
+        return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime()))
+        return null;
+    return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
-function formatSeasonLabel(season) {
-    const next = String(season + 1);
-    return `${season}-${next.slice(-2)}`;
+function normaliseName(value) {
+    return value
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/\b(jr|sr|ii|iii|iv|v)\b/g, "")
+        .replace(/[^a-z0-9]/g, "");
 }
-function inferCurrentSeason() {
-    const now = new Date();
-    const year = now.getUTCFullYear();
-    const month = now.getUTCMonth();
-    return month >= 6 ? year : year - 1;
+function normaliseTeam(value) {
+    return value
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/men's|mens|women's|womens/gi, "")
+        .replace(/\b(men|women|basketball)\b/gi, "")
+        .replace(/[^a-z0-9]/g, "");
+}
+function seasonLabelToYear(label) {
+    const match = label.match(/(\d{4})/);
+    if (!match)
+        return 0;
+    const start = Number.parseInt(match[1], 10);
+    if (!Number.isFinite(start))
+        return 0;
+    return start + 1;
 }
 function buildSearchIndex(team, group) {
     return [

@@ -1,0 +1,48 @@
+{
+  "slug": "solomon-ball-2",
+  "name": "Solomon Ball",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 39,
+      "gs": 10,
+      "mp_g": 11.4615384615,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.3194444444,
+      "ft_pct": 0.6956521739,
+      "orb_g": 0.358974359,
+      "drb_g": 0.641025641,
+      "trb_g": 1,
+      "ast_g": 0.2564102564,
+      "stl_g": 0.2051282051,
+      "blk_g": 0.0256410256,
+      "tov_g": 0.358974359,
+      "pf_g": 0.7179487179,
+      "pts_g": 3.3076923077
+    },
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 31.7142857143,
+      "fg_pct": 0.4391534392,
+      "fg3_pct": 0.4142259414,
+      "ft_pct": 0.8409090909,
+      "orb_g": 0.6857142857,
+      "drb_g": 2.9142857143,
+      "trb_g": 3.6,
+      "ast_g": 1.6285714286,
+      "stl_g": 0.7428571429,
+      "blk_g": 0.3714285714,
+      "tov_g": 1,
+      "pf_g": 1.9714285714,
+      "pts_g": 14.4285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/solomon-ball-2.html",
+  "last_scraped": "2025-10-31T22:45:16.071Z"
+}
