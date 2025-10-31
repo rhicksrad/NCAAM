@@ -6,7 +6,11 @@ import { fetchHtml } from "./lib/http.js";
 
 const BASE_URL = "https://www.sports-reference.com";
 const DEFAULT_SEASONS = [2024, 2025];
-const CONCURRENCY = 2;
+const concurrencyEnvRaw = process.env.CBB_CONCURRENCY;
+const concurrencyValue = concurrencyEnvRaw ? Number.parseInt(concurrencyEnvRaw, 10) : Number.NaN;
+const parsedConcurrency = Number.isFinite(concurrencyValue) && concurrencyValue > 0 ? concurrencyValue : null;
+const isCi = process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
+const CONCURRENCY = parsedConcurrency ?? (isCi ? 1 : 2);
 const teamLimitEnv = process.env.CBB_TEAM_LIMIT ? Number.parseInt(process.env.CBB_TEAM_LIMIT, 10) : null;
 const TEAM_LIMIT = Number.isFinite(teamLimitEnv ?? null) && (teamLimitEnv ?? 0) > 0 ? teamLimitEnv : null;
 const teamSlugsEnv = process.env.CBB_TEAMS
@@ -186,6 +190,7 @@ async function runPool<T>(items: T[], limit: number, iterator: (item: T) => Prom
 async function main(): Promise<void> {
   const seasons = parseSeasonArgs();
   console.log(`Building College Basketball Reference index for seasons: ${seasons.join(", ")}`);
+  console.log(`Roster fetch concurrency: ${CONCURRENCY}`);
 
   const playerMap = new Map<string, PlayerIndexEntry>();
   const seasonLabels = new Set<string>();

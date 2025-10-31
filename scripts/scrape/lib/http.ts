@@ -8,18 +8,44 @@ import { promisify } from "node:util";
 const CACHE_DIR = path.resolve(process.cwd(), ".cache", "cbb");
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 const MAX_RETRIES = 4;
+const MIN_REQUEST_INTERVAL_MS = 1250;
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36";
+const COOKIE_JAR = path.join(CACHE_DIR, "cookies.txt");
+const CURL_HEADERS = [
+  "-H",
+  "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+  "-H",
+  "Accept-Language: en-US,en;q=0.9",
+  "-H",
+  "Cache-Control: no-cache",
+  "-H",
+  "Pragma: no-cache",
+  "-H",
+  "Sec-Fetch-Dest: document",
+  "-H",
+  "Sec-Fetch-Mode: navigate",
+  "-H",
+  "Sec-Fetch-Site: same-origin",
+  "-H",
+  "Upgrade-Insecure-Requests: 1",
+];
 
 const pending = new Map<string, Promise<string>>();
 let cacheReady: Promise<void> | null = null;
+let lastRequestAt = 0;
 const execFileAsync = promisify(execFile);
 const STATUS_MARKER = "__curl_http_status__";
 
 async function ensureCacheDir(): Promise<void> {
   if (!cacheReady) {
-    cacheReady = fs.mkdir(CACHE_DIR, { recursive: true }).then(() => undefined);
+    cacheReady = fs
+      .mkdir(CACHE_DIR, { recursive: true })
+      .then(async () => {
+        await fs.open(COOKIE_JAR, "a").then(file => file.close());
+      })
+      .then(() => undefined);
   }
   await cacheReady;
 }
@@ -58,6 +84,10 @@ function jitter(minMs: number, maxMs: number): number {
 }
 
 async function requestWithCurl(url: string): Promise<{ status: number; body: string }> {
+  const sinceLast = Date.now() - lastRequestAt;
+  if (sinceLast < MIN_REQUEST_INTERVAL_MS) {
+    await sleep(MIN_REQUEST_INTERVAL_MS - sinceLast + jitter(100, 200));
+  }
   const args = [
     "-sS",
     "-L",
@@ -68,6 +98,11 @@ async function requestWithCurl(url: string): Promise<{ status: number; body: str
     "45",
     "-A",
     USER_AGENT,
+    "--cookie",
+    COOKIE_JAR,
+    "--cookie-jar",
+    COOKIE_JAR,
+    ...CURL_HEADERS,
     "-w",
     `\n${STATUS_MARKER}%{http_code}\n`,
     url,
@@ -86,6 +121,7 @@ async function requestWithCurl(url: string): Promise<{ status: number; body: str
   if (!Number.isFinite(status)) {
     throw new Error(`Invalid HTTP status from curl for ${url}: ${statusLine}`);
   }
+  lastRequestAt = Date.now();
   return { status, body };
 }
 
@@ -107,7 +143,8 @@ async function performFetch(url: string): Promise<string> {
     try {
       const { status, body } = await requestWithCurl(url);
       if (status === 429 || status >= 500) {
-        const waitMs = jitter(1500, 2500) + attempt * 500;
+        const baseDelay = status === 429 ? 5000 : 2500;
+        const waitMs = baseDelay + attempt * 2000 + jitter(750, 1750);
         await sleep(waitMs);
         continue;
       }
