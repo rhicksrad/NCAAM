@@ -1,0 +1,48 @@
+{
+  "slug": "tai-hamilton-1",
+  "name": "Tai Hamilton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "William & Mary",
+      "conf": "CAA",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 12.1538461538,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": null,
+      "ft_pct": 0.2608695652,
+      "orb_g": 0.9615384615,
+      "drb_g": 2.1153846154,
+      "trb_g": 3.0769230769,
+      "ast_g": 0.2307692308,
+      "stl_g": 0.5,
+      "blk_g": 0.8461538462,
+      "tov_g": 0.6923076923,
+      "pf_g": 2.4615384615,
+      "pts_g": 1.4615384615
+    },
+    {
+      "season": "2024-25",
+      "team": "Winthrop",
+      "conf": "Big South",
+      "gp": 28,
+      "gs": 0,
+      "mp_g": 7.8571428571,
+      "fg_pct": 0.4864864865,
+      "fg3_pct": null,
+      "ft_pct": 0.5625,
+      "orb_g": 1.1071428571,
+      "drb_g": 1.3571428571,
+      "trb_g": 2.4642857143,
+      "ast_g": 0.1428571429,
+      "stl_g": 0.3928571429,
+      "blk_g": 0.7857142857,
+      "tov_g": 0.4642857143,
+      "pf_g": 1.7142857143,
+      "pts_g": 1.9285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tai-hamilton-1.html",
+  "last_scraped": "2025-11-01T04:46:49.939Z"
+}

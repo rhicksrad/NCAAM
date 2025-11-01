@@ -1,0 +1,48 @@
+{
+  "slug": "jake-goldberg-1",
+  "name": "Jake Goldberg",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 26,
+      "gs": 3,
+      "mp_g": 9.3076923077,
+      "fg_pct": 0.2083333333,
+      "fg3_pct": 0.1923076923,
+      "ft_pct": 0.7,
+      "orb_g": 0.4615384615,
+      "drb_g": 1,
+      "trb_g": 1.4615384615,
+      "ast_g": 0.2692307692,
+      "stl_g": 0.2692307692,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.4230769231,
+      "pf_g": 0.5,
+      "pts_g": 1.2307692308
+    },
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 8,
+      "gs": 8,
+      "mp_g": 20,
+      "fg_pct": 0.4666666667,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5,
+      "orb_g": 0.5,
+      "drb_g": 1.375,
+      "trb_g": 1.875,
+      "ast_g": 0.375,
+      "stl_g": 0.375,
+      "blk_g": 0.375,
+      "tov_g": 0.75,
+      "pf_g": 1.75,
+      "pts_g": 4.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jake-goldberg-1.html",
+  "last_scraped": "2025-11-01T04:42:23.413Z"
+}

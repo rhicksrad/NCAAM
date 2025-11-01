@@ -1,0 +1,48 @@
+{
+  "slug": "sebastian-hartmann-1",
+  "name": "Sebastian Hartmann",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 12.625,
+      "fg_pct": 0.5454545455,
+      "fg3_pct": 0.1944444444,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.5,
+      "drb_g": 0.875,
+      "trb_g": 1.375,
+      "ast_g": 0.8125,
+      "stl_g": 0.21875,
+      "blk_g": 0.0625,
+      "tov_g": 0.53125,
+      "pf_g": 1.625,
+      "pts_g": 3
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 30,
+      "gs": 25,
+      "mp_g": 29.2333333333,
+      "fg_pct": 0.5103092784,
+      "fg3_pct": 0.3578947368,
+      "ft_pct": 0.7666666667,
+      "orb_g": 0.9,
+      "drb_g": 3.3333333333,
+      "trb_g": 4.2333333333,
+      "ast_g": 1.5666666667,
+      "stl_g": 0.5666666667,
+      "blk_g": 0.3666666667,
+      "tov_g": 1.0333333333,
+      "pf_g": 2.4,
+      "pts_g": 9.2666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sebastian-hartmann-1.html",
+  "last_scraped": "2025-11-01T04:46:31.538Z"
+}

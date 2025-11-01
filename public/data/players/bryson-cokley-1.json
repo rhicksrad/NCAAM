@@ -1,0 +1,28 @@
+{
+  "slug": "bryson-cokley-1",
+  "name": "Bryson Cokley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "George Mason",
+      "conf": "A-10",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 2.3333333333,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": 0.25,
+      "ft_pct": 1,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.1111111111,
+      "trb_g": 0.3333333333,
+      "ast_g": 0,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0,
+      "pts_g": 1.2222222222
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bryson-cokley-1.html",
+  "last_scraped": "2025-11-01T04:37:43.198Z"
+}

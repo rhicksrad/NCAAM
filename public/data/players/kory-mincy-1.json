@@ -1,0 +1,48 @@
+{
+  "slug": "kory-mincy-1",
+  "name": "Kory Mincy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Presbyterian",
+      "conf": "Big South",
+      "gp": 33,
+      "gs": 11,
+      "mp_g": 15.6363636364,
+      "fg_pct": 0.4478527607,
+      "fg3_pct": 0.3684210526,
+      "ft_pct": 0.6764705882,
+      "orb_g": 0.2424242424,
+      "drb_g": 1.1818181818,
+      "trb_g": 1.4242424242,
+      "ast_g": 1.2727272727,
+      "stl_g": 0.6363636364,
+      "blk_g": 0.0303030303,
+      "tov_g": 0.696969697,
+      "pf_g": 1.5757575758,
+      "pts_g": 5.9696969697
+    },
+    {
+      "season": "2024-25",
+      "team": "Presbyterian",
+      "conf": "Big South",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 31.8484848485,
+      "fg_pct": 0.3995157385,
+      "fg3_pct": 0.3684210526,
+      "ft_pct": 0.7906976744,
+      "orb_g": 0.3636363636,
+      "drb_g": 2.2424242424,
+      "trb_g": 2.6060606061,
+      "ast_g": 4.3636363636,
+      "stl_g": 1.5454545455,
+      "blk_g": 0.0909090909,
+      "tov_g": 2.2727272727,
+      "pf_g": 2.0303030303,
+      "pts_g": 15
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kory-mincy-1.html",
+  "last_scraped": "2025-11-01T04:44:05.068Z"
+}

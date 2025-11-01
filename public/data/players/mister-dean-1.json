@@ -1,0 +1,28 @@
+{
+  "slug": "mister-dean-1",
+  "name": "Mister Dean",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "USC Upstate",
+      "conf": "Big South",
+      "gp": 31,
+      "gs": 27,
+      "mp_g": 23.2580645161,
+      "fg_pct": 0.5718475073,
+      "fg3_pct": 0.2444444444,
+      "ft_pct": 0.5723684211,
+      "orb_g": 1.4838709677,
+      "drb_g": 3.9677419355,
+      "trb_g": 5.4516129032,
+      "ast_g": 1.3548387097,
+      "stl_g": 2.1612903226,
+      "blk_g": 0.6774193548,
+      "tov_g": 2.2903225806,
+      "pf_g": 2.9032258065,
+      "pts_g": 15.7419354839
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mister-dean-1.html",
+  "last_scraped": "2025-11-01T04:45:17.931Z"
+}

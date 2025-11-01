@@ -1,0 +1,28 @@
+{
+  "slug": "sabien-cain-1",
+  "name": "Sabien Cain",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cal State Northridge",
+      "conf": "Big West",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 3.5,
+      "fg_pct": 0.2,
+      "fg3_pct": 0.25,
+      "ft_pct": 1,
+      "orb_g": 0.1,
+      "drb_g": 0.5,
+      "trb_g": 0.6,
+      "ast_g": 0.6,
+      "stl_g": 0.1,
+      "blk_g": 0,
+      "tov_g": 0.3,
+      "pf_g": 0.5,
+      "pts_g": 1.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sabien-cain-1.html",
+  "last_scraped": "2025-11-01T04:46:23.710Z"
+}

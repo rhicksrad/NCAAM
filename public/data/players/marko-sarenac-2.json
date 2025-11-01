@@ -1,0 +1,48 @@
+{
+  "slug": "marko-sarenac-2",
+  "name": "Marko Sarenac",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 4.1153846154,
+      "fg_pct": 0.46875,
+      "fg3_pct": 0.2941176471,
+      "ft_pct": 1,
+      "orb_g": 0.1923076923,
+      "drb_g": 0.3846153846,
+      "trb_g": 0.5769230769,
+      "ast_g": 0.1923076923,
+      "stl_g": 0.0384615385,
+      "blk_g": 0.0384615385,
+      "tov_g": 0.0384615385,
+      "pf_g": 0.8076923077,
+      "pts_g": 1.4230769231
+    },
+    {
+      "season": "2024-25",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 5.4444444444,
+      "fg_pct": 0.5416666667,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.5833333333,
+      "orb_g": 0.4444444444,
+      "drb_g": 0.7777777778,
+      "trb_g": 1.2222222222,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.3888888889,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.2777777778,
+      "pf_g": 0.3888888889,
+      "pts_g": 1.9444444444
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marko-sarenac-2.html",
+  "last_scraped": "2025-11-01T04:44:47.502Z"
+}

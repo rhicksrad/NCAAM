@@ -75,7 +75,7 @@ const [conferenceMap, teamsResponse, playersIndexDoc, playersMeta] = await Promi
         console.warn("Unable to load player index", error);
         return null;
     }),
-    fetch(assetUrl("data/cbb_power_meta.json"))
+    fetch(assetUrl("data/cbb_conference_meta.json"))
         .then(res => {
         if (!res.ok)
             throw new Error(`Failed to load college stats metadata (${res.status})`);
@@ -99,7 +99,7 @@ const restrictToMetaConferences = metaConferences.length > 0;
 if (introParagraph && restrictToMetaConferences) {
     const conferenceList = metaConferences.join(", ");
     introParagraph.textContent =
-        `Power Conference focus · College stats cached for ${conferenceList}. Open a team to load its active roster.`;
+        `College stats cached for ${conferenceList}. Open a team to load its active roster.`;
 }
 const playerIndexByKey = new Map();
 const playerIndexByName = new Map();

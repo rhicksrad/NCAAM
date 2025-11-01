@@ -1,0 +1,28 @@
+{
+  "slug": "cam-christy-1",
+  "name": "Cam Christy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Winthrop",
+      "conf": "Big South",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0.25,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.2857142857,
+      "drb_g": 0.4285714286,
+      "trb_g": 0.7142857143,
+      "ast_g": 0.1428571429,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.2857142857,
+      "pts_g": 0.7142857143
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cam-christy-1.html",
+  "last_scraped": "2025-11-01T04:38:04.229Z"
+}

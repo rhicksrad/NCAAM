@@ -1,0 +1,48 @@
+{
+  "slug": "kolton-mitchell-2",
+  "name": "Kolton Mitchell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Idaho State",
+      "conf": "Big Sky",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 18,
+      "fg_pct": 0.4814814815,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.7857142857,
+      "orb_g": 0.3,
+      "drb_g": 2,
+      "trb_g": 2.3,
+      "ast_g": 2.1,
+      "stl_g": 1,
+      "blk_g": 0.1,
+      "tov_g": 1.1,
+      "pf_g": 1.5,
+      "pts_g": 7.3
+    },
+    {
+      "season": "2024-25",
+      "team": "Idaho",
+      "conf": "Big Sky",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 30.5757575758,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.34,
+      "ft_pct": 0.8947368421,
+      "orb_g": 0.5757575758,
+      "drb_g": 2.0303030303,
+      "trb_g": 2.6060606061,
+      "ast_g": 3.4545454545,
+      "stl_g": 1.3636363636,
+      "blk_g": 0.0909090909,
+      "tov_g": 1.7575757576,
+      "pf_g": 2.4242424242,
+      "pts_g": 11.1212121212
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kolton-mitchell-2.html",
+  "last_scraped": "2025-11-01T04:44:05.201Z"
+}

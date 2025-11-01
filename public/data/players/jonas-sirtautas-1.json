@@ -1,0 +1,48 @@
+{
+  "slug": "jonas-sirtautas-1",
+  "name": "Jonas Sirtautas",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - dnp",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Radford",
+      "conf": "Big South",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 7.96,
+      "fg_pct": 0.6486486486,
+      "fg3_pct": 0,
+      "ft_pct": 0.4285714286,
+      "orb_g": 0.84,
+      "drb_g": 1.04,
+      "trb_g": 1.88,
+      "ast_g": 0.08,
+      "stl_g": 0.2,
+      "blk_g": 0.24,
+      "tov_g": 0.36,
+      "pf_g": 0.88,
+      "pts_g": 2.28
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jonas-sirtautas-1.html",
+  "last_scraped": "2025-11-01T04:43:11.805Z"
+}

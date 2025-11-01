@@ -1,0 +1,48 @@
+{
+  "slug": "aj-lux-1",
+  "name": "AJ Lux",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Bellarmine",
+      "conf": "A-Sun",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 12.8260869565,
+      "fg_pct": 0.375,
+      "fg3_pct": 0.3404255319,
+      "ft_pct": 0.9166666667,
+      "orb_g": 0.7391304348,
+      "drb_g": 1.4782608696,
+      "trb_g": 2.2173913043,
+      "ast_g": 0.5217391304,
+      "stl_g": 0.347826087,
+      "blk_g": 0.2173913043,
+      "tov_g": 0.2608695652,
+      "pf_g": 1.9130434783,
+      "pts_g": 3.2608695652
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-lux-1.html",
+  "last_scraped": "2025-11-01T04:34:37.564Z"
+}

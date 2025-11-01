@@ -1,0 +1,28 @@
+{
+  "slug": "stefan-cicic-1",
+  "name": "Stefan Cicic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulane",
+      "conf": "AAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1.3333333333,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.3333333333,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/stefan-cicic-1.html",
+  "last_scraped": "2025-11-01T04:46:44.544Z"
+}

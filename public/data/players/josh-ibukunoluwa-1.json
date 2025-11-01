@@ -1,0 +1,28 @@
+{
+  "slug": "josh-ibukunoluwa-1",
+  "name": "Josh Ibukunoluwa",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "High Point",
+      "conf": "Big South",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 9.48,
+      "fg_pct": 0.5789473684,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.84,
+      "drb_g": 1.88,
+      "trb_g": 2.72,
+      "ast_g": 0.36,
+      "stl_g": 0.28,
+      "blk_g": 0.52,
+      "tov_g": 0.32,
+      "pf_g": 1.6,
+      "pts_g": 3.12
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-ibukunoluwa-1.html",
+  "last_scraped": "2025-11-01T04:43:18.262Z"
+}

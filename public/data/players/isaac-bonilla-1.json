@@ -1,0 +1,48 @@
+{
+  "slug": "isaac-bonilla-1",
+  "name": "Isaac Bonilla",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Maine",
+      "conf": "AEC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 7,
+      "fg_pct": 0.1666666667,
+      "fg3_pct": 0.2,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 1,
+      "trb_g": 1,
+      "ast_g": 0.75,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0.5,
+      "pts_g": 1.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Maine",
+      "conf": "AEC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 5.6666666667,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.25,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.25,
+      "stl_g": 0.4166666667,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.0833333333,
+      "pf_g": 0.6666666667,
+      "pts_g": 1.4166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaac-bonilla-1.html",
+  "last_scraped": "2025-11-01T04:41:43.463Z"
+}

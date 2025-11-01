@@ -1,0 +1,28 @@
+{
+  "slug": "leo-ricketts-1",
+  "name": "Leo Ricketts",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 16,
+      "gs": 4,
+      "mp_g": 15.3125,
+      "fg_pct": 0.397260274,
+      "fg3_pct": 0.2777777778,
+      "ft_pct": 0.75,
+      "orb_g": 0.3125,
+      "drb_g": 1.4375,
+      "trb_g": 1.75,
+      "ast_g": 1.1875,
+      "stl_g": 0.625,
+      "blk_g": 0,
+      "tov_g": 0.875,
+      "pf_g": 0.8125,
+      "pts_g": 4.625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/leo-ricketts-1.html",
+  "last_scraped": "2025-11-01T04:44:21.345Z"
+}

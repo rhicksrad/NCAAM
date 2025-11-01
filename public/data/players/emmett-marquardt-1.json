@@ -1,0 +1,48 @@
+{
+  "slug": "emmett-marquardt-1",
+  "name": "Emmett Marquardt",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 22.75,
+      "fg_pct": 0.4954954955,
+      "fg3_pct": 0.3645833333,
+      "ft_pct": 0.756097561,
+      "orb_g": 1.40625,
+      "drb_g": 3.03125,
+      "trb_g": 4.4375,
+      "ast_g": 1.15625,
+      "stl_g": 0.625,
+      "blk_g": 0.71875,
+      "tov_g": 0.90625,
+      "pf_g": 3.03125,
+      "pts_g": 8.9375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/emmett-marquardt-1.html",
+  "last_scraped": "2025-11-01T04:41:07.223Z"
+}

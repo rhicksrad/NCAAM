@@ -1,0 +1,28 @@
+{
+  "slug": "dylan-warlick-1",
+  "name": "Dylan Warlick",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Louis",
+      "conf": "A-10",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 10,
+      "fg_pct": 0.4615384615,
+      "fg3_pct": 0.3846153846,
+      "ft_pct": 0.75,
+      "orb_g": 0.64,
+      "drb_g": 1,
+      "trb_g": 1.64,
+      "ast_g": 0.4,
+      "stl_g": 0.12,
+      "blk_g": 0.16,
+      "tov_g": 0.44,
+      "pf_g": 1.12,
+      "pts_g": 2.36
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dylan-warlick-1.html",
+  "last_scraped": "2025-11-01T04:40:58.823Z"
+}

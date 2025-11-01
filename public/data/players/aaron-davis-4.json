@@ -1,0 +1,48 @@
+{
+  "slug": "aaron-davis-4",
+  "name": "Aaron Davis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Bryant",
+      "conf": "AEC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 4.1666666667,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.5,
+      "trb_g": 0.6666666667,
+      "ast_g": 0.1666666667,
+      "stl_g": 0,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.8333333333,
+      "pf_g": 0.3333333333,
+      "pts_g": 1.8333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Bryant",
+      "conf": "AEC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 9,
+      "fg_pct": 0.390625,
+      "fg3_pct": 0.2432432432,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.3846153846,
+      "drb_g": 0.6923076923,
+      "trb_g": 1.0769230769,
+      "ast_g": 0.2307692308,
+      "stl_g": 0.1538461538,
+      "blk_g": 0.3846153846,
+      "tov_g": 0.2307692308,
+      "pf_g": 1.5384615385,
+      "pts_g": 4.9230769231
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aaron-davis-4.html",
+  "last_scraped": "2025-11-01T04:34:12.597Z"
+}

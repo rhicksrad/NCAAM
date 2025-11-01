@@ -1,0 +1,48 @@
+{
+  "slug": "evan-dickey-1",
+  "name": "Evan Dickey",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Dayton",
+      "conf": "A-10",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1.6666666667,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.3333333333,
+      "drb_g": 0,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.3333333333,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Dayton",
+      "conf": "A-10",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 1.6666666667,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.1666666667,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1666666667,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/evan-dickey-1.html",
+  "last_scraped": "2025-11-01T04:41:13.577Z"
+}

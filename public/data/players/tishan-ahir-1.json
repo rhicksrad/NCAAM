@@ -1,0 +1,28 @@
+{
+  "slug": "tishan-ahir-1",
+  "name": "Tishan Ahir",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC Irvine",
+      "conf": "Big West",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 1.2727272727,
+      "fg_pct": 0.1111111111,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0.0909090909,
+      "trb_g": 0.0909090909,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.7272727273
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tishan-ahir-1.html",
+  "last_scraped": "2025-11-01T04:47:01.049Z"
+}

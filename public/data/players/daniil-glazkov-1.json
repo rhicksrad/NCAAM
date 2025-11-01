@@ -1,0 +1,28 @@
+{
+  "slug": "daniil-glazkov-1",
+  "name": "Daniil Glazkov",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Loyola Chicago",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 6.4545454545,
+      "fg_pct": 0.3409090909,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.5294117647,
+      "orb_g": 0.1818181818,
+      "drb_g": 0.4848484848,
+      "trb_g": 0.6666666667,
+      "ast_g": 0.2727272727,
+      "stl_g": 0.1515151515,
+      "blk_g": 0,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.7878787879,
+      "pts_g": 1.3939393939
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daniil-glazkov-1.html",
+  "last_scraped": "2025-11-01T04:40:20.812Z"
+}

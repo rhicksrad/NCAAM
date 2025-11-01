@@ -1,0 +1,28 @@
+{
+  "slug": "andrew-nagy-1",
+  "name": "Andrew Nagy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Long Beach State",
+      "conf": "Big West",
+      "gp": 26,
+      "gs": 8,
+      "mp_g": 17.8076923077,
+      "fg_pct": 0.5396825397,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 0.7647058824,
+      "orb_g": 0.9615384615,
+      "drb_g": 1.3846153846,
+      "trb_g": 2.3461538462,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.3461538462,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.8461538462,
+      "pf_g": 1.5,
+      "pts_g": 3.4615384615
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/andrew-nagy-1.html",
+  "last_scraped": "2025-11-01T04:35:23.648Z"
+}

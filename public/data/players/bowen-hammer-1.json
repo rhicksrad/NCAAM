@@ -1,0 +1,28 @@
+{
+  "slug": "bowen-hammer-1",
+  "name": "Bowen Hammer",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Austin Peay",
+      "conf": "A-Sun",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 2.2727272727,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.25,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.1818181818,
+      "trb_g": 0.1818181818,
+      "ast_g": 0.0909090909,
+      "stl_g": 0,
+      "blk_g": 0.0909090909,
+      "tov_g": 0,
+      "pf_g": 0.3636363636,
+      "pts_g": 0.5454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bowen-hammer-1.html",
+  "last_scraped": "2025-11-01T04:36:54.218Z"
+}

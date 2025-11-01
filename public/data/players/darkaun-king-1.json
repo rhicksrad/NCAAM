@@ -1,0 +1,28 @@
+{
+  "slug": "darkaun-king-1",
+  "name": "DarKaun King",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Alabama",
+      "conf": "A-Sun",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 7.5555555556,
+      "fg_pct": 0.4864864865,
+      "fg3_pct": 0.25,
+      "ft_pct": null,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.7222222222,
+      "trb_g": 1.0555555556,
+      "ast_g": 0.1666666667,
+      "stl_g": 0.1111111111,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.1666666667,
+      "pf_g": 1.0555555556,
+      "pts_g": 2.1666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/darkaun-king-1.html",
+  "last_scraped": "2025-11-01T04:40:24.287Z"
+}

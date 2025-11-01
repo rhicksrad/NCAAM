@@ -1,0 +1,28 @@
+{
+  "slug": "jurian-dixon-1",
+  "name": "Jurian Dixon",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC Irvine",
+      "conf": "Big West",
+      "gp": 39,
+      "gs": 29,
+      "mp_g": 26.3846153846,
+      "fg_pct": 0.4321428571,
+      "fg3_pct": 0.3258426966,
+      "ft_pct": 0.7628865979,
+      "orb_g": 0.7179487179,
+      "drb_g": 2.2564102564,
+      "trb_g": 2.9743589744,
+      "ast_g": 1.6923076923,
+      "stl_g": 0.8974358974,
+      "blk_g": 0.0512820513,
+      "tov_g": 1.0512820513,
+      "pf_g": 1.4102564103,
+      "pts_g": 8.8461538462
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jurian-dixon-1.html",
+  "last_scraped": "2025-11-01T04:43:26.286Z"
+}

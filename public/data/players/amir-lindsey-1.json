@@ -1,0 +1,28 @@
+{
+  "slug": "amir-lindsey-1",
+  "name": "Amir Lindsey",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 31,
+      "gs": 3,
+      "mp_g": 19.3548387097,
+      "fg_pct": 0.4233128834,
+      "fg3_pct": 0.3595505618,
+      "ft_pct": 0.85,
+      "orb_g": 0.4193548387,
+      "drb_g": 1.4516129032,
+      "trb_g": 1.8709677419,
+      "ast_g": 1.3225806452,
+      "stl_g": 0.9032258065,
+      "blk_g": 0.1290322581,
+      "tov_g": 0.5161290323,
+      "pf_g": 1.6451612903,
+      "pts_g": 6.0322580645
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/amir-lindsey-1.html",
+  "last_scraped": "2025-11-01T04:35:12.632Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "mason-williams-2",
+  "name": "Mason Williams",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 9.0588235294,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.46875,
+      "ft_pct": 0.9090909091,
+      "orb_g": 0.0588235294,
+      "drb_g": 0.7647058824,
+      "trb_g": 0.8235294118,
+      "ast_g": 1.1764705882,
+      "stl_g": 0.1764705882,
+      "blk_g": 0,
+      "tov_g": 0.5882352941,
+      "pf_g": 1.1176470588,
+      "pts_g": 3.8235294118
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 27,
+      "gs": 22,
+      "mp_g": 28.0740740741,
+      "fg_pct": 0.4271523179,
+      "fg3_pct": 0.3451327434,
+      "ft_pct": 0.8369565217,
+      "orb_g": 0.2222222222,
+      "drb_g": 2.962962963,
+      "trb_g": 3.1851851852,
+      "ast_g": 2.4074074074,
+      "stl_g": 1.2222222222,
+      "blk_g": 0.4444444444,
+      "tov_g": 2.5925925926,
+      "pf_g": 1.9259259259,
+      "pts_g": 13.8518518519
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mason-williams-2.html",
+  "last_scraped": "2025-11-01T04:44:52.286Z"
+}

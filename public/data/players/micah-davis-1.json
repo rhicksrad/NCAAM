@@ -1,0 +1,28 @@
+{
+  "slug": "micah-davis-1",
+  "name": "Micah Davis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Eastern Kentucky",
+      "conf": "A-Sun",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 4.1538461538,
+      "fg_pct": 0.2666666667,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.0769230769,
+      "drb_g": 0.2307692308,
+      "trb_g": 0.3076923077,
+      "ast_g": 0.3076923077,
+      "stl_g": 0.0769230769,
+      "blk_g": 0,
+      "tov_g": 0.1538461538,
+      "pf_g": 0.6153846154,
+      "pts_g": 0.8461538462
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/micah-davis-1.html",
+  "last_scraped": "2025-11-01T04:45:06.953Z"
+}

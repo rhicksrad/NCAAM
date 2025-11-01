@@ -1,0 +1,28 @@
+{
+  "slug": "jacob-hudson-1",
+  "name": "Jacob Hudson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Gardner-Webb",
+      "conf": "Big South",
+      "gp": 27,
+      "gs": 3,
+      "mp_g": 13.3333333333,
+      "fg_pct": 0.4368932039,
+      "fg3_pct": 0.05,
+      "ft_pct": 0.5128205128,
+      "orb_g": 0.4444444444,
+      "drb_g": 1,
+      "trb_g": 1.4444444444,
+      "ast_g": 0.7777777778,
+      "stl_g": 0.6666666667,
+      "blk_g": 0.037037037,
+      "tov_g": 0.9259259259,
+      "pf_g": 0.7777777778,
+      "pts_g": 4.1111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-hudson-1.html",
+  "last_scraped": "2025-11-01T04:42:13.173Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "cal-conroy-1",
+  "name": "Cal Conroy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulsa",
+      "conf": "AAC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 2.5,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.5,
+      "drb_g": 0,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cal-conroy-1.html",
+  "last_scraped": "2025-11-01T04:37:52.974Z"
+}

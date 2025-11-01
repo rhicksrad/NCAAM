@@ -1,0 +1,28 @@
+{
+  "slug": "martin-somerville-1",
+  "name": "Martin Somerville",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UMass Lowell",
+      "conf": "AEC",
+      "gp": 32,
+      "gs": 12,
+      "mp_g": 31.5,
+      "fg_pct": 0.4195583596,
+      "fg3_pct": 0.4054054054,
+      "ft_pct": 0.8260869565,
+      "orb_g": 0.4375,
+      "drb_g": 2.46875,
+      "trb_g": 2.90625,
+      "ast_g": 3.65625,
+      "stl_g": 1.46875,
+      "blk_g": 0.0625,
+      "tov_g": 1.5,
+      "pf_g": 2.15625,
+      "pts_g": 13.625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/martin-somerville-1.html",
+  "last_scraped": "2025-11-01T04:44:50.598Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jimmy-oladokun-jr-1",
+  "name": "Jimmy Oladokun Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "San Diego",
+      "conf": "WCC",
+      "gp": 31,
+      "gs": 13,
+      "mp_g": 16.4516129032,
+      "fg_pct": 0.4906832298,
+      "fg3_pct": 0,
+      "ft_pct": 0.4222222222,
+      "orb_g": 1.3225806452,
+      "drb_g": 1.6451612903,
+      "trb_g": 2.9677419355,
+      "ast_g": 0.5483870968,
+      "stl_g": 0.4193548387,
+      "blk_g": 0.5483870968,
+      "tov_g": 1.0322580645,
+      "pf_g": 2.4193548387,
+      "pts_g": 5.7096774194
+    },
+    {
+      "season": "2024-25",
+      "team": "Rice",
+      "conf": "AAC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 9.4838709677,
+      "fg_pct": 0.4567901235,
+      "fg3_pct": null,
+      "ft_pct": 0.375,
+      "orb_g": 1.2580645161,
+      "drb_g": 1.2903225806,
+      "trb_g": 2.5483870968,
+      "ast_g": 0.3548387097,
+      "stl_g": 0.2258064516,
+      "blk_g": 0.2258064516,
+      "tov_g": 0.5806451613,
+      "pf_g": 1.3548387097,
+      "pts_g": 2.8709677419
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jimmy-oladokun-jr-1.html",
+  "last_scraped": "2025-11-01T04:43:01.738Z"
+}

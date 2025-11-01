@@ -1,0 +1,28 @@
+{
+  "slug": "dante-oliver-1",
+  "name": "Dante Oliver",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Florida",
+      "conf": "A-Sun",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 7.0344827586,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.1904761905,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.3448275862,
+      "drb_g": 1.1034482759,
+      "trb_g": 1.4482758621,
+      "ast_g": 0.4827586207,
+      "stl_g": 0.1724137931,
+      "blk_g": 0.0344827586,
+      "tov_g": 0.5517241379,
+      "pf_g": 0.6206896552,
+      "pts_g": 0.9310344828
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dante-oliver-1.html",
+  "last_scraped": "2025-11-01T04:40:20.757Z"
+}

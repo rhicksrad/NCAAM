@@ -6,9 +6,23 @@ const ROOT = resolve(new URL('../../', import.meta.url).pathname);
 const DATA_DIR = resolve(ROOT, 'public', 'data');
 const PLAYERS_DIR = resolve(DATA_DIR, 'players');
 const INDEX_FILE = resolve(DATA_DIR, 'players_index.json');
-const META_FILE = resolve(DATA_DIR, 'cbb_power_meta.json');
+const META_FILE = resolve(DATA_DIR, 'cbb_conference_meta.json');
 
-const POWER_CONFERENCES = ['ACC', 'B10', 'B12', 'SEC', 'BE', 'P12'];
+const TARGET_CONFERENCES = [
+  'ACC',
+  'B10',
+  'B12',
+  'SEC',
+  'BE',
+  'P12',
+  'AEC',
+  'AAC',
+  'ASUN',
+  'A10',
+  'BSKY',
+  'BSOU',
+  'BWC',
+];
 const TARGET_SEASON_YEARS = ['2025'];
 
 async function fileExists(path) {
@@ -47,7 +61,7 @@ async function ensureIndexUpToDate() {
   const args = ['exec', 'tsx', 'scripts/scrape/cbb_index.ts'];
   const env = {
     CBB_SEASONS: TARGET_SEASON_YEARS.join(','),
-    CBB_CONFERENCES: POWER_CONFERENCES.join(','),
+    CBB_CONFERENCES: TARGET_CONFERENCES.join(','),
   };
   await runCommand('pnpm', args, env);
 }
@@ -77,7 +91,7 @@ async function writeMeta(meta) {
 function needsRefresh(currentMeta) {
   if (!currentMeta) return true;
   const hasConferences = Array.isArray(currentMeta.conferences)
-    && POWER_CONFERENCES.every(conf => currentMeta.conferences.includes(conf));
+    && TARGET_CONFERENCES.every(conf => currentMeta.conferences.includes(conf));
   if (!hasConferences) return true;
   if (!currentMeta.seasons || !Array.isArray(currentMeta.seasons)) return true;
   const hasSeason = TARGET_SEASON_YEARS.every(season => currentMeta.seasons.includes(season));
@@ -99,7 +113,7 @@ async function loadMeta() {
   }
 }
 
-async function ensurePowerConferencePlayerStats() {
+async function ensureConferencePlayerStats() {
   const existingMeta = await loadMeta();
   if (!needsRefresh(existingMeta) && (await fileExists(INDEX_FILE))) {
     return existingMeta;
@@ -122,7 +136,7 @@ async function ensurePowerConferencePlayerStats() {
 
   const meta = {
     generated_at: new Date().toISOString(),
-    conferences: [...POWER_CONFERENCES],
+    conferences: [...TARGET_CONFERENCES],
     seasons: [...new Set(seasons)].sort(),
     player_count: players.length,
     season_filter: [...TARGET_SEASON_YEARS],
@@ -133,9 +147,9 @@ async function ensurePowerConferencePlayerStats() {
 
 let ensurePromise = null;
 
-export async function ensurePowerConferencePlayers() {
+export async function ensureConferencePlayers() {
   if (!ensurePromise) {
-    ensurePromise = ensurePowerConferencePlayerStats().catch(error => {
+    ensurePromise = ensureConferencePlayerStats().catch(error => {
       ensurePromise = null;
       throw error;
     });

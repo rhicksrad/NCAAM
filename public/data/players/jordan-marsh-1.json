@@ -1,0 +1,48 @@
+{
+  "slug": "jordan-marsh-1",
+  "name": "Jordan Marsh",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Appalachian State",
+      "conf": "Sun Belt",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 11.59375,
+      "fg_pct": 0.4127906977,
+      "fg3_pct": 0.296875,
+      "ft_pct": 0.6785714286,
+      "orb_g": 0.1875,
+      "drb_g": 1.40625,
+      "trb_g": 1.59375,
+      "ast_g": 1.25,
+      "stl_g": 0.71875,
+      "blk_g": 0.25,
+      "tov_g": 0.75,
+      "pf_g": 0.78125,
+      "pts_g": 6.21875
+    },
+    {
+      "season": "2024-25",
+      "team": "UNC Asheville",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 29,
+      "mp_g": 28.53125,
+      "fg_pct": 0.4477911647,
+      "fg3_pct": 0.3046357616,
+      "ft_pct": 0.7816901408,
+      "orb_g": 1.03125,
+      "drb_g": 3.1875,
+      "trb_g": 4.21875,
+      "ast_g": 3.65625,
+      "stl_g": 2.03125,
+      "blk_g": 0.375,
+      "tov_g": 2.25,
+      "pf_g": 3,
+      "pts_g": 18.84375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jordan-marsh-1.html",
+  "last_scraped": "2025-11-01T04:43:13.437Z"
+}

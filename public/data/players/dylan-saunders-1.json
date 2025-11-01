@@ -1,0 +1,48 @@
+{
+  "slug": "dylan-saunders-1",
+  "name": "Dylan Saunders",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iona",
+      "conf": "MAAC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 9.8095238095,
+      "fg_pct": 0.380952381,
+      "fg3_pct": 0.306122449,
+      "ft_pct": 0.75,
+      "orb_g": 0.2857142857,
+      "drb_g": 0.7619047619,
+      "trb_g": 1.0476190476,
+      "ast_g": 0.2380952381,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.1904761905,
+      "tov_g": 0.1904761905,
+      "pf_g": 1.0952380952,
+      "pts_g": 3.1428571429
+    },
+    {
+      "season": "2024-25",
+      "team": "New Hampshire",
+      "conf": "AEC",
+      "gp": 31,
+      "gs": 5,
+      "mp_g": 12.4193548387,
+      "fg_pct": 0.3857142857,
+      "fg3_pct": 0.3709677419,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1935483871,
+      "drb_g": 1.0322580645,
+      "trb_g": 1.2258064516,
+      "ast_g": 0.2903225806,
+      "stl_g": 0.2903225806,
+      "blk_g": 0.1612903226,
+      "tov_g": 0.3870967742,
+      "pf_g": 1.064516129,
+      "pts_g": 2.6774193548
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dylan-saunders-1.html",
+  "last_scraped": "2025-11-01T04:40:57.194Z"
+}

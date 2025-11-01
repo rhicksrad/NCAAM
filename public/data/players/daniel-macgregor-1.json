@@ -1,0 +1,28 @@
+{
+  "slug": "daniel-macgregor-1",
+  "name": "Daniel Macgregor",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 11.8947368421,
+      "fg_pct": 0.375,
+      "fg3_pct": 0,
+      "ft_pct": 0.75,
+      "orb_g": 0.3157894737,
+      "drb_g": 0.7894736842,
+      "trb_g": 1.1052631579,
+      "ast_g": 1.1052631579,
+      "stl_g": 0.5263157895,
+      "blk_g": 0,
+      "tov_g": 1.4210526316,
+      "pf_g": 1.0526315789,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daniel-macgregor-1.html",
+  "last_scraped": "2025-11-01T04:40:17.360Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "noah-barnett-1",
+  "name": "Noah Barnett",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Vermont",
+      "conf": "AEC",
+      "gp": 30,
+      "gs": 4,
+      "mp_g": 12.4,
+      "fg_pct": 0.7169811321,
+      "fg3_pct": 0,
+      "ft_pct": 0.8095238095,
+      "orb_g": 1.1666666667,
+      "drb_g": 1.2333333333,
+      "trb_g": 2.4,
+      "ast_g": 0.3,
+      "stl_g": 0.2666666667,
+      "blk_g": 0.2,
+      "tov_g": 0.4333333333,
+      "pf_g": 1.6,
+      "pts_g": 3.1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/noah-barnett-1.html",
+  "last_scraped": "2025-11-01T04:45:35.775Z"
+}

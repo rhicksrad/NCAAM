@@ -1,0 +1,28 @@
+{
+  "slug": "lj-brown-1",
+  "name": "LJ Brown",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UTSA",
+      "conf": "AAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 4.3333333333,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.2,
+      "ft_pct": null,
+      "orb_g": 0.3333333333,
+      "drb_g": 0,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 1.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lj-brown-1.html",
+  "last_scraped": "2025-11-01T04:44:22.850Z"
+}

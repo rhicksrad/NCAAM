@@ -1,0 +1,28 @@
+{
+  "slug": "owen-derhmann-1",
+  "name": "Owen Derhmann",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Central Arkansas",
+      "conf": "A-Sun",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 11.0555555556,
+      "fg_pct": 0.3225806452,
+      "fg3_pct": 0.2083333333,
+      "ft_pct": null,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.8888888889,
+      "ast_g": 0.3888888889,
+      "stl_g": 0.0555555556,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.2777777778,
+      "pts_g": 1.3888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/owen-derhmann-1.html",
+  "last_scraped": "2025-11-01T04:45:42.174Z"
+}

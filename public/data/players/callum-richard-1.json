@@ -1,0 +1,48 @@
+{
+  "slug": "callum-richard-1",
+  "name": "Callum Richard",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "East Carolina",
+      "conf": "AAC",
+      "gp": 16,
+      "gs": 2,
+      "mp_g": 6.375,
+      "fg_pct": 0.625,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.6875,
+      "drb_g": 0.25,
+      "trb_g": 0.9375,
+      "ast_g": 0.0625,
+      "stl_g": 0.1875,
+      "blk_g": 0.1875,
+      "tov_g": 0.125,
+      "pf_g": 0.8125,
+      "pts_g": 0.875
+    },
+    {
+      "season": "2024-25",
+      "team": "East Carolina",
+      "conf": "AAC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 2.75,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.5,
+      "drb_g": 0.25,
+      "trb_g": 0.75,
+      "ast_g": 0,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.25,
+      "pts_g": 1.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/callum-richard-1.html",
+  "last_scraped": "2025-11-01T04:38:01.023Z"
+}

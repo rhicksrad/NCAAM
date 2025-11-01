@@ -1,0 +1,48 @@
+{
+  "slug": "zane-adnan-1",
+  "name": "Zane Adnan",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 2.9411764706,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 1,
+      "orb_g": 0.0588235294,
+      "drb_g": 0.2941176471,
+      "trb_g": 0.3529411765,
+      "ast_g": 0.2352941176,
+      "stl_g": 0.1176470588,
+      "blk_g": 0,
+      "tov_g": 0.1176470588,
+      "pf_g": 0.5294117647,
+      "pts_g": 0.7058823529
+    },
+    {
+      "season": "2024-25",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 4.7272727273,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": null,
+      "orb_g": 0.2727272727,
+      "drb_g": 0.3636363636,
+      "trb_g": 0.6363636364,
+      "ast_g": 0.3636363636,
+      "stl_g": 0.1818181818,
+      "blk_g": 0,
+      "tov_g": 0.5454545455,
+      "pf_g": 0.7272727273,
+      "pts_g": 0.4545454545
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zane-adnan-1.html",
+  "last_scraped": "2025-11-01T04:47:54.350Z"
+}

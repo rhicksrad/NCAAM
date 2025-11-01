@@ -1,0 +1,48 @@
+{
+  "slug": "nick-richart-1",
+  "name": "Nick Richart",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Charlotte",
+      "conf": "AAC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 7.25,
+      "fg_pct": 0.4166666667,
+      "fg3_pct": null,
+      "ft_pct": 0.6,
+      "orb_g": 0.625,
+      "drb_g": 0.375,
+      "trb_g": 1,
+      "ast_g": 0.375,
+      "stl_g": 0.25,
+      "blk_g": 0.25,
+      "tov_g": 0.5,
+      "pf_g": 1,
+      "pts_g": 1.625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nick-richart-1.html",
+  "last_scraped": "2025-11-01T04:45:32.516Z"
+}

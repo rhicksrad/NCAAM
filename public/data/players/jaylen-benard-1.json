@@ -1,0 +1,48 @@
+{
+  "slug": "jaylen-benard-1",
+  "name": "Jaylen Benard",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Longwood",
+      "conf": "Big South",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 8.5625,
+      "fg_pct": 0.3055555556,
+      "fg3_pct": 0.3043478261,
+      "ft_pct": 1,
+      "orb_g": 0.0625,
+      "drb_g": 1.25,
+      "trb_g": 1.3125,
+      "ast_g": 0.25,
+      "stl_g": 0.1875,
+      "blk_g": 0.0625,
+      "tov_g": 0.4375,
+      "pf_g": 0.9375,
+      "pts_g": 2.1875
+    },
+    {
+      "season": "2024-25",
+      "team": "Longwood",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 7,
+      "mp_g": 16.34375,
+      "fg_pct": 0.4214285714,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7647058824,
+      "orb_g": 1,
+      "drb_g": 1.96875,
+      "trb_g": 2.96875,
+      "ast_g": 0.4375,
+      "stl_g": 0.34375,
+      "blk_g": 0.0625,
+      "tov_g": 0.8125,
+      "pf_g": 1.90625,
+      "pts_g": 5.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylen-benard-1.html",
+  "last_scraped": "2025-11-01T04:42:51.642Z"
+}

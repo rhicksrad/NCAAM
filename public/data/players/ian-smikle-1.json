@@ -1,0 +1,28 @@
+{
+  "slug": "ian-smikle-1",
+  "name": "Ian Smikle",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulsa",
+      "conf": "AAC",
+      "gp": 33,
+      "gs": 28,
+      "mp_g": 20.4545454545,
+      "fg_pct": 0.5441176471,
+      "fg3_pct": null,
+      "ft_pct": 0.4925373134,
+      "orb_g": 1.9696969697,
+      "drb_g": 3.5757575758,
+      "trb_g": 5.5454545455,
+      "ast_g": 0.6060606061,
+      "stl_g": 0.4242424242,
+      "blk_g": 0.4545454545,
+      "tov_g": 0.9090909091,
+      "pf_g": 2.5151515152,
+      "pts_g": 5.4848484848
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ian-smikle-1.html",
+  "last_scraped": "2025-11-01T04:41:41.814Z"
+}

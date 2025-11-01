@@ -1,0 +1,48 @@
+{
+  "slug": "varrick-lewis-1",
+  "name": "Varrick Lewis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Long Beach State",
+      "conf": "Big West",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 5.7741935484,
+      "fg_pct": 0.3164556962,
+      "fg3_pct": 0.2321428571,
+      "ft_pct": 0.875,
+      "orb_g": 0.1935483871,
+      "drb_g": 0.3225806452,
+      "trb_g": 0.5161290323,
+      "ast_g": 0.1290322581,
+      "stl_g": 0.3225806452,
+      "blk_g": 0.0322580645,
+      "tov_g": 0.2580645161,
+      "pf_g": 0.4516129032,
+      "pts_g": 2.2580645161
+    },
+    {
+      "season": "2024-25",
+      "team": "Long Beach State",
+      "conf": "Big West",
+      "gp": 28,
+      "gs": 0,
+      "mp_g": 12.0714285714,
+      "fg_pct": 0.3645833333,
+      "fg3_pct": 0.3188405797,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.1785714286,
+      "drb_g": 0.4285714286,
+      "trb_g": 0.6071428571,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.5714285714,
+      "blk_g": 0.0357142857,
+      "tov_g": 0.6071428571,
+      "pf_g": 1.1785714286,
+      "pts_g": 3.8214285714
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/varrick-lewis-1.html",
+  "last_scraped": "2025-11-01T04:47:33.202Z"
+}

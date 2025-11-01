@@ -1,0 +1,28 @@
+{
+  "slug": "cj-brown-2",
+  "name": "CJ Brown",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Florida",
+      "conf": "AAC",
+      "gp": 31,
+      "gs": 23,
+      "mp_g": 22.5161290323,
+      "fg_pct": 0.4550898204,
+      "fg3_pct": 0.2580645161,
+      "ft_pct": 0.756097561,
+      "orb_g": 0.3548387097,
+      "drb_g": 1.935483871,
+      "trb_g": 2.2903225806,
+      "ast_g": 2.5161290323,
+      "stl_g": 1.2258064516,
+      "blk_g": 0.5483870968,
+      "tov_g": 0.9677419355,
+      "pf_g": 2.2580645161,
+      "pts_g": 7.1612903226
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cj-brown-2.html",
+  "last_scraped": "2025-11-01T04:39:02.056Z"
+}

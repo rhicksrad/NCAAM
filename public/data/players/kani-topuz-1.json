@@ -1,0 +1,28 @@
+{
+  "slug": "kani-topuz-1",
+  "name": "Kani Topuz",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 6,
+      "fg_pct": 0.2,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": null,
+      "orb_g": 0.75,
+      "drb_g": 0,
+      "trb_g": 0.75,
+      "ast_g": 0,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.25,
+      "pts_g": 1.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kani-topuz-1.html",
+  "last_scraped": "2025-11-01T04:43:42.436Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "niccolo-moretti-1",
+  "name": "Niccolo Moretti",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Illinois",
+      "conf": "Big Ten",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 5.8888888889,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.7777777778,
+      "ast_g": 0.6111111111,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.3888888889,
+      "pts_g": 1.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida Atlantic",
+      "conf": "AAC",
+      "gp": 34,
+      "gs": 1,
+      "mp_g": 22.1176470588,
+      "fg_pct": 0.4277456647,
+      "fg3_pct": 0.347826087,
+      "ft_pct": 0.7586206897,
+      "orb_g": 0.4411764706,
+      "drb_g": 2.2058823529,
+      "trb_g": 2.6470588235,
+      "ast_g": 3.3823529412,
+      "stl_g": 0.9117647059,
+      "blk_g": 0.1176470588,
+      "tov_g": 1.2941176471,
+      "pf_g": 1.5,
+      "pts_g": 6.3529411765
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/niccolo-moretti-1.html",
+  "last_scraped": "2025-11-01T04:45:29.580Z"
+}

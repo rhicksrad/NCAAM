@@ -1,0 +1,48 @@
+{
+  "slug": "daryl-simmons-ii-1",
+  "name": "Daryl Simmons II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Gardner-Webb",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 10.125,
+      "fg_pct": 0.4096385542,
+      "fg3_pct": 0.358974359,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.15625,
+      "drb_g": 0.6875,
+      "trb_g": 0.84375,
+      "ast_g": 0.84375,
+      "stl_g": 0.375,
+      "blk_g": 0,
+      "tov_g": 0.40625,
+      "pf_g": 0.65625,
+      "pts_g": 2.78125
+    },
+    {
+      "season": "2024-25",
+      "team": "Gardner-Webb",
+      "conf": "Big South",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 33.5161290323,
+      "fg_pct": 0.4342105263,
+      "fg3_pct": 0.3886255924,
+      "ft_pct": 0.9104477612,
+      "orb_g": 0.5161290323,
+      "drb_g": 2.6774193548,
+      "trb_g": 3.1935483871,
+      "ast_g": 1.9032258065,
+      "stl_g": 1.2258064516,
+      "blk_g": 0.0967741935,
+      "tov_g": 2.3870967742,
+      "pf_g": 1.8387096774,
+      "pts_g": 17.3870967742
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daryl-simmons-ii-1.html",
+  "last_scraped": "2025-11-01T04:40:24.397Z"
+}

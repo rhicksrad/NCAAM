@@ -1,0 +1,48 @@
+{
+  "slug": "bailey-nunn-1",
+  "name": "Bailey Nunn",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 13.4827586207,
+      "fg_pct": 0.4019607843,
+      "fg3_pct": 0.3793103448,
+      "ft_pct": 0.59375,
+      "orb_g": 0.1034482759,
+      "drb_g": 0.6206896552,
+      "trb_g": 0.724137931,
+      "ast_g": 1.7931034483,
+      "stl_g": 0.275862069,
+      "blk_g": 0.0344827586,
+      "tov_g": 0.8965517241,
+      "pf_g": 1.275862069,
+      "pts_g": 4.2413793103
+    },
+    {
+      "season": "2024-25",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 30,
+      "gs": 20,
+      "mp_g": 29.1333333333,
+      "fg_pct": 0.2731481481,
+      "fg3_pct": 0.2698412698,
+      "ft_pct": 0.6774193548,
+      "orb_g": 0.5666666667,
+      "drb_g": 1.8666666667,
+      "trb_g": 2.4333333333,
+      "ast_g": 3.6333333333,
+      "stl_g": 0.6333333333,
+      "blk_g": 0.0333333333,
+      "tov_g": 1.9,
+      "pf_g": 2.1,
+      "pts_g": 6.4666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bailey-nunn-1.html",
+  "last_scraped": "2025-11-01T04:36:13.132Z"
+}

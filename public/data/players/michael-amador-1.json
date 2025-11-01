@@ -1,0 +1,28 @@
+{
+  "slug": "michael-amador-1",
+  "name": "Michael Amador",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Bryant",
+      "conf": "AEC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.5,
+      "drb_g": 0,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/michael-amador-1.html",
+  "last_scraped": "2025-11-01T04:45:06.872Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "tyonne-farrell-1",
+  "name": "Tyonne Farrell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rhode Island",
+      "conf": "A-10",
+      "gp": 18,
+      "gs": 15,
+      "mp_g": 18.5555555556,
+      "fg_pct": 0.4415584416,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.4871794872,
+      "orb_g": 0.8888888889,
+      "drb_g": 2.3888888889,
+      "trb_g": 3.2777777778,
+      "ast_g": 1,
+      "stl_g": 0.6111111111,
+      "blk_g": 0.1666666667,
+      "tov_g": 1,
+      "pf_g": 1.2777777778,
+      "pts_g": 5.1666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyonne-farrell-1.html",
+  "last_scraped": "2025-11-01T04:47:29.916Z"
+}

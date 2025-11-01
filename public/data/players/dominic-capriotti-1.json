@@ -1,0 +1,48 @@
+{
+  "slug": "dominic-capriotti-1",
+  "name": "Dominic Capriotti",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Houston Christian",
+      "conf": "Southland",
+      "gp": 26,
+      "gs": 16,
+      "mp_g": 24.5,
+      "fg_pct": 0.3790849673,
+      "fg3_pct": 0.3852459016,
+      "ft_pct": 0.8888888889,
+      "orb_g": 0.4615384615,
+      "drb_g": 1.6153846154,
+      "trb_g": 2.0769230769,
+      "ast_g": 0.7307692308,
+      "stl_g": 0.5384615385,
+      "blk_g": 0.0769230769,
+      "tov_g": 1.0384615385,
+      "pf_g": 1.6923076923,
+      "pts_g": 7.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Binghamton",
+      "conf": "AEC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 3.5,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.25,
+      "drb_g": 0.25,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0.5,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dominic-capriotti-1.html",
+  "last_scraped": "2025-11-01T04:40:52.143Z"
+}

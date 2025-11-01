@@ -1,0 +1,48 @@
+{
+  "slug": "gloire-goma-1",
+  "name": "Gloire Goma",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - juco",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Cal State Bakersfield",
+      "conf": "Big West",
+      "gp": 12,
+      "gs": 1,
+      "mp_g": 6.3333333333,
+      "fg_pct": 0.1666666667,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.75,
+      "trb_g": 1.0833333333,
+      "ast_g": 0.0833333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.25,
+      "tov_g": 0.0833333333,
+      "pf_g": 1.75,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gloire-goma-1.html",
+  "last_scraped": "2025-11-01T04:41:25.124Z"
+}

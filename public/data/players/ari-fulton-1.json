@@ -1,0 +1,28 @@
+{
+  "slug": "ari-fulton-1",
+  "name": "Ari Fulton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 29,
+      "gs": 21,
+      "mp_g": 28.5517241379,
+      "fg_pct": 0.4161849711,
+      "fg3_pct": 0.2575757576,
+      "ft_pct": 0.65,
+      "orb_g": 1.724137931,
+      "drb_g": 3.6896551724,
+      "trb_g": 5.4137931034,
+      "ast_g": 0.8620689655,
+      "stl_g": 0.5172413793,
+      "blk_g": 0.6206896552,
+      "tov_g": 0.9655172414,
+      "pf_g": 2,
+      "pts_g": 6.8965517241
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ari-fulton-1.html",
+  "last_scraped": "2025-11-01T04:35:48.387Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "corneilous-williams-1",
+  "name": "Corneilous Williams",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Western Carolina",
+      "conf": "Southern",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 11.8275862069,
+      "fg_pct": 0.7068965517,
+      "fg3_pct": 0,
+      "ft_pct": 0.5135135135,
+      "orb_g": 1.3103448276,
+      "drb_g": 1.6896551724,
+      "trb_g": 3,
+      "ast_g": 0.0689655172,
+      "stl_g": 0.1034482759,
+      "blk_g": 0.9310344828,
+      "tov_g": 0.3793103448,
+      "pf_g": 1.4137931034,
+      "pts_g": 3.4827586207
+    },
+    {
+      "season": "2024-25",
+      "team": "North Alabama",
+      "conf": "A-Sun",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 29.8,
+      "fg_pct": 0.635,
+      "fg3_pct": null,
+      "ft_pct": 0.6511627907,
+      "orb_g": 3.2285714286,
+      "drb_g": 5.8285714286,
+      "trb_g": 9.0571428571,
+      "ast_g": 0.3714285714,
+      "stl_g": 0.5428571429,
+      "blk_g": 0.8,
+      "tov_g": 1.0285714286,
+      "pf_g": 2.8,
+      "pts_g": 9.6571428571
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/corneilous-williams-1.html",
+  "last_scraped": "2025-11-01T04:40:10.897Z"
+}

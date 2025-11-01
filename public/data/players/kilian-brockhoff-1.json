@@ -1,0 +1,48 @@
+{
+  "slug": "kilian-brockhoff-1",
+  "name": "Kilian Brockhoff",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UC Santa Barbara",
+      "conf": "Big West",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 7.5789473684,
+      "fg_pct": 0.3947368421,
+      "fg3_pct": 0.3793103448,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.4210526316,
+      "drb_g": 1.0526315789,
+      "trb_g": 1.4736842105,
+      "ast_g": 0.2631578947,
+      "stl_g": 0.1578947368,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.7368421053,
+      "pf_g": 1.0526315789,
+      "pts_g": 2.5789473684
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Louis",
+      "conf": "A-10",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 4.3043478261,
+      "fg_pct": 0.3461538462,
+      "fg3_pct": 0.1904761905,
+      "ft_pct": 0.7,
+      "orb_g": 0.0434782609,
+      "drb_g": 0.4782608696,
+      "trb_g": 0.5217391304,
+      "ast_g": 0.2608695652,
+      "stl_g": 0.1304347826,
+      "blk_g": 0,
+      "tov_g": 0.2608695652,
+      "pf_g": 0.5652173913,
+      "pts_g": 1.2608695652
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kilian-brockhoff-1.html",
+  "last_scraped": "2025-11-01T04:43:58.853Z"
+}

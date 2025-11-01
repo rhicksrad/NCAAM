@@ -1,0 +1,48 @@
+{
+  "slug": "tunde-vahlberg-fasasi-1",
+  "name": "Tunde Vahlberg Fasasi",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "La Salle",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 18,
+      "mp_g": 23.2727272727,
+      "fg_pct": 0.3825136612,
+      "fg3_pct": 0.3565891473,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.9393939394,
+      "drb_g": 2.2121212121,
+      "trb_g": 3.1515151515,
+      "ast_g": 0.8484848485,
+      "stl_g": 0.5454545455,
+      "blk_g": 0.6363636364,
+      "tov_g": 0.7272727273,
+      "pf_g": 2.4545454545,
+      "pts_g": 6.2424242424
+    },
+    {
+      "season": "2024-25",
+      "team": "La Salle",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 8,
+      "mp_g": 20.8787878788,
+      "fg_pct": 0.4370860927,
+      "fg3_pct": 0.3483146067,
+      "ft_pct": 0.7173913043,
+      "orb_g": 0.9696969697,
+      "drb_g": 1.7272727273,
+      "trb_g": 2.696969697,
+      "ast_g": 0.7272727273,
+      "stl_g": 0.6060606061,
+      "blk_g": 0.3939393939,
+      "tov_g": 0.6060606061,
+      "pf_g": 1.8181818182,
+      "pts_g": 5.9393939394
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tunde-vahlberg-fasasi-1.html",
+  "last_scraped": "2025-11-01T04:47:20.250Z"
+}

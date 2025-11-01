@@ -1,0 +1,48 @@
+{
+  "slug": "juslin-bodo-bodo-1",
+  "name": "Juslin Bodo Bodo",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "High Point",
+      "conf": "Big South",
+      "gp": 36,
+      "gs": 36,
+      "mp_g": 24.2222222222,
+      "fg_pct": 0.6770186335,
+      "fg3_pct": 0,
+      "ft_pct": 0.3978494624,
+      "orb_g": 4.1944444444,
+      "drb_g": 5.4444444444,
+      "trb_g": 9.6388888889,
+      "ast_g": 0.1944444444,
+      "stl_g": 0.4444444444,
+      "blk_g": 1.9166666667,
+      "tov_g": 1.0555555556,
+      "pf_g": 2.8055555556,
+      "pts_g": 7.0833333333
+    },
+    {
+      "season": "2024-25",
+      "team": "High Point",
+      "conf": "Big South",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 21.6571428571,
+      "fg_pct": 0.6434782609,
+      "fg3_pct": null,
+      "ft_pct": 0.5342465753,
+      "orb_g": 3.1428571429,
+      "drb_g": 5.2285714286,
+      "trb_g": 8.3714285714,
+      "ast_g": 0.1714285714,
+      "stl_g": 0.5714285714,
+      "blk_g": 1.4285714286,
+      "tov_g": 0.6857142857,
+      "pf_g": 2.2857142857,
+      "pts_g": 5.3428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/juslin-bodo-bodo-1.html",
+  "last_scraped": "2025-11-01T04:43:26.344Z"
+}

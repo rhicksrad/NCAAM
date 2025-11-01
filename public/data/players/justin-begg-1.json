@@ -1,0 +1,28 @@
+{
+  "slug": "justin-begg-1",
+  "name": "Justin Begg",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "George Mason",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 9.2424242424,
+      "fg_pct": 0.3837209302,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6842105263,
+      "orb_g": 0.0606060606,
+      "drb_g": 0.6060606061,
+      "trb_g": 0.6666666667,
+      "ast_g": 1.1515151515,
+      "stl_g": 0.4545454545,
+      "blk_g": 0.0303030303,
+      "tov_g": 1.0909090909,
+      "pf_g": 1.2121212121,
+      "pts_g": 2.8787878788
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/justin-begg-1.html",
+  "last_scraped": "2025-11-01T04:43:27.963Z"
+}

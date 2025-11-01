@@ -1,0 +1,48 @@
+{
+  "slug": "mikkel-tyne-1",
+  "name": "Mikkel Tyne",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Richmond",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 11,
+      "mp_g": 17,
+      "fg_pct": 0.32,
+      "fg3_pct": 0.2692307692,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.2121212121,
+      "drb_g": 1.9090909091,
+      "trb_g": 2.1212121212,
+      "ast_g": 0.8484848485,
+      "stl_g": 0.5151515152,
+      "blk_g": 0,
+      "tov_g": 0.5151515152,
+      "pf_g": 1.2121212121,
+      "pts_g": 4
+    },
+    {
+      "season": "2024-25",
+      "team": "Richmond",
+      "conf": "A-10",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 31.53125,
+      "fg_pct": 0.3830508475,
+      "fg3_pct": 0.2714285714,
+      "ft_pct": 0.7804878049,
+      "orb_g": 0.5,
+      "drb_g": 1.75,
+      "trb_g": 2.25,
+      "ast_g": 1.40625,
+      "stl_g": 1.03125,
+      "blk_g": 0,
+      "tov_g": 1.59375,
+      "pf_g": 2.40625,
+      "pts_g": 9.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mikkel-tyne-1.html",
+  "last_scraped": "2025-11-01T04:45:13.333Z"
+}

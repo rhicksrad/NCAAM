@@ -1,0 +1,48 @@
+{
+  "slug": "logan-carey-1",
+  "name": "Logan Carey",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Maine",
+      "conf": "AEC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 5.75,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.25,
+      "orb_g": 0.3,
+      "drb_g": 0.6,
+      "trb_g": 0.9,
+      "ast_g": 0.35,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0.35,
+      "pf_g": 0.7,
+      "pts_g": 1.95
+    },
+    {
+      "season": "2024-25",
+      "team": "Maine",
+      "conf": "AEC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 10.7096774194,
+      "fg_pct": 0.3255813953,
+      "fg3_pct": 0.1304347826,
+      "ft_pct": 0.5925925926,
+      "orb_g": 0.2580645161,
+      "drb_g": 0.5483870968,
+      "trb_g": 0.8064516129,
+      "ast_g": 1.0322580645,
+      "stl_g": 0.5806451613,
+      "blk_g": 0.0967741935,
+      "tov_g": 0.6129032258,
+      "pf_g": 1.0322580645,
+      "pts_g": 2.4193548387
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/logan-carey-1.html",
+  "last_scraped": "2025-11-01T04:44:24.570Z"
+}

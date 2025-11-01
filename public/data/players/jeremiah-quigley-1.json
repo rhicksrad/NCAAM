@@ -1,0 +1,48 @@
+{
+  "slug": "jeremiah-quigley-1",
+  "name": "Jeremiah Quigley",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iona",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 18,
+      "mp_g": 27.8484848485,
+      "fg_pct": 0.4141414141,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7704918033,
+      "orb_g": 0.4545454545,
+      "drb_g": 2.8484848485,
+      "trb_g": 3.303030303,
+      "ast_g": 3.2727272727,
+      "stl_g": 0.8484848485,
+      "blk_g": 0.0606060606,
+      "tov_g": 1.6666666667,
+      "pf_g": 2.1818181818,
+      "pts_g": 10.8181818182
+    },
+    {
+      "season": "2024-25",
+      "team": "George Mason",
+      "conf": "A-10",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 8.1111111111,
+      "fg_pct": 0.1818181818,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.7777777778,
+      "ast_g": 1.2222222222,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.8888888889,
+      "pts_g": 1.2222222222
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeremiah-quigley-1.html",
+  "last_scraped": "2025-11-01T04:43:00.087Z"
+}

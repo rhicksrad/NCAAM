@@ -1,0 +1,28 @@
+{
+  "slug": "john-kelly-9",
+  "name": "John Kelly",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 26,
+      "gs": 7,
+      "mp_g": 10.2307692308,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.2173913043,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.8076923077,
+      "drb_g": 1.3846153846,
+      "trb_g": 2.1923076923,
+      "ast_g": 0.0769230769,
+      "stl_g": 0.1153846154,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.3461538462,
+      "pf_g": 1.3461538462,
+      "pts_g": 1.3076923077
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/john-kelly-9.html",
+  "last_scraped": "2025-11-01T04:43:06.747Z"
+}

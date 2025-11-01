@@ -1,0 +1,28 @@
+{
+  "slug": "chico-johnson-1",
+  "name": "Chico Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "USC Upstate",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 9,
+      "mp_g": 19.15625,
+      "fg_pct": 0.3375,
+      "fg3_pct": 0.2784810127,
+      "ft_pct": 0.6046511628,
+      "orb_g": 0.28125,
+      "drb_g": 1.28125,
+      "trb_g": 1.5625,
+      "ast_g": 0.6875,
+      "stl_g": 0.40625,
+      "blk_g": 0.40625,
+      "tov_g": 1.09375,
+      "pf_g": 1.40625,
+      "pts_g": 4.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chico-johnson-1.html",
+  "last_scraped": "2025-11-01T04:38:39.935Z"
+}

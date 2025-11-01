@@ -1,0 +1,48 @@
+{
+  "slug": "keyshawn-mitchell-1",
+  "name": "Keyshawn Mitchell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Bryant",
+      "conf": "AEC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 4.5882352941,
+      "fg_pct": 0.8,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.3529411765,
+      "drb_g": 1.2941176471,
+      "trb_g": 1.6470588235,
+      "ast_g": 0,
+      "stl_g": 0.0588235294,
+      "blk_g": 0.4117647059,
+      "tov_g": 0,
+      "pf_g": 0.7647058824,
+      "pts_g": 1
+    },
+    {
+      "season": "2024-25",
+      "team": "Bryant",
+      "conf": "AEC",
+      "gp": 35,
+      "gs": 34,
+      "mp_g": 20.3428571429,
+      "fg_pct": 0.5242290749,
+      "fg3_pct": 0.3166666667,
+      "ft_pct": 0.5753424658,
+      "orb_g": 2.7428571429,
+      "drb_g": 4.0571428571,
+      "trb_g": 6.8,
+      "ast_g": 0.6285714286,
+      "stl_g": 0.3714285714,
+      "blk_g": 0.7428571429,
+      "tov_g": 1.0285714286,
+      "pf_g": 2.2,
+      "pts_g": 8.5428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/keyshawn-mitchell-1.html",
+  "last_scraped": "2025-11-01T04:43:55.526Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "zion-walker-1",
+  "name": "Zion Walker",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Radford",
+      "conf": "Big South",
+      "gp": 27,
+      "gs": 1,
+      "mp_g": 11.2592592593,
+      "fg_pct": 0.4782608696,
+      "fg3_pct": 0.3913043478,
+      "ft_pct": 0.8510638298,
+      "orb_g": 0.2592592593,
+      "drb_g": 0.8888888889,
+      "trb_g": 1.1481481481,
+      "ast_g": 1,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.7407407407,
+      "pf_g": 0.7407407407,
+      "pts_g": 5.8888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zion-walker-1.html",
+  "last_scraped": "2025-11-01T04:48:00.520Z"
+}

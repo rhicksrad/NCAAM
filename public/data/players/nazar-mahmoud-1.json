@@ -1,0 +1,48 @@
+{
+  "slug": "nazar-mahmoud-1",
+  "name": "Nazar Mahmoud",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UTSA",
+      "conf": "AAC",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 5.5714285714,
+      "fg_pct": 0.2592592593,
+      "fg3_pct": 0.1904761905,
+      "ft_pct": 0.5833333333,
+      "orb_g": 0.1428571429,
+      "drb_g": 0.6428571429,
+      "trb_g": 0.7857142857,
+      "ast_g": 0.2142857143,
+      "stl_g": 0.0714285714,
+      "blk_g": 0,
+      "tov_g": 0.2142857143,
+      "pf_g": 1,
+      "pts_g": 1.7857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "UTSA",
+      "conf": "AAC",
+      "gp": 18,
+      "gs": 2,
+      "mp_g": 7.5,
+      "fg_pct": 0.2708333333,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.95,
+      "orb_g": 0.6111111111,
+      "drb_g": 0.7222222222,
+      "trb_g": 1.3333333333,
+      "ast_g": 0.0555555556,
+      "stl_g": 0.4444444444,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.7777777778,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nazar-mahmoud-1.html",
+  "last_scraped": "2025-11-01T04:45:26.139Z"
+}

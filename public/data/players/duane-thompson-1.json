@@ -1,0 +1,28 @@
+{
+  "slug": "duane-thompson-1",
+  "name": "Duane Thompson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "St. Bonaventure",
+      "conf": "A-10",
+      "gp": 24,
+      "gs": 1,
+      "mp_g": 9.7083333333,
+      "fg_pct": 0.3188405797,
+      "fg3_pct": 0.2647058824,
+      "ft_pct": 0.6,
+      "orb_g": 0.5416666667,
+      "drb_g": 1.0416666667,
+      "trb_g": 1.5833333333,
+      "ast_g": 0.2916666667,
+      "stl_g": 0.25,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.6666666667,
+      "pts_g": 3.2083333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/duane-thompson-1.html",
+  "last_scraped": "2025-11-01T04:40:53.877Z"
+}

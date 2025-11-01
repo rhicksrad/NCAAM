@@ -1,0 +1,28 @@
+{
+  "slug": "brandon-jennings-2",
+  "name": "Brandon Jennings",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "VCU",
+      "conf": "A-10",
+      "gp": 35,
+      "gs": 0,
+      "mp_g": 13.0571428571,
+      "fg_pct": 0.3604651163,
+      "fg3_pct": 0.3928571429,
+      "ft_pct": 0.6774193548,
+      "orb_g": 0.9142857143,
+      "drb_g": 1.4,
+      "trb_g": 2.3142857143,
+      "ast_g": 0.8,
+      "stl_g": 0.5428571429,
+      "blk_g": 0.3428571429,
+      "tov_g": 0.5142857143,
+      "pf_g": 1.9142857143,
+      "pts_g": 2.6857142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brandon-jennings-2.html",
+  "last_scraped": "2025-11-01T04:37:06.850Z"
+}

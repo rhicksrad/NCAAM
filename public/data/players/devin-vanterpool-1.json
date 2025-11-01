@@ -1,0 +1,28 @@
+{
+  "slug": "devin-vanterpool-1",
+  "name": "Devin Vanterpool",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida Atlantic",
+      "conf": "AAC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 7.9333333333,
+      "fg_pct": 0.3392857143,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.7333333333,
+      "trb_g": 1.0666666667,
+      "ast_g": 0.4666666667,
+      "stl_g": 0.3,
+      "blk_g": 0.2,
+      "tov_g": 0.5,
+      "pf_g": 1.2666666667,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/devin-vanterpool-1.html",
+  "last_scraped": "2025-11-01T04:40:45.833Z"
+}

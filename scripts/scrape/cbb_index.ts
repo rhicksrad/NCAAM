@@ -102,6 +102,23 @@ const POWER_CONFERENCE_TEAM_MAP = new Map<string, { conference: string; name: st
   ["xavier", { conference: "BE", name: "Xavier" }],
 ]);
 
+type ConferenceDetail = {
+  code: string;
+  name: string;
+};
+
+const CONFERENCE_SLUG_OVERRIDES = new Map<string, ConferenceDetail>([
+  ["america-east", { code: "AEC", name: "America East Conference" }],
+  ["aac", { code: "AAC", name: "American Athletic Conference" }],
+  ["atlantic-sun", { code: "ASUN", name: "ASUN Conference" }],
+  ["atlantic-10", { code: "A10", name: "Atlantic 10 Conference" }],
+  ["big-sky", { code: "BSKY", name: "Big Sky Conference" }],
+  ["big-south", { code: "BSOU", name: "Big South Conference" }],
+  ["big-west", { code: "BWC", name: "Big West Conference" }],
+]);
+
+const conferenceTeamCache = new Map<string, Promise<string[]>>();
+
 type TeamListing = {
   year: number;
   name: string;
@@ -128,6 +145,125 @@ type PlayerIndexDocument = {
   seasons: string[];
   players: PlayerIndexEntry[];
 };
+
+function normaliseConferenceText(text: string): string {
+  return text.replace(/\s+(?:MB|WB)B$/iu, "").replace(/\s+/g, " ").trim();
+}
+
+function titleCaseFromSlug(slug: string): string {
+  return slug
+    .split(/[-_]+/)
+    .filter(Boolean)
+    .map(part => {
+      if (part.length <= 3) {
+        return part.toUpperCase();
+      }
+      return part[0].toUpperCase() + part.slice(1).toLowerCase();
+    })
+    .join(" ");
+}
+
+function formatConferenceName(slug: string, raw: string | null): string {
+  const base = raw && raw.length > 0 ? raw : titleCaseFromSlug(slug);
+  if (!base) {
+    return "";
+  }
+  const hasConference = /conference$/iu.test(base);
+  return hasConference ? base : `${base} Conference`;
+}
+
+function deriveConferenceDetailsFromLink(link: cheerio.Cheerio<cheerio.Element>): ConferenceDetail | null {
+  const href = link.attr("href");
+  if (!href) {
+    return null;
+  }
+  const match = href.match(/\/cbb\/conferences\/([^/]+)/i);
+  if (!match) {
+    return null;
+  }
+  const slug = match[1];
+  const override = CONFERENCE_SLUG_OVERRIDES.get(slug);
+  const rawText = normaliseConferenceText(link.text());
+  const name = override?.name ?? formatConferenceName(slug, rawText);
+  const codeSource = override?.code ?? (rawText || slug);
+  const code = codeSource.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+  if (!code || !name) {
+    return null;
+  }
+  return { code, name };
+}
+
+function extractConferenceDetails(root: cheerio.CheerioAPI): ConferenceDetail | null {
+  const meta = root("#meta");
+  if (!meta.length) {
+    return null;
+  }
+  const recordParagraph = meta.find("p strong:contains('Record')").parent();
+  if (!recordParagraph.length) {
+    return null;
+  }
+  const link = recordParagraph.find("a[href*='/cbb/conferences/']").first();
+  if (!link.length) {
+    return null;
+  }
+  return deriveConferenceDetailsFromLink(link);
+}
+
+async function fetchConferenceTeamSlugs(slug: string, year: number): Promise<string[]> {
+  const cacheKey = `${slug}:${year}`;
+  let loader = conferenceTeamCache.get(cacheKey);
+  if (!loader) {
+    loader = (async () => {
+      const url = `${BASE_URL}/cbb/conferences/${slug}/men/${year}.html`;
+      const html = await fetchHtml(url);
+      const sanitised = html.replace(/<!--/g, "").replace(/-->/g, "");
+      const $ = cheerio.load(sanitised);
+      const slugs = new Set<string>();
+      $("#standings tbody tr").each((_, row) => {
+        const anchor = $(row).find("td[data-stat='school_name'] a");
+        const href = anchor.attr("href");
+        if (!href) {
+          return;
+        }
+        const match = href.match(/\/cbb\/schools\/([^/]+)\//i);
+        if (match) {
+          slugs.add(match[1]);
+        }
+      });
+      return Array.from(slugs.values());
+    })();
+    conferenceTeamCache.set(cacheKey, loader);
+  }
+  return loader;
+}
+
+async function buildConferenceTeamLookup(
+  conferenceFilter: Set<string> | null,
+  seasons: number[],
+): Promise<Map<string, ConferenceDetail>> {
+  const lookup = new Map<string, ConferenceDetail>();
+  if (!conferenceFilter || conferenceFilter.size === 0) {
+    return lookup;
+  }
+  for (const [slug, detail] of CONFERENCE_SLUG_OVERRIDES.entries()) {
+    if (!conferenceFilter.has(detail.code)) {
+      continue;
+    }
+    for (const year of seasons) {
+      try {
+        const teamSlugs = await fetchConferenceTeamSlugs(slug, year);
+        for (const teamSlug of teamSlugs) {
+          if (!lookup.has(teamSlug)) {
+            lookup.set(teamSlug, detail);
+          }
+        }
+      } catch (error) {
+        console.warn(`Failed to load conference standings for ${slug} in ${year}`, error);
+      }
+    }
+  }
+  return lookup;
+}
 
 function parseSeasonArgs(): number[] {
   const fromEnv = process.env.CBB_SEASONS;
@@ -198,7 +334,10 @@ function uniqueKey(entry: PlayerIndexEntry): string {
   return `${entry.season}|${entry.team_slug}|${entry.slug}`;
 }
 
-async function fetchSeasonTeams(year: number): Promise<TeamListing[]> {
+async function fetchSeasonTeams(
+  year: number,
+  conferenceOverrides: Map<string, ConferenceDetail>,
+): Promise<TeamListing[]> {
   const seasonUrl = `${BASE_URL}/cbb/seasons/men/${year}-school-stats.html`;
   console.log(`Fetching teams for ${year} from ${seasonUrl}`);
   const html = await fetchHtml(seasonUrl);
@@ -220,9 +359,12 @@ async function fetchSeasonTeams(year: number): Promise<TeamListing[]> {
     }
     const slug = match[1];
     const url = new URL(href, BASE_URL).toString();
+    const override = conferenceOverrides.get(slug);
     const meta = POWER_CONFERENCE_TEAM_MAP.get(slug);
-    const conference = meta?.conference ?? cleanConference($(row).find("td[data-stat='conf_abbr']").text());
-    const conferenceName = meta?.name ?? cleanConferenceName($(row).find("td[data-stat='conf_name']").text());
+    const conference =
+      meta?.conference ?? override?.code ?? cleanConference($(row).find("td[data-stat='conf_abbr']").text());
+    const conferenceName =
+      meta?.name ?? override?.name ?? cleanConferenceName($(row).find("td[data-stat='conf_name']").text());
     teams.set(slug, { year, name, url, slug, conference, conference_name: conferenceName });
   });
   return Array.from(teams.values());
@@ -231,6 +373,18 @@ async function fetchSeasonTeams(year: number): Promise<TeamListing[]> {
 async function fetchTeamRoster(listing: TeamListing): Promise<PlayerIndexEntry[]> {
   const html = await fetchHtml(listing.url);
   const $ = cheerio.load(html);
+
+  if (!listing.conference || !listing.conference_name) {
+    const details = extractConferenceDetails($);
+    if (details) {
+      if (!listing.conference) {
+        listing.conference = details.code;
+      }
+      if (!listing.conference_name) {
+        listing.conference_name = details.name;
+      }
+    }
+  }
 
   const heading = $("h1").first();
   const spanTexts = heading
@@ -315,20 +469,27 @@ async function main(): Promise<void> {
     console.log(`Restricting to conferences: ${Array.from(conferenceFilter.values()).join(", ")}`);
   }
 
+  const conferenceTeamOverrides = await buildConferenceTeamLookup(conferenceFilter, seasons);
+
   const playerMap = new Map<string, PlayerIndexEntry>();
   const seasonLabels = new Set<string>();
 
   for (const year of seasons) {
-    const teams = await fetchSeasonTeams(year);
+    const teams = await fetchSeasonTeams(year, conferenceTeamOverrides);
     let filteredTeams = teams;
+    let skippedConferenceTeams = 0;
     if (conferenceFilter) {
-      filteredTeams = filteredTeams.filter(team => {
-        if (!team.conference) return false;
-        return conferenceFilter.has(team.conference);
-      });
-      console.log(
-        `Identified ${filteredTeams.length} power-conference teams out of ${teams.length} for ${year}.`,
+      const immediateMatches = filteredTeams.filter(
+        team => team.conference && conferenceFilter.has(team.conference),
       );
+      skippedConferenceTeams = teams.length - immediateMatches.length;
+      filteredTeams = immediateMatches;
+      console.log(
+        `Identified ${immediateMatches.length} conference-aligned teams out of ${teams.length} for ${year}.`,
+      );
+      if (skippedConferenceTeams > 0) {
+        console.log(`Skipping ${skippedConferenceTeams} teams without a matching conference override.`);
+      }
     }
     if (TEAM_SLUG_FILTER) {
       filteredTeams = filteredTeams.filter(team => TEAM_SLUG_FILTER!.has(team.slug));
@@ -345,6 +506,12 @@ async function main(): Promise<void> {
     await runPool(teamList, CONCURRENCY, async listing => {
       try {
         const players = await fetchTeamRoster(listing);
+        if (conferenceFilter) {
+          const teamConference = listing.conference;
+          if (!teamConference || !conferenceFilter.has(teamConference)) {
+            return;
+          }
+        }
         for (const player of players) {
           const key = uniqueKey(player);
           if (!playerMap.has(key)) {

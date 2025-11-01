@@ -1,0 +1,28 @@
+{
+  "slug": "ivan-matlekovic-1",
+  "name": "Ivan Matlekovic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "High Point",
+      "conf": "Big South",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 6,
+      "fg_pct": 0.75,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 0.6,
+      "drb_g": 1.2,
+      "trb_g": 1.8,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0.8,
+      "tov_g": 0.6,
+      "pf_g": 0.8,
+      "pts_g": 2.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ivan-matlekovic-1.html",
+  "last_scraped": "2025-11-01T04:41:54.884Z"
+}

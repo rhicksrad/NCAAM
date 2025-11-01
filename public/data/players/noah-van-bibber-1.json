@@ -1,0 +1,48 @@
+{
+  "slug": "noah-van-bibber-1",
+  "name": "Noah Van Bibber",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Winthrop",
+      "conf": "Big South",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 8.8333333333,
+      "fg_pct": 0.3181818182,
+      "fg3_pct": 0.3076923077,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.5555555556,
+      "drb_g": 0.6666666667,
+      "trb_g": 1.2222222222,
+      "ast_g": 0.1111111111,
+      "stl_g": 0.0555555556,
+      "blk_g": 0,
+      "tov_g": 0.3888888889,
+      "pf_g": 1.6111111111,
+      "pts_g": 3.8888888889
+    },
+    {
+      "season": "2024-25",
+      "team": "Winthrop",
+      "conf": "Big South",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 4.1,
+      "fg_pct": 0.2777777778,
+      "fg3_pct": 0.3125,
+      "ft_pct": null,
+      "orb_g": 0.1,
+      "drb_g": 0.4,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.1,
+      "pf_g": 0.2,
+      "pts_g": 1.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/noah-van-bibber-1.html",
+  "last_scraped": "2025-11-01T04:45:39.085Z"
+}

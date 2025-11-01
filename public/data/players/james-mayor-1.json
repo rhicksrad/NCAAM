@@ -1,0 +1,28 @@
+{
+  "slug": "james-mayor-1",
+  "name": "James Mayor",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Eastern Kentucky",
+      "conf": "A-Sun",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 1.5,
+      "trb_g": 1.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.5,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/james-mayor-1.html",
+  "last_scraped": "2025-11-01T04:42:31.804Z"
+}

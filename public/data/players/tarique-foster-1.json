@@ -1,0 +1,48 @@
+{
+  "slug": "tarique-foster-1",
+  "name": "Tarique Foster",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 3.3846153846,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.0769230769,
+      "drb_g": 0.3846153846,
+      "trb_g": 0.4615384615,
+      "ast_g": 0.0769230769,
+      "stl_g": 0.1538461538,
+      "blk_g": 0,
+      "tov_g": 0.2307692308,
+      "pf_g": 0.5384615385,
+      "pts_g": 1.5384615385
+    },
+    {
+      "season": "2024-25",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 18,
+      "gs": 1,
+      "mp_g": 9.3333333333,
+      "fg_pct": 0.5454545455,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.4375,
+      "orb_g": 0.5555555556,
+      "drb_g": 0.5,
+      "trb_g": 1.0555555556,
+      "ast_g": 0.2777777778,
+      "stl_g": 0.2777777778,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.3888888889,
+      "pf_g": 0.6111111111,
+      "pts_g": 2.6111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tarique-foster-1.html",
+  "last_scraped": "2025-11-01T04:46:54.550Z"
+}

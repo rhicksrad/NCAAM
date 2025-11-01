@@ -1,0 +1,28 @@
+{
+  "slug": "stefano-alesso-1",
+  "name": "Stefano Alesso",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 17,
+      "gs": 3,
+      "mp_g": 7.8823529412,
+      "fg_pct": 0.3888888889,
+      "fg3_pct": 0.1333333333,
+      "ft_pct": 0.1666666667,
+      "orb_g": 0.2352941176,
+      "drb_g": 1.5294117647,
+      "trb_g": 1.7647058824,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.1176470588,
+      "blk_g": 0.3529411765,
+      "tov_g": 1.1764705882,
+      "pf_g": 0.8823529412,
+      "pts_g": 2.7058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/stefano-alesso-1.html",
+  "last_scraped": "2025-11-01T04:46:45.022Z"
+}

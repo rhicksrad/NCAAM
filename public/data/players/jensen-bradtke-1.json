@@ -1,0 +1,28 @@
+{
+  "slug": "jensen-bradtke-1",
+  "name": "Jensen Bradtke",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Montana",
+      "conf": "Big Sky",
+      "gp": 25,
+      "gs": 1,
+      "mp_g": 10.44,
+      "fg_pct": 0.3815789474,
+      "fg3_pct": 0.3137254902,
+      "ft_pct": 0.9166666667,
+      "orb_g": 0.4,
+      "drb_g": 1,
+      "trb_g": 1.4,
+      "ast_g": 0.16,
+      "stl_g": 0.12,
+      "blk_g": 0.24,
+      "tov_g": 0.28,
+      "pf_g": 0.6,
+      "pts_g": 3.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jensen-bradtke-1.html",
+  "last_scraped": "2025-11-01T04:42:58.598Z"
+}

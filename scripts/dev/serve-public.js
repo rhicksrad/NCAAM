@@ -3,7 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
 
 import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
-import { ensurePowerConferencePlayers } from './ensure-cbb-player-stats.js';
+import { ensureConferencePlayers } from './ensure-cbb-player-stats.js';
 
 const DEFAULT_PORT = 4173;
 const PUBLIC_ROOT = resolve(new URL('../../public', import.meta.url).pathname);
@@ -94,7 +94,7 @@ function sendJson(res, statusCode, payload) {
 await ensureNcaALogos();
 
 try {
-  const meta = await ensurePowerConferencePlayers();
+  const meta = await ensureConferencePlayers();
   if (meta) {
     const { player_count: playerCount, conferences } = meta;
     console.log(

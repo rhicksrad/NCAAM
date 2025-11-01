@@ -1,0 +1,28 @@
+{
+  "slug": "carmelo-adkins-1",
+  "name": "Carmelo Adkins",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "USC Upstate",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 25,
+      "mp_g": 29,
+      "fg_pct": 0.4096385542,
+      "fg3_pct": 0.3309352518,
+      "ft_pct": 0.7373737374,
+      "orb_g": 0.78125,
+      "drb_g": 3.96875,
+      "trb_g": 4.75,
+      "ast_g": 1.40625,
+      "stl_g": 0.84375,
+      "blk_g": 0.15625,
+      "tov_g": 0.96875,
+      "pf_g": 1.5625,
+      "pts_g": 10.09375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/carmelo-adkins-1.html",
+  "last_scraped": "2025-11-01T04:38:22.147Z"
+}

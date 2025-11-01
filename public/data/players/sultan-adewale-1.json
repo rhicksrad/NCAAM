@@ -1,0 +1,48 @@
+{
+  "slug": "sultan-adewale-1",
+  "name": "Sultan Adewale",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iona",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 15,
+      "mp_g": 14.0606060606,
+      "fg_pct": 0.4367816092,
+      "fg3_pct": 0,
+      "ft_pct": 0.6875,
+      "orb_g": 1.8181818182,
+      "drb_g": 1.3333333333,
+      "trb_g": 3.1515151515,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.303030303,
+      "blk_g": 0.6666666667,
+      "tov_g": 0.4848484848,
+      "pf_g": 1.3636363636,
+      "pts_g": 2.9696969697
+    },
+    {
+      "season": "2024-25",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 14,
+      "gs": 10,
+      "mp_g": 11.7857142857,
+      "fg_pct": 0.5744680851,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 1.7857142857,
+      "drb_g": 1.0714285714,
+      "trb_g": 2.8571428571,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.2857142857,
+      "tov_g": 0.5714285714,
+      "pf_g": 1.7857142857,
+      "pts_g": 4.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sultan-adewale-1.html",
+  "last_scraped": "2025-11-01T04:46:48.267Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "kj-greene-1",
+  "name": "KJ Greene",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulane",
+      "conf": "AAC",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 7.04,
+      "fg_pct": 0.3928571429,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.65,
+      "orb_g": 0.12,
+      "drb_g": 0.36,
+      "trb_g": 0.48,
+      "ast_g": 0.92,
+      "stl_g": 0.36,
+      "blk_g": 0.16,
+      "tov_g": 0.56,
+      "pf_g": 0.76,
+      "pts_g": 1.48
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kj-greene-1.html",
+  "last_scraped": "2025-11-01T04:44:01.994Z"
+}

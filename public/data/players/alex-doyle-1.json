@@ -1,0 +1,48 @@
+{
+  "slug": "alex-doyle-1",
+  "name": "Alex Doyle",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 9.5925925926,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.2258064516,
+      "ft_pct": 0.6,
+      "orb_g": 0.2222222222,
+      "drb_g": 1.1481481481,
+      "trb_g": 1.3703703704,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.1481481481,
+      "blk_g": 0.2222222222,
+      "tov_g": 0.1851851852,
+      "pf_g": 1.0740740741,
+      "pts_g": 1.2592592593
+    },
+    {
+      "season": "2024-25",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 8.85,
+      "fg_pct": 0.3720930233,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": null,
+      "orb_g": 0.3,
+      "drb_g": 0.7,
+      "trb_g": 1,
+      "ast_g": 0.35,
+      "stl_g": 0.3,
+      "blk_g": 0.2,
+      "tov_g": 0.3,
+      "pf_g": 0.4,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/alex-doyle-1.html",
+  "last_scraped": "2025-11-01T04:34:51.580Z"
+}
