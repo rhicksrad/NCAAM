@@ -48,4 +48,10 @@ jobs:
         run: pnpm run --if-present test
 
       - name: Build
-        run: pnpm run --if-present build
+        run: |
+          pnpm run clean
+          pnpm run prepare:logos
+          pnpm run build:ts
+          pnpm run build:pages
+          python3 scripts/build_site.py || true
+          pnpm run build:sitemap
