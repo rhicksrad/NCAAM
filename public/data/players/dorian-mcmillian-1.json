@@ -1,0 +1,28 @@
+{
+  "slug": "dorian-mcmillian-1",
+  "name": "Dorian McMillian",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jackson State",
+      "conf": "SWAC",
+      "gp": 34,
+      "gs": 31,
+      "mp_g": 25.7647058824,
+      "fg_pct": 0.4216027875,
+      "fg3_pct": 0.3731343284,
+      "ft_pct": 0.8,
+      "orb_g": 0.5,
+      "drb_g": 3.7941176471,
+      "trb_g": 4.2941176471,
+      "ast_g": 0.6176470588,
+      "stl_g": 1.0882352941,
+      "blk_g": 0.3823529412,
+      "tov_g": 1.5588235294,
+      "pf_g": 1.6764705882,
+      "pts_g": 10.2352941176
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dorian-mcmillian-1.html",
+  "last_scraped": "2025-11-01T16:54:52.832Z"
+}

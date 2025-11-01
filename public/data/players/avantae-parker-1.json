@@ -1,0 +1,48 @@
+{
+  "slug": "avantae-parker-1",
+  "name": "Avantae Parker",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 33,
+      "gs": 23,
+      "mp_g": 23.2727272727,
+      "fg_pct": 0.5151515152,
+      "fg3_pct": 0.2631578947,
+      "ft_pct": 0.5849056604,
+      "orb_g": 2.2424242424,
+      "drb_g": 3.303030303,
+      "trb_g": 5.5454545455,
+      "ast_g": 1.0606060606,
+      "stl_g": 1.0303030303,
+      "blk_g": 1.2121212121,
+      "tov_g": 2.303030303,
+      "pf_g": 3.5757575758,
+      "pts_g": 8.2121212121
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 17,
+      "gs": 2,
+      "mp_g": 13.0588235294,
+      "fg_pct": 0.5555555556,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.9411764706,
+      "drb_g": 2.4117647059,
+      "trb_g": 3.3529411765,
+      "ast_g": 0.3529411765,
+      "stl_g": 1,
+      "blk_g": 1.0588235294,
+      "tov_g": 1.1176470588,
+      "pf_g": 2.5882352941,
+      "pts_g": 4.9411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/avantae-parker-1.html",
+  "last_scraped": "2025-11-01T16:53:51.697Z"
+}

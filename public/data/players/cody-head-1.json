@@ -1,0 +1,48 @@
+{
+  "slug": "cody-head-1",
+  "name": "Cody Head",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Lipscomb",
+      "conf": "A-Sun",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 18.6875,
+      "fg_pct": 0.5322580645,
+      "fg3_pct": 0.3518518519,
+      "ft_pct": 0.8431372549,
+      "orb_g": 0.78125,
+      "drb_g": 1.6875,
+      "trb_g": 2.46875,
+      "ast_g": 0.65625,
+      "stl_g": 0.53125,
+      "blk_g": 0.0625,
+      "tov_g": 0.6875,
+      "pf_g": 1.375,
+      "pts_g": 8.125
+    },
+    {
+      "season": "2024-25",
+      "team": "Arkansas State",
+      "conf": "Sun Belt",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 6.2105263158,
+      "fg_pct": 0.3913043478,
+      "fg3_pct": 0.1538461538,
+      "ft_pct": 0.7692307692,
+      "orb_g": 0.3157894737,
+      "drb_g": 0.5263157895,
+      "trb_g": 0.8421052632,
+      "ast_g": 0.8421052632,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.4736842105,
+      "pf_g": 0.4736842105,
+      "pts_g": 2.5263157895
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cody-head-1.html",
+  "last_scraped": "2025-11-01T16:54:26.150Z"
+}

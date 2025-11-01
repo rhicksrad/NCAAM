@@ -1,0 +1,48 @@
+{
+  "slug": "kaden-gumbs-1",
+  "name": "Kaden Gumbs",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Texas State",
+      "conf": "Sun Belt",
+      "gp": 25,
+      "gs": 25,
+      "mp_g": 29.84,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.2592592593,
+      "ft_pct": 0.7466666667,
+      "orb_g": 0.76,
+      "drb_g": 3.68,
+      "trb_g": 4.44,
+      "ast_g": 3.48,
+      "stl_g": 1.16,
+      "blk_g": 0.12,
+      "tov_g": 2.44,
+      "pf_g": 1.92,
+      "pts_g": 9.08
+    },
+    {
+      "season": "2024-25",
+      "team": "Texas State",
+      "conf": "Sun Belt",
+      "gp": 28,
+      "gs": 24,
+      "mp_g": 30.2142857143,
+      "fg_pct": 0.4581673307,
+      "fg3_pct": 0.3714285714,
+      "ft_pct": 0.8684210526,
+      "orb_g": 0.3571428571,
+      "drb_g": 3.0357142857,
+      "trb_g": 3.3928571429,
+      "ast_g": 4,
+      "stl_g": 1.4642857143,
+      "blk_g": 0.2142857143,
+      "tov_g": 2.2142857143,
+      "pf_g": 1.8571428571,
+      "pts_g": 11.0357142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kaden-gumbs-1.html",
+  "last_scraped": "2025-11-01T16:56:05.354Z"
+}

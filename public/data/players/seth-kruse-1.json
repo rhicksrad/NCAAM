@@ -1,0 +1,48 @@
+{
+  "slug": "seth-kruse-1",
+  "name": "Seth Kruse",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.25,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 1,
+      "drb_g": 0,
+      "trb_g": 1,
+      "ast_g": 1,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 1,
+      "pts_g": 2
+    },
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/seth-kruse-1.html",
+  "last_scraped": "2025-11-01T16:57:31.946Z"
+}

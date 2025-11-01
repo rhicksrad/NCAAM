@@ -1,0 +1,48 @@
+{
+  "slug": "mathok-majok-1",
+  "name": "Mathok Majok",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 3.5,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": 0,
+      "orb_g": 0.25,
+      "drb_g": 0.75,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0.125,
+      "blk_g": 0.125,
+      "tov_g": 0.25,
+      "pf_g": 1.25,
+      "pts_g": 0.75
+    },
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 19,
+      "gs": 4,
+      "mp_g": 8,
+      "fg_pct": 0.3529411765,
+      "fg3_pct": 0,
+      "ft_pct": 0.75,
+      "orb_g": 0.5263157895,
+      "drb_g": 1.3157894737,
+      "trb_g": 1.8421052632,
+      "ast_g": 0.1578947368,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.4736842105,
+      "tov_g": 0.4736842105,
+      "pf_g": 1.2105263158,
+      "pts_g": 0.7894736842
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mathok-majok-1.html",
+  "last_scraped": "2025-11-01T16:56:41.706Z"
+}

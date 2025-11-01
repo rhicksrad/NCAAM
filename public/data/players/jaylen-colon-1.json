@@ -1,0 +1,28 @@
+{
+  "slug": "jaylen-colon-1",
+  "name": "Jaylen Colon",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 9.3666666667,
+      "fg_pct": 0.3,
+      "fg3_pct": 0.3098591549,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.2333333333,
+      "drb_g": 0.9333333333,
+      "trb_g": 1.1666666667,
+      "ast_g": 1.1,
+      "stl_g": 0.4,
+      "blk_g": 0.0333333333,
+      "tov_g": 0.3333333333,
+      "pf_g": 1,
+      "pts_g": 2.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylen-colon-1.html",
+  "last_scraped": "2025-11-01T16:55:33.251Z"
+}

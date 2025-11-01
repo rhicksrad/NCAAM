@@ -1,0 +1,48 @@
+{
+  "slug": "deandre-craig-1",
+  "name": "DeAndre Craig",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 34,
+      "gs": 4,
+      "mp_g": 23.3823529412,
+      "fg_pct": 0.3896713615,
+      "fg3_pct": 0.2954545455,
+      "ft_pct": 0.5762711864,
+      "orb_g": 0.5588235294,
+      "drb_g": 2.0882352941,
+      "trb_g": 2.6470588235,
+      "ast_g": 2.5,
+      "stl_g": 1.0294117647,
+      "blk_g": 0,
+      "tov_g": 1.1764705882,
+      "pf_g": 2.1470588235,
+      "pts_g": 6.6470588235
+    },
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 29,
+      "gs": 29,
+      "mp_g": 29.8275862069,
+      "fg_pct": 0.4936305732,
+      "fg3_pct": 0.387755102,
+      "ft_pct": 0.7719298246,
+      "orb_g": 0.7586206897,
+      "drb_g": 2.8965517241,
+      "trb_g": 3.6551724138,
+      "ast_g": 2.6896551724,
+      "stl_g": 1.2413793103,
+      "blk_g": 0.0689655172,
+      "tov_g": 2.1724137931,
+      "pf_g": 2.724137931,
+      "pts_g": 13.5172413793
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/deandre-craig-1.html",
+  "last_scraped": "2025-11-01T16:54:41.910Z"
+}

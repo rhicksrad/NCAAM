@@ -1,0 +1,28 @@
+{
+  "slug": "anthony-alston-1",
+  "name": "Anthony Alston",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Appalachian State",
+      "conf": "Sun Belt",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 10.1666666667,
+      "fg_pct": 0.380952381,
+      "fg3_pct": 0.5384615385,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.1666666667,
+      "drb_g": 1.25,
+      "trb_g": 1.4166666667,
+      "ast_g": 0.5,
+      "stl_g": 0.4166666667,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.9166666667,
+      "pf_g": 0.9166666667,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-alston-1.html",
+  "last_scraped": "2025-11-01T16:53:46.604Z"
+}

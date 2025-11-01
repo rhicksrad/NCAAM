@@ -1,0 +1,28 @@
+{
+  "slug": "zack-markus-1",
+  "name": "Zack Markus",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kansas City",
+      "conf": "Summit",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 8,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.4,
+      "ft_pct": 0,
+      "orb_g": 0.3333333333,
+      "drb_g": 0,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.6666666667,
+      "stl_g": 1.3333333333,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.3333333333,
+      "pts_g": 2.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zack-markus-1.html",
+  "last_scraped": "2025-11-01T16:58:02.804Z"
+}

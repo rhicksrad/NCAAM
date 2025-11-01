@@ -1,0 +1,48 @@
+{
+  "slug": "anthony-doppler-1",
+  "name": "Anthony Doppler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "North Dakota",
+      "conf": "Summit",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 5.8333333333,
+      "fg_pct": 0.7142857143,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.5,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.5,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.5,
+      "pts_g": 2.1666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-doppler-1.html",
+  "last_scraped": "2025-11-01T16:53:46.673Z"
+}

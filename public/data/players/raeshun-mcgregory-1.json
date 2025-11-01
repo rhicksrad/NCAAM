@@ -1,0 +1,28 @@
+{
+  "slug": "raeshun-mcgregory-1",
+  "name": "Raeshun McGregory",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Mississippi Valley State",
+      "conf": "SWAC",
+      "gp": 17,
+      "gs": 10,
+      "mp_g": 16.0588235294,
+      "fg_pct": 0.3953488372,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.5,
+      "orb_g": 0.3529411765,
+      "drb_g": 1.4117647059,
+      "trb_g": 1.7647058824,
+      "ast_g": 0.2352941176,
+      "stl_g": 0.4705882353,
+      "blk_g": 0.1176470588,
+      "tov_g": 0.5294117647,
+      "pf_g": 1,
+      "pts_g": 2.9411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/raeshun-mcgregory-1.html",
+  "last_scraped": "2025-11-01T16:57:14.906Z"
+}

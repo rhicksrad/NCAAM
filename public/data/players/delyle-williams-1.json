@@ -1,0 +1,48 @@
+{
+  "slug": "delyle-williams-1",
+  "name": "Delyle Williams",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Jackson State",
+      "conf": "SWAC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 2.6,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 0.4,
+      "drb_g": 0.6,
+      "trb_g": 1,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.4,
+      "pf_g": 0.4,
+      "pts_g": 0.8
+    },
+    {
+      "season": "2024-25",
+      "team": "Jackson State",
+      "conf": "SWAC",
+      "gp": 23,
+      "gs": 7,
+      "mp_g": 9.347826087,
+      "fg_pct": 0.275,
+      "fg3_pct": 0.2105263158,
+      "ft_pct": 0.8,
+      "orb_g": 0.4347826087,
+      "drb_g": 1.0869565217,
+      "trb_g": 1.5217391304,
+      "ast_g": 0.1739130435,
+      "stl_g": 0.3043478261,
+      "blk_g": 0.1304347826,
+      "tov_g": 0.2608695652,
+      "pf_g": 0.8695652174,
+      "pts_g": 1.3043478261
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/delyle-williams-1.html",
+  "last_scraped": "2025-11-01T16:54:42.608Z"
+}

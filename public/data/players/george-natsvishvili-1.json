@@ -1,0 +1,28 @@
+{
+  "slug": "george-natsvishvili-1",
+  "name": "George Natsvishvili",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Dakota",
+      "conf": "Summit",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7.9047619048,
+      "fg_pct": 0.4038461538,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.4,
+      "orb_g": 1,
+      "drb_g": 1.0952380952,
+      "trb_g": 2.0952380952,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.2380952381,
+      "blk_g": 0.0476190476,
+      "tov_g": 0.4761904762,
+      "pf_g": 0.8095238095,
+      "pts_g": 2.2857142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/george-natsvishvili-1.html",
+  "last_scraped": "2025-11-01T16:55:08.235Z"
+}

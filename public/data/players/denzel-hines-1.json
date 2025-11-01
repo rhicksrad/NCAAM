@@ -1,0 +1,48 @@
+{
+  "slug": "denzel-hines-1",
+  "name": "Denzel Hines",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "High Point",
+      "conf": "Big South",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 8.7083333333,
+      "fg_pct": 0.4166666667,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.8333333333,
+      "drb_g": 1.4583333333,
+      "trb_g": 2.2916666667,
+      "ast_g": 0.125,
+      "stl_g": 0.125,
+      "blk_g": 0.125,
+      "tov_g": 0.375,
+      "pf_g": 1.0416666667,
+      "pts_g": 2.2083333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Coastal Carolina",
+      "conf": "Sun Belt",
+      "gp": 32,
+      "gs": 21,
+      "mp_g": 23.0625,
+      "fg_pct": 0.4301675978,
+      "fg3_pct": 0.243902439,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.8125,
+      "drb_g": 4.375,
+      "trb_g": 6.1875,
+      "ast_g": 1.25,
+      "stl_g": 0.21875,
+      "blk_g": 0.09375,
+      "tov_g": 1.40625,
+      "pf_g": 2.28125,
+      "pts_g": 7.15625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/denzel-hines-1.html",
+  "last_scraped": "2025-11-01T16:54:46.059Z"
+}

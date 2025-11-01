@@ -1,0 +1,28 @@
+{
+  "slug": "damon-wilkinson-1",
+  "name": "Damon Wilkinson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 10,
+      "fg_pct": 0.585106383,
+      "fg3_pct": null,
+      "ft_pct": 0.6470588235,
+      "orb_g": 1,
+      "drb_g": 1.4444444444,
+      "trb_g": 2.4444444444,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.0740740741,
+      "blk_g": 0.2592592593,
+      "tov_g": 1.037037037,
+      "pf_g": 1.3703703704,
+      "pts_g": 4.8888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/damon-wilkinson-1.html",
+  "last_scraped": "2025-11-01T16:54:32.431Z"
+}

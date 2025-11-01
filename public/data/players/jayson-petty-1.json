@@ -1,0 +1,48 @@
+{
+  "slug": "jayson-petty-1",
+  "name": "Jayson Petty",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kansas City",
+      "conf": "Summit",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 18.90625,
+      "fg_pct": 0.3836477987,
+      "fg3_pct": 0.2826086957,
+      "ft_pct": 0.7727272727,
+      "orb_g": 0.71875,
+      "drb_g": 2.1875,
+      "trb_g": 2.90625,
+      "ast_g": 0.34375,
+      "stl_g": 0.5,
+      "blk_g": 0.4375,
+      "tov_g": 0.875,
+      "pf_g": 1.9375,
+      "pts_g": 6.21875
+    },
+    {
+      "season": "2024-25",
+      "team": "Kansas City",
+      "conf": "Summit",
+      "gp": 33,
+      "gs": 32,
+      "mp_g": 28.1212121212,
+      "fg_pct": 0.3469387755,
+      "fg3_pct": 0.2574850299,
+      "ft_pct": 0.7565789474,
+      "orb_g": 1.1212121212,
+      "drb_g": 3.4545454545,
+      "trb_g": 4.5757575758,
+      "ast_g": 0.696969697,
+      "stl_g": 0.9090909091,
+      "blk_g": 0.303030303,
+      "tov_g": 1.5454545455,
+      "pf_g": 1.696969697,
+      "pts_g": 10.9696969697
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jayson-petty-1.html",
+  "last_scraped": "2025-11-01T16:55:38.324Z"
+}

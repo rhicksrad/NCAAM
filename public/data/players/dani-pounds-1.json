@@ -1,0 +1,48 @@
+{
+  "slug": "dani-pounds-1",
+  "name": "Dani Pounds",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Old Dominion",
+      "conf": "Sun Belt",
+      "gp": 31,
+      "gs": 20,
+      "mp_g": 15.5806451613,
+      "fg_pct": 0.4571428571,
+      "fg3_pct": 0,
+      "ft_pct": 0.6388888889,
+      "orb_g": 1.3870967742,
+      "drb_g": 2.5161290323,
+      "trb_g": 3.9032258065,
+      "ast_g": 0.3548387097,
+      "stl_g": 0.4193548387,
+      "blk_g": 0.6451612903,
+      "tov_g": 0.8709677419,
+      "pf_g": 2.7419354839,
+      "pts_g": 2.8064516129
+    },
+    {
+      "season": "2024-25",
+      "team": "Old Dominion",
+      "conf": "Sun Belt",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 8.4666666667,
+      "fg_pct": 0.2692307692,
+      "fg3_pct": 0.1960784314,
+      "ft_pct": 0.6176470588,
+      "orb_g": 0.7,
+      "drb_g": 1.1,
+      "trb_g": 1.8,
+      "ast_g": 0.3,
+      "stl_g": 0.4,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.3666666667,
+      "pf_g": 1.5,
+      "pts_g": 2.9
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dani-pounds-1.html",
+  "last_scraped": "2025-11-01T16:54:32.673Z"
+}

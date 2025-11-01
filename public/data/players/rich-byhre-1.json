@@ -1,0 +1,48 @@
+{
+  "slug": "rich-byhre-1",
+  "name": "Rich Byhre",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Green Bay",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 28,
+      "mp_g": 19.34375,
+      "fg_pct": 0.4085365854,
+      "fg3_pct": 0.328,
+      "ft_pct": 0.4761904762,
+      "orb_g": 0.84375,
+      "drb_g": 2.15625,
+      "trb_g": 3,
+      "ast_g": 0.8125,
+      "stl_g": 0.21875,
+      "blk_g": 0.125,
+      "tov_g": 0.59375,
+      "pf_g": 1.625,
+      "pts_g": 5.78125
+    },
+    {
+      "season": "2024-25",
+      "team": "St. Thomas",
+      "conf": "Summit",
+      "gp": 34,
+      "gs": 17,
+      "mp_g": 14.8823529412,
+      "fg_pct": 0.4173913043,
+      "fg3_pct": 0.2884615385,
+      "ft_pct": 0.6341463415,
+      "orb_g": 0.7941176471,
+      "drb_g": 1.6176470588,
+      "trb_g": 2.4117647059,
+      "ast_g": 0.6176470588,
+      "stl_g": 0.3235294118,
+      "blk_g": 0.4117647059,
+      "tov_g": 0.4705882353,
+      "pf_g": 1.7058823529,
+      "pts_g": 4.0294117647
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rich-byhre-1.html",
+  "last_scraped": "2025-11-01T16:57:20.013Z"
+}

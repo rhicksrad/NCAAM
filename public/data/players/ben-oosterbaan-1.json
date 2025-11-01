@@ -1,0 +1,28 @@
+{
+  "slug": "ben-oosterbaan-1",
+  "name": "Ben Oosterbaan",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "St. Thomas",
+      "conf": "Summit",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 16.0882352941,
+      "fg_pct": 0.5398230088,
+      "fg3_pct": 0.4615384615,
+      "ft_pct": 0.7073170732,
+      "orb_g": 0.7352941176,
+      "drb_g": 2.3823529412,
+      "trb_g": 3.1176470588,
+      "ast_g": 0.8823529412,
+      "stl_g": 0.7941176471,
+      "blk_g": 0.2647058824,
+      "tov_g": 0.7058823529,
+      "pf_g": 1.8529411765,
+      "pts_g": 5.1470588235
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ben-oosterbaan-1.html",
+  "last_scraped": "2025-11-01T16:53:56.872Z"
+}

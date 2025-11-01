@@ -1,0 +1,28 @@
+{
+  "slug": "tymo-sternicki-1",
+  "name": "Tymo Sternicki",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 27,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.625,
+      "orb_g": 2.5,
+      "drb_g": 2.5,
+      "trb_g": 5,
+      "ast_g": 3,
+      "stl_g": 0.5,
+      "blk_g": 1,
+      "tov_g": 1,
+      "pf_g": 1.5,
+      "pts_g": 7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tymo-sternicki-1.html",
+  "last_scraped": "2025-11-01T16:57:52.185Z"
+}

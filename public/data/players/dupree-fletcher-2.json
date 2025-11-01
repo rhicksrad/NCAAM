@@ -1,0 +1,28 @@
+{
+  "slug": "dupree-fletcher-2",
+  "name": "Dupree Fletcher",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Grambling State",
+      "conf": "SWAC",
+      "gp": 13,
+      "gs": 1,
+      "mp_g": 6.8461538462,
+      "fg_pct": 0.2142857143,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.7,
+      "orb_g": 0.4615384615,
+      "drb_g": 0.2307692308,
+      "trb_g": 0.6923076923,
+      "ast_g": 0.3846153846,
+      "stl_g": 0.3846153846,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.3846153846,
+      "pf_g": 1.3076923077,
+      "pts_g": 1.1538461538
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dupree-fletcher-2.html",
+  "last_scraped": "2025-11-01T16:54:56.234Z"
+}

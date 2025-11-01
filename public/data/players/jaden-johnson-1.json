@@ -1,0 +1,28 @@
+{
+  "slug": "jaden-johnson-1",
+  "name": "Jaden Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Old Dominion",
+      "conf": "Sun Belt",
+      "gp": 35,
+      "gs": 34,
+      "mp_g": 34.1714285714,
+      "fg_pct": 0.3667820069,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.7079646018,
+      "orb_g": 0.6,
+      "drb_g": 2.5714285714,
+      "trb_g": 3.1714285714,
+      "ast_g": 3.7142857143,
+      "stl_g": 0.8,
+      "blk_g": 0.0285714286,
+      "tov_g": 2.4857142857,
+      "pf_g": 2.5714285714,
+      "pts_g": 8.5714285714
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-johnson-1.html",
+  "last_scraped": "2025-11-01T16:55:22.769Z"
+}

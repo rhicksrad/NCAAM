@@ -1,0 +1,28 @@
+{
+  "slug": "jermaine-coleman-1",
+  "name": "Jermaine Coleman",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "St. Thomas",
+      "conf": "Summit",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 5.7777777778,
+      "fg_pct": 0.44,
+      "fg3_pct": 0.2777777778,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.1111111111,
+      "stl_g": 0.2222222222,
+      "blk_g": 0,
+      "tov_g": 0.2222222222,
+      "pf_g": 0.1111111111,
+      "pts_g": 3.1111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jermaine-coleman-1.html",
+  "last_scraped": "2025-11-01T16:55:39.847Z"
+}

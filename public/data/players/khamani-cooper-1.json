@@ -1,0 +1,48 @@
+{
+  "slug": "khamani-cooper-1",
+  "name": "Khamani Cooper",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - juco",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Omaha",
+      "conf": "Summit",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 6.6666666667,
+      "fg_pct": 0.2903225806,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.7222222222,
+      "trb_g": 0.8333333333,
+      "ast_g": 0.2777777778,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.2777777778,
+      "pf_g": 1.0555555556,
+      "pts_g": 1.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/khamani-cooper-1.html",
+  "last_scraped": "2025-11-01T16:56:15.809Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ebo-wilson-1",
+  "name": "Ebo Wilson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jackson State",
+      "conf": "SWAC",
+      "gp": 11,
+      "gs": 1,
+      "mp_g": 9.3636363636,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.2857142857,
+      "orb_g": 1,
+      "drb_g": 1.8181818182,
+      "trb_g": 2.8181818182,
+      "ast_g": 0.2727272727,
+      "stl_g": 0.5454545455,
+      "blk_g": 0,
+      "tov_g": 1,
+      "pf_g": 2,
+      "pts_g": 0.5454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ebo-wilson-1.html",
+  "last_scraped": "2025-11-01T16:54:59.639Z"
+}

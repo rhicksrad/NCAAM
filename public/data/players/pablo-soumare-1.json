@@ -1,0 +1,28 @@
+{
+  "slug": "pablo-soumare-1",
+  "name": "Pablo Soumare",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Omaha",
+      "conf": "Summit",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 3.7857142857,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": null,
+      "ft_pct": 0.25,
+      "orb_g": 0.2142857143,
+      "drb_g": 0.1428571429,
+      "trb_g": 0.3571428571,
+      "ast_g": 0,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.5,
+      "pf_g": 1.2142857143,
+      "pts_g": 0.6428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/pablo-soumare-1.html",
+  "last_scraped": "2025-11-01T16:57:08.079Z"
+}

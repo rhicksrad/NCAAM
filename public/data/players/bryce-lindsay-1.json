@@ -1,0 +1,48 @@
+{
+  "slug": "bryce-lindsay-1",
+  "name": "Bryce Lindsay",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Texas A&M",
+      "conf": "SEC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 6.75,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0,
+      "orb_g": 0,
+      "drb_g": 0.125,
+      "trb_g": 0.125,
+      "ast_g": 0.625,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0.75,
+      "pf_g": 0.75,
+      "pts_g": 1.75
+    },
+    {
+      "season": "2024-25",
+      "team": "James Madison",
+      "conf": "Sun Belt",
+      "gp": 31,
+      "gs": 13,
+      "mp_g": 29.5161290323,
+      "fg_pct": 0.4554140127,
+      "fg3_pct": 0.4084507042,
+      "ft_pct": 0.8541666667,
+      "orb_g": 0.3870967742,
+      "drb_g": 2.4516129032,
+      "trb_g": 2.8387096774,
+      "ast_g": 2.2258064516,
+      "stl_g": 0.6129032258,
+      "blk_g": 0.064516129,
+      "tov_g": 1.1290322581,
+      "pf_g": 1.5161290323,
+      "pts_g": 13.3548387097
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bryce-lindsay-1.html",
+  "last_scraped": "2025-11-01T16:54:05.407Z"
+}

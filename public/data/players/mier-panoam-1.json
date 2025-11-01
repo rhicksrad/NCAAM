@@ -1,0 +1,48 @@
+{
+  "slug": "mier-panoam-1",
+  "name": "Mier Panoam",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Tulane",
+      "conf": "AAC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3.8888888889,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.5,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.2222222222,
+      "trb_g": 0.2222222222,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.2222222222,
+      "pts_g": 1.2222222222
+    },
+    {
+      "season": "2024-25",
+      "team": "North Dakota",
+      "conf": "Summit",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 28.2424242424,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.711409396,
+      "orb_g": 2.2424242424,
+      "drb_g": 3.5454545455,
+      "trb_g": 5.7878787879,
+      "ast_g": 2.3939393939,
+      "stl_g": 0.9090909091,
+      "blk_g": 0.5454545455,
+      "tov_g": 2,
+      "pf_g": 2.1515151515,
+      "pts_g": 12.9696969697
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mier-panoam-1.html",
+  "last_scraped": "2025-11-01T16:56:48.652Z"
+}

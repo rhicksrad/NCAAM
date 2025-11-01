@@ -1,0 +1,48 @@
+{
+  "slug": "joshua-hughley-1",
+  "name": "Joshua Hughley",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 2.5,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.5,
+      "ft_pct": 0,
+      "orb_g": 0.125,
+      "drb_g": 0.125,
+      "trb_g": 0.25,
+      "ast_g": 0.125,
+      "stl_g": 0.375,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.375,
+      "pts_g": 0.625
+    },
+    {
+      "season": "2024-25",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 3.6666666667,
+      "fg_pct": 0.5,
+      "fg3_pct": 1,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 2.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joshua-hughley-1.html",
+  "last_scraped": "2025-11-01T16:55:58.423Z"
+}

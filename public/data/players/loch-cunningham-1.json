@@ -1,0 +1,28 @@
+{
+  "slug": "loch-cunningham-1",
+  "name": "Loch Cunningham",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 3.6666666667,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.6666666667,
+      "drb_g": 0.3333333333,
+      "trb_g": 1,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.6666666667,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 2,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/loch-cunningham-1.html",
+  "last_scraped": "2025-11-01T16:56:24.302Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "micah-smith-1",
+  "name": "Micah Smith",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 21,
+      "gs": 4,
+      "mp_g": 11.8571428571,
+      "fg_pct": 0.4237288136,
+      "fg3_pct": 0.2142857143,
+      "ft_pct": 0.6129032258,
+      "orb_g": 0.8095238095,
+      "drb_g": 1.0952380952,
+      "trb_g": 1.9047619048,
+      "ast_g": 0.7142857143,
+      "stl_g": 0.4285714286,
+      "blk_g": 0.4761904762,
+      "tov_g": 0.7142857143,
+      "pf_g": 1.2380952381,
+      "pts_g": 3.4285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/micah-smith-1.html",
+  "last_scraped": "2025-11-01T16:56:46.880Z"
+}

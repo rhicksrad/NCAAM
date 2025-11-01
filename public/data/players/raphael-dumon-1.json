@@ -1,0 +1,28 @@
+{
+  "slug": "raphael-dumon-1",
+  "name": "Raphael Dumon",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arkansas–Pine Bluff",
+      "conf": "SWAC",
+      "gp": 27,
+      "gs": 12,
+      "mp_g": 16.7407407407,
+      "fg_pct": 0.3955223881,
+      "fg3_pct": 0.3050847458,
+      "ft_pct": 0.6481481481,
+      "orb_g": 0.4814814815,
+      "drb_g": 2.4444444444,
+      "trb_g": 2.9259259259,
+      "ast_g": 1.7037037037,
+      "stl_g": 0.2962962963,
+      "blk_g": 0.037037037,
+      "tov_g": 1.7407407407,
+      "pf_g": 1.7777777778,
+      "pts_g": 5.8888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/raphael-dumon-1.html",
+  "last_scraped": "2025-11-01T16:57:16.823Z"
+}

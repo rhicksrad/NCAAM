@@ -1,0 +1,28 @@
+{
+  "slug": "omari-hamilton-1",
+  "name": "Omari Hamilton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alcorn State",
+      "conf": "SWAC",
+      "gp": 17,
+      "gs": 11,
+      "mp_g": 17.2352941176,
+      "fg_pct": 0.3543307087,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6842105263,
+      "orb_g": 1.1764705882,
+      "drb_g": 1.9411764706,
+      "trb_g": 3.1176470588,
+      "ast_g": 0.5294117647,
+      "stl_g": 0.4117647059,
+      "blk_g": 0.0588235294,
+      "tov_g": 1.1764705882,
+      "pf_g": 1,
+      "pts_g": 7.2941176471
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/omari-hamilton-1.html",
+  "last_scraped": "2025-11-01T16:57:02.767Z"
+}

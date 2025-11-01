@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-nutter-1",
+  "name": "Ryan Nutter",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marshall",
+      "conf": "Sun Belt",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 12.6451612903,
+      "fg_pct": 0.2542372881,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.6129032258,
+      "drb_g": 1.0967741935,
+      "trb_g": 1.7096774194,
+      "ast_g": 1.4838709677,
+      "stl_g": 0.3870967742,
+      "blk_g": 0.1612903226,
+      "tov_g": 0.7096774194,
+      "pf_g": 1.6774193548,
+      "pts_g": 2
+    },
+    {
+      "season": "2024-25",
+      "team": "Marshall",
+      "conf": "Sun Belt",
+      "gp": 22,
+      "gs": 11,
+      "mp_g": 15.7272727273,
+      "fg_pct": 0.3658536585,
+      "fg3_pct": 0.1891891892,
+      "ft_pct": 0.7222222222,
+      "orb_g": 1.0909090909,
+      "drb_g": 0.6363636364,
+      "trb_g": 1.7272727273,
+      "ast_g": 1.5,
+      "stl_g": 0.6818181818,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.9090909091,
+      "pf_g": 2,
+      "pts_g": 4.2272727273
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-nutter-1.html",
+  "last_scraped": "2025-11-01T16:57:26.907Z"
+}
