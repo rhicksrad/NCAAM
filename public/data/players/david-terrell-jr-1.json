@@ -1,0 +1,48 @@
+{
+  "slug": "david-terrell-jr-1",
+  "name": "David Terrell Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UTEP",
+      "conf": "CUSA",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 19.4117647059,
+      "fg_pct": 0.4137931034,
+      "fg3_pct": 0.15,
+      "ft_pct": 0.746835443,
+      "orb_g": 0.3823529412,
+      "drb_g": 1.3235294118,
+      "trb_g": 1.7058823529,
+      "ast_g": 1.8235294118,
+      "stl_g": 1.2941176471,
+      "blk_g": 0.1176470588,
+      "tov_g": 1.7941176471,
+      "pf_g": 2,
+      "pts_g": 5.3529411765
+    },
+    {
+      "season": "2024-25",
+      "team": "UTEP",
+      "conf": "CUSA",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 30.625,
+      "fg_pct": 0.48,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6274509804,
+      "orb_g": 0.5625,
+      "drb_g": 3.1875,
+      "trb_g": 3.75,
+      "ast_g": 3.9375,
+      "stl_g": 1.59375,
+      "blk_g": 0.21875,
+      "tov_g": 2.25,
+      "pf_g": 3.09375,
+      "pts_g": 8.3125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/david-terrell-jr-1.html",
+  "last_scraped": "2025-11-01T13:50:43.994Z"
+}

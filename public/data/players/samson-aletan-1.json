@@ -1,0 +1,48 @@
+{
+  "slug": "samson-aletan-1",
+  "name": "Samson Aletan",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Yale",
+      "conf": "Ivy",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7,
+      "fg_pct": 0.6296296296,
+      "fg3_pct": null,
+      "ft_pct": 0.6315789474,
+      "orb_g": 0.619047619,
+      "drb_g": 0.9047619048,
+      "trb_g": 1.5238095238,
+      "ast_g": 0.1904761905,
+      "stl_g": 0.1904761905,
+      "blk_g": 0.5238095238,
+      "tov_g": 0.380952381,
+      "pf_g": 1.1904761905,
+      "pts_g": 2.1904761905
+    },
+    {
+      "season": "2024-25",
+      "team": "Yale",
+      "conf": "Ivy",
+      "gp": 30,
+      "gs": 29,
+      "mp_g": 20.6333333333,
+      "fg_pct": 0.5906040268,
+      "fg3_pct": 0,
+      "ft_pct": 0.6315789474,
+      "orb_g": 1.9666666667,
+      "drb_g": 1.8,
+      "trb_g": 3.7666666667,
+      "ast_g": 0.7666666667,
+      "stl_g": 0.3,
+      "blk_g": 1.6,
+      "tov_g": 0.7333333333,
+      "pf_g": 1.9333333333,
+      "pts_g": 7.4666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/samson-aletan-1.html",
+  "last_scraped": "2025-11-01T13:54:01.933Z"
+}

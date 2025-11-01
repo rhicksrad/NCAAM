@@ -1,0 +1,48 @@
+{
+  "slug": "jack-edelen-1",
+  "name": "Jack Edelen",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Western Kentucky",
+      "conf": "CUSA",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 8.7407407407,
+      "fg_pct": 0.3076923077,
+      "fg3_pct": 0.0909090909,
+      "ft_pct": 0.6875,
+      "orb_g": 0.1481481481,
+      "drb_g": 0.4814814815,
+      "trb_g": 0.6296296296,
+      "ast_g": 1.2222222222,
+      "stl_g": 0.4444444444,
+      "blk_g": 0,
+      "tov_g": 0.5555555556,
+      "pf_g": 1.1481481481,
+      "pts_g": 1.037037037
+    },
+    {
+      "season": "2024-25",
+      "team": "Western Kentucky",
+      "conf": "CUSA",
+      "gp": 27,
+      "gs": 1,
+      "mp_g": 11.9259259259,
+      "fg_pct": 0.4057971014,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.5833333333,
+      "orb_g": 0.1851851852,
+      "drb_g": 0.5925925926,
+      "trb_g": 0.7777777778,
+      "ast_g": 0.7037037037,
+      "stl_g": 0.5555555556,
+      "blk_g": 0.037037037,
+      "tov_g": 0.4814814815,
+      "pf_g": 1.4444444444,
+      "pts_g": 2.9259259259
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jack-edelen-1.html",
+  "last_scraped": "2025-11-01T13:51:37.955Z"
+}

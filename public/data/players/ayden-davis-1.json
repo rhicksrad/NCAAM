@@ -1,0 +1,28 @@
+{
+  "slug": "ayden-davis-1",
+  "name": "Ayden Davis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Wright State",
+      "conf": "Horizon",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 6.3333333333,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.6666666667,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 1.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ayden-davis-1.html",
+  "last_scraped": "2025-11-01T13:49:46.062Z"
+}

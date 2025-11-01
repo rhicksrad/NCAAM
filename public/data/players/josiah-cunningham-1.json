@@ -1,0 +1,28 @@
+{
+  "slug": "josiah-cunningham-1",
+  "name": "Josiah Cunningham",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Columbia",
+      "conf": "Ivy",
+      "gp": 20,
+      "gs": 1,
+      "mp_g": 10.4,
+      "fg_pct": 0.5094339623,
+      "fg3_pct": 0.1764705882,
+      "ft_pct": 0.6111111111,
+      "orb_g": 0.25,
+      "drb_g": 0.85,
+      "trb_g": 1.1,
+      "ast_g": 0.5,
+      "stl_g": 0.85,
+      "blk_g": 0,
+      "tov_g": 0.45,
+      "pf_g": 0.5,
+      "pts_g": 3.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josiah-cunningham-1.html",
+  "last_scraped": "2025-11-01T13:52:22.900Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jackson-hicke-1",
+  "name": "Jackson Hicke",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 7.4375,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": 1,
+      "orb_g": 0.75,
+      "drb_g": 0.875,
+      "trb_g": 1.625,
+      "ast_g": 0.6875,
+      "stl_g": 0.4375,
+      "blk_g": 0.25,
+      "tov_g": 0.4375,
+      "pf_g": 0.5625,
+      "pts_g": 1.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 30,
+      "gs": 8,
+      "mp_g": 17.1666666667,
+      "fg_pct": 0.4696969697,
+      "fg3_pct": 0.3414634146,
+      "ft_pct": 0.8181818182,
+      "orb_g": 1.1666666667,
+      "drb_g": 1.5666666667,
+      "trb_g": 2.7333333333,
+      "ast_g": 1.1,
+      "stl_g": 0.6,
+      "blk_g": 0.3,
+      "tov_g": 0.8333333333,
+      "pf_g": 1.6333333333,
+      "pts_g": 5.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jackson-hicke-1.html",
+  "last_scraped": "2025-11-01T13:51:41.300Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "efstratios-kalliontzis-1",
+  "name": "Efstratios Kalliontzis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Carolina A&T",
+      "conf": "CAA",
+      "gp": 29,
+      "gs": 16,
+      "mp_g": 19.7931034483,
+      "fg_pct": 0.5652173913,
+      "fg3_pct": null,
+      "ft_pct": 0.6923076923,
+      "orb_g": 1.8965517241,
+      "drb_g": 1.4482758621,
+      "trb_g": 3.3448275862,
+      "ast_g": 0.4482758621,
+      "stl_g": 0.4482758621,
+      "blk_g": 0.4482758621,
+      "tov_g": 0.6206896552,
+      "pf_g": 2.1379310345,
+      "pts_g": 3.9310344828
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/efstratios-kalliontzis-1.html",
+  "last_scraped": "2025-11-01T13:51:01.251Z"
+}

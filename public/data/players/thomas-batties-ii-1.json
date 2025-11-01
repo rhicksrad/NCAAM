@@ -1,0 +1,48 @@
+{
+  "slug": "thomas-batties-ii-1",
+  "name": "Thomas Batties II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 22,
+      "gs": 9,
+      "mp_g": 25.4090909091,
+      "fg_pct": 0.4146341463,
+      "fg3_pct": 0.3018867925,
+      "ft_pct": 0.6808510638,
+      "orb_g": 0.8636363636,
+      "drb_g": 3.3636363636,
+      "trb_g": 4.2272727273,
+      "ast_g": 0.8181818182,
+      "stl_g": 0.6818181818,
+      "blk_g": 0.4545454545,
+      "tov_g": 1.0454545455,
+      "pf_g": 2.0909090909,
+      "pts_g": 6.8181818182
+    },
+    {
+      "season": "2024-25",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 26,
+      "mp_g": 32.7037037037,
+      "fg_pct": 0.4408163265,
+      "fg3_pct": 0.3820224719,
+      "ft_pct": 0.734375,
+      "orb_g": 1.2962962963,
+      "drb_g": 3.7037037037,
+      "trb_g": 5,
+      "ast_g": 1.7407407407,
+      "stl_g": 0.8888888889,
+      "blk_g": 1.5925925926,
+      "tov_g": 1.5185185185,
+      "pf_g": 2.4814814815,
+      "pts_g": 11
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/thomas-batties-ii-1.html",
+  "last_scraped": "2025-11-01T13:54:14.680Z"
+}

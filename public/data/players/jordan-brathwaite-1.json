@@ -1,0 +1,28 @@
+{
+  "slug": "jordan-brathwaite-1",
+  "name": "Jordan Brathwaite",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Yale",
+      "conf": "Ivy",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 8.0434782609,
+      "fg_pct": 0.4358974359,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.0869565217,
+      "drb_g": 0.8260869565,
+      "trb_g": 0.9130434783,
+      "ast_g": 0.652173913,
+      "stl_g": 0.1739130435,
+      "blk_g": 0.1304347826,
+      "tov_g": 0.347826087,
+      "pf_g": 0.8695652174,
+      "pts_g": 1.9565217391
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jordan-brathwaite-1.html",
+  "last_scraped": "2025-11-01T13:52:16.398Z"
+}

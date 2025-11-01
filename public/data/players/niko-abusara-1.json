@@ -1,0 +1,48 @@
+{
+  "slug": "niko-abusara-1",
+  "name": "Niko Abusara",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Dartmouth",
+      "conf": "Ivy",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 6.4375,
+      "fg_pct": 0.3684210526,
+      "fg3_pct": 0,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.125,
+      "drb_g": 0.8125,
+      "trb_g": 0.9375,
+      "ast_g": 0.875,
+      "stl_g": 0.4375,
+      "blk_g": 0.125,
+      "tov_g": 0.3125,
+      "pf_g": 0.1875,
+      "pts_g": 1.1875
+    },
+    {
+      "season": "2024-25",
+      "team": "Dartmouth",
+      "conf": "Ivy",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 10,
+      "fg_pct": 0.8,
+      "fg3_pct": null,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.3333333333,
+      "drb_g": 2,
+      "trb_g": 2.3333333333,
+      "ast_g": 2.3333333333,
+      "stl_g": 1,
+      "blk_g": 0,
+      "tov_g": 1.3333333333,
+      "pf_g": 1.6666666667,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/niko-abusara-1.html",
+  "last_scraped": "2025-11-01T13:53:26.838Z"
+}

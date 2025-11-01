@@ -1,0 +1,28 @@
+{
+  "slug": "luca-soroa-1",
+  "name": "Luca Soroa",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northeastern",
+      "conf": "CAA",
+      "gp": 14,
+      "gs": 1,
+      "mp_g": 5.8571428571,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.2142857143,
+      "drb_g": 0.2857142857,
+      "trb_g": 0.5,
+      "ast_g": 0.5,
+      "stl_g": 0.7857142857,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.7142857143,
+      "pts_g": 0.9285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luca-soroa-1.html",
+  "last_scraped": "2025-11-01T13:52:54.758Z"
+}

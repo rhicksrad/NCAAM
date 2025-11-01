@@ -1,0 +1,28 @@
+{
+  "slug": "miguel-mantilla-pacchiano-1",
+  "name": "Miguel Mantilla Pacchiano",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hofstra",
+      "conf": "CAA",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 1,
+      "stl_g": 1,
+      "blk_g": 1,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/miguel-mantilla-pacchiano-1.html",
+  "last_scraped": "2025-11-01T13:53:14.154Z"
+}

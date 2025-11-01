@@ -1,0 +1,48 @@
+{
+  "slug": "nicolo-romanelli-1",
+  "name": "Nicolo Romanelli",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Columbia",
+      "conf": "Ivy",
+      "gp": 20,
+      "gs": 1,
+      "mp_g": 7,
+      "fg_pct": 0.3529411765,
+      "fg3_pct": 0.4,
+      "ft_pct": 1,
+      "orb_g": 0.25,
+      "drb_g": 0.7,
+      "trb_g": 0.95,
+      "ast_g": 1.05,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0.45,
+      "pf_g": 0.4,
+      "pts_g": 1.7
+    },
+    {
+      "season": "2024-25",
+      "team": "Columbia",
+      "conf": "Ivy",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 8.3333333333,
+      "fg_pct": 0.48,
+      "fg3_pct": 0.5294117647,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.5333333333,
+      "ast_g": 0.7333333333,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0.4666666667,
+      "pf_g": 0.4,
+      "pts_g": 2.4666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nicolo-romanelli-1.html",
+  "last_scraped": "2025-11-01T13:53:25.289Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ty-iwanonkiw-1",
+  "name": "Ty Iwanonkiw",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ty-iwanonkiw-1.html",
+  "last_scraped": "2025-11-01T13:54:24.251Z"
+}

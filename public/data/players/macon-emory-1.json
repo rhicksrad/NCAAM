@@ -1,0 +1,28 @@
+{
+  "slug": "macon-emory-1",
+  "name": "Macon Emory",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Delaware",
+      "conf": "CAA",
+      "gp": 34,
+      "gs": 6,
+      "mp_g": 15.5,
+      "fg_pct": 0.4095238095,
+      "fg3_pct": 0.3428571429,
+      "ft_pct": 0.7619047619,
+      "orb_g": 0.7058823529,
+      "drb_g": 2.0294117647,
+      "trb_g": 2.7352941176,
+      "ast_g": 0.5882352941,
+      "stl_g": 0.5588235294,
+      "blk_g": 0.6176470588,
+      "tov_g": 0.5882352941,
+      "pf_g": 2.1764705882,
+      "pts_g": 3.7058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/macon-emory-1.html",
+  "last_scraped": "2025-11-01T13:52:56.528Z"
+}

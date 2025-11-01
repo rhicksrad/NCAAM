@@ -1,0 +1,48 @@
+{
+  "slug": "ian-imegwu-1",
+  "name": "Ian Imegwu",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.625,
+      "fg3_pct": 0.5714285714,
+      "ft_pct": null,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.6666666667,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 1,
+      "pts_g": 4.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 5.5,
+      "fg_pct": 0.3571428571,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": null,
+      "orb_g": 0.5,
+      "drb_g": 1,
+      "trb_g": 1.5,
+      "ast_g": 1.25,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 3.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ian-imegwu-1.html",
+  "last_scraped": "2025-11-01T13:51:28.484Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "jaecoby-osborne-1",
+  "name": "Jae'Coby Osborne",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "New Mexico State",
+      "conf": "CUSA",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 10.4545454545,
+      "fg_pct": 0.6388888889,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.5238095238,
+      "orb_g": 1,
+      "drb_g": 1.3181818182,
+      "trb_g": 2.3181818182,
+      "ast_g": 0.2727272727,
+      "stl_g": 0.5,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.3181818182,
+      "pf_g": 1.3181818182,
+      "pts_g": 2.6363636364
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaecoby-osborne-1.html",
+  "last_scraped": "2025-11-01T13:51:45.960Z"
+}

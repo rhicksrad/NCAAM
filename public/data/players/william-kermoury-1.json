@@ -1,0 +1,48 @@
+{
+  "slug": "william-kermoury-1",
+  "name": "William Kermoury",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Northeastern",
+      "conf": "CAA",
+      "gp": 24,
+      "gs": 1,
+      "mp_g": 5.7916666667,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0.2272727273,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.2083333333,
+      "trb_g": 0.2083333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.2083333333,
+      "blk_g": 0,
+      "tov_g": 0.5833333333,
+      "pf_g": 0.5,
+      "pts_g": 1.2083333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Northeastern",
+      "conf": "CAA",
+      "gp": 17,
+      "gs": 7,
+      "mp_g": 21.7647058824,
+      "fg_pct": 0.4112149533,
+      "fg3_pct": 0.3882352941,
+      "ft_pct": 0.85,
+      "orb_g": 0.2352941176,
+      "drb_g": 1.3529411765,
+      "trb_g": 1.5882352941,
+      "ast_g": 1.1176470588,
+      "stl_g": 0.7647058824,
+      "blk_g": 0,
+      "tov_g": 1.2941176471,
+      "pf_g": 1.8823529412,
+      "pts_g": 8.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/william-kermoury-1.html",
+  "last_scraped": "2025-11-01T13:54:33.603Z"
+}

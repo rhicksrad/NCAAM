@@ -1,0 +1,48 @@
+{
+  "slug": "luke-paragon-1",
+  "name": "Luke Paragon",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Brown",
+      "conf": "Ivy",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 1,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.5,
+      "drb_g": 0.5,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 4
+    },
+    {
+      "season": "2024-25",
+      "team": "Brown",
+      "conf": "Ivy",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.2222222222,
+      "trb_g": 0.3333333333,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.1111111111,
+      "pts_g": 0.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-paragon-1.html",
+  "last_scraped": "2025-11-01T13:52:54.702Z"
+}

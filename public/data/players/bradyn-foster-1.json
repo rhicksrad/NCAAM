@@ -1,0 +1,28 @@
+{
+  "slug": "bradyn-foster-1",
+  "name": "Bradyn Foster",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 12,
+      "gs": 3,
+      "mp_g": 6.4166666667,
+      "fg_pct": 0.4375,
+      "fg3_pct": 0,
+      "ft_pct": 0.375,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.0833333333,
+      "trb_g": 1.4166666667,
+      "ast_g": 0.1666666667,
+      "stl_g": 0.25,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.8333333333,
+      "pts_g": 1.4166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bradyn-foster-1.html",
+  "last_scraped": "2025-11-01T13:49:55.627Z"
+}

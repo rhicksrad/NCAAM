@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-duncan-1",
+  "name": "Ryan Duncan",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 3.7142857143,
+      "fg_pct": 0.75,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.1428571429,
+      "drb_g": 0,
+      "trb_g": 0.1428571429,
+      "ast_g": 0.1428571429,
+      "stl_g": 0.2857142857,
+      "blk_g": 0,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.1428571429,
+      "pts_g": 1.2857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 4,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.4444444444,
+      "trb_g": 0.5555555556,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1111111111,
+      "pts_g": 1.2222222222
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-duncan-1.html",
+  "last_scraped": "2025-11-01T13:53:52.383Z"
+}

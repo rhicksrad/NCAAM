@@ -1,0 +1,48 @@
+{
+  "slug": "adrian-uchidiuno-1",
+  "name": "Adrian Uchidiuno",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Brown",
+      "conf": "Ivy",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 2.6666666667,
+      "fg_pct": 0.5,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.5,
+      "ast_g": 0.1666666667,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.1666666667,
+      "pf_g": 0.5,
+      "pts_g": 1.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Brown",
+      "conf": "Ivy",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 8.1666666667,
+      "fg_pct": 0.4375,
+      "fg3_pct": 0.2592592593,
+      "ft_pct": 0.75,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.7777777778,
+      "trb_g": 1,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.5,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.6111111111,
+      "pf_g": 0.9444444444,
+      "pts_g": 3.3888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/adrian-uchidiuno-1.html",
+  "last_scraped": "2025-11-01T13:49:21.834Z"
+}

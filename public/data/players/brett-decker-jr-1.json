@@ -1,0 +1,28 @@
+{
+  "slug": "brett-decker-jr-1",
+  "name": "Brett Decker Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Liberty",
+      "conf": "CUSA",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 6.7777777778,
+      "fg_pct": 0.4605263158,
+      "fg3_pct": 0.4423076923,
+      "ft_pct": 0.9166666667,
+      "orb_g": 0.0740740741,
+      "drb_g": 0.4814814815,
+      "trb_g": 0.5555555556,
+      "ast_g": 0.4074074074,
+      "stl_g": 0,
+      "blk_g": 0.037037037,
+      "tov_g": 0.3703703704,
+      "pf_g": 0.2222222222,
+      "pts_g": 4.2592592593
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brett-decker-jr-1.html",
+  "last_scraped": "2025-11-01T13:50:00.493Z"
+}

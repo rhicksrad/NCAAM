@@ -1,0 +1,28 @@
+{
+  "slug": "luke-kinkade-1",
+  "name": "Luke Kinkade",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "William & Mary",
+      "conf": "CAA",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 6.875,
+      "fg_pct": 0.3181818182,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 1,
+      "orb_g": 0.25,
+      "drb_g": 0.125,
+      "trb_g": 0.375,
+      "ast_g": 0.5,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0.25,
+      "pts_g": 2.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-kinkade-1.html",
+  "last_scraped": "2025-11-01T13:52:54.730Z"
+}

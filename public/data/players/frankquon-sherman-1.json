@@ -1,0 +1,48 @@
+{
+  "slug": "frankquon-sherman-1",
+  "name": "Frankquon Sherman",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kennesaw State",
+      "conf": "A-Sun",
+      "gp": 24,
+      "gs": 13,
+      "mp_g": 14.7916666667,
+      "fg_pct": 0.5185185185,
+      "fg3_pct": 0.3125,
+      "ft_pct": 0.7288135593,
+      "orb_g": 1.2916666667,
+      "drb_g": 3.125,
+      "trb_g": 4.4166666667,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.375,
+      "blk_g": 0.2916666667,
+      "tov_g": 0.9583333333,
+      "pf_g": 2.5833333333,
+      "pts_g": 5.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Kennesaw State",
+      "conf": "CUSA",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 16.46875,
+      "fg_pct": 0.452991453,
+      "fg3_pct": 0.2558139535,
+      "ft_pct": 0.7837837838,
+      "orb_g": 1.625,
+      "drb_g": 3.1875,
+      "trb_g": 4.8125,
+      "ast_g": 0.6875,
+      "stl_g": 0.75,
+      "blk_g": 0.375,
+      "tov_g": 0.84375,
+      "pf_g": 1.90625,
+      "pts_g": 5.46875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/frankquon-sherman-1.html",
+  "last_scraped": "2025-11-01T13:51:17.260Z"
+}

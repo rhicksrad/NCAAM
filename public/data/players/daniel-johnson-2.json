@@ -1,0 +1,28 @@
+{
+  "slug": "daniel-johnson-2",
+  "name": "Daniel Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hampton",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 18,
+      "mp_g": 18.3125,
+      "fg_pct": 0.4366197183,
+      "fg3_pct": 0.3376623377,
+      "ft_pct": 0.6530612245,
+      "orb_g": 1.28125,
+      "drb_g": 1.71875,
+      "trb_g": 3,
+      "ast_g": 0.875,
+      "stl_g": 0.9375,
+      "blk_g": 0.25,
+      "tov_g": 1,
+      "pf_g": 1.78125,
+      "pts_g": 7.625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daniel-johnson-2.html",
+  "last_scraped": "2025-11-01T13:50:39.054Z"
+}

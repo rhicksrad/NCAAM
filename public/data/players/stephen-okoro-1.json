@@ -1,0 +1,28 @@
+{
+  "slug": "stephen-okoro-1",
+  "name": "Stephen Okoro",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 21,
+      "gs": 7,
+      "mp_g": 11.0476190476,
+      "fg_pct": 0.5365853659,
+      "fg3_pct": 0,
+      "ft_pct": 0.3571428571,
+      "orb_g": 1.4761904762,
+      "drb_g": 2.0476190476,
+      "trb_g": 3.5238095238,
+      "ast_g": 0.4285714286,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.380952381,
+      "pf_g": 1.8095238095,
+      "pts_g": 2.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/stephen-okoro-1.html",
+  "last_scraped": "2025-11-01T13:54:08.331Z"
+}

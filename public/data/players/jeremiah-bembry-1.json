@@ -1,0 +1,48 @@
+{
+  "slug": "jeremiah-bembry-1",
+  "name": "Jeremiah Bembry",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "West Virginia",
+      "conf": "Big 12",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 3.25,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": 0,
+      "orb_g": 0.375,
+      "drb_g": 0.125,
+      "trb_g": 0.5,
+      "ast_g": 0.375,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.125,
+      "pf_g": 0.375,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Oakland",
+      "conf": "Horizon",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3.3333333333,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.5,
+      "ft_pct": 0,
+      "orb_g": 0,
+      "drb_g": 0.2222222222,
+      "trb_g": 0.2222222222,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5555555556,
+      "pf_g": 0.2222222222,
+      "pts_g": 0.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeremiah-bembry-1.html",
+  "last_scraped": "2025-11-01T13:52:08.319Z"
+}

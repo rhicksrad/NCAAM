@@ -1,0 +1,28 @@
+{
+  "slug": "gianni-cobb-1",
+  "name": "Gianni Cobb",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Columbia",
+      "conf": "Ivy",
+      "gp": 23,
+      "gs": 1,
+      "mp_g": 12.7826086957,
+      "fg_pct": 0.3789473684,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.6470588235,
+      "orb_g": 0.1304347826,
+      "drb_g": 0.9130434783,
+      "trb_g": 1.0434782609,
+      "ast_g": 1.6956521739,
+      "stl_g": 1.1304347826,
+      "blk_g": 0.0869565217,
+      "tov_g": 1,
+      "pf_g": 1.347826087,
+      "pts_g": 4.3043478261
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gianni-cobb-1.html",
+  "last_scraped": "2025-11-01T13:51:23.854Z"
+}

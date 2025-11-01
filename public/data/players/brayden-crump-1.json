@@ -1,0 +1,48 @@
+{
+  "slug": "brayden-crump-1",
+  "name": "Brayden Crump",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 31,
+      "gs": 1,
+      "mp_g": 15.6451612903,
+      "fg_pct": 0.4537037037,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.7073170732,
+      "orb_g": 1.0322580645,
+      "drb_g": 2.064516129,
+      "trb_g": 3.0967741935,
+      "ast_g": 0.2903225806,
+      "stl_g": 0.3548387097,
+      "blk_g": 0.0967741935,
+      "tov_g": 0.2903225806,
+      "pf_g": 1.1612903226,
+      "pts_g": 4.3548387097
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brayden-crump-1.html",
+  "last_scraped": "2025-11-01T13:49:58.790Z"
+}

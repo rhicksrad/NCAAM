@@ -1,0 +1,48 @@
+{
+  "slug": "chris-loofe-1",
+  "name": "Chris Loofe",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Middle Tennessee",
+      "conf": "CUSA",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 10.1290322581,
+      "fg_pct": 0.55,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.5416666667,
+      "orb_g": 0.8387096774,
+      "drb_g": 1.6451612903,
+      "trb_g": 2.4838709677,
+      "ast_g": 0.4193548387,
+      "stl_g": 0.1612903226,
+      "blk_g": 0.9032258065,
+      "tov_g": 0.8709677419,
+      "pf_g": 1.935483871,
+      "pts_g": 2.6451612903
+    },
+    {
+      "season": "2024-25",
+      "team": "Middle Tennessee",
+      "conf": "CUSA",
+      "gp": 34,
+      "gs": 1,
+      "mp_g": 13.5294117647,
+      "fg_pct": 0.5252525253,
+      "fg3_pct": 0.1923076923,
+      "ft_pct": 0.52,
+      "orb_g": 1.1176470588,
+      "drb_g": 2.2941176471,
+      "trb_g": 3.4117647059,
+      "ast_g": 0.2352941176,
+      "stl_g": 0.1176470588,
+      "blk_g": 1.0294117647,
+      "tov_g": 0.9705882353,
+      "pf_g": 2.1764705882,
+      "pts_g": 3.9705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chris-loofe-1.html",
+  "last_scraped": "2025-11-01T13:50:19.814Z"
+}

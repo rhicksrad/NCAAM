@@ -1,0 +1,28 @@
+{
+  "slug": "connor-amundsen-1",
+  "name": "Connor Amundsen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Dartmouth",
+      "conf": "Ivy",
+      "gp": 28,
+      "gs": 28,
+      "mp_g": 31.5714285714,
+      "fg_pct": 0.4112149533,
+      "fg3_pct": 0.4466019417,
+      "ft_pct": 0.7849462366,
+      "orb_g": 0.4285714286,
+      "drb_g": 2.0357142857,
+      "trb_g": 2.4642857143,
+      "ast_g": 3.1071428571,
+      "stl_g": 0.5714285714,
+      "blk_g": 0.0357142857,
+      "tov_g": 1.2857142857,
+      "pf_g": 1.4642857143,
+      "pts_g": 10.5357142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/connor-amundsen-1.html",
+  "last_scraped": "2025-11-01T13:50:29.417Z"
+}

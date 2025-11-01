@@ -1,0 +1,48 @@
+{
+  "slug": "donovan-santoro-1",
+  "name": "Donovan Santoro",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 2.4545454545,
+      "fg_pct": 0.2,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0.0909090909,
+      "trb_g": 0.0909090909,
+      "ast_g": 0.0909090909,
+      "stl_g": 0,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.4545454545,
+      "pts_g": 0.6363636364
+    },
+    {
+      "season": "2024-25",
+      "team": "Green Bay",
+      "conf": "Horizon",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 3.5,
+      "fg_pct": 0.1333333333,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0.375,
+      "trb_g": 0.375,
+      "ast_g": 0.125,
+      "stl_g": 0.125,
+      "blk_g": 0.25,
+      "tov_g": 0.125,
+      "pf_g": 0,
+      "pts_g": 0.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/donovan-santoro-1.html",
+  "last_scraped": "2025-11-01T13:50:54.941Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "aj-bates-1",
+  "name": "AJ Bates",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Louisiana Tech",
+      "conf": "CUSA",
+      "gp": 29,
+      "gs": 4,
+      "mp_g": 17.5172413793,
+      "fg_pct": 0.4356435644,
+      "fg3_pct": 0.3170731707,
+      "ft_pct": 0.6734693878,
+      "orb_g": 0.2413793103,
+      "drb_g": 1.724137931,
+      "trb_g": 1.9655172414,
+      "ast_g": 1.6896551724,
+      "stl_g": 0.7586206897,
+      "blk_g": 0.1034482759,
+      "tov_g": 1,
+      "pf_g": 1.5862068966,
+      "pts_g": 4.6206896552
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-bates-1.html",
+  "last_scraped": "2025-11-01T13:49:23.559Z"
+}

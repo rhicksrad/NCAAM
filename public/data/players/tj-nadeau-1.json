@@ -1,0 +1,28 @@
+{
+  "slug": "tj-nadeau-1",
+  "name": "TJ Nadeau",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 24.25,
+      "fg_pct": 0.3610108303,
+      "fg3_pct": 0.3428571429,
+      "ft_pct": 0.8604651163,
+      "orb_g": 1,
+      "drb_g": 2.53125,
+      "trb_g": 3.53125,
+      "ast_g": 0.59375,
+      "stl_g": 0.375,
+      "blk_g": 0.21875,
+      "tov_g": 0.9375,
+      "pf_g": 2.0625,
+      "pts_g": 8.90625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tj-nadeau-1.html",
+  "last_scraped": "2025-11-01T13:54:16.205Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ashton-williamson-1",
+  "name": "Ashton Williamson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida International",
+      "conf": "CUSA",
+      "gp": 33,
+      "gs": 16,
+      "mp_g": 24.1818181818,
+      "fg_pct": 0.3941908714,
+      "fg3_pct": 0.3294117647,
+      "ft_pct": 0.6764705882,
+      "orb_g": 0.4545454545,
+      "drb_g": 2.0606060606,
+      "trb_g": 2.5151515152,
+      "ast_g": 2.696969697,
+      "stl_g": 1.5757575758,
+      "blk_g": 0.1818181818,
+      "tov_g": 1.9090909091,
+      "pf_g": 1.4848484848,
+      "pts_g": 7.303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ashton-williamson-1.html",
+  "last_scraped": "2025-11-01T13:49:42.884Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "lazar-djokovic-1",
+  "name": "Lazar Djokovic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 28,
+      "gs": 7,
+      "mp_g": 14.4642857143,
+      "fg_pct": 0.3026315789,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.65,
+      "orb_g": 1.0357142857,
+      "drb_g": 1.8928571429,
+      "trb_g": 2.9285714286,
+      "ast_g": 0.8928571429,
+      "stl_g": 0.2142857143,
+      "blk_g": 0.2857142857,
+      "tov_g": 1,
+      "pf_g": 1.1428571429,
+      "pts_g": 2.7857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 29,
+      "gs": 19,
+      "mp_g": 23.9310344828,
+      "fg_pct": 0.5263157895,
+      "fg3_pct": 0.1333333333,
+      "ft_pct": 0.6734693878,
+      "orb_g": 2.1724137931,
+      "drb_g": 4.1034482759,
+      "trb_g": 6.275862069,
+      "ast_g": 0.6551724138,
+      "stl_g": 0.6896551724,
+      "blk_g": 1.0689655172,
+      "tov_g": 0.9310344828,
+      "pf_g": 2.0344827586,
+      "pts_g": 7.9310344828
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lazar-djokovic-1.html",
+  "last_scraped": "2025-11-01T13:52:48.273Z"
+}

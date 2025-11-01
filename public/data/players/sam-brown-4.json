@@ -1,0 +1,48 @@
+{
+  "slug": "sam-brown-4",
+  "name": "Sam Brown",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 25,
+      "gs": 18,
+      "mp_g": 29.84,
+      "fg_pct": 0.4334975369,
+      "fg3_pct": 0.4326241135,
+      "ft_pct": 0.8372093023,
+      "orb_g": 0.36,
+      "drb_g": 2.56,
+      "trb_g": 2.92,
+      "ast_g": 1.92,
+      "stl_g": 0.52,
+      "blk_g": 0.2,
+      "tov_g": 1.16,
+      "pf_g": 1.6,
+      "pts_g": 10.92
+    },
+    {
+      "season": "2024-25",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 26,
+      "mp_g": 33.037037037,
+      "fg_pct": 0.4222972973,
+      "fg3_pct": 0.3443708609,
+      "ft_pct": 0.8372093023,
+      "orb_g": 0.6296296296,
+      "drb_g": 2.6666666667,
+      "trb_g": 3.2962962963,
+      "ast_g": 2.2592592593,
+      "stl_g": 0.7407407407,
+      "blk_g": 0.1481481481,
+      "tov_g": 1.4444444444,
+      "pf_g": 1.962962963,
+      "pts_g": 13.8518518519
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sam-brown-4.html",
+  "last_scraped": "2025-11-01T13:53:58.803Z"
+}

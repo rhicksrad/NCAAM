@@ -1,0 +1,28 @@
+{
+  "slug": "gabe-moss-1",
+  "name": "Gabe Moss",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Delaware",
+      "conf": "CAA",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 7.0625,
+      "fg_pct": 0.5882352941,
+      "fg3_pct": null,
+      "ft_pct": 0.4444444444,
+      "orb_g": 0.4375,
+      "drb_g": 0.4375,
+      "trb_g": 0.875,
+      "ast_g": 0.125,
+      "stl_g": 0.125,
+      "blk_g": 0.125,
+      "tov_g": 0.375,
+      "pf_g": 1.1875,
+      "pts_g": 2.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gabe-moss-1.html",
+  "last_scraped": "2025-11-01T13:51:18.917Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "christian-kirkland-1",
+  "name": "Christian Kirkland",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 8.0689655172,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": 0,
+      "ft_pct": 0.4814814815,
+      "orb_g": 0.724137931,
+      "drb_g": 1.2068965517,
+      "trb_g": 1.9310344828,
+      "ast_g": 0.1034482759,
+      "stl_g": 0.275862069,
+      "blk_g": 0.4827586207,
+      "tov_g": 0.275862069,
+      "pf_g": 1.4827586207,
+      "pts_g": 1.8275862069
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/christian-kirkland-1.html",
+  "last_scraped": "2025-11-01T13:50:23.040Z"
+}

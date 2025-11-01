@@ -1,0 +1,28 @@
+{
+  "slug": "tey-barbour-1",
+  "name": "Tey Barbour",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 2,
+      "mp_g": 15.8148148148,
+      "fg_pct": 0.3831775701,
+      "fg3_pct": 0.3043478261,
+      "ft_pct": 0.95,
+      "orb_g": 0.2222222222,
+      "drb_g": 1.5925925926,
+      "trb_g": 1.8148148148,
+      "ast_g": 0.5555555556,
+      "stl_g": 0.3703703704,
+      "blk_g": 0,
+      "tov_g": 0.5185185185,
+      "pf_g": 1.5555555556,
+      "pts_g": 4.7777777778
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tey-barbour-1.html",
+  "last_scraped": "2025-11-01T13:54:14.527Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-forrest-1",
+  "name": "Ryan Forrest",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Northwestern State",
+      "conf": "Southland",
+      "gp": 10,
+      "gs": 7,
+      "mp_g": 20.1,
+      "fg_pct": 0.3853211009,
+      "fg3_pct": 0.2285714286,
+      "ft_pct": 0.619047619,
+      "orb_g": 0.5,
+      "drb_g": 1.6,
+      "trb_g": 2.1,
+      "ast_g": 0.8,
+      "stl_g": 0.7,
+      "blk_g": 0.4,
+      "tov_g": 2,
+      "pf_g": 1.5,
+      "pts_g": 11.8
+    },
+    {
+      "season": "2024-25",
+      "team": "North Carolina A&T",
+      "conf": "CAA",
+      "gp": 21,
+      "gs": 19,
+      "mp_g": 32.5714285714,
+      "fg_pct": 0.3994413408,
+      "fg3_pct": 0.247311828,
+      "ft_pct": 0.6369863014,
+      "orb_g": 1.0952380952,
+      "drb_g": 2.5714285714,
+      "trb_g": 3.6666666667,
+      "ast_g": 1.2857142857,
+      "stl_g": 1.0952380952,
+      "blk_g": 0.4285714286,
+      "tov_g": 2.0952380952,
+      "pf_g": 2.380952381,
+      "pts_g": 19.1428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-forrest-1.html",
+  "last_scraped": "2025-11-01T13:53:53.912Z"
+}

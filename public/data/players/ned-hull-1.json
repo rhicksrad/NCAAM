@@ -1,0 +1,48 @@
+{
+  "slug": "ned-hull-1",
+  "name": "Ned Hull",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 6.4117647059,
+      "fg_pct": 0.3181818182,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.75,
+      "orb_g": 0.0588235294,
+      "drb_g": 0.2352941176,
+      "trb_g": 0.2941176471,
+      "ast_g": 0.0588235294,
+      "stl_g": 0.1764705882,
+      "blk_g": 0,
+      "tov_g": 0.2352941176,
+      "pf_g": 0.4117647059,
+      "pts_g": 1.4117647059
+    },
+    {
+      "season": "2024-25",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 14,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": null,
+      "orb_g": 1,
+      "drb_g": 2,
+      "trb_g": 3,
+      "ast_g": 3,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 1,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ned-hull-1.html",
+  "last_scraped": "2025-11-01T13:53:20.525Z"
+}

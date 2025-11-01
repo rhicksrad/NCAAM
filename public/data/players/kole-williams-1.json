@@ -1,0 +1,28 @@
+{
+  "slug": "kole-williams-1",
+  "name": "Kole Williams",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida International",
+      "conf": "CUSA",
+      "gp": 33,
+      "gs": 2,
+      "mp_g": 10.9393939394,
+      "fg_pct": 0.3866666667,
+      "fg3_pct": 0.303030303,
+      "ft_pct": 0.75,
+      "orb_g": 0.5151515152,
+      "drb_g": 0.696969697,
+      "trb_g": 1.2121212121,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.2424242424,
+      "tov_g": 0.5757575758,
+      "pf_g": 1.3333333333,
+      "pts_g": 2.1515151515
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kole-williams-1.html",
+  "last_scraped": "2025-11-01T13:52:43.512Z"
+}

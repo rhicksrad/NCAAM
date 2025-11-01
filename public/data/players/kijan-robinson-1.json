@@ -1,0 +1,48 @@
+{
+  "slug": "kijan-robinson-1",
+  "name": "KiJan Robinson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Hofstra",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 9.25,
+      "fg_pct": 0.3777777778,
+      "fg3_pct": 0.359375,
+      "ft_pct": 0.8666666667,
+      "orb_g": 0.0625,
+      "drb_g": 0.59375,
+      "trb_g": 0.65625,
+      "ast_g": 0.75,
+      "stl_g": 0.125,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.6875,
+      "pts_g": 3.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Hofstra",
+      "conf": "CAA",
+      "gp": 30,
+      "gs": 1,
+      "mp_g": 15.6666666667,
+      "fg_pct": 0.3680981595,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.0666666667,
+      "drb_g": 1.5,
+      "trb_g": 1.5666666667,
+      "ast_g": 0.9666666667,
+      "stl_g": 0.3666666667,
+      "blk_g": 0.0333333333,
+      "tov_g": 0.9,
+      "pf_g": 1.3333333333,
+      "pts_g": 5.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kijan-robinson-1.html",
+  "last_scraped": "2025-11-01T13:52:40.453Z"
+}

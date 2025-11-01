@@ -1,0 +1,48 @@
+{
+  "slug": "cooper-mueller-1",
+  "name": "Cooper Mueller",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - other sport",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 4.5,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 1.5,
+      "drb_g": 1,
+      "trb_g": 2.5,
+      "ast_g": 0,
+      "stl_g": 0.5,
+      "blk_g": 0,
+      "tov_g": 1,
+      "pf_g": 0.5,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cooper-mueller-1.html",
+  "last_scraped": "2025-11-01T13:50:30.956Z"
+}

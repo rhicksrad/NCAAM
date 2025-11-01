@@ -1,0 +1,48 @@
+{
+  "slug": "cesar-tchilombo-1",
+  "name": "Cesar Tchilombo",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Northern Kentucky",
+      "conf": "Horizon",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 4.0833333333,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.75,
+      "orb_g": 0.2083333333,
+      "drb_g": 0.625,
+      "trb_g": 0.8333333333,
+      "ast_g": 0.0416666667,
+      "stl_g": 0.125,
+      "blk_g": 0.0416666667,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.9583333333,
+      "pts_g": 0.5416666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Northern Kentucky",
+      "conf": "Horizon",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 4.4117647059,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.3529411765,
+      "drb_g": 0.5294117647,
+      "trb_g": 0.8823529412,
+      "ast_g": 0.0588235294,
+      "stl_g": 0,
+      "blk_g": 0.0588235294,
+      "tov_g": 0.2352941176,
+      "pf_g": 1,
+      "pts_g": 0.2352941176
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cesar-tchilombo-1.html",
+  "last_scraped": "2025-11-01T13:50:11.768Z"
+}

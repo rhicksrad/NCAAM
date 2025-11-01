@@ -1,0 +1,48 @@
+{
+  "slug": "jacob-beccles-1",
+  "name": "Jacob Beccles",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.92,
+      "fg_pct": 0.453125,
+      "fg3_pct": 0.28,
+      "ft_pct": 0.8823529412,
+      "orb_g": 0.28,
+      "drb_g": 0.24,
+      "trb_g": 0.52,
+      "ast_g": 1.24,
+      "stl_g": 0.4,
+      "blk_g": 0.04,
+      "tov_g": 0.44,
+      "pf_g": 0.6,
+      "pts_g": 3.2
+    },
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 17.0689655172,
+      "fg_pct": 0.476635514,
+      "fg3_pct": 0.3409090909,
+      "ft_pct": 0.6944444444,
+      "orb_g": 0.6896551724,
+      "drb_g": 0.6896551724,
+      "trb_g": 1.3793103448,
+      "ast_g": 2,
+      "stl_g": 0.6896551724,
+      "blk_g": 0.0689655172,
+      "tov_g": 0.8965517241,
+      "pf_g": 1.5517241379,
+      "pts_g": 4.8965517241
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-beccles-1.html",
+  "last_scraped": "2025-11-01T13:51:42.715Z"
+}

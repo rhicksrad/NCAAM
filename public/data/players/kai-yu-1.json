@@ -1,0 +1,48 @@
+{
+  "slug": "kai-yu-1",
+  "name": "Kai Yu",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Liberty",
+      "conf": "CUSA",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 3.1333333333,
+      "fg_pct": 0.5555555556,
+      "fg3_pct": null,
+      "ft_pct": 0.619047619,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.7333333333,
+      "trb_g": 1.0666666667,
+      "ast_g": 0,
+      "stl_g": 0.1333333333,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.6,
+      "pts_g": 1.5333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kai-yu-1.html",
+  "last_scraped": "2025-11-01T13:52:29.287Z"
+}

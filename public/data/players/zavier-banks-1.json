@@ -1,0 +1,28 @@
+{
+  "slug": "zavier-banks-1",
+  "name": "Zavier Banks",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oakland",
+      "conf": "Horizon",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 3.8571428571,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.8571428571,
+      "orb_g": 1,
+      "drb_g": 0.2857142857,
+      "trb_g": 1.2857142857,
+      "ast_g": 0.2857142857,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.1428571429,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zavier-banks-1.html",
+  "last_scraped": "2025-11-01T13:54:39.957Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jeramiah-israel-1",
+  "name": "Jeramiah Israel",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Northern Kentucky",
+      "conf": "Horizon",
+      "gp": 31,
+      "gs": 2,
+      "mp_g": 13.2903225806,
+      "fg_pct": 0.4311926606,
+      "fg3_pct": 0.2888888889,
+      "ft_pct": 0.7368421053,
+      "orb_g": 0.5806451613,
+      "drb_g": 1.5161290323,
+      "trb_g": 2.0967741935,
+      "ast_g": 0.6774193548,
+      "stl_g": 0.3225806452,
+      "blk_g": 0.0322580645,
+      "tov_g": 0.5483870968,
+      "pf_g": 1.064516129,
+      "pts_g": 3.9032258065
+    },
+    {
+      "season": "2024-25",
+      "team": "Northern Kentucky",
+      "conf": "Horizon",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 6.2666666667,
+      "fg_pct": 0.6111111111,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2,
+      "drb_g": 0.5333333333,
+      "trb_g": 0.7333333333,
+      "ast_g": 0.1333333333,
+      "stl_g": 0.2666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.8,
+      "pts_g": 2.0666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeramiah-israel-1.html",
+  "last_scraped": "2025-11-01T13:52:08.280Z"
+}

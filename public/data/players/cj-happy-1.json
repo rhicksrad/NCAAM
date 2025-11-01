@@ -1,0 +1,28 @@
+{
+  "slug": "cj-happy-1",
+  "name": "CJ Happy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 25,
+      "gs": 10,
+      "mp_g": 10.6,
+      "fg_pct": 0.4326923077,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.5833333333,
+      "orb_g": 0.64,
+      "drb_g": 1.4,
+      "trb_g": 2.04,
+      "ast_g": 0.56,
+      "stl_g": 0.44,
+      "blk_g": 0.16,
+      "tov_g": 1,
+      "pf_g": 1.32,
+      "pts_g": 4.96
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cj-happy-1.html",
+  "last_scraped": "2025-11-01T13:50:24.606Z"
+}

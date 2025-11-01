@@ -1,0 +1,48 @@
+{
+  "slug": "jake-fiegen-1",
+  "name": "Jake Fiegen",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 15.0333333333,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.3058823529,
+      "ft_pct": 0.875,
+      "orb_g": 0.6,
+      "drb_g": 1.5333333333,
+      "trb_g": 2.1333333333,
+      "ast_g": 0.5,
+      "stl_g": 0.2333333333,
+      "blk_g": 0.2,
+      "tov_g": 0.2666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 3.7666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 29,
+      "gs": 28,
+      "mp_g": 25.724137931,
+      "fg_pct": 0.5090909091,
+      "fg3_pct": 0.3834586466,
+      "ft_pct": 0.7777777778,
+      "orb_g": 1.1034482759,
+      "drb_g": 2.6206896552,
+      "trb_g": 3.724137931,
+      "ast_g": 1.0689655172,
+      "stl_g": 0.9310344828,
+      "blk_g": 0.4827586207,
+      "tov_g": 0.8620689655,
+      "pf_g": 2,
+      "pts_g": 10.9310344828
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jake-fiegen-1.html",
+  "last_scraped": "2025-11-01T13:51:47.684Z"
+}

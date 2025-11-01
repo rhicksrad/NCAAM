@@ -1,0 +1,28 @@
+{
+  "slug": "amir-shaheed-1",
+  "name": "Amir Shaheed",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Towson",
+      "conf": "CAA",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 8,
+      "fg_pct": 0.2,
+      "fg3_pct": 0.2,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 1,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/amir-shaheed-1.html",
+  "last_scraped": "2025-11-01T13:49:34.659Z"
+}
