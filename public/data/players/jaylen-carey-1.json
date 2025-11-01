@@ -1,0 +1,48 @@
+{
+  "slug": "jaylen-carey-1",
+  "name": "Jaylen Carey",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "James Madison",
+      "conf": "Sun Belt",
+      "gp": 36,
+      "gs": 0,
+      "mp_g": 14.8611111111,
+      "fg_pct": 0.6687898089,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.5142857143,
+      "orb_g": 1.5,
+      "drb_g": 2.75,
+      "trb_g": 4.25,
+      "ast_g": 0.75,
+      "stl_g": 0.6666666667,
+      "blk_g": 0.3055555556,
+      "tov_g": 0.6111111111,
+      "pf_g": 1.6666666667,
+      "pts_g": 7
+    },
+    {
+      "season": "2024-25",
+      "team": "Vanderbilt",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 1,
+      "mp_g": 20.2121212121,
+      "fg_pct": 0.488372093,
+      "fg3_pct": 0.2307692308,
+      "ft_pct": 0.5679012346,
+      "orb_g": 2.2727272727,
+      "drb_g": 3.4545454545,
+      "trb_g": 5.7272727273,
+      "ast_g": 0.7878787879,
+      "stl_g": 0.5757575758,
+      "blk_g": 0.6363636364,
+      "tov_g": 1.4242424242,
+      "pf_g": 2.4545454545,
+      "pts_g": 8.0303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylen-carey-1.html",
+  "last_scraped": "2025-11-01T00:44:02.841Z"
+}

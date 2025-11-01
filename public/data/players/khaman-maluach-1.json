@@ -1,0 +1,28 @@
+{
+  "slug": "khaman-maluach-1",
+  "name": "Khaman Maluach",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Duke",
+      "conf": "ACC",
+      "gp": 39,
+      "gs": 39,
+      "mp_g": 21.2307692308,
+      "fg_pct": 0.7120418848,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.7662337662,
+      "orb_g": 2.7435897436,
+      "drb_g": 3.8461538462,
+      "trb_g": 6.5897435897,
+      "ast_g": 0.5128205128,
+      "stl_g": 0.2051282051,
+      "blk_g": 1.3076923077,
+      "tov_g": 0.7692307692,
+      "pf_g": 2.0512820513,
+      "pts_g": 8.5897435897
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/khaman-maluach-1.html",
+  "last_scraped": "2025-11-01T00:47:29.647Z"
+}

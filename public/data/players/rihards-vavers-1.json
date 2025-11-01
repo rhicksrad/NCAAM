@@ -1,0 +1,48 @@
+{
+  "slug": "rihards-vavers-1",
+  "name": "Rihards Vavers",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Quinnipiac",
+      "conf": "MAAC",
+      "gp": 24,
+      "gs": 6,
+      "mp_g": 17.5416666667,
+      "fg_pct": 0.3933333333,
+      "fg3_pct": 0.3711340206,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.4583333333,
+      "drb_g": 2.2916666667,
+      "trb_g": 2.75,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.4166666667,
+      "tov_g": 0.625,
+      "pf_g": 1,
+      "pts_g": 7.9166666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Washington State",
+      "conf": "WCC",
+      "gp": 16,
+      "gs": 1,
+      "mp_g": 13.9375,
+      "fg_pct": 0.4736842105,
+      "fg3_pct": 0.4791666667,
+      "ft_pct": 0.75,
+      "orb_g": 0.375,
+      "drb_g": 1.1875,
+      "trb_g": 1.5625,
+      "ast_g": 0.5,
+      "stl_g": 0.0625,
+      "blk_g": 0.125,
+      "tov_g": 0.4375,
+      "pf_g": 0.8125,
+      "pts_g": 5.5625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rihards-vavers-1.html",
+  "last_scraped": "2025-11-01T00:53:15.231Z"
+}

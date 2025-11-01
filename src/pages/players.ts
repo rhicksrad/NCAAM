@@ -15,11 +15,18 @@ type PlayerIndexEntry = {
   season_year?: number;
   name_key?: string;
   team_key?: string;
+  conference?: string;
 };
 
 type PlayerIndexDocument = {
   seasons?: string[];
   players?: PlayerIndexEntry[];
+};
+
+type PlayerStatsMeta = {
+  conferences?: string[];
+  season_filter?: string[];
+  generated_at?: string;
 };
 
 type PlayerStatsSeason = {
@@ -127,7 +134,7 @@ const assetUrl = (path: string) => {
   return new URL(normalisedPath, root).toString();
 };
 
-const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
+const [conferenceMap, teamsResponse, playersIndexDoc, playersMeta] = await Promise.all([
   getConferenceMap(),
   NCAAM.teams(1, 400),
   fetch(assetUrl("data/players_index.json"))
@@ -139,6 +146,15 @@ const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
       console.warn("Unable to load player index", error);
       return null;
     }),
+  fetch(assetUrl("data/cbb_power_meta.json"))
+    .then(res => {
+      if (!res.ok) throw new Error(`Failed to load college stats metadata (${res.status})`);
+      return res.json() as Promise<PlayerStatsMeta>;
+    })
+    .catch(error => {
+      console.warn("Unable to load college stats metadata", error);
+      return null;
+    }),
 ]);
 
 const playerIndexEntries = Array.isArray(playersIndexDoc?.players) ? playersIndexDoc.players : [];
@@ -146,9 +162,21 @@ const playerIndexSeasonsRaw = Array.isArray(playersIndexDoc?.seasons) ? playersI
 const playerIndexSeasons = playerIndexSeasonsRaw.filter((value): value is string => typeof value === "string");
 playerIndexSeasons.sort((a, b) => seasonLabelToYear(a) - seasonLabelToYear(b));
 const latestPlayerIndexSeason = playerIndexSeasons[playerIndexSeasons.length - 1] ?? null;
+const introParagraph = app.querySelector<HTMLParagraphElement>(".page-intro");
+
+const metaConferences = Array.isArray(playersMeta?.conferences)
+  ? playersMeta?.conferences.filter((value): value is string => typeof value === "string" && value.trim().length > 0)
+  : [];
+const restrictToMetaConferences = metaConferences.length > 0;
+if (introParagraph && restrictToMetaConferences) {
+  const conferenceList = metaConferences.join(", ");
+  introParagraph.textContent =
+    `Power Conference focus · College stats cached for ${conferenceList}. Open a team to load its active roster.`;
+}
 
 const playerIndexByKey = new Map<string, PlayerIndexEntry>();
 const playerIndexByName = new Map<string, PlayerIndexEntry[]>();
+const teamIndexByKey = new Map<string, PlayerIndexEntry>();
 
 for (const entry of playerIndexEntries) {
   const nameKey = entry.name_key ?? normaliseName(entry.name);
@@ -158,11 +186,19 @@ for (const entry of playerIndexEntries) {
   const bucket = playerIndexByName.get(nameKey) ?? [];
   bucket.push(entry);
   playerIndexByName.set(nameKey, bucket);
+
+  if (!teamIndexByKey.has(teamKey)) {
+    if (!latestPlayerIndexSeason || entry.season === latestPlayerIndexSeason) {
+      teamIndexByKey.set(teamKey, entry);
+    }
+  }
 }
 
 for (const bucket of playerIndexByName.values()) {
   bucket.sort((a, b) => seasonLabelToYear(a.season) - seasonLabelToYear(b.season));
 }
+
+const restrictTeamsToIndex = teamIndexByKey.size > 0;
 
 const playerSlugCache = new Map<number, string | null>();
 const playerStatsCache = new Map<string, PlayerStatsDocument | null>();
@@ -172,6 +208,12 @@ const seenTeams = new Map<number, Team>();
 for (const team of teamsResponse.data) {
   if (!team.conference_id) continue;
   if (!conferenceMap.has(team.conference_id)) continue;
+  if (restrictTeamsToIndex) {
+    const indexKey = normaliseTeam(team.full_name || team.name || team.college || "");
+    if (!teamIndexByKey.has(indexKey)) {
+      continue;
+    }
+  }
   if (!seenTeams.has(team.id)) {
     seenTeams.set(team.id, team);
   }

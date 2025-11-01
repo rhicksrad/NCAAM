@@ -1,0 +1,48 @@
+{
+  "slug": "elliot-cadeau-1",
+  "name": "Elliot Cadeau",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "North Carolina",
+      "conf": "ACC",
+      "gp": 37,
+      "gs": 31,
+      "mp_g": 23.8378378378,
+      "fg_pct": 0.4173553719,
+      "fg3_pct": 0.1886792453,
+      "ft_pct": 0.6483516484,
+      "orb_g": 0.5675675676,
+      "drb_g": 1.6216216216,
+      "trb_g": 2.1891891892,
+      "ast_g": 4.0540540541,
+      "stl_g": 0.7837837838,
+      "blk_g": 0.1081081081,
+      "tov_g": 1.8108108108,
+      "pf_g": 2.2702702703,
+      "pts_g": 7.3243243243
+    },
+    {
+      "season": "2024-25",
+      "team": "North Carolina",
+      "conf": "ACC",
+      "gp": 37,
+      "gs": 37,
+      "mp_g": 27.8108108108,
+      "fg_pct": 0.445229682,
+      "fg3_pct": 0.3372093023,
+      "ft_pct": 0.6701030928,
+      "orb_g": 0.4324324324,
+      "drb_g": 2.4594594595,
+      "trb_g": 2.8918918919,
+      "ast_g": 6.2432432432,
+      "stl_g": 1.1081081081,
+      "blk_g": 0.2702702703,
+      "tov_g": 3.0540540541,
+      "pf_g": 2.7567567568,
+      "pts_g": 9.3513513514
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/elliot-cadeau-1.html",
+  "last_scraped": "2025-11-01T00:38:37.001Z"
+}

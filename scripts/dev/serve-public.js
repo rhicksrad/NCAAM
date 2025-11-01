@@ -3,6 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
 
 import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
+import { ensurePowerConferencePlayers } from './ensure-cbb-player-stats.js';
 
 const DEFAULT_PORT = 4173;
 const PUBLIC_ROOT = resolve(new URL('../../public', import.meta.url).pathname);
@@ -91,6 +92,18 @@ function sendJson(res, statusCode, payload) {
 }
 
 await ensureNcaALogos();
+
+try {
+  const meta = await ensurePowerConferencePlayers();
+  if (meta) {
+    const { player_count: playerCount, conferences } = meta;
+    console.log(
+      `Prepared College Basketball Reference stats for ${playerCount} players across ${conferences.length} conferences.`,
+    );
+  }
+} catch (error) {
+  console.error('Unable to prepare College Basketball Reference player stats before startup.', error);
+}
 
 const server = createServer(async (req, res) => {
   if (!req.url) {

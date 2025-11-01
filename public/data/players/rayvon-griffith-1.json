@@ -1,0 +1,48 @@
+{
+  "slug": "rayvon-griffith-1",
+  "name": "Rayvon Griffith",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Cincinnati",
+      "conf": "Big 12",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 5.6842105263,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.1875,
+      "ft_pct": 0.7857142857,
+      "orb_g": 0.4210526316,
+      "drb_g": 0.3684210526,
+      "trb_g": 0.7894736842,
+      "ast_g": 0.2631578947,
+      "stl_g": 0.1052631579,
+      "blk_g": 0.1052631579,
+      "tov_g": 0.1578947368,
+      "pf_g": 0.9473684211,
+      "pts_g": 1.8947368421
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rayvon-griffith-1.html",
+  "last_scraped": "2025-11-01T00:53:03.999Z"
+}

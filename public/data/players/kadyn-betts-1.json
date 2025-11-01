@@ -1,0 +1,48 @@
+{
+  "slug": "kadyn-betts-1",
+  "name": "Kadyn Betts",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Minnesota",
+      "conf": "Big Ten",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 7,
+      "fg_pct": 0.2666666667,
+      "fg3_pct": 0.125,
+      "ft_pct": 1,
+      "orb_g": 0.25,
+      "drb_g": 0,
+      "trb_g": 0.25,
+      "ast_g": 0.375,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 1,
+      "pts_g": 1.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Minnesota",
+      "conf": "Big Ten",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 4.8181818182,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5,
+      "orb_g": 0.1818181818,
+      "drb_g": 0.2727272727,
+      "trb_g": 0.4545454545,
+      "ast_g": 0,
+      "stl_g": 0.0454545455,
+      "blk_g": 0.0909090909,
+      "tov_g": 0.1363636364,
+      "pf_g": 0.4545454545,
+      "pts_g": 1.3636363636
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kadyn-betts-1.html",
+  "last_scraped": "2025-11-01T00:46:31.581Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "simeon-wilcher-2",
+  "name": "Simeon Wilcher",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "St. John's (NY)",
+      "conf": "Big East",
+      "gp": 28,
+      "gs": 2,
+      "mp_g": 9.1071428571,
+      "fg_pct": 0.4305555556,
+      "fg3_pct": 0.4166666667,
+      "ft_pct": 0.625,
+      "orb_g": 0.25,
+      "drb_g": 0.6071428571,
+      "trb_g": 0.8571428571,
+      "ast_g": 1.1071428571,
+      "stl_g": 0.25,
+      "blk_g": 0.2142857143,
+      "tov_g": 0.8214285714,
+      "pf_g": 1.0357142857,
+      "pts_g": 2.75
+    },
+    {
+      "season": "2024-25",
+      "team": "St. John's (NY)",
+      "conf": "Big East",
+      "gp": 36,
+      "gs": 25,
+      "mp_g": 25.4166666667,
+      "fg_pct": 0.4071428571,
+      "fg3_pct": 0.2972972973,
+      "ft_pct": 0.7368421053,
+      "orb_g": 0.3888888889,
+      "drb_g": 1.4722222222,
+      "trb_g": 1.8611111111,
+      "ast_g": 1.3611111111,
+      "stl_g": 1.0833333333,
+      "blk_g": 0.4166666667,
+      "tov_g": 1.4166666667,
+      "pf_g": 2.6666666667,
+      "pts_g": 8.0277777778
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/simeon-wilcher-2.html",
+  "last_scraped": "2025-11-01T00:54:47.410Z"
+}

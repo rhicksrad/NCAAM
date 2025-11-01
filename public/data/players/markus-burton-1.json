@@ -1,0 +1,48 @@
+{
+  "slug": "markus-burton-1",
+  "name": "Markus Burton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Notre Dame",
+      "conf": "ACC",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 33.7575757576,
+      "fg_pct": 0.4208416834,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.8214285714,
+      "orb_g": 0.6363636364,
+      "drb_g": 2.696969697,
+      "trb_g": 3.3333333333,
+      "ast_g": 4.3333333333,
+      "stl_g": 1.9090909091,
+      "blk_g": 0.2121212121,
+      "tov_g": 3.7272727273,
+      "pf_g": 2.8787878788,
+      "pts_g": 17.4848484848
+    },
+    {
+      "season": "2024-25",
+      "team": "Notre Dame",
+      "conf": "ACC",
+      "gp": 26,
+      "gs": 25,
+      "mp_g": 33.6923076923,
+      "fg_pct": 0.4419134396,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.847826087,
+      "orb_g": 0.2692307692,
+      "drb_g": 3.3461538462,
+      "trb_g": 3.6153846154,
+      "ast_g": 3.0384615385,
+      "stl_g": 1.6923076923,
+      "blk_g": 0.0769230769,
+      "tov_g": 2.6923076923,
+      "pf_g": 2.3846153846,
+      "pts_g": 21.2692307692
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/markus-burton-1.html",
+  "last_scraped": "2025-11-01T00:49:30.876Z"
+}

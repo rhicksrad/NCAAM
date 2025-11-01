@@ -1,0 +1,28 @@
+{
+  "slug": "jase-butler-1",
+  "name": "Jase Butler",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Washington",
+      "conf": "Big Ten",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 10.6666666667,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.6,
+      "orb_g": 0.5555555556,
+      "drb_g": 0.8333333333,
+      "trb_g": 1.3888888889,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.1111111111,
+      "pf_g": 1.3333333333,
+      "pts_g": 1.8888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jase-butler-1.html",
+  "last_scraped": "2025-11-01T00:43:26.837Z"
+}

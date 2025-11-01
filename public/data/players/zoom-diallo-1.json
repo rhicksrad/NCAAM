@@ -1,0 +1,28 @@
+{
+  "slug": "zoom-diallo-1",
+  "name": "Zoom Diallo",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Washington",
+      "conf": "Big Ten",
+      "gp": 31,
+      "gs": 22,
+      "mp_g": 25.1290322581,
+      "fg_pct": 0.4734982332,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.71875,
+      "orb_g": 1,
+      "drb_g": 2.064516129,
+      "trb_g": 3.064516129,
+      "ast_g": 2.7419354839,
+      "stl_g": 0.3548387097,
+      "blk_g": 0.1935483871,
+      "tov_g": 2.1290322581,
+      "pf_g": 2.3225806452,
+      "pts_g": 11.064516129
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zoom-diallo-1.html",
+  "last_scraped": "2025-11-01T00:58:40.673Z"
+}

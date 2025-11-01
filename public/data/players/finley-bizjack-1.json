@@ -1,0 +1,48 @@
+{
+  "slug": "finley-bizjack-1",
+  "name": "Finley Bizjack",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Butler",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 14.9393939394,
+      "fg_pct": 0.3833333333,
+      "fg3_pct": 0.2702702703,
+      "ft_pct": 0.7878787879,
+      "orb_g": 0.0606060606,
+      "drb_g": 1.0909090909,
+      "trb_g": 1.1515151515,
+      "ast_g": 0.8787878788,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.0606060606,
+      "tov_g": 0.5151515152,
+      "pf_g": 0.4242424242,
+      "pts_g": 4.1818181818
+    },
+    {
+      "season": "2024-25",
+      "team": "Butler",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 30,
+      "mp_g": 27.5882352941,
+      "fg_pct": 0.4430894309,
+      "fg3_pct": 0.4275362319,
+      "ft_pct": 0.7604166667,
+      "orb_g": 0.4705882353,
+      "drb_g": 2.2941176471,
+      "trb_g": 2.7647058824,
+      "ast_g": 2.4117647059,
+      "stl_g": 0.5294117647,
+      "blk_g": 0.2058823529,
+      "tov_g": 1.2941176471,
+      "pf_g": 1.8235294118,
+      "pts_g": 10.2941176471
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/finley-bizjack-1.html",
+  "last_scraped": "2025-11-01T00:39:13.949Z"
+}

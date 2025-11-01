@@ -1,0 +1,48 @@
+{
+  "slug": "dajohn-craig-1",
+  "name": "DaJohn Craig",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oregon State",
+      "conf": "Pac-12",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 8.8,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3157894737,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.0666666667,
+      "drb_g": 0.4666666667,
+      "trb_g": 0.5333333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.0666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 0.4,
+      "pf_g": 0.4666666667,
+      "pts_g": 2.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Oregon State",
+      "conf": "WCC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 6.2,
+      "fg_pct": 0.4666666667,
+      "fg3_pct": 0.375,
+      "ft_pct": 1,
+      "orb_g": 0.2,
+      "drb_g": 0.5,
+      "trb_g": 0.7,
+      "ast_g": 0.5,
+      "stl_g": 0.2,
+      "blk_g": 0.1,
+      "tov_g": 0.3,
+      "pf_g": 0.6,
+      "pts_g": 1.9
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dajohn-craig-1.html",
+  "last_scraped": "2025-11-01T00:35:48.188Z"
+}

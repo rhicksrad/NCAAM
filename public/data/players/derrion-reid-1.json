@@ -1,0 +1,28 @@
+{
+  "slug": "derrion-reid-1",
+  "name": "Derrion Reid",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alabama",
+      "conf": "SEC",
+      "gp": 24,
+      "gs": 3,
+      "mp_g": 14.0416666667,
+      "fg_pct": 0.4504504505,
+      "fg3_pct": 0.2631578947,
+      "ft_pct": 0.5789473684,
+      "orb_g": 0.9166666667,
+      "drb_g": 1.9166666667,
+      "trb_g": 2.8333333333,
+      "ast_g": 0.7083333333,
+      "stl_g": 0.25,
+      "blk_g": 0.2083333333,
+      "tov_g": 0.7916666667,
+      "pf_g": 1.1666666667,
+      "pts_g": 5.9583333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/derrion-reid-1.html",
+  "last_scraped": "2025-11-01T00:37:07.043Z"
+}

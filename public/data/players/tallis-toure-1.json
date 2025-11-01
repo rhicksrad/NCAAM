@@ -1,0 +1,28 @@
+{
+  "slug": "tallis-toure-1",
+  "name": "Tallis Toure",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stanford",
+      "conf": "ACC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.4,
+      "fg3_pct": 0,
+      "ft_pct": 0.75,
+      "orb_g": 0.3125,
+      "drb_g": 0.25,
+      "trb_g": 0.5625,
+      "ast_g": 0.1875,
+      "stl_g": 0.1875,
+      "blk_g": 0.25,
+      "tov_g": 0.5625,
+      "pf_g": 1.1875,
+      "pts_g": 1.0625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tallis-toure-1.html",
+  "last_scraped": "2025-11-01T00:55:27.480Z"
+}

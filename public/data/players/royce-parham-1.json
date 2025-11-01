@@ -1,0 +1,28 @@
+{
+  "slug": "royce-parham-1",
+  "name": "Royce Parham",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 14.8235294118,
+      "fg_pct": 0.4074074074,
+      "fg3_pct": 0.2795698925,
+      "ft_pct": 0.64,
+      "orb_g": 1.0588235294,
+      "drb_g": 1.1764705882,
+      "trb_g": 2.2352941176,
+      "ast_g": 0.3529411765,
+      "stl_g": 0.6176470588,
+      "blk_g": 0.3823529412,
+      "tov_g": 0.3823529412,
+      "pf_g": 1.3823529412,
+      "pts_g": 5.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/royce-parham-1.html",
+  "last_scraped": "2025-11-01T00:53:46.424Z"
+}

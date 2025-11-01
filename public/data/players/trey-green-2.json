@@ -1,0 +1,48 @@
+{
+  "slug": "trey-green-2",
+  "name": "Trey Green",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 13.5454545455,
+      "fg_pct": 0.3591160221,
+      "fg3_pct": 0.3220338983,
+      "ft_pct": 0.9473684211,
+      "orb_g": 0.0606060606,
+      "drb_g": 0.9090909091,
+      "trb_g": 0.9696969697,
+      "ast_g": 1.1212121212,
+      "stl_g": 0.5757575758,
+      "blk_g": 0,
+      "tov_g": 1.2121212121,
+      "pf_g": 1,
+      "pts_g": 5.6363636364
+    },
+    {
+      "season": "2024-25",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 10.8888888889,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.375,
+      "ft_pct": 1,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.8888888889,
+      "ast_g": 1,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.8888888889,
+      "pf_g": 0.8888888889,
+      "pts_g": 5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trey-green-2.html",
+  "last_scraped": "2025-11-01T00:56:36.594Z"
+}

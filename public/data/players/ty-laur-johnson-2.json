@@ -1,0 +1,48 @@
+{
+  "slug": "ty-laur-johnson-2",
+  "name": "Ty-Laur Johnson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Louisville",
+      "conf": "ACC",
+      "gp": 30,
+      "gs": 8,
+      "mp_g": 23.1333333333,
+      "fg_pct": 0.3738317757,
+      "fg3_pct": 0.1935483871,
+      "ft_pct": 0.8240740741,
+      "orb_g": 0.5,
+      "drb_g": 1.2666666667,
+      "trb_g": 1.7666666667,
+      "ast_g": 3.6333333333,
+      "stl_g": 1.3666666667,
+      "blk_g": 0.2666666667,
+      "tov_g": 2.3333333333,
+      "pf_g": 2.8666666667,
+      "pts_g": 8.7
+    },
+    {
+      "season": "2024-25",
+      "team": "Wake Forest",
+      "conf": "ACC",
+      "gp": 29,
+      "gs": 19,
+      "mp_g": 23.5172413793,
+      "fg_pct": 0.3496932515,
+      "fg3_pct": 0.2413793103,
+      "ft_pct": 0.8305084746,
+      "orb_g": 0.3448275862,
+      "drb_g": 1.5517241379,
+      "trb_g": 1.8965517241,
+      "ast_g": 2.724137931,
+      "stl_g": 1.4827586207,
+      "blk_g": 0.275862069,
+      "tov_g": 2.275862069,
+      "pf_g": 2.2413793103,
+      "pts_g": 6.1034482759
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ty-laur-johnson-2.html",
+  "last_scraped": "2025-11-01T00:56:56.792Z"
+}

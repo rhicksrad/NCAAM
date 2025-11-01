@@ -1,0 +1,28 @@
+{
+  "slug": "emmanuel-stephen-1",
+  "name": "Emmanuel Stephen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arizona",
+      "conf": "Big 12",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": 0,
+      "orb_g": 0.125,
+      "drb_g": 1.125,
+      "trb_g": 1.25,
+      "ast_g": 0.125,
+      "stl_g": 0.25,
+      "blk_g": 0.125,
+      "tov_g": 0.25,
+      "pf_g": 0.5,
+      "pts_g": 1.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/emmanuel-stephen-1.html",
+  "last_scraped": "2025-11-01T00:38:43.073Z"
+}

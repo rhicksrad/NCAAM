@@ -1,0 +1,28 @@
+{
+  "slug": "james-brown-12",
+  "name": "James Brown",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Carolina",
+      "conf": "ACC",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 2.9444444444,
+      "fg_pct": 0.7142857143,
+      "fg3_pct": null,
+      "ft_pct": 0.2,
+      "orb_g": 0.4444444444,
+      "drb_g": 0.3888888889,
+      "trb_g": 0.8333333333,
+      "ast_g": 0,
+      "stl_g": 0.0555555556,
+      "blk_g": 0,
+      "tov_g": 0.2222222222,
+      "pf_g": 0.5555555556,
+      "pts_g": 1.1666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/james-brown-12.html",
+  "last_scraped": "2025-11-01T00:43:08.170Z"
+}

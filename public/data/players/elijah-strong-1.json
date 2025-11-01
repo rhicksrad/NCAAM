@@ -1,0 +1,48 @@
+{
+  "slug": "elijah-strong-1",
+  "name": "Elijah Strong",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Boston College",
+      "conf": "ACC",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 6.7894736842,
+      "fg_pct": 0.525,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.5,
+      "orb_g": 0.3157894737,
+      "drb_g": 0.3684210526,
+      "trb_g": 0.6842105263,
+      "ast_g": 0.1578947368,
+      "stl_g": 0.0526315789,
+      "blk_g": 0,
+      "tov_g": 0.2105263158,
+      "pf_g": 0.6842105263,
+      "pts_g": 2.7368421053
+    },
+    {
+      "season": "2024-25",
+      "team": "Boston College",
+      "conf": "ACC",
+      "gp": 27,
+      "gs": 19,
+      "mp_g": 23.5555555556,
+      "fg_pct": 0.4523809524,
+      "fg3_pct": 0.3623188406,
+      "ft_pct": 0.6285714286,
+      "orb_g": 1.4814814815,
+      "drb_g": 2.6296296296,
+      "trb_g": 4.1111111111,
+      "ast_g": 0.9259259259,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.2592592593,
+      "tov_g": 1.7407407407,
+      "pf_g": 2.4444444444,
+      "pts_g": 9.5925925926
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/elijah-strong-1.html",
+  "last_scraped": "2025-11-01T00:38:35.429Z"
+}

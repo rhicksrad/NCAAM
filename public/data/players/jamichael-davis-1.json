@@ -1,0 +1,48 @@
+{
+  "slug": "jamichael-davis-1",
+  "name": "Jamichael Davis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Rutgers",
+      "conf": "Big Ten",
+      "gp": 31,
+      "gs": 14,
+      "mp_g": 23.0967741935,
+      "fg_pct": 0.3714285714,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.5217391304,
+      "orb_g": 1,
+      "drb_g": 2.1290322581,
+      "trb_g": 3.1290322581,
+      "ast_g": 1.8709677419,
+      "stl_g": 1.1290322581,
+      "blk_g": 0.2903225806,
+      "tov_g": 1.2580645161,
+      "pf_g": 1,
+      "pts_g": 5.6129032258
+    },
+    {
+      "season": "2024-25",
+      "team": "Rutgers",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 7,
+      "mp_g": 17.96875,
+      "fg_pct": 0.3714285714,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6511627907,
+      "orb_g": 0.5,
+      "drb_g": 1.03125,
+      "trb_g": 1.53125,
+      "ast_g": 1.71875,
+      "stl_g": 0.90625,
+      "blk_g": 0.28125,
+      "tov_g": 0.5,
+      "pf_g": 1.4375,
+      "pts_g": 4.5625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jamichael-davis-1.html",
+  "last_scraped": "2025-11-01T00:43:12.797Z"
+}

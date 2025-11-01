@@ -1,0 +1,28 @@
+{
+  "slug": "lefteris-liotopoulos-1",
+  "name": "Lefteris Liotopoulos",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "St. John's (NY)",
+      "conf": "Big East",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 4.76,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.2307692308,
+      "ft_pct": 0.6,
+      "orb_g": 0.16,
+      "drb_g": 0.32,
+      "trb_g": 0.48,
+      "ast_g": 0.28,
+      "stl_g": 0.12,
+      "blk_g": 0.08,
+      "tov_g": 0.16,
+      "pf_g": 0.36,
+      "pts_g": 1.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lefteris-liotopoulos-1.html",
+  "last_scraped": "2025-11-01T00:48:24.833Z"
+}

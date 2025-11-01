@@ -1,0 +1,48 @@
+{
+  "slug": "patrick-wessler-1",
+  "name": "Patrick Wessler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 3.8461538462,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.6153846154,
+      "drb_g": 0.8461538462,
+      "trb_g": 1.4615384615,
+      "ast_g": 0.1538461538,
+      "stl_g": 0.0769230769,
+      "blk_g": 0.3076923077,
+      "tov_g": 0.1538461538,
+      "pf_g": 0.7692307692,
+      "pts_g": 0.9230769231
+    },
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 31,
+      "gs": 1,
+      "mp_g": 10.6129032258,
+      "fg_pct": 0.625,
+      "fg3_pct": 1,
+      "ft_pct": 0.6451612903,
+      "orb_g": 1.0322580645,
+      "drb_g": 1.8709677419,
+      "trb_g": 2.9032258065,
+      "ast_g": 0.1612903226,
+      "stl_g": 0.1612903226,
+      "blk_g": 0.3548387097,
+      "tov_g": 0.3870967742,
+      "pf_g": 1.4838709677,
+      "pts_g": 3.9032258065
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/patrick-wessler-1.html",
+  "last_scraped": "2025-11-01T00:52:27.025Z"
+}

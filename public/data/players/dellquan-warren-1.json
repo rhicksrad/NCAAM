@@ -1,0 +1,28 @@
+{
+  "slug": "dellquan-warren-1",
+  "name": "Dellquan Warren",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Mississippi State",
+      "conf": "SEC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 6.2307692308,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.2,
+      "orb_g": 0.0384615385,
+      "drb_g": 0.8076923077,
+      "trb_g": 0.8461538462,
+      "ast_g": 1.2692307692,
+      "stl_g": 0.4230769231,
+      "blk_g": 0.1538461538,
+      "tov_g": 0.7307692308,
+      "pf_g": 0.6923076923,
+      "pts_g": 0.5769230769
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dellquan-warren-1.html",
+  "last_scraped": "2025-11-01T00:36:54.664Z"
+}

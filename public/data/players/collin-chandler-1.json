@@ -1,0 +1,28 @@
+{
+  "slug": "collin-chandler-1",
+  "name": "Collin Chandler",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kentucky",
+      "conf": "SEC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 10.3666666667,
+      "fg_pct": 0.3611111111,
+      "fg3_pct": 0.3469387755,
+      "ft_pct": 0.8666666667,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.8333333333,
+      "trb_g": 1,
+      "ast_g": 0.7,
+      "stl_g": 0.6666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 0.8666666667,
+      "pf_g": 1.2666666667,
+      "pts_g": 2.7333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/collin-chandler-1.html",
+  "last_scraped": "2025-11-01T00:35:06.623Z"
+}

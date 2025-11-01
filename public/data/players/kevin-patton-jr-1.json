@@ -1,0 +1,48 @@
+{
+  "slug": "kevin-patton-jr-1",
+  "name": "Kevin Patton Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "San Diego",
+      "conf": "WCC",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 26,
+      "fg_pct": 0.4329501916,
+      "fg3_pct": 0.3375,
+      "ft_pct": 0.7176470588,
+      "orb_g": 0.78125,
+      "drb_g": 3.625,
+      "trb_g": 4.40625,
+      "ast_g": 2.40625,
+      "stl_g": 1.3125,
+      "blk_g": 1.3125,
+      "tov_g": 2.21875,
+      "pf_g": 1.65625,
+      "pts_g": 9.8125
+    },
+    {
+      "season": "2024-25",
+      "team": "Southern California",
+      "conf": "Big Ten",
+      "gp": 27,
+      "gs": 2,
+      "mp_g": 8.1111111111,
+      "fg_pct": 0.5614035088,
+      "fg3_pct": 0.3529411765,
+      "ft_pct": 0.5909090909,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.8888888889,
+      "trb_g": 1.2222222222,
+      "ast_g": 0.4074074074,
+      "stl_g": 0.4074074074,
+      "blk_g": 0.4444444444,
+      "tov_g": 0.5185185185,
+      "pf_g": 1.2592592593,
+      "pts_g": 3.0740740741
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kevin-patton-jr-1.html",
+  "last_scraped": "2025-11-01T00:47:21.936Z"
+}

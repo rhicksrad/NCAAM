@@ -1,0 +1,28 @@
+{
+  "slug": "dylan-mansour-1",
+  "name": "Dylan Mansour",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Washington",
+      "conf": "Big Ten",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1.4,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.4,
+      "trb_g": 0.4,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.2,
+      "tov_g": 0.2,
+      "pf_g": 0.2,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dylan-mansour-1.html",
+  "last_scraped": "2025-11-01T00:38:12.441Z"
+}

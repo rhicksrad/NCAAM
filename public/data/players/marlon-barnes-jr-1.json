@@ -1,0 +1,28 @@
+{
+  "slug": "marlon-barnes-jr-1",
+  "name": "Marlon Barnes Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Pittsburgh",
+      "conf": "ACC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 1.625,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.5,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.25,
+      "trb_g": 0.25,
+      "ast_g": 0.25,
+      "stl_g": 0,
+      "blk_g": 0.125,
+      "tov_g": 0.125,
+      "pf_g": 0.5,
+      "pts_g": 0.375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marlon-barnes-jr-1.html",
+  "last_scraped": "2025-11-01T00:49:35.642Z"
+}

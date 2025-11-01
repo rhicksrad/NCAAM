@@ -1,0 +1,48 @@
+{
+  "slug": "john-blackwell-3",
+  "name": "John Blackwell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Wisconsin",
+      "conf": "Big Ten",
+      "gp": 34,
+      "gs": 1,
+      "mp_g": 18.4705882353,
+      "fg_pct": 0.4456521739,
+      "fg3_pct": 0.4545454545,
+      "ft_pct": 0.8210526316,
+      "orb_g": 0.6764705882,
+      "drb_g": 2.5,
+      "trb_g": 3.1764705882,
+      "ast_g": 0.6176470588,
+      "stl_g": 0.4411764706,
+      "blk_g": 0.0588235294,
+      "tov_g": 0.7941176471,
+      "pf_g": 1.8529411765,
+      "pts_g": 8
+    },
+    {
+      "season": "2024-25",
+      "team": "Wisconsin",
+      "conf": "Big Ten",
+      "gp": 37,
+      "gs": 37,
+      "mp_g": 31.1621621622,
+      "fg_pct": 0.4511111111,
+      "fg3_pct": 0.3222222222,
+      "ft_pct": 0.8150684932,
+      "orb_g": 1.027027027,
+      "drb_g": 4.0810810811,
+      "trb_g": 5.1081081081,
+      "ast_g": 2.1891891892,
+      "stl_g": 0.8648648649,
+      "blk_g": 0.0540540541,
+      "tov_g": 2.0810810811,
+      "pf_g": 2.5405405405,
+      "pts_g": 15.7567567568
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/john-blackwell-3.html",
+  "last_scraped": "2025-11-01T00:44:47.529Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "david-tubek-1",
+  "name": "David Tubek",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 16,
+      "gs": 1,
+      "mp_g": 5.1875,
+      "fg_pct": 0.2142857143,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.3125,
+      "drb_g": 0.5,
+      "trb_g": 0.8125,
+      "ast_g": 0.0625,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.0625,
+      "pf_g": 0.3125,
+      "pts_g": 0.8125
+    },
+    {
+      "season": "2024-25",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 25,
+      "gs": 1,
+      "mp_g": 10.36,
+      "fg_pct": 0.3559322034,
+      "fg3_pct": 0.36,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.08,
+      "drb_g": 0.6,
+      "trb_g": 1.68,
+      "ast_g": 0.32,
+      "stl_g": 0.44,
+      "blk_g": 0.16,
+      "tov_g": 0.28,
+      "pf_g": 0.68,
+      "pts_g": 2.64
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/david-tubek-1.html",
+  "last_scraped": "2025-11-01T00:36:34.182Z"
+}

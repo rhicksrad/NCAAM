@@ -1,0 +1,48 @@
+{
+  "slug": "tyler-perkins-1",
+  "name": "Tyler Perkins",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 29,
+      "gs": 27,
+      "mp_g": 29.7931034483,
+      "fg_pct": 0.3906705539,
+      "fg3_pct": 0.3466666667,
+      "ft_pct": 0.7647058824,
+      "orb_g": 1.5172413793,
+      "drb_g": 3.7931034483,
+      "trb_g": 5.3103448276,
+      "ast_g": 1.8965517241,
+      "stl_g": 1.3793103448,
+      "blk_g": 0.1034482759,
+      "tov_g": 1.8275862069,
+      "pf_g": 2.2413793103,
+      "pts_g": 13.724137931
+    },
+    {
+      "season": "2024-25",
+      "team": "Villanova",
+      "conf": "Big East",
+      "gp": 36,
+      "gs": 3,
+      "mp_g": 25.75,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.3515625,
+      "ft_pct": 0.72,
+      "orb_g": 1.2222222222,
+      "drb_g": 3.0555555556,
+      "trb_g": 4.2777777778,
+      "ast_g": 1,
+      "stl_g": 1.0555555556,
+      "blk_g": 0.25,
+      "tov_g": 0.5277777778,
+      "pf_g": 1.9166666667,
+      "pts_g": 6.3055555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-perkins-1.html",
+  "last_scraped": "2025-11-01T00:57:09.030Z"
+}

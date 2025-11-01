@@ -1,0 +1,48 @@
+{
+  "slug": "eli-delaurier-1",
+  "name": "Eli DeLaurier",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.3333333333,
+      "tov_g": 0,
+      "pf_g": 1.6666666667,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 5.7727272727,
+      "fg_pct": 0.3928571429,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": null,
+      "orb_g": 0.4545454545,
+      "drb_g": 0.6818181818,
+      "trb_g": 1.1363636364,
+      "ast_g": 0.1363636364,
+      "stl_g": 0.0909090909,
+      "blk_g": 0.3181818182,
+      "tov_g": 0.3636363636,
+      "pf_g": 1.5454545455,
+      "pts_g": 1.2272727273
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eli-delaurier-1.html",
+  "last_scraped": "2025-11-01T00:38:24.716Z"
+}

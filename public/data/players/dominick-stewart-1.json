@@ -1,0 +1,28 @@
+{
+  "slug": "dominick-stewart-1",
+  "name": "Dominick Stewart",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Penn State",
+      "conf": "Big Ten",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 8.1666666667,
+      "fg_pct": 0.3731343284,
+      "fg3_pct": 0.2894736842,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.375,
+      "drb_g": 0.7083333333,
+      "trb_g": 1.0833333333,
+      "ast_g": 0.4166666667,
+      "stl_g": 0.5,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.75,
+      "pts_g": 2.7916666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dominick-stewart-1.html",
+  "last_scraped": "2025-11-01T00:37:38.235Z"
+}

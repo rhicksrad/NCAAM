@@ -1,0 +1,48 @@
+{
+  "slug": "arrinten-page-2",
+  "name": "Arrinten Page",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Southern California",
+      "conf": "Pac-12",
+      "gp": 27,
+      "gs": 4,
+      "mp_g": 10.7037037037,
+      "fg_pct": 0.4920634921,
+      "fg3_pct": 0.3125,
+      "ft_pct": 0.53125,
+      "orb_g": 0.7407407407,
+      "drb_g": 1.3703703704,
+      "trb_g": 2.1111111111,
+      "ast_g": 0.3703703704,
+      "stl_g": 0.2962962963,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.9259259259,
+      "pf_g": 0.9259259259,
+      "pts_g": 3.1111111111
+    },
+    {
+      "season": "2024-25",
+      "team": "Cincinnati",
+      "conf": "Big 12",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 9.064516129,
+      "fg_pct": 0.4938271605,
+      "fg3_pct": 0.4444444444,
+      "ft_pct": 0.6341463415,
+      "orb_g": 0.8709677419,
+      "drb_g": 1.4516129032,
+      "trb_g": 2.3225806452,
+      "ast_g": 0.3548387097,
+      "stl_g": 0.3225806452,
+      "blk_g": 0.4838709677,
+      "tov_g": 0.6774193548,
+      "pf_g": 1.1612903226,
+      "pts_g": 3.5483870968
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/arrinten-page-2.html",
+  "last_scraped": "2025-11-01T00:30:45.443Z"
+}

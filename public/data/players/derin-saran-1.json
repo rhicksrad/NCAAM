@@ -1,0 +1,48 @@
+{
+  "slug": "derin-saran-1",
+  "name": "Derin Saran",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UC Irvine",
+      "conf": "Big West",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 19.0967741935,
+      "fg_pct": 0.5020408163,
+      "fg3_pct": 0.3488372093,
+      "ft_pct": 0.8,
+      "orb_g": 1.2580645161,
+      "drb_g": 2.1290322581,
+      "trb_g": 3.3870967742,
+      "ast_g": 1.6451612903,
+      "stl_g": 0.935483871,
+      "blk_g": 0.064516129,
+      "tov_g": 1.1935483871,
+      "pf_g": 1.7419354839,
+      "pts_g": 10.0967741935
+    },
+    {
+      "season": "2024-25",
+      "team": "Stanford",
+      "conf": "ACC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 4,
+      "fg_pct": 1,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.2,
+      "drb_g": 0.4,
+      "trb_g": 0.6,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.2,
+      "pts_g": 0.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/derin-saran-1.html",
+  "last_scraped": "2025-11-01T00:37:05.522Z"
+}

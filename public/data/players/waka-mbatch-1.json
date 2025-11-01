@@ -1,0 +1,48 @@
+{
+  "slug": "waka-mbatch-1",
+  "name": "Waka Mbatch",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Florida State",
+      "conf": "ACC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.5,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida State",
+      "conf": "ACC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 3.4,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.2,
+      "drb_g": 0.6,
+      "trb_g": 0.8,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.2,
+      "tov_g": 0.6,
+      "pf_g": 1.2,
+      "pts_g": 0.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/waka-mbatch-1.html",
+  "last_scraped": "2025-11-01T00:57:39.800Z"
+}

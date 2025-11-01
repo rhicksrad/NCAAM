@@ -1,0 +1,48 @@
+{
+  "slug": "mikey-williams-1",
+  "name": "Mikey Williams",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "UCF",
+      "conf": "Big 12",
+      "gp": 18,
+      "gs": 5,
+      "mp_g": 14,
+      "fg_pct": 0.3707865169,
+      "fg3_pct": 0.28125,
+      "ft_pct": 0.8,
+      "orb_g": 0.3888888889,
+      "drb_g": 1.5555555556,
+      "trb_g": 1.9444444444,
+      "ast_g": 0.7222222222,
+      "stl_g": 0.4444444444,
+      "blk_g": 0.2222222222,
+      "tov_g": 0.6111111111,
+      "pf_g": 1.1666666667,
+      "pts_g": 5.0555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mikey-williams-1.html",
+  "last_scraped": "2025-11-01T00:50:38.585Z"
+}

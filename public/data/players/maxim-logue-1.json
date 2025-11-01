@@ -1,0 +1,28 @@
+{
+  "slug": "maxim-logue-1",
+  "name": "Maxim Logue",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oregon State",
+      "conf": "WCC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 6.619047619,
+      "fg_pct": 0.6486486486,
+      "fg3_pct": null,
+      "ft_pct": 0.5217391304,
+      "orb_g": 0.8095238095,
+      "drb_g": 1.1904761905,
+      "trb_g": 2,
+      "ast_g": 0,
+      "stl_g": 0.0952380952,
+      "blk_g": 0.2380952381,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.7619047619,
+      "pts_g": 2.8571428571
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/maxim-logue-1.html",
+  "last_scraped": "2025-11-01T00:50:09.452Z"
+}

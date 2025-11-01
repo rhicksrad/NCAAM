@@ -1,0 +1,48 @@
+{
+  "slug": "connor-dow-1",
+  "name": "Connor Dow",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oklahoma State",
+      "conf": "Big 12",
+      "gp": 27,
+      "gs": 7,
+      "mp_g": 11.3333333333,
+      "fg_pct": 0.2807017544,
+      "fg3_pct": 0.24,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.1111111111,
+      "drb_g": 1.3333333333,
+      "trb_g": 1.4444444444,
+      "ast_g": 0.3703703704,
+      "stl_g": 0.4444444444,
+      "blk_g": 0.1481481481,
+      "tov_g": 0.3703703704,
+      "pf_g": 0.6296296296,
+      "pts_g": 1.8888888889
+    },
+    {
+      "season": "2024-25",
+      "team": "Oklahoma State",
+      "conf": "Big 12",
+      "gp": 24,
+      "gs": 1,
+      "mp_g": 8.4583333333,
+      "fg_pct": 0.3888888889,
+      "fg3_pct": 0.3703703704,
+      "ft_pct": 0.5,
+      "orb_g": 0.5833333333,
+      "drb_g": 0.7916666667,
+      "trb_g": 1.375,
+      "ast_g": 0.25,
+      "stl_g": 0.2916666667,
+      "blk_g": 0.125,
+      "tov_g": 0.25,
+      "pf_g": 0.8333333333,
+      "pts_g": 1.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/connor-dow-1.html",
+  "last_scraped": "2025-11-01T00:35:14.475Z"
+}

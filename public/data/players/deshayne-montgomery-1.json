@@ -1,0 +1,48 @@
+{
+  "slug": "deshayne-montgomery-1",
+  "name": "De'Shayne Montgomery",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mount St. Mary's",
+      "conf": "MAAC",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 27.75,
+      "fg_pct": 0.5379310345,
+      "fg3_pct": 0.4117647059,
+      "ft_pct": 0.7280701754,
+      "orb_g": 0.71875,
+      "drb_g": 2.78125,
+      "trb_g": 3.5,
+      "ast_g": 2,
+      "stl_g": 1.6875,
+      "blk_g": 0.6875,
+      "tov_g": 2.8125,
+      "pf_g": 2.09375,
+      "pts_g": 13.21875
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 15.5294117647,
+      "fg_pct": 0.4086021505,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.7105263158,
+      "orb_g": 0.5882352941,
+      "drb_g": 1.4705882353,
+      "trb_g": 2.0588235294,
+      "ast_g": 0.7647058824,
+      "stl_g": 1.0588235294,
+      "blk_g": 0.1764705882,
+      "tov_g": 1.7058823529,
+      "pf_g": 1.2941176471,
+      "pts_g": 6.4705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/deshayne-montgomery-1.html",
+  "last_scraped": "2025-11-01T00:36:49.953Z"
+}

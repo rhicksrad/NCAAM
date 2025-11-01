@@ -1,0 +1,48 @@
+{
+  "slug": "rodney-brown-jr-1",
+  "name": "Rodney Brown Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "California",
+      "conf": "Pac-12",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 14.15625,
+      "fg_pct": 0.40625,
+      "fg3_pct": 0.3965517241,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.25,
+      "drb_g": 0.84375,
+      "trb_g": 1.09375,
+      "ast_g": 0.875,
+      "stl_g": 0.1875,
+      "blk_g": 0.0625,
+      "tov_g": 0.625,
+      "pf_g": 1.5,
+      "pts_g": 3.53125
+    },
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 15.1111111111,
+      "fg_pct": 0.375,
+      "fg3_pct": 0.4242424242,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.2222222222,
+      "drb_g": 1.8333333333,
+      "trb_g": 2.0555555556,
+      "ast_g": 1.7777777778,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.9444444444,
+      "pf_g": 0.8333333333,
+      "pts_g": 4.1111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rodney-brown-jr-1.html",
+  "last_scraped": "2025-11-01T00:53:38.429Z"
+}

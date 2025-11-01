@@ -1,0 +1,28 @@
+{
+  "slug": "john-bol-1",
+  "name": "John Bol",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Ole Miss",
+      "conf": "SEC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 4.0588235294,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.4117647059,
+      "drb_g": 0.5294117647,
+      "trb_g": 0.9411764706,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.2941176471,
+      "tov_g": 0.2941176471,
+      "pf_g": 0.5882352941,
+      "pts_g": 1.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/john-bol-1.html",
+  "last_scraped": "2025-11-01T00:44:49.077Z"
+}

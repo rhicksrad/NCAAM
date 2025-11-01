@@ -1,0 +1,48 @@
+{
+  "slug": "dailyn-swain-2",
+  "name": "Dailyn Swain",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 29,
+      "gs": 3,
+      "mp_g": 18.9310344828,
+      "fg_pct": 0.4594594595,
+      "fg3_pct": 0.1538461538,
+      "ft_pct": 0.8125,
+      "orb_g": 0.9655172414,
+      "drb_g": 2.0689655172,
+      "trb_g": 3.0344827586,
+      "ast_g": 1.2413793103,
+      "stl_g": 1.0344827586,
+      "blk_g": 0.724137931,
+      "tov_g": 0.724137931,
+      "pf_g": 1.6896551724,
+      "pts_g": 4.5517241379
+    },
+    {
+      "season": "2024-25",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 33,
+      "mp_g": 28.4705882353,
+      "fg_pct": 0.5317460317,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.8166666667,
+      "orb_g": 1,
+      "drb_g": 4.4705882353,
+      "trb_g": 5.4705882353,
+      "ast_g": 2.6176470588,
+      "stl_g": 1.5588235294,
+      "blk_g": 0.5882352941,
+      "tov_g": 1.6176470588,
+      "pf_g": 2.0588235294,
+      "pts_g": 10.9705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dailyn-swain-2.html",
+  "last_scraped": "2025-11-01T00:35:45.101Z"
+}

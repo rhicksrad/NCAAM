@@ -1,0 +1,28 @@
+{
+  "slug": "liam-mcneeley-1",
+  "name": "Liam McNeeley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 27,
+      "gs": 26,
+      "mp_g": 32.1111111111,
+      "fg_pct": 0.3806451613,
+      "fg3_pct": 0.3172413793,
+      "ft_pct": 0.8661417323,
+      "orb_g": 0.9259259259,
+      "drb_g": 5.037037037,
+      "trb_g": 5.962962963,
+      "ast_g": 2.2592592593,
+      "stl_g": 0.5555555556,
+      "blk_g": 0.2222222222,
+      "tov_g": 1.8518518519,
+      "pf_g": 2,
+      "pts_g": 14.5185185185
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/liam-mcneeley-1.html",
+  "last_scraped": "2025-11-01T00:48:29.801Z"
+}

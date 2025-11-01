@@ -1,0 +1,28 @@
+{
+  "slug": "savo-drezgic-1",
+  "name": "Savo Drezgic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 6.875,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.4444444444,
+      "ft_pct": 0.6470588235,
+      "orb_g": 0,
+      "drb_g": 1.125,
+      "trb_g": 1.125,
+      "ast_g": 0.5,
+      "stl_g": 0.375,
+      "blk_g": 0,
+      "tov_g": 0.875,
+      "pf_g": 0.375,
+      "pts_g": 2.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/savo-drezgic-1.html",
+  "last_scraped": "2025-11-01T00:54:23.113Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "vladimir-pavlovic-1",
+  "name": "Vladimir Pavlovic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "California",
+      "conf": "Pac-12",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 6.1428571429,
+      "fg_pct": 0.5,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.2857142857,
+      "trb_g": 0.2857142857,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.1428571429,
+      "blk_g": 0,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.5714285714,
+      "pts_g": 0.8571428571
+    },
+    {
+      "season": "2024-25",
+      "team": "California",
+      "conf": "ACC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 4.6666666667,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/vladimir-pavlovic-1.html",
+  "last_scraped": "2025-11-01T00:57:33.684Z"
+}

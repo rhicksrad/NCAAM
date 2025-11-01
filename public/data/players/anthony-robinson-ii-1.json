@@ -1,0 +1,48 @@
+{
+  "slug": "anthony-robinson-ii-1",
+  "name": "Anthony Robinson II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Missouri",
+      "conf": "SEC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 13.3666666667,
+      "fg_pct": 0.3673469388,
+      "fg3_pct": 0.2045454545,
+      "ft_pct": 0.75,
+      "orb_g": 0.5666666667,
+      "drb_g": 1.1666666667,
+      "trb_g": 1.7333333333,
+      "ast_g": 0.9666666667,
+      "stl_g": 1.2666666667,
+      "blk_g": 0.2666666667,
+      "tov_g": 0.4666666667,
+      "pf_g": 2.0666666667,
+      "pts_g": 3.9
+    },
+    {
+      "season": "2024-25",
+      "team": "Missouri",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 31,
+      "mp_g": 23.0303030303,
+      "fg_pct": 0.4829545455,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.7714285714,
+      "orb_g": 0.9090909091,
+      "drb_g": 2.2121212121,
+      "trb_g": 3.1212121212,
+      "ast_g": 3.4545454545,
+      "stl_g": 2.0303030303,
+      "blk_g": 0.1818181818,
+      "tov_g": 1.696969697,
+      "pf_g": 3.0606060606,
+      "pts_g": 9.0303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-robinson-ii-1.html",
+  "last_scraped": "2025-11-01T00:30:39.263Z"
+}

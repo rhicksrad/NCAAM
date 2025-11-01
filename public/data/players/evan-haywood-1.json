@@ -1,0 +1,28 @@
+{
+  "slug": "evan-haywood-1",
+  "name": "Evan Haywood",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Butler",
+      "conf": "Big East",
+      "gp": 23,
+      "gs": 2,
+      "mp_g": 5.4782608696,
+      "fg_pct": 0.3947368421,
+      "fg3_pct": 0.3461538462,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.0869565217,
+      "drb_g": 0.2608695652,
+      "trb_g": 0.347826087,
+      "ast_g": 0.2173913043,
+      "stl_g": 0.1739130435,
+      "blk_g": 0,
+      "tov_g": 0.1739130435,
+      "pf_g": 0.5217391304,
+      "pts_g": 2.0869565217
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/evan-haywood-1.html",
+  "last_scraped": "2025-11-01T00:38:58.566Z"
+}

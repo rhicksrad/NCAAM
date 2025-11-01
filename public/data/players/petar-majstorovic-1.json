@@ -1,0 +1,28 @@
+{
+  "slug": "petar-majstorovic-1",
+  "name": "Petar Majstorovic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Syracuse",
+      "conf": "ACC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 13.2580645161,
+      "fg_pct": 0.484375,
+      "fg3_pct": 0.4166666667,
+      "ft_pct": 0.5384615385,
+      "orb_g": 1.3548387097,
+      "drb_g": 1.8387096774,
+      "trb_g": 3.1935483871,
+      "ast_g": 0.7096774194,
+      "stl_g": 0.4193548387,
+      "blk_g": 0.2580645161,
+      "tov_g": 0.8064516129,
+      "pf_g": 2.0322580645,
+      "pts_g": 2.6129032258
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/petar-majstorovic-1.html",
+  "last_scraped": "2025-11-01T00:52:31.910Z"
+}

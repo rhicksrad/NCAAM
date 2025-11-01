@@ -1,0 +1,28 @@
+{
+  "slug": "amier-ali-1",
+  "name": "Amier Ali",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arizona State",
+      "conf": "Big 12",
+      "gp": 32,
+      "gs": 4,
+      "mp_g": 19.15625,
+      "fg_pct": 0.3724137931,
+      "fg3_pct": 0.3260869565,
+      "ft_pct": 0.7169811321,
+      "orb_g": 0.40625,
+      "drb_g": 2.65625,
+      "trb_g": 3.0625,
+      "ast_g": 0.75,
+      "stl_g": 0.46875,
+      "blk_g": 0.03125,
+      "tov_g": 0.625,
+      "pf_g": 1.21875,
+      "pts_g": 5.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/amier-ali-1.html",
+  "last_scraped": "2025-11-01T00:30:13.740Z"
+}

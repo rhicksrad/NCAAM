@@ -1,0 +1,28 @@
+{
+  "slug": "ahmad-nowell-1",
+  "name": "Ahmad Nowell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 6.3888888889,
+      "fg_pct": 0.3571428571,
+      "fg3_pct": 0.1875,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.3888888889,
+      "drb_g": 0.5555555556,
+      "trb_g": 0.9444444444,
+      "ast_g": 1.1111111111,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.5,
+      "pf_g": 0.5555555556,
+      "pts_g": 1.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ahmad-nowell-1.html",
+  "last_scraped": "2025-11-01T00:30:12.228Z"
+}

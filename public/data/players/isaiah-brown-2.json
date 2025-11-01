@@ -1,0 +1,28 @@
+{
+  "slug": "isaiah-brown-2",
+  "name": "Isaiah Brown",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida",
+      "conf": "SEC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 3.8421052632,
+      "fg_pct": 0.52,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.4375,
+      "orb_g": 0.3157894737,
+      "drb_g": 0.6315789474,
+      "trb_g": 0.9473684211,
+      "ast_g": 0.0526315789,
+      "stl_g": 0.1578947368,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.1578947368,
+      "pf_g": 0.5789473684,
+      "pts_g": 1.8947368421
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-brown-2.html",
+  "last_scraped": "2025-11-01T00:40:56.982Z"
+}

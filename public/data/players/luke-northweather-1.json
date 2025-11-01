@@ -1,0 +1,48 @@
+{
+  "slug": "luke-northweather-1",
+  "name": "Luke Northweather",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oklahoma",
+      "conf": "Big 12",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.56,
+      "fg_pct": 0.4047619048,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.44,
+      "drb_g": 1.08,
+      "trb_g": 1.52,
+      "ast_g": 0.44,
+      "stl_g": 0.12,
+      "blk_g": 0.32,
+      "tov_g": 0.36,
+      "pf_g": 0.84,
+      "pts_g": 2.04
+    },
+    {
+      "season": "2024-25",
+      "team": "Oklahoma",
+      "conf": "SEC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 11.3333333333,
+      "fg_pct": 0.4285714286,
+      "fg3_pct": 0.34,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.2333333333,
+      "drb_g": 1.2333333333,
+      "trb_g": 1.4666666667,
+      "ast_g": 0.3666666667,
+      "stl_g": 0.0666666667,
+      "blk_g": 0.2333333333,
+      "tov_g": 0.1,
+      "pf_g": 1.1333333333,
+      "pts_g": 2.7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-northweather-1.html",
+  "last_scraped": "2025-11-01T00:48:54.026Z"
+}

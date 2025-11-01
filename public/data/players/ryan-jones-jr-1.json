@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-jones-jr-1",
+  "name": "Ryan Jones Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0.6,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.2,
+      "drb_g": 0.2,
+      "trb_g": 0.4,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.6,
+      "pts_g": 1.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-jones-jr-1.html",
+  "last_scraped": "2025-11-01T00:53:57.475Z"
+}

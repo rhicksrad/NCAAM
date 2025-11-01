@@ -1,0 +1,48 @@
+{
+  "slug": "morris-ugusuk-1",
+  "name": "Morris Ugusuk",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina",
+      "conf": "SEC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 10.2333333333,
+      "fg_pct": 0.3382352941,
+      "fg3_pct": 0.2916666667,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.2,
+      "drb_g": 0.4666666667,
+      "trb_g": 0.6666666667,
+      "ast_g": 0.5333333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.1,
+      "tov_g": 0.5,
+      "pf_g": 0.3333333333,
+      "pts_g": 2.2333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina",
+      "conf": "SEC",
+      "gp": 32,
+      "gs": 6,
+      "mp_g": 22.25,
+      "fg_pct": 0.3836477987,
+      "fg3_pct": 0.407079646,
+      "ft_pct": 0.7692307692,
+      "orb_g": 0.4375,
+      "drb_g": 0.96875,
+      "trb_g": 1.40625,
+      "ast_g": 0.875,
+      "stl_g": 0.46875,
+      "blk_g": 0.03125,
+      "tov_g": 0.875,
+      "pf_g": 1.25,
+      "pts_g": 5.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/morris-ugusuk-1.html",
+  "last_scraped": "2025-11-01T00:50:57.416Z"
+}

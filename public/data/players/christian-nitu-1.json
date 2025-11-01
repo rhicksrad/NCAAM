@@ -1,0 +1,28 @@
+{
+  "slug": "christian-nitu-1",
+  "name": "Christian Nitu",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida State",
+      "conf": "ACC",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 6.9090909091,
+      "fg_pct": 0.4090909091,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.5,
+      "drb_g": 0.7727272727,
+      "trb_g": 1.2727272727,
+      "ast_g": 0.1818181818,
+      "stl_g": 0.0454545455,
+      "blk_g": 0.2272727273,
+      "tov_g": 0.3181818182,
+      "pf_g": 0.9090909091,
+      "pts_g": 1.9090909091
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/christian-nitu-1.html",
+  "last_scraped": "2025-11-01T00:34:32.471Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "isaiah-abraham-1",
+  "name": "Isaiah Abraham",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Connecticut",
+      "conf": "Big East",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3.5555555556,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 1,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.5555555556,
+      "ast_g": 0,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.2222222222,
+      "pf_g": 0.5555555556,
+      "pts_g": 1.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-abraham-1.html",
+  "last_scraped": "2025-11-01T00:40:55.338Z"
+}

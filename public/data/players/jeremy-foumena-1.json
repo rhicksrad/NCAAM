@@ -1,0 +1,48 @@
+{
+  "slug": "jeremy-foumena-1",
+  "name": "Jeremy Foumena",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Rhode Island",
+      "conf": "A-10",
+      "gp": 28,
+      "gs": 0,
+      "mp_g": 12.8571428571,
+      "fg_pct": 0.5254237288,
+      "fg3_pct": 0.32,
+      "ft_pct": 0.380952381,
+      "orb_g": 1.4642857143,
+      "drb_g": 2.0357142857,
+      "trb_g": 3.5,
+      "ast_g": 0.4285714286,
+      "stl_g": 0.1785714286,
+      "blk_g": 0.5,
+      "tov_g": 0.6071428571,
+      "pf_g": 1.3571428571,
+      "pts_g": 5.2857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "Mississippi State",
+      "conf": "SEC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 2.8888888889,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.75,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.5555555556,
+      "ast_g": 0.1111111111,
+      "stl_g": 0,
+      "blk_g": 0.2222222222,
+      "tov_g": 0.1111111111,
+      "pf_g": 0.6666666667,
+      "pts_g": 1.1111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeremy-foumena-1.html",
+  "last_scraped": "2025-11-01T00:44:23.546Z"
+}

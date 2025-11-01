@@ -1,0 +1,28 @@
+{
+  "slug": "fedor-zugic-1",
+  "name": "Fedor Žugić",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 11.8181818182,
+      "fg_pct": 0.4838709677,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.1363636364,
+      "drb_g": 1.5,
+      "trb_g": 1.6363636364,
+      "ast_g": 0.7727272727,
+      "stl_g": 0.2272727273,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.7272727273,
+      "pf_g": 0.7272727273,
+      "pts_g": 4.5454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/fedor-zugic-1.html",
+  "last_scraped": "2025-11-01T00:39:07.782Z"
+}

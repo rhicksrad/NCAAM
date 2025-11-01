@@ -1,0 +1,48 @@
+{
+  "slug": "baye-fall-2",
+  "name": "Baye Fall",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Arkansas",
+      "conf": "SEC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.5555555556,
+      "drb_g": 0.7777777778,
+      "trb_g": 1.3333333333,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.6666666667,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.1111111111,
+      "pts_g": 0.7777777778
+    },
+    {
+      "season": "2024-25",
+      "team": "Kansas State",
+      "conf": "Big 12",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 6.5,
+      "fg_pct": 0.625,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 1,
+      "drb_g": 0.5,
+      "trb_g": 1.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.75,
+      "tov_g": 0.75,
+      "pf_g": 1.25,
+      "pts_g": 2.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/baye-fall-2.html",
+  "last_scraped": "2025-11-01T00:31:11.857Z"
+}

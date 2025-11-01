@@ -1,0 +1,28 @@
+{
+  "slug": "will-riley-1",
+  "name": "Will Riley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois",
+      "conf": "Big Ten",
+      "gp": 35,
+      "gs": 9,
+      "mp_g": 25.6857142857,
+      "fg_pct": 0.4317548747,
+      "fg3_pct": 0.3263888889,
+      "ft_pct": 0.724137931,
+      "orb_g": 1.2,
+      "drb_g": 2.9428571429,
+      "trb_g": 4.1428571429,
+      "ast_g": 2.2285714286,
+      "stl_g": 0.2571428571,
+      "blk_g": 0.2857142857,
+      "tov_g": 1.2,
+      "pf_g": 1.2,
+      "pts_g": 12.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/will-riley-1.html",
+  "last_scraped": "2025-11-01T00:58:00.117Z"
+}

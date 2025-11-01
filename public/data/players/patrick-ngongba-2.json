@@ -1,0 +1,28 @@
+{
+  "slug": "patrick-ngongba-2",
+  "name": "Patrick Ngongba",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Duke",
+      "conf": "ACC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 10.5333333333,
+      "fg_pct": 0.71875,
+      "fg3_pct": 0,
+      "ft_pct": 0.7272727273,
+      "orb_g": 1,
+      "drb_g": 1.6666666667,
+      "trb_g": 2.6666666667,
+      "ast_g": 0.7666666667,
+      "stl_g": 0.3666666667,
+      "blk_g": 0.5333333333,
+      "tov_g": 0.2333333333,
+      "pf_g": 1.7,
+      "pts_g": 3.8666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/patrick-ngongba-2.html",
+  "last_scraped": "2025-11-01T00:52:25.412Z"
+}

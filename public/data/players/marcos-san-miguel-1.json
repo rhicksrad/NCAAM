@@ -1,0 +1,48 @@
+{
+  "slug": "marcos-san-miguel-1",
+  "name": "Marcos San Miguel",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 1,
+      "drb_g": 0,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 1,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1.8,
+      "fg_pct": 0.4,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.4,
+      "pf_g": 0,
+      "pts_g": 0.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marcos-san-miguel-1.html",
+  "last_scraped": "2025-11-01T00:49:18.271Z"
+}

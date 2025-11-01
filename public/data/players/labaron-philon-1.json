@@ -1,0 +1,28 @@
+{
+  "slug": "labaron-philon-1",
+  "name": "Labaron Philon",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alabama",
+      "conf": "SEC",
+      "gp": 37,
+      "gs": 29,
+      "mp_g": 24.7027027027,
+      "fg_pct": 0.4522292994,
+      "fg3_pct": 0.314516129,
+      "ft_pct": 0.7666666667,
+      "orb_g": 0.8648648649,
+      "drb_g": 2.4324324324,
+      "trb_g": 3.2972972973,
+      "ast_g": 3.7837837838,
+      "stl_g": 1.3513513514,
+      "blk_g": 0.3243243243,
+      "tov_g": 1.7297297297,
+      "pf_g": 1.6756756757,
+      "pts_g": 10.5945945946
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/labaron-philon-1.html",
+  "last_scraped": "2025-11-01T00:48:03.583Z"
+}

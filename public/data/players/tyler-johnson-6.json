@@ -1,0 +1,28 @@
+{
+  "slug": "tyler-johnson-6",
+  "name": "Tyler Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 28,
+      "mp_g": 25.46875,
+      "fg_pct": 0.4523809524,
+      "fg3_pct": 0.347826087,
+      "ft_pct": 0.737704918,
+      "orb_g": 1.59375,
+      "drb_g": 3.25,
+      "trb_g": 4.84375,
+      "ast_g": 1.03125,
+      "stl_g": 0.78125,
+      "blk_g": 0.1875,
+      "tov_g": 1.40625,
+      "pf_g": 2.40625,
+      "pts_g": 6.65625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-johnson-6.html",
+  "last_scraped": "2025-11-01T00:57:06.009Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jacob-meyer-1",
+  "name": "Jacob Meyer",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Coastal Carolina",
+      "conf": "Sun Belt",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 33.8709677419,
+      "fg_pct": 0.4491315136,
+      "fg3_pct": 0.4017094017,
+      "ft_pct": 0.6695652174,
+      "orb_g": 0.9677419355,
+      "drb_g": 4.0967741935,
+      "trb_g": 5.064516129,
+      "ast_g": 2.6129032258,
+      "stl_g": 1.0322580645,
+      "blk_g": 0.1290322581,
+      "tov_g": 2.6451612903,
+      "pf_g": 1.9677419355,
+      "pts_g": 15.6774193548
+    },
+    {
+      "season": "2024-25",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 16,
+      "mp_g": 19.4242424242,
+      "fg_pct": 0.3842975207,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7674418605,
+      "orb_g": 0.5757575758,
+      "drb_g": 2.0606060606,
+      "trb_g": 2.6363636364,
+      "ast_g": 0.7272727273,
+      "stl_g": 0.6666666667,
+      "blk_g": 0.0606060606,
+      "tov_g": 0.6060606061,
+      "pf_g": 1.6666666667,
+      "pts_g": 8.9090909091
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-meyer-1.html",
+  "last_scraped": "2025-11-01T00:42:06.882Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "felix-kossaras-1",
+  "name": "Felix Kossaras",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Colorado",
+      "conf": "Big 12",
+      "gp": 29,
+      "gs": 1,
+      "mp_g": 10.7931034483,
+      "fg_pct": 0.4130434783,
+      "fg3_pct": 0.3125,
+      "ft_pct": 0.5769230769,
+      "orb_g": 0.2413793103,
+      "drb_g": 1,
+      "trb_g": 1.2413793103,
+      "ast_g": 0.8275862069,
+      "stl_g": 0.4137931034,
+      "blk_g": 0.0689655172,
+      "tov_g": 0.6896551724,
+      "pf_g": 0.8965517241,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/felix-kossaras-1.html",
+  "last_scraped": "2025-11-01T00:39:09.401Z"
+}

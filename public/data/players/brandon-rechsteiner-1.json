@@ -1,0 +1,48 @@
+{
+  "slug": "brandon-rechsteiner-1",
+  "name": "Brandon Rechsteiner",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 26,
+      "gs": 2,
+      "mp_g": 9.1923076923,
+      "fg_pct": 0.3720930233,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.75,
+      "orb_g": 0.0769230769,
+      "drb_g": 0.6153846154,
+      "trb_g": 0.6923076923,
+      "ast_g": 1.2692307692,
+      "stl_g": 0.1538461538,
+      "blk_g": 0,
+      "tov_g": 0.6923076923,
+      "pf_g": 0.6153846154,
+      "pts_g": 1.8076923077
+    },
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 22.15625,
+      "fg_pct": 0.3648648649,
+      "fg3_pct": 0.2985074627,
+      "ft_pct": 0.8148148148,
+      "orb_g": 0.21875,
+      "drb_g": 0.78125,
+      "trb_g": 1,
+      "ast_g": 2.84375,
+      "stl_g": 0.5625,
+      "blk_g": 0,
+      "tov_g": 2.21875,
+      "pf_g": 1.40625,
+      "pts_g": 7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brandon-rechsteiner-1.html",
+  "last_scraped": "2025-11-01T00:32:10.905Z"
+}

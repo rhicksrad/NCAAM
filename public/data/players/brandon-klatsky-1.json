@@ -1,0 +1,48 @@
+{
+  "slug": "brandon-klatsky-1",
+  "name": "Brandon Klatsky",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1.6666666667,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.1666666667,
+      "trb_g": 0.1666666667,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.1666666667,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brandon-klatsky-1.html",
+  "last_scraped": "2025-11-01T00:32:07.921Z"
+}

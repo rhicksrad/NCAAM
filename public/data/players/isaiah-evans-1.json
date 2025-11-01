@@ -1,0 +1,28 @@
+{
+  "slug": "isaiah-evans-1",
+  "name": "Isaiah Evans",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Duke",
+      "conf": "ACC",
+      "gp": 36,
+      "gs": 3,
+      "mp_g": 13.75,
+      "fg_pct": 0.4316939891,
+      "fg3_pct": 0.4161073826,
+      "ft_pct": 0.8125,
+      "orb_g": 0.1111111111,
+      "drb_g": 1.0277777778,
+      "trb_g": 1.1388888889,
+      "ast_g": 0.5,
+      "stl_g": 0.1944444444,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.9444444444,
+      "pts_g": 6.8333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-evans-1.html",
+  "last_scraped": "2025-11-01T00:41:01.482Z"
+}

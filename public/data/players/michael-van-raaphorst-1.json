@@ -1,0 +1,28 @@
+{
+  "slug": "michael-van-raaphorst-1",
+  "name": "Michael Van Raaphorst",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 2.6,
+      "fg_pct": 0.5,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.4,
+      "drb_g": 0.4,
+      "trb_g": 0.8,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.2,
+      "pts_g": 0.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/michael-van-raaphorst-1.html",
+  "last_scraped": "2025-11-01T00:50:29.518Z"
+}

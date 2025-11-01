@@ -1,0 +1,48 @@
+{
+  "slug": "jake-wahlin-1",
+  "name": "Jake Wahlin",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Utah",
+      "conf": "Pac-12",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 5.7,
+      "fg_pct": 0.3,
+      "fg3_pct": 0.0909090909,
+      "ft_pct": 0.25,
+      "orb_g": 0.55,
+      "drb_g": 0.9,
+      "trb_g": 1.45,
+      "ast_g": 0.2,
+      "stl_g": 0.05,
+      "blk_g": 0.15,
+      "tov_g": 0.2,
+      "pf_g": 1.05,
+      "pts_g": 0.7
+    },
+    {
+      "season": "2024-25",
+      "team": "Utah",
+      "conf": "Big 12",
+      "gp": 33,
+      "gs": 23,
+      "mp_g": 23.4545454545,
+      "fg_pct": 0.4670658683,
+      "fg3_pct": 0.3506493506,
+      "ft_pct": 0.6666666667,
+      "orb_g": 1.5151515152,
+      "drb_g": 3.3636363636,
+      "trb_g": 4.8787878788,
+      "ast_g": 1.4545454545,
+      "stl_g": 0.696969697,
+      "blk_g": 0.6666666667,
+      "tov_g": 0.7575757576,
+      "pf_g": 2.3939393939,
+      "pts_g": 6.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jake-wahlin-1.html",
+  "last_scraped": "2025-11-01T00:42:47.784Z"
+}

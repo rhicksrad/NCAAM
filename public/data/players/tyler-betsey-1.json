@@ -1,0 +1,28 @@
+{
+  "slug": "tyler-betsey-1",
+  "name": "Tyler Betsey",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cincinnati",
+      "conf": "Big 12",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 11.1764705882,
+      "fg_pct": 0.3571428571,
+      "fg3_pct": 0.3209876543,
+      "ft_pct": 0.5384615385,
+      "orb_g": 0.5,
+      "drb_g": 0.9705882353,
+      "trb_g": 1.4705882353,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.0294117647,
+      "blk_g": 0.1470588235,
+      "tov_g": 0.2647058824,
+      "pf_g": 0.7647058824,
+      "pts_g": 3.3235294118
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-betsey-1.html",
+  "last_scraped": "2025-11-01T00:56:58.371Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jordan-clayton-1",
+  "name": "Jordan Clayton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Northwestern",
+      "conf": "Big Ten",
+      "gp": 28,
+      "gs": 0,
+      "mp_g": 7.2142857143,
+      "fg_pct": 0.1739130435,
+      "fg3_pct": 0.0833333333,
+      "ft_pct": null,
+      "orb_g": 0.0357142857,
+      "drb_g": 0.5,
+      "trb_g": 0.5357142857,
+      "ast_g": 0.3928571429,
+      "stl_g": 0.2142857143,
+      "blk_g": 0,
+      "tov_g": 0.3571428571,
+      "pf_g": 0.8571428571,
+      "pts_g": 0.3214285714
+    },
+    {
+      "season": "2024-25",
+      "team": "Northwestern",
+      "conf": "Big Ten",
+      "gp": 10,
+      "gs": 10,
+      "mp_g": 20.7,
+      "fg_pct": 0.3461538462,
+      "fg3_pct": 0.28,
+      "ft_pct": 1,
+      "orb_g": 0.1,
+      "drb_g": 2.3,
+      "trb_g": 2.4,
+      "ast_g": 2.5,
+      "stl_g": 0.7,
+      "blk_g": 0.1,
+      "tov_g": 1,
+      "pf_g": 2.1,
+      "pts_g": 4.7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jordan-clayton-1.html",
+  "last_scraped": "2025-11-01T00:45:09.315Z"
+}

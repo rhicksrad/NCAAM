@@ -1,0 +1,28 @@
+{
+  "slug": "john-holbrook-1",
+  "name": "John Holbrook",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Carolina",
+      "conf": "ACC",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 1.25,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.125,
+      "drb_g": 0.375,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/john-holbrook-1.html",
+  "last_scraped": "2025-11-01T00:44:50.617Z"
+}

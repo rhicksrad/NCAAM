@@ -1,0 +1,28 @@
+{
+  "slug": "malick-diallo-1",
+  "name": "Malick Diallo",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "TCU",
+      "conf": "Big 12",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 10.8620689655,
+      "fg_pct": 0.4901960784,
+      "fg3_pct": null,
+      "ft_pct": 0.5555555556,
+      "orb_g": 1.3103448276,
+      "drb_g": 1.3793103448,
+      "trb_g": 2.6896551724,
+      "ast_g": 0.1724137931,
+      "stl_g": 0.3103448276,
+      "blk_g": 0.5862068966,
+      "tov_g": 0.8275862069,
+      "pf_g": 1.9310344828,
+      "pts_g": 2.2413793103
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malick-diallo-1.html",
+  "last_scraped": "2025-11-01T00:49:05.731Z"
+}

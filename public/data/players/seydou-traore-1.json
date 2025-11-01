@@ -1,0 +1,48 @@
+{
+  "slug": "seydou-traore-1",
+  "name": "Seydou Traore",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 28,
+      "gs": 27,
+      "mp_g": 32.2857142857,
+      "fg_pct": 0.4327868852,
+      "fg3_pct": 0.2555555556,
+      "ft_pct": 0.8,
+      "orb_g": 1.7142857143,
+      "drb_g": 6.5,
+      "trb_g": 8.2142857143,
+      "ast_g": 2.3214285714,
+      "stl_g": 1.5357142857,
+      "blk_g": 1.2857142857,
+      "tov_g": 1.8214285714,
+      "pf_g": 2.4285714286,
+      "pts_g": 11.8214285714
+    },
+    {
+      "season": "2024-25",
+      "team": "Iowa",
+      "conf": "Big Ten",
+      "gp": 27,
+      "gs": 12,
+      "mp_g": 16.5185185185,
+      "fg_pct": 0.4357142857,
+      "fg3_pct": 0.2647058824,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.7037037037,
+      "drb_g": 2.3333333333,
+      "trb_g": 3.037037037,
+      "ast_g": 1.3703703704,
+      "stl_g": 0.4814814815,
+      "blk_g": 0.6666666667,
+      "tov_g": 0.9259259259,
+      "pf_g": 1.4814814815,
+      "pts_g": 5.8518518519
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/seydou-traore-1.html",
+  "last_scraped": "2025-11-01T00:54:36.536Z"
+}

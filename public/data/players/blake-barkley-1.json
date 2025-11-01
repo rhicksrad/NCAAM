@@ -1,0 +1,28 @@
+{
+  "slug": "blake-barkley-1",
+  "name": "Blake Barkley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northwestern",
+      "conf": "Big Ten",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 3.25,
+      "fg_pct": 0.4,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.25,
+      "drb_g": 0.75,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.75,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/blake-barkley-1.html",
+  "last_scraped": "2025-11-01T00:31:35.832Z"
+}

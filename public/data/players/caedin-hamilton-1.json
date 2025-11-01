@@ -1,0 +1,48 @@
+{
+  "slug": "caedin-hamilton-1",
+  "name": "Caedin Hamilton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 6.3448275862,
+      "fg_pct": 0.3863636364,
+      "fg3_pct": 0,
+      "ft_pct": 0.5263157895,
+      "orb_g": 0.6551724138,
+      "drb_g": 0.5862068966,
+      "trb_g": 1.2413793103,
+      "ast_g": 0.5862068966,
+      "stl_g": 0.1379310345,
+      "blk_g": 0.2413793103,
+      "tov_g": 0.4137931034,
+      "pf_g": 0.8620689655,
+      "pts_g": 1.5172413793
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/caedin-hamilton-1.html",
+  "last_scraped": "2025-11-01T00:32:55.893Z"
+}

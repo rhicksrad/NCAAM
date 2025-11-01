@@ -1,0 +1,28 @@
+{
+  "slug": "vyctorius-miller-1",
+  "name": "Vyctorius Miller",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Louisiana State",
+      "conf": "SEC",
+      "gp": 25,
+      "gs": 5,
+      "mp_g": 19.04,
+      "fg_pct": 0.4470588235,
+      "fg3_pct": 0.3181818182,
+      "ft_pct": 0.7288135593,
+      "orb_g": 0.4,
+      "drb_g": 2.04,
+      "trb_g": 2.44,
+      "ast_g": 1.24,
+      "stl_g": 0.52,
+      "blk_g": 0.2,
+      "tov_g": 1.12,
+      "pf_g": 1.44,
+      "pts_g": 8.92
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/vyctorius-miller-1.html",
+  "last_scraped": "2025-11-01T00:57:36.721Z"
+}

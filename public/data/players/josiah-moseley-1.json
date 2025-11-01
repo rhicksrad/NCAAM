@@ -1,0 +1,28 @@
+{
+  "slug": "josiah-moseley-1",
+  "name": "Josiah Moseley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Villanova",
+      "conf": "Big East",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 10.3,
+      "fg_pct": 0.575,
+      "fg3_pct": 0,
+      "ft_pct": 0.6666666667,
+      "orb_g": 1,
+      "drb_g": 1.2666666667,
+      "trb_g": 2.2666666667,
+      "ast_g": 0.1333333333,
+      "stl_g": 0.0666666667,
+      "blk_g": 0.1333333333,
+      "tov_g": 0.2666666667,
+      "pf_g": 0.9666666667,
+      "pts_g": 1.9333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josiah-moseley-1.html",
+  "last_scraped": "2025-11-01T00:45:49.659Z"
+}

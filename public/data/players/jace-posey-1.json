@@ -1,0 +1,28 @@
+{
+  "slug": "jace-posey-1",
+  "name": "Jace Posey",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "TCU",
+      "conf": "Big 12",
+      "gp": 31,
+      "gs": 3,
+      "mp_g": 12.8387096774,
+      "fg_pct": 0.4210526316,
+      "fg3_pct": 0.2777777778,
+      "ft_pct": 0.5306122449,
+      "orb_g": 1,
+      "drb_g": 1.3225806452,
+      "trb_g": 2.3225806452,
+      "ast_g": 0.3548387097,
+      "stl_g": 0.5161290323,
+      "blk_g": 0.2258064516,
+      "tov_g": 0.6451612903,
+      "pf_g": 1.2258064516,
+      "pts_g": 4.2580645161
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jace-posey-1.html",
+  "last_scraped": "2025-11-01T00:41:35.638Z"
+}

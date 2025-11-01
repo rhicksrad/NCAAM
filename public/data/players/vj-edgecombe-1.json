@@ -1,0 +1,28 @@
+{
+  "slug": "vj-edgecombe-1",
+  "name": "V.J. Edgecombe",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Baylor",
+      "conf": "Big 12",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 32.7272727273,
+      "fg_pct": 0.4356955381,
+      "fg3_pct": 0.339869281,
+      "ft_pct": 0.7816901408,
+      "orb_g": 2.0303030303,
+      "drb_g": 3.5757575758,
+      "trb_g": 5.6060606061,
+      "ast_g": 3.2121212121,
+      "stl_g": 2.0606060606,
+      "blk_g": 0.6060606061,
+      "tov_g": 1.9393939394,
+      "pf_g": 2.5454545455,
+      "pts_g": 15
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/vj-edgecombe-1.html",
+  "last_scraped": "2025-11-01T00:57:22.999Z"
+}

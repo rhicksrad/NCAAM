@@ -1,0 +1,28 @@
+{
+  "slug": "jerry-huang-1",
+  "name": "Jerry Huang",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Utah",
+      "conf": "Big 12",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 2.1111111111,
+      "fg_pct": 0.4,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.1111111111,
+      "trb_g": 0.2222222222,
+      "ast_g": 0.1111111111,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jerry-huang-1.html",
+  "last_scraped": "2025-11-01T00:44:32.993Z"
+}

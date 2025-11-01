@@ -1,0 +1,48 @@
+{
+  "slug": "lukas-sotell-1",
+  "name": "Lukas Sotell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.25,
+      "trb_g": 0.25,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.5,
+      "pts_g": 0.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 1.3,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.3,
+      "trb_g": 0.3,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.3,
+      "pts_g": 0.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lukas-sotell-1.html",
+  "last_scraped": "2025-11-01T00:48:44.321Z"
+}

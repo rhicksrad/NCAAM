@@ -1,0 +1,28 @@
+{
+  "slug": "somto-cyril-1",
+  "name": "Somto Cyril",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 14,
+      "fg_pct": 0.6263736264,
+      "fg3_pct": 0,
+      "ft_pct": 0.4875,
+      "orb_g": 1.2424242424,
+      "drb_g": 2.5757575758,
+      "trb_g": 3.8181818182,
+      "ast_g": 0.5151515152,
+      "stl_g": 0.1818181818,
+      "blk_g": 1.5454545455,
+      "tov_g": 1.0909090909,
+      "pf_g": 2.0909090909,
+      "pts_g": 4.6363636364
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/somto-cyril-1.html",
+  "last_scraped": "2025-11-01T00:54:56.797Z"
+}

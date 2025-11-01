@@ -1,0 +1,48 @@
+{
+  "slug": "kevin-overton-2",
+  "name": "Kevin Overton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Drake",
+      "conf": "MVC",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 29.9142857143,
+      "fg_pct": 0.4397394137,
+      "fg3_pct": 0.3463687151,
+      "ft_pct": 0.7948717949,
+      "orb_g": 0.8,
+      "drb_g": 2.5428571429,
+      "trb_g": 3.3428571429,
+      "ast_g": 1.0857142857,
+      "stl_g": 0.6,
+      "blk_g": 0.1714285714,
+      "tov_g": 0.5142857143,
+      "pf_g": 2.2,
+      "pts_g": 11.2571428571
+    },
+    {
+      "season": "2024-25",
+      "team": "Texas Tech",
+      "conf": "Big 12",
+      "gp": 36,
+      "gs": 1,
+      "mp_g": 22.25,
+      "fg_pct": 0.4222222222,
+      "fg3_pct": 0.3305084746,
+      "ft_pct": 0.7794117647,
+      "orb_g": 0.8888888889,
+      "drb_g": 2.7777777778,
+      "trb_g": 3.6666666667,
+      "ast_g": 0.8888888889,
+      "stl_g": 0.5,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.9166666667,
+      "pf_g": 1.9166666667,
+      "pts_g": 7.8333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kevin-overton-2.html",
+  "last_scraped": "2025-11-01T00:47:20.369Z"
+}

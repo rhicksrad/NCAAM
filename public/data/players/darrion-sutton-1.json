@@ -1,0 +1,28 @@
+{
+  "slug": "darrion-sutton-1",
+  "name": "Darrion Sutton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 18,
+      "gs": 1,
+      "mp_g": 12,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2777777778,
+      "drb_g": 1.2777777778,
+      "trb_g": 1.5555555556,
+      "ast_g": 0.5555555556,
+      "stl_g": 0.2777777778,
+      "blk_g": 0.2777777778,
+      "tov_g": 0.2777777778,
+      "pf_g": 1.2222222222,
+      "pts_g": 1.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/darrion-sutton-1.html",
+  "last_scraped": "2025-11-01T00:36:18.531Z"
+}

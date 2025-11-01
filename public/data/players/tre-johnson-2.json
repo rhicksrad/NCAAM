@@ -1,0 +1,28 @@
+{
+  "slug": "tre-johnson-2",
+  "name": "Tre Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Texas",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 34.696969697,
+      "fg_pct": 0.4266666667,
+      "fg3_pct": 0.3973214286,
+      "ft_pct": 0.8705035971,
+      "orb_g": 0.3333333333,
+      "drb_g": 2.7878787879,
+      "trb_g": 3.1212121212,
+      "ast_g": 2.7272727273,
+      "stl_g": 0.9393939394,
+      "blk_g": 0.303030303,
+      "tov_g": 1.8181818182,
+      "pf_g": 2.0909090909,
+      "pts_g": 19.9393939394
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tre-johnson-2.html",
+  "last_scraped": "2025-11-01T00:56:16.617Z"
+}

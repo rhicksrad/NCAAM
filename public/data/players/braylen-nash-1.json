@@ -1,0 +1,28 @@
+{
+  "slug": "braylen-nash-1",
+  "name": "Braylen Nash",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Ohio State",
+      "conf": "Big Ten",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 1.5555555556,
+      "fg_pct": 1,
+      "fg3_pct": 1,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.1111111111,
+      "pf_g": 0.1111111111,
+      "pts_g": 0.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/braylen-nash-1.html",
+  "last_scraped": "2025-11-01T00:32:15.777Z"
+}

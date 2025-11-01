@@ -18,11 +18,97 @@ const teamSlugsEnv = process.env.CBB_TEAMS
   : null;
 const TEAM_SLUG_FILTER = teamSlugsEnv && teamSlugsEnv.length > 0 ? new Set(teamSlugsEnv) : null;
 
+const POWER_CONFERENCE_TEAM_MAP = new Map<string, { conference: string; name: string }>([
+  ["alabama", { conference: "SEC", name: "Alabama" }],
+  ["arizona", { conference: "B12", name: "Arizona" }],
+  ["arizona-state", { conference: "B12", name: "Arizona State" }],
+  ["arkansas", { conference: "SEC", name: "Arkansas" }],
+  ["auburn", { conference: "SEC", name: "Auburn" }],
+  ["baylor", { conference: "B12", name: "Baylor" }],
+  ["boston-college", { conference: "ACC", name: "Boston College" }],
+  ["brigham-young", { conference: "B12", name: "Brigham Young" }],
+  ["butler", { conference: "BE", name: "Butler" }],
+  ["california", { conference: "ACC", name: "California" }],
+  ["central-florida", { conference: "B12", name: "UCF" }],
+  ["cincinnati", { conference: "B12", name: "Cincinnati" }],
+  ["clemson", { conference: "ACC", name: "Clemson" }],
+  ["colorado", { conference: "B12", name: "Colorado" }],
+  ["connecticut", { conference: "BE", name: "Connecticut" }],
+  ["creighton", { conference: "BE", name: "Creighton" }],
+  ["depaul", { conference: "BE", name: "DePaul" }],
+  ["duke", { conference: "ACC", name: "Duke" }],
+  ["florida", { conference: "SEC", name: "Florida" }],
+  ["florida-state", { conference: "ACC", name: "Florida State" }],
+  ["georgetown", { conference: "BE", name: "Georgetown" }],
+  ["georgia", { conference: "SEC", name: "Georgia" }],
+  ["georgia-tech", { conference: "ACC", name: "Georgia Tech" }],
+  ["houston", { conference: "B12", name: "Houston" }],
+  ["illinois", { conference: "B10", name: "Illinois" }],
+  ["indiana", { conference: "B10", name: "Indiana" }],
+  ["iowa", { conference: "B10", name: "Iowa" }],
+  ["iowa-state", { conference: "B12", name: "Iowa State" }],
+  ["kansas", { conference: "B12", name: "Kansas" }],
+  ["kansas-state", { conference: "B12", name: "Kansas State" }],
+  ["kentucky", { conference: "SEC", name: "Kentucky" }],
+  ["louisiana-state", { conference: "SEC", name: "Louisiana State" }],
+  ["louisville", { conference: "ACC", name: "Louisville" }],
+  ["marquette", { conference: "BE", name: "Marquette" }],
+  ["maryland", { conference: "B10", name: "Maryland" }],
+  ["miami-fl", { conference: "ACC", name: "Miami (FL)" }],
+  ["michigan", { conference: "B10", name: "Michigan" }],
+  ["michigan-state", { conference: "B10", name: "Michigan State" }],
+  ["minnesota", { conference: "B10", name: "Minnesota" }],
+  ["mississippi", { conference: "SEC", name: "Mississippi" }],
+  ["mississippi-state", { conference: "SEC", name: "Mississippi State" }],
+  ["missouri", { conference: "SEC", name: "Missouri" }],
+  ["nebraska", { conference: "B10", name: "Nebraska" }],
+  ["north-carolina", { conference: "ACC", name: "North Carolina" }],
+  ["north-carolina-state", { conference: "ACC", name: "NC State" }],
+  ["northwestern", { conference: "B10", name: "Northwestern" }],
+  ["notre-dame", { conference: "ACC", name: "Notre Dame" }],
+  ["ohio-state", { conference: "B10", name: "Ohio State" }],
+  ["oklahoma", { conference: "SEC", name: "Oklahoma" }],
+  ["oklahoma-state", { conference: "B12", name: "Oklahoma State" }],
+  ["oregon", { conference: "B10", name: "Oregon" }],
+  ["oregon-state", { conference: "P12", name: "Oregon State" }],
+  ["penn-state", { conference: "B10", name: "Penn State" }],
+  ["pittsburgh", { conference: "ACC", name: "Pittsburgh" }],
+  ["providence", { conference: "BE", name: "Providence" }],
+  ["purdue", { conference: "B10", name: "Purdue" }],
+  ["rutgers", { conference: "B10", name: "Rutgers" }],
+  ["seton-hall", { conference: "BE", name: "Seton Hall" }],
+  ["south-carolina", { conference: "SEC", name: "South Carolina" }],
+  ["southern-california", { conference: "B10", name: "Southern California" }],
+  ["southern-methodist", { conference: "ACC", name: "Southern Methodist" }],
+  ["st-johns-ny", { conference: "BE", name: "St. John's (NY)" }],
+  ["stanford", { conference: "ACC", name: "Stanford" }],
+  ["syracuse", { conference: "ACC", name: "Syracuse" }],
+  ["tennessee", { conference: "SEC", name: "Tennessee" }],
+  ["texas", { conference: "SEC", name: "Texas" }],
+  ["texas-am", { conference: "SEC", name: "Texas A&M" }],
+  ["texas-christian", { conference: "B12", name: "TCU" }],
+  ["texas-tech", { conference: "B12", name: "Texas Tech" }],
+  ["ucla", { conference: "B10", name: "UCLA" }],
+  ["utah", { conference: "B12", name: "Utah" }],
+  ["vanderbilt", { conference: "SEC", name: "Vanderbilt" }],
+  ["villanova", { conference: "BE", name: "Villanova" }],
+  ["virginia", { conference: "ACC", name: "Virginia" }],
+  ["virginia-tech", { conference: "ACC", name: "Virginia Tech" }],
+  ["wake-forest", { conference: "ACC", name: "Wake Forest" }],
+  ["washington", { conference: "B10", name: "Washington" }],
+  ["washington-state", { conference: "P12", name: "Washington State" }],
+  ["west-virginia", { conference: "B12", name: "West Virginia" }],
+  ["wisconsin", { conference: "B10", name: "Wisconsin" }],
+  ["xavier", { conference: "BE", name: "Xavier" }],
+]);
+
 type TeamListing = {
   year: number;
   name: string;
   url: string;
   slug: string;
+  conference?: string;
+  conference_name?: string;
 };
 
 type PlayerIndexEntry = {
@@ -35,6 +121,7 @@ type PlayerIndexEntry = {
   team_slug: string;
   name_key: string;
   team_key: string;
+  conference?: string;
 };
 
 type PlayerIndexDocument = {
@@ -58,6 +145,29 @@ function seasonLabelFromYear(year: number): string {
   const start = year - 1;
   const end = String(year).slice(-2);
   return `${start}-${end}`;
+}
+
+function cleanConference(value: string | undefined | null): string | undefined {
+  const trimmed = (value ?? "").trim();
+  if (!trimmed) return undefined;
+  return trimmed.toUpperCase();
+}
+
+function cleanConferenceName(value: string | undefined | null): string | undefined {
+  const trimmed = (value ?? "").replace(/\s+/g, " ").trim();
+  if (!trimmed) return undefined;
+  return trimmed;
+}
+
+function parseConferenceFilter(): Set<string> | null {
+  const raw = process.env.CBB_CONFERENCES;
+  if (!raw) return null;
+  const values = raw
+    .split(/[\s,]+/)
+    .map(value => value.trim().toUpperCase())
+    .filter(Boolean);
+  if (!values.length) return null;
+  return new Set(values);
 }
 
 function cleanTeamName(raw: string): string {
@@ -94,9 +204,13 @@ async function fetchSeasonTeams(year: number): Promise<TeamListing[]> {
   const html = await fetchHtml(seasonUrl);
   const $ = cheerio.load(html);
   const teams = new Map<string, TeamListing>();
-  $("td[data-stat='school_name'] a").each((_, element) => {
-    const href = $(element).attr("href");
-    const name = $(element).text().trim();
+  $("#basic_school_stats tbody tr").each((_, row) => {
+    const anchor = $(row).find("td[data-stat='school_name'] a");
+    if (!anchor.length) {
+      return;
+    }
+    const href = anchor.attr("href");
+    const name = anchor.text().trim();
     if (!href || !name) {
       return;
     }
@@ -106,7 +220,10 @@ async function fetchSeasonTeams(year: number): Promise<TeamListing[]> {
     }
     const slug = match[1];
     const url = new URL(href, BASE_URL).toString();
-    teams.set(slug, { year, name, url, slug });
+    const meta = POWER_CONFERENCE_TEAM_MAP.get(slug);
+    const conference = meta?.conference ?? cleanConference($(row).find("td[data-stat='conf_abbr']").text());
+    const conferenceName = meta?.name ?? cleanConferenceName($(row).find("td[data-stat='conf_name']").text());
+    teams.set(slug, { year, name, url, slug, conference, conference_name: conferenceName });
   });
   return Array.from(teams.values());
 }
@@ -157,6 +274,7 @@ async function fetchTeamRoster(listing: TeamListing): Promise<PlayerIndexEntry[]
     }
     const slug = slugMatch[1];
     const url = new URL(href, BASE_URL).toString();
+    const meta = POWER_CONFERENCE_TEAM_MAP.get(listing.slug);
     players.push({
       name,
       team,
@@ -167,6 +285,7 @@ async function fetchTeamRoster(listing: TeamListing): Promise<PlayerIndexEntry[]
       team_slug: listing.slug,
       name_key: normaliseName(name),
       team_key: normaliseTeam(team),
+      conference: listing.conference ?? meta?.conference ?? undefined,
     });
   });
 
@@ -191,6 +310,10 @@ async function main(): Promise<void> {
   const seasons = parseSeasonArgs();
   console.log(`Building College Basketball Reference index for seasons: ${seasons.join(", ")}`);
   console.log(`Roster fetch concurrency: ${CONCURRENCY}`);
+  const conferenceFilter = parseConferenceFilter();
+  if (conferenceFilter) {
+    console.log(`Restricting to conferences: ${Array.from(conferenceFilter.values()).join(", ")}`);
+  }
 
   const playerMap = new Map<string, PlayerIndexEntry>();
   const seasonLabels = new Set<string>();
@@ -198,8 +321,17 @@ async function main(): Promise<void> {
   for (const year of seasons) {
     const teams = await fetchSeasonTeams(year);
     let filteredTeams = teams;
+    if (conferenceFilter) {
+      filteredTeams = filteredTeams.filter(team => {
+        if (!team.conference) return false;
+        return conferenceFilter.has(team.conference);
+      });
+      console.log(
+        `Identified ${filteredTeams.length} power-conference teams out of ${teams.length} for ${year}.`,
+      );
+    }
     if (TEAM_SLUG_FILTER) {
-      filteredTeams = teams.filter(team => TEAM_SLUG_FILTER!.has(team.slug));
+      filteredTeams = filteredTeams.filter(team => TEAM_SLUG_FILTER!.has(team.slug));
     }
     const teamList =
       TEAM_LIMIT && TEAM_LIMIT > 0

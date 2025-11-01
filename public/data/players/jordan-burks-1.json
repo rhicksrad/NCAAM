@@ -1,0 +1,48 @@
+{
+  "slug": "jordan-burks-1",
+  "name": "Jordan Burks",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kentucky",
+      "conf": "SEC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 7.15,
+      "fg_pct": 0.6,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.45,
+      "drb_g": 1.2,
+      "trb_g": 1.65,
+      "ast_g": 0.25,
+      "stl_g": 0.15,
+      "blk_g": 0.2,
+      "tov_g": 0.25,
+      "pf_g": 1.2,
+      "pts_g": 1.85
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 11,
+      "mp_g": 18.6176470588,
+      "fg_pct": 0.5205479452,
+      "fg3_pct": 0.3555555556,
+      "ft_pct": 0.6842105263,
+      "orb_g": 1.2058823529,
+      "drb_g": 2.2352941176,
+      "trb_g": 3.4411764706,
+      "ast_g": 0.6176470588,
+      "stl_g": 0.7647058824,
+      "blk_g": 0.5,
+      "tov_g": 0.6176470588,
+      "pf_g": 1.7352941176,
+      "pts_g": 5.7058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jordan-burks-1.html",
+  "last_scraped": "2025-11-01T00:45:06.251Z"
+}

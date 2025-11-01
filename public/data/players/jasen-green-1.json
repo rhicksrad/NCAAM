@@ -1,0 +1,48 @@
+{
+  "slug": "jasen-green-1",
+  "name": "Jasen Green",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 7.16,
+      "fg_pct": 0.6538461538,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.5,
+      "orb_g": 0.92,
+      "drb_g": 0.8,
+      "trb_g": 1.72,
+      "ast_g": 0.28,
+      "stl_g": 0.04,
+      "blk_g": 0.04,
+      "tov_g": 0.32,
+      "pf_g": 0.36,
+      "pts_g": 1.56
+    },
+    {
+      "season": "2024-25",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 36,
+      "gs": 25,
+      "mp_g": 20.3333333333,
+      "fg_pct": 0.5573770492,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.6590909091,
+      "orb_g": 1.0833333333,
+      "drb_g": 2.1388888889,
+      "trb_g": 3.2222222222,
+      "ast_g": 1.0277777778,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.4444444444,
+      "tov_g": 0.9166666667,
+      "pf_g": 0.8611111111,
+      "pts_g": 4.9166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jasen-green-1.html",
+  "last_scraped": "2025-11-01T00:43:30.023Z"
+}

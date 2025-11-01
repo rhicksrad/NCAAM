@@ -1,0 +1,48 @@
+{
+  "slug": "myles-rice-1",
+  "name": "Myles Rice",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Washington State",
+      "conf": "Pac-12",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 33.1714285714,
+      "fg_pct": 0.4387990762,
+      "fg3_pct": 0.2748091603,
+      "ft_pct": 0.811023622,
+      "orb_g": 0.4285714286,
+      "drb_g": 2.6571428571,
+      "trb_g": 3.0857142857,
+      "ast_g": 3.8285714286,
+      "stl_g": 1.6,
+      "blk_g": 0.1714285714,
+      "tov_g": 2.5714285714,
+      "pf_g": 2.7428571429,
+      "pts_g": 14.8285714286
+    },
+    {
+      "season": "2024-25",
+      "team": "Indiana",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 25,
+      "mp_g": 27.4375,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.3253012048,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.4375,
+      "drb_g": 2.3125,
+      "trb_g": 2.75,
+      "ast_g": 2.75,
+      "stl_g": 1,
+      "blk_g": 0.09375,
+      "tov_g": 2.15625,
+      "pf_g": 2.59375,
+      "pts_g": 10.09375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/myles-rice-1.html",
+  "last_scraped": "2025-11-01T00:51:06.808Z"
+}

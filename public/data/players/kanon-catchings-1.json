@@ -1,0 +1,28 @@
+{
+  "slug": "kanon-catchings-1",
+  "name": "Kanon Catchings",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Brigham Young",
+      "conf": "Big 12",
+      "gp": 31,
+      "gs": 15,
+      "mp_g": 17.3548387097,
+      "fg_pct": 0.4108108108,
+      "fg3_pct": 0.3495934959,
+      "ft_pct": 0.5869565217,
+      "orb_g": 0.6129032258,
+      "drb_g": 1.5483870968,
+      "trb_g": 2.1612903226,
+      "ast_g": 0.6774193548,
+      "stl_g": 0.5806451613,
+      "blk_g": 0.4193548387,
+      "tov_g": 0.7741935484,
+      "pf_g": 1.1935483871,
+      "pts_g": 7.1612903226
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kanon-catchings-1.html",
+  "last_scraped": "2025-11-01T00:46:41.146Z"
+}

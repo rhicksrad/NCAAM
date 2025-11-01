@@ -1,0 +1,48 @@
+{
+  "slug": "isaiah-sy-1",
+  "name": "Isaiah Sy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - juco",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Oregon State",
+      "conf": "WCC",
+      "gp": 33,
+      "gs": 7,
+      "mp_g": 18.4545454545,
+      "fg_pct": 0.4121621622,
+      "fg3_pct": 0.3418803419,
+      "ft_pct": 0.8064516129,
+      "orb_g": 0.4848484848,
+      "drb_g": 1.4545454545,
+      "trb_g": 1.9393939394,
+      "ast_g": 0.9393939394,
+      "stl_g": 0.303030303,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.6060606061,
+      "pf_g": 1.6666666667,
+      "pts_g": 5.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-sy-1.html",
+  "last_scraped": "2025-11-01T00:41:07.745Z"
+}

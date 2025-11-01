@@ -1,0 +1,48 @@
+{
+  "slug": "berke-buyuktuncel-1",
+  "name": "Berke Buyuktuncel",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UCLA",
+      "conf": "Pac-12",
+      "gp": 26,
+      "gs": 8,
+      "mp_g": 16.3461538462,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.2972972973,
+      "ft_pct": 0.6279069767,
+      "orb_g": 0.9230769231,
+      "drb_g": 1.5769230769,
+      "trb_g": 2.5,
+      "ast_g": 0.4230769231,
+      "stl_g": 0.1538461538,
+      "blk_g": 0.3461538462,
+      "tov_g": 0.8461538462,
+      "pf_g": 2.2307692308,
+      "pts_g": 4.5384615385
+    },
+    {
+      "season": "2024-25",
+      "team": "Nebraska",
+      "conf": "Big Ten",
+      "gp": 31,
+      "gs": 28,
+      "mp_g": 22.6774193548,
+      "fg_pct": 0.4011627907,
+      "fg3_pct": 0.2771084337,
+      "ft_pct": 0.65,
+      "orb_g": 1.3870967742,
+      "drb_g": 4.064516129,
+      "trb_g": 5.4516129032,
+      "ast_g": 1.3870967742,
+      "stl_g": 0.8064516129,
+      "blk_g": 0.6451612903,
+      "tov_g": 1.2258064516,
+      "pf_g": 2.3870967742,
+      "pts_g": 6.0322580645
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/berke-buyuktuncel-1.html",
+  "last_scraped": "2025-11-01T00:31:29.530Z"
+}

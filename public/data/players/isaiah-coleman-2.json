@@ -1,0 +1,48 @@
+{
+  "slug": "isaiah-coleman-2",
+  "name": "Isaiah Coleman",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 3,
+      "mp_g": 18.2424242424,
+      "fg_pct": 0.4748201439,
+      "fg3_pct": 0.3111111111,
+      "ft_pct": 0.7173913043,
+      "orb_g": 0.5454545455,
+      "drb_g": 2.0303030303,
+      "trb_g": 2.5757575758,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.7575757576,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.9090909091,
+      "pf_g": 1.8484848485,
+      "pts_g": 5.4242424242
+    },
+    {
+      "season": "2024-25",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 30,
+      "gs": 29,
+      "mp_g": 33.6666666667,
+      "fg_pct": 0.3886255924,
+      "fg3_pct": 0.2945736434,
+      "ft_pct": 0.7611940299,
+      "orb_g": 1.6333333333,
+      "drb_g": 3.6666666667,
+      "trb_g": 5.3,
+      "ast_g": 1.7,
+      "stl_g": 1.5,
+      "blk_g": 0.1333333333,
+      "tov_g": 2,
+      "pf_g": 2.1,
+      "pts_g": 15.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-coleman-2.html",
+  "last_scraped": "2025-11-01T00:40:58.455Z"
+}
