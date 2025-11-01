@@ -795,9 +795,14 @@ html[data-theme="dark"] .teams-map__tooltip {
   gap: var(--space-sm);
   padding: var(--space-md);
   border-radius: var(--radius-card);
-  background: color-mix(in oklab, var(--color-cream) 96%, transparent);
-  border: 1px solid color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 20%, transparent);
-  box-shadow: 0 18px 32px color-mix(in oklab, var(--leaderboard-card-color, var(--color-ink)) 10%, transparent);
+  background: linear-gradient(
+    140deg,
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 20%, transparent) 0%,
+    color-mix(in oklab, var(--color-cream) 96%, transparent) 42%,
+    color-mix(in oklab, var(--color-cream) 99%, transparent) 100%
+  );
+  border: 1px solid color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 18%, transparent);
+  box-shadow: 0 18px 32px color-mix(in oklab, var(--leaderboard-card-color, var(--color-ink)) 12%, transparent);
   overflow: hidden;
 }
 
@@ -821,6 +826,15 @@ html[data-theme="dark"] .teams-map__tooltip {
   padding-block-start: var(--space-2xs);
 }
 
+.player-leaderboard__card-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 80%, var(--color-ink) 20%);
+}
+
 .player-leaderboard__card-title {
   margin: 0;
   font-size: clamp(1.15rem, 1rem + 0.4vw, 1.4rem);
@@ -841,6 +855,53 @@ html[data-theme="dark"] .teams-map__tooltip {
   color: color-mix(in oklab, var(--color-steel) 78%, var(--color-ink) 22%);
 }
 
+.player-leaderboard__body {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.player-leaderboard__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-leaderboard__view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0.2rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 15%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 18%, transparent);
+}
+
+.player-leaderboard__view-button {
+  border: 0;
+  background: transparent;
+  color: color-mix(in oklab, var(--color-steel) 70%, var(--color-ink) 30%);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  padding: 0.35rem 0.65rem;
+  border-radius: calc(var(--radius-pill) - 4px);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.player-leaderboard__view-button:hover,
+.player-leaderboard__view-button:focus-visible {
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 70%, var(--color-ink) 30%);
+}
+
+.player-leaderboard__view-button.is-active {
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 24%, transparent);
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 85%, white 15%);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, white 55%, transparent);
+}
+
 .player-leaderboard__list {
   list-style: none;
   margin: 0;
@@ -853,9 +914,10 @@ html[data-theme="dark"] .teams-map__tooltip {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: var(--space-xs);
+  grid-template-rows: auto auto;
+  gap: 0.35rem var(--space-xs);
   align-items: center;
-  padding: 0.4rem 0.75rem;
+  padding: 0.6rem 0.75rem 0.5rem;
   border-radius: var(--radius-pill);
   overflow: hidden;
   isolation: isolate;
@@ -886,8 +948,40 @@ html[data-theme="dark"] .teams-map__tooltip {
   pointer-events: none;
 }
 
+.player-leaderboard__bar {
+  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  height: 0.55rem;
+  border-radius: calc(var(--radius-pill) - 6px);
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 12%, transparent);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.player-leaderboard__bar-segment {
+  flex: 0 0 auto;
+  width: 0%;
+  height: 100%;
+  background: color-mix(in oklab, var(--leaderboard-segment-color, var(--leaderboard-card-color, var(--color-arc))) 78%, transparent);
+  transition: width 180ms ease, opacity 180ms ease;
+  opacity: 0.35;
+}
+
+.player-leaderboard__bar-segment--active {
+  opacity: 1;
+}
+
+.player-leaderboard__bar-segment--hidden {
+  opacity: 0;
+}
+
 .player-leaderboard__rank {
   position: relative;
+  grid-row: 2;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   font-size: 1.05rem;
@@ -897,6 +991,7 @@ html[data-theme="dark"] .teams-map__tooltip {
 
 .player-leaderboard__info {
   position: relative;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -921,9 +1016,45 @@ html[data-theme="dark"] .teams-map__tooltip {
 
 .player-leaderboard__value {
   position: relative;
+  grid-row: 2;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  font-size: 1rem;
   z-index: 1;
+}
+
+.player-leaderboard__legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.player-leaderboard__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: color-mix(in oklab, var(--color-steel) 70%, var(--color-ink) 30%);
+}
+
+.player-leaderboard__legend-item.is-active {
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 75%, var(--color-ink) 25%);
+}
+
+.player-leaderboard__legend-swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: var(--leaderboard-legend-color, currentColor);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-cream) 80%, transparent);
+}
+
+.player-leaderboard__legend-label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .player-leaderboard__status {
@@ -951,9 +1082,18 @@ html[data-theme="dark"] .teams-map__tooltip {
 }
 
 [data-theme="dark"] .player-leaderboard__card {
-  background: color-mix(in oklab, var(--color-slate) 80%, transparent);
-  border-color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 30%, transparent);
+  background: linear-gradient(
+    140deg,
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 24%, transparent) 0%,
+    color-mix(in oklab, var(--color-slate) 78%, transparent) 48%,
+    color-mix(in oklab, var(--color-slate) 85%, transparent) 100%
+  );
+  border-color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 35%, transparent);
   box-shadow: 0 18px 32px color-mix(in oklab, black 45%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__card-kicker {
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 70%, white 30%);
 }
 
 [data-theme="dark"] .player-leaderboard__item::before {
@@ -962,6 +1102,38 @@ html[data-theme="dark"] .teams-map__tooltip {
 
 [data-theme="dark"] .player-leaderboard__item::after {
   opacity: 0.25;
+}
+
+[data-theme="dark"] .player-leaderboard__view-toggle {
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 28%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, white 12%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__view-button {
+  color: color-mix(in oklab, white 75%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__view-button:hover,
+[data-theme="dark"] .player-leaderboard__view-button:focus-visible {
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 60%, white 40%);
+}
+
+[data-theme="dark"] .player-leaderboard__view-button.is-active {
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 40%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, white 35%, transparent);
+  color: color-mix(in oklab, white 85%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__legend-item {
+  color: color-mix(in oklab, white 70%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__legend-item.is-active {
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 65%, white 35%);
+}
+
+[data-theme="dark"] .player-leaderboard__legend-swatch {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-slate) 40%, transparent);
 }
 
 [data-theme="dark"] .player-leaderboard__status {
