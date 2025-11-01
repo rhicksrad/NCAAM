@@ -27,10 +27,14 @@ jobs:
           corepack prepare pnpm@9.0.0 --activate
       - name: Install deps
         run: pnpm install --frozen-lockfile
-      - name: Build College Basketball Reference data
-        run: pnpm run build:data:bbr
       - name: Build site
-        run: pnpm run build
+        run: |
+          pnpm run clean
+          pnpm run prepare:logos
+          pnpm run build:ts
+          pnpm run build:pages
+          python3 scripts/build_site.py || true
+          pnpm run build:sitemap
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
