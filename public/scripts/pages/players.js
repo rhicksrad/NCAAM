@@ -23,6 +23,18 @@ const LEADERBOARD_COLOR_PALETTE = [
     "#ec4899",
     "#14b8a6",
 ];
+const LEADERBOARD_DEFAULT_MINIMUM_SAMPLE_SIZE = 10;
+const LEADERBOARD_MINIMUM_SAMPLE_SIZE = {
+    mp: 12,
+    fgPct: 15,
+    fg3Pct: 15,
+    ftPct: 15,
+    rebounds: 12,
+    assists: 12,
+    stocks: 12,
+    turnovers: 12,
+    points: 12,
+};
 function decorateAvatar(el, team) {
     const logoUrl = getTeamLogoUrl(team);
     el.innerHTML = "";
@@ -568,6 +580,23 @@ function renderPlayerLeaderboards(container, doc) {
     }
     container.append(grid);
 }
+function getLeaderboardMinimumSample(metricId) {
+    const raw = LEADERBOARD_MINIMUM_SAMPLE_SIZE[metricId];
+    if (typeof raw === "number" && Number.isFinite(raw) && raw >= 0) {
+        return raw;
+    }
+    return LEADERBOARD_DEFAULT_MINIMUM_SAMPLE_SIZE;
+}
+function leaderboardEntryMeetsMinimumSample(entry, minimumGames) {
+    if (minimumGames <= 0) {
+        return true;
+    }
+    const games = entry.games;
+    if (typeof games !== "number" || !Number.isFinite(games)) {
+        return false;
+    }
+    return games >= minimumGames;
+}
 function createLeaderboardCard(metricId, metric, accentColor) {
     const card = document.createElement("article");
     card.className = "player-leaderboard__card";
@@ -582,18 +611,38 @@ function createLeaderboardCard(metricId, metric, accentColor) {
     subtitle.textContent = metric.label || metric.shortLabel || metricId;
     header.append(title, subtitle);
     card.append(header);
-    const list = document.createElement("ol");
-    list.className = "player-leaderboard__list";
-    list.setAttribute("role", "list");
-    const leaders = metric.leaders.filter(isValidLeaderboardEntry).slice(0, 10);
+    const minimumGames = getLeaderboardMinimumSample(metricId);
+    if (minimumGames > 0) {
+        const note = document.createElement("p");
+        note.className = "player-leaderboard__note";
+        note.textContent = `Minimum ${minimumGames} games played`;
+        card.append(note);
+    }
+    const leaders = metric.leaders
+        .filter(isValidLeaderboardEntry)
+        .filter(leader => leaderboardEntryMeetsMinimumSample(leader, minimumGames))
+        .slice(0, 10);
+    if (leaders.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "player-leaderboard__status player-leaderboard__status--empty";
+        empty.textContent =
+            minimumGames > 0
+                ? `No players meet the minimum ${minimumGames}-game requirement yet.`
+                : "No data available.";
+        card.append(empty);
+        return card;
+    }
     const maxValue = leaders.reduce((max, leader) => Math.max(max, leader.value), 0);
-    if (leaders.length === 0 || maxValue <= 0) {
+    if (maxValue <= 0) {
         const empty = document.createElement("p");
         empty.className = "player-leaderboard__status player-leaderboard__status--empty";
         empty.textContent = "No data available.";
         card.append(empty);
         return card;
     }
+    const list = document.createElement("ol");
+    list.className = "player-leaderboard__list";
+    list.setAttribute("role", "list");
     leaders.forEach((leader, index) => {
         list.append(createLeaderboardListItem(metricId, leader, index, maxValue));
     });
