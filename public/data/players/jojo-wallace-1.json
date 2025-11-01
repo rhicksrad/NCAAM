@@ -1,0 +1,28 @@
+{
+  "slug": "jojo-wallace-1",
+  "name": "JoJo Wallace",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Iona",
+      "conf": "MAAC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 6.5833333333,
+      "fg_pct": 0.2972972973,
+      "fg3_pct": 0.1333333333,
+      "ft_pct": null,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.4166666667,
+      "trb_g": 0.5833333333,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5833333333,
+      "pf_g": 0.0833333333,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jojo-wallace-1.html",
+  "last_scraped": "2025-11-01T15:01:17.636Z"
+}

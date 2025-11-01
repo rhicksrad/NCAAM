@@ -1,0 +1,48 @@
+{
+  "slug": "donovan-hunter-1",
+  "name": "Donovan Hunter",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kent State",
+      "conf": "MAC",
+      "gp": 16,
+      "gs": 1,
+      "mp_g": 5.5625,
+      "fg_pct": 0.3181818182,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": null,
+      "orb_g": 0.25,
+      "drb_g": 0.6875,
+      "trb_g": 0.9375,
+      "ast_g": 0.1875,
+      "stl_g": 0.125,
+      "blk_g": 0.0625,
+      "tov_g": 0.3125,
+      "pf_g": 1.0625,
+      "pts_g": 1.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Kent State",
+      "conf": "MAC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 4.1,
+      "fg_pct": 0.2777777778,
+      "fg3_pct": 0.2307692308,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.3,
+      "trb_g": 0.3,
+      "ast_g": 0.1,
+      "stl_g": 0.4,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.5,
+      "pts_g": 1.3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/donovan-hunter-1.html",
+  "last_scraped": "2025-11-01T15:06:06.208Z"
+}

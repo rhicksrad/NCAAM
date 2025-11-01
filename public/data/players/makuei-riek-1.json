@@ -1,0 +1,48 @@
+{
+  "slug": "makuei-riek-1",
+  "name": "Makuei Riek",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Fairfield",
+      "conf": "MAAC",
+      "gp": 19,
+      "gs": 2,
+      "mp_g": 6.8947368421,
+      "fg_pct": 0.3076923077,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.25,
+      "orb_g": 0.0526315789,
+      "drb_g": 0.7894736842,
+      "trb_g": 0.8421052632,
+      "ast_g": 0.4736842105,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.1052631579,
+      "tov_g": 0.4210526316,
+      "pf_g": 0.8421052632,
+      "pts_g": 2.1578947368
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/makuei-riek-1.html",
+  "last_scraped": "2025-11-01T15:01:28.506Z"
+}

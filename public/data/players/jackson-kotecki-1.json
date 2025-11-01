@@ -1,0 +1,48 @@
+{
+  "slug": "jackson-kotecki-1",
+  "name": "Jackson Kotecki",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Miami (OH)",
+      "conf": "MAC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7.5238095238,
+      "fg_pct": 0.5227272727,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.6296296296,
+      "orb_g": 0.619047619,
+      "drb_g": 0.8095238095,
+      "trb_g": 1.4285714286,
+      "ast_g": 0.1904761905,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.1904761905,
+      "tov_g": 0.619047619,
+      "pf_g": 1.2857142857,
+      "pts_g": 3.1904761905
+    },
+    {
+      "season": "2024-25",
+      "team": "Miami (OH)",
+      "conf": "MAC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 6.1176470588,
+      "fg_pct": 0.347826087,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.5,
+      "orb_g": 0.2941176471,
+      "drb_g": 1,
+      "trb_g": 1.2941176471,
+      "ast_g": 0.2352941176,
+      "stl_g": 0.1176470588,
+      "blk_g": 0.1764705882,
+      "tov_g": 0.5882352941,
+      "pf_g": 0.8823529412,
+      "pts_g": 1.3529411765
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jackson-kotecki-1.html",
+  "last_scraped": "2025-11-01T15:06:17.227Z"
+}

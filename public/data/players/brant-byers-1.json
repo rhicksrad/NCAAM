@@ -1,0 +1,48 @@
+{
+  "slug": "brant-byers-1",
+  "name": "Brant Byers",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Miami (OH)",
+      "conf": "MAC",
+      "gp": 34,
+      "gs": 1,
+      "mp_g": 17.5882352941,
+      "fg_pct": 0.4948453608,
+      "fg3_pct": 0.4140625,
+      "ft_pct": 0.75,
+      "orb_g": 0.4705882353,
+      "drb_g": 2.3235294118,
+      "trb_g": 2.7941176471,
+      "ast_g": 0.5,
+      "stl_g": 0.5588235294,
+      "blk_g": 0.3529411765,
+      "tov_g": 0.4705882353,
+      "pf_g": 1.5588235294,
+      "pts_g": 8.4411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brant-byers-1.html",
+  "last_scraped": "2025-11-01T15:05:54.672Z"
+}

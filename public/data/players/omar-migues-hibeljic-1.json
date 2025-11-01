@@ -1,0 +1,28 @@
+{
+  "slug": "omar-migues-hibeljic-1",
+  "name": "Omar Migues-Hibeljić",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 8.125,
+      "fg_pct": 0.380952381,
+      "fg3_pct": 0.3684210526,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.0625,
+      "drb_g": 0.5625,
+      "trb_g": 0.625,
+      "ast_g": 0.375,
+      "stl_g": 0.375,
+      "blk_g": 0.0625,
+      "tov_g": 0.5,
+      "pf_g": 0.375,
+      "pts_g": 2.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/omar-migues-hibeljic-1.html",
+  "last_scraped": "2025-11-01T15:06:46.156Z"
+}

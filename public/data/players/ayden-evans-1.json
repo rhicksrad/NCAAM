@@ -1,0 +1,28 @@
+{
+  "slug": "ayden-evans-1",
+  "name": "Ayden Evans",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Ohio",
+      "conf": "MAC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 6.0625,
+      "fg_pct": 0.4666666667,
+      "fg3_pct": 0,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.125,
+      "drb_g": 0.75,
+      "trb_g": 0.875,
+      "ast_g": 0.0625,
+      "stl_g": 0.0625,
+      "blk_g": 0.3125,
+      "tov_g": 0.5625,
+      "pf_g": 1,
+      "pts_g": 1.1875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ayden-evans-1.html",
+  "last_scraped": "2025-11-01T15:05:48.540Z"
+}

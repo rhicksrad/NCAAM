@@ -1,0 +1,28 @@
+{
+  "slug": "eric-morgan-jr-1",
+  "name": "Eric Morgan Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Peter's",
+      "conf": "MAAC",
+      "gp": 23,
+      "gs": 3,
+      "mp_g": 8.4347826087,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7,
+      "orb_g": 0.2173913043,
+      "drb_g": 0.4347826087,
+      "trb_g": 0.652173913,
+      "ast_g": 0.4782608696,
+      "stl_g": 0.3913043478,
+      "blk_g": 0.0434782609,
+      "tov_g": 0.3043478261,
+      "pf_g": 0.9130434783,
+      "pts_g": 2.652173913
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eric-morgan-jr-1.html",
+  "last_scraped": "2025-11-01T15:00:58.942Z"
+}

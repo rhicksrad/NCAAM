@@ -1,0 +1,48 @@
+{
+  "slug": "cayden-vasko-1",
+  "name": "Cayden Vasko",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Central Michigan",
+      "conf": "MAC",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 22.125,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.2535211268,
+      "ft_pct": 0.5238095238,
+      "orb_g": 0.75,
+      "drb_g": 2.3125,
+      "trb_g": 3.0625,
+      "ast_g": 1.1875,
+      "stl_g": 1,
+      "blk_g": 0.25,
+      "tov_g": 1.40625,
+      "pf_g": 2,
+      "pts_g": 4.09375
+    },
+    {
+      "season": "2024-25",
+      "team": "Central Michigan",
+      "conf": "MAC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 32.5483870968,
+      "fg_pct": 0.404040404,
+      "fg3_pct": 0.3898305085,
+      "ft_pct": 0.88,
+      "orb_g": 0.9677419355,
+      "drb_g": 4,
+      "trb_g": 4.9677419355,
+      "ast_g": 2.6129032258,
+      "stl_g": 1,
+      "blk_g": 0.4838709677,
+      "tov_g": 1.8387096774,
+      "pf_g": 2.7096774194,
+      "pts_g": 7.3548387097
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cayden-vasko-1.html",
+  "last_scraped": "2025-11-01T15:05:56.517Z"
+}

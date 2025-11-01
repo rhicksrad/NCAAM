@@ -1,0 +1,28 @@
+{
+  "slug": "tarik-watson-1",
+  "name": "Tarik Watson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Marist",
+      "conf": "MAAC",
+      "gp": 27,
+      "gs": 9,
+      "mp_g": 11.3703703704,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": null,
+      "ft_pct": 0.4482758621,
+      "orb_g": 0.8148148148,
+      "drb_g": 1.1851851852,
+      "trb_g": 2,
+      "ast_g": 0.5185185185,
+      "stl_g": 0.2592592593,
+      "blk_g": 0.4444444444,
+      "tov_g": 0.7037037037,
+      "pf_g": 1.6296296296,
+      "pts_g": 4.6296296296
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tarik-watson-1.html",
+  "last_scraped": "2025-11-01T15:01:54.959Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "anquan-boldin-jr-1",
+  "name": "Anquan Boldin Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 22,
+      "gs": 18,
+      "mp_g": 29.5454545455,
+      "fg_pct": 0.4140625,
+      "fg3_pct": 0.3469387755,
+      "ft_pct": 0.7380952381,
+      "orb_g": 1.5909090909,
+      "drb_g": 1.9545454545,
+      "trb_g": 3.5454545455,
+      "ast_g": 1.3636363636,
+      "stl_g": 1.0454545455,
+      "blk_g": 0.8181818182,
+      "tov_g": 1.3181818182,
+      "pf_g": 1.5909090909,
+      "pts_g": 7
+    },
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 25.2580645161,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.224137931,
+      "ft_pct": 0.625,
+      "orb_g": 1.5806451613,
+      "drb_g": 1.6129032258,
+      "trb_g": 3.1935483871,
+      "ast_g": 1.064516129,
+      "stl_g": 0.8387096774,
+      "blk_g": 0.5483870968,
+      "tov_g": 1.1935483871,
+      "pf_g": 1.6451612903,
+      "pts_g": 7.7741935484
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anquan-boldin-jr-1.html",
+  "last_scraped": "2025-11-01T15:05:46.903Z"
+}

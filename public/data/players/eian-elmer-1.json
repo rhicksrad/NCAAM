@@ -1,0 +1,48 @@
+{
+  "slug": "eian-elmer-1",
+  "name": "Eian Elmer",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Miami (OH)",
+      "conf": "MAC",
+      "gp": 32,
+      "gs": 19,
+      "mp_g": 18.5,
+      "fg_pct": 0.5243902439,
+      "fg3_pct": 0.4032258065,
+      "ft_pct": 0.6666666667,
+      "orb_g": 1.03125,
+      "drb_g": 3.3125,
+      "trb_g": 4.34375,
+      "ast_g": 0.46875,
+      "stl_g": 0.9375,
+      "blk_g": 0.65625,
+      "tov_g": 0.78125,
+      "pf_g": 2.15625,
+      "pts_g": 6.96875
+    },
+    {
+      "season": "2024-25",
+      "team": "Miami (OH)",
+      "conf": "MAC",
+      "gp": 33,
+      "gs": 32,
+      "mp_g": 27.3939393939,
+      "fg_pct": 0.4734982332,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.6851851852,
+      "orb_g": 0.7878787879,
+      "drb_g": 4.1515151515,
+      "trb_g": 4.9393939394,
+      "ast_g": 1.2424242424,
+      "stl_g": 1.5151515152,
+      "blk_g": 0.7272727273,
+      "tov_g": 1.0303030303,
+      "pf_g": 2.6363636364,
+      "pts_g": 11
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eian-elmer-1.html",
+  "last_scraped": "2025-11-01T15:06:07.724Z"
+}

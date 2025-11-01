@@ -1,0 +1,28 @@
+{
+  "slug": "gavin-doty-1",
+  "name": "Gavin Doty",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 32,
+      "gs": 17,
+      "mp_g": 28.09375,
+      "fg_pct": 0.492248062,
+      "fg3_pct": 0.2830188679,
+      "ft_pct": 0.8017241379,
+      "orb_g": 1.9375,
+      "drb_g": 4.125,
+      "trb_g": 6.0625,
+      "ast_g": 1.4375,
+      "stl_g": 1.15625,
+      "blk_g": 0,
+      "tov_g": 0.96875,
+      "pf_g": 1.71875,
+      "pts_g": 11.3125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gavin-doty-1.html",
+  "last_scraped": "2025-11-01T15:01:00.581Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jahari-williamson-1",
+  "name": "Jahari Williamson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 30,
+      "gs": 5,
+      "mp_g": 19.6,
+      "fg_pct": 0.354368932,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.8125,
+      "orb_g": 0.2,
+      "drb_g": 1.7333333333,
+      "trb_g": 1.9333333333,
+      "ast_g": 0.9333333333,
+      "stl_g": 0.5666666667,
+      "blk_g": 0.0333333333,
+      "tov_g": 0.7666666667,
+      "pf_g": 1.2,
+      "pts_g": 7.9333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Niagara",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 12,
+      "mp_g": 22.9677419355,
+      "fg_pct": 0.421319797,
+      "fg3_pct": 0.4104477612,
+      "ft_pct": 0.8448275862,
+      "orb_g": 0.0967741935,
+      "drb_g": 0.9677419355,
+      "trb_g": 1.064516129,
+      "ast_g": 0.935483871,
+      "stl_g": 0.6451612903,
+      "blk_g": 0.0322580645,
+      "tov_g": 0.5483870968,
+      "pf_g": 1.5483870968,
+      "pts_g": 8.7096774194
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jahari-williamson-1.html",
+  "last_scraped": "2025-11-01T15:01:08.308Z"
+}

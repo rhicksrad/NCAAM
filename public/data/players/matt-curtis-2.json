@@ -1,0 +1,48 @@
+{
+  "slug": "matt-curtis-2",
+  "name": "Matt Curtis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Fairfield",
+      "conf": "MAAC",
+      "gp": 17,
+      "gs": 3,
+      "mp_g": 9.2941176471,
+      "fg_pct": 0.3829787234,
+      "fg3_pct": 0.2903225806,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.1764705882,
+      "drb_g": 0.6470588235,
+      "trb_g": 0.8235294118,
+      "ast_g": 0.3529411765,
+      "stl_g": 0.1176470588,
+      "blk_g": 0,
+      "tov_g": 0.4117647059,
+      "pf_g": 0.2352941176,
+      "pts_g": 3
+    },
+    {
+      "season": "2024-25",
+      "team": "Fairfield",
+      "conf": "MAAC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 4,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.1666666667,
+      "trb_g": 0.3333333333,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.3333333333,
+      "pts_g": 1.8333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/matt-curtis-2.html",
+  "last_scraped": "2025-11-01T15:01:33.177Z"
+}

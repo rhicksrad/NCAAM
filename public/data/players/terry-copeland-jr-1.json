@@ -1,0 +1,28 @@
+{
+  "slug": "terry-copeland-jr-1",
+  "name": "Terry Copeland Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northern Illinois",
+      "conf": "MAC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 17,
+      "fg_pct": 0.4,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 1,
+      "drb_g": 5,
+      "trb_g": 6,
+      "ast_g": 2,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 2,
+      "pf_g": 3,
+      "pts_g": 6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/terry-copeland-jr-1.html",
+  "last_scraped": "2025-11-01T15:06:58.737Z"
+}

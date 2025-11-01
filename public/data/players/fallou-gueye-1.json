@@ -1,0 +1,28 @@
+{
+  "slug": "fallou-gueye-1",
+  "name": "Fallou Gueye",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Sacred Heart",
+      "conf": "MAAC",
+      "gp": 29,
+      "gs": 4,
+      "mp_g": 11.6896551724,
+      "fg_pct": 0.3220338983,
+      "fg3_pct": 0.2173913043,
+      "ft_pct": 0.7407407407,
+      "orb_g": 0.3448275862,
+      "drb_g": 1.1379310345,
+      "trb_g": 1.4827586207,
+      "ast_g": 1.3448275862,
+      "stl_g": 0.275862069,
+      "blk_g": 0.275862069,
+      "tov_g": 0.9655172414,
+      "pf_g": 1.4482758621,
+      "pts_g": 2.1724137931
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/fallou-gueye-1.html",
+  "last_scraped": "2025-11-01T15:00:58.869Z"
+}

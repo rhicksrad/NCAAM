@@ -1,0 +1,28 @@
+{
+  "slug": "drew-barbee-1",
+  "name": "Drew Barbee",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Central Michigan",
+      "conf": "MAC",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 4.3636363636,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.625,
+      "orb_g": 0.0909090909,
+      "drb_g": 0.6363636364,
+      "trb_g": 0.7272727273,
+      "ast_g": 0.1818181818,
+      "stl_g": 0,
+      "blk_g": 0.0909090909,
+      "tov_g": 0,
+      "pf_g": 0.7272727273,
+      "pts_g": 1.0909090909
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drew-barbee-1.html",
+  "last_scraped": "2025-11-01T15:06:06.176Z"
+}

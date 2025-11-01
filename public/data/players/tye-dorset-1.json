@@ -1,0 +1,28 @@
+{
+  "slug": "tye-dorset-1",
+  "name": "Tye Dorset",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Merrimack",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 15.2121212121,
+      "fg_pct": 0.3695652174,
+      "fg3_pct": 0.2833333333,
+      "ft_pct": 0.75,
+      "orb_g": 0.0909090909,
+      "drb_g": 0.7575757576,
+      "trb_g": 0.8484848485,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.6363636364,
+      "blk_g": 0.0606060606,
+      "tov_g": 0.2121212121,
+      "pf_g": 0.6363636364,
+      "pts_g": 2.9393939394
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tye-dorset-1.html",
+  "last_scraped": "2025-11-01T15:01:58.023Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "tyler-ode-1",
+  "name": "Tyler Ode",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Toledo",
+      "conf": "MAC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 4.3333333333,
+      "fg_pct": 0.1428571429,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": null,
+      "orb_g": 0.0833333333,
+      "drb_g": 0.25,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.1666666667,
+      "stl_g": 0.1666666667,
+      "blk_g": 0,
+      "tov_g": 0.1666666667,
+      "pf_g": 0.25,
+      "pts_g": 0.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-ode-1.html",
+  "last_scraped": "2025-11-01T15:07:01.958Z"
+}

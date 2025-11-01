@@ -1,0 +1,48 @@
+{
+  "slug": "anthony-benard-1",
+  "name": "Anthony Benard",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mercer",
+      "conf": "Southern",
+      "gp": 27,
+      "gs": 20,
+      "mp_g": 16.7407407407,
+      "fg_pct": 0.3461538462,
+      "fg3_pct": 0.2380952381,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.3703703704,
+      "drb_g": 0.8518518519,
+      "trb_g": 1.2222222222,
+      "ast_g": 2.037037037,
+      "stl_g": 0.7777777778,
+      "blk_g": 0.0740740741,
+      "tov_g": 1.5185185185,
+      "pf_g": 1.1111111111,
+      "pts_g": 2.3333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Canisius",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 25,
+      "mp_g": 29.8387096774,
+      "fg_pct": 0.4285714286,
+      "fg3_pct": 0.3773584906,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1612903226,
+      "drb_g": 2.3548387097,
+      "trb_g": 2.5161290323,
+      "ast_g": 3.7741935484,
+      "stl_g": 1.9032258065,
+      "blk_g": 0.1290322581,
+      "tov_g": 2.5161290323,
+      "pf_g": 2.7096774194,
+      "pts_g": 5.0967741935
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-benard-1.html",
+  "last_scraped": "2025-11-01T15:00:36.822Z"
+}

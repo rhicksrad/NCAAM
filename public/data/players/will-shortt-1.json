@@ -1,0 +1,28 @@
+{
+  "slug": "will-shortt-1",
+  "name": "Will Shortt",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Niagara",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 13.6451612903,
+      "fg_pct": 0.5802469136,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": 0.5483870968,
+      "orb_g": 0.8387096774,
+      "drb_g": 2.1612903226,
+      "trb_g": 3,
+      "ast_g": 0.2903225806,
+      "stl_g": 0.3870967742,
+      "blk_g": 0.5483870968,
+      "tov_g": 0.6774193548,
+      "pf_g": 1.9677419355,
+      "pts_g": 3.6451612903
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/will-shortt-1.html",
+  "last_scraped": "2025-11-01T15:02:01.063Z"
+}

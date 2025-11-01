@@ -1,0 +1,48 @@
+{
+  "slug": "sonny-wilson-1",
+  "name": "Sonny Wilson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Toledo",
+      "conf": "MAC",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 28.53125,
+      "fg_pct": 0.4385964912,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.7413793103,
+      "orb_g": 1.15625,
+      "drb_g": 1.65625,
+      "trb_g": 2.8125,
+      "ast_g": 2.15625,
+      "stl_g": 0.84375,
+      "blk_g": 0.0625,
+      "tov_g": 1,
+      "pf_g": 1.21875,
+      "pts_g": 7.96875
+    },
+    {
+      "season": "2024-25",
+      "team": "Toledo",
+      "conf": "MAC",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 33.6363636364,
+      "fg_pct": 0.5141388175,
+      "fg3_pct": 0.3666666667,
+      "ft_pct": 0.672,
+      "orb_g": 1.7878787879,
+      "drb_g": 2.9696969697,
+      "trb_g": 4.7575757576,
+      "ast_g": 3.2121212121,
+      "stl_g": 0.8787878788,
+      "blk_g": 0.0606060606,
+      "tov_g": 1.696969697,
+      "pf_g": 1.4545454545,
+      "pts_g": 15.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sonny-wilson-1.html",
+  "last_scraped": "2025-11-01T15:06:58.686Z"
+}

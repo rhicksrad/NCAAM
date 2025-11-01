@@ -1,0 +1,48 @@
+{
+  "slug": "shaedon-simpson-1",
+  "name": "Shaedon Simpson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Central Michigan",
+      "conf": "MAC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 9.9,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.1764705882,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.4,
+      "drb_g": 0.8,
+      "trb_g": 1.2,
+      "ast_g": 0.2,
+      "stl_g": 0.1,
+      "blk_g": 0.1,
+      "tov_g": 0.3,
+      "pf_g": 1,
+      "pts_g": 1.8
+    },
+    {
+      "season": "2024-25",
+      "team": "Central Michigan",
+      "conf": "MAC",
+      "gp": 12,
+      "gs": 2,
+      "mp_g": 7.3333333333,
+      "fg_pct": 0.3913043478,
+      "fg3_pct": 0.0714285714,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.4166666667,
+      "drb_g": 0.6666666667,
+      "trb_g": 1.0833333333,
+      "ast_g": 0.25,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.25,
+      "pf_g": 1.25,
+      "pts_g": 1.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/shaedon-simpson-1.html",
+  "last_scraped": "2025-11-01T15:06:55.665Z"
+}

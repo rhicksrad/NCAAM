@@ -1,0 +1,48 @@
+{
+  "slug": "khaden-bennett-1",
+  "name": "Khaden Bennett",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Quinnipiac",
+      "conf": "MAAC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 7.0625,
+      "fg_pct": 0.2068965517,
+      "fg3_pct": 0.0526315789,
+      "ft_pct": 0.5625,
+      "orb_g": 0.375,
+      "drb_g": 1.5,
+      "trb_g": 1.875,
+      "ast_g": 0.125,
+      "stl_g": 0.375,
+      "blk_g": 0.125,
+      "tov_g": 0.75,
+      "pf_g": 0.75,
+      "pts_g": 1.375
+    },
+    {
+      "season": "2024-25",
+      "team": "Quinnipiac",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 20,
+      "mp_g": 24.5454545455,
+      "fg_pct": 0.4037735849,
+      "fg3_pct": 0.3451327434,
+      "ft_pct": 0.7787610619,
+      "orb_g": 1.0909090909,
+      "drb_g": 3.2424242424,
+      "trb_g": 4.3333333333,
+      "ast_g": 1.5757575758,
+      "stl_g": 1.303030303,
+      "blk_g": 0.3333333333,
+      "tov_g": 1.3636363636,
+      "pf_g": 2.5454545455,
+      "pts_g": 10.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/khaden-bennett-1.html",
+  "last_scraped": "2025-11-01T15:01:23.859Z"
+}

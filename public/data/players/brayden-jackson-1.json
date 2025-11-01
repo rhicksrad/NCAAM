@@ -1,0 +1,28 @@
+{
+  "slug": "brayden-jackson-1",
+  "name": "Brayden Jackson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 8.8260869565,
+      "fg_pct": 0.4246575342,
+      "fg3_pct": 0.05,
+      "ft_pct": 0.6111111111,
+      "orb_g": 0.3043478261,
+      "drb_g": 1.2173913043,
+      "trb_g": 1.5217391304,
+      "ast_g": 0.2173913043,
+      "stl_g": 0.347826087,
+      "blk_g": 0.2173913043,
+      "tov_g": 0.3913043478,
+      "pf_g": 1.2608695652,
+      "pts_g": 4.1739130435
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brayden-jackson-1.html",
+  "last_scraped": "2025-11-01T15:05:54.764Z"
+}

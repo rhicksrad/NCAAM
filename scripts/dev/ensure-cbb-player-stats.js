@@ -8,7 +8,19 @@ const PLAYERS_DIR = resolve(DATA_DIR, 'players');
 const INDEX_FILE = resolve(DATA_DIR, 'players_index.json');
 const META_FILE = resolve(DATA_DIR, 'cbb_conference_meta.json');
 
-const TARGET_CONFERENCES = [
+function parseConferenceList(raw) {
+  if (!raw) return null;
+  const values = raw
+    .split(/[\s,]+/u)
+    .map(value => value.trim().toUpperCase())
+    .filter(Boolean);
+  if (values.length === 0) {
+    return null;
+  }
+  return [...new Set(values)];
+}
+
+const DEFAULT_TARGET_CONFERENCES = [
   'ACC',
   'B10',
   'B12',
@@ -26,7 +38,12 @@ const TARGET_CONFERENCES = [
   'CUSA',
   'HORIZ',
   'IVY',
+  'MAC',
+  'MAAC',
 ];
+
+const TARGET_CONFERENCES =
+  parseConferenceList(process.env.CBB_TARGET_CONFERENCES) ?? DEFAULT_TARGET_CONFERENCES;
 const TARGET_SEASON_YEARS = ['2025'];
 
 async function fileExists(path) {
@@ -74,6 +91,12 @@ async function ensurePlayerStats() {
   const args = ['exec', 'tsx', 'scripts/scrape/cbb_player_stats.ts'];
   await runCommand('pnpm', args);
 }
+
+const PRUNE_STALE_PLAYERS = (() => {
+  const raw = process.env.CBB_PRUNE_PLAYERS;
+  if (!raw) return false;
+  return /^(1|true|yes)$/iu.test(raw);
+})();
 
 async function removeStalePlayerFiles(validSlugs) {
   await mkdir(PLAYERS_DIR, { recursive: true });
@@ -139,7 +162,12 @@ async function ensureConferencePlayerStats() {
     }
   }
 
-  await removeStalePlayerFiles(slugs);
+  if (PRUNE_STALE_PLAYERS) {
+    const { removed } = await removeStalePlayerFiles(slugs);
+    if (removed > 0) {
+      console.log(`Removed ${removed} stale college player stat files.`);
+    }
+  }
 
   const meta = {
     generated_at: new Date().toISOString(),

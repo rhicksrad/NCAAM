@@ -1,0 +1,28 @@
+{
+  "slug": "sam-akot-1",
+  "name": "Sam Akot",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 4.2222222222,
+      "fg_pct": 0.625,
+      "fg3_pct": 0,
+      "ft_pct": 0.4444444444,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.7777777778,
+      "ast_g": 0.1111111111,
+      "stl_g": 0.4444444444,
+      "blk_g": 0,
+      "tov_g": 0.2222222222,
+      "pf_g": 0.5555555556,
+      "pts_g": 1.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sam-akot-1.html",
+  "last_scraped": "2025-11-01T15:06:52.473Z"
+}

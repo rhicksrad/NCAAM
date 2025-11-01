@@ -1,0 +1,48 @@
+{
+  "slug": "marvin-musiime-kamali-1",
+  "name": "Marvin Musiime-Kamali",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Akron",
+      "conf": "MAC",
+      "gp": 32,
+      "gs": 3,
+      "mp_g": 8.21875,
+      "fg_pct": 0.6904761905,
+      "fg3_pct": null,
+      "ft_pct": 0.3076923077,
+      "orb_g": 1.03125,
+      "drb_g": 1.5,
+      "trb_g": 2.53125,
+      "ast_g": 0.40625,
+      "stl_g": 0.09375,
+      "blk_g": 0.09375,
+      "tov_g": 0.375,
+      "pf_g": 1.6875,
+      "pts_g": 1.9375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marvin-musiime-kamali-1.html",
+  "last_scraped": "2025-11-01T15:06:38.096Z"
+}

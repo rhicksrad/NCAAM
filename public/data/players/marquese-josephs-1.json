@@ -1,0 +1,48 @@
+{
+  "slug": "marquese-josephs-1",
+  "name": "Marquese Josephs",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Grand Canyon",
+      "conf": "WAC",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 2.9285714286,
+      "fg_pct": 0.7777777778,
+      "fg3_pct": null,
+      "ft_pct": 0.875,
+      "orb_g": 0.1428571429,
+      "drb_g": 0.1428571429,
+      "trb_g": 0.2857142857,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.0714285714,
+      "blk_g": 0.2142857143,
+      "tov_g": 0.2142857143,
+      "pf_g": 0.0714285714,
+      "pts_g": 1.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Western Michigan",
+      "conf": "MAC",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 10.5,
+      "fg_pct": 0.4888888889,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5333333333,
+      "orb_g": 0.2222222222,
+      "drb_g": 1,
+      "trb_g": 1.2222222222,
+      "ast_g": 1.1111111111,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.2777777778,
+      "tov_g": 0.5555555556,
+      "pf_g": 0.8333333333,
+      "pts_g": 2.9444444444
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marquese-josephs-1.html",
+  "last_scraped": "2025-11-01T15:06:38.377Z"
+}

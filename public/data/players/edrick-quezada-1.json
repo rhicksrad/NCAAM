@@ -1,0 +1,48 @@
+{
+  "slug": "edrick-quezada-1",
+  "name": "Edrick Quezada",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Merrimack",
+      "conf": "NEC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.2,
+      "trb_g": 0.2,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Merrimack",
+      "conf": "MAAC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 0.5,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/edrick-quezada-1.html",
+  "last_scraped": "2025-11-01T15:00:55.916Z"
+}
