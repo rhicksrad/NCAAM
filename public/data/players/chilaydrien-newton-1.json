@@ -1,0 +1,48 @@
+{
+  "slug": "chilaydrien-newton-1",
+  "name": "Chilaydrien Newton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Grambling State",
+      "conf": "SWAC",
+      "gp": 29,
+      "gs": 9,
+      "mp_g": 19.8275862069,
+      "fg_pct": 0.5234375,
+      "fg3_pct": 0.4683544304,
+      "ft_pct": 0.8611111111,
+      "orb_g": 0.3448275862,
+      "drb_g": 2.0344827586,
+      "trb_g": 2.3793103448,
+      "ast_g": 0.8620689655,
+      "stl_g": 0.4482758621,
+      "blk_g": 0.2413793103,
+      "tov_g": 0.7586206897,
+      "pf_g": 1.275862069,
+      "pts_g": 6.9655172414
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chilaydrien-newton-1.html",
+  "last_scraped": "2025-11-01T16:54:17.561Z"
+}

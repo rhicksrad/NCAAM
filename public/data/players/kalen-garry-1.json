@@ -1,0 +1,48 @@
+{
+  "slug": "kalen-garry-1",
+  "name": "Kalen Garry",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 35,
+      "gs": 15,
+      "mp_g": 26.0857142857,
+      "fg_pct": 0.4037558685,
+      "fg3_pct": 0.3432835821,
+      "ft_pct": 0.7708333333,
+      "orb_g": 0.7142857143,
+      "drb_g": 2.8571428571,
+      "trb_g": 3.5714285714,
+      "ast_g": 1.0571428571,
+      "stl_g": 0.7714285714,
+      "blk_g": 0.0857142857,
+      "tov_g": 0.9714285714,
+      "pf_g": 2.4,
+      "pts_g": 7.2857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 28.9032258065,
+      "fg_pct": 0.4158415842,
+      "fg3_pct": 0.3456790123,
+      "ft_pct": 0.7297297297,
+      "orb_g": 0.6129032258,
+      "drb_g": 3.3225806452,
+      "trb_g": 3.935483871,
+      "ast_g": 2.5483870968,
+      "stl_g": 0.8709677419,
+      "blk_g": 0.1290322581,
+      "tov_g": 1.6451612903,
+      "pf_g": 1.8709677419,
+      "pts_g": 11.6774193548
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kalen-garry-1.html",
+  "last_scraped": "2025-11-01T16:56:07.151Z"
+}

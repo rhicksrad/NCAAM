@@ -1,0 +1,48 @@
+{
+  "slug": "eren-banks-1",
+  "name": "Eren Banks",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 30,
+      "gs": 24,
+      "mp_g": 28.5,
+      "fg_pct": 0.4302325581,
+      "fg3_pct": 0.3888888889,
+      "ft_pct": 0.75,
+      "orb_g": 0.2666666667,
+      "drb_g": 2.3666666667,
+      "trb_g": 2.6333333333,
+      "ast_g": 1.9,
+      "stl_g": 0.9333333333,
+      "blk_g": 0.1666666667,
+      "tov_g": 2.1333333333,
+      "pf_g": 2.2666666667,
+      "pts_g": 10.2333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 33,
+      "gs": 30,
+      "mp_g": 28.7878787879,
+      "fg_pct": 0.46,
+      "fg3_pct": 0.3969465649,
+      "ft_pct": 0.6170212766,
+      "orb_g": 0.3939393939,
+      "drb_g": 2.1515151515,
+      "trb_g": 2.5454545455,
+      "ast_g": 2.3333333333,
+      "stl_g": 1.3636363636,
+      "blk_g": 0.0606060606,
+      "tov_g": 1.8787878788,
+      "pf_g": 2.2424242424,
+      "pts_g": 9.4242424242
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eren-banks-1.html",
+  "last_scraped": "2025-11-01T16:55:04.890Z"
+}

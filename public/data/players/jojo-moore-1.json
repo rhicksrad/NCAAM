@@ -1,0 +1,28 @@
+{
+  "slug": "jojo-moore-1",
+  "name": "JoJo Moore",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 28,
+      "gs": 18,
+      "mp_g": 27.5357142857,
+      "fg_pct": 0.4936708861,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6436781609,
+      "orb_g": 1.1428571429,
+      "drb_g": 3.25,
+      "trb_g": 4.3928571429,
+      "ast_g": 2.1785714286,
+      "stl_g": 0.6785714286,
+      "blk_g": 0.5714285714,
+      "tov_g": 1.4285714286,
+      "pf_g": 2.25,
+      "pts_g": 10.8928571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jojo-moore-1.html",
+  "last_scraped": "2025-11-01T16:55:48.418Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "grant-stubblefield-1",
+  "name": "Grant Stubblefield",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Omaha",
+      "conf": "Summit",
+      "gp": 28,
+      "gs": 10,
+      "mp_g": 16.7142857143,
+      "fg_pct": 0.5106382979,
+      "fg3_pct": 0.4242424242,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.3571428571,
+      "drb_g": 1.7857142857,
+      "trb_g": 2.1428571429,
+      "ast_g": 1.2142857143,
+      "stl_g": 0.8571428571,
+      "blk_g": 0.1071428571,
+      "tov_g": 1.1071428571,
+      "pf_g": 1.6428571429,
+      "pts_g": 4.5714285714
+    },
+    {
+      "season": "2024-25",
+      "team": "Omaha",
+      "conf": "Summit",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 6.3076923077,
+      "fg_pct": 0.3611111111,
+      "fg3_pct": 0.1764705882,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.1923076923,
+      "drb_g": 0.6923076923,
+      "trb_g": 0.8846153846,
+      "ast_g": 0.2692307692,
+      "stl_g": 0.5,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.5,
+      "pf_g": 1.0769230769,
+      "pts_g": 1.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/grant-stubblefield-1.html",
+  "last_scraped": "2025-11-01T16:55:10.126Z"
+}

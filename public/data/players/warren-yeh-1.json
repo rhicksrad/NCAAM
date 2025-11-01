@@ -1,0 +1,28 @@
+{
+  "slug": "warren-yeh-1",
+  "name": "Warren Yeh",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 6.5,
+      "fg_pct": 0.3220338983,
+      "fg3_pct": 0.2368421053,
+      "ft_pct": 0.5,
+      "orb_g": 0.25,
+      "drb_g": 0.5416666667,
+      "trb_g": 0.7916666667,
+      "ast_g": 0.2083333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.875,
+      "pts_g": 2.375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/warren-yeh-1.html",
+  "last_scraped": "2025-11-01T16:57:55.884Z"
+}

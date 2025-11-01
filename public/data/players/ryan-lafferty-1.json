@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-lafferty-1",
+  "name": "Ryan Lafferty",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "St. Thomas",
+      "conf": "Summit",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7.380952381,
+      "fg_pct": 0.5151515152,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.2380952381,
+      "drb_g": 1.380952381,
+      "trb_g": 1.619047619,
+      "ast_g": 1.0476190476,
+      "stl_g": 0.5238095238,
+      "blk_g": 0.0476190476,
+      "tov_g": 0.5714285714,
+      "pf_g": 0.9523809524,
+      "pts_g": 2.0952380952
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-lafferty-1.html",
+  "last_scraped": "2025-11-01T16:57:26.770Z"
+}

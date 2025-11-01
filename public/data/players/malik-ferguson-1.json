@@ -1,0 +1,48 @@
+{
+  "slug": "malik-ferguson-1",
+  "name": "Malik Ferguson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia State",
+      "conf": "Sun Belt",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 7.75,
+      "fg_pct": 0.5217391304,
+      "fg3_pct": 0.4375,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.125,
+      "drb_g": 0.375,
+      "trb_g": 0.5,
+      "ast_g": 0.625,
+      "stl_g": 0.625,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.125,
+      "pts_g": 4.375
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia State",
+      "conf": "Sun Belt",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 10,
+      "fg_pct": 0.2745098039,
+      "fg3_pct": 0.16,
+      "ft_pct": 0.6,
+      "orb_g": 0.24,
+      "drb_g": 0.88,
+      "trb_g": 1.12,
+      "ast_g": 0.88,
+      "stl_g": 0.28,
+      "blk_g": 0.12,
+      "tov_g": 0.36,
+      "pf_g": 1.16,
+      "pts_g": 1.76
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malik-ferguson-1.html",
+  "last_scraped": "2025-11-01T16:56:34.741Z"
+}

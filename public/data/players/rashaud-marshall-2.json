@@ -1,0 +1,48 @@
+{
+  "slug": "rashaud-marshall-2",
+  "name": "Rashaud Marshall",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Ole Miss",
+      "conf": "SEC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.625,
+      "fg3_pct": null,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.3157894737,
+      "drb_g": 0.5263157895,
+      "trb_g": 0.8421052632,
+      "ast_g": 0.3157894737,
+      "stl_g": 0.1052631579,
+      "blk_g": 0.1052631579,
+      "tov_g": 0.3157894737,
+      "pf_g": 0.6842105263,
+      "pts_g": 1.3684210526
+    },
+    {
+      "season": "2024-25",
+      "team": "Arkansas State",
+      "conf": "Sun Belt",
+      "gp": 35,
+      "gs": 16,
+      "mp_g": 17.3714285714,
+      "fg_pct": 0.5673076923,
+      "fg3_pct": null,
+      "ft_pct": 0.6575342466,
+      "orb_g": 1.8285714286,
+      "drb_g": 3.4285714286,
+      "trb_g": 5.2571428571,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.2285714286,
+      "blk_g": 0.6571428571,
+      "tov_g": 0.5714285714,
+      "pf_g": 2.1142857143,
+      "pts_g": 4.7428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rashaud-marshall-2.html",
+  "last_scraped": "2025-11-01T16:57:16.529Z"
+}

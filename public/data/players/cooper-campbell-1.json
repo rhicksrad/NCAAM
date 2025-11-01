@@ -1,0 +1,28 @@
+{
+  "slug": "cooper-campbell-1",
+  "name": "Cooper Campbell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Troy",
+      "conf": "Sun Belt",
+      "gp": 34,
+      "gs": 3,
+      "mp_g": 16.5294117647,
+      "fg_pct": 0.4081632653,
+      "fg3_pct": 0.3555555556,
+      "ft_pct": 0.75,
+      "orb_g": 0.3823529412,
+      "drb_g": 1.2058823529,
+      "trb_g": 1.5882352941,
+      "ast_g": 1.2941176471,
+      "stl_g": 0.5882352941,
+      "blk_g": 0,
+      "tov_g": 0.6176470588,
+      "pf_g": 0.6764705882,
+      "pts_g": 5.1764705882
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cooper-campbell-1.html",
+  "last_scraped": "2025-11-01T16:54:29.105Z"
+}

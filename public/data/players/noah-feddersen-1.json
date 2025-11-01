@@ -1,0 +1,48 @@
+{
+  "slug": "noah-feddersen-1",
+  "name": "Noah Feddersen",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "North Dakota State",
+      "conf": "Summit",
+      "gp": 32,
+      "gs": 21,
+      "mp_g": 22.1875,
+      "fg_pct": 0.5705128205,
+      "fg3_pct": 0.3888888889,
+      "ft_pct": 0.6271186441,
+      "orb_g": 1,
+      "drb_g": 3.03125,
+      "trb_g": 4.03125,
+      "ast_g": 0.8125,
+      "stl_g": 0.53125,
+      "blk_g": 0.34375,
+      "tov_g": 0.96875,
+      "pf_g": 1.59375,
+      "pts_g": 7.375
+    },
+    {
+      "season": "2024-25",
+      "team": "North Dakota State",
+      "conf": "Summit",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 25.1875,
+      "fg_pct": 0.5235602094,
+      "fg3_pct": 0.3818181818,
+      "ft_pct": 0.6428571429,
+      "orb_g": 1.40625,
+      "drb_g": 4.625,
+      "trb_g": 6.03125,
+      "ast_g": 1.5625,
+      "stl_g": 0.1875,
+      "blk_g": 0.625,
+      "tov_g": 0.9375,
+      "pf_g": 2.1875,
+      "pts_g": 8.3125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/noah-feddersen-1.html",
+  "last_scraped": "2025-11-01T16:57:01.063Z"
+}

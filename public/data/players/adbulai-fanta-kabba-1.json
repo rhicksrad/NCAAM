@@ -1,0 +1,28 @@
+{
+  "slug": "adbulai-fanta-kabba-1",
+  "name": "Adbulai Fanta Kabba",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 17,
+      "gs": 16,
+      "mp_g": 17.2352941176,
+      "fg_pct": 0.6296296296,
+      "fg3_pct": null,
+      "ft_pct": 0.25,
+      "orb_g": 1.2941176471,
+      "drb_g": 3.3529411765,
+      "trb_g": 4.6470588235,
+      "ast_g": 0.5294117647,
+      "stl_g": 0.6470588235,
+      "blk_g": 1.2352941176,
+      "tov_g": 1.2941176471,
+      "pf_g": 3.3529411765,
+      "pts_g": 4.4117647059
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/adbulai-fanta-kabba-1.html",
+  "last_scraped": "2025-11-01T16:53:36.107Z"
+}

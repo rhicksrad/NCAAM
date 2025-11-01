@@ -1,0 +1,28 @@
+{
+  "slug": "joe-sayler-1",
+  "name": "Joe Sayler",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 30,
+      "fg_pct": 0.3928571429,
+      "fg3_pct": 0.3353293413,
+      "ft_pct": 0.8611111111,
+      "orb_g": 0.2,
+      "drb_g": 2.3666666667,
+      "trb_g": 2.5666666667,
+      "ast_g": 1.9,
+      "stl_g": 0.6333333333,
+      "blk_g": 0,
+      "tov_g": 1.8666666667,
+      "pf_g": 1.5,
+      "pts_g": 12.7333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joe-sayler-1.html",
+  "last_scraped": "2025-11-01T16:55:45.036Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "moses-horne-1",
+  "name": "Moses Horne",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Mississippi Valley State",
+      "conf": "SWAC",
+      "gp": 17,
+      "gs": 2,
+      "mp_g": 13.0588235294,
+      "fg_pct": 0.2898550725,
+      "fg3_pct": 0.3125,
+      "ft_pct": 0.5769230769,
+      "orb_g": 0.2352941176,
+      "drb_g": 1.8235294118,
+      "trb_g": 2.0588235294,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.2941176471,
+      "blk_g": 0.2941176471,
+      "tov_g": 1,
+      "pf_g": 0.8823529412,
+      "pts_g": 3.8235294118
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/moses-horne-1.html",
+  "last_scraped": "2025-11-01T16:56:52.275Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "clash-peters-1",
+  "name": "Clash Peters",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia State",
+      "conf": "Sun Belt",
+      "gp": 26,
+      "gs": 2,
+      "mp_g": 13.5769230769,
+      "fg_pct": 0.4772727273,
+      "fg3_pct": 0,
+      "ft_pct": 0.5806451613,
+      "orb_g": 1.6923076923,
+      "drb_g": 2.7307692308,
+      "trb_g": 4.4230769231,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.5769230769,
+      "blk_g": 0.3461538462,
+      "tov_g": 0.6923076923,
+      "pf_g": 2.5,
+      "pts_g": 2.3076923077
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/clash-peters-1.html",
+  "last_scraped": "2025-11-01T16:54:24.220Z"
+}

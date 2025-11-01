@@ -1,0 +1,48 @@
+{
+  "slug": "josh-jones-5",
+  "name": "Josh Jones",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 27,
+      "gs": 8,
+      "mp_g": 14.1481481481,
+      "fg_pct": 0.6290322581,
+      "fg3_pct": 0,
+      "ft_pct": 0.652173913,
+      "orb_g": 0.8888888889,
+      "drb_g": 1.6296296296,
+      "trb_g": 2.5185185185,
+      "ast_g": 0.4814814815,
+      "stl_g": 0.4074074074,
+      "blk_g": 0.2962962963,
+      "tov_g": 0.8888888889,
+      "pf_g": 3,
+      "pts_g": 3.4444444444
+    },
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 29,
+      "gs": 13,
+      "mp_g": 18.3103448276,
+      "fg_pct": 0.6043956044,
+      "fg3_pct": 0.3076923077,
+      "ft_pct": 0.6285714286,
+      "orb_g": 0.9655172414,
+      "drb_g": 2.3793103448,
+      "trb_g": 3.3448275862,
+      "ast_g": 0.6551724138,
+      "stl_g": 0.275862069,
+      "blk_g": 0.275862069,
+      "tov_g": 1.6206896552,
+      "pf_g": 3.2413793103,
+      "pts_g": 4.6896551724
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-jones-5.html",
+  "last_scraped": "2025-11-01T16:55:55.147Z"
+}

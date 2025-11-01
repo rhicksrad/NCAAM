@@ -1,0 +1,48 @@
+{
+  "slug": "cobie-montgomery-1",
+  "name": "Cobie Montgomery",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Southern Mississippi",
+      "conf": "Sun Belt",
+      "gp": 32,
+      "gs": 7,
+      "mp_g": 21.375,
+      "fg_pct": 0.3842364532,
+      "fg3_pct": 0.3414634146,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.125,
+      "drb_g": 1.65625,
+      "trb_g": 2.78125,
+      "ast_g": 0.53125,
+      "stl_g": 0.375,
+      "blk_g": 0.125,
+      "tov_g": 0.75,
+      "pf_g": 0.75,
+      "pts_g": 6.96875
+    },
+    {
+      "season": "2024-25",
+      "team": "Southern Mississippi",
+      "conf": "Sun Belt",
+      "gp": 33,
+      "gs": 23,
+      "mp_g": 22.0303030303,
+      "fg_pct": 0.4517766497,
+      "fg3_pct": 0.4183006536,
+      "ft_pct": 0.6444444444,
+      "orb_g": 0.4848484848,
+      "drb_g": 1.3636363636,
+      "trb_g": 1.8484848485,
+      "ast_g": 1,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.3636363636,
+      "tov_g": 0.696969697,
+      "pf_g": 1.0303030303,
+      "pts_g": 8.2121212121
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cobie-montgomery-1.html",
+  "last_scraped": "2025-11-01T16:54:24.367Z"
+}

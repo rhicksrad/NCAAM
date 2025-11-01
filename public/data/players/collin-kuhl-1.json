@@ -1,0 +1,48 @@
+{
+  "slug": "collin-kuhl-1",
+  "name": "Collin Kuhl",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 28,
+      "gs": 4,
+      "mp_g": 10.25,
+      "fg_pct": 0.5365853659,
+      "fg3_pct": null,
+      "ft_pct": 0.6,
+      "orb_g": 1.1071428571,
+      "drb_g": 2.1071428571,
+      "trb_g": 3.2142857143,
+      "ast_g": 0.5714285714,
+      "stl_g": 0.2142857143,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.6071428571,
+      "pf_g": 1.8571428571,
+      "pts_g": 2.4285714286
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 29,
+      "gs": 2,
+      "mp_g": 9.4482758621,
+      "fg_pct": 0.5490196078,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5555555556,
+      "orb_g": 1.4137931034,
+      "drb_g": 1.4137931034,
+      "trb_g": 2.8275862069,
+      "ast_g": 0.275862069,
+      "stl_g": 0.275862069,
+      "blk_g": 0.3448275862,
+      "tov_g": 0.7586206897,
+      "pf_g": 2.0689655172,
+      "pts_g": 2.4827586207
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/collin-kuhl-1.html",
+  "last_scraped": "2025-11-01T16:54:25.961Z"
+}

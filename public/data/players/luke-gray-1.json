@@ -1,0 +1,28 @@
+{
+  "slug": "luke-gray-1",
+  "name": "Luke Gray",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 30,
+      "gs": 13,
+      "mp_g": 11.1333333333,
+      "fg_pct": 0.4133333333,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.7708333333,
+      "orb_g": 0.9,
+      "drb_g": 1.7,
+      "trb_g": 2.6,
+      "ast_g": 0.2333333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.5,
+      "tov_g": 0.5666666667,
+      "pf_g": 1.6,
+      "pts_g": 3.4333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-gray-1.html",
+  "last_scraped": "2025-11-01T16:56:27.793Z"
+}

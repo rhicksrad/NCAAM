@@ -1,0 +1,48 @@
+{
+  "slug": "bilal-abdur-rahman-1",
+  "name": "Bilal Abdur-Rahman",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 0,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Alabama A&M",
+      "conf": "SWAC",
+      "gp": 30,
+      "gs": 3,
+      "mp_g": 14.4,
+      "fg_pct": 0.3492063492,
+      "fg3_pct": 0.2564102564,
+      "ft_pct": 0.8,
+      "orb_g": 0.3666666667,
+      "drb_g": 1.4666666667,
+      "trb_g": 1.8333333333,
+      "ast_g": 2.2666666667,
+      "stl_g": 0.9666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 1.5,
+      "pf_g": 1.9,
+      "pts_g": 5.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bilal-abdur-rahman-1.html",
+  "last_scraped": "2025-11-01T16:53:58.714Z"
+}

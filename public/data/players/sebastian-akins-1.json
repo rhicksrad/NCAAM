@@ -1,0 +1,28 @@
+{
+  "slug": "sebastian-akins-1",
+  "name": "Sebastian Akins",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 25.625,
+      "fg_pct": 0.4214876033,
+      "fg3_pct": 0.3035714286,
+      "ft_pct": 0.7647058824,
+      "orb_g": 0.28125,
+      "drb_g": 1.9375,
+      "trb_g": 2.21875,
+      "ast_g": 2.6875,
+      "stl_g": 0.9375,
+      "blk_g": 0.25,
+      "tov_g": 1.9375,
+      "pf_g": 2.4375,
+      "pts_g": 12.65625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sebastian-akins-1.html",
+  "last_scraped": "2025-11-01T16:57:30.072Z"
+}

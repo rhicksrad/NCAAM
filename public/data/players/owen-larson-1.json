@@ -1,0 +1,28 @@
+{
+  "slug": "owen-larson-1",
+  "name": "Owen Larson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 29,
+      "gs": 29,
+      "mp_g": 28.8275862069,
+      "fg_pct": 0.4017857143,
+      "fg3_pct": 0.3873239437,
+      "ft_pct": 0.8378378378,
+      "orb_g": 0.5862068966,
+      "drb_g": 3.5172413793,
+      "trb_g": 4.1034482759,
+      "ast_g": 2.5862068966,
+      "stl_g": 0.8275862069,
+      "blk_g": 0.2068965517,
+      "tov_g": 1.7586206897,
+      "pf_g": 2.4137931034,
+      "pts_g": 9.1724137931
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/owen-larson-1.html",
+  "last_scraped": "2025-11-01T16:57:04.632Z"
+}

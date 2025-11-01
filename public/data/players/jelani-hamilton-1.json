@@ -1,0 +1,28 @@
+{
+  "slug": "jelani-hamilton-1",
+  "name": "Jelani Hamilton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia State",
+      "conf": "Sun Belt",
+      "gp": 33,
+      "gs": 21,
+      "mp_g": 27.0606060606,
+      "fg_pct": 0.3924914676,
+      "fg3_pct": 0.3313253012,
+      "ft_pct": 0.7802197802,
+      "orb_g": 0.696969697,
+      "drb_g": 2.7575757576,
+      "trb_g": 3.4545454545,
+      "ast_g": 1.6060606061,
+      "stl_g": 1.1515151515,
+      "blk_g": 0.1818181818,
+      "tov_g": 1.2121212121,
+      "pf_g": 2.2121212121,
+      "pts_g": 10.7878787879
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jelani-hamilton-1.html",
+  "last_scraped": "2025-11-01T16:55:38.231Z"
+}

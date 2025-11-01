@@ -1,13 +1,14 @@
 {
-  "generated_at": "2025-11-01T16:16:01.335Z",
+  "generated_at": "2025-11-01T16:58:22.330451Z",
   "conferences": [
-    "NEC",
-    "OVC"
+    "SUMMIT",
+    "SUNBELT",
+    "SWAC"
   ],
   "seasons": [
     "2024-25"
   ],
-  "player_count": 275,
+  "player_count": 505,
   "season_filter": [
     "2025"
   ]

@@ -1,0 +1,48 @@
+{
+  "slug": "kelton-williams-1",
+  "name": "Kelton Williams",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Louisiana–Monroe",
+      "conf": "Sun Belt",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 9.3333333333,
+      "fg_pct": 0.2142857143,
+      "fg3_pct": 0.125,
+      "ft_pct": 0.75,
+      "orb_g": 0.1666666667,
+      "drb_g": 1,
+      "trb_g": 1.1666666667,
+      "ast_g": 0.5,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.5,
+      "pf_g": 0.3333333333,
+      "pts_g": 1.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Louisiana–Monroe",
+      "conf": "Sun Belt",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 11.5,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 1,
+      "orb_g": 0.25,
+      "drb_g": 1.5,
+      "trb_g": 1.75,
+      "ast_g": 2,
+      "stl_g": 1.25,
+      "blk_g": 0,
+      "tov_g": 0.75,
+      "pf_g": 2,
+      "pts_g": 3.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kelton-williams-1.html",
+  "last_scraped": "2025-11-01T16:56:12.563Z"
+}

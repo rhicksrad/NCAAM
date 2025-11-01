@@ -1,0 +1,48 @@
+{
+  "slug": "orlando-horton-jr-1",
+  "name": "Orlando Horton Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Prairie View A&M",
+      "conf": "SWAC",
+      "gp": 21,
+      "gs": 7,
+      "mp_g": 19.2857142857,
+      "fg_pct": 0.4396551724,
+      "fg3_pct": 0.3529411765,
+      "ft_pct": 0.59375,
+      "orb_g": 0.7142857143,
+      "drb_g": 1.2857142857,
+      "trb_g": 2,
+      "ast_g": 1.9047619048,
+      "stl_g": 1.619047619,
+      "blk_g": 0.0476190476,
+      "tov_g": 1.8095238095,
+      "pf_g": 2.380952381,
+      "pts_g": 6.3333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Prairie View A&M",
+      "conf": "SWAC",
+      "gp": 25,
+      "gs": 4,
+      "mp_g": 19.52,
+      "fg_pct": 0.3916666667,
+      "fg3_pct": 0.3888888889,
+      "ft_pct": 0.7962962963,
+      "orb_g": 0.44,
+      "drb_g": 1.64,
+      "trb_g": 2.08,
+      "ast_g": 2.68,
+      "stl_g": 1.4,
+      "blk_g": 0.08,
+      "tov_g": 1.6,
+      "pf_g": 2.12,
+      "pts_g": 6.04
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/orlando-horton-jr-1.html",
+  "last_scraped": "2025-11-01T16:57:04.693Z"
+}

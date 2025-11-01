@@ -1,0 +1,28 @@
+{
+  "slug": "koron-davis-1",
+  "name": "Koron Davis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Louisiana",
+      "conf": "Sun Belt",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 11.8571428571,
+      "fg_pct": 0.5348837209,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.8461538462,
+      "orb_g": 0.5714285714,
+      "drb_g": 1.1428571429,
+      "trb_g": 1.7142857143,
+      "ast_g": 0.4285714286,
+      "stl_g": 0.4285714286,
+      "blk_g": 0,
+      "tov_g": 0.4285714286,
+      "pf_g": 0.7142857143,
+      "pts_g": 8.7142857143
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/koron-davis-1.html",
+  "last_scraped": "2025-11-01T16:56:19.289Z"
+}

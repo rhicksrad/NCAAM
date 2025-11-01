@@ -1,0 +1,48 @@
+{
+  "slug": "brandon-hardy-1",
+  "name": "Brandon Hardy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Louisiana",
+      "conf": "Sun Belt",
+      "gp": 29,
+      "gs": 3,
+      "mp_g": 11.6896551724,
+      "fg_pct": 0.4504504505,
+      "fg3_pct": 0.2833333333,
+      "ft_pct": 0.4,
+      "orb_g": 0.3448275862,
+      "drb_g": 0.8965517241,
+      "trb_g": 1.2413793103,
+      "ast_g": 0.275862069,
+      "stl_g": 0.7586206897,
+      "blk_g": 0.1724137931,
+      "tov_g": 0.5172413793,
+      "pf_g": 1.0344827586,
+      "pts_g": 4.3793103448
+    },
+    {
+      "season": "2024-25",
+      "team": "Louisiana",
+      "conf": "Sun Belt",
+      "gp": 24,
+      "gs": 10,
+      "mp_g": 22.0833333333,
+      "fg_pct": 0.3020134228,
+      "fg3_pct": 0.2179487179,
+      "ft_pct": 0.6756756757,
+      "orb_g": 0.1666666667,
+      "drb_g": 1.3333333333,
+      "trb_g": 1.5,
+      "ast_g": 0.75,
+      "stl_g": 1.0833333333,
+      "blk_g": 0.25,
+      "tov_g": 0.75,
+      "pf_g": 1.75,
+      "pts_g": 5.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brandon-hardy-1.html",
+  "last_scraped": "2025-11-01T16:54:01.961Z"
+}

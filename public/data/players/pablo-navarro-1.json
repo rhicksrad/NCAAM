@@ -1,0 +1,48 @@
+{
+  "slug": "pablo-navarro-1",
+  "name": "Pablo Navarro",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 5.1428571429,
+      "fg_pct": 0.5384615385,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.75,
+      "orb_g": 0.8571428571,
+      "drb_g": 1.1428571429,
+      "trb_g": 2,
+      "ast_g": 0.1428571429,
+      "stl_g": 0.2857142857,
+      "blk_g": 0,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.4285714286,
+      "pts_g": 2.5714285714
+    },
+    {
+      "season": "2024-25",
+      "team": "Oral Roberts",
+      "conf": "Summit",
+      "gp": 19,
+      "gs": 3,
+      "mp_g": 7.6315789474,
+      "fg_pct": 0.3823529412,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6071428571,
+      "orb_g": 0.5789473684,
+      "drb_g": 1.3157894737,
+      "trb_g": 1.8947368421,
+      "ast_g": 0.3157894737,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.1578947368,
+      "tov_g": 0.5789473684,
+      "pf_g": 0.9473684211,
+      "pts_g": 2.4210526316
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/pablo-navarro-1.html",
+  "last_scraped": "2025-11-01T16:57:08.104Z"
+}

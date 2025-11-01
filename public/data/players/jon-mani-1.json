@@ -1,0 +1,28 @@
+{
+  "slug": "jon-mani-1",
+  "name": "Jon Mani",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Denver",
+      "conf": "Summit",
+      "gp": 30,
+      "gs": 6,
+      "mp_g": 13.9666666667,
+      "fg_pct": 0.3298969072,
+      "fg3_pct": 0.306122449,
+      "ft_pct": 0.4705882353,
+      "orb_g": 0.2333333333,
+      "drb_g": 1.3666666667,
+      "trb_g": 1.6,
+      "ast_g": 0.4666666667,
+      "stl_g": 0.4666666667,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.8333333333,
+      "pts_g": 2.9
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jon-mani-1.html",
+  "last_scraped": "2025-11-01T16:55:48.361Z"
+}

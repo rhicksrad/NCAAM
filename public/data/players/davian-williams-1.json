@@ -1,0 +1,28 @@
+{
+  "slug": "davian-williams-1",
+  "name": "Davian Williams",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Alcorn State",
+      "conf": "SWAC",
+      "gp": 31,
+      "gs": 14,
+      "mp_g": 21.3870967742,
+      "fg_pct": 0.335078534,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.4838709677,
+      "drb_g": 1.8064516129,
+      "trb_g": 2.2903225806,
+      "ast_g": 1.7096774194,
+      "stl_g": 1.4516129032,
+      "blk_g": 0.1290322581,
+      "tov_g": 1.2580645161,
+      "pf_g": 1.6774193548,
+      "pts_g": 5.8709677419
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/davian-williams-1.html",
+  "last_scraped": "2025-11-01T16:54:39.255Z"
+}

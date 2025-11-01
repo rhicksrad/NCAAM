@@ -1,0 +1,48 @@
+{
+  "slug": "victor-valdes-1",
+  "name": "Victor Valdes",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Troy",
+      "conf": "Sun Belt",
+      "gp": 31,
+      "gs": 12,
+      "mp_g": 15.7419354839,
+      "fg_pct": 0.4519230769,
+      "fg3_pct": 0.387755102,
+      "ft_pct": 0.475,
+      "orb_g": 0.8709677419,
+      "drb_g": 1.7419354839,
+      "trb_g": 2.6129032258,
+      "ast_g": 0.935483871,
+      "stl_g": 0.8064516129,
+      "blk_g": 0.3548387097,
+      "tov_g": 1.064516129,
+      "pf_g": 2,
+      "pts_g": 4.2580645161
+    },
+    {
+      "season": "2024-25",
+      "team": "Troy",
+      "conf": "Sun Belt",
+      "gp": 34,
+      "gs": 3,
+      "mp_g": 16.7941176471,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3026315789,
+      "ft_pct": 0.74,
+      "orb_g": 0.4705882353,
+      "drb_g": 1.7058823529,
+      "trb_g": 2.1764705882,
+      "ast_g": 1.8823529412,
+      "stl_g": 0.9117647059,
+      "blk_g": 0.3235294118,
+      "tov_g": 1.2058823529,
+      "pf_g": 1.2647058824,
+      "pts_g": 4.4117647059
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/victor-valdes-1.html",
+  "last_scraped": "2025-11-01T16:57:54.196Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-bolton-1",
+  "name": "Ryan Bolton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Prairie View A&M",
+      "conf": "SWAC",
+      "gp": 24,
+      "gs": 13,
+      "mp_g": 8.2916666667,
+      "fg_pct": 0.5238095238,
+      "fg3_pct": null,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.7083333333,
+      "drb_g": 1.0833333333,
+      "trb_g": 1.7916666667,
+      "ast_g": 0.0416666667,
+      "stl_g": 0.0833333333,
+      "blk_g": 0.7083333333,
+      "tov_g": 0.25,
+      "pf_g": 2.0833333333,
+      "pts_g": 1.375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-bolton-1.html",
+  "last_scraped": "2025-11-01T16:57:23.300Z"
+}

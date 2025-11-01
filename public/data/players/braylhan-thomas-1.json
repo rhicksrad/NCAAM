@@ -1,0 +1,28 @@
+{
+  "slug": "braylhan-thomas-1",
+  "name": "Braylhan Thomas",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia Southern",
+      "conf": "Sun Belt",
+      "gp": 25,
+      "gs": 8,
+      "mp_g": 11.8,
+      "fg_pct": 0.3406593407,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.6666666667,
+      "orb_g": 1,
+      "drb_g": 1.48,
+      "trb_g": 2.48,
+      "ast_g": 0.72,
+      "stl_g": 0.44,
+      "blk_g": 0.12,
+      "tov_g": 0.48,
+      "pf_g": 0.92,
+      "pts_g": 3.12
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/braylhan-thomas-1.html",
+  "last_scraped": "2025-11-01T16:54:01.791Z"
+}

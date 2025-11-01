@@ -1,0 +1,28 @@
+{
+  "slug": "kerrington-kiel-1",
+  "name": "Kerrington Kiel",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Troy",
+      "conf": "Sun Belt",
+      "gp": 30,
+      "gs": 2,
+      "mp_g": 8.2333333333,
+      "fg_pct": 0.2978723404,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.6,
+      "orb_g": 0.4,
+      "drb_g": 1,
+      "trb_g": 1.4,
+      "ast_g": 0.4,
+      "stl_g": 0.4,
+      "blk_g": 0.1,
+      "tov_g": 0.6,
+      "pf_g": 0.6333333333,
+      "pts_g": 1.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kerrington-kiel-1.html",
+  "last_scraped": "2025-11-01T16:56:16.125Z"
+}

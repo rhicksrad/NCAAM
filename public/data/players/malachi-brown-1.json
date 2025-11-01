@@ -1,0 +1,48 @@
+{
+  "slug": "malachi-brown-1",
+  "name": "Malachi Brown",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 4.2222222222,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.0555555556,
+      "drb_g": 0.2222222222,
+      "trb_g": 0.2777777778,
+      "ast_g": 0.5555555556,
+      "stl_g": 0.2222222222,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.1111111111,
+      "pts_g": 1.2777777778
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia State",
+      "conf": "Sun Belt",
+      "gp": 33,
+      "gs": 31,
+      "mp_g": 29.696969697,
+      "fg_pct": 0.4299065421,
+      "fg3_pct": 0.3689320388,
+      "ft_pct": 0.8260869565,
+      "orb_g": 0.696969697,
+      "drb_g": 2.9393939394,
+      "trb_g": 3.6363636364,
+      "ast_g": 3.3636363636,
+      "stl_g": 1.1212121212,
+      "blk_g": 0.0909090909,
+      "tov_g": 1.8181818182,
+      "pf_g": 1.7575757576,
+      "pts_g": 7.8787878788
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malachi-brown-1.html",
+  "last_scraped": "2025-11-01T16:56:32.684Z"
+}

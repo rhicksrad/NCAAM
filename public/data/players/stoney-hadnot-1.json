@@ -1,0 +1,28 @@
+{
+  "slug": "stoney-hadnot-1",
+  "name": "Stoney Hadnot",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Dakota State",
+      "conf": "Summit",
+      "gp": 32,
+      "gs": 2,
+      "mp_g": 17.40625,
+      "fg_pct": 0.5454545455,
+      "fg3_pct": 0.2258064516,
+      "ft_pct": 0.6447368421,
+      "orb_g": 1.21875,
+      "drb_g": 2.90625,
+      "trb_g": 4.125,
+      "ast_g": 0.6875,
+      "stl_g": 0.34375,
+      "blk_g": 0.46875,
+      "tov_g": 1.28125,
+      "pf_g": 1.6875,
+      "pts_g": 6.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/stoney-hadnot-1.html",
+  "last_scraped": "2025-11-01T16:57:38.520Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "eddie-ricks-iii-1",
+  "name": "Eddie Ricks III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Morehead State",
+      "conf": "OVC",
+      "gp": 35,
+      "gs": 4,
+      "mp_g": 25.2285714286,
+      "fg_pct": 0.4311926606,
+      "fg3_pct": 0.3113207547,
+      "ft_pct": 0.640625,
+      "orb_g": 1.3714285714,
+      "drb_g": 3.8857142857,
+      "trb_g": 5.2571428571,
+      "ast_g": 1.4,
+      "stl_g": 0.7428571429,
+      "blk_g": 1.1142857143,
+      "tov_g": 1.2857142857,
+      "pf_g": 1.9428571429,
+      "pts_g": 7.4857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "James Madison",
+      "conf": "Sun Belt",
+      "gp": 32,
+      "gs": 26,
+      "mp_g": 26.03125,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.3157894737,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.15625,
+      "drb_g": 3.5,
+      "trb_g": 4.65625,
+      "ast_g": 0.875,
+      "stl_g": 0.65625,
+      "blk_g": 0.71875,
+      "tov_g": 0.96875,
+      "pf_g": 1.375,
+      "pts_g": 6.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eddie-ricks-iii-1.html",
+  "last_scraped": "2025-11-01T16:54:59.599Z"
+}

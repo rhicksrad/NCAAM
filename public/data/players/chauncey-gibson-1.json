@@ -1,0 +1,48 @@
+{
+  "slug": "chauncey-gibson-1",
+  "name": "Chauncey Gibson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UT Arlington",
+      "conf": "WAC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 13.25,
+      "fg_pct": 0.3043478261,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": null,
+      "orb_g": 0.5,
+      "drb_g": 1.75,
+      "trb_g": 2.25,
+      "ast_g": 0.75,
+      "stl_g": 0.25,
+      "blk_g": 0.25,
+      "tov_g": 1.25,
+      "pf_g": 0.75,
+      "pts_g": 4.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Prairie View A&M",
+      "conf": "SWAC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 20.1666666667,
+      "fg_pct": 0.3255813953,
+      "fg3_pct": 0.3529411765,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.6666666667,
+      "drb_g": 2.5,
+      "trb_g": 3.1666666667,
+      "ast_g": 1.5,
+      "stl_g": 0.6666666667,
+      "blk_g": 0,
+      "tov_g": 1.1666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 7.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chauncey-gibson-1.html",
+  "last_scraped": "2025-11-01T16:54:17.456Z"
+}

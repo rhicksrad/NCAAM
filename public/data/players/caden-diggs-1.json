@@ -1,0 +1,28 @@
+{
+  "slug": "caden-diggs-1",
+  "name": "Caden Diggs",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Old Dominion",
+      "conf": "Sun Belt",
+      "gp": 35,
+      "gs": 0,
+      "mp_g": 10.6285714286,
+      "fg_pct": 0.34,
+      "fg3_pct": 0.24,
+      "ft_pct": 0.84375,
+      "orb_g": 0.4285714286,
+      "drb_g": 0.8571428571,
+      "trb_g": 1.2857142857,
+      "ast_g": 0.3714285714,
+      "stl_g": 0.2571428571,
+      "blk_g": 0.0285714286,
+      "tov_g": 0.2857142857,
+      "pf_g": 0.5714285714,
+      "pts_g": 2.8857142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/caden-diggs-1.html",
+  "last_scraped": "2025-11-01T16:54:07.191Z"
+}

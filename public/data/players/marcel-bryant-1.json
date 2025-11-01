@@ -1,0 +1,48 @@
+{
+  "slug": "marcel-bryant-1",
+  "name": "Marcel Bryant",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Omaha",
+      "conf": "Summit",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 8.9,
+      "fg_pct": 0.5344827586,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.3913043478,
+      "orb_g": 0.7,
+      "drb_g": 1.2,
+      "trb_g": 1.9,
+      "ast_g": 0.2,
+      "stl_g": 0.4,
+      "blk_g": 0.2,
+      "tov_g": 0.55,
+      "pf_g": 1.8,
+      "pts_g": 3.65
+    },
+    {
+      "season": "2024-25",
+      "team": "Prairie View A&M",
+      "conf": "SWAC",
+      "gp": 31,
+      "gs": 27,
+      "mp_g": 26.5483870968,
+      "fg_pct": 0.4154411765,
+      "fg3_pct": 0.2741935484,
+      "ft_pct": 0.5904761905,
+      "orb_g": 1.8387096774,
+      "drb_g": 3.2903225806,
+      "trb_g": 5.1290322581,
+      "ast_g": 1.4193548387,
+      "stl_g": 1.1935483871,
+      "blk_g": 1.1290322581,
+      "tov_g": 2.1612903226,
+      "pf_g": 3.3225806452,
+      "pts_g": 9.8387096774
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marcel-bryant-1.html",
+  "last_scraped": "2025-11-01T16:56:34.680Z"
+}

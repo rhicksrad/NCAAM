@@ -1,0 +1,48 @@
+{
+  "slug": "kycen-pruett-1",
+  "name": "Kycen Pruett",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marshall",
+      "conf": "Sun Belt",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 7.4285714286,
+      "fg_pct": 0.2333333333,
+      "fg3_pct": 0.24,
+      "ft_pct": null,
+      "orb_g": 0.2142857143,
+      "drb_g": 0.7857142857,
+      "trb_g": 1,
+      "ast_g": 0.2142857143,
+      "stl_g": 0.2142857143,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.1428571429,
+      "pf_g": 0.6428571429,
+      "pts_g": 1.4285714286
+    },
+    {
+      "season": "2024-25",
+      "team": "Marshall",
+      "conf": "Sun Belt",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 5.3333333333,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.25,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.6666666667,
+      "ast_g": 0.6666666667,
+      "stl_g": 0,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.3333333333,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kycen-pruett-1.html",
+  "last_scraped": "2025-11-01T16:56:21.102Z"
+}
