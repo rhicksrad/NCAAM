@@ -1,0 +1,28 @@
+{
+  "slug": "chidube-ekwommadu-1",
+  "name": "Chidube Ekwommadu",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "FDU",
+      "conf": "NEC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 5.2380952381,
+      "fg_pct": 0.3684210526,
+      "fg3_pct": 0.3448275862,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1428571429,
+      "drb_g": 0.4285714286,
+      "trb_g": 0.5714285714,
+      "ast_g": 0.2380952381,
+      "stl_g": 0.0476190476,
+      "blk_g": 0.0952380952,
+      "tov_g": 0.1904761905,
+      "pf_g": 0.4285714286,
+      "pts_g": 2.0952380952
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chidube-ekwommadu-1.html",
+  "last_scraped": "2025-11-01T16:14:04.911Z"
+}

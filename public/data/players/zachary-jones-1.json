@@ -1,0 +1,28 @@
+{
+  "slug": "zachary-jones-1",
+  "name": "Zachary Jones",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 2.75,
+      "fg_pct": 0.4,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.25,
+      "trb_g": 0.25,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.5,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zachary-jones-1.html",
+  "last_scraped": "2025-11-01T16:15:58.038Z"
+}

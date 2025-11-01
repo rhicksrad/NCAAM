@@ -1,0 +1,28 @@
+{
+  "slug": "jc-brooks-1",
+  "name": "JC Brooks",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tennessee State",
+      "conf": "OVC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 7.6470588235,
+      "fg_pct": 0.3225806452,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.2,
+      "orb_g": 0.3529411765,
+      "drb_g": 1.1764705882,
+      "trb_g": 1.5294117647,
+      "ast_g": 0.6470588235,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.1176470588,
+      "tov_g": 0.5294117647,
+      "pf_g": 1.4705882353,
+      "pts_g": 1.4705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jc-brooks-1.html",
+  "last_scraped": "2025-11-01T16:14:47.011Z"
+}

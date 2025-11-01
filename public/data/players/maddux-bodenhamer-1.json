@@ -1,0 +1,28 @@
+{
+  "slug": "maddux-bodenhamer-1",
+  "name": "Maddux Bodenhamer",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tennessee State",
+      "conf": "OVC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 9.0625,
+      "fg_pct": 0.3529411765,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.6,
+      "orb_g": 0.5625,
+      "drb_g": 1.125,
+      "trb_g": 1.6875,
+      "ast_g": 0.75,
+      "stl_g": 0.1875,
+      "blk_g": 0,
+      "tov_g": 0.5625,
+      "pf_g": 0.9375,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/maddux-bodenhamer-1.html",
+  "last_scraped": "2025-11-01T16:15:11.340Z"
+}

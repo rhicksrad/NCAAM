@@ -1,0 +1,28 @@
+{
+  "slug": "victor-payne-3",
+  "name": "Victor Payne",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.32,
+      "fg_pct": 0.3863636364,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.8,
+      "orb_g": 0.24,
+      "drb_g": 1.2,
+      "trb_g": 1.44,
+      "ast_g": 0.36,
+      "stl_g": 0.12,
+      "blk_g": 0.08,
+      "tov_g": 0.32,
+      "pf_g": 0.64,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/victor-payne-3.html",
+  "last_scraped": "2025-11-01T16:15:56.305Z"
+}

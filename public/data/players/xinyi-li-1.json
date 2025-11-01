@@ -1,0 +1,48 @@
+{
+  "slug": "xinyi-li-1",
+  "name": "Xinyi Li",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.24,
+      "fg_pct": 0.4179104478,
+      "fg3_pct": 0.3888888889,
+      "ft_pct": 0.6,
+      "orb_g": 0.32,
+      "drb_g": 0.92,
+      "trb_g": 1.24,
+      "ast_g": 0.32,
+      "stl_g": 0.12,
+      "blk_g": 0.08,
+      "tov_g": 0.48,
+      "pf_g": 0.76,
+      "pts_g": 3.16
+    },
+    {
+      "season": "2024-25",
+      "team": "LIU",
+      "conf": "NEC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 7.9615384615,
+      "fg_pct": 0.5384615385,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5,
+      "orb_g": 0.4230769231,
+      "drb_g": 0.6923076923,
+      "trb_g": 1.1153846154,
+      "ast_g": 0.4230769231,
+      "stl_g": 0.1538461538,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.3846153846,
+      "pf_g": 0.9615384615,
+      "pts_g": 2.4230769231
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/xinyi-li-1.html",
+  "last_scraped": "2025-11-01T16:15:58.012Z"
+}

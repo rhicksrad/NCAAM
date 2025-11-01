@@ -1,0 +1,48 @@
+{
+  "slug": "aaron-talbert-1",
+  "name": "Aaron Talbert",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 29,
+      "gs": 21,
+      "mp_g": 28.0344827586,
+      "fg_pct": 0.400921659,
+      "fg3_pct": 0.381443299,
+      "ft_pct": 0.5849056604,
+      "orb_g": 0.3448275862,
+      "drb_g": 1.8275862069,
+      "trb_g": 2.1724137931,
+      "ast_g": 2.2068965517,
+      "stl_g": 0.724137931,
+      "blk_g": 0.1034482759,
+      "tov_g": 1.8275862069,
+      "pf_g": 2.1724137931,
+      "pts_g": 8.3448275862
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 5,
+      "gs": 5,
+      "mp_g": 28,
+      "fg_pct": 0.3541666667,
+      "fg3_pct": 0.3793103448,
+      "ft_pct": 0.5,
+      "orb_g": 0.2,
+      "drb_g": 2.6,
+      "trb_g": 2.8,
+      "ast_g": 1.8,
+      "stl_g": 0.6,
+      "blk_g": 0.2,
+      "tov_g": 2.2,
+      "pf_g": 2.6,
+      "pts_g": 10.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aaron-talbert-1.html",
+  "last_scraped": "2025-11-01T16:13:35.647Z"
+}

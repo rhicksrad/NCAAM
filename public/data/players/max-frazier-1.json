@@ -1,0 +1,48 @@
+{
+  "slug": "max-frazier-1",
+  "name": "Max Frazier",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 7.85,
+      "fg_pct": 0.5833333333,
+      "fg3_pct": null,
+      "ft_pct": 0.4166666667,
+      "orb_g": 0.4,
+      "drb_g": 1.1,
+      "trb_g": 1.5,
+      "ast_g": 0.35,
+      "stl_g": 0.2,
+      "blk_g": 0.65,
+      "tov_g": 0.7,
+      "pf_g": 0.75,
+      "pts_g": 1.65
+    },
+    {
+      "season": "2024-25",
+      "team": "Central Connecticut State",
+      "conf": "NEC",
+      "gp": 27,
+      "gs": 1,
+      "mp_g": 9.962962963,
+      "fg_pct": 0.6393442623,
+      "fg3_pct": null,
+      "ft_pct": 0.3888888889,
+      "orb_g": 0.8148148148,
+      "drb_g": 1.7777777778,
+      "trb_g": 2.5925925926,
+      "ast_g": 0.4814814815,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.8148148148,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.8888888889,
+      "pts_g": 3.1481481481
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/max-frazier-1.html",
+  "last_scraped": "2025-11-01T16:15:16.097Z"
+}

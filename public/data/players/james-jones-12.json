@@ -1,0 +1,28 @@
+{
+  "slug": "james-jones-12",
+  "name": "James Jones",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Central Connecticut State",
+      "conf": "NEC",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 11.5217391304,
+      "fg_pct": 0.3,
+      "fg3_pct": 0,
+      "ft_pct": 0.8,
+      "orb_g": 0.9565217391,
+      "drb_g": 1.6086956522,
+      "trb_g": 2.5652173913,
+      "ast_g": 0.9565217391,
+      "stl_g": 0.2608695652,
+      "blk_g": 0.4782608696,
+      "tov_g": 0.4347826087,
+      "pf_g": 0.2173913043,
+      "pts_g": 1.1304347826
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/james-jones-12.html",
+  "last_scraped": "2025-11-01T16:14:42.109Z"
+}

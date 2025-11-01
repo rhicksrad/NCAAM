@@ -1,0 +1,28 @@
+{
+  "slug": "jadis-jones-1",
+  "name": "Jadis Jones",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Lindenwood",
+      "conf": "OVC",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 33.4848484848,
+      "fg_pct": 0.5524475524,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6012658228,
+      "orb_g": 2.2424242424,
+      "drb_g": 3.6060606061,
+      "trb_g": 5.8484848485,
+      "ast_g": 1.0606060606,
+      "stl_g": 1.4545454545,
+      "blk_g": 0.5151515152,
+      "tov_g": 1.303030303,
+      "pf_g": 2.303030303,
+      "pts_g": 12.5151515152
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jadis-jones-1.html",
+  "last_scraped": "2025-11-01T16:14:33.940Z"
+}

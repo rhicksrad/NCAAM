@@ -1,0 +1,48 @@
+{
+  "slug": "aj-dancler-1",
+  "name": "AJ Dancler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Le Moyne",
+      "conf": "NEC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 14.6,
+      "fg_pct": 0.4029850746,
+      "fg3_pct": 0.3384615385,
+      "ft_pct": 0.7547169811,
+      "orb_g": 0.2666666667,
+      "drb_g": 1.9666666667,
+      "trb_g": 2.2333333333,
+      "ast_g": 1.2666666667,
+      "stl_g": 0.4666666667,
+      "blk_g": 0.0333333333,
+      "tov_g": 1.2,
+      "pf_g": 1.5666666667,
+      "pts_g": 5.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Le Moyne",
+      "conf": "NEC",
+      "gp": 30,
+      "gs": 22,
+      "mp_g": 31.9666666667,
+      "fg_pct": 0.4450867052,
+      "fg3_pct": 0.4036144578,
+      "ft_pct": 0.7647058824,
+      "orb_g": 0.4333333333,
+      "drb_g": 3.3666666667,
+      "trb_g": 3.8,
+      "ast_g": 3.3666666667,
+      "stl_g": 1.1,
+      "blk_g": 0.2,
+      "tov_g": 2.6333333333,
+      "pf_g": 2,
+      "pts_g": 15.1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-dancler-1.html",
+  "last_scraped": "2025-11-01T16:13:40.684Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "clayton-jackson-1",
+  "name": "Clayton Jackson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Lindenwood",
+      "conf": "OVC",
+      "gp": 32,
+      "gs": 8,
+      "mp_g": 18.84375,
+      "fg_pct": 0.3733333333,
+      "fg3_pct": 0.3055555556,
+      "ft_pct": 0.6315789474,
+      "orb_g": 0.53125,
+      "drb_g": 1.40625,
+      "trb_g": 1.9375,
+      "ast_g": 1.125,
+      "stl_g": 0.59375,
+      "blk_g": 0.09375,
+      "tov_g": 1.03125,
+      "pf_g": 1.15625,
+      "pts_g": 4.5625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/clayton-jackson-1.html",
+  "last_scraped": "2025-11-01T16:14:09.586Z"
+}

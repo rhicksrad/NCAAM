@@ -1,0 +1,48 @@
+{
+  "slug": "jerone-morton-1",
+  "name": "Jerone Morton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Morehead State",
+      "conf": "OVC",
+      "gp": 34,
+      "gs": 2,
+      "mp_g": 12.9411764706,
+      "fg_pct": 0.3108108108,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.6764705882,
+      "orb_g": 0.3235294118,
+      "drb_g": 0.9705882353,
+      "trb_g": 1.2941176471,
+      "ast_g": 0.6470588235,
+      "stl_g": 0.3235294118,
+      "blk_g": 0.1764705882,
+      "tov_g": 0.8529411765,
+      "pf_g": 1.2352941176,
+      "pts_g": 2.2058823529
+    },
+    {
+      "season": "2024-25",
+      "team": "Morehead State",
+      "conf": "OVC",
+      "gp": 26,
+      "gs": 20,
+      "mp_g": 29.5384615385,
+      "fg_pct": 0.4497816594,
+      "fg3_pct": 0.3766233766,
+      "ft_pct": 0.72,
+      "orb_g": 0.5769230769,
+      "drb_g": 2.6538461538,
+      "trb_g": 3.2307692308,
+      "ast_g": 3.4230769231,
+      "stl_g": 1.3076923077,
+      "blk_g": 0.1538461538,
+      "tov_g": 1.8846153846,
+      "pf_g": 1.8846153846,
+      "pts_g": 10.4230769231
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jerone-morton-1.html",
+  "last_scraped": "2025-11-01T16:14:47.039Z"
+}

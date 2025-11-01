@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-hall-1",
+  "name": "Ryan Hall",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Southern Indiana",
+      "conf": "OVC",
+      "gp": 30,
+      "gs": 8,
+      "mp_g": 18.6,
+      "fg_pct": 0.3791208791,
+      "fg3_pct": 0.3431372549,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.4666666667,
+      "drb_g": 1.1,
+      "trb_g": 1.5666666667,
+      "ast_g": 0.4333333333,
+      "stl_g": 0.5666666667,
+      "blk_g": 0.1333333333,
+      "tov_g": 0.5666666667,
+      "pf_g": 1.9,
+      "pts_g": 6.1666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Southern Indiana",
+      "conf": "OVC",
+      "gp": 12,
+      "gs": 3,
+      "mp_g": 12.75,
+      "fg_pct": 0.3720930233,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.3333333333,
+      "drb_g": 1,
+      "trb_g": 1.3333333333,
+      "ast_g": 0.5833333333,
+      "stl_g": 0.4166666667,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.8333333333,
+      "pts_g": 4.5833333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-hall-1.html",
+  "last_scraped": "2025-11-01T16:15:36.918Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "blake-fleming-1",
+  "name": "Blake Fleming",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tennessee State",
+      "conf": "OVC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 3.4,
+      "fg_pct": 0.4285714286,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": null,
+      "orb_g": 0.1,
+      "drb_g": 0.2,
+      "trb_g": 0.3,
+      "ast_g": 0.2,
+      "stl_g": 0.1,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.3,
+      "pts_g": 2.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/blake-fleming-1.html",
+  "last_scraped": "2025-11-01T16:13:50.554Z"
+}

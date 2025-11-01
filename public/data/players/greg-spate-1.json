@@ -1,0 +1,48 @@
+{
+  "slug": "greg-spate-1",
+  "name": "Greg Spate",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Chicago State",
+      "conf": "Ind",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 6.4210526316,
+      "fg_pct": 0.3548387097,
+      "fg3_pct": 0.3461538462,
+      "ft_pct": 0.5,
+      "orb_g": 0.1052631579,
+      "drb_g": 0.7368421053,
+      "trb_g": 0.8421052632,
+      "ast_g": 0.3157894737,
+      "stl_g": 0.0526315789,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.1052631579,
+      "pf_g": 0.4736842105,
+      "pts_g": 1.7368421053
+    },
+    {
+      "season": "2024-25",
+      "team": "Chicago State",
+      "conf": "NEC",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 8.3571428571,
+      "fg_pct": 0.3529411765,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 1,
+      "orb_g": 0.2142857143,
+      "drb_g": 0.4285714286,
+      "trb_g": 0.6428571429,
+      "ast_g": 0.2142857143,
+      "stl_g": 0.2857142857,
+      "blk_g": 0,
+      "tov_g": 0.5714285714,
+      "pf_g": 0.8571428571,
+      "pts_g": 2.4285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/greg-spate-1.html",
+  "last_scraped": "2025-11-01T16:14:27.448Z"
+}

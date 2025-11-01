@@ -1,0 +1,28 @@
+{
+  "slug": "mykolaus-ivanauskas-1",
+  "name": "Mykolaus Ivanauskas",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Mercyhurst",
+      "conf": "NEC",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 15.1851851852,
+      "fg_pct": 0.4747474747,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.2592592593,
+      "drb_g": 2.4444444444,
+      "trb_g": 3.7037037037,
+      "ast_g": 0.3703703704,
+      "stl_g": 0.2962962963,
+      "blk_g": 0.5925925926,
+      "tov_g": 1,
+      "pf_g": 1.6296296296,
+      "pts_g": 4.5925925926
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mykolaus-ivanauskas-1.html",
+  "last_scraped": "2025-11-01T16:15:19.326Z"
+}
