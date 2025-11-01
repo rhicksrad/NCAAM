@@ -176,7 +176,6 @@ if (introParagraph && restrictToMetaConferences) {
 
 const playerIndexByKey = new Map<string, PlayerIndexEntry>();
 const playerIndexByName = new Map<string, PlayerIndexEntry[]>();
-const teamIndexByKey = new Map<string, PlayerIndexEntry>();
 
 for (const entry of playerIndexEntries) {
   const nameKey = entry.name_key ?? normaliseName(entry.name);
@@ -186,19 +185,11 @@ for (const entry of playerIndexEntries) {
   const bucket = playerIndexByName.get(nameKey) ?? [];
   bucket.push(entry);
   playerIndexByName.set(nameKey, bucket);
-
-  if (!teamIndexByKey.has(teamKey)) {
-    if (!latestPlayerIndexSeason || entry.season === latestPlayerIndexSeason) {
-      teamIndexByKey.set(teamKey, entry);
-    }
-  }
 }
 
 for (const bucket of playerIndexByName.values()) {
   bucket.sort((a, b) => seasonLabelToYear(a.season) - seasonLabelToYear(b.season));
 }
-
-const restrictTeamsToIndex = teamIndexByKey.size > 0;
 
 const playerSlugCache = new Map<number, string | null>();
 const playerStatsCache = new Map<string, PlayerStatsDocument | null>();
@@ -208,12 +199,6 @@ const seenTeams = new Map<number, Team>();
 for (const team of teamsResponse.data) {
   if (!team.conference_id) continue;
   if (!conferenceMap.has(team.conference_id)) continue;
-  if (restrictTeamsToIndex) {
-    const indexKey = normaliseTeam(team.full_name || team.name || team.college || "");
-    if (!teamIndexByKey.has(indexKey)) {
-      continue;
-    }
-  }
   if (!seenTeams.has(team.id)) {
     seenTeams.set(team.id, team);
   }
