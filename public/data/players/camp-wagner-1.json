@@ -1,0 +1,48 @@
+{
+  "slug": "camp-wagner-1",
+  "name": "Camp Wagner",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Rice",
+      "conf": "AAC",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 3.5,
+      "fg_pct": 0.3076923077,
+      "fg3_pct": 0.375,
+      "ft_pct": null,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.3888888889,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0.0555555556,
+      "blk_g": 0.1111111111,
+      "tov_g": 0.1111111111,
+      "pf_g": 0.2777777778,
+      "pts_g": 1.2222222222
+    },
+    {
+      "season": "2024-25",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 31,
+      "gs": 25,
+      "mp_g": 26.6451612903,
+      "fg_pct": 0.3784860558,
+      "fg3_pct": 0.3824884793,
+      "ft_pct": 0.8444444444,
+      "orb_g": 0.3870967742,
+      "drb_g": 2.4838709677,
+      "trb_g": 2.8709677419,
+      "ast_g": 0.8387096774,
+      "stl_g": 0.4838709677,
+      "blk_g": 0.2580645161,
+      "tov_g": 0.7419354839,
+      "pf_g": 2,
+      "pts_g": 10.0322580645
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/camp-wagner-1.html",
+  "last_scraped": "2025-11-01T15:30:50.889Z"
+}

@@ -40,6 +40,9 @@ const DEFAULT_TARGET_CONFERENCES = [
   'IVY',
   'MAC',
   'MAAC',
+  'MEAC',
+  'MVC',
+  'MWC',
 ];
 
 const TARGET_CONFERENCES =

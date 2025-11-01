@@ -1,0 +1,28 @@
+{
+  "slug": "sam-duskin-1",
+  "name": "Sam Duskin",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 19,
+      "gs": 8,
+      "mp_g": 10.4736842105,
+      "fg_pct": 0.35,
+      "fg3_pct": 0.2424242424,
+      "ft_pct": 0.4,
+      "orb_g": 0.2631578947,
+      "drb_g": 1,
+      "trb_g": 1.2631578947,
+      "ast_g": 0.3684210526,
+      "stl_g": 0.4210526316,
+      "blk_g": 0.2631578947,
+      "tov_g": 0.3684210526,
+      "pf_g": 0.7368421053,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sam-duskin-1.html",
+  "last_scraped": "2025-11-01T15:33:22.803Z"
+}

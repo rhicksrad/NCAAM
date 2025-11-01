@@ -1,0 +1,28 @@
+{
+  "slug": "calvin-robins-1",
+  "name": "Calvin Robins",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Howard",
+      "conf": "MEAC",
+      "gp": 21,
+      "gs": 4,
+      "mp_g": 10.619047619,
+      "fg_pct": 0.5777777778,
+      "fg3_pct": 0,
+      "ft_pct": 0.4444444444,
+      "orb_g": 1.380952381,
+      "drb_g": 1.3333333333,
+      "trb_g": 2.7142857143,
+      "ast_g": 0.5238095238,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.380952381,
+      "pf_g": 1.5714285714,
+      "pts_g": 3.0476190476
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/calvin-robins-1.html",
+  "last_scraped": "2025-11-01T15:30:46.160Z"
+}

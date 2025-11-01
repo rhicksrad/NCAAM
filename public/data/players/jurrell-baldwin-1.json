@@ -1,0 +1,28 @@
+{
+  "slug": "jurrell-baldwin-1",
+  "name": "Jurrell Baldwin",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Missouri State",
+      "conf": "MVC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 1,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jurrell-baldwin-1.html",
+  "last_scraped": "2025-11-01T15:32:18.180Z"
+}

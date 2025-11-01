@@ -1,0 +1,48 @@
+{
+  "slug": "cam-lawin-1",
+  "name": "Cam Lawin",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 2.3333333333,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0,
+      "drb_g": 0.1111111111,
+      "trb_g": 0.1111111111,
+      "ast_g": 0.1111111111,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 2.3333333333,
+      "fg_pct": 0.1111111111,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.6666666667,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.1666666667,
+      "pf_g": 0.5,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cam-lawin-1.html",
+  "last_scraped": "2025-11-01T15:30:46.224Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "pearson-carmichael-1",
+  "name": "Pearson Carmichael",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Boise State",
+      "conf": "MWC",
+      "gp": 22,
+      "gs": 12,
+      "mp_g": 16.6363636364,
+      "fg_pct": 0.4263565891,
+      "fg3_pct": 0.3164556962,
+      "ft_pct": 0.7727272727,
+      "orb_g": 0.6818181818,
+      "drb_g": 1.8636363636,
+      "trb_g": 2.5454545455,
+      "ast_g": 0.9090909091,
+      "stl_g": 0.5,
+      "blk_g": 0.1363636364,
+      "tov_g": 1,
+      "pf_g": 1.2272727273,
+      "pts_g": 6.9090909091
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/pearson-carmichael-1.html",
+  "last_scraped": "2025-11-01T15:33:08.238Z"
+}

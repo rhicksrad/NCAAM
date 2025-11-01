@@ -1,0 +1,28 @@
+{
+  "slug": "ralph-martino-jr-1",
+  "name": "Ralph Martino Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Maryland Eastern Shore",
+      "conf": "MEAC",
+      "gp": 27,
+      "gs": 5,
+      "mp_g": 12.6296296296,
+      "fg_pct": 0.3166666667,
+      "fg3_pct": 0.1578947368,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.5185185185,
+      "drb_g": 1.6296296296,
+      "trb_g": 2.1481481481,
+      "ast_g": 0.4814814815,
+      "stl_g": 0.4814814815,
+      "blk_g": 0.0740740741,
+      "tov_g": 0.4814814815,
+      "pf_g": 1.2222222222,
+      "pts_g": 1.7037037037
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ralph-martino-jr-1.html",
+  "last_scraped": "2025-11-01T15:33:11.403Z"
+}

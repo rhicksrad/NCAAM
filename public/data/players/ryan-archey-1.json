@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-archey-1",
+  "name": "Ryan Archey",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Coppin State",
+      "conf": "MEAC",
+      "gp": 27,
+      "gs": 8,
+      "mp_g": 24.6296296296,
+      "fg_pct": 0.3409961686,
+      "fg3_pct": 0.2295081967,
+      "ft_pct": 0.6818181818,
+      "orb_g": 0.9259259259,
+      "drb_g": 1.2222222222,
+      "trb_g": 2.1481481481,
+      "ast_g": 1.5185185185,
+      "stl_g": 0.8148148148,
+      "blk_g": 0.037037037,
+      "tov_g": 1.8148148148,
+      "pf_g": 1.8148148148,
+      "pts_g": 9.3333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Coppin State",
+      "conf": "MEAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 19.6666666667,
+      "fg_pct": 0.2142857143,
+      "fg3_pct": 0,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.6666666667,
+      "trb_g": 2,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0.3333333333,
+      "tov_g": 1.6666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 5.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-archey-1.html",
+  "last_scraped": "2025-11-01T15:33:19.556Z"
+}

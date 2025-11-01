@@ -1,0 +1,48 @@
+{
+  "slug": "cooper-bean-1",
+  "name": "Cooper Bean",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3.5555555556,
+      "fg_pct": 0.125,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.4444444444,
+      "trb_g": 0.4444444444,
+      "ast_g": 0.2222222222,
+      "stl_g": 0,
+      "blk_g": 0.1111111111,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.1111111111,
+      "pts_g": 0.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cooper-bean-1.html",
+  "last_scraped": "2025-11-01T15:31:04.137Z"
+}

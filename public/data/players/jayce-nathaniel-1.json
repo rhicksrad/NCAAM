@@ -1,0 +1,28 @@
+{
+  "slug": "jayce-nathaniel-1",
+  "name": "Jayce Nathaniel",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois–Chicago",
+      "conf": "MVC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 10,
+      "fg_pct": 0.8333333333,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 1,
+      "drb_g": 2.3333333333,
+      "trb_g": 3.3333333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 1,
+      "tov_g": 0,
+      "pf_g": 1.6666666667,
+      "pts_g": 4.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jayce-nathaniel-1.html",
+  "last_scraped": "2025-11-01T15:31:58.025Z"
+}

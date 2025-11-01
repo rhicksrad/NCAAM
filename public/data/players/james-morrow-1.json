@@ -1,0 +1,48 @@
+{
+  "slug": "james-morrow-1",
+  "name": "James Morrow",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 9.1111111111,
+      "fg_pct": 0.431372549,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.8275862069,
+      "orb_g": 0.962962963,
+      "drb_g": 1.1481481481,
+      "trb_g": 2.1111111111,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.2222222222,
+      "blk_g": 0.3703703704,
+      "tov_g": 0.7407407407,
+      "pf_g": 1.5555555556,
+      "pts_g": 2.5555555556
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 30,
+      "gs": 4,
+      "mp_g": 10,
+      "fg_pct": 0.3289473684,
+      "fg3_pct": 0.0769230769,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.7,
+      "drb_g": 1.5,
+      "trb_g": 2.2,
+      "ast_g": 0.5,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.3,
+      "tov_g": 0.7333333333,
+      "pf_g": 1.5,
+      "pts_g": 2.5333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/james-morrow-1.html",
+  "last_scraped": "2025-11-01T15:31:51.380Z"
+}

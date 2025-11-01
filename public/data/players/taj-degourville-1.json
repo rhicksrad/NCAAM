@@ -1,0 +1,28 @@
+{
+  "slug": "taj-degourville-1",
+  "name": "Taj DeGourville",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 18.935483871,
+      "fg_pct": 0.3673469388,
+      "fg3_pct": 0.3043478261,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.5161290323,
+      "drb_g": 2.3870967742,
+      "trb_g": 2.9032258065,
+      "ast_g": 1.8387096774,
+      "stl_g": 0.6129032258,
+      "blk_g": 0.3225806452,
+      "tov_g": 1.1935483871,
+      "pf_g": 1.4516129032,
+      "pts_g": 5.1290322581
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/taj-degourville-1.html",
+  "last_scraped": "2025-11-01T15:33:29.326Z"
+}

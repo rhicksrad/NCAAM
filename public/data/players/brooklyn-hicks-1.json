@@ -1,0 +1,48 @@
+{
+  "slug": "brooklyn-hicks-1",
+  "name": "Brooklyn Hicks",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UNLV",
+      "conf": "MWC",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 11.25,
+      "fg_pct": 0.4492753623,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.52,
+      "orb_g": 0.25,
+      "drb_g": 1.125,
+      "trb_g": 1.375,
+      "ast_g": 0.6875,
+      "stl_g": 0.25,
+      "blk_g": 0.03125,
+      "tov_g": 0.625,
+      "pf_g": 0.6875,
+      "pts_g": 2.59375
+    },
+    {
+      "season": "2024-25",
+      "team": "UNLV",
+      "conf": "MWC",
+      "gp": 33,
+      "gs": 7,
+      "mp_g": 19.8181818182,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.18,
+      "ft_pct": 0.5384615385,
+      "orb_g": 1.0606060606,
+      "drb_g": 1.9090909091,
+      "trb_g": 2.9696969697,
+      "ast_g": 1,
+      "stl_g": 0.696969697,
+      "blk_g": 0.0606060606,
+      "tov_g": 1.1212121212,
+      "pf_g": 1.696969697,
+      "pts_g": 4.1818181818
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brooklyn-hicks-1.html",
+  "last_scraped": "2025-11-01T15:30:38.033Z"
+}

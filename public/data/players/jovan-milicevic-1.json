@@ -1,0 +1,28 @@
+{
+  "slug": "jovan-milicevic-1",
+  "name": "Jovan Milicevic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "New Mexico",
+      "conf": "MWC",
+      "gp": 34,
+      "gs": 3,
+      "mp_g": 11.8235294118,
+      "fg_pct": 0.4842105263,
+      "fg3_pct": 0.4576271186,
+      "ft_pct": 0.5789473684,
+      "orb_g": 0.5,
+      "drb_g": 1.5,
+      "trb_g": 2,
+      "ast_g": 0.4411764706,
+      "stl_g": 0.3235294118,
+      "blk_g": 0.1470588235,
+      "tov_g": 0.3823529412,
+      "pf_g": 1.2647058824,
+      "pts_g": 3.8235294118
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jovan-milicevic-1.html",
+  "last_scraped": "2025-11-01T15:32:14.888Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "bruno-alocen-1",
+  "name": "Bruno Alocen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 22.9375,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.3539823009,
+      "ft_pct": 0.8260869565,
+      "orb_g": 0.71875,
+      "drb_g": 2.09375,
+      "trb_g": 2.8125,
+      "ast_g": 1.65625,
+      "stl_g": 0.6875,
+      "blk_g": 0.0625,
+      "tov_g": 1.1875,
+      "pf_g": 1.5,
+      "pts_g": 5.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bruno-alocen-1.html",
+  "last_scraped": "2025-11-01T15:30:39.483Z"
+}

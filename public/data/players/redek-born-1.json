@@ -1,0 +1,28 @@
+{
+  "slug": "redek-born-1",
+  "name": "Redek Born",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northern Iowa",
+      "conf": "MVC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 7.3684210526,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0,
+      "ft_pct": 0.7,
+      "orb_g": 0.1578947368,
+      "drb_g": 1,
+      "trb_g": 1.1578947368,
+      "ast_g": 0.4736842105,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.4736842105,
+      "pf_g": 1.1052631579,
+      "pts_g": 1.3157894737
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/redek-born-1.html",
+  "last_scraped": "2025-11-01T15:33:14.822Z"
+}

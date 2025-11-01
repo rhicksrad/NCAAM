@@ -1,0 +1,48 @@
+{
+  "slug": "leon-bond-iii-1",
+  "name": "Leon Bond III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Virginia",
+      "conf": "ACC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 12.3333333333,
+      "fg_pct": 0.4583333333,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.6428571429,
+      "orb_g": 1.1666666667,
+      "drb_g": 1.6666666667,
+      "trb_g": 2.8333333333,
+      "ast_g": 0.625,
+      "stl_g": 0.5416666667,
+      "blk_g": 0.2083333333,
+      "tov_g": 0.375,
+      "pf_g": 0.8333333333,
+      "pts_g": 4.0833333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Northern Iowa",
+      "conf": "MVC",
+      "gp": 23,
+      "gs": 21,
+      "mp_g": 26.0434782609,
+      "fg_pct": 0.55625,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7837837838,
+      "orb_g": 0.8260869565,
+      "drb_g": 3.5652173913,
+      "trb_g": 4.3913043478,
+      "ast_g": 1.3043478261,
+      "stl_g": 0.9130434783,
+      "blk_g": 0.6086956522,
+      "tov_g": 1.1739130435,
+      "pf_g": 1.347826087,
+      "pts_g": 9.5652173913
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/leon-bond-iii-1.html",
+  "last_scraped": "2025-11-01T15:32:38.491Z"
+}

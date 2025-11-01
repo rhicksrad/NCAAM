@@ -1,0 +1,28 @@
+{
+  "slug": "kyle-jorgensen-1",
+  "name": "Kyle Jorgensen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Colorado State",
+      "conf": "MWC",
+      "gp": 34,
+      "gs": 4,
+      "mp_g": 13.0882352941,
+      "fg_pct": 0.4247787611,
+      "fg3_pct": 0.3111111111,
+      "ft_pct": 0.84375,
+      "orb_g": 0.4705882353,
+      "drb_g": 1.4117647059,
+      "trb_g": 1.8823529412,
+      "ast_g": 0.8529411765,
+      "stl_g": 0.2647058824,
+      "blk_g": 0.2941176471,
+      "tov_g": 0.6764705882,
+      "pf_g": 1.3235294118,
+      "pts_g": 4.0294117647
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kyle-jorgensen-1.html",
+  "last_scraped": "2025-11-01T15:32:33.444Z"
+}

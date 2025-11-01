@@ -1,0 +1,48 @@
+{
+  "slug": "chase-walker-1",
+  "name": "Chase Walker",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Illinois State",
+      "conf": "MVC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 7.7058823529,
+      "fg_pct": 0.5294117647,
+      "fg3_pct": null,
+      "ft_pct": 0.75,
+      "orb_g": 1.1176470588,
+      "drb_g": 1,
+      "trb_g": 2.1176470588,
+      "ast_g": 0.4117647059,
+      "stl_g": 0.3529411765,
+      "blk_g": 0.2352941176,
+      "tov_g": 1.1176470588,
+      "pf_g": 1.8235294118,
+      "pts_g": 3.1764705882
+    },
+    {
+      "season": "2024-25",
+      "team": "Illinois State",
+      "conf": "MVC",
+      "gp": 35,
+      "gs": 34,
+      "mp_g": 24.2285714286,
+      "fg_pct": 0.580060423,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.6934673367,
+      "orb_g": 2.5714285714,
+      "drb_g": 3.6285714286,
+      "trb_g": 6.2,
+      "ast_g": 2.0285714286,
+      "stl_g": 0.6571428571,
+      "blk_g": 0.3714285714,
+      "tov_g": 1.9428571429,
+      "pf_g": 2.6,
+      "pts_g": 15.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chase-walker-1.html",
+  "last_scraped": "2025-11-01T15:30:55.793Z"
+}

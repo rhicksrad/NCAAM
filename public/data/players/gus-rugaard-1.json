@@ -1,0 +1,28 @@
+{
+  "slug": "gus-rugaard-1",
+  "name": "Gus Rugaard",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Bradley",
+      "conf": "MVC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 2.25,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.5,
+      "ft_pct": null,
+      "orb_g": 0.25,
+      "drb_g": 0.5,
+      "trb_g": 0.75,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 1.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gus-rugaard-1.html",
+  "last_scraped": "2025-11-01T15:31:35.135Z"
+}

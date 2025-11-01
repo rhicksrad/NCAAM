@@ -1,0 +1,48 @@
+{
+  "slug": "drayton-jones-1",
+  "name": "Drayton Jones",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 30,
+      "gs": 19,
+      "mp_g": 17.5,
+      "fg_pct": 0.4473684211,
+      "fg3_pct": null,
+      "ft_pct": 0.637254902,
+      "orb_g": 1.7333333333,
+      "drb_g": 2.3333333333,
+      "trb_g": 4.0666666667,
+      "ast_g": 0.8333333333,
+      "stl_g": 0.4333333333,
+      "blk_g": 1.0666666667,
+      "tov_g": 1.5,
+      "pf_g": 3.1,
+      "pts_g": 5.5666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 33,
+      "gs": 32,
+      "mp_g": 23.5757575758,
+      "fg_pct": 0.5643153527,
+      "fg3_pct": null,
+      "ft_pct": 0.6916299559,
+      "orb_g": 1.9696969697,
+      "drb_g": 3.5454545455,
+      "trb_g": 5.5151515152,
+      "ast_g": 1.4242424242,
+      "stl_g": 0.8484848485,
+      "blk_g": 1.696969697,
+      "tov_g": 2.5151515152,
+      "pf_g": 2.8484848485,
+      "pts_g": 13
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drayton-jones-1.html",
+  "last_scraped": "2025-11-01T15:31:23.840Z"
+}

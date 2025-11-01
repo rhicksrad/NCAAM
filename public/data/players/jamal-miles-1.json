@@ -1,0 +1,28 @@
+{
+  "slug": "jamal-miles-1",
+  "name": "Jamal Miles",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 6.0666666667,
+      "fg_pct": 0.4615384615,
+      "fg3_pct": 0.2307692308,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2666666667,
+      "drb_g": 0.2,
+      "trb_g": 0.4666666667,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.0666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 0.2,
+      "pf_g": 0.4666666667,
+      "pts_g": 2.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jamal-miles-1.html",
+  "last_scraped": "2025-11-01T15:31:49.961Z"
+}

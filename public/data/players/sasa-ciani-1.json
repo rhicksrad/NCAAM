@@ -1,0 +1,48 @@
+{
+  "slug": "sasa-ciani-1",
+  "name": "Saša Ciani",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 31,
+      "gs": 5,
+      "mp_g": 13.1612903226,
+      "fg_pct": 0.4852941176,
+      "fg3_pct": null,
+      "ft_pct": 0.5238095238,
+      "orb_g": 1.0322580645,
+      "drb_g": 1.9032258065,
+      "trb_g": 2.935483871,
+      "ast_g": 0.8064516129,
+      "stl_g": 0.3225806452,
+      "blk_g": 0.2580645161,
+      "tov_g": 0.4838709677,
+      "pf_g": 1.8064516129,
+      "pts_g": 2.4838709677
+    },
+    {
+      "season": "2024-25",
+      "team": "Illinois–Chicago",
+      "conf": "MVC",
+      "gp": 27,
+      "gs": 21,
+      "mp_g": 20.2222222222,
+      "fg_pct": 0.5326633166,
+      "fg3_pct": 0.3076923077,
+      "ft_pct": 0.53125,
+      "orb_g": 2.4814814815,
+      "drb_g": 5.1111111111,
+      "trb_g": 7.5925925926,
+      "ast_g": 1.3333333333,
+      "stl_g": 0.5555555556,
+      "blk_g": 0.5185185185,
+      "tov_g": 1.8888888889,
+      "pf_g": 1.9259259259,
+      "pts_g": 9.8888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sasa-ciani-1.html",
+  "last_scraped": "2025-11-01T15:33:26.043Z"
+}

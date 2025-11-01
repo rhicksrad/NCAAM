@@ -1,14 +1,16 @@
 {
-  "generated_at": "2025-11-01T15:09:26Z",
+  "generated_at": "2025-11-01T15:33:54.381Z",
   "conferences": [
-    "A10",
-    "AAC",
     "ACC",
-    "AEC",
-    "ASUN",
     "B10",
     "B12",
+    "SEC",
     "BE",
+    "P12",
+    "AEC",
+    "AAC",
+    "ASUN",
+    "A10",
     "BSKY",
     "BSOU",
     "BWC",
@@ -16,15 +18,16 @@
     "CUSA",
     "HORIZ",
     "IVY",
-    "MAAC",
     "MAC",
-    "P12",
-    "SEC"
+    "MAAC",
+    "MEAC",
+    "MVC",
+    "MWC"
   ],
   "seasons": [
     "2024-25"
   ],
-  "player_count": 3201,
+  "player_count": 3618,
   "season_filter": [
     "2025"
   ]

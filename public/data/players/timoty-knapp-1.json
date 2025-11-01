@@ -1,0 +1,28 @@
+{
+  "slug": "timoty-knapp-1",
+  "name": "Timoty van der Knapp",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Bradley",
+      "conf": "MVC",
+      "gp": 18,
+      "gs": 2,
+      "mp_g": 5.0555555556,
+      "fg_pct": 0.2777777778,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.8333333333,
+      "trb_g": 0.9444444444,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.1111111111,
+      "blk_g": 0,
+      "tov_g": 0.2222222222,
+      "pf_g": 0.3888888889,
+      "pts_g": 0.7222222222
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/timoty-knapp-1.html",
+  "last_scraped": "2025-11-01T15:33:32.589Z"
+}

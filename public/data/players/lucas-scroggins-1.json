@@ -1,0 +1,28 @@
+{
+  "slug": "lucas-scroggins-1",
+  "name": "Lucas Scroggins",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 5.5,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": 0,
+      "orb_g": 0.8333333333,
+      "drb_g": 0.8333333333,
+      "trb_g": 1.6666666667,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.6666666667,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lucas-scroggins-1.html",
+  "last_scraped": "2025-11-01T15:32:41.855Z"
+}

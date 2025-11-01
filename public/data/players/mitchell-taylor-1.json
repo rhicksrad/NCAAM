@@ -1,0 +1,48 @@
+{
+  "slug": "mitchell-taylor-1",
+  "name": "Mitchell Taylor",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 32,
+      "gs": 17,
+      "mp_g": 20.0625,
+      "fg_pct": 0.4107883817,
+      "fg3_pct": 0.275,
+      "ft_pct": 0.6883116883,
+      "orb_g": 0.84375,
+      "drb_g": 2.03125,
+      "trb_g": 2.875,
+      "ast_g": 2.03125,
+      "stl_g": 1.125,
+      "blk_g": 0.03125,
+      "tov_g": 2.28125,
+      "pf_g": 1.71875,
+      "pts_g": 8.1875
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 31,
+      "gs": 20,
+      "mp_g": 20.3548387097,
+      "fg_pct": 0.4680851064,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 0.7831325301,
+      "orb_g": 0.3870967742,
+      "drb_g": 1.7096774194,
+      "trb_g": 2.0967741935,
+      "ast_g": 2.4516129032,
+      "stl_g": 1.1935483871,
+      "blk_g": 0,
+      "tov_g": 1.7419354839,
+      "pf_g": 1.8709677419,
+      "pts_g": 8.5483870968
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mitchell-taylor-1.html",
+  "last_scraped": "2025-11-01T15:32:54.814Z"
+}

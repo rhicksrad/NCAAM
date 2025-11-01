@@ -1,0 +1,28 @@
+{
+  "slug": "maurice-vassel-1",
+  "name": "Maurice Vassel",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Maryland Eastern Shore",
+      "conf": "MEAC",
+      "gp": 29,
+      "gs": 13,
+      "mp_g": 15.0689655172,
+      "fg_pct": 0.5076923077,
+      "fg3_pct": null,
+      "ft_pct": 0.46875,
+      "orb_g": 1.1379310345,
+      "drb_g": 1.4827586207,
+      "trb_g": 2.6206896552,
+      "ast_g": 0.4137931034,
+      "stl_g": 0.1724137931,
+      "blk_g": 0.3793103448,
+      "tov_g": 0.7931034483,
+      "pf_g": 2.1034482759,
+      "pts_g": 2.7931034483
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/maurice-vassel-1.html",
+  "last_scraped": "2025-11-01T15:32:48.284Z"
+}
