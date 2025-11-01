@@ -514,6 +514,31 @@ html[data-theme="dark"] .teams-map__tooltip {
   gap: var(--space-sm);
 }
 
+.player-card__header {
+  justify-content: flex-start;
+}
+
+.player-card__name {
+  margin: 0;
+  font-size: clamp(0.9rem, 0.82rem + 0.2vw, 1rem);
+  font-weight: 600;
+  color: var(--color-ink);
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.player-card__name-text {
+  font-size: 1em;
+  font-weight: inherit;
+}
+
+.player-card__name-meta {
+  font-size: 0.78em;
+  color: var(--color-steel);
+}
+
 .team-card__body {
   display: flex;
   flex-direction: column;
@@ -537,7 +562,6 @@ html[data-theme="dark"] .teams-map__tooltip {
 }
 
 .team-card__meta,
-.player-card__meta,
 .roster-team__meta {
   font-size: 0.9rem;
   color: var(--color-steel);
@@ -658,26 +682,6 @@ html[data-theme="dark"] .teams-map__tooltip {
 .roster-status button:active {
   transform: translateY(1px);
 }
-
-.player-card__meta-row {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  font-size: 0.85rem;
-  color: color-mix(in oklab, var(--color-ink) 88%, var(--color-steel) 12%);
-}
-
-.player-card__meta-row dt {
-  font-weight: 600;
-  color: var(--color-steel);
-}
-
-.player-card__meta-row dd {
-  margin: 0;
-  font-family: var(--font-mono);
-  letter-spacing: 0.05em;
-}
-
 
 .player-card__stats {
   margin-top: var(--space-xs);

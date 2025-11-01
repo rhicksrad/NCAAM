@@ -397,29 +397,34 @@ function renderPlayerCard(player: Player): HTMLElement {
 
   const header = document.createElement("header");
   header.className = "player-card__header";
-  header.innerHTML = `
-    <h3 class="player-card__name">${player.first_name} ${player.last_name}</h3>
-    <span class="player-card__jersey">${formatJersey(player.jersey_number)}</span>
-  `;
+  const name = document.createElement("h3");
+  name.className = "player-card__name";
 
-  const meta = document.createElement("dl");
-  meta.className = "player-card__meta";
+  const nameText = document.createElement("span");
+  nameText.className = "player-card__name-text";
+  nameText.textContent = `${player.first_name} ${player.last_name}`.trim();
 
-  meta.append(createMetaRow("Position", player.position ?? "—"));
-  meta.append(createMetaRow("Height", player.height ?? "—"));
-  meta.append(createMetaRow("Weight", player.weight ?? "—"));
+  const detailParts: string[] = [];
+  const jersey = formatJersey(player.jersey_number);
+  if (jersey !== "—") detailParts.push(jersey);
+  const position = player.position?.trim();
+  if (position) detailParts.push(position);
+  const height = player.height?.trim();
+  if (height) detailParts.push(height);
+  const weight = player.weight?.trim();
+  if (weight) detailParts.push(weight);
+
+  const details = document.createElement("span");
+  details.className = "player-card__name-meta";
+  details.textContent = detailParts.length > 0 ? detailParts.join(" • ") : "—";
+
+  name.append(nameText, details);
+  header.append(name);
 
   const statsSection = renderPlayerStatsSection(player);
 
-  card.append(header, meta, statsSection);
+  card.append(header, statsSection);
   return card;
-}
-
-function createMetaRow(label: string, value: string): HTMLElement {
-  const row = document.createElement("div");
-  row.className = "player-card__meta-row";
-  row.innerHTML = `<dt>${label}</dt><dd>${value}</dd>`;
-  return row;
 }
 
 function renderPlayerStatsSection(player: Player): HTMLElement {
