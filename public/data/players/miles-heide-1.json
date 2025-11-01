@@ -1,0 +1,48 @@
+{
+  "slug": "miles-heide-1",
+  "name": "Miles Heide",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 37,
+      "gs": 1,
+      "mp_g": 8.6756756757,
+      "fg_pct": 0.6326530612,
+      "fg3_pct": 0,
+      "ft_pct": 0.3684210526,
+      "orb_g": 1.1351351351,
+      "drb_g": 1.0540540541,
+      "trb_g": 2.1891891892,
+      "ast_g": 0.1081081081,
+      "stl_g": 0.2432432432,
+      "blk_g": 0.4864864865,
+      "tov_g": 0.4594594595,
+      "pf_g": 1.3783783784,
+      "pts_g": 1.8648648649
+    },
+    {
+      "season": "2024-25",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 30,
+      "gs": 8,
+      "mp_g": 16.5666666667,
+      "fg_pct": 0.7368421053,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.3103448276,
+      "orb_g": 1.6666666667,
+      "drb_g": 2.0333333333,
+      "trb_g": 3.7,
+      "ast_g": 0.5333333333,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.2666666667,
+      "tov_g": 0.8,
+      "pf_g": 2,
+      "pts_g": 4.1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/miles-heide-1.html",
+  "last_scraped": "2025-11-01T15:32:53.230Z"
+}

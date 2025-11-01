@@ -1,0 +1,28 @@
+{
+  "slug": "brian-amuneke-1",
+  "name": "Brian Amuneke",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Fresno State",
+      "conf": "MWC",
+      "gp": 29,
+      "gs": 6,
+      "mp_g": 21.2413793103,
+      "fg_pct": 0.4244186047,
+      "fg3_pct": 0.4069767442,
+      "ft_pct": 0.671875,
+      "orb_g": 0.5172413793,
+      "drb_g": 2.0344827586,
+      "trb_g": 2.5517241379,
+      "ast_g": 0.4482758621,
+      "stl_g": 0.7931034483,
+      "blk_g": 0.0344827586,
+      "tov_g": 0.9310344828,
+      "pf_g": 1.9655172414,
+      "pts_g": 7.724137931
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brian-amuneke-1.html",
+  "last_scraped": "2025-11-01T15:30:36.419Z"
+}

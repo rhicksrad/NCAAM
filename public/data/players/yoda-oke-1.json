@@ -1,0 +1,28 @@
+{
+  "slug": "yoda-oke-1",
+  "name": "Yoda Oke",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 7.9230769231,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.2307692308,
+      "ft_pct": 0.5,
+      "orb_g": 0.4615384615,
+      "drb_g": 2.0769230769,
+      "trb_g": 2.5384615385,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.1538461538,
+      "blk_g": 0,
+      "tov_g": 0.4615384615,
+      "pf_g": 0.3846153846,
+      "pts_g": 2.3076923077
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/yoda-oke-1.html",
+  "last_scraped": "2025-11-01T15:33:50.803Z"
+}

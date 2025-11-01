@@ -1,0 +1,48 @@
+{
+  "slug": "wesley-celichowski-1",
+  "name": "Wesley Celichowski",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 8.3,
+      "fg_pct": 0.5625,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0,
+      "orb_g": 0.3,
+      "drb_g": 0.5,
+      "trb_g": 0.8,
+      "ast_g": 0.4,
+      "stl_g": 0,
+      "blk_g": 0.3,
+      "tov_g": 0.1,
+      "pf_g": 1.2,
+      "pts_g": 1.9
+    },
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 32,
+      "gs": 26,
+      "mp_g": 20.25,
+      "fg_pct": 0.5025906736,
+      "fg3_pct": 0.2881355932,
+      "ft_pct": 0.6355140187,
+      "orb_g": 0.71875,
+      "drb_g": 1.34375,
+      "trb_g": 2.0625,
+      "ast_g": 1.03125,
+      "stl_g": 0.0625,
+      "blk_g": 0.65625,
+      "tov_g": 1.03125,
+      "pf_g": 2.25,
+      "pts_g": 8.71875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/wesley-celichowski-1.html",
+  "last_scraped": "2025-11-01T15:33:45.811Z"
+}

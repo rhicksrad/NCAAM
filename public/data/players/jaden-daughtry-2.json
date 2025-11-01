@@ -1,0 +1,48 @@
+{
+  "slug": "jaden-daughtry-2",
+  "name": "Jaden Daughtry",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 5.25,
+      "fg_pct": 0.5517241379,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.5,
+      "drb_g": 1.0833333333,
+      "trb_g": 1.5833333333,
+      "ast_g": 0.1666666667,
+      "stl_g": 0.1666666667,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0.8333333333,
+      "pts_g": 3.0833333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 32,
+      "gs": 3,
+      "mp_g": 19.375,
+      "fg_pct": 0.5888888889,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.6434108527,
+      "orb_g": 1.28125,
+      "drb_g": 3,
+      "trb_g": 4.28125,
+      "ast_g": 0.9375,
+      "stl_g": 0.96875,
+      "blk_g": 0.34375,
+      "tov_g": 1.75,
+      "pf_g": 2.3125,
+      "pts_g": 12.90625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-daughtry-2.html",
+  "last_scraped": "2025-11-01T15:31:44.941Z"
+}

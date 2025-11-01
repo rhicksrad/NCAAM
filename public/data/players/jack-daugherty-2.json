@@ -1,0 +1,28 @@
+{
+  "slug": "jack-daugherty-2",
+  "name": "Jack Daugherty",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois State",
+      "conf": "MVC",
+      "gp": 33,
+      "gs": 6,
+      "mp_g": 12.0303030303,
+      "fg_pct": 0.4733333333,
+      "fg3_pct": 0.4758064516,
+      "ft_pct": 0.5384615385,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.3939393939,
+      "trb_g": 1.7272727273,
+      "ast_g": 0.2727272727,
+      "stl_g": 0.1818181818,
+      "blk_g": 0.0303030303,
+      "tov_g": 0.2727272727,
+      "pf_g": 0.6060606061,
+      "pts_g": 6.303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jack-daugherty-2.html",
+  "last_scraped": "2025-11-01T15:31:41.809Z"
+}

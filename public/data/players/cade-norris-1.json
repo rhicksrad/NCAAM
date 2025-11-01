@@ -1,0 +1,28 @@
+{
+  "slug": "cade-norris-1",
+  "name": "Cade Norris",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois State",
+      "conf": "MVC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 7.8823529412,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.75,
+      "orb_g": 0.1176470588,
+      "drb_g": 1.1176470588,
+      "trb_g": 1.2352941176,
+      "ast_g": 0.5882352941,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.3529411765,
+      "pf_g": 0.8235294118,
+      "pts_g": 1.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cade-norris-1.html",
+  "last_scraped": "2025-11-01T15:30:41.204Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "john-seay-oliver-1",
+  "name": "John Seay-Oliver",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1.6,
+      "fg_pct": 0.25,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.4,
+      "drb_g": 0.4,
+      "trb_g": 0.8,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.6,
+      "pf_g": 0,
+      "pts_g": 0.4
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina State",
+      "conf": "MEAC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 4.9,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.25,
+      "ft_pct": 1,
+      "orb_g": 0.1,
+      "drb_g": 1,
+      "trb_g": 1.1,
+      "ast_g": 0.6,
+      "stl_g": 0.4,
+      "blk_g": 0,
+      "tov_g": 0.3,
+      "pf_g": 0.6,
+      "pts_g": 1.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/john-seay-oliver-1.html",
+  "last_scraped": "2025-11-01T15:32:04.820Z"
+}

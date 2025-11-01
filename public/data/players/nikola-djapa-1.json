@@ -1,0 +1,48 @@
+{
+  "slug": "nikola-djapa-1",
+  "name": "Nikola Djapa",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "LIU",
+      "conf": "NEC",
+      "gp": 29,
+      "gs": 27,
+      "mp_g": 21.4137931034,
+      "fg_pct": 0.5681818182,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.5853658537,
+      "orb_g": 2.1379310345,
+      "drb_g": 3.4137931034,
+      "trb_g": 5.5517241379,
+      "ast_g": 0.4482758621,
+      "stl_g": 0.5517241379,
+      "blk_g": 0.5862068966,
+      "tov_g": 1.3103448276,
+      "pf_g": 3.724137931,
+      "pts_g": 6.1379310345
+    },
+    {
+      "season": "2024-25",
+      "team": "Colorado State",
+      "conf": "MWC",
+      "gp": 22,
+      "gs": 1,
+      "mp_g": 7.5,
+      "fg_pct": 0.7,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.3181818182,
+      "drb_g": 1.1818181818,
+      "trb_g": 1.5,
+      "ast_g": 0.3181818182,
+      "stl_g": 0.0909090909,
+      "blk_g": 0.0909090909,
+      "tov_g": 0.5909090909,
+      "pf_g": 1.7727272727,
+      "pts_g": 2.3636363636
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nikola-djapa-1.html",
+  "last_scraped": "2025-11-01T15:33:01.842Z"
+}

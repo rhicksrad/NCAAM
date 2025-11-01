@@ -1,0 +1,28 @@
+{
+  "slug": "cameron-barnes-1",
+  "name": "Cameron Barnes",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois State",
+      "conf": "MVC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 6.1764705882,
+      "fg_pct": 0.56,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.625,
+      "orb_g": 0.4117647059,
+      "drb_g": 0.8823529412,
+      "trb_g": 1.2941176471,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.0588235294,
+      "blk_g": 0.2941176471,
+      "tov_g": 0.1176470588,
+      "pf_g": 0.7647058824,
+      "pts_g": 2.0588235294
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cameron-barnes-1.html",
+  "last_scraped": "2025-11-01T15:30:49.384Z"
+}

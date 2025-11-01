@@ -1,0 +1,48 @@
+{
+  "slug": "luke-kearney-1",
+  "name": "Luke Kearney",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 10.1904761905,
+      "fg_pct": 0.3835616438,
+      "fg3_pct": 0.2978723404,
+      "ft_pct": 0.8461538462,
+      "orb_g": 0.1904761905,
+      "drb_g": 0.7142857143,
+      "trb_g": 0.9047619048,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.2857142857,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.5238095238,
+      "pf_g": 1.1904761905,
+      "pts_g": 3.8571428571
+    },
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 32,
+      "gs": 22,
+      "mp_g": 26.59375,
+      "fg_pct": 0.3891213389,
+      "fg3_pct": 0.3270440252,
+      "ft_pct": 0.8392857143,
+      "orb_g": 0.71875,
+      "drb_g": 2,
+      "trb_g": 2.71875,
+      "ast_g": 0.90625,
+      "stl_g": 0.65625,
+      "blk_g": 0.125,
+      "tov_g": 1.21875,
+      "pf_g": 1.75,
+      "pts_g": 8.90625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-kearney-1.html",
+  "last_scraped": "2025-11-01T15:32:41.843Z"
+}

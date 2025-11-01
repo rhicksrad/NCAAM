@@ -1,0 +1,48 @@
+{
+  "slug": "chuck-bailey-iii-1",
+  "name": "Chuck Bailey III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Evansville",
+      "conf": "MVC",
+      "gp": 34,
+      "gs": 1,
+      "mp_g": 18.4705882353,
+      "fg_pct": 0.4089068826,
+      "fg3_pct": 0.3518518519,
+      "ft_pct": 0.8125,
+      "orb_g": 0.4705882353,
+      "drb_g": 2.1764705882,
+      "trb_g": 2.6470588235,
+      "ast_g": 0.7941176471,
+      "stl_g": 0.2941176471,
+      "blk_g": 0.0588235294,
+      "tov_g": 1.3529411765,
+      "pf_g": 1.4705882353,
+      "pts_g": 8.4117647059
+    },
+    {
+      "season": "2024-25",
+      "team": "Nevada",
+      "conf": "MWC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 11.064516129,
+      "fg_pct": 0.4078947368,
+      "fg3_pct": 0.32,
+      "ft_pct": 0.5,
+      "orb_g": 0.1612903226,
+      "drb_g": 1.1290322581,
+      "trb_g": 1.2903225806,
+      "ast_g": 0.3225806452,
+      "stl_g": 0.1612903226,
+      "blk_g": 0.0967741935,
+      "tov_g": 0.4838709677,
+      "pf_g": 1.3548387097,
+      "pts_g": 2.3548387097
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chuck-bailey-iii-1.html",
+  "last_scraped": "2025-11-01T15:31:00.849Z"
+}

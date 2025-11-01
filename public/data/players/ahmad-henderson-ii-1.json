@@ -1,0 +1,48 @@
+{
+  "slug": "ahmad-henderson-ii-1",
+  "name": "Ahmad Henderson II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Niagara",
+      "conf": "MAAC",
+      "gp": 32,
+      "gs": 26,
+      "mp_g": 25.8125,
+      "fg_pct": 0.3663663664,
+      "fg3_pct": 0.2954545455,
+      "ft_pct": 0.8444444444,
+      "orb_g": 0.28125,
+      "drb_g": 2.09375,
+      "trb_g": 2.375,
+      "ast_g": 1.875,
+      "stl_g": 0.71875,
+      "blk_g": 0.03125,
+      "tov_g": 1.3125,
+      "pf_g": 1.65625,
+      "pts_g": 11.21875
+    },
+    {
+      "season": "2024-25",
+      "team": "Illinois–Chicago",
+      "conf": "MVC",
+      "gp": 31,
+      "gs": 16,
+      "mp_g": 24.5161290323,
+      "fg_pct": 0.4022988506,
+      "fg3_pct": 0.3360655738,
+      "ft_pct": 0.8991596639,
+      "orb_g": 0.2903225806,
+      "drb_g": 2.3870967742,
+      "trb_g": 2.6774193548,
+      "ast_g": 2.6129032258,
+      "stl_g": 1.2258064516,
+      "blk_g": 0,
+      "tov_g": 1.8709677419,
+      "pf_g": 2.4193548387,
+      "pts_g": 11.5483870968
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ahmad-henderson-ii-1.html",
+  "last_scraped": "2025-11-01T15:30:16.321Z"
+}

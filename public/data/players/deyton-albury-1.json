@@ -1,0 +1,48 @@
+{
+  "slug": "deyton-albury-1",
+  "name": "Deyton Albury",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Queens (NC)",
+      "conf": "A-Sun",
+      "gp": 32,
+      "gs": 28,
+      "mp_g": 28.46875,
+      "fg_pct": 0.4819587629,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.75,
+      "orb_g": 0.8125,
+      "drb_g": 5.03125,
+      "trb_g": 5.84375,
+      "ast_g": 3.65625,
+      "stl_g": 1.1875,
+      "blk_g": 0.375,
+      "tov_g": 3.25,
+      "pf_g": 2.625,
+      "pts_g": 17
+    },
+    {
+      "season": "2024-25",
+      "team": "Utah State",
+      "conf": "MWC",
+      "gp": 34,
+      "gs": 23,
+      "mp_g": 18.7941176471,
+      "fg_pct": 0.5476190476,
+      "fg3_pct": 0.4333333333,
+      "ft_pct": 0.6868686869,
+      "orb_g": 0.7058823529,
+      "drb_g": 1.8235294118,
+      "trb_g": 2.5294117647,
+      "ast_g": 1.7058823529,
+      "stl_g": 0.8823529412,
+      "blk_g": 0.1176470588,
+      "tov_g": 1.0882352941,
+      "pf_g": 1.6764705882,
+      "pts_g": 7.7941176471
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/deyton-albury-1.html",
+  "last_scraped": "2025-11-01T15:31:19.115Z"
+}

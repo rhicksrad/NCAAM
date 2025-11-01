@@ -1,0 +1,48 @@
+{
+  "slug": "joshua-hughes-2",
+  "name": "Joshua Hughes",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Evansville",
+      "conf": "MVC",
+      "gp": 35,
+      "gs": 10,
+      "mp_g": 19.4571428571,
+      "fg_pct": 0.4594594595,
+      "fg3_pct": 0.36,
+      "ft_pct": 0.7083333333,
+      "orb_g": 1.0571428571,
+      "drb_g": 2.8857142857,
+      "trb_g": 3.9428571429,
+      "ast_g": 1.0571428571,
+      "stl_g": 0.4,
+      "blk_g": 1.0857142857,
+      "tov_g": 1.2,
+      "pf_g": 1.8571428571,
+      "pts_g": 6.6
+    },
+    {
+      "season": "2024-25",
+      "team": "Evansville",
+      "conf": "MVC",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 29.6875,
+      "fg_pct": 0.3728070175,
+      "fg3_pct": 0.2393162393,
+      "ft_pct": 0.7173913043,
+      "orb_g": 1.34375,
+      "drb_g": 3.84375,
+      "trb_g": 5.1875,
+      "ast_g": 0.6875,
+      "stl_g": 0.96875,
+      "blk_g": 1.125,
+      "tov_g": 1.3125,
+      "pf_g": 2.71875,
+      "pts_g": 7.21875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joshua-hughes-2.html",
+  "last_scraped": "2025-11-01T15:32:13.070Z"
+}

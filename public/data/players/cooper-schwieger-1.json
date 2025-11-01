@@ -1,0 +1,48 @@
+{
+  "slug": "cooper-schwieger-1",
+  "name": "Cooper Schwieger",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 29.935483871,
+      "fg_pct": 0.5015873016,
+      "fg3_pct": 0.3626373626,
+      "ft_pct": 0.7894736842,
+      "orb_g": 1.935483871,
+      "drb_g": 3.4838709677,
+      "trb_g": 5.4193548387,
+      "ast_g": 1,
+      "stl_g": 0.3548387097,
+      "blk_g": 0.9032258065,
+      "tov_g": 1.6129032258,
+      "pf_g": 2.5161290323,
+      "pts_g": 13.1935483871
+    },
+    {
+      "season": "2024-25",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 32.6764705882,
+      "fg_pct": 0.4886649874,
+      "fg3_pct": 0.2989690722,
+      "ft_pct": 0.85,
+      "orb_g": 2,
+      "drb_g": 5.8235294118,
+      "trb_g": 7.8235294118,
+      "ast_g": 1.0588235294,
+      "stl_g": 0.5,
+      "blk_g": 2,
+      "tov_g": 1.6470588235,
+      "pf_g": 2.4705882353,
+      "pts_g": 15.7647058824
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cooper-schwieger-1.html",
+  "last_scraped": "2025-11-01T15:31:04.213Z"
+}

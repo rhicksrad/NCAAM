@@ -1,0 +1,48 @@
+{
+  "slug": "tyran-cook-1",
+  "name": "Tyran Cook",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "VMI",
+      "conf": "Southern",
+      "gp": 32,
+      "gs": 23,
+      "mp_g": 28.4375,
+      "fg_pct": 0.4097938144,
+      "fg3_pct": 0.3396226415,
+      "ft_pct": 0.68,
+      "orb_g": 0.65625,
+      "drb_g": 2.09375,
+      "trb_g": 2.75,
+      "ast_g": 2.4375,
+      "stl_g": 0.625,
+      "blk_g": 0.09375,
+      "tov_g": 2.5,
+      "pf_g": 1.125,
+      "pts_g": 12.65625
+    },
+    {
+      "season": "2024-25",
+      "team": "Indiana State",
+      "conf": "MVC",
+      "gp": 9,
+      "gs": 1,
+      "mp_g": 8.8888888889,
+      "fg_pct": 0.5833333333,
+      "fg3_pct": 0,
+      "ft_pct": 0.1666666667,
+      "orb_g": 0.2222222222,
+      "drb_g": 1.3333333333,
+      "trb_g": 1.5555555556,
+      "ast_g": 1.5555555556,
+      "stl_g": 0.7777777778,
+      "blk_g": 0,
+      "tov_g": 0.7777777778,
+      "pf_g": 0.5555555556,
+      "pts_g": 1.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyran-cook-1.html",
+  "last_scraped": "2025-11-01T15:33:42.628Z"
+}

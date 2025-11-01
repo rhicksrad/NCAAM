@@ -1,0 +1,28 @@
+{
+  "slug": "blake-harper-1",
+  "name": "Blake Harper",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Howard",
+      "conf": "MEAC",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 34.40625,
+      "fg_pct": 0.4471744472,
+      "fg3_pct": 0.404040404,
+      "ft_pct": 0.8246268657,
+      "orb_g": 1,
+      "drb_g": 5.15625,
+      "trb_g": 6.15625,
+      "ast_g": 3.4375,
+      "stl_g": 0.96875,
+      "blk_g": 0.03125,
+      "tov_g": 2.6875,
+      "pf_g": 3.09375,
+      "pts_g": 19.53125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/blake-harper-1.html",
+  "last_scraped": "2025-11-01T15:30:32.865Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "isaia-howard-1",
+  "name": "Isaia Howard",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Drake",
+      "conf": "MVC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 15.2333333333,
+      "fg_pct": 0.435483871,
+      "fg3_pct": 0.3111111111,
+      "ft_pct": 0.4482758621,
+      "orb_g": 1,
+      "drb_g": 1.5,
+      "trb_g": 2.5,
+      "ast_g": 0.8333333333,
+      "stl_g": 1.1,
+      "blk_g": 0.3,
+      "tov_g": 0.6333333333,
+      "pf_g": 2,
+      "pts_g": 4.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaia-howard-1.html",
+  "last_scraped": "2025-11-01T15:31:38.480Z"
+}

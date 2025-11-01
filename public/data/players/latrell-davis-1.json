@@ -1,0 +1,48 @@
+{
+  "slug": "latrell-davis-1",
+  "name": "Latrell Davis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "San Jose State",
+      "conf": "MWC",
+      "gp": 31,
+      "gs": 3,
+      "mp_g": 13.8064516129,
+      "fg_pct": 0.512195122,
+      "fg3_pct": 0.2972972973,
+      "ft_pct": 0.65,
+      "orb_g": 0.4838709677,
+      "drb_g": 1.5483870968,
+      "trb_g": 2.0322580645,
+      "ast_g": 0.6129032258,
+      "stl_g": 0.2580645161,
+      "blk_g": 0.0322580645,
+      "tov_g": 0.6451612903,
+      "pf_g": 1.2258064516,
+      "pts_g": 5.6774193548
+    },
+    {
+      "season": "2024-25",
+      "team": "San Jose State",
+      "conf": "MWC",
+      "gp": 35,
+      "gs": 9,
+      "mp_g": 25.3428571429,
+      "fg_pct": 0.4525547445,
+      "fg3_pct": 0.3834586466,
+      "ft_pct": 0.6846153846,
+      "orb_g": 0.6285714286,
+      "drb_g": 2.4571428571,
+      "trb_g": 3.0857142857,
+      "ast_g": 1.6571428571,
+      "stl_g": 0.6,
+      "blk_g": 0,
+      "tov_g": 1.2,
+      "pf_g": 1.5142857143,
+      "pts_g": 11.0857142857
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/latrell-davis-1.html",
+  "last_scraped": "2025-11-01T15:32:36.702Z"
+}

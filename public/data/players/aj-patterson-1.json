@@ -1,0 +1,28 @@
+{
+  "slug": "aj-patterson-1",
+  "name": "AJ Patterson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0,
+      "ft_pct": 0.75,
+      "orb_g": 0.2,
+      "drb_g": 0.4,
+      "trb_g": 0.6,
+      "ast_g": 0.3,
+      "stl_g": 0.1,
+      "blk_g": 0,
+      "tov_g": 0.7,
+      "pf_g": 0.5,
+      "pts_g": 0.7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-patterson-1.html",
+  "last_scraped": "2025-11-01T15:30:19.408Z"
+}

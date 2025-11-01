@@ -1,0 +1,48 @@
+{
+  "slug": "jaylen-crocker-johnson-1",
+  "name": "Jaylen Crocker-Johnson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 34,
+      "gs": 33,
+      "mp_g": 23.2941176471,
+      "fg_pct": 0.4979079498,
+      "fg3_pct": 0.2833333333,
+      "ft_pct": 0.6923076923,
+      "orb_g": 1.8235294118,
+      "drb_g": 3.5,
+      "trb_g": 5.3235294118,
+      "ast_g": 1.6176470588,
+      "stl_g": 0.5,
+      "blk_g": 0.8235294118,
+      "tov_g": 1.4117647059,
+      "pf_g": 2.9705882353,
+      "pts_g": 9.0882352941
+    },
+    {
+      "season": "2024-25",
+      "team": "Colorado State",
+      "conf": "MWC",
+      "gp": 36,
+      "gs": 29,
+      "mp_g": 21.5,
+      "fg_pct": 0.4913793103,
+      "fg3_pct": 0.3541666667,
+      "ft_pct": 0.7590361446,
+      "orb_g": 1.25,
+      "drb_g": 3.1388888889,
+      "trb_g": 4.3888888889,
+      "ast_g": 0.8055555556,
+      "stl_g": 0.2777777778,
+      "blk_g": 0.75,
+      "tov_g": 0.9444444444,
+      "pf_g": 2.4444444444,
+      "pts_g": 9.0277777778
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylen-crocker-johnson-1.html",
+  "last_scraped": "2025-11-01T15:31:59.623Z"
+}

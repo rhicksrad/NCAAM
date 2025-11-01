@@ -1,0 +1,28 @@
+{
+  "slug": "pharaoh-compton-1",
+  "name": "Pharaoh Compton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "San Diego State",
+      "conf": "MWC",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 13.3333333333,
+      "fg_pct": 0.6454545455,
+      "fg3_pct": null,
+      "ft_pct": 0.38,
+      "orb_g": 0.7,
+      "drb_g": 1.7,
+      "trb_g": 2.4,
+      "ast_g": 0.4333333333,
+      "stl_g": 0.6,
+      "blk_g": 0.5,
+      "tov_g": 0.9,
+      "pf_g": 2.4333333333,
+      "pts_g": 5.3666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/pharaoh-compton-1.html",
+  "last_scraped": "2025-11-01T15:33:08.221Z"
+}

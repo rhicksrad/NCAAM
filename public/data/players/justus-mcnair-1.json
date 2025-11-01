@@ -1,0 +1,28 @@
+{
+  "slug": "justus-mcnair-1",
+  "name": "Justus McNair",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 11.1764705882,
+      "fg_pct": 0.3880597015,
+      "fg3_pct": 0.3088235294,
+      "ft_pct": 0.7297297297,
+      "orb_g": 0.3529411765,
+      "drb_g": 0.9117647059,
+      "trb_g": 1.2647058824,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.5294117647,
+      "blk_g": 0.2058823529,
+      "tov_g": 0.4117647059,
+      "pf_g": 0.6176470588,
+      "pts_g": 4.4705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/justus-mcnair-1.html",
+  "last_scraped": "2025-11-01T15:32:19.875Z"
+}

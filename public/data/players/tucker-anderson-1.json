@@ -1,0 +1,48 @@
+{
+  "slug": "tucker-anderson-1",
+  "name": "Tucker Anderson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Central Arkansas",
+      "conf": "A-Sun",
+      "gp": 31,
+      "gs": 29,
+      "mp_g": 30.8064516129,
+      "fg_pct": 0.4145658263,
+      "fg3_pct": 0.3807106599,
+      "ft_pct": 0.8125,
+      "orb_g": 0.8387096774,
+      "drb_g": 2.8709677419,
+      "trb_g": 3.7096774194,
+      "ast_g": 1.4516129032,
+      "stl_g": 0.8709677419,
+      "blk_g": 0.4516129032,
+      "tov_g": 1.1612903226,
+      "pf_g": 2.3548387097,
+      "pts_g": 14.4838709677
+    },
+    {
+      "season": "2024-25",
+      "team": "Utah State",
+      "conf": "MWC",
+      "gp": 34,
+      "gs": 9,
+      "mp_g": 16.8823529412,
+      "fg_pct": 0.3756906077,
+      "fg3_pct": 0.2945736434,
+      "ft_pct": 0.8275862069,
+      "orb_g": 0.6470588235,
+      "drb_g": 1.3529411765,
+      "trb_g": 2,
+      "ast_g": 0.6764705882,
+      "stl_g": 0.4117647059,
+      "blk_g": 0.3529411765,
+      "tov_g": 0.3529411765,
+      "pf_g": 1.2941176471,
+      "pts_g": 5.8235294118
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tucker-anderson-1.html",
+  "last_scraped": "2025-11-01T15:33:37.676Z"
+}

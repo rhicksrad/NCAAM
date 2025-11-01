@@ -1,0 +1,28 @@
+{
+  "slug": "all-wright-1",
+  "name": "All Wright",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Valparaiso",
+      "conf": "MVC",
+      "gp": 34,
+      "gs": 31,
+      "mp_g": 29.5882352941,
+      "fg_pct": 0.4080717489,
+      "fg3_pct": 0.3828571429,
+      "ft_pct": 0.8050847458,
+      "orb_g": 0.4705882353,
+      "drb_g": 1.7058823529,
+      "trb_g": 2.1764705882,
+      "ast_g": 2.3823529412,
+      "stl_g": 0.8529411765,
+      "blk_g": 0.2058823529,
+      "tov_g": 1.3529411765,
+      "pf_g": 2,
+      "pts_g": 15.4705882353
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/all-wright-1.html",
+  "last_scraped": "2025-11-01T15:30:23.041Z"
+}

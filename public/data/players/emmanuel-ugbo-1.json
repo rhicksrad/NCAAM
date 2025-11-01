@@ -1,0 +1,48 @@
+{
+  "slug": "emmanuel-ugbo-1",
+  "name": "Emmanuel Ugbo",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - dnp",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Boise State",
+      "conf": "MWC",
+      "gp": 36,
+      "gs": 12,
+      "mp_g": 10.0277777778,
+      "fg_pct": 0.4823529412,
+      "fg3_pct": 0.2272727273,
+      "ft_pct": 0.7878787879,
+      "orb_g": 0.5833333333,
+      "drb_g": 1.75,
+      "trb_g": 2.3333333333,
+      "ast_g": 0.1944444444,
+      "stl_g": 0.1111111111,
+      "blk_g": 0.3611111111,
+      "tov_g": 0.5277777778,
+      "pf_g": 1.0833333333,
+      "pts_g": 3.1388888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/emmanuel-ugbo-1.html",
+  "last_scraped": "2025-11-01T15:31:28.570Z"
+}

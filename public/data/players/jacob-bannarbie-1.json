@@ -1,0 +1,48 @@
+{
+  "slug": "jacob-bannarbie-1",
+  "name": "Jacob Bannarbie",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "UNLV",
+      "conf": "MWC",
+      "gp": 19,
+      "gs": 3,
+      "mp_g": 6.6315789474,
+      "fg_pct": 0.5294117647,
+      "fg3_pct": 0,
+      "ft_pct": 0.6,
+      "orb_g": 1,
+      "drb_g": 0.8421052632,
+      "trb_g": 1.8421052632,
+      "ast_g": 0.0526315789,
+      "stl_g": 0.1578947368,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.2631578947,
+      "pf_g": 1.3684210526,
+      "pts_g": 1.5789473684
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-bannarbie-1.html",
+  "last_scraped": "2025-11-01T15:31:41.737Z"
+}

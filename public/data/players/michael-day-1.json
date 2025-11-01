@@ -1,0 +1,48 @@
+{
+  "slug": "michael-day-1",
+  "name": "Michael Day",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Evansville",
+      "conf": "MVC",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 3.4444444444,
+      "fg_pct": 0.4285714286,
+      "fg3_pct": 0,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.5555555556,
+      "trb_g": 0.8888888889,
+      "ast_g": 0.1111111111,
+      "stl_g": 0.1111111111,
+      "blk_g": 0.2222222222,
+      "tov_g": 0.1111111111,
+      "pf_g": 0.2222222222,
+      "pts_g": 0.7777777778
+    },
+    {
+      "season": "2024-25",
+      "team": "Evansville",
+      "conf": "MVC",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 9.8888888889,
+      "fg_pct": 0.4385964912,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.5,
+      "orb_g": 0.3703703704,
+      "drb_g": 1.0740740741,
+      "trb_g": 1.4444444444,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.0740740741,
+      "blk_g": 0.3703703704,
+      "tov_g": 0.5555555556,
+      "pf_g": 1.6666666667,
+      "pts_g": 2.4074074074
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/michael-day-1.html",
+  "last_scraped": "2025-11-01T15:32:49.867Z"
+}

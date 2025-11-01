@@ -1,0 +1,28 @@
+{
+  "slug": "jaquan-johnson-1",
+  "name": "Jaquan Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Bradley",
+      "conf": "MVC",
+      "gp": 37,
+      "gs": 0,
+      "mp_g": 18.0540540541,
+      "fg_pct": 0.4573170732,
+      "fg3_pct": 0.3488372093,
+      "ft_pct": 0.6837606838,
+      "orb_g": 0.5135135135,
+      "drb_g": 1.8648648649,
+      "trb_g": 2.3783783784,
+      "ast_g": 2.4324324324,
+      "stl_g": 1.5405405405,
+      "blk_g": 0,
+      "tov_g": 1.1891891892,
+      "pf_g": 1.4324324324,
+      "pts_g": 6.6216216216
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaquan-johnson-1.html",
+  "last_scraped": "2025-11-01T15:31:52.960Z"
+}

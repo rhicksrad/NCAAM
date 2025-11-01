@@ -1,0 +1,28 @@
+{
+  "slug": "drew-steffe-2",
+  "name": "Drew Steffe",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Southern Illinois",
+      "conf": "MVC",
+      "gp": 33,
+      "gs": 19,
+      "mp_g": 26.2424242424,
+      "fg_pct": 0.3924731183,
+      "fg3_pct": 0.3771929825,
+      "ft_pct": 0.5964912281,
+      "orb_g": 0.4545454545,
+      "drb_g": 2.1818181818,
+      "trb_g": 2.6363636364,
+      "ast_g": 2.303030303,
+      "stl_g": 0.7272727273,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.7575757576,
+      "pf_g": 1.7575757576,
+      "pts_g": 6.7575757576
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drew-steffe-2.html",
+  "last_scraped": "2025-11-01T15:31:23.879Z"
+}

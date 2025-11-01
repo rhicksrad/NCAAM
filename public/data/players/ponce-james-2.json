@@ -1,0 +1,28 @@
+{
+  "slug": "ponce-james-2",
+  "name": "Ponce James",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Delaware State",
+      "conf": "MEAC",
+      "gp": 23,
+      "gs": 1,
+      "mp_g": 12.5217391304,
+      "fg_pct": 0.4411764706,
+      "fg3_pct": 0.4411764706,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.3043478261,
+      "drb_g": 0.8695652174,
+      "trb_g": 1.1739130435,
+      "ast_g": 1.8260869565,
+      "stl_g": 0.6086956522,
+      "blk_g": 0,
+      "tov_g": 0.9130434783,
+      "pf_g": 1.3043478261,
+      "pts_g": 4.1739130435
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ponce-james-2.html",
+  "last_scraped": "2025-11-01T15:33:11.283Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "justin-mcbride-2",
+  "name": "Justin McBride",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oklahoma State",
+      "conf": "Big 12",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 6.4166666667,
+      "fg_pct": 0.5208333333,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.2105263158,
+      "orb_g": 0.5416666667,
+      "drb_g": 0.9583333333,
+      "trb_g": 1.5,
+      "ast_g": 0.0833333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.125,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.875,
+      "pts_g": 2.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Nevada",
+      "conf": "MWC",
+      "gp": 33,
+      "gs": 3,
+      "mp_g": 18.5151515152,
+      "fg_pct": 0.5217391304,
+      "fg3_pct": 0.2413793103,
+      "ft_pct": 0.58,
+      "orb_g": 1.0606060606,
+      "drb_g": 3.1212121212,
+      "trb_g": 4.1818181818,
+      "ast_g": 0.6363636364,
+      "stl_g": 0.4242424242,
+      "blk_g": 0.4242424242,
+      "tov_g": 0.7878787879,
+      "pf_g": 1.5757575758,
+      "pts_g": 7.8484848485
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/justin-mcbride-2.html",
+  "last_scraped": "2025-11-01T15:32:18.265Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "dramane-camara-1",
+  "name": "Dramane Camara",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 2.7,
+      "fg_pct": 0.1428571429,
+      "fg3_pct": 0,
+      "ft_pct": 0.4,
+      "orb_g": 0,
+      "drb_g": 0.2,
+      "trb_g": 0.2,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1,
+      "pts_g": 0.6
+    },
+    {
+      "season": "2024-25",
+      "team": "Norfolk State",
+      "conf": "MEAC",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.4,
+      "fg_pct": 0.2962962963,
+      "fg3_pct": 0.2558139535,
+      "ft_pct": 1,
+      "orb_g": 0.2,
+      "drb_g": 1.16,
+      "trb_g": 1.36,
+      "ast_g": 0.32,
+      "stl_g": 0.44,
+      "blk_g": 0,
+      "tov_g": 0.32,
+      "pf_g": 0.88,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dramane-camara-1.html",
+  "last_scraped": "2025-11-01T15:31:23.805Z"
+}

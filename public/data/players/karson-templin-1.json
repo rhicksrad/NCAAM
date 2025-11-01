@@ -1,0 +1,48 @@
+{
+  "slug": "karson-templin-1",
+  "name": "Karson Templin",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Utah State",
+      "conf": "MWC",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 7.5217391304,
+      "fg_pct": 0.5789473684,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.65,
+      "orb_g": 0.6086956522,
+      "drb_g": 1.0434782609,
+      "trb_g": 1.652173913,
+      "ast_g": 0.347826087,
+      "stl_g": 0.2173913043,
+      "blk_g": 0.2608695652,
+      "tov_g": 0.1304347826,
+      "pf_g": 1.5217391304,
+      "pts_g": 2.5217391304
+    },
+    {
+      "season": "2024-25",
+      "team": "Utah State",
+      "conf": "MWC",
+      "gp": 34,
+      "gs": 3,
+      "mp_g": 17.0294117647,
+      "fg_pct": 0.5251396648,
+      "fg3_pct": 0.2954545455,
+      "ft_pct": 0.5862068966,
+      "orb_g": 2,
+      "drb_g": 3,
+      "trb_g": 5,
+      "ast_g": 0.7941176471,
+      "stl_g": 0.5,
+      "blk_g": 0.6470588235,
+      "tov_g": 0.6764705882,
+      "pf_g": 2.6470588235,
+      "pts_g": 7.4117647059
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/karson-templin-1.html",
+  "last_scraped": "2025-11-01T15:32:23.482Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "caleb-surgers-1",
+  "name": "Caleb Surgers",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Delaware State",
+      "conf": "MEAC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 6.3529411765,
+      "fg_pct": 0.7647058824,
+      "fg3_pct": 1,
+      "ft_pct": 0.2,
+      "orb_g": 0.4117647059,
+      "drb_g": 0.6470588235,
+      "trb_g": 1.0588235294,
+      "ast_g": 0.1764705882,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.1764705882,
+      "tov_g": 0,
+      "pf_g": 1,
+      "pts_g": 1.7058823529
+    },
+    {
+      "season": "2024-25",
+      "team": "Delaware State",
+      "conf": "MEAC",
+      "gp": 28,
+      "gs": 0,
+      "mp_g": 8.8571428571,
+      "fg_pct": 0.5384615385,
+      "fg3_pct": null,
+      "ft_pct": 0.5454545455,
+      "orb_g": 1,
+      "drb_g": 1.6785714286,
+      "trb_g": 2.6785714286,
+      "ast_g": 0.2142857143,
+      "stl_g": 0.3571428571,
+      "blk_g": 0.2142857143,
+      "tov_g": 0.5714285714,
+      "pf_g": 1.1785714286,
+      "pts_g": 1.7142857143
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/caleb-surgers-1.html",
+  "last_scraped": "2025-11-01T15:30:44.564Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "will-cooper-1",
+  "name": "Will Cooper",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Air Force",
+      "conf": "MWC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 15.1428571429,
+      "fg_pct": 0.4512195122,
+      "fg3_pct": 0.3773584906,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.4285714286,
+      "trb_g": 1.7619047619,
+      "ast_g": 0.380952381,
+      "stl_g": 0.1428571429,
+      "blk_g": 0.380952381,
+      "tov_g": 1.1904761905,
+      "pf_g": 1.7619047619,
+      "pts_g": 5.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/will-cooper-1.html",
+  "last_scraped": "2025-11-01T15:33:47.517Z"
+}
