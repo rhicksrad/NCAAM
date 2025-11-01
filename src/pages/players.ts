@@ -23,12 +23,6 @@ type PlayerIndexDocument = {
   players?: PlayerIndexEntry[];
 };
 
-type PlayerStatsMeta = {
-  conferences?: string[];
-  season_filter?: string[];
-  generated_at?: string;
-};
-
 type PlayerStatsSeason = {
   season: string;
   team: string;
@@ -99,8 +93,6 @@ if (!app) {
 }
 
 app.innerHTML = `
-  <h1>Active Players</h1>
-  <p class="page-intro">Browse every Division I roster and open a team to load its current active players.</p>
   <input class="search" placeholder="Search by team or conference" aria-label="Filter teams">
   <div id="roster-groups" class="conference-groups roster-groups" aria-live="polite"></div>
   <p id="roster-empty" class="empty-state" hidden>No teams match your search.</p>
@@ -134,7 +126,7 @@ const assetUrl = (path: string) => {
   return new URL(normalisedPath, root).toString();
 };
 
-const [conferenceMap, teamsResponse, playersIndexDoc, playersMeta] = await Promise.all([
+const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
   getConferenceMap(),
   NCAAM.teams(1, 400),
   fetch(assetUrl("data/players_index.json"))
@@ -146,15 +138,6 @@ const [conferenceMap, teamsResponse, playersIndexDoc, playersMeta] = await Promi
       console.warn("Unable to load player index", error);
       return null;
     }),
-  fetch(assetUrl("data/cbb_conference_meta.json"))
-    .then(res => {
-      if (!res.ok) throw new Error(`Failed to load college stats metadata (${res.status})`);
-      return res.json() as Promise<PlayerStatsMeta>;
-    })
-    .catch(error => {
-      console.warn("Unable to load college stats metadata", error);
-      return null;
-    }),
 ]);
 
 const playerIndexEntries = Array.isArray(playersIndexDoc?.players) ? playersIndexDoc.players : [];
@@ -162,18 +145,6 @@ const playerIndexSeasonsRaw = Array.isArray(playersIndexDoc?.seasons) ? playersI
 const playerIndexSeasons = playerIndexSeasonsRaw.filter((value): value is string => typeof value === "string");
 playerIndexSeasons.sort((a, b) => seasonLabelToYear(a) - seasonLabelToYear(b));
 const latestPlayerIndexSeason = playerIndexSeasons[playerIndexSeasons.length - 1] ?? null;
-const introParagraph = app.querySelector<HTMLParagraphElement>(".page-intro");
-
-const metaConferences = Array.isArray(playersMeta?.conferences)
-  ? playersMeta?.conferences.filter((value): value is string => typeof value === "string" && value.trim().length > 0)
-  : [];
-const restrictToMetaConferences = metaConferences.length > 0;
-if (introParagraph && restrictToMetaConferences) {
-  const conferenceList = metaConferences.join(", ");
-  introParagraph.textContent =
-    `College stats cached for ${conferenceList}. Open a team to load its active roster.`;
-}
-
 const playerIndexByKey = new Map<string, PlayerIndexEntry>();
 const playerIndexByName = new Map<string, PlayerIndexEntry[]>();
 
