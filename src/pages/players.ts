@@ -427,40 +427,13 @@ function updatePlayerStatsSection(
 
   section.innerHTML = "";
 
-  const header = document.createElement("div");
-  header.className = "player-card__stats-header";
-
-  const title = document.createElement("h3");
-  title.textContent = "College stats";
-  header.append(title);
-
-  const source = document.createElement("p");
-  source.className = "player-card__stats-meta";
-  source.textContent = "Source: College Basketball Reference";
-  header.append(source);
-
-  section.append(header);
+  const tableWrapper = document.createElement("div");
+  tableWrapper.className = "player-card__stats-scroll";
 
   const table = createPlayerStatsTable(seasons);
-  section.append(table);
+  tableWrapper.append(table);
 
-  const updated = lastUpdatedLabel(doc.last_scraped);
-  if (updated) {
-    const updatedRow = document.createElement("p");
-    updatedRow.className = "player-card__stats-meta";
-    updatedRow.textContent = `Last updated ${updated}`;
-    section.append(updatedRow);
-  }
-
-  const linkRow = document.createElement("p");
-  linkRow.className = "player-card__stats-meta";
-  const anchor = document.createElement("a");
-  anchor.href = doc.source;
-  anchor.target = "_blank";
-  anchor.rel = "noopener";
-  anchor.textContent = "View on College Basketball Reference";
-  linkRow.append(anchor);
-  section.append(linkRow);
+  section.append(tableWrapper);
 }
 
 function createPlayerStatsTable(seasons: PlayerStatsSeason[]): HTMLTableElement {
@@ -651,13 +624,6 @@ function ensureStatsForSlug(slug: string): Promise<PlayerStatsDocument | null> {
 
   playerStatsRequests.set(slug, request);
   return request;
-}
-
-function lastUpdatedLabel(value: string | undefined): string | null {
-  if (!value) return null;
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return null;
-  return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
 
 function normaliseName(value: string): string {
