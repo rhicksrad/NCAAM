@@ -1,0 +1,48 @@
+{
+  "slug": "corey-hadnot-ii-1",
+  "name": "Corey Hadnot II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Purdue Fort Wayne",
+      "conf": "Horizon",
+      "gp": 36,
+      "gs": 0,
+      "mp_g": 17.8333333333,
+      "fg_pct": 0.4088669951,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6875,
+      "orb_g": 0.3055555556,
+      "drb_g": 1.3055555556,
+      "trb_g": 1.6111111111,
+      "ast_g": 1.4722222222,
+      "stl_g": 0.5277777778,
+      "blk_g": 0.1944444444,
+      "tov_g": 0.8888888889,
+      "pf_g": 1.5,
+      "pts_g": 6.1944444444
+    },
+    {
+      "season": "2024-25",
+      "team": "Purdue Fort Wayne",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 2,
+      "mp_g": 22.40625,
+      "fg_pct": 0.4458874459,
+      "fg3_pct": 0.3917525773,
+      "ft_pct": 0.8035714286,
+      "orb_g": 0.25,
+      "drb_g": 1.53125,
+      "trb_g": 1.78125,
+      "ast_g": 1.5625,
+      "stl_g": 1.1875,
+      "blk_g": 0.25,
+      "tov_g": 0.875,
+      "pf_g": 1.375,
+      "pts_g": 9.03125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/corey-hadnot-ii-1.html",
+  "last_scraped": "2025-11-01T13:50:32.611Z"
+}

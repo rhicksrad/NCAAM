@@ -1,0 +1,28 @@
+{
+  "slug": "quelron-house-1",
+  "name": "Quel'Ron House",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jacksonville State",
+      "conf": "CUSA",
+      "gp": 29,
+      "gs": 22,
+      "mp_g": 26.3793103448,
+      "fg_pct": 0.3961352657,
+      "fg3_pct": 0.3555555556,
+      "ft_pct": 0.8181818182,
+      "orb_g": 0.5862068966,
+      "drb_g": 2.1034482759,
+      "trb_g": 2.6896551724,
+      "ast_g": 3,
+      "stl_g": 1.1379310345,
+      "blk_g": 0.0344827586,
+      "tov_g": 1.5862068966,
+      "pf_g": 1.9655172414,
+      "pts_g": 8.3793103448
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/quelron-house-1.html",
+  "last_scraped": "2025-11-01T13:53:39.655Z"
+}

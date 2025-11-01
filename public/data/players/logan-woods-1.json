@@ -1,0 +1,48 @@
+{
+  "slug": "logan-woods-1",
+  "name": "Logan Woods",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Wright State",
+      "conf": "Horizon",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 11.1481481481,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.7647058824,
+      "orb_g": 0.2962962963,
+      "drb_g": 0.8888888889,
+      "trb_g": 1.1851851852,
+      "ast_g": 0.7037037037,
+      "stl_g": 0.4074074074,
+      "blk_g": 0.037037037,
+      "tov_g": 0.4814814815,
+      "pf_g": 1.4444444444,
+      "pts_g": 2.2592592593
+    },
+    {
+      "season": "2024-25",
+      "team": "Wright State",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 25,
+      "mp_g": 23.0625,
+      "fg_pct": 0.4795321637,
+      "fg3_pct": 0.4606741573,
+      "ft_pct": 0.7894736842,
+      "orb_g": 0.53125,
+      "drb_g": 1.53125,
+      "trb_g": 2.0625,
+      "ast_g": 1.78125,
+      "stl_g": 0.5625,
+      "blk_g": 0.1875,
+      "tov_g": 0.9375,
+      "pf_g": 2.15625,
+      "pts_g": 6.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/logan-woods-1.html",
+  "last_scraped": "2025-11-01T13:52:51.466Z"
+}

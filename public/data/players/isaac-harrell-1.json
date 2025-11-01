@@ -1,0 +1,48 @@
+{
+  "slug": "isaac-harrell-1",
+  "name": "Isaac Harrell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 29,
+      "gs": 10,
+      "mp_g": 14.8620689655,
+      "fg_pct": 0.4137931034,
+      "fg3_pct": 0.3055555556,
+      "ft_pct": 0.6153846154,
+      "orb_g": 0.9655172414,
+      "drb_g": 1.8275862069,
+      "trb_g": 2.7931034483,
+      "ast_g": 0.2068965517,
+      "stl_g": 0.5862068966,
+      "blk_g": 0.1034482759,
+      "tov_g": 0.4482758621,
+      "pf_g": 1.1724137931,
+      "pts_g": 2.3103448276
+    },
+    {
+      "season": "2024-25",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 6,
+      "mp_g": 21.03125,
+      "fg_pct": 0.4230769231,
+      "fg3_pct": 0.3943661972,
+      "ft_pct": 0.6153846154,
+      "orb_g": 0.96875,
+      "drb_g": 3.03125,
+      "trb_g": 4,
+      "ast_g": 0.5,
+      "stl_g": 0.625,
+      "blk_g": 0.21875,
+      "tov_g": 0.6875,
+      "pf_g": 1.8125,
+      "pts_g": 4.125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaac-harrell-1.html",
+  "last_scraped": "2025-11-01T13:51:31.665Z"
+}

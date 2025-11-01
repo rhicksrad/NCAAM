@@ -1,0 +1,28 @@
+{
+  "slug": "paulis-rapolis-1",
+  "name": "Paulis Rapolis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northern Kentucky",
+      "conf": "Horizon",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 5.08,
+      "fg_pct": 0.4230769231,
+      "fg3_pct": null,
+      "ft_pct": 0.1666666667,
+      "orb_g": 0.48,
+      "drb_g": 0.64,
+      "trb_g": 1.12,
+      "ast_g": 0.04,
+      "stl_g": 0.16,
+      "blk_g": 0.36,
+      "tov_g": 0.44,
+      "pf_g": 0.76,
+      "pts_g": 0.92
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/paulis-rapolis-1.html",
+  "last_scraped": "2025-11-01T13:53:36.382Z"
+}

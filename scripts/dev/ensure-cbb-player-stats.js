@@ -22,6 +22,10 @@ const TARGET_CONFERENCES = [
   'BSKY',
   'BSOU',
   'BWC',
+  'CAA',
+  'CUSA',
+  'HORIZ',
+  'IVY',
 ];
 const TARGET_SEASON_YEARS = ['2025'];
 
@@ -93,8 +97,11 @@ function needsRefresh(currentMeta) {
   const hasConferences = Array.isArray(currentMeta.conferences)
     && TARGET_CONFERENCES.every(conf => currentMeta.conferences.includes(conf));
   if (!hasConferences) return true;
-  if (!currentMeta.seasons || !Array.isArray(currentMeta.seasons)) return true;
-  const hasSeason = TARGET_SEASON_YEARS.every(season => currentMeta.seasons.includes(season));
+  const seasonList = Array.isArray(currentMeta.season_filter) && currentMeta.season_filter.length > 0
+    ? currentMeta.season_filter
+    : currentMeta.seasons;
+  if (!Array.isArray(seasonList) || seasonList.length === 0) return true;
+  const hasSeason = TARGET_SEASON_YEARS.every(season => seasonList.includes(season));
   if (!hasSeason) return true;
   if (typeof currentMeta.player_count !== 'number' || currentMeta.player_count <= 0) return true;
   return false;

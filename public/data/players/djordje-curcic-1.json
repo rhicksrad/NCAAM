@@ -1,0 +1,48 @@
+{
+  "slug": "djordje-curcic-1",
+  "name": "Djordje Curcic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Saint Louis",
+      "conf": "A-10",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 9.8888888889,
+      "fg_pct": 0.5277777778,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 1,
+      "orb_g": 0.0555555556,
+      "drb_g": 0.3888888889,
+      "trb_g": 0.4444444444,
+      "ast_g": 0.5,
+      "stl_g": 0.5,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.5555555556,
+      "pf_g": 0.7777777778,
+      "pts_g": 2.9444444444
+    },
+    {
+      "season": "2024-25",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 23,
+      "gs": 1,
+      "mp_g": 9.3913043478,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3095238095,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.0434782609,
+      "drb_g": 0.7391304348,
+      "trb_g": 0.7826086957,
+      "ast_g": 0.2173913043,
+      "stl_g": 0.2608695652,
+      "blk_g": 0,
+      "tov_g": 0.0869565217,
+      "pf_g": 0.6956521739,
+      "pts_g": 2.1739130435
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/djordje-curcic-1.html",
+  "last_scraped": "2025-11-01T13:50:53.336Z"
+}

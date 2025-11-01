@@ -1,0 +1,28 @@
+{
+  "slug": "robert-hinton-1",
+  "name": "Robert Hinton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 26,
+      "mp_g": 30.2592592593,
+      "fg_pct": 0.4769736842,
+      "fg3_pct": 0.3555555556,
+      "ft_pct": 0.7631578947,
+      "orb_g": 0.962962963,
+      "drb_g": 3.1481481481,
+      "trb_g": 4.1111111111,
+      "ast_g": 1.8148148148,
+      "stl_g": 1.2592592593,
+      "blk_g": 0.037037037,
+      "tov_g": 1.4074074074,
+      "pf_g": 1.4814814815,
+      "pts_g": 14.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/robert-hinton-1.html",
+  "last_scraped": "2025-11-01T13:53:49.147Z"
+}

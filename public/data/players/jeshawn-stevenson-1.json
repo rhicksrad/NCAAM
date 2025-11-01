@@ -1,0 +1,28 @@
+{
+  "slug": "jeshawn-stevenson-1",
+  "name": "Je'Shawn Stevenson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cleveland State",
+      "conf": "Horizon",
+      "gp": 36,
+      "gs": 0,
+      "mp_g": 19.5,
+      "fg_pct": 0.4452554745,
+      "fg3_pct": 0.3451327434,
+      "ft_pct": 0.843373494,
+      "orb_g": 1.1388888889,
+      "drb_g": 1.2777777778,
+      "trb_g": 2.4166666667,
+      "ast_g": 0.9722222222,
+      "stl_g": 1.3611111111,
+      "blk_g": 0.1944444444,
+      "tov_g": 1.1388888889,
+      "pf_g": 1.5555555556,
+      "pts_g": 9.8055555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeshawn-stevenson-1.html",
+  "last_scraped": "2025-11-01T13:52:06.661Z"
+}

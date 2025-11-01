@@ -1,0 +1,28 @@
+{
+  "slug": "austin-brooks-2",
+  "name": "Austin Brooks",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jacksonville State",
+      "conf": "CUSA",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1.6,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0.4,
+      "pf_g": 0.6,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/austin-brooks-2.html",
+  "last_scraped": "2025-11-01T13:49:42.716Z"
+}

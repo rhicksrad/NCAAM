@@ -1,0 +1,48 @@
+{
+  "slug": "jahnathan-lamothe-1",
+  "name": "Jahnathan Lamothe",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 7,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.5,
+      "orb_g": 0.1875,
+      "drb_g": 0.5,
+      "trb_g": 0.6875,
+      "ast_g": 0.25,
+      "stl_g": 0.25,
+      "blk_g": 0.125,
+      "tov_g": 0.4375,
+      "pf_g": 0.75,
+      "pts_g": 0.75
+    },
+    {
+      "season": "2024-25",
+      "team": "North Carolina A&T",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 36.21875,
+      "fg_pct": 0.3715012723,
+      "fg3_pct": 0.2938388626,
+      "ft_pct": 0.7672413793,
+      "orb_g": 0.84375,
+      "drb_g": 6.40625,
+      "trb_g": 7.25,
+      "ast_g": 2.625,
+      "stl_g": 1.46875,
+      "blk_g": 0.25,
+      "tov_g": 2.84375,
+      "pf_g": 2.6875,
+      "pts_g": 13.84375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jahnathan-lamothe-1.html",
+  "last_scraped": "2025-11-01T13:51:47.572Z"
+}

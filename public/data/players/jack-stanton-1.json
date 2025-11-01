@@ -1,0 +1,28 @@
+{
+  "slug": "jack-stanton-1",
+  "name": "Jack Stanton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 7.5555555556,
+      "fg_pct": 0.4074074074,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.5555555556,
+      "trb_g": 0.7777777778,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.5925925926,
+      "blk_g": 0,
+      "tov_g": 0.1851851852,
+      "pf_g": 0.6296296296,
+      "pts_g": 2.4814814815
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jack-stanton-1.html",
+  "last_scraped": "2025-11-01T13:51:41.338Z"
+}

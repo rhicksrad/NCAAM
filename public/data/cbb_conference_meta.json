@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-01T04:49:53.819Z",
+  "generated_at": "2025-11-01T13:56:38.504Z",
   "conferences": [
     "ACC",
     "B10",
@@ -13,12 +13,16 @@
     "A10",
     "BSKY",
     "BSOU",
-    "BWC"
+    "BWC",
+    "CAA",
+    "CUSA",
+    "HORIZ",
+    "IVY"
   ],
   "seasons": [
     "2024-25"
   ],
-  "player_count": 2243,
+  "player_count": 2853,
   "season_filter": [
     "2025"
   ]

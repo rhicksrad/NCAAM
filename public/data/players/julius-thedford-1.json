@@ -1,0 +1,28 @@
+{
+  "slug": "julius-thedford-1",
+  "name": "Julius Thedford",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Western Kentucky",
+      "conf": "CUSA",
+      "gp": 18,
+      "gs": 6,
+      "mp_g": 21.9444444444,
+      "fg_pct": 0.4277108434,
+      "fg3_pct": 0.3658536585,
+      "ft_pct": 0.6296296296,
+      "orb_g": 0.5555555556,
+      "drb_g": 3.2777777778,
+      "trb_g": 3.8333333333,
+      "ast_g": 0.8888888889,
+      "stl_g": 0.6111111111,
+      "blk_g": 0.3333333333,
+      "tov_g": 1.2222222222,
+      "pf_g": 1.9444444444,
+      "pts_g": 12.3888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/julius-thedford-1.html",
+  "last_scraped": "2025-11-01T13:52:26.062Z"
+}

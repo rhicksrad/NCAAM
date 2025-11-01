@@ -1,0 +1,28 @@
+{
+  "slug": "jamil-miller-1",
+  "name": "Jamil Miller",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kennesaw State",
+      "conf": "CUSA",
+      "gp": 33,
+      "gs": 27,
+      "mp_g": 23.4545454545,
+      "fg_pct": 0.4730538922,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.5280898876,
+      "orb_g": 1.0909090909,
+      "drb_g": 3.696969697,
+      "trb_g": 4.7878787879,
+      "ast_g": 0.6060606061,
+      "stl_g": 0.6363636364,
+      "blk_g": 0.4545454545,
+      "tov_g": 0.7272727273,
+      "pf_g": 1.5151515152,
+      "pts_g": 6.7575757576
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jamil-miller-1.html",
+  "last_scraped": "2025-11-01T13:51:53.928Z"
+}

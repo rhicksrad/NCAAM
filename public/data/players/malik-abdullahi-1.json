@@ -1,0 +1,28 @@
+{
+  "slug": "malik-abdullahi-1",
+  "name": "Malik Abdullahi",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 27,
+      "gs": 18,
+      "mp_g": 14.4444444444,
+      "fg_pct": 0.5698924731,
+      "fg3_pct": 0,
+      "ft_pct": 0.5882352941,
+      "orb_g": 0.962962963,
+      "drb_g": 1.7777777778,
+      "trb_g": 2.7407407407,
+      "ast_g": 0.3703703704,
+      "stl_g": 0.4444444444,
+      "blk_g": 0.4444444444,
+      "tov_g": 0.5555555556,
+      "pf_g": 1.5925925926,
+      "pts_g": 4.2962962963
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malik-abdullahi-1.html",
+  "last_scraped": "2025-11-01T13:53:01.288Z"
+}

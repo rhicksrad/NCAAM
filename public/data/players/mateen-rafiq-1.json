@@ -1,0 +1,28 @@
+{
+  "slug": "mateen-rafiq-1",
+  "name": "Mateen Rafiq",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 4.6,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.5,
+      "ft_pct": null,
+      "orb_g": 0.2,
+      "drb_g": 1,
+      "trb_g": 1.2,
+      "ast_g": 0.6,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.4,
+      "pts_g": 0.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mateen-rafiq-1.html",
+  "last_scraped": "2025-11-01T13:53:04.370Z"
+}

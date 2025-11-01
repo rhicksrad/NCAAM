@@ -1,0 +1,48 @@
+{
+  "slug": "jaylen-jones-1",
+  "name": "Jaylen Jones",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Tennessee State",
+      "conf": "OVC",
+      "gp": 31,
+      "gs": 8,
+      "mp_g": 25.5806451613,
+      "fg_pct": 0.4129554656,
+      "fg3_pct": 0.3645833333,
+      "ft_pct": 0.6811594203,
+      "orb_g": 0.7419354839,
+      "drb_g": 3.0967741935,
+      "trb_g": 3.8387096774,
+      "ast_g": 2.7419354839,
+      "stl_g": 0.8709677419,
+      "blk_g": 0.1290322581,
+      "tov_g": 2.4516129032,
+      "pf_g": 1.4516129032,
+      "pts_g": 9.2258064516
+    },
+    {
+      "season": "2024-25",
+      "team": "Oakland",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 21.96875,
+      "fg_pct": 0.3725490196,
+      "fg3_pct": 0.2745098039,
+      "ft_pct": 0.8392857143,
+      "orb_g": 0.53125,
+      "drb_g": 2.28125,
+      "trb_g": 2.8125,
+      "ast_g": 3.0625,
+      "stl_g": 1.15625,
+      "blk_g": 0.03125,
+      "tov_g": 1.59375,
+      "pf_g": 1.0625,
+      "pts_g": 5.46875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaylen-jones-1.html",
+  "last_scraped": "2025-11-01T13:52:03.412Z"
+}

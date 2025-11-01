@@ -1,0 +1,28 @@
+{
+  "slug": "dante-depante-1",
+  "name": "Dante DePante",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 4.5555555556,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0.5555555556,
+      "drb_g": 0.6666666667,
+      "trb_g": 1.2222222222,
+      "ast_g": 0.8888888889,
+      "stl_g": 0.2222222222,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 0.2222222222,
+      "pts_g": 1.1111111111
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dante-depante-1.html",
+  "last_scraped": "2025-11-01T13:50:40.746Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "etienne-strothers-1",
+  "name": "Etienne Strothers",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Hampton",
+      "conf": "CAA",
+      "gp": 28,
+      "gs": 12,
+      "mp_g": 17.9642857143,
+      "fg_pct": 0.419047619,
+      "fg3_pct": 0.3673469388,
+      "ft_pct": 0.71875,
+      "orb_g": 0.5357142857,
+      "drb_g": 1.5,
+      "trb_g": 2.0357142857,
+      "ast_g": 1.2857142857,
+      "stl_g": 1.0714285714,
+      "blk_g": 0.3571428571,
+      "tov_g": 0.7857142857,
+      "pf_g": 1.25,
+      "pts_g": 4.6071428571
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/etienne-strothers-1.html",
+  "last_scraped": "2025-11-01T13:51:14.108Z"
+}

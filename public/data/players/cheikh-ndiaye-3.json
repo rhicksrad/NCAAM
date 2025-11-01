@@ -1,0 +1,28 @@
+{
+  "slug": "cheikh-ndiaye-3",
+  "name": "Cheikh Ndiaye",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Sam Houston State",
+      "conf": "CUSA",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 10.0666666667,
+      "fg_pct": 0.3461538462,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.6666666667,
+      "drb_g": 1.1333333333,
+      "trb_g": 1.8,
+      "ast_g": 0.2,
+      "stl_g": 0.2,
+      "blk_g": 0.2666666667,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.5333333333,
+      "pts_g": 1.5333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cheikh-ndiaye-3.html",
+  "last_scraped": "2025-11-01T13:50:16.605Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "izaiah-pasha-1",
+  "name": "Izaiah Pasha",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Delaware",
+      "conf": "CAA",
+      "gp": 34,
+      "gs": 33,
+      "mp_g": 29.7647058824,
+      "fg_pct": 0.5170068027,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.7692307692,
+      "orb_g": 0.7941176471,
+      "drb_g": 3.3823529412,
+      "trb_g": 4.1764705882,
+      "ast_g": 3.8823529412,
+      "stl_g": 0.8235294118,
+      "blk_g": 0.5882352941,
+      "tov_g": 2.6470588235,
+      "pf_g": 2.2058823529,
+      "pts_g": 11.8529411765
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/izaiah-pasha-1.html",
+  "last_scraped": "2025-11-01T13:51:34.727Z"
+}

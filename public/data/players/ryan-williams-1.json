@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-williams-1",
+  "name": "Ryan Williams",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Northeastern",
+      "conf": "CAA",
+      "gp": 22,
+      "gs": 3,
+      "mp_g": 8.5454545455,
+      "fg_pct": 0.3188405797,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1363636364,
+      "drb_g": 0.3181818182,
+      "trb_g": 0.4545454545,
+      "ast_g": 0.4090909091,
+      "stl_g": 0.3636363636,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.5454545455,
+      "pf_g": 0.7727272727,
+      "pts_g": 2.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-williams-1.html",
+  "last_scraped": "2025-11-01T13:53:58.771Z"
+}

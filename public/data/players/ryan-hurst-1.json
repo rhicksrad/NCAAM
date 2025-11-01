@@ -1,0 +1,48 @@
+{
+  "slug": "ryan-hurst-1",
+  "name": "Ryan Hurst",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 5,
+      "gs": 4,
+      "mp_g": 31.6,
+      "fg_pct": 0.3166666667,
+      "fg3_pct": 0.2564102564,
+      "ft_pct": 0.7777777778,
+      "orb_g": 1,
+      "drb_g": 3.2,
+      "trb_g": 4.2,
+      "ast_g": 0.2,
+      "stl_g": 0.8,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 1.6,
+      "pts_g": 12.4
+    },
+    {
+      "season": "2024-25",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 4.4,
+      "fg_pct": 0.2,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.4,
+      "trb_g": 0.4,
+      "ast_g": 0.4,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.4,
+      "pts_g": 0.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-hurst-1.html",
+  "last_scraped": "2025-11-01T13:53:55.512Z"
+}

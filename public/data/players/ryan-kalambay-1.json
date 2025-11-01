@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-kalambay-1",
+  "name": "Ryan Kalambay",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 18.21875,
+      "fg_pct": 0.5301204819,
+      "fg3_pct": null,
+      "ft_pct": 0.5319148936,
+      "orb_g": 1.59375,
+      "drb_g": 2.1875,
+      "trb_g": 3.78125,
+      "ast_g": 0.65625,
+      "stl_g": 0.65625,
+      "blk_g": 0.78125,
+      "tov_g": 0.875,
+      "pf_g": 2.1875,
+      "pts_g": 3.53125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-kalambay-1.html",
+  "last_scraped": "2025-11-01T13:53:55.423Z"
+}

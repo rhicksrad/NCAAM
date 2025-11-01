@@ -115,6 +115,10 @@ const CONFERENCE_SLUG_OVERRIDES = new Map<string, ConferenceDetail>([
   ["big-sky", { code: "BSKY", name: "Big Sky Conference" }],
   ["big-south", { code: "BSOU", name: "Big South Conference" }],
   ["big-west", { code: "BWC", name: "Big West Conference" }],
+  ["coastal", { code: "CAA", name: "Coastal Athletic Association" }],
+  ["cusa", { code: "CUSA", name: "Conference USA" }],
+  ["horizon", { code: "HORIZ", name: "Horizon League" }],
+  ["ivy", { code: "IVY", name: "Ivy League" }],
 ]);
 
 const conferenceTeamCache = new Map<string, Promise<string[]>>();

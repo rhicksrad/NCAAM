@@ -1,0 +1,28 @@
+{
+  "slug": "nate-johnson-9",
+  "name": "Nate Johnson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Detroit Mercy",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 29.84375,
+      "fg_pct": 0.3858267717,
+      "fg3_pct": 0.3009708738,
+      "ft_pct": 0.6708860759,
+      "orb_g": 1.28125,
+      "drb_g": 3.25,
+      "trb_g": 4.53125,
+      "ast_g": 1.0625,
+      "stl_g": 0.53125,
+      "blk_g": 0.125,
+      "tov_g": 2.09375,
+      "pf_g": 2.3125,
+      "pts_g": 8.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nate-johnson-9.html",
+  "last_scraped": "2025-11-01T13:53:17.395Z"
+}

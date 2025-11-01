@@ -1,0 +1,48 @@
+{
+  "slug": "cornelius-robinson-jr-1",
+  "name": "Cornelius Robinson Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Monmouth",
+      "conf": "CAA",
+      "gp": 33,
+      "gs": 1,
+      "mp_g": 15.4242424242,
+      "fg_pct": 0.4755244755,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.7,
+      "orb_g": 1.3939393939,
+      "drb_g": 2.4242424242,
+      "trb_g": 3.8181818182,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.7878787879,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.5454545455,
+      "pf_g": 2.6363636364,
+      "pts_g": 5.0606060606
+    },
+    {
+      "season": "2024-25",
+      "team": "Monmouth",
+      "conf": "CAA",
+      "gp": 33,
+      "gs": 21,
+      "mp_g": 23.696969697,
+      "fg_pct": 0.5388601036,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.6144578313,
+      "orb_g": 1.9696969697,
+      "drb_g": 3.7575757576,
+      "trb_g": 5.7272727273,
+      "ast_g": 0.9090909091,
+      "stl_g": 1.0303030303,
+      "blk_g": 0.4848484848,
+      "tov_g": 1,
+      "pf_g": 2.4545454545,
+      "pts_g": 7.8787878788
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cornelius-robinson-jr-1.html",
+  "last_scraped": "2025-11-01T13:50:34.146Z"
+}

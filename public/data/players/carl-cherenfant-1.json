@@ -1,0 +1,48 @@
+{
+  "slug": "carl-cherenfant-1",
+  "name": "Carl Cherenfant",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Memphis",
+      "conf": "AAC",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 4.3888888889,
+      "fg_pct": 0.2,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.3888888889,
+      "drb_g": 0.5555555556,
+      "trb_g": 0.9444444444,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.2777777778,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.1666666667,
+      "pf_g": 0.6666666667,
+      "pts_g": 0.5555555556
+    },
+    {
+      "season": "2024-25",
+      "team": "New Mexico State",
+      "conf": "CUSA",
+      "gp": 20,
+      "gs": 5,
+      "mp_g": 10.8,
+      "fg_pct": 0.358974359,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.8461538462,
+      "orb_g": 0.3,
+      "drb_g": 1.6,
+      "trb_g": 1.9,
+      "ast_g": 0.4,
+      "stl_g": 0.55,
+      "blk_g": 0.2,
+      "tov_g": 0.65,
+      "pf_g": 1.4,
+      "pts_g": 2.1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/carl-cherenfant-1.html",
+  "last_scraped": "2025-11-01T13:50:10.233Z"
+}

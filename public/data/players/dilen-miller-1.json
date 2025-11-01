@@ -1,0 +1,28 @@
+{
+  "slug": "dilen-miller-1",
+  "name": "Dilen Miller",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Robert Morris",
+      "conf": "Horizon",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 12,
+      "fg_pct": 0.2432432432,
+      "fg3_pct": 0.2115384615,
+      "ft_pct": 0.9411764706,
+      "orb_g": 0.08,
+      "drb_g": 0.96,
+      "trb_g": 1.04,
+      "ast_g": 1,
+      "stl_g": 0.8,
+      "blk_g": 0,
+      "tov_g": 0.64,
+      "pf_g": 1.36,
+      "pts_g": 2.52
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dilen-miller-1.html",
+  "last_scraped": "2025-11-01T13:50:50.338Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "nick-dorn-1",
+  "name": "Nick Dorn",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 30,
+      "gs": 22,
+      "mp_g": 23,
+      "fg_pct": 0.3916666667,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.75,
+      "orb_g": 0.9333333333,
+      "drb_g": 2.1666666667,
+      "trb_g": 3.1,
+      "ast_g": 0.5,
+      "stl_g": 0.5333333333,
+      "blk_g": 0.1,
+      "tov_g": 0.8333333333,
+      "pf_g": 1.2,
+      "pts_g": 9.3666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Elon",
+      "conf": "CAA",
+      "gp": 25,
+      "gs": 25,
+      "mp_g": 30.8,
+      "fg_pct": 0.3737024221,
+      "fg3_pct": 0.3507109005,
+      "ft_pct": 0.8053097345,
+      "orb_g": 1,
+      "drb_g": 2.8,
+      "trb_g": 3.8,
+      "ast_g": 0.76,
+      "stl_g": 0.28,
+      "blk_g": 0.04,
+      "tov_g": 1.16,
+      "pf_g": 1.52,
+      "pts_g": 15.24
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nick-dorn-1.html",
+  "last_scraped": "2025-11-01T13:53:20.557Z"
+}

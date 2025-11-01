@@ -1,0 +1,28 @@
+{
+  "slug": "zio-kim-1",
+  "name": "Zio Kim",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 8,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0.1428571429,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.5,
+      "orb_g": 0.125,
+      "drb_g": 0.25,
+      "trb_g": 0.375,
+      "ast_g": 0.125,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zio-kim-1.html",
+  "last_scraped": "2025-11-01T13:54:39.906Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "chase-robinson-2",
+  "name": "Chase Robinson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Cleveland State",
+      "conf": "Horizon",
+      "gp": 35,
+      "gs": 5,
+      "mp_g": 20.2571428571,
+      "fg_pct": 0.4135802469,
+      "fg3_pct": 0.3220338983,
+      "ft_pct": 0.8541666667,
+      "orb_g": 0.5428571429,
+      "drb_g": 1.8571428571,
+      "trb_g": 2.4,
+      "ast_g": 1.5428571429,
+      "stl_g": 1.2285714286,
+      "blk_g": 0.0571428571,
+      "tov_g": 0.9428571429,
+      "pf_g": 2.4571428571,
+      "pts_g": 5.5428571429
+    },
+    {
+      "season": "2024-25",
+      "team": "Cleveland State",
+      "conf": "Horizon",
+      "gp": 36,
+      "gs": 6,
+      "mp_g": 24.0277777778,
+      "fg_pct": 0.3944223108,
+      "fg3_pct": 0.3047619048,
+      "ft_pct": 0.7741935484,
+      "orb_g": 0.3055555556,
+      "drb_g": 2.3055555556,
+      "trb_g": 2.6111111111,
+      "ast_g": 2.2222222222,
+      "stl_g": 1.4166666667,
+      "blk_g": 0.0833333333,
+      "tov_g": 1.2777777778,
+      "pf_g": 2.1944444444,
+      "pts_g": 8.3888888889
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chase-robinson-2.html",
+  "last_scraped": "2025-11-01T13:50:16.526Z"
+}

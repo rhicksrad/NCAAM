@@ -1,0 +1,28 @@
+{
+  "slug": "david-wilkerson-2",
+  "name": "David Wilkerson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 7.6666666667,
+      "fg_pct": 0.4078947368,
+      "fg3_pct": 0.275862069,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.3703703704,
+      "drb_g": 0.8888888889,
+      "trb_g": 1.2592592593,
+      "ast_g": 0.7777777778,
+      "stl_g": 0.2592592593,
+      "blk_g": 0.037037037,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.1111111111,
+      "pts_g": 2.962962963
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/david-wilkerson-2.html",
+  "last_scraped": "2025-11-01T13:50:43.955Z"
+}

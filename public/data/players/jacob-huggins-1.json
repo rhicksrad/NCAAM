@@ -1,0 +1,48 @@
+{
+  "slug": "jacob-huggins-1",
+  "name": "Jacob Huggins",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 6,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": null,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.6363636364,
+      "drb_g": 0.7727272727,
+      "trb_g": 1.4090909091,
+      "ast_g": 0.1818181818,
+      "stl_g": 0,
+      "blk_g": 0.0909090909,
+      "tov_g": 0.1363636364,
+      "pf_g": 0.5909090909,
+      "pts_g": 1.5
+    },
+    {
+      "season": "2024-25",
+      "team": "Princeton",
+      "conf": "Ivy",
+      "gp": 22,
+      "gs": 3,
+      "mp_g": 7.5909090909,
+      "fg_pct": 0.6538461538,
+      "fg3_pct": 0,
+      "ft_pct": 0.5416666667,
+      "orb_g": 0.5454545455,
+      "drb_g": 0.5454545455,
+      "trb_g": 1.0909090909,
+      "ast_g": 0.0909090909,
+      "stl_g": 0.1363636364,
+      "blk_g": 0.3181818182,
+      "tov_g": 0.2272727273,
+      "pf_g": 1.0909090909,
+      "pts_g": 2.1363636364
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-huggins-1.html",
+  "last_scraped": "2025-11-01T13:51:44.391Z"
+}

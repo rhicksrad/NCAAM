@@ -1,0 +1,28 @@
+{
+  "slug": "isaiah-mbeng-1",
+  "name": "Isaiah Mbeng",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "William & Mary",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 19.9375,
+      "fg_pct": 0.3974358974,
+      "fg3_pct": 0.3163265306,
+      "ft_pct": 0.7105263158,
+      "orb_g": 0.46875,
+      "drb_g": 1.28125,
+      "trb_g": 1.75,
+      "ast_g": 3.4375,
+      "stl_g": 1.5,
+      "blk_g": 0.03125,
+      "tov_g": 1.6875,
+      "pf_g": 1.1875,
+      "pts_g": 5.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-mbeng-1.html",
+  "last_scraped": "2025-11-01T13:51:33.208Z"
+}

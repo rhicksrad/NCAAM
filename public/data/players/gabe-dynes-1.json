@@ -1,0 +1,48 @@
+{
+  "slug": "gabe-dynes-1",
+  "name": "Gabe Dynes",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 27,
+      "gs": 4,
+      "mp_g": 13.7037037037,
+      "fg_pct": 0.7058823529,
+      "fg3_pct": 0,
+      "ft_pct": 0.3846153846,
+      "orb_g": 1.037037037,
+      "drb_g": 2.9259259259,
+      "trb_g": 3.962962963,
+      "ast_g": 0.3703703704,
+      "stl_g": 0.2962962963,
+      "blk_g": 2.2592592593,
+      "tov_g": 0.6296296296,
+      "pf_g": 1.3333333333,
+      "pts_g": 3.9259259259
+    },
+    {
+      "season": "2024-25",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 34,
+      "gs": 7,
+      "mp_g": 21.7647058824,
+      "fg_pct": 0.6993006993,
+      "fg3_pct": 0,
+      "ft_pct": 0.4776119403,
+      "orb_g": 2.5,
+      "drb_g": 3.2647058824,
+      "trb_g": 5.7647058824,
+      "ast_g": 0.4117647059,
+      "stl_g": 0.2647058824,
+      "blk_g": 3.0588235294,
+      "tov_g": 1.2058823529,
+      "pf_g": 2.5294117647,
+      "pts_g": 6.8235294118
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gabe-dynes-1.html",
+  "last_scraped": "2025-11-01T13:51:18.970Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "augustus-gerhart-1",
+  "name": "Augustus Gerhart",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 6.8846153846,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": 0,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.5384615385,
+      "drb_g": 0.6923076923,
+      "trb_g": 1.2307692308,
+      "ast_g": 0.6153846154,
+      "stl_g": 0.1153846154,
+      "blk_g": 0.3076923077,
+      "tov_g": 0.2692307692,
+      "pf_g": 0.9615384615,
+      "pts_g": 1.7692307692
+    },
+    {
+      "season": "2024-25",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 26,
+      "gs": 6,
+      "mp_g": 14.9230769231,
+      "fg_pct": 0.6034482759,
+      "fg3_pct": null,
+      "ft_pct": 0.625,
+      "orb_g": 1.3461538462,
+      "drb_g": 2.1153846154,
+      "trb_g": 3.4615384615,
+      "ast_g": 0.7692307692,
+      "stl_g": 0.2307692308,
+      "blk_g": 0.3846153846,
+      "tov_g": 0.7307692308,
+      "pf_g": 2.2307692308,
+      "pts_g": 3.4615384615
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/augustus-gerhart-1.html",
+  "last_scraped": "2025-11-01T13:49:42.774Z"
+}

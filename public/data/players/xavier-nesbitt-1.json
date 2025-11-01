@@ -1,0 +1,48 @@
+{
+  "slug": "xavier-nesbitt-1",
+  "name": "Xavier Nesbitt",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 8.1052631579,
+      "fg_pct": 0.3414634146,
+      "fg3_pct": 0.3461538462,
+      "ft_pct": 0.8,
+      "orb_g": 0.1578947368,
+      "drb_g": 0.5263157895,
+      "trb_g": 0.6842105263,
+      "ast_g": 0.5263157895,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.1052631579,
+      "tov_g": 0.5263157895,
+      "pf_g": 0.5789473684,
+      "pts_g": 2.1578947368
+    },
+    {
+      "season": "2024-25",
+      "team": "Harvard",
+      "conf": "Ivy",
+      "gp": 17,
+      "gs": 1,
+      "mp_g": 6.7647058824,
+      "fg_pct": 0.3076923077,
+      "fg3_pct": 0.2142857143,
+      "ft_pct": 0,
+      "orb_g": 0.1176470588,
+      "drb_g": 0.4705882353,
+      "trb_g": 0.5882352941,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.1176470588,
+      "blk_g": 0,
+      "tov_g": 0.2352941176,
+      "pf_g": 0.5294117647,
+      "pts_g": 1.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/xavier-nesbitt-1.html",
+  "last_scraped": "2025-11-01T13:54:35.077Z"
+}

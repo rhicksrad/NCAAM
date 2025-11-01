@@ -1,0 +1,48 @@
+{
+  "slug": "niklas-polonowski-1",
+  "name": "Niklas Polonowski",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 18,
+      "gs": 0,
+      "mp_g": 9.3333333333,
+      "fg_pct": 0.4727272727,
+      "fg3_pct": 0.4693877551,
+      "ft_pct": 1,
+      "orb_g": 0.0555555556,
+      "drb_g": 0.7777777778,
+      "trb_g": 0.8333333333,
+      "ast_g": 0.2777777778,
+      "stl_g": 0.0555555556,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 0.5,
+      "pts_g": 4.2777777778
+    },
+    {
+      "season": "2024-25",
+      "team": "Pennsylvania",
+      "conf": "Ivy",
+      "gp": 24,
+      "gs": 3,
+      "mp_g": 13.7916666667,
+      "fg_pct": 0.3125,
+      "fg3_pct": 0.2696629213,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.25,
+      "drb_g": 1.3333333333,
+      "trb_g": 1.5833333333,
+      "ast_g": 0.4166666667,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.4166666667,
+      "pf_g": 0.625,
+      "pts_g": 4.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/niklas-polonowski-1.html",
+  "last_scraped": "2025-11-01T13:53:26.778Z"
+}

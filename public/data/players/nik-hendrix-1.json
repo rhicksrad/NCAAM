@@ -1,0 +1,48 @@
+{
+  "slug": "nik-hendrix-1",
+  "name": "Nik Hendrix",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - dnp",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Youngstown State",
+      "conf": "Horizon",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 0.4444444444,
+      "fg3_pct": 0.2,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.2,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 2.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nik-hendrix-1.html",
+  "last_scraped": "2025-11-01T13:53:26.876Z"
+}

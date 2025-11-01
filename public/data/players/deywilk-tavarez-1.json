@@ -1,0 +1,48 @@
+{
+  "slug": "deywilk-tavarez-1",
+  "name": "Deywilk Tavarez",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Delaware State",
+      "conf": "MEAC",
+      "gp": 33,
+      "gs": 30,
+      "mp_g": 30.8787878788,
+      "fg_pct": 0.3962264151,
+      "fg3_pct": 0.3624161074,
+      "ft_pct": 0.7686567164,
+      "orb_g": 0.3333333333,
+      "drb_g": 3.0303030303,
+      "trb_g": 3.3636363636,
+      "ast_g": 3.5757575758,
+      "stl_g": 1.9696969697,
+      "blk_g": 0,
+      "tov_g": 3.7878787879,
+      "pf_g": 2.1515151515,
+      "pts_g": 13.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 27,
+      "gs": 23,
+      "mp_g": 27.4814814815,
+      "fg_pct": 0.4134275618,
+      "fg3_pct": 0.4150943396,
+      "ft_pct": 0.6805555556,
+      "orb_g": 0.2962962963,
+      "drb_g": 3.2592592593,
+      "trb_g": 3.5555555556,
+      "ast_g": 2.5185185185,
+      "stl_g": 1.0740740741,
+      "blk_g": 0,
+      "tov_g": 2.3703703704,
+      "pf_g": 2.5925925926,
+      "pts_g": 12.9259259259
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/deywilk-tavarez-1.html",
+  "last_scraped": "2025-11-01T13:50:50.136Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "cj-ohara-1",
+  "name": "C.J. O'Hara",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Green Bay",
+      "conf": "Horizon",
+      "gp": 31,
+      "gs": 1,
+      "mp_g": 12.4838709677,
+      "fg_pct": 0.5185185185,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.6964285714,
+      "orb_g": 0.7419354839,
+      "drb_g": 1.4193548387,
+      "trb_g": 2.1612903226,
+      "ast_g": 0.5806451613,
+      "stl_g": 0.4193548387,
+      "blk_g": 0.1612903226,
+      "tov_g": 0.5161290323,
+      "pf_g": 1.5161290323,
+      "pts_g": 4.0322580645
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cj-ohara-1.html",
+  "last_scraped": "2025-11-01T13:50:03.734Z"
+}

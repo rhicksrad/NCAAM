@@ -1,0 +1,28 @@
+{
+  "slug": "kareem-thomas-1",
+  "name": "Kareem Thomas",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Dartmouth",
+      "conf": "Ivy",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 4.4285714286,
+      "fg_pct": 0.4736842105,
+      "fg3_pct": 0,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.4285714286,
+      "drb_g": 0.5714285714,
+      "trb_g": 1,
+      "ast_g": 0.2142857143,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.0714285714,
+      "pf_g": 0.5,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kareem-thomas-1.html",
+  "last_scraped": "2025-11-01T13:52:30.887Z"
+}

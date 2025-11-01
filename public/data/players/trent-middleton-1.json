@@ -1,0 +1,48 @@
+{
+  "slug": "trent-middleton-1",
+  "name": "Trent Middleton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Ball State",
+      "conf": "MAC",
+      "gp": 29,
+      "gs": 7,
+      "mp_g": 18.6206896552,
+      "fg_pct": 0.424,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 0.8125,
+      "orb_g": 0.4827586207,
+      "drb_g": 2.1379310345,
+      "trb_g": 2.6206896552,
+      "ast_g": 1.8620689655,
+      "stl_g": 0.5172413793,
+      "blk_g": 0.1724137931,
+      "tov_g": 1.1379310345,
+      "pf_g": 1.4482758621,
+      "pts_g": 6.1724137931
+    },
+    {
+      "season": "2024-25",
+      "team": "Delaware",
+      "conf": "CAA",
+      "gp": 32,
+      "gs": 2,
+      "mp_g": 17.40625,
+      "fg_pct": 0.4184397163,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.86,
+      "orb_g": 0.3125,
+      "drb_g": 2.34375,
+      "trb_g": 2.65625,
+      "ast_g": 1.71875,
+      "stl_g": 0.71875,
+      "blk_g": 0.15625,
+      "tov_g": 1.125,
+      "pf_g": 1.75,
+      "pts_g": 5.46875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trent-middleton-1.html",
+  "last_scraped": "2025-11-01T13:54:21.053Z"
+}

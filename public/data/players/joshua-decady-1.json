@@ -1,0 +1,28 @@
+{
+  "slug": "joshua-decady-1",
+  "name": "Joshua DeCady",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hofstra",
+      "conf": "CAA",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 9.44,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5806451613,
+      "orb_g": 0.64,
+      "drb_g": 1.04,
+      "trb_g": 1.68,
+      "ast_g": 0.12,
+      "stl_g": 0.4,
+      "blk_g": 0.28,
+      "tov_g": 0.16,
+      "pf_g": 1.16,
+      "pts_g": 2.64
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joshua-decady-1.html",
+  "last_scraped": "2025-11-01T13:52:22.945Z"
+}

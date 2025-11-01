@@ -1,0 +1,48 @@
+{
+  "slug": "alvaro-folgueiras-1",
+  "name": "Alvaro Folgueiras",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Robert Morris",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 6,
+      "mp_g": 17.78125,
+      "fg_pct": 0.4557823129,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.7368421053,
+      "orb_g": 1.5,
+      "drb_g": 2.96875,
+      "trb_g": 4.46875,
+      "ast_g": 1.21875,
+      "stl_g": 0.40625,
+      "blk_g": 0.65625,
+      "tov_g": 1,
+      "pf_g": 1.9375,
+      "pts_g": 5.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Robert Morris",
+      "conf": "Horizon",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 29.2571428571,
+      "fg_pct": 0.5482866044,
+      "fg3_pct": 0.4128440367,
+      "ft_pct": 0.784,
+      "orb_g": 2.3142857143,
+      "drb_g": 6.7714285714,
+      "trb_g": 9.0857142857,
+      "ast_g": 3.1714285714,
+      "stl_g": 1.4,
+      "blk_g": 1.1714285714,
+      "tov_g": 2.2571428571,
+      "pf_g": 2.3428571429,
+      "pts_g": 14.1428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/alvaro-folgueiras-1.html",
+  "last_scraped": "2025-11-01T13:49:33.305Z"
+}

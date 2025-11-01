@@ -1,0 +1,28 @@
+{
+  "slug": "eric-parnell-1",
+  "name": "Eric Parnell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hofstra",
+      "conf": "CAA",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 11.125,
+      "fg_pct": 0.4038461538,
+      "fg3_pct": 0.375,
+      "ft_pct": 1,
+      "orb_g": 0.0625,
+      "drb_g": 1.1875,
+      "trb_g": 1.25,
+      "ast_g": 0.5,
+      "stl_g": 0.375,
+      "blk_g": 0,
+      "tov_g": 0.0625,
+      "pf_g": 0.8125,
+      "pts_g": 3.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eric-parnell-1.html",
+  "last_scraped": "2025-11-01T13:51:09.242Z"
+}

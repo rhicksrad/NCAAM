@@ -1,0 +1,28 @@
+{
+  "slug": "justas-stonkus-1",
+  "name": "Justas Stonkus",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 33,
+      "gs": 4,
+      "mp_g": 16.0606060606,
+      "fg_pct": 0.3985507246,
+      "fg3_pct": 0.3768115942,
+      "ft_pct": 0.8823529412,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.3939393939,
+      "trb_g": 1.7272727273,
+      "ast_g": 0.5151515152,
+      "stl_g": 0.4242424242,
+      "blk_g": 0,
+      "tov_g": 0.8787878788,
+      "pf_g": 0.9696969697,
+      "pts_g": 5.0303030303
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/justas-stonkus-1.html",
+  "last_scraped": "2025-11-01T13:52:26.149Z"
+}

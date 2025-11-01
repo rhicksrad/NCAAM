@@ -1,0 +1,28 @@
+{
+  "slug": "quin-gorman-1",
+  "name": "Quin Gorman",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stony Brook",
+      "conf": "CAA",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 6.5416666667,
+      "fg_pct": 0.375,
+      "fg3_pct": 0.3157894737,
+      "ft_pct": 0.25,
+      "orb_g": 0.4583333333,
+      "drb_g": 0.875,
+      "trb_g": 1.3333333333,
+      "ast_g": 0.2083333333,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.125,
+      "pf_g": 0.5,
+      "pts_g": 1.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/quin-gorman-1.html",
+  "last_scraped": "2025-11-01T13:53:39.533Z"
+}

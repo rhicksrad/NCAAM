@@ -1,0 +1,48 @@
+{
+  "slug": "shane-blakeney-1",
+  "name": "Shane Blakeney",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Drexel",
+      "conf": "CAA",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 5.4545454545,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.3461538462,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.0909090909,
+      "drb_g": 0.6818181818,
+      "trb_g": 0.7727272727,
+      "ast_g": 0.2727272727,
+      "stl_g": 0,
+      "blk_g": 0.0909090909,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.4545454545,
+      "pts_g": 2
+    },
+    {
+      "season": "2024-25",
+      "team": "Drexel",
+      "conf": "CAA",
+      "gp": 33,
+      "gs": 1,
+      "mp_g": 24.6060606061,
+      "fg_pct": 0.3884297521,
+      "fg3_pct": 0.3394495413,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.6363636364,
+      "drb_g": 2.9696969697,
+      "trb_g": 3.6060606061,
+      "ast_g": 1.5757575758,
+      "stl_g": 0.6666666667,
+      "blk_g": 0.5757575758,
+      "tov_g": 1.3333333333,
+      "pf_g": 1.4242424242,
+      "pts_g": 7.5454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/shane-blakeney-1.html",
+  "last_scraped": "2025-11-01T13:54:05.183Z"
+}

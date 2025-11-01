@@ -1,0 +1,28 @@
+{
+  "slug": "aj-rodriguez-1",
+  "name": "AJ Rodriguez",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cornell",
+      "conf": "Ivy",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 5.4,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0,
+      "orb_g": 0.4,
+      "drb_g": 1.2,
+      "trb_g": 1.6,
+      "ast_g": 0,
+      "stl_g": 0.2,
+      "blk_g": 0.2,
+      "tov_g": 0.4,
+      "pf_g": 0.4,
+      "pts_g": 1.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-rodriguez-1.html",
+  "last_scraped": "2025-11-01T13:49:26.582Z"
+}

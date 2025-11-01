@@ -1,0 +1,28 @@
+{
+  "slug": "danny-young-2",
+  "name": "Danny Young",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cleveland State",
+      "conf": "Horizon",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 5.3,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.5454545455,
+      "ft_pct": 0.25,
+      "orb_g": 0,
+      "drb_g": 0.2,
+      "trb_g": 0.2,
+      "ast_g": 0.5,
+      "stl_g": 0.3,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.9,
+      "pts_g": 2.1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/danny-young-2.html",
+  "last_scraped": "2025-11-01T13:50:40.766Z"
+}

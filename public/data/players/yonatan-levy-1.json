@@ -1,0 +1,28 @@
+{
+  "slug": "yonatan-levy-1",
+  "name": "Yonatan Levy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Green Bay",
+      "conf": "Horizon",
+      "gp": 13,
+      "gs": 11,
+      "mp_g": 23.9230769231,
+      "fg_pct": 0.3725490196,
+      "fg3_pct": 0.3181818182,
+      "ft_pct": 0.8636363636,
+      "orb_g": 1.4615384615,
+      "drb_g": 4.6153846154,
+      "trb_g": 6.0769230769,
+      "ast_g": 2.6153846154,
+      "stl_g": 0.9230769231,
+      "blk_g": 0.4615384615,
+      "tov_g": 2.3846153846,
+      "pf_g": 3.6153846154,
+      "pts_g": 7.8461538462
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/yonatan-levy-1.html",
+  "last_scraped": "2025-11-01T13:54:36.562Z"
+}

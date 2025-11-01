@@ -1,0 +1,28 @@
+{
+  "slug": "solomon-callaghan-1",
+  "name": "Solomon Callaghan",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Wright State",
+      "conf": "Horizon",
+      "gp": 32,
+      "gs": 11,
+      "mp_g": 22.90625,
+      "fg_pct": 0.4055555556,
+      "fg3_pct": 0.3723404255,
+      "ft_pct": 0.8048780488,
+      "orb_g": 0.3125,
+      "drb_g": 1.09375,
+      "trb_g": 1.40625,
+      "ast_g": 1.25,
+      "stl_g": 0.375,
+      "blk_g": 0.0625,
+      "tov_g": 1.09375,
+      "pf_g": 1.21875,
+      "pts_g": 6.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/solomon-callaghan-1.html",
+  "last_scraped": "2025-11-01T13:54:08.244Z"
+}
