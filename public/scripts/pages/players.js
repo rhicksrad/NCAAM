@@ -1,6 +1,28 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
+const LEADERBOARD_METRIC_ORDER = [
+    "mp",
+    "fgPct",
+    "fg3Pct",
+    "ftPct",
+    "rebounds",
+    "assists",
+    "stocks",
+    "turnovers",
+    "points",
+];
+const LEADERBOARD_COLOR_PALETTE = [
+    "#2563eb",
+    "#db2777",
+    "#0ea5e9",
+    "#f97316",
+    "#7c3aed",
+    "#10b981",
+    "#facc15",
+    "#ec4899",
+    "#14b8a6",
+];
 function decorateAvatar(el, team) {
     const logoUrl = getTeamLogoUrl(team);
     el.innerHTML = "";
@@ -33,10 +55,17 @@ if (!app) {
     throw new Error("Missing #app container");
 }
 app.innerHTML = `
+  <section id="player-leaderboard" class="player-leaderboard" aria-live="polite" aria-busy="true">
+    <div class="player-leaderboard__status">Loading 2024-25 player leaderboards…</div>
+  </section>
   <input class="search" placeholder="Search by team or conference" aria-label="Filter teams">
   <div id="roster-groups" class="conference-groups roster-groups" aria-live="polite"></div>
   <p id="roster-empty" class="empty-state" hidden>No teams match your search.</p>
 `;
+const leaderboardSectionEl = app.querySelector("#player-leaderboard");
+if (!leaderboardSectionEl) {
+    throw new Error("Players page failed to find leaderboard container");
+}
 const searchInputEl = app.querySelector("input.search");
 const rosterGroupsEl = app.querySelector("#roster-groups");
 const emptyStateEl = app.querySelector("#roster-empty");
@@ -60,6 +89,7 @@ const assetUrl = (path) => {
     const normalisedPath = path.startsWith("/") ? path.slice(1) : path;
     return new URL(normalisedPath, root).toString();
 };
+void loadPlayerLeaderboards(leaderboardSectionEl);
 const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
     getConferenceMap(),
     NCAAM.teams(1, 400),
@@ -472,6 +502,166 @@ function ensureStatsForSlug(slug) {
     })();
     playerStatsRequests.set(slug, request);
     return request;
+}
+async function loadPlayerLeaderboards(container) {
+    container.setAttribute("aria-busy", "true");
+    try {
+        const response = await fetch(assetUrl("data/player_stat_leaders_2024-25.json"));
+        if (!response.ok) {
+            throw new Error(`Failed to load leaderboard data (${response.status})`);
+        }
+        const doc = (await response.json());
+        renderPlayerLeaderboards(container, doc);
+    }
+    catch (error) {
+        console.error("Unable to load 2024-25 player leaderboards", error);
+        container.innerHTML = `<div class="player-leaderboard__status player-leaderboard__status--error">Unable to load player leaderboards right now.</div>`;
+    }
+    finally {
+        container.setAttribute("aria-busy", "false");
+    }
+}
+function renderPlayerLeaderboards(container, doc) {
+    container.classList.add("player-leaderboard--ready");
+    container.innerHTML = "";
+    const intro = document.createElement("header");
+    intro.className = "player-leaderboard__intro";
+    const title = document.createElement("h2");
+    title.className = "player-leaderboard__title";
+    title.textContent = `${doc.season || "2024-25"} Player Leaderboards`;
+    const description = document.createElement("p");
+    description.className = "player-leaderboard__description";
+    description.textContent = "Top 10 players in core per-game stats for the 2024-25 season.";
+    intro.append(title, description);
+    const updated = formatLeaderboardUpdatedAt(doc.generatedAt);
+    if (updated) {
+        const meta = document.createElement("p");
+        meta.className = "player-leaderboard__meta";
+        meta.textContent = `Updated ${updated}`;
+        intro.append(meta);
+    }
+    container.append(intro);
+    const grid = document.createElement("div");
+    grid.className = "player-leaderboard__grid";
+    let rendered = 0;
+    LEADERBOARD_METRIC_ORDER.forEach((metricId, index) => {
+        const metric = doc.metrics?.[metricId];
+        if (!metric || !Array.isArray(metric.leaders) || metric.leaders.length === 0) {
+            return;
+        }
+        const color = LEADERBOARD_COLOR_PALETTE[index % LEADERBOARD_COLOR_PALETTE.length];
+        const card = createLeaderboardCard(metricId, metric, color);
+        grid.append(card);
+        rendered += 1;
+    });
+    if (rendered === 0) {
+        container.innerHTML = `<div class="player-leaderboard__status player-leaderboard__status--empty">Leaderboard data is not available at the moment.</div>`;
+        return;
+    }
+    container.append(grid);
+}
+function createLeaderboardCard(metricId, metric, accentColor) {
+    const card = document.createElement("article");
+    card.className = "player-leaderboard__card";
+    card.style.setProperty("--leaderboard-card-color", accentColor);
+    const header = document.createElement("header");
+    header.className = "player-leaderboard__card-header";
+    const title = document.createElement("h3");
+    title.className = "player-leaderboard__card-title";
+    title.textContent = metric.shortLabel || metricId.toUpperCase();
+    const subtitle = document.createElement("p");
+    subtitle.className = "player-leaderboard__card-subtitle";
+    subtitle.textContent = metric.label || metric.shortLabel || metricId;
+    header.append(title, subtitle);
+    card.append(header);
+    const list = document.createElement("ol");
+    list.className = "player-leaderboard__list";
+    list.setAttribute("role", "list");
+    const leaders = metric.leaders.filter(isValidLeaderboardEntry).slice(0, 10);
+    const maxValue = leaders.reduce((max, leader) => Math.max(max, leader.value), 0);
+    if (leaders.length === 0 || maxValue <= 0) {
+        const empty = document.createElement("p");
+        empty.className = "player-leaderboard__status player-leaderboard__status--empty";
+        empty.textContent = "No data available.";
+        card.append(empty);
+        return card;
+    }
+    leaders.forEach((leader, index) => {
+        list.append(createLeaderboardListItem(metricId, leader, index, maxValue));
+    });
+    card.append(list);
+    return card;
+}
+function createLeaderboardListItem(metricId, leader, index, maxValue) {
+    const item = document.createElement("li");
+    item.className = "player-leaderboard__item";
+    item.dataset.rank = String(index + 1);
+    const ratio = maxValue > 0 ? Math.max(0, Math.min(leader.value / maxValue, 1)) : 0;
+    item.style.setProperty("--leaderboard-fill", ratio.toFixed(4));
+    const rank = document.createElement("span");
+    rank.className = "player-leaderboard__rank";
+    rank.textContent = String(index + 1);
+    const info = document.createElement("div");
+    info.className = "player-leaderboard__info";
+    const nameEl = document.createElement(leader.url ? "a" : "span");
+    nameEl.className = "player-leaderboard__name";
+    nameEl.textContent = leader.name;
+    if (leader.url) {
+        const link = nameEl;
+        link.href = leader.url;
+        link.target = "_blank";
+        link.rel = "noreferrer noopener";
+    }
+    const team = document.createElement("span");
+    team.className = "player-leaderboard__team";
+    const meta = [];
+    if (leader.team) {
+        meta.push(leader.team);
+    }
+    if (typeof leader.games === "number" && Number.isFinite(leader.games)) {
+        meta.push(`${leader.games} GP`);
+    }
+    team.textContent = meta.join(" · ");
+    info.append(nameEl, team);
+    const value = document.createElement("span");
+    value.className = "player-leaderboard__value";
+    value.textContent = formatLeaderboardValue(metricId, leader);
+    item.append(rank, info, value);
+    return item;
+}
+function isValidLeaderboardEntry(entry) {
+    return Boolean(entry && typeof entry.value === "number" && Number.isFinite(entry.value));
+}
+function formatLeaderboardValue(metricId, entry) {
+    if (entry.valueFormatted) {
+        return entry.valueFormatted;
+    }
+    const value = entry.value;
+    if (!Number.isFinite(value)) {
+        return "—";
+    }
+    switch (metricId) {
+        case "fgPct":
+        case "fg3Pct":
+        case "ftPct":
+            return formatPercentValue(value);
+        default:
+            return formatDecimal(value, 1);
+    }
+}
+function formatLeaderboardUpdatedAt(value) {
+    if (!value) {
+        return null;
+    }
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) {
+        return null;
+    }
+    return new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+    }).format(date);
 }
 function normaliseName(value) {
     return value

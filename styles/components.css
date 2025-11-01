@@ -749,6 +749,215 @@ html[data-theme="dark"] .teams-map__tooltip {
   color: color-mix(in oklab, var(--color-steel) 82%, var(--color-ink) 18%);
 }
 
+.player-leaderboard {
+  display: grid;
+  gap: var(--space-lg);
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+
+.player-leaderboard__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.player-leaderboard__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.1rem + 1vw, 2rem);
+  font-weight: 700;
+}
+
+.player-leaderboard__description {
+  margin: 0;
+  color: var(--color-steel);
+}
+
+.player-leaderboard__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: color-mix(in oklab, var(--color-steel) 80%, var(--color-ink) 20%);
+}
+
+.player-leaderboard__grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.player-leaderboard__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-card);
+  background: color-mix(in oklab, var(--color-cream) 96%, transparent);
+  border: 1px solid color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 20%, transparent);
+  box-shadow: 0 18px 32px color-mix(in oklab, var(--leaderboard-card-color, var(--color-ink)) 10%, transparent);
+  overflow: hidden;
+}
+
+.player-leaderboard__card::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 85%, transparent),
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 35%, transparent)
+  );
+}
+
+.player-leaderboard__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding-block-start: var(--space-2xs);
+}
+
+.player-leaderboard__card-title {
+  margin: 0;
+  font-size: clamp(1.15rem, 1rem + 0.4vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.player-leaderboard__card-subtitle {
+  margin: 0;
+  color: color-mix(in oklab, var(--color-steel) 82%, var(--color-ink) 18%);
+  font-size: 0.9rem;
+}
+
+.player-leaderboard__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.player-leaderboard__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-xs);
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.player-leaderboard__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 70%, transparent),
+    color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 30%, transparent)
+  );
+  transform-origin: left center;
+  transform: scaleX(var(--leaderboard-fill, 0));
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.player-leaderboard__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 35%, transparent);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.player-leaderboard__rank {
+  position: relative;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 80%, var(--color-ink) 20%);
+  z-index: 1;
+}
+
+.player-leaderboard__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
+}
+
+.player-leaderboard__name {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.player-leaderboard__name:hover,
+.player-leaderboard__name:focus-visible {
+  text-decoration: underline;
+}
+
+.player-leaderboard__team {
+  font-size: 0.8rem;
+  color: color-mix(in oklab, var(--color-steel) 75%, var(--color-ink) 25%);
+}
+
+.player-leaderboard__value {
+  position: relative;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  z-index: 1;
+}
+
+.player-leaderboard__status {
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-card);
+  text-align: center;
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 12%, transparent);
+  color: color-mix(in oklab, var(--color-ink) 85%, var(--color-steel) 15%);
+}
+
+.player-leaderboard__status--error {
+  color: var(--color-danger);
+  background: color-mix(in oklab, var(--color-danger) 18%, transparent);
+}
+
+.player-leaderboard__status--empty {
+  color: color-mix(in oklab, var(--color-steel) 82%, var(--color-ink) 18%);
+}
+
+@media (max-width: 640px) {
+  .player-leaderboard__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-theme="dark"] .player-leaderboard__card {
+  background: color-mix(in oklab, var(--color-slate) 80%, transparent);
+  border-color: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 30%, transparent);
+  box-shadow: 0 18px 32px color-mix(in oklab, black 45%, transparent);
+}
+
+[data-theme="dark"] .player-leaderboard__item::before {
+  opacity: 0.55;
+}
+
+[data-theme="dark"] .player-leaderboard__item::after {
+  opacity: 0.25;
+}
+
+[data-theme="dark"] .player-leaderboard__status {
+  background: color-mix(in oklab, var(--leaderboard-card-color, var(--color-arc)) 25%, transparent);
+  color: color-mix(in oklab, white 78%, transparent);
+}
+
 [data-theme="dark"] .site-header {
   background: color-mix(in oklab, var(--color-slate) 75%, transparent);
   border-bottom-color: color-mix(in oklab, white 7%, transparent);
