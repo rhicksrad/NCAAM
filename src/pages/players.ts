@@ -79,6 +79,48 @@ type PlayerLeaderboardMetric = {
   leaders: PlayerLeaderboardEntry[];
 };
 
+type StackedLeaderboardEntry = {
+  leader: PlayerLeaderboardEntry;
+  breakdown: Record<string, number>;
+  total: number;
+};
+
+type StackedLeaderboardItemState = {
+  entry: StackedLeaderboardEntry;
+  element: HTMLLIElement;
+  valueEl: HTMLSpanElement;
+  segmentElements: Map<string, HTMLSpanElement>;
+};
+
+type LeaderboardStackedSegment = {
+  id: string;
+  label: string;
+  stat: keyof PlayerStatsSeason;
+  color: string;
+};
+
+type LeaderboardStackedView = {
+  id: string;
+  label: string;
+  segmentIds: string[];
+  useTotal?: boolean;
+};
+
+type LeaderboardStackedConfig = {
+  segments: LeaderboardStackedSegment[];
+  views: LeaderboardStackedView[];
+  defaultView: string;
+  totalStat?: keyof PlayerStatsSeason;
+};
+
+type LeaderboardMetricPresentation = {
+  kicker: string;
+  title: string;
+  description: string;
+  accentColor?: string;
+  stacked?: LeaderboardStackedConfig;
+};
+
 type PlayerLeaderboardDocument = {
   season: string;
   seasonYear?: number | null;
@@ -121,6 +163,88 @@ const LEADERBOARD_MINIMUM_SAMPLE_SIZE: Record<LeaderboardMetricId, number> = {
   stocks: 12,
   turnovers: 12,
   points: 12,
+};
+
+const LEADERBOARD_PRESENTATION: Record<LeaderboardMetricId, LeaderboardMetricPresentation> = {
+  mp: {
+    kicker: "Iron five",
+    title: "Minutes workhorses",
+    description: "Largest workloads in 2024-25 by average minutes played.",
+    accentColor: "#2563eb",
+  },
+  fgPct: {
+    kicker: "Shot makers",
+    title: "Field goal efficiency",
+    description: "Highest overall field-goal percentages among qualified players.",
+    accentColor: "#16a34a",
+  },
+  fg3Pct: {
+    kicker: "Arc assassins",
+    title: "Three-point accuracy",
+    description: "Sharpest shooters from deep with at least 15 games played.",
+    accentColor: "#8b5cf6",
+  },
+  ftPct: {
+    kicker: "Stripe snipers",
+    title: "Free throw percentage",
+    description: "Steadiest performers at the charity stripe this season.",
+    accentColor: "#f97316",
+  },
+  rebounds: {
+    kicker: "Glass cleaners",
+    title: "Top rebound totals",
+    description: "Offensive and defensive boards per game for the slate's best rebounders.",
+    accentColor: "#0ea5e9",
+    stacked: {
+      segments: [
+        { id: "orb", label: "Offensive per game", stat: "orb_g", color: "#ec4899" },
+        { id: "drb", label: "Defensive per game", stat: "drb_g", color: "#2563eb" },
+      ],
+      views: [
+        { id: "total", label: "Total", segmentIds: ["orb", "drb"], useTotal: true },
+        { id: "orb", label: "Off", segmentIds: ["orb"] },
+        { id: "drb", label: "Def", segmentIds: ["drb"] },
+      ],
+      defaultView: "total",
+      totalStat: "trb_g",
+    },
+  },
+  assists: {
+    kicker: "Assist engines",
+    title: "Playmakers on the slate",
+    description: "Primary table-setters leading the country in helpers per night.",
+    accentColor: "#14b8a6",
+  },
+  stocks: {
+    kicker: "Stocks hawks",
+    title: "Steals + blocks leaders",
+    description: "Disruptive defenders filling the steals and blocks columns.",
+    accentColor: "#7c3aed",
+    stacked: {
+      segments: [
+        { id: "stl", label: "Steals per game", stat: "stl_g", color: "#f97316" },
+        { id: "blk", label: "Blocks per game", stat: "blk_g", color: "#22d3ee" },
+      ],
+      views: [
+        { id: "total", label: "Total", segmentIds: ["stl", "blk"], useTotal: true },
+        { id: "stl", label: "Steals", segmentIds: ["stl"] },
+        { id: "blk", label: "Blocks", segmentIds: ["blk"] },
+      ],
+      defaultView: "total",
+    },
+  },
+  turnovers: {
+    kicker: "Care factor",
+    title: "Turnovers per game",
+    description: "Most giveaways among players meeting the minimum games threshold.",
+    accentColor: "#facc15",
+  },
+  points: {
+    kicker: "Slate scorers",
+    title: "Top player points",
+    description: "Highest scoring averages per game for the 2024-25 campaign.",
+    accentColor: "#2563eb",
+  },
 };
 
 function decorateAvatar(el: HTMLElement, team: Team): void {
@@ -695,7 +819,7 @@ async function loadPlayerLeaderboards(container: HTMLElement): Promise<void> {
       throw new Error(`Failed to load leaderboard data (${response.status})`);
     }
     const doc = (await response.json()) as PlayerLeaderboardDocument;
-    renderPlayerLeaderboards(container, doc);
+    await renderPlayerLeaderboards(container, doc);
   } catch (error) {
     console.error("Unable to load 2024-25 player leaderboards", error);
     container.innerHTML = `<div class="player-leaderboard__status player-leaderboard__status--error">Unable to load player leaderboards right now.</div>`;
@@ -704,10 +828,10 @@ async function loadPlayerLeaderboards(container: HTMLElement): Promise<void> {
   }
 }
 
-function renderPlayerLeaderboards(
+async function renderPlayerLeaderboards(
   container: HTMLElement,
   doc: PlayerLeaderboardDocument,
-): void {
+): Promise<void> {
   container.classList.add("player-leaderboard--ready");
   container.innerHTML = "";
 
@@ -738,13 +862,21 @@ function renderPlayerLeaderboards(
   grid.className = "player-leaderboard__grid";
 
   let rendered = 0;
-  LEADERBOARD_METRIC_ORDER.forEach((metricId, index) => {
+  const cardPromises = LEADERBOARD_METRIC_ORDER.map(async (metricId, index) => {
     const metric = doc.metrics?.[metricId];
     if (!metric || !Array.isArray(metric.leaders) || metric.leaders.length === 0) {
-      return;
+      return null;
     }
-    const color = LEADERBOARD_COLOR_PALETTE[index % LEADERBOARD_COLOR_PALETTE.length];
-    const card = createLeaderboardCard(metricId, metric, color);
+    const fallbackColor = LEADERBOARD_COLOR_PALETTE[index % LEADERBOARD_COLOR_PALETTE.length];
+    const card = await createLeaderboardCard(metricId, metric, fallbackColor, doc);
+    return card;
+  });
+
+  const cards = (await Promise.all(cardPromises)).filter(
+    (card): card is HTMLElement => Boolean(card),
+  );
+
+  cards.forEach(card => {
     grid.append(card);
     rendered += 1;
   });
@@ -779,25 +911,37 @@ function leaderboardEntryMeetsMinimumSample(
   return games >= minimumGames;
 }
 
-function createLeaderboardCard(
+async function createLeaderboardCard(
   metricId: LeaderboardMetricId,
   metric: PlayerLeaderboardMetric,
-  accentColor: string,
-): HTMLElement {
+  fallbackColor: string,
+  doc: PlayerLeaderboardDocument,
+): Promise<HTMLElement> {
+  const presentation = LEADERBOARD_PRESENTATION[metricId];
+  const accentColor = presentation?.accentColor ?? fallbackColor;
+
   const card = document.createElement("article");
   card.className = "player-leaderboard__card";
+  card.dataset.metric = metricId;
   card.style.setProperty("--leaderboard-card-color", accentColor);
 
   const header = document.createElement("header");
   header.className = "player-leaderboard__card-header";
 
+  if (presentation?.kicker) {
+    const kicker = document.createElement("p");
+    kicker.className = "player-leaderboard__card-kicker";
+    kicker.textContent = presentation.kicker;
+    header.append(kicker);
+  }
+
   const title = document.createElement("h3");
   title.className = "player-leaderboard__card-title";
-  title.textContent = metric.shortLabel || metricId.toUpperCase();
+  title.textContent = presentation?.title || metric.shortLabel || metricId.toUpperCase();
 
   const subtitle = document.createElement("p");
   subtitle.className = "player-leaderboard__card-subtitle";
-  subtitle.textContent = metric.label || metric.shortLabel || metricId;
+  subtitle.textContent = presentation?.description || metric.label || metric.shortLabel || metricId;
 
   header.append(title, subtitle);
   card.append(header);
@@ -822,6 +966,24 @@ function createLeaderboardCard(
       minimumGames > 0
         ? `No players meet the minimum ${minimumGames}-game requirement yet.`
         : "No data available.";
+    card.append(empty);
+    return card;
+  }
+
+  if (presentation?.stacked) {
+    const stackedContent = await createStackedLeaderboardContent(
+      metricId,
+      leaders,
+      doc.season,
+      presentation.stacked,
+    );
+    if (stackedContent) {
+      card.append(stackedContent);
+      return card;
+    }
+    const empty = document.createElement("p");
+    empty.className = "player-leaderboard__status player-leaderboard__status--empty";
+    empty.textContent = "No data available.";
     card.append(empty);
     return card;
   }
@@ -860,6 +1022,15 @@ function createLeaderboardListItem(
   const ratio = maxValue > 0 ? Math.max(0, Math.min(leader.value / maxValue, 1)) : 0;
   item.style.setProperty("--leaderboard-fill", ratio.toFixed(4));
 
+  const bar = document.createElement("div");
+  bar.className = "player-leaderboard__bar";
+
+  const barSegment = document.createElement("span");
+  barSegment.className = "player-leaderboard__bar-segment player-leaderboard__bar-segment--active";
+  barSegment.style.setProperty("--leaderboard-segment-color", "var(--leaderboard-card-color)");
+  barSegment.style.width = `${(ratio * 100).toFixed(4)}%`;
+  bar.append(barSegment);
+
   const rank = document.createElement("span");
   rank.className = "player-leaderboard__rank";
   rank.textContent = String(index + 1);
@@ -894,8 +1065,277 @@ function createLeaderboardListItem(
   value.className = "player-leaderboard__value";
   value.textContent = formatLeaderboardValue(metricId, leader);
 
-  item.append(rank, info, value);
+  item.append(bar, rank, info, value);
   return item;
+}
+
+async function createStackedLeaderboardContent(
+  metricId: LeaderboardMetricId,
+  leaders: PlayerLeaderboardEntry[],
+  seasonLabel: string | undefined,
+  config: LeaderboardStackedConfig,
+): Promise<HTMLElement | null> {
+  const processed = (
+    await Promise.all(
+      leaders.map(async leader => {
+        const statsDoc = await ensureStatsForSlug(leader.slug);
+        if (!statsDoc) {
+          return null;
+        }
+        const season = findSeasonForLeaderboard(statsDoc, seasonLabel);
+        if (!season) {
+          return null;
+        }
+        const breakdown: Record<string, number> = {};
+        let hasValue = false;
+        for (const segment of config.segments) {
+          const raw = season[segment.stat];
+          const numeric = typeof raw === "number" && Number.isFinite(raw) ? raw : 0;
+          const safeValue = numeric > 0 ? numeric : Math.max(0, numeric);
+          breakdown[segment.id] = safeValue;
+          if (safeValue > 0) {
+            hasValue = true;
+          }
+        }
+        const segmentSum = config.segments.reduce(
+          (sum, segment) => sum + (breakdown[segment.id] ?? 0),
+          0,
+        );
+        const totalRaw = config.totalStat ? season[config.totalStat] : null;
+        const totalCandidate =
+          typeof totalRaw === "number" && Number.isFinite(totalRaw) ? totalRaw : segmentSum;
+        const total = totalCandidate > 0 ? totalCandidate : Math.max(0, totalCandidate);
+        if (!hasValue && total <= 0) {
+          return null;
+        }
+        return {
+          leader,
+          breakdown,
+          total,
+        } satisfies StackedLeaderboardEntry;
+      }),
+    )
+  ).filter((entry): entry is StackedLeaderboardEntry => Boolean(entry));
+
+  if (processed.length === 0) {
+    return null;
+  }
+
+  const container = document.createElement("div");
+  container.className = "player-leaderboard__body";
+
+  const controls = document.createElement("div");
+  controls.className = "player-leaderboard__controls";
+
+  const toggleButtons: HTMLButtonElement[] = [];
+  if (config.views.length > 1) {
+    const toggle = document.createElement("div");
+    toggle.className = "player-leaderboard__view-toggle";
+    config.views.forEach(view => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "player-leaderboard__view-button";
+      button.dataset.view = view.id;
+      button.textContent = view.label;
+      toggle.append(button);
+      toggleButtons.push(button);
+    });
+    controls.append(toggle);
+  }
+
+  const legend = document.createElement("ul");
+  legend.className = "player-leaderboard__legend";
+  const legendEntries = config.segments.map(segment => {
+    const item = document.createElement("li");
+    item.className = "player-leaderboard__legend-item";
+    item.dataset.segment = segment.id;
+
+    const swatch = document.createElement("span");
+    swatch.className = "player-leaderboard__legend-swatch";
+    swatch.style.setProperty("--leaderboard-legend-color", segment.color);
+
+    const label = document.createElement("span");
+    label.className = "player-leaderboard__legend-label";
+    label.textContent = segment.label;
+
+    item.append(swatch, label);
+    legend.append(item);
+    return { id: segment.id, element: item };
+  });
+  controls.append(legend);
+
+  const list = document.createElement("ol");
+  list.className = "player-leaderboard__list";
+  list.setAttribute("role", "list");
+
+  const items: StackedLeaderboardItemState[] = processed.map((entry, index) => {
+    const item = document.createElement("li");
+    item.className = "player-leaderboard__item";
+    item.dataset.rank = String(index + 1);
+
+    const bar = document.createElement("div");
+    bar.className = "player-leaderboard__bar";
+    const segmentElements = new Map<string, HTMLSpanElement>();
+    config.segments.forEach(segment => {
+      const segEl = document.createElement("span");
+      segEl.className = "player-leaderboard__bar-segment";
+      segEl.style.setProperty("--leaderboard-segment-color", segment.color);
+      bar.append(segEl);
+      segmentElements.set(segment.id, segEl);
+    });
+
+    const rank = document.createElement("span");
+    rank.className = "player-leaderboard__rank";
+    rank.textContent = String(index + 1);
+
+    const info = document.createElement("div");
+    info.className = "player-leaderboard__info";
+
+    const nameEl = document.createElement(entry.leader.url ? "a" : "span");
+    nameEl.className = "player-leaderboard__name";
+    nameEl.textContent = entry.leader.name;
+    if (entry.leader.url) {
+      const link = nameEl as HTMLAnchorElement;
+      link.href = entry.leader.url;
+      link.target = "_blank";
+      link.rel = "noreferrer noopener";
+    }
+
+    const team = document.createElement("span");
+    team.className = "player-leaderboard__team";
+    const meta: string[] = [];
+    if (entry.leader.team) {
+      meta.push(entry.leader.team);
+    }
+    if (typeof entry.leader.games === "number" && Number.isFinite(entry.leader.games)) {
+      meta.push(`${entry.leader.games} GP`);
+    }
+    team.textContent = meta.join(" · ");
+
+    info.append(nameEl, team);
+
+    const valueEl = document.createElement("span");
+    valueEl.className = "player-leaderboard__value";
+    valueEl.textContent = "—";
+
+    item.append(bar, rank, info, valueEl);
+    list.append(item);
+
+    return { entry, element: item, valueEl, segmentElements };
+  });
+
+  container.append(controls, list);
+
+  const initialView =
+    config.views.find(view => view.id === config.defaultView) ?? config.views[0];
+  if (!initialView) {
+    return container;
+  }
+
+  function updateView(viewId: string): void {
+    const view = config.views.find(v => v.id === viewId) ?? initialView;
+    const computations = processed.map(entry => computeStackedView(entry, view));
+    const maxValue = computations.reduce(
+      (max, current) => Math.max(max, current.baseValue),
+      0,
+    );
+
+    items.forEach((itemState, index) => {
+      const computation = computations[index];
+      const baseValue = Number.isFinite(computation.baseValue)
+        ? Math.max(0, computation.baseValue)
+        : 0;
+      const ratio = maxValue > 0 ? Math.max(0, Math.min(baseValue / maxValue, 1)) : 0;
+      itemState.element.style.setProperty("--leaderboard-fill", ratio.toFixed(4));
+      itemState.valueEl.textContent = formatDecimal(baseValue, 1);
+
+      config.segments.forEach(segment => {
+        const segmentEl = itemState.segmentElements.get(segment.id);
+        if (!segmentEl) {
+          return;
+        }
+        const segmentData = computation.segments.find(seg => seg.id === segment.id);
+        const isActive = Boolean(
+          segmentData && view.segmentIds.includes(segment.id) && segmentData.value > 0,
+        );
+        const width = segmentData && maxValue > 0
+          ? Math.max(0, Math.min(segmentData.value / maxValue, 1)) * 100
+          : 0;
+        segmentEl.style.width = `${width.toFixed(4)}%`;
+        segmentEl.classList.toggle(
+          "player-leaderboard__bar-segment--hidden",
+          !view.segmentIds.includes(segment.id),
+        );
+        segmentEl.classList.toggle("player-leaderboard__bar-segment--active", isActive);
+      });
+    });
+
+    toggleButtons.forEach(button => {
+      button.classList.toggle("is-active", button.dataset.view === view.id);
+    });
+
+    legendEntries.forEach(entry => {
+      entry.element.classList.toggle("is-active", view.segmentIds.includes(entry.id));
+    });
+  }
+
+  if (toggleButtons.length > 0) {
+    toggleButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const viewId = button.dataset.view;
+        if (viewId) {
+          updateView(viewId);
+        }
+      });
+    });
+  }
+
+  updateView(initialView.id);
+
+  return container;
+}
+
+function computeStackedView(
+  entry: StackedLeaderboardEntry,
+  view: LeaderboardStackedView,
+): { baseValue: number; segments: Array<{ id: string; value: number }> } {
+  const activeSegments = view.segmentIds.map(id => ({
+    id,
+    raw: Math.max(0, entry.breakdown[id] ?? 0),
+  }));
+
+  const rawSum = activeSegments.reduce((sum, segment) => sum + segment.raw, 0);
+  const baseCandidate = view.useTotal ? entry.total : rawSum;
+  const baseValue = Number.isFinite(baseCandidate)
+    ? Math.max(0, baseCandidate)
+    : Math.max(0, rawSum);
+  const denominator = rawSum > 0 ? rawSum : baseValue;
+  const scale = view.useTotal && denominator > 0 ? baseValue / denominator : 1;
+
+  const segments = activeSegments.map(segment => ({
+    id: segment.id,
+    value: Math.max(0, segment.raw * scale),
+  }));
+
+  return { baseValue, segments };
+}
+
+function findSeasonForLeaderboard(
+  doc: PlayerStatsDocument | null,
+  seasonLabel: string | undefined,
+): PlayerStatsSeason | null {
+  if (!doc || !Array.isArray(doc.seasons) || doc.seasons.length === 0) {
+    return null;
+  }
+
+  if (seasonLabel) {
+    const match = doc.seasons.find(season => season.season === seasonLabel);
+    if (match) {
+      return match;
+    }
+  }
+
+  return doc.seasons[doc.seasons.length - 1] ?? null;
 }
 
 function isValidLeaderboardEntry(
