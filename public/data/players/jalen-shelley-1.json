@@ -1,0 +1,28 @@
+{
+  "slug": "jalen-shelley-1",
+  "name": "Jalen Shelley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Southern California",
+      "conf": "Big Ten",
+      "gp": 22,
+      "gs": 1,
+      "mp_g": 7.5909090909,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.1764705882,
+      "ft_pct": 0.55,
+      "orb_g": 0.2272727273,
+      "drb_g": 1.1818181818,
+      "trb_g": 1.4090909091,
+      "ast_g": 0.4545454545,
+      "stl_g": 0.1818181818,
+      "blk_g": 0.3181818182,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.8636363636,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jalen-shelley-1.html",
+  "last_scraped": "2025-11-01T00:42:58.773Z"
+}

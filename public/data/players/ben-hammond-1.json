@@ -1,0 +1,28 @@
+{
+  "slug": "ben-hammond-1",
+  "name": "Ben Hammond",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 29,
+      "gs": 17,
+      "mp_g": 19.4827586207,
+      "fg_pct": 0.4186046512,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.7446808511,
+      "orb_g": 0.1724137931,
+      "drb_g": 1.5172413793,
+      "trb_g": 1.6896551724,
+      "ast_g": 2.1379310345,
+      "stl_g": 1.2068965517,
+      "blk_g": 0,
+      "tov_g": 1.724137931,
+      "pf_g": 1.724137931,
+      "pts_g": 5.5517241379
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ben-hammond-1.html",
+  "last_scraped": "2025-11-01T00:31:16.562Z"
+}

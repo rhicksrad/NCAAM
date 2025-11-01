@@ -1,0 +1,28 @@
+{
+  "slug": "dylan-grant-1",
+  "name": "Dylan Grant",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rutgers",
+      "conf": "Big Ten",
+      "gp": 21,
+      "gs": 16,
+      "mp_g": 18.7619047619,
+      "fg_pct": 0.4454545455,
+      "fg3_pct": 0.2325581395,
+      "ft_pct": 0.5714285714,
+      "orb_g": 1.619047619,
+      "drb_g": 1.8095238095,
+      "trb_g": 3.4285714286,
+      "ast_g": 0.1904761905,
+      "stl_g": 0.380952381,
+      "blk_g": 0.619047619,
+      "tov_g": 0.4285714286,
+      "pf_g": 1.1428571429,
+      "pts_g": 5.9047619048
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dylan-grant-1.html",
+  "last_scraped": "2025-11-01T00:38:07.823Z"
+}

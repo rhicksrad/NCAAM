@@ -1,0 +1,48 @@
+{
+  "slug": "dylan-james-2",
+  "name": "Dylan James",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 22,
+      "gs": 8,
+      "mp_g": 14.5,
+      "fg_pct": 0.472972973,
+      "fg3_pct": 0.3870967742,
+      "ft_pct": 0.4615384615,
+      "orb_g": 0.8636363636,
+      "drb_g": 1.7727272727,
+      "trb_g": 2.6363636364,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.3181818182,
+      "blk_g": 0.5909090909,
+      "tov_g": 0.8181818182,
+      "pf_g": 1.1363636364,
+      "pts_g": 4
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 32,
+      "gs": 8,
+      "mp_g": 13.625,
+      "fg_pct": 0.4642857143,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5185185185,
+      "orb_g": 0.78125,
+      "drb_g": 1.40625,
+      "trb_g": 2.1875,
+      "ast_g": 0.5625,
+      "stl_g": 0.34375,
+      "blk_g": 0.53125,
+      "tov_g": 0.65625,
+      "pf_g": 1.15625,
+      "pts_g": 3.1875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dylan-james-2.html",
+  "last_scraped": "2025-11-01T00:38:10.972Z"
+}

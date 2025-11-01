@@ -1,0 +1,28 @@
+{
+  "slug": "isaac-asuma-1",
+  "name": "Isaac Asuma",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Minnesota",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 24.71875,
+      "fg_pct": 0.4370860927,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.6363636364,
+      "orb_g": 0.8125,
+      "drb_g": 2.0625,
+      "trb_g": 2.875,
+      "ast_g": 2.09375,
+      "stl_g": 0.8125,
+      "blk_g": 0.3125,
+      "tov_g": 1.1875,
+      "pf_g": 2,
+      "pts_g": 5.5625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaac-asuma-1.html",
+  "last_scraped": "2025-11-01T00:40:49.026Z"
+}

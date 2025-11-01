@@ -1,0 +1,48 @@
+{
+  "slug": "zvonimir-ivisic-1",
+  "name": "Zvonimir Ivisic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kentucky",
+      "conf": "SEC",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 11.7333333333,
+      "fg_pct": 0.5769230769,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.7727272727,
+      "orb_g": 1.0666666667,
+      "drb_g": 2.2,
+      "trb_g": 3.2666666667,
+      "ast_g": 0.6,
+      "stl_g": 0.3333333333,
+      "blk_g": 1.3333333333,
+      "tov_g": 1,
+      "pf_g": 1.5333333333,
+      "pts_g": 5.5333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Arkansas",
+      "conf": "SEC",
+      "gp": 35,
+      "gs": 19,
+      "mp_g": 19.1142857143,
+      "fg_pct": 0.472972973,
+      "fg3_pct": 0.376,
+      "ft_pct": 0.724137931,
+      "orb_g": 0.7714285714,
+      "drb_g": 3.5428571429,
+      "trb_g": 4.3142857143,
+      "ast_g": 0.8,
+      "stl_g": 0.6571428571,
+      "blk_g": 1.8857142857,
+      "tov_g": 1.4,
+      "pf_g": 2.0285714286,
+      "pts_g": 8.5428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zvonimir-ivisic-1.html",
+  "last_scraped": "2025-11-01T00:58:43.752Z"
+}

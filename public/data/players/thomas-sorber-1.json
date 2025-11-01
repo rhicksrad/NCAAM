@@ -1,0 +1,28 @@
+{
+  "slug": "thomas-sorber-1",
+  "name": "Thomas Sorber",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 24,
+      "gs": 23,
+      "mp_g": 31.3333333333,
+      "fg_pct": 0.532,
+      "fg3_pct": 0.1621621622,
+      "ft_pct": 0.7238095238,
+      "orb_g": 2.6666666667,
+      "drb_g": 5.7916666667,
+      "trb_g": 8.4583333333,
+      "ast_g": 2.4166666667,
+      "stl_g": 1.4583333333,
+      "blk_g": 2.0416666667,
+      "tov_g": 2.25,
+      "pf_g": 2.2083333333,
+      "pts_g": 14.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/thomas-sorber-1.html",
+  "last_scraped": "2025-11-01T00:55:50.293Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "thomas-ndong-1",
+  "name": "Thomas Ndong",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oregon State",
+      "conf": "Pac-12",
+      "gp": 21,
+      "gs": 1,
+      "mp_g": 8.9523809524,
+      "fg_pct": 0.303030303,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.5833333333,
+      "orb_g": 0.4761904762,
+      "drb_g": 1.4761904762,
+      "trb_g": 1.9523809524,
+      "ast_g": 0.4285714286,
+      "stl_g": 0.2857142857,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.7142857143,
+      "pts_g": 1.8095238095
+    },
+    {
+      "season": "2024-25",
+      "team": "Oregon State",
+      "conf": "WCC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 3.8461538462,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.0769230769,
+      "drb_g": 0.4615384615,
+      "trb_g": 0.5384615385,
+      "ast_g": 0.1538461538,
+      "stl_g": 0.1538461538,
+      "blk_g": 0.1538461538,
+      "tov_g": 0.0769230769,
+      "pf_g": 0.3846153846,
+      "pts_g": 0.8461538462
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/thomas-ndong-1.html",
+  "last_scraped": "2025-11-01T00:55:48.698Z"
+}

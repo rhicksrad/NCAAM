@@ -1,0 +1,48 @@
+{
+  "slug": "paul-djobet-1",
+  "name": "Paul Djobet",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 16,
+      "gs": 1,
+      "mp_g": 10.1875,
+      "fg_pct": 0.4193548387,
+      "fg3_pct": 0.4117647059,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.5625,
+      "drb_g": 1,
+      "trb_g": 1.5625,
+      "ast_g": 0.4375,
+      "stl_g": 0.25,
+      "blk_g": 0.125,
+      "tov_g": 0.375,
+      "pf_g": 0.625,
+      "pts_g": 2.4375
+    },
+    {
+      "season": "2024-25",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 28,
+      "gs": 3,
+      "mp_g": 16.4285714286,
+      "fg_pct": 0.4710743802,
+      "fg3_pct": 0.3823529412,
+      "ft_pct": 0.7714285714,
+      "orb_g": 1,
+      "drb_g": 1.6071428571,
+      "trb_g": 2.6071428571,
+      "ast_g": 0.8928571429,
+      "stl_g": 0.5357142857,
+      "blk_g": 0.25,
+      "tov_g": 1.0357142857,
+      "pf_g": 1.6071428571,
+      "pts_g": 5.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/paul-djobet-1.html",
+  "last_scraped": "2025-11-01T00:52:28.601Z"
+}

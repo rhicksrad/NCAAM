@@ -1,0 +1,28 @@
+{
+  "slug": "derik-queen-1",
+  "name": "Derik Queen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 36,
+      "gs": 36,
+      "mp_g": 30.3611111111,
+      "fg_pct": 0.5263157895,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.7660550459,
+      "orb_g": 2.3333333333,
+      "drb_g": 6.6388888889,
+      "trb_g": 8.9722222222,
+      "ast_g": 1.8611111111,
+      "stl_g": 1.0833333333,
+      "blk_g": 1.0833333333,
+      "tov_g": 2.3611111111,
+      "pf_g": 2.1388888889,
+      "pts_g": 16.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/derik-queen-1.html",
+  "last_scraped": "2025-11-01T00:37:03.916Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "dayton-forsythe-1",
+  "name": "Dayton Forsythe",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oklahoma",
+      "conf": "SEC",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 12.064516129,
+      "fg_pct": 0.45,
+      "fg3_pct": 0.4468085106,
+      "ft_pct": 0.9090909091,
+      "orb_g": 0.064516129,
+      "drb_g": 1.0322580645,
+      "trb_g": 1.0967741935,
+      "ast_g": 1.0322580645,
+      "stl_g": 0.4193548387,
+      "blk_g": 0,
+      "tov_g": 0.5161290323,
+      "pf_g": 1.2903225806,
+      "pts_g": 4.2903225806
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dayton-forsythe-1.html",
+  "last_scraped": "2025-11-01T00:36:46.895Z"
+}

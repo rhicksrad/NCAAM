@@ -1,0 +1,48 @@
+{
+  "slug": "drew-fielder-1",
+  "name": "Drew Fielder",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 32,
+      "gs": 2,
+      "mp_g": 14.59375,
+      "fg_pct": 0.4841269841,
+      "fg3_pct": 0.4074074074,
+      "ft_pct": 0.6285714286,
+      "orb_g": 1.0625,
+      "drb_g": 2,
+      "trb_g": 3.0625,
+      "ast_g": 0.71875,
+      "stl_g": 0.3125,
+      "blk_g": 0.625,
+      "tov_g": 0.40625,
+      "pf_g": 2.25,
+      "pts_g": 5.1875
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 23.5161290323,
+      "fg_pct": 0.4632768362,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.7169811321,
+      "orb_g": 1.6451612903,
+      "drb_g": 3.7741935484,
+      "trb_g": 5.4193548387,
+      "ast_g": 0.9677419355,
+      "stl_g": 0.3548387097,
+      "blk_g": 0.4193548387,
+      "tov_g": 0.935483871,
+      "pf_g": 2.3870967742,
+      "pts_g": 7.0967741935
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drew-fielder-1.html",
+  "last_scraped": "2025-11-01T00:37:52.238Z"
+}

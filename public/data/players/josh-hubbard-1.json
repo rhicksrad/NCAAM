@@ -1,0 +1,48 @@
+{
+  "slug": "josh-hubbard-1",
+  "name": "Josh Hubbard",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mississippi State",
+      "conf": "SEC",
+      "gp": 35,
+      "gs": 16,
+      "mp_g": 27.7428571429,
+      "fg_pct": 0.3849372385,
+      "fg3_pct": 0.3552631579,
+      "ft_pct": 0.8531468531,
+      "orb_g": 0.2571428571,
+      "drb_g": 1.9142857143,
+      "trb_g": 2.1714285714,
+      "ast_g": 1.7428571429,
+      "stl_g": 0.6857142857,
+      "blk_g": 0.1142857143,
+      "tov_g": 1.2,
+      "pf_g": 1.3714285714,
+      "pts_g": 17.0857142857
+    },
+    {
+      "season": "2024-25",
+      "team": "Mississippi State",
+      "conf": "SEC",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 32.9411764706,
+      "fg_pct": 0.4015904573,
+      "fg3_pct": 0.3450479233,
+      "ft_pct": 0.8783783784,
+      "orb_g": 0.2647058824,
+      "drb_g": 1.8823529412,
+      "trb_g": 2.1470588235,
+      "ast_g": 3.1470588235,
+      "stl_g": 0.9117647059,
+      "blk_g": 0.0882352941,
+      "tov_g": 1.2647058824,
+      "pf_g": 1.8823529412,
+      "pts_g": 18.8823529412
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-hubbard-1.html",
+  "last_scraped": "2025-11-01T00:45:37.198Z"
+}

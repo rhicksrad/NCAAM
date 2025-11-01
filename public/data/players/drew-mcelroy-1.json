@@ -1,0 +1,28 @@
+{
+  "slug": "drew-mcelroy-1",
+  "name": "Drew McElroy",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "TCU",
+      "conf": "Big 12",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": 1,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.5,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 1.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drew-mcelroy-1.html",
+  "last_scraped": "2025-11-01T00:37:53.709Z"
+}

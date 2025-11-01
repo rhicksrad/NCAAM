@@ -1,0 +1,48 @@
+{
+  "slug": "layden-blocker-2",
+  "name": "Layden Blocker",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Arkansas",
+      "conf": "SEC",
+      "gp": 27,
+      "gs": 5,
+      "mp_g": 13.3333333333,
+      "fg_pct": 0.4025974026,
+      "fg3_pct": 0.1176470588,
+      "ft_pct": 0.6206896552,
+      "orb_g": 0.7777777778,
+      "drb_g": 0.7777777778,
+      "trb_g": 1.5555555556,
+      "ast_g": 1,
+      "stl_g": 0.7777777778,
+      "blk_g": 0.2592592593,
+      "tov_g": 0.7407407407,
+      "pf_g": 1.7037037037,
+      "pts_g": 3.7037037037
+    },
+    {
+      "season": "2024-25",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 21,
+      "mp_g": 25.4545454545,
+      "fg_pct": 0.4029850746,
+      "fg3_pct": 0.3369565217,
+      "ft_pct": 0.7831325301,
+      "orb_g": 0.8787878788,
+      "drb_g": 2.0303030303,
+      "trb_g": 2.9090909091,
+      "ast_g": 3.0606060606,
+      "stl_g": 1.1212121212,
+      "blk_g": 0.2424242424,
+      "tov_g": 1.7575757576,
+      "pf_g": 2.4848484848,
+      "pts_g": 9.4545454545
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/layden-blocker-2.html",
+  "last_scraped": "2025-11-01T00:48:20.020Z"
+}

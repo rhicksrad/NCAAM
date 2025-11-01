@@ -1,0 +1,28 @@
+{
+  "slug": "will-thengvall-1",
+  "name": "Will Thengvall",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kansas",
+      "conf": "Big 12",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/will-thengvall-1.html",
+  "last_scraped": "2025-11-01T00:58:01.608Z"
+}

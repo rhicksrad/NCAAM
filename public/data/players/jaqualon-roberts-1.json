@@ -1,0 +1,48 @@
+{
+  "slug": "jaqualon-roberts-1",
+  "name": "JaQualon \"JQ\" Roberts",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Vanderbilt",
+      "conf": "SEC",
+      "gp": 26,
+      "gs": 4,
+      "mp_g": 13.4230769231,
+      "fg_pct": 0.32,
+      "fg3_pct": 0.2592592593,
+      "ft_pct": 0.6774193548,
+      "orb_g": 1.0769230769,
+      "drb_g": 1.1923076923,
+      "trb_g": 2.2692307692,
+      "ast_g": 0.3461538462,
+      "stl_g": 0.3461538462,
+      "blk_g": 0.3076923077,
+      "tov_g": 0.5384615385,
+      "pf_g": 1.0769230769,
+      "pts_g": 2.3076923077
+    },
+    {
+      "season": "2024-25",
+      "team": "Vanderbilt",
+      "conf": "SEC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 4.619047619,
+      "fg_pct": 0.6666666667,
+      "fg3_pct": 0,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.2380952381,
+      "drb_g": 0.5714285714,
+      "trb_g": 0.8095238095,
+      "ast_g": 0.0476190476,
+      "stl_g": 0.0952380952,
+      "blk_g": 0.1904761905,
+      "tov_g": 0.0952380952,
+      "pf_g": 0.8571428571,
+      "pts_g": 0.9523809524
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaqualon-roberts-1.html",
+  "last_scraped": "2025-11-01T00:43:20.395Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "christian-anderson-2",
+  "name": "Christian Anderson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Texas Tech",
+      "conf": "Big 12",
+      "gp": 35,
+      "gs": 7,
+      "mp_g": 30.5714285714,
+      "fg_pct": 0.4290909091,
+      "fg3_pct": 0.3796791444,
+      "ft_pct": 0.8024691358,
+      "orb_g": 0.5428571429,
+      "drb_g": 2.4571428571,
+      "trb_g": 3,
+      "ast_g": 2.2,
+      "stl_g": 1.1714285714,
+      "blk_g": 0.0857142857,
+      "tov_g": 1.0285714286,
+      "pf_g": 2.2571428571,
+      "pts_g": 10.6285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/christian-anderson-2.html",
+  "last_scraped": "2025-11-01T00:34:27.896Z"
+}

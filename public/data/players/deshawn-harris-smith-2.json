@@ -1,0 +1,48 @@
+{
+  "slug": "deshawn-harris-smith-2",
+  "name": "DeShawn Harris-Smith",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 33,
+      "gs": 30,
+      "mp_g": 29.4848484848,
+      "fg_pct": 0.3682008368,
+      "fg3_pct": 0.202247191,
+      "ft_pct": 0.5802469136,
+      "orb_g": 1.1212121212,
+      "drb_g": 3.1515151515,
+      "trb_g": 4.2727272727,
+      "ast_g": 2.1818181818,
+      "stl_g": 0.9393939394,
+      "blk_g": 0.1212121212,
+      "tov_g": 1.6666666667,
+      "pf_g": 2.6060606061,
+      "pts_g": 7.303030303
+    },
+    {
+      "season": "2024-25",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 36,
+      "gs": 4,
+      "mp_g": 15.4166666667,
+      "fg_pct": 0.3953488372,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5,
+      "orb_g": 0.4166666667,
+      "drb_g": 1.9444444444,
+      "trb_g": 2.3611111111,
+      "ast_g": 1,
+      "stl_g": 0.4444444444,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.5,
+      "pts_g": 2.4722222222
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/deshawn-harris-smith-2.html",
+  "last_scraped": "2025-11-01T00:37:08.587Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jj-taylor-2",
+  "name": "JJ Taylor",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Memphis",
+      "conf": "AAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1.6666666667,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.6666666667,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "UCF",
+      "conf": "Big 12",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 13.8,
+      "fg_pct": 0.4074074074,
+      "fg3_pct": 0.325,
+      "ft_pct": 0.652173913,
+      "orb_g": 0.56,
+      "drb_g": 1.68,
+      "trb_g": 2.24,
+      "ast_g": 0.84,
+      "stl_g": 0.36,
+      "blk_g": 0.28,
+      "tov_g": 1.12,
+      "pf_g": 1.4,
+      "pts_g": 4.36
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jj-taylor-2.html",
+  "last_scraped": "2025-11-01T00:44:40.897Z"
+}

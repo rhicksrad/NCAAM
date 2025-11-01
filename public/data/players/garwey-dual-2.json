@@ -1,0 +1,48 @@
+{
+  "slug": "garwey-dual-2",
+  "name": "Garwey Dual",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 6,
+      "mp_g": 18.5454545455,
+      "fg_pct": 0.3305785124,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.4242424242,
+      "drb_g": 0.9090909091,
+      "trb_g": 1.3333333333,
+      "ast_g": 1.9090909091,
+      "stl_g": 0.7575757576,
+      "blk_g": 0.6666666667,
+      "tov_g": 1.0303030303,
+      "pf_g": 1.5151515152,
+      "pts_g": 3.2727272727
+    },
+    {
+      "season": "2024-25",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 30,
+      "gs": 22,
+      "mp_g": 25.6,
+      "fg_pct": 0.4222222222,
+      "fg3_pct": 0.3142857143,
+      "ft_pct": 0.6315789474,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.3,
+      "trb_g": 1.6333333333,
+      "ast_g": 2.9666666667,
+      "stl_g": 1.6666666667,
+      "blk_g": 0.6666666667,
+      "tov_g": 1.5,
+      "pf_g": 1.9666666667,
+      "pts_g": 5.3666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/garwey-dual-2.html",
+  "last_scraped": "2025-11-01T00:39:38.736Z"
+}

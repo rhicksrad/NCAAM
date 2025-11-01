@@ -1,0 +1,28 @@
+{
+  "slug": "joson-sanon-1",
+  "name": "Joson Sanon",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arizona State",
+      "conf": "Big 12",
+      "gp": 27,
+      "gs": 9,
+      "mp_g": 28.1851851852,
+      "fg_pct": 0.4218181818,
+      "fg3_pct": 0.368852459,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.2592592593,
+      "drb_g": 3.1851851852,
+      "trb_g": 3.4444444444,
+      "ast_g": 1.037037037,
+      "stl_g": 0.5185185185,
+      "blk_g": 0.2592592593,
+      "tov_g": 1.4444444444,
+      "pf_g": 1.8518518519,
+      "pts_g": 11.9259259259
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joson-sanon-1.html",
+  "last_scraped": "2025-11-01T00:45:51.237Z"
+}

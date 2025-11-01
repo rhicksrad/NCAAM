@@ -1,0 +1,28 @@
+{
+  "slug": "karter-knox-1",
+  "name": "Karter Knox",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arkansas",
+      "conf": "SEC",
+      "gp": 36,
+      "gs": 24,
+      "mp_g": 23.9722222222,
+      "fg_pct": 0.4615384615,
+      "fg3_pct": 0.35,
+      "ft_pct": 0.8021978022,
+      "orb_g": 0.6666666667,
+      "drb_g": 2.6388888889,
+      "trb_g": 3.3055555556,
+      "ast_g": 1.0277777778,
+      "stl_g": 0.5833333333,
+      "blk_g": 0.4722222222,
+      "tov_g": 1.1388888889,
+      "pf_g": 1.8888888889,
+      "pts_g": 8.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/karter-knox-1.html",
+  "last_scraped": "2025-11-01T00:46:49.044Z"
+}

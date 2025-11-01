@@ -1,0 +1,48 @@
+{
+  "slug": "zaide-lowery-1",
+  "name": "Zaide Lowery",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 9.5161290323,
+      "fg_pct": 0.3265306122,
+      "fg3_pct": 0.3103448276,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.4193548387,
+      "drb_g": 0.9677419355,
+      "trb_g": 1.3870967742,
+      "ast_g": 0.2903225806,
+      "stl_g": 0.2903225806,
+      "blk_g": 0.0967741935,
+      "tov_g": 0.3225806452,
+      "pf_g": 0.8709677419,
+      "pts_g": 1.6129032258
+    },
+    {
+      "season": "2024-25",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 15.7741935484,
+      "fg_pct": 0.4705882353,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.7096774194,
+      "drb_g": 2.3225806452,
+      "trb_g": 3.0322580645,
+      "ast_g": 0.2258064516,
+      "stl_g": 0.6774193548,
+      "blk_g": 0.064516129,
+      "tov_g": 0.3225806452,
+      "pf_g": 0.9677419355,
+      "pts_g": 4.0967741935
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zaide-lowery-1.html",
+  "last_scraped": "2025-11-01T00:58:31.206Z"
+}

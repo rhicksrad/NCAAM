@@ -1,0 +1,48 @@
+{
+  "slug": "cade-kelderman-1",
+  "name": "Cade Kelderman",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iowa State",
+      "conf": "Big 12",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.0833333333,
+      "trb_g": 0.0833333333,
+      "ast_g": 0,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Iowa State",
+      "conf": "Big 12",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 5.4,
+      "fg_pct": 0.3636363636,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0,
+      "orb_g": 0.1333333333,
+      "drb_g": 0.1333333333,
+      "trb_g": 0.2666666667,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.4,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.8,
+      "pts_g": 0.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cade-kelderman-1.html",
+  "last_scraped": "2025-11-01T00:32:51.258Z"
+}

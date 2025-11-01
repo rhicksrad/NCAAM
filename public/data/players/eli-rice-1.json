@@ -1,0 +1,48 @@
+{
+  "slug": "eli-rice-1",
+  "name": "Eli Rice",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Nebraska",
+      "conf": "Big Ten",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 10.0588235294,
+      "fg_pct": 0.4130434783,
+      "fg3_pct": 0.3703703704,
+      "ft_pct": 0.71875,
+      "orb_g": 0.2352941176,
+      "drb_g": 1.3529411765,
+      "trb_g": 1.5882352941,
+      "ast_g": 0.3529411765,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.2352941176,
+      "tov_g": 0.2352941176,
+      "pf_g": 0.8235294118,
+      "pts_g": 4.1764705882
+    },
+    {
+      "season": "2024-25",
+      "team": "Penn State",
+      "conf": "Big Ten",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 7,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 2,
+      "trb_g": 2,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eli-rice-1.html",
+  "last_scraped": "2025-11-01T00:38:26.253Z"
+}

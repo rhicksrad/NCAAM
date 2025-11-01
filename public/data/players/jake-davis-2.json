@@ -1,0 +1,48 @@
+{
+  "slug": "jake-davis-2",
+  "name": "Jake Davis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mercer",
+      "conf": "Southern",
+      "gp": 33,
+      "gs": 25,
+      "mp_g": 28.5757575758,
+      "fg_pct": 0.4194915254,
+      "fg3_pct": 0.3870967742,
+      "ft_pct": 0.847826087,
+      "orb_g": 0.8484848485,
+      "drb_g": 3.6060606061,
+      "trb_g": 4.4545454545,
+      "ast_g": 1.0909090909,
+      "stl_g": 0.7272727273,
+      "blk_g": 0.4242424242,
+      "tov_g": 1.3333333333,
+      "pf_g": 2.6666666667,
+      "pts_g": 9
+    },
+    {
+      "season": "2024-25",
+      "team": "Illinois",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 9.4375,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.34375,
+      "ft_pct": 0.5,
+      "orb_g": 0.53125,
+      "drb_g": 0.875,
+      "trb_g": 1.40625,
+      "ast_g": 0.3125,
+      "stl_g": 0.03125,
+      "blk_g": 0.15625,
+      "tov_g": 0.25,
+      "pf_g": 1.21875,
+      "pts_g": 2.96875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jake-davis-2.html",
+  "last_scraped": "2025-11-01T00:42:42.906Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "nic-codie-1",
+  "name": "Nic Codie",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Texas",
+      "conf": "SEC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 5.4210526316,
+      "fg_pct": 0.7,
+      "fg3_pct": 1,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.4210526316,
+      "drb_g": 0.5263157895,
+      "trb_g": 0.9473684211,
+      "ast_g": 0.1052631579,
+      "stl_g": 0,
+      "blk_g": 0.1578947368,
+      "tov_g": 0.1578947368,
+      "pf_g": 0.3157894737,
+      "pts_g": 1.6842105263
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nic-codie-1.html",
+  "last_scraped": "2025-11-01T00:51:28.827Z"
+}

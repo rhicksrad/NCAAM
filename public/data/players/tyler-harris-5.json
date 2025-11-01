@@ -1,0 +1,48 @@
+{
+  "slug": "tyler-harris-5",
+  "name": "Tyler Harris",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Portland",
+      "conf": "WCC",
+      "gp": 22,
+      "gs": 21,
+      "mp_g": 33.8181818182,
+      "fg_pct": 0.4595959596,
+      "fg3_pct": 0.358490566,
+      "ft_pct": 0.6770833333,
+      "orb_g": 1.6363636364,
+      "drb_g": 5.6818181818,
+      "trb_g": 7.3181818182,
+      "ast_g": 1.1363636364,
+      "stl_g": 0.9545454545,
+      "blk_g": 0.9090909091,
+      "tov_g": 2,
+      "pf_g": 1.7272727273,
+      "pts_g": 12.0909090909
+    },
+    {
+      "season": "2024-25",
+      "team": "Washington",
+      "conf": "Big Ten",
+      "gp": 30,
+      "gs": 27,
+      "mp_g": 30.6666666667,
+      "fg_pct": 0.4924242424,
+      "fg3_pct": 0.4945054945,
+      "ft_pct": 0.6944444444,
+      "orb_g": 1.2,
+      "drb_g": 3.8,
+      "trb_g": 5,
+      "ast_g": 0.3666666667,
+      "stl_g": 0.9333333333,
+      "blk_g": 1.0666666667,
+      "tov_g": 1,
+      "pf_g": 2.2,
+      "pts_g": 11.8333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-harris-5.html",
+  "last_scraped": "2025-11-01T00:57:03.015Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "jacob-cofie-1",
+  "name": "Jacob Cofie",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Virginia",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 20.84375,
+      "fg_pct": 0.4945054945,
+      "fg3_pct": 0.243902439,
+      "ft_pct": 0.75,
+      "orb_g": 1.4375,
+      "drb_g": 3.1875,
+      "trb_g": 4.625,
+      "ast_g": 1.03125,
+      "stl_g": 1.09375,
+      "blk_g": 0.84375,
+      "tov_g": 0.96875,
+      "pf_g": 2.5,
+      "pts_g": 7.15625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacob-cofie-1.html",
+  "last_scraped": "2025-11-01T00:42:02.214Z"
+}

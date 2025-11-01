@@ -1,0 +1,28 @@
+{
+  "slug": "moustapha-thiam-1",
+  "name": "Moustapha Thiam",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UCF",
+      "conf": "Big 12",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 28.7352941176,
+      "fg_pct": 0.4982206406,
+      "fg3_pct": 0.2911392405,
+      "ft_pct": 0.6666666667,
+      "orb_g": 2.6470588235,
+      "drb_g": 3.7647058824,
+      "trb_g": 6.4117647059,
+      "ast_g": 0.7352941176,
+      "stl_g": 0.4705882353,
+      "blk_g": 2.5882352941,
+      "tov_g": 1.3235294118,
+      "pf_g": 2.7647058824,
+      "pts_g": 10.3823529412
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/moustapha-thiam-1.html",
+  "last_scraped": "2025-11-01T00:51:02.119Z"
+}

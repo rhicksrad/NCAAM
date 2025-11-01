@@ -1,0 +1,28 @@
+{
+  "slug": "cooper-flagg-1",
+  "name": "Cooper Flagg",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Duke",
+      "conf": "ACC",
+      "gp": 37,
+      "gs": 37,
+      "mp_g": 30.6756756757,
+      "fg_pct": 0.4808853119,
+      "fg3_pct": 0.3851851852,
+      "ft_pct": 0.8403755869,
+      "orb_g": 1.3243243243,
+      "drb_g": 6.1621621622,
+      "trb_g": 7.4864864865,
+      "ast_g": 4.2162162162,
+      "stl_g": 1.4054054054,
+      "blk_g": 1.3513513514,
+      "tov_g": 2.1081081081,
+      "pf_g": 1.8918918919,
+      "pts_g": 19.1621621622
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cooper-flagg-1.html",
+  "last_scraped": "2025-11-01T00:35:25.130Z"
+}

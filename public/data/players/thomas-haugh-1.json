@@ -1,0 +1,48 @@
+{
+  "slug": "thomas-haugh-1",
+  "name": "Thomas Haugh",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Florida",
+      "conf": "SEC",
+      "gp": 36,
+      "gs": 2,
+      "mp_g": 14.7222222222,
+      "fg_pct": 0.45,
+      "fg3_pct": 0.2553191489,
+      "ft_pct": 0.4565217391,
+      "orb_g": 1.3055555556,
+      "drb_g": 2.3611111111,
+      "trb_g": 3.6666666667,
+      "ast_g": 0.6388888889,
+      "stl_g": 0.3055555556,
+      "blk_g": 0.6944444444,
+      "tov_g": 0.4166666667,
+      "pf_g": 1.9444444444,
+      "pts_g": 3.9166666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida",
+      "conf": "SEC",
+      "gp": 40,
+      "gs": 5,
+      "mp_g": 24.375,
+      "fg_pct": 0.4853556485,
+      "fg3_pct": 0.3398058252,
+      "ft_pct": 0.7935483871,
+      "orb_g": 2.325,
+      "drb_g": 3.8,
+      "trb_g": 6.125,
+      "ast_g": 2.15,
+      "stl_g": 0.775,
+      "blk_g": 0.75,
+      "tov_g": 1.05,
+      "pf_g": 2.375,
+      "pts_g": 9.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/thomas-haugh-1.html",
+  "last_scraped": "2025-11-01T00:55:47.103Z"
+}

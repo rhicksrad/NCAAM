@@ -1,0 +1,28 @@
+{
+  "slug": "spencer-mahoney-1",
+  "name": "Spencer Mahoney",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "California",
+      "conf": "ACC",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 6.2592592593,
+      "fg_pct": 0.2826086957,
+      "fg3_pct": 0.3,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.6666666667,
+      "trb_g": 1,
+      "ast_g": 0.1851851852,
+      "stl_g": 0.037037037,
+      "blk_g": 0.037037037,
+      "tov_g": 0.1481481481,
+      "pf_g": 0.7037037037,
+      "pts_g": 1.4814814815
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/spencer-mahoney-1.html",
+  "last_scraped": "2025-11-01T00:55:03.587Z"
+}

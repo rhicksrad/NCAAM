@@ -1,0 +1,48 @@
+{
+  "slug": "lejuan-watts-1",
+  "name": "LeJuan Watts",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 22.53125,
+      "fg_pct": 0.6119402985,
+      "fg3_pct": 0.4054054054,
+      "ft_pct": 0.7192982456,
+      "orb_g": 1.3125,
+      "drb_g": 3.59375,
+      "trb_g": 4.90625,
+      "ast_g": 1.6875,
+      "stl_g": 0.90625,
+      "blk_g": 0.375,
+      "tov_g": 1.375,
+      "pf_g": 2.21875,
+      "pts_g": 9.4375
+    },
+    {
+      "season": "2024-25",
+      "team": "Washington State",
+      "conf": "WCC",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 31.5588235294,
+      "fg_pct": 0.5493421053,
+      "fg3_pct": 0.421875,
+      "ft_pct": 0.7342657343,
+      "orb_g": 1.5588235294,
+      "drb_g": 5.1470588235,
+      "trb_g": 6.7058823529,
+      "ast_g": 4.3823529412,
+      "stl_g": 1.0588235294,
+      "blk_g": 0.5,
+      "tov_g": 3.2647058824,
+      "pf_g": 2.4411764706,
+      "pts_g": 13.7058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lejuan-watts-1.html",
+  "last_scraped": "2025-11-01T00:48:26.368Z"
+}

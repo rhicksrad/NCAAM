@@ -1,0 +1,48 @@
+{
+  "slug": "tre-norman-1",
+  "name": "Tre Norman",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 9,
+      "fg_pct": 0.3783783784,
+      "fg3_pct": 0.1891891892,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.3235294118,
+      "drb_g": 0.9117647059,
+      "trb_g": 1.2352941176,
+      "ast_g": 0.4411764706,
+      "stl_g": 0.4117647059,
+      "blk_g": 0.0882352941,
+      "tov_g": 0.3235294118,
+      "pf_g": 1.0588235294,
+      "pts_g": 2
+    },
+    {
+      "season": "2024-25",
+      "team": "Marquette",
+      "conf": "Big East",
+      "gp": 34,
+      "gs": 0,
+      "mp_g": 8.9411764706,
+      "fg_pct": 0.34375,
+      "fg3_pct": 0.1875,
+      "ft_pct": 0.5,
+      "orb_g": 0.4117647059,
+      "drb_g": 1.0882352941,
+      "trb_g": 1.5,
+      "ast_g": 0.4705882353,
+      "stl_g": 0.3529411765,
+      "blk_g": 0.0882352941,
+      "tov_g": 0.5,
+      "pf_g": 1.0882352941,
+      "pts_g": 1.8529411765
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tre-norman-1.html",
+  "last_scraped": "2025-11-01T00:56:18.139Z"
+}

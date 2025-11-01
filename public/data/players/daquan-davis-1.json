@@ -1,0 +1,28 @@
+{
+  "slug": "daquan-davis-1",
+  "name": "Daquan Davis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida State",
+      "conf": "ACC",
+      "gp": 31,
+      "gs": 20,
+      "mp_g": 25.6129032258,
+      "fg_pct": 0.3607305936,
+      "fg3_pct": 0.2790697674,
+      "ft_pct": 0.8256880734,
+      "orb_g": 0.4193548387,
+      "drb_g": 1.9032258065,
+      "trb_g": 2.3225806452,
+      "ast_g": 2.4838709677,
+      "stl_g": 1.0967741935,
+      "blk_g": 0.5806451613,
+      "tov_g": 1.6129032258,
+      "pf_g": 2.2580645161,
+      "pts_g": 8.7741935484
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daquan-davis-1.html",
+  "last_scraped": "2025-11-01T00:36:13.085Z"
+}

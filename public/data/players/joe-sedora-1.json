@@ -1,0 +1,28 @@
+{
+  "slug": "joe-sedora-1",
+  "name": "Joe Sedora",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Penn State",
+      "conf": "Big Ten",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 1.8571428571,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.4285714286,
+      "drb_g": 0.4285714286,
+      "trb_g": 0.8571428571,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1428571429,
+      "pts_g": 0.5714285714
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/joe-sedora-1.html",
+  "last_scraped": "2025-11-01T00:44:44.447Z"
+}

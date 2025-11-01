@@ -271,7 +271,6 @@ async function processPlayer(slug: string, entries: PlayerIndexEntry[]): Promise
       const raw = await fs.readFile(filePath, "utf8");
       const existing = JSON.parse(raw) as PlayerStatsDocument;
       if (Array.isArray(existing.seasons) && existing.seasons.length > 0) {
-        playerStatsCache.set(slug, existing);
         return;
       }
     } catch (error) {

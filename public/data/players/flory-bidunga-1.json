@@ -1,0 +1,28 @@
+{
+  "slug": "flory-bidunga-1",
+  "name": "Flory Bidunga",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kansas",
+      "conf": "Big 12",
+      "gp": 34,
+      "gs": 6,
+      "mp_g": 16.2941176471,
+      "fg_pct": 0.6984126984,
+      "fg3_pct": null,
+      "ft_pct": 0.5333333333,
+      "orb_g": 1.7941176471,
+      "drb_g": 3.5588235294,
+      "trb_g": 5.3529411765,
+      "ast_g": 0.3235294118,
+      "stl_g": 0.5588235294,
+      "blk_g": 1.5882352941,
+      "tov_g": 0.7647058824,
+      "pf_g": 2.2352941176,
+      "pts_g": 5.8823529412
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/flory-bidunga-1.html",
+  "last_scraped": "2025-11-01T00:39:16.927Z"
+}

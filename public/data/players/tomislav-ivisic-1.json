@@ -1,0 +1,28 @@
+{
+  "slug": "tomislav-ivisic-1",
+  "name": "Tomislav Ivisic",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 26.84375,
+      "fg_pct": 0.4921135647,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.75,
+      "orb_g": 1.78125,
+      "drb_g": 5.90625,
+      "trb_g": 7.6875,
+      "ast_g": 2.25,
+      "stl_g": 0.5625,
+      "blk_g": 1.21875,
+      "tov_g": 1.59375,
+      "pf_g": 2.375,
+      "pts_g": 12.96875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tomislav-ivisic-1.html",
+  "last_scraped": "2025-11-01T00:56:02.720Z"
+}

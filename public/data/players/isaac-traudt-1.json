@@ -1,0 +1,48 @@
+{
+  "slug": "isaac-traudt-1",
+  "name": "Isaac Traudt",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 31,
+      "gs": 2,
+      "mp_g": 8.8064516129,
+      "fg_pct": 0.4347826087,
+      "fg3_pct": 0.4210526316,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.4838709677,
+      "drb_g": 0.7419354839,
+      "trb_g": 1.2258064516,
+      "ast_g": 0.3548387097,
+      "stl_g": 0.064516129,
+      "blk_g": 0.0322580645,
+      "tov_g": 0.1290322581,
+      "pf_g": 0.5161290323,
+      "pts_g": 2.8709677419
+    },
+    {
+      "season": "2024-25",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 36,
+      "gs": 4,
+      "mp_g": 15.8055555556,
+      "fg_pct": 0.4330708661,
+      "fg3_pct": 0.3838383838,
+      "ft_pct": 0.9411764706,
+      "orb_g": 0.5555555556,
+      "drb_g": 1.6111111111,
+      "trb_g": 2.1666666667,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.2777777778,
+      "pf_g": 0.8888888889,
+      "pts_g": 4.5555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaac-traudt-1.html",
+  "last_scraped": "2025-11-01T00:40:53.734Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "aidan-konop-1",
+  "name": "Aidan Konop",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Wisconsin",
+      "conf": "Big Ten",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 0.75,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aidan-konop-1.html",
+  "last_scraped": "2025-11-01T00:30:12.419Z"
+}

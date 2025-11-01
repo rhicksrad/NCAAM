@@ -1,0 +1,48 @@
+{
+  "slug": "ladji-dembele-1",
+  "name": "Ladji Dembele",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iowa",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 11.0625,
+      "fg_pct": 0.3783783784,
+      "fg3_pct": 0.3103448276,
+      "ft_pct": 0.3571428571,
+      "orb_g": 0.65625,
+      "drb_g": 1.375,
+      "trb_g": 2.03125,
+      "ast_g": 0.4375,
+      "stl_g": 0.46875,
+      "blk_g": 0.21875,
+      "tov_g": 0.65625,
+      "pf_g": 2.09375,
+      "pts_g": 2.1875
+    },
+    {
+      "season": "2024-25",
+      "team": "Iowa",
+      "conf": "Big Ten",
+      "gp": 33,
+      "gs": 21,
+      "mp_g": 16.696969697,
+      "fg_pct": 0.4672131148,
+      "fg3_pct": 0.3823529412,
+      "ft_pct": 0.7142857143,
+      "orb_g": 1.6666666667,
+      "drb_g": 1.8787878788,
+      "trb_g": 3.5454545455,
+      "ast_g": 0.5757575758,
+      "stl_g": 0.303030303,
+      "blk_g": 0.2121212121,
+      "tov_g": 0.6060606061,
+      "pf_g": 2.1515151515,
+      "pts_g": 4.4545454545
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ladji-dembele-1.html",
+  "last_scraped": "2025-11-01T00:48:05.914Z"
+}

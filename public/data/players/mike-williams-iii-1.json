@@ -1,0 +1,48 @@
+{
+  "slug": "mike-williams-iii-1",
+  "name": "Mike Williams III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Louisiana State",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 22,
+      "mp_g": 19.4545454545,
+      "fg_pct": 0.3908629442,
+      "fg3_pct": 0.3714285714,
+      "ft_pct": 0.7419354839,
+      "orb_g": 0.5151515152,
+      "drb_g": 1.6363636364,
+      "trb_g": 2.1515151515,
+      "ast_g": 1.2424242424,
+      "stl_g": 1.2424242424,
+      "blk_g": 0.2121212121,
+      "tov_g": 1.3939393939,
+      "pf_g": 1.9393939394,
+      "pts_g": 7.2424242424
+    },
+    {
+      "season": "2024-25",
+      "team": "Louisiana State",
+      "conf": "SEC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 11.2083333333,
+      "fg_pct": 0.3131313131,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.7727272727,
+      "orb_g": 0.125,
+      "drb_g": 1.2916666667,
+      "trb_g": 1.4166666667,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.5,
+      "blk_g": 0.125,
+      "tov_g": 0.75,
+      "pf_g": 0.875,
+      "pts_g": 4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mike-williams-iii-1.html",
+  "last_scraped": "2025-11-01T00:50:36.931Z"
+}

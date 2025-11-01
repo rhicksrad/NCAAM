@@ -1,0 +1,28 @@
+{
+  "slug": "kris-parker-1",
+  "name": "Kris Parker",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Villanova",
+      "conf": "Big East",
+      "gp": 27,
+      "gs": 0,
+      "mp_g": 10.037037037,
+      "fg_pct": 0.4363636364,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.6,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.0740740741,
+      "trb_g": 1.4074074074,
+      "ast_g": 0.4814814815,
+      "stl_g": 0.1851851852,
+      "blk_g": 0.1851851852,
+      "tov_g": 0.5925925926,
+      "pf_g": 1.8148148148,
+      "pts_g": 2.6296296296
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kris-parker-1.html",
+  "last_scraped": "2025-11-01T00:47:55.683Z"
+}

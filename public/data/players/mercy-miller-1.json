@@ -1,0 +1,28 @@
+{
+  "slug": "mercy-miller-1",
+  "name": "Mercy Miller",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Houston",
+      "conf": "Big 12",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 8.5909090909,
+      "fg_pct": 0.253968254,
+      "fg3_pct": 0.1785714286,
+      "ft_pct": 0.71875,
+      "orb_g": 0.4545454545,
+      "drb_g": 1.4545454545,
+      "trb_g": 1.9090909091,
+      "ast_g": 0.3636363636,
+      "stl_g": 0.3181818182,
+      "blk_g": 0.1363636364,
+      "tov_g": 0.3636363636,
+      "pf_g": 0.8636363636,
+      "pts_g": 2.7272727273
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mercy-miller-1.html",
+  "last_scraped": "2025-11-01T00:50:17.300Z"
+}

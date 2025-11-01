@@ -1,0 +1,48 @@
+{
+  "slug": "churchill-abass-1",
+  "name": "Churchill Abass",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 30,
+      "gs": 13,
+      "mp_g": 15.9,
+      "fg_pct": 0.578313253,
+      "fg3_pct": 0,
+      "ft_pct": 0.4583333333,
+      "orb_g": 0.9666666667,
+      "drb_g": 2.5333333333,
+      "trb_g": 3.5,
+      "ast_g": 0.2,
+      "stl_g": 0.6333333333,
+      "blk_g": 0.9,
+      "tov_g": 1.1,
+      "pf_g": 1.8333333333,
+      "pts_g": 3.9333333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Wake Forest",
+      "conf": "ACC",
+      "gp": 15,
+      "gs": 1,
+      "mp_g": 7,
+      "fg_pct": 0.4375,
+      "fg3_pct": null,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.8,
+      "drb_g": 0.8,
+      "trb_g": 1.6,
+      "ast_g": 0.2,
+      "stl_g": 0.2,
+      "blk_g": 0.5333333333,
+      "tov_g": 0.7333333333,
+      "pf_g": 1.5333333333,
+      "pts_g": 1.2666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/churchill-abass-1.html",
+  "last_scraped": "2025-11-01T00:34:40.050Z"
+}

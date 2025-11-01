@@ -1,0 +1,48 @@
+{
+  "slug": "camden-heide-1",
+  "name": "Camden Heide",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Purdue",
+      "conf": "Big Ten",
+      "gp": 39,
+      "gs": 0,
+      "mp_g": 12.4102564103,
+      "fg_pct": 0.5764705882,
+      "fg3_pct": 0.45,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.5897435897,
+      "drb_g": 1.3333333333,
+      "trb_g": 1.9230769231,
+      "ast_g": 0.358974359,
+      "stl_g": 0.2051282051,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.2564102564,
+      "pf_g": 1.4615384615,
+      "pts_g": 3.2564102564
+    },
+    {
+      "season": "2024-25",
+      "team": "Purdue",
+      "conf": "Big Ten",
+      "gp": 36,
+      "gs": 8,
+      "mp_g": 19.6111111111,
+      "fg_pct": 0.4909090909,
+      "fg3_pct": 0.3924050633,
+      "ft_pct": 0.8055555556,
+      "orb_g": 0.8611111111,
+      "drb_g": 2.75,
+      "trb_g": 3.6111111111,
+      "ast_g": 0.4166666667,
+      "stl_g": 0.3611111111,
+      "blk_g": 0.2222222222,
+      "tov_g": 0.3333333333,
+      "pf_g": 2,
+      "pts_g": 4.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/camden-heide-1.html",
+  "last_scraped": "2025-11-01T00:33:14.726Z"
+}

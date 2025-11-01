@@ -1,0 +1,48 @@
+{
+  "slug": "jizzle-james-1",
+  "name": "Jizzle James",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Cincinnati",
+      "conf": "Big 12",
+      "gp": 37,
+      "gs": 2,
+      "mp_g": 19.2432432432,
+      "fg_pct": 0.4327868852,
+      "fg3_pct": 0.2875,
+      "ft_pct": 0.78,
+      "orb_g": 0.6216216216,
+      "drb_g": 1.2702702703,
+      "trb_g": 1.8918918919,
+      "ast_g": 2.0540540541,
+      "stl_g": 0.4864864865,
+      "blk_g": 0.2162162162,
+      "tov_g": 1.1621621622,
+      "pf_g": 1.0540540541,
+      "pts_g": 8.8108108108
+    },
+    {
+      "season": "2024-25",
+      "team": "Cincinnati",
+      "conf": "Big 12",
+      "gp": 35,
+      "gs": 35,
+      "mp_g": 27.1142857143,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.282208589,
+      "ft_pct": 0.7741935484,
+      "orb_g": 0.5428571429,
+      "drb_g": 2.4285714286,
+      "trb_g": 2.9714285714,
+      "ast_g": 3.5428571429,
+      "stl_g": 0.8571428571,
+      "blk_g": 0.4285714286,
+      "tov_g": 1.8,
+      "pf_g": 2.1428571429,
+      "pts_g": 12.7428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jizzle-james-1.html",
+  "last_scraped": "2025-11-01T00:44:37.885Z"
+}

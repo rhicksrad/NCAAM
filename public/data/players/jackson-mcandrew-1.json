@@ -1,0 +1,28 @@
+{
+  "slug": "jackson-mcandrew-1",
+  "name": "Jackson McAndrew",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 36,
+      "gs": 31,
+      "mp_g": 21.8611111111,
+      "fg_pct": 0.3950617284,
+      "fg3_pct": 0.3538461538,
+      "ft_pct": 0.65625,
+      "orb_g": 1.1111111111,
+      "drb_g": 3.3333333333,
+      "trb_g": 4.4444444444,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.4166666667,
+      "blk_g": 0.1388888889,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.3333333333,
+      "pts_g": 7.8333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jackson-mcandrew-1.html",
+  "last_scraped": "2025-11-01T00:41:55.780Z"
+}

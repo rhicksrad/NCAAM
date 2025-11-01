@@ -1,0 +1,28 @@
+{
+  "slug": "oswin-erhunmwunse-1",
+  "name": "Oswin Erhunmwunse",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 32,
+      "gs": 24,
+      "mp_g": 20.0625,
+      "fg_pct": 0.7230769231,
+      "fg3_pct": null,
+      "ft_pct": 0.4745762712,
+      "orb_g": 2.4375,
+      "drb_g": 3.15625,
+      "trb_g": 5.59375,
+      "ast_g": 0.1875,
+      "stl_g": 0.375,
+      "blk_g": 1.625,
+      "tov_g": 1.0625,
+      "pf_g": 3,
+      "pts_g": 6.75
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/oswin-erhunmwunse-1.html",
+  "last_scraped": "2025-11-01T00:52:01.532Z"
+}

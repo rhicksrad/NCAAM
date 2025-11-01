@@ -1,0 +1,28 @@
+{
+  "slug": "kayvaun-mulready-1",
+  "name": "Kayvaun Mulready",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 7.9545454545,
+      "fg_pct": 0.303030303,
+      "fg3_pct": 0.2608695652,
+      "ft_pct": 0.625,
+      "orb_g": 0.2272727273,
+      "drb_g": 0.4545454545,
+      "trb_g": 0.6818181818,
+      "ast_g": 0.4090909091,
+      "stl_g": 0.3636363636,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.5,
+      "pts_g": 1.4090909091
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kayvaun-mulready-1.html",
+  "last_scraped": "2025-11-01T00:46:56.844Z"
+}

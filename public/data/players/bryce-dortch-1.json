@@ -1,0 +1,28 @@
+{
+  "slug": "bryce-dortch-1",
+  "name": "Bryce Dortch",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rutgers",
+      "conf": "Big Ten",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 6.5,
+      "fg_pct": 0.7142857143,
+      "fg3_pct": null,
+      "ft_pct": 0.4285714286,
+      "orb_g": 0.4166666667,
+      "drb_g": 0.75,
+      "trb_g": 1.1666666667,
+      "ast_g": 0.25,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.5,
+      "tov_g": 0.0833333333,
+      "pf_g": 1.5,
+      "pts_g": 1.0833333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bryce-dortch-1.html",
+  "last_scraped": "2025-11-01T00:32:34.133Z"
+}

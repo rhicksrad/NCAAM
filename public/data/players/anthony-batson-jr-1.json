@@ -1,0 +1,28 @@
+{
+  "slug": "anthony-batson-jr-1",
+  "name": "Anthony Batson Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stanford",
+      "conf": "ACC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 5.05,
+      "fg_pct": 0.1739130435,
+      "fg3_pct": 0,
+      "ft_pct": 0.6875,
+      "orb_g": 0.15,
+      "drb_g": 0.3,
+      "trb_g": 0.45,
+      "ast_g": 0.25,
+      "stl_g": 0.5,
+      "blk_g": 0.2,
+      "tov_g": 0.45,
+      "pf_g": 1.05,
+      "pts_g": 0.95
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-batson-jr-1.html",
+  "last_scraped": "2025-11-01T00:30:32.965Z"
+}

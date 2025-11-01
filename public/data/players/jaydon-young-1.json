@@ -1,0 +1,48 @@
+{
+  "slug": "jaydon-young-1",
+  "name": "Jaydon Young",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 8.5,
+      "fg_pct": 0.3488372093,
+      "fg3_pct": 0.375,
+      "ft_pct": 1,
+      "orb_g": 0.0384615385,
+      "drb_g": 0.7692307692,
+      "trb_g": 0.8076923077,
+      "ast_g": 0.6923076923,
+      "stl_g": 0.2307692308,
+      "blk_g": 0.0384615385,
+      "tov_g": 0.1923076923,
+      "pf_g": 0.4615384615,
+      "pts_g": 1.8461538462
+    },
+    {
+      "season": "2024-25",
+      "team": "Virginia Tech",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 22.375,
+      "fg_pct": 0.3473282443,
+      "fg3_pct": 0.2960526316,
+      "ft_pct": 0.8157894737,
+      "orb_g": 0.15625,
+      "drb_g": 1.53125,
+      "trb_g": 1.6875,
+      "ast_g": 1.4375,
+      "stl_g": 0.5625,
+      "blk_g": 0,
+      "tov_g": 1.09375,
+      "pf_g": 1.3125,
+      "pts_g": 8.0625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaydon-young-1.html",
+  "last_scraped": "2025-11-01T00:43:57.979Z"
+}

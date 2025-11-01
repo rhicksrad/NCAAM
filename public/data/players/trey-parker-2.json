@@ -1,0 +1,28 @@
+{
+  "slug": "trey-parker-2",
+  "name": "Trey Parker",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NC State",
+      "conf": "ACC",
+      "gp": 27,
+      "gs": 1,
+      "mp_g": 11.9259259259,
+      "fg_pct": 0.4102564103,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.75,
+      "orb_g": 0.5925925926,
+      "drb_g": 0.8148148148,
+      "trb_g": 1.4074074074,
+      "ast_g": 1.1111111111,
+      "stl_g": 0.5185185185,
+      "blk_g": 0.1481481481,
+      "tov_g": 0.962962963,
+      "pf_g": 1.3703703704,
+      "pts_g": 4.6296296296
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trey-parker-2.html",
+  "last_scraped": "2025-11-01T00:56:41.293Z"
+}

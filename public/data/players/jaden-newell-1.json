@@ -1,0 +1,48 @@
+{
+  "slug": "jaden-newell-1",
+  "name": "Jaden Newell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 2.3333333333,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.6666666667,
+      "trb_g": 0.6666666667,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.6666666667,
+      "pts_g": 0.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 1.2857142857,
+      "fg_pct": 0.25,
+      "fg3_pct": null,
+      "ft_pct": 1,
+      "orb_g": 0.2857142857,
+      "drb_g": 0,
+      "trb_g": 0.2857142857,
+      "ast_g": 0,
+      "stl_g": 0.1428571429,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.2857142857,
+      "pts_g": 0.4285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-newell-1.html",
+  "last_scraped": "2025-11-01T00:42:16.318Z"
+}

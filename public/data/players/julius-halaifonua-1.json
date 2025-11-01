@@ -1,0 +1,28 @@
+{
+  "slug": "julius-halaifonua-1",
+  "name": "Julius Halaifonua",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgetown",
+      "conf": "Big East",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 13.1666666667,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.25,
+      "ft_pct": 1,
+      "orb_g": 0.6666666667,
+      "drb_g": 1.3333333333,
+      "trb_g": 2,
+      "ast_g": 0.6666666667,
+      "stl_g": 0,
+      "blk_g": 0.5,
+      "tov_g": 1.1666666667,
+      "pf_g": 1,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/julius-halaifonua-1.html",
+  "last_scraped": "2025-11-01T00:46:09.809Z"
+}

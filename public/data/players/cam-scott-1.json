@@ -1,0 +1,28 @@
+{
+  "slug": "cam-scott-1",
+  "name": "Cam Scott",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "South Carolina",
+      "conf": "SEC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 10.1923076923,
+      "fg_pct": 0.2784810127,
+      "fg3_pct": 0.1777777778,
+      "ft_pct": 0.7368421053,
+      "orb_g": 0.1923076923,
+      "drb_g": 1.1538461538,
+      "trb_g": 1.3461538462,
+      "ast_g": 0.3846153846,
+      "stl_g": 0.0384615385,
+      "blk_g": 0.0384615385,
+      "tov_g": 0.6153846154,
+      "pf_g": 0.8461538462,
+      "pts_g": 2.5384615385
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cam-scott-1.html",
+  "last_scraped": "2025-11-01T00:33:11.536Z"
+}

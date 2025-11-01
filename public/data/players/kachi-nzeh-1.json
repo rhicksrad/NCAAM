@@ -1,0 +1,48 @@
+{
+  "slug": "kachi-nzeh-1",
+  "name": "Kachi Nzeh",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Xavier",
+      "conf": "Big East",
+      "gp": 19,
+      "gs": 4,
+      "mp_g": 9.8421052632,
+      "fg_pct": 0.6,
+      "fg3_pct": null,
+      "ft_pct": 0.55,
+      "orb_g": 0.9473684211,
+      "drb_g": 1.5263157895,
+      "trb_g": 2.4736842105,
+      "ast_g": 0.4210526316,
+      "stl_g": 0.3157894737,
+      "blk_g": 0.3684210526,
+      "tov_g": 0.5789473684,
+      "pf_g": 0.6842105263,
+      "pts_g": 2.4736842105
+    },
+    {
+      "season": "2024-25",
+      "team": "Penn State",
+      "conf": "Big Ten",
+      "gp": 29,
+      "gs": 2,
+      "mp_g": 11.275862069,
+      "fg_pct": 0.6111111111,
+      "fg3_pct": null,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.8275862069,
+      "drb_g": 1.3793103448,
+      "trb_g": 2.2068965517,
+      "ast_g": 0.0344827586,
+      "stl_g": 0.1034482759,
+      "blk_g": 0.3103448276,
+      "tov_g": 0.3103448276,
+      "pf_g": 1.6551724138,
+      "pts_g": 2.6206896552
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kachi-nzeh-1.html",
+  "last_scraped": "2025-11-01T00:46:26.847Z"
+}

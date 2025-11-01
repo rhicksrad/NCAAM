@@ -1,0 +1,28 @@
+{
+  "slug": "to-barrett-1",
+  "name": "T.O. Barrett",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Missouri",
+      "conf": "SEC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 5.3684210526,
+      "fg_pct": 0.5833333333,
+      "fg3_pct": 0,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.0526315789,
+      "drb_g": 0.3157894737,
+      "trb_g": 0.3684210526,
+      "ast_g": 0.6315789474,
+      "stl_g": 0.3157894737,
+      "blk_g": 0.0526315789,
+      "tov_g": 0.3684210526,
+      "pf_g": 1,
+      "pts_g": 1.8947368421
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/to-barrett-1.html",
+  "last_scraped": "2025-11-01T00:55:17.980Z"
+}

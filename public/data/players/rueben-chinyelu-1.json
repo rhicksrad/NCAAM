@@ -1,0 +1,48 @@
+{
+  "slug": "rueben-chinyelu-1",
+  "name": "Rueben Chinyelu",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Washington State",
+      "conf": "Pac-12",
+      "gp": 35,
+      "gs": 12,
+      "mp_g": 13.8,
+      "fg_pct": 0.6173913043,
+      "fg3_pct": null,
+      "ft_pct": 0.4893617021,
+      "orb_g": 1.8857142857,
+      "drb_g": 3.0857142857,
+      "trb_g": 4.9714285714,
+      "ast_g": 0.1428571429,
+      "stl_g": 0.2,
+      "blk_g": 1.2857142857,
+      "tov_g": 1.0571428571,
+      "pf_g": 2.1714285714,
+      "pts_g": 4.7142857143
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida",
+      "conf": "SEC",
+      "gp": 40,
+      "gs": 40,
+      "mp_g": 19.025,
+      "fg_pct": 0.5988372093,
+      "fg3_pct": null,
+      "ft_pct": 0.5818181818,
+      "orb_g": 2.325,
+      "drb_g": 4.225,
+      "trb_g": 6.55,
+      "ast_g": 0.65,
+      "stl_g": 0.5,
+      "blk_g": 0.85,
+      "tov_g": 0.95,
+      "pf_g": 2.825,
+      "pts_g": 5.95
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rueben-chinyelu-1.html",
+  "last_scraped": "2025-11-01T00:53:51.055Z"
+}

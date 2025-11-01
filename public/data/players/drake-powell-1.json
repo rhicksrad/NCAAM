@@ -1,0 +1,28 @@
+{
+  "slug": "drake-powell-1",
+  "name": "Drake Powell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Carolina",
+      "conf": "ACC",
+      "gp": 37,
+      "gs": 24,
+      "mp_g": 25.5945945946,
+      "fg_pct": 0.4834123223,
+      "fg3_pct": 0.3789473684,
+      "ft_pct": 0.6481481481,
+      "orb_g": 0.7027027027,
+      "drb_g": 2.6756756757,
+      "trb_g": 3.3783783784,
+      "ast_g": 1.0810810811,
+      "stl_g": 0.7027027027,
+      "blk_g": 0.6756756757,
+      "tov_g": 0.7297297297,
+      "pf_g": 1.7567567568,
+      "pts_g": 7.4324324324
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/drake-powell-1.html",
+  "last_scraped": "2025-11-01T00:37:47.137Z"
+}

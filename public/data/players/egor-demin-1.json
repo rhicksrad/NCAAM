@@ -1,0 +1,28 @@
+{
+  "slug": "egor-demin-1",
+  "name": "Egor Demin",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Brigham Young",
+      "conf": "Big 12",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 27.5151515152,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.2727272727,
+      "ft_pct": 0.6951219512,
+      "orb_g": 0.303030303,
+      "drb_g": 3.5757575758,
+      "trb_g": 3.8787878788,
+      "ast_g": 5.4545454545,
+      "stl_g": 1.1515151515,
+      "blk_g": 0.3636363636,
+      "tov_g": 2.9393939394,
+      "pf_g": 1.2424242424,
+      "pts_g": 10.6363636364
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/egor-demin-1.html",
+  "last_scraped": "2025-11-01T00:38:21.647Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "asa-newell-1",
+  "name": "Asa Newell",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 29.0303030303,
+      "fg_pct": 0.5426136364,
+      "fg3_pct": 0.2921348315,
+      "ft_pct": 0.7481481481,
+      "orb_g": 3.3333333333,
+      "drb_g": 3.5454545455,
+      "trb_g": 6.8787878788,
+      "ast_g": 0.8787878788,
+      "stl_g": 1,
+      "blk_g": 0.9696969697,
+      "tov_g": 1.1212121212,
+      "pf_g": 2.4242424242,
+      "pts_g": 15.4242424242
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/asa-newell-1.html",
+  "last_scraped": "2025-11-01T00:30:50.063Z"
+}

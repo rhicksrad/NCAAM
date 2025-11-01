@@ -1,0 +1,28 @@
+{
+  "slug": "trevor-best-1",
+  "name": "Trevor Best",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arizona State",
+      "conf": "Big 12",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 12.8181818182,
+      "fg_pct": 0.40625,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.2727272727,
+      "drb_g": 0.6363636364,
+      "trb_g": 0.9090909091,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.2727272727,
+      "blk_g": 0,
+      "tov_g": 0.4545454545,
+      "pf_g": 1.7272727273,
+      "pts_g": 3.6363636364
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trevor-best-1.html",
+  "last_scraped": "2025-11-01T00:56:32.004Z"
+}

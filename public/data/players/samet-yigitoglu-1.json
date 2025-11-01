@@ -1,0 +1,28 @@
+{
+  "slug": "samet-yigitoglu-1",
+  "name": "Samet Yigitoglu",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "SMU",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 24.46875,
+      "fg_pct": 0.5347826087,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5606060606,
+      "orb_g": 2.40625,
+      "drb_g": 3.8125,
+      "trb_g": 6.21875,
+      "ast_g": 1.03125,
+      "stl_g": 0.6875,
+      "blk_g": 1.03125,
+      "tov_g": 1.5625,
+      "pf_g": 3.125,
+      "pts_g": 10.03125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/samet-yigitoglu-1.html",
+  "last_scraped": "2025-11-01T00:54:18.019Z"
+}

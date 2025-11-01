@@ -1,0 +1,28 @@
+{
+  "slug": "robert-wright-3",
+  "name": "Robert Wright III",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Baylor",
+      "conf": "Big 12",
+      "gp": 35,
+      "gs": 21,
+      "mp_g": 29.3714285714,
+      "fg_pct": 0.4142857143,
+      "fg3_pct": 0.3522727273,
+      "ft_pct": 0.7961165049,
+      "orb_g": 0.4857142857,
+      "drb_g": 1.6,
+      "trb_g": 2.0857142857,
+      "ast_g": 4.2285714286,
+      "stl_g": 1,
+      "blk_g": 0.0571428571,
+      "tov_g": 2.0571428571,
+      "pf_g": 1.5428571429,
+      "pts_g": 11.5142857143
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/robert-wright-3.html",
+  "last_scraped": "2025-11-01T00:53:35.444Z"
+}

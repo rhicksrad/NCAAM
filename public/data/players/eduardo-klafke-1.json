@@ -1,0 +1,28 @@
+{
+  "slug": "eduardo-klafke-1",
+  "name": "Eduardo Klafke",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Ole Miss",
+      "conf": "SEC",
+      "gp": 36,
+      "gs": 0,
+      "mp_g": 9.9444444444,
+      "fg_pct": 0.4444444444,
+      "fg3_pct": 0.4814814815,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.2222222222,
+      "drb_g": 0.8333333333,
+      "trb_g": 1.0555555556,
+      "ast_g": 0.4166666667,
+      "stl_g": 0.4444444444,
+      "blk_g": 0.1944444444,
+      "tov_g": 0.3055555556,
+      "pf_g": 1,
+      "pts_g": 1.4166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eduardo-klafke-1.html",
+  "last_scraped": "2025-11-01T00:38:17.055Z"
+}

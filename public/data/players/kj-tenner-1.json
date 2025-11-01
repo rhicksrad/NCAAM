@@ -1,0 +1,28 @@
+{
+  "slug": "kj-tenner-1",
+  "name": "KJ Tenner",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "West Virginia",
+      "conf": "Big 12",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 13.1666666667,
+      "fg_pct": 0.35,
+      "fg3_pct": 0.1538461538,
+      "ft_pct": 0.6111111111,
+      "orb_g": 0.1,
+      "drb_g": 0.6,
+      "trb_g": 0.7,
+      "ast_g": 1.0666666667,
+      "stl_g": 0.8,
+      "blk_g": 0.0333333333,
+      "tov_g": 0.4,
+      "pf_g": 1.7666666667,
+      "pts_g": 2.3666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kj-tenner-1.html",
+  "last_scraped": "2025-11-01T00:47:41.752Z"
+}

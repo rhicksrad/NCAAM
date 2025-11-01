@@ -1,0 +1,48 @@
+{
+  "slug": "james-scott-8",
+  "name": "James Scott",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 35,
+      "gs": 4,
+      "mp_g": 16.0285714286,
+      "fg_pct": 0.7916666667,
+      "fg3_pct": null,
+      "ft_pct": 0.44,
+      "orb_g": 1.4,
+      "drb_g": 1.9714285714,
+      "trb_g": 3.3714285714,
+      "ast_g": 0.6285714286,
+      "stl_g": 0.6,
+      "blk_g": 1.2857142857,
+      "tov_g": 0.4857142857,
+      "pf_g": 1.4571428571,
+      "pts_g": 4.9714285714
+    },
+    {
+      "season": "2024-25",
+      "team": "Louisville",
+      "conf": "ACC",
+      "gp": 35,
+      "gs": 31,
+      "mp_g": 23.6,
+      "fg_pct": 0.7552447552,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.4347826087,
+      "orb_g": 2.0857142857,
+      "drb_g": 3.9714285714,
+      "trb_g": 6.0571428571,
+      "ast_g": 1.4,
+      "stl_g": 0.6285714286,
+      "blk_g": 0.8571428571,
+      "tov_g": 1,
+      "pf_g": 2.5142857143,
+      "pts_g": 7.0571428571
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/james-scott-8.html",
+  "last_scraped": "2025-11-01T00:43:11.269Z"
+}

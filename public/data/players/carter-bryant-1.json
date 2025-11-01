@@ -1,0 +1,28 @@
+{
+  "slug": "carter-bryant-1",
+  "name": "Carter Bryant",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arizona",
+      "conf": "Big 12",
+      "gp": 37,
+      "gs": 5,
+      "mp_g": 19.2972972973,
+      "fg_pct": 0.4602272727,
+      "fg3_pct": 0.3714285714,
+      "ft_pct": 0.6949152542,
+      "orb_g": 0.8648648649,
+      "drb_g": 3.2432432432,
+      "trb_g": 4.1081081081,
+      "ast_g": 0.972972973,
+      "stl_g": 0.9459459459,
+      "blk_g": 1,
+      "tov_g": 1,
+      "pf_g": 2.2972972973,
+      "pts_g": 6.5405405405
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/carter-bryant-1.html",
+  "last_scraped": "2025-11-01T00:33:34.878Z"
+}

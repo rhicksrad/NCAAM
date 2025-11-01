@@ -1,0 +1,28 @@
+{
+  "slug": "curtis-givens-iii-1",
+  "name": "Curtis Givens III",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Louisiana State",
+      "conf": "SEC",
+      "gp": 32,
+      "gs": 12,
+      "mp_g": 18.1875,
+      "fg_pct": 0.2692307692,
+      "fg3_pct": 0.2457627119,
+      "ft_pct": 0.5909090909,
+      "orb_g": 0.28125,
+      "drb_g": 1.4375,
+      "trb_g": 1.71875,
+      "ast_g": 1.59375,
+      "stl_g": 0.5,
+      "blk_g": 0,
+      "tov_g": 1.125,
+      "pf_g": 1.28125,
+      "pts_g": 4.78125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/curtis-givens-iii-1.html",
+  "last_scraped": "2025-11-01T00:35:35.883Z"
+}

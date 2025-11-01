@@ -1,0 +1,48 @@
+{
+  "slug": "rich-barron-1",
+  "name": "Rich Barron",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 33,
+      "gs": 10,
+      "mp_g": 15.8181818182,
+      "fg_pct": 0.4416666667,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.303030303,
+      "drb_g": 1.0606060606,
+      "trb_g": 1.3636363636,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.303030303,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.5151515152,
+      "pf_g": 1.2424242424,
+      "pts_g": 4.4242424242
+    },
+    {
+      "season": "2024-25",
+      "team": "Providence",
+      "conf": "Big East",
+      "gp": 27,
+      "gs": 9,
+      "mp_g": 19,
+      "fg_pct": 0.3496503497,
+      "fg3_pct": 0.3366336634,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.5555555556,
+      "drb_g": 1.7037037037,
+      "trb_g": 2.2592592593,
+      "ast_g": 0.6296296296,
+      "stl_g": 0.5925925926,
+      "blk_g": 0.037037037,
+      "tov_g": 0.4814814815,
+      "pf_g": 1.5555555556,
+      "pts_g": 5.1851851852
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rich-barron-1.html",
+  "last_scraped": "2025-11-01T00:53:12.005Z"
+}

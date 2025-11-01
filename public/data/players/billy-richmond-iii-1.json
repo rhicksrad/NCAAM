@@ -1,0 +1,28 @@
+{
+  "slug": "billy-richmond-iii-1",
+  "name": "Billy Richmond III",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Arkansas",
+      "conf": "SEC",
+      "gp": 36,
+      "gs": 0,
+      "mp_g": 17.5277777778,
+      "fg_pct": 0.5225806452,
+      "fg3_pct": 0.125,
+      "ft_pct": 0.7321428571,
+      "orb_g": 0.9722222222,
+      "drb_g": 2,
+      "trb_g": 2.9722222222,
+      "ast_g": 1.3611111111,
+      "stl_g": 0.5277777778,
+      "blk_g": 0.4166666667,
+      "tov_g": 1.25,
+      "pf_g": 2.0277777778,
+      "pts_g": 5.6944444444
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/billy-richmond-iii-1.html",
+  "last_scraped": "2025-11-01T00:31:31.083Z"
+}

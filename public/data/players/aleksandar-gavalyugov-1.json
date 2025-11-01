@@ -1,0 +1,28 @@
+{
+  "slug": "aleksandar-gavalyugov-1",
+  "name": "Aleksandar Gavalyugov",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Villanova",
+      "conf": "Big East",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 4.75,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.6666666667,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0.25,
+      "stl_g": 0.5,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0.25,
+      "pts_g": 2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aleksandar-gavalyugov-1.html",
+  "last_scraped": "2025-11-01T00:30:13.127Z"
+}

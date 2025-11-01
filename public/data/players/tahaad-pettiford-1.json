@@ -1,0 +1,28 @@
+{
+  "slug": "tahaad-pettiford-1",
+  "name": "Tahaad Pettiford",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Auburn",
+      "conf": "SEC",
+      "gp": 38,
+      "gs": 1,
+      "mp_g": 22.9210526316,
+      "fg_pct": 0.4207492795,
+      "fg3_pct": 0.3664921466,
+      "ft_pct": 0.8041237113,
+      "orb_g": 0.2368421053,
+      "drb_g": 1.9736842105,
+      "trb_g": 2.2105263158,
+      "ast_g": 2.9736842105,
+      "stl_g": 0.8684210526,
+      "blk_g": 0.1842105263,
+      "tov_g": 1.6315789474,
+      "pf_g": 2.3947368421,
+      "pts_g": 11.5789473684
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tahaad-pettiford-1.html",
+  "last_scraped": "2025-11-01T00:55:22.677Z"
+}

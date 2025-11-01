@@ -1,0 +1,48 @@
+{
+  "slug": "josh-furst-1",
+  "name": "Josh Furst",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Purdue",
+      "conf": "Big Ten",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 1,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Purdue",
+      "conf": "Big Ten",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-furst-1.html",
+  "last_scraped": "2025-11-01T00:45:34.095Z"
+}

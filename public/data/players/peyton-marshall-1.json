@@ -1,0 +1,28 @@
+{
+  "slug": "peyton-marshall-1",
+  "name": "Peyton Marshall",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Missouri",
+      "conf": "SEC",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 4.4090909091,
+      "fg_pct": 0.5,
+      "fg3_pct": null,
+      "ft_pct": 0.2631578947,
+      "orb_g": 0.3636363636,
+      "drb_g": 0.7727272727,
+      "trb_g": 1.1363636364,
+      "ast_g": 0.1363636364,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.2727272727,
+      "tov_g": 0.5454545455,
+      "pf_g": 0.8636363636,
+      "pts_g": 1.0454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/peyton-marshall-1.html",
+  "last_scraped": "2025-11-01T00:52:35.831Z"
+}

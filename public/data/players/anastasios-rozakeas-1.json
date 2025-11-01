@@ -1,0 +1,28 @@
+{
+  "slug": "anastasios-rozakeas-1",
+  "name": "Anastasios Rozakeas",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida State",
+      "conf": "ACC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 2.4615384615,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5,
+      "orb_g": 0.2307692308,
+      "drb_g": 0.0769230769,
+      "trb_g": 0.3076923077,
+      "ast_g": 0.1538461538,
+      "stl_g": 0.0769230769,
+      "blk_g": 0,
+      "tov_g": 0.1538461538,
+      "pf_g": 0.3846153846,
+      "pts_g": 0.4615384615
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anastasios-rozakeas-1.html",
+  "last_scraped": "2025-11-01T00:30:13.793Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "eric-dailey-jr-2",
+  "name": "Eric Dailey Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oklahoma State",
+      "conf": "Big 12",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 22.34375,
+      "fg_pct": 0.4955752212,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6021505376,
+      "orb_g": 1.5,
+      "drb_g": 3.34375,
+      "trb_g": 4.84375,
+      "ast_g": 1.53125,
+      "stl_g": 0.75,
+      "blk_g": 0.125,
+      "tov_g": 1.09375,
+      "pf_g": 2,
+      "pts_g": 9.34375
+    },
+    {
+      "season": "2024-25",
+      "team": "UCLA",
+      "conf": "Big Ten",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 23.5454545455,
+      "fg_pct": 0.5072463768,
+      "fg3_pct": 0.3777777778,
+      "ft_pct": 0.7209302326,
+      "orb_g": 1.2424242424,
+      "drb_g": 2.7272727273,
+      "trb_g": 3.9696969697,
+      "ast_g": 1.3636363636,
+      "stl_g": 1.2727272727,
+      "blk_g": 0.1515151515,
+      "tov_g": 1,
+      "pf_g": 2.6666666667,
+      "pts_g": 11.3939393939
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/eric-dailey-jr-2.html",
+  "last_scraped": "2025-11-01T00:38:47.751Z"
+}

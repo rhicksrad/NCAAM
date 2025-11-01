@@ -1,0 +1,28 @@
+{
+  "slug": "chris-riddle-1",
+  "name": "Chris Riddle",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 5.3684210526,
+      "fg_pct": 0.5833333333,
+      "fg3_pct": 0.625,
+      "ft_pct": 0.1666666667,
+      "orb_g": 0.1578947368,
+      "drb_g": 0.8421052632,
+      "trb_g": 1,
+      "ast_g": 0.2105263158,
+      "stl_g": 0.2631578947,
+      "blk_g": 0.2105263158,
+      "tov_g": 0.3684210526,
+      "pf_g": 0.3684210526,
+      "pts_g": 1.0526315789
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/chris-riddle-1.html",
+  "last_scraped": "2025-11-01T00:34:22.177Z"
+}

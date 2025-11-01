@@ -1,0 +1,48 @@
+{
+  "slug": "ethan-soares-rodriguez-1",
+  "name": "Ethan Soares Rodriguez",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Boston College",
+      "conf": "ACC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Boston College",
+      "conf": "ACC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ethan-soares-rodriguez-1.html",
+  "last_scraped": "2025-11-01T00:38:57.045Z"
+}

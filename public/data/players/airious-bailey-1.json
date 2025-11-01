@@ -1,0 +1,28 @@
+{
+  "slug": "airious-bailey-1",
+  "name": "Airious Bailey",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rutgers",
+      "conf": "Big Ten",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 33.3333333333,
+      "fg_pct": 0.4603174603,
+      "fg3_pct": 0.3455882353,
+      "ft_pct": 0.691588785,
+      "orb_g": 2.0666666667,
+      "drb_g": 5.1,
+      "trb_g": 7.1666666667,
+      "ast_g": 1.2666666667,
+      "stl_g": 1,
+      "blk_g": 1.2666666667,
+      "tov_g": 2.0333333333,
+      "pf_g": 2.7666666667,
+      "pts_g": 17.5666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/airious-bailey-1.html",
+  "last_scraped": "2025-11-01T00:30:12.883Z"
+}

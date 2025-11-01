@@ -1,0 +1,48 @@
+{
+  "slug": "braden-pierce-1",
+  "name": "Braden Pierce",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Maryland",
+      "conf": "Big Ten",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 7.2,
+      "fg_pct": 0.5555555556,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.8,
+      "drb_g": 1.6,
+      "trb_g": 2.4,
+      "ast_g": 0.6,
+      "stl_g": 0.2,
+      "blk_g": 0.4,
+      "tov_g": 0.2,
+      "pf_g": 1.8,
+      "pts_g": 2.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/braden-pierce-1.html",
+  "last_scraped": "2025-11-01T00:31:52.516Z"
+}

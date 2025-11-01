@@ -1,0 +1,48 @@
+{
+  "slug": "collin-murray-boyles-1",
+  "name": "Collin Murray-Boyles",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Carolina",
+      "conf": "SEC",
+      "gp": 28,
+      "gs": 19,
+      "mp_g": 22.75,
+      "fg_pct": 0.5969387755,
+      "fg3_pct": 0,
+      "ft_pct": 0.6666666667,
+      "orb_g": 2.3571428571,
+      "drb_g": 3.3214285714,
+      "trb_g": 5.6785714286,
+      "ast_g": 1.75,
+      "stl_g": 1.0357142857,
+      "blk_g": 1,
+      "tov_g": 1.2142857143,
+      "pf_g": 2.3571428571,
+      "pts_g": 10.4285714286
+    },
+    {
+      "season": "2024-25",
+      "team": "South Carolina",
+      "conf": "SEC",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 30.625,
+      "fg_pct": 0.5857988166,
+      "fg3_pct": 0.2647058824,
+      "ft_pct": 0.7074468085,
+      "orb_g": 2.21875,
+      "drb_g": 6.03125,
+      "trb_g": 8.25,
+      "ast_g": 2.40625,
+      "stl_g": 1.46875,
+      "blk_g": 1.34375,
+      "tov_g": 2.4375,
+      "pf_g": 2.5625,
+      "pts_g": 16.8125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/collin-murray-boyles-1.html",
+  "last_scraped": "2025-11-01T00:35:08.256Z"
+}

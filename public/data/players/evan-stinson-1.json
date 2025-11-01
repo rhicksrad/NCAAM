@@ -1,0 +1,28 @@
+{
+  "slug": "evan-stinson-1",
+  "name": "Evan Stinson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stanford",
+      "conf": "ACC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 11.0588235294,
+      "fg_pct": 0.387755102,
+      "fg3_pct": 0.2580645161,
+      "ft_pct": 1,
+      "orb_g": 0.3529411765,
+      "drb_g": 0.9411764706,
+      "trb_g": 1.2941176471,
+      "ast_g": 0.3529411765,
+      "stl_g": 0.4117647059,
+      "blk_g": 0.1176470588,
+      "tov_g": 0.3529411765,
+      "pf_g": 1.1176470588,
+      "pts_g": 2.9411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/evan-stinson-1.html",
+  "last_scraped": "2025-11-01T00:39:01.704Z"
+}

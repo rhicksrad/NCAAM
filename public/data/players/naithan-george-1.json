@@ -1,0 +1,48 @@
+{
+  "slug": "naithan-george-1",
+  "name": "Naithan George",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 29,
+      "gs": 28,
+      "mp_g": 29.7586206897,
+      "fg_pct": 0.4214876033,
+      "fg3_pct": 0.3137254902,
+      "ft_pct": 0.6901408451,
+      "orb_g": 0.4137931034,
+      "drb_g": 1.9655172414,
+      "trb_g": 2.3793103448,
+      "ast_g": 4.6551724138,
+      "stl_g": 0.3448275862,
+      "blk_g": 0.1034482759,
+      "tov_g": 2.0689655172,
+      "pf_g": 1.6206896552,
+      "pts_g": 9.8275862069
+    },
+    {
+      "season": "2024-25",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 35.5882352941,
+      "fg_pct": 0.3931398417,
+      "fg3_pct": 0.3389830508,
+      "ft_pct": 0.7894736842,
+      "orb_g": 0.5294117647,
+      "drb_g": 3.7058823529,
+      "trb_g": 4.2352941176,
+      "ast_g": 6.5,
+      "stl_g": 1.0882352941,
+      "blk_g": 0.4411764706,
+      "tov_g": 3.0294117647,
+      "pf_g": 1.5588235294,
+      "pts_g": 12.2941176471
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/naithan-george-1.html",
+  "last_scraped": "2025-11-01T00:51:16.243Z"
+}

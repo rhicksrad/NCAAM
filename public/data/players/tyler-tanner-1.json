@@ -1,0 +1,28 @@
+{
+  "slug": "tyler-tanner-1",
+  "name": "Tyler Tanner",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Vanderbilt",
+      "conf": "SEC",
+      "gp": 33,
+      "gs": 0,
+      "mp_g": 20.4242424242,
+      "fg_pct": 0.465408805,
+      "fg3_pct": 0.265625,
+      "ft_pct": 0.75,
+      "orb_g": 0.4545454545,
+      "drb_g": 1.7878787879,
+      "trb_g": 2.2424242424,
+      "ast_g": 1.9090909091,
+      "stl_g": 1.6666666667,
+      "blk_g": 0.1515151515,
+      "tov_g": 0.4545454545,
+      "pf_g": 1.7575757576,
+      "pts_g": 5.7272727273
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tyler-tanner-1.html",
+  "last_scraped": "2025-11-01T00:57:10.591Z"
+}

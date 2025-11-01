@@ -1,0 +1,28 @@
+{
+  "slug": "rakease-passmore-1",
+  "name": "Rakease Passmore",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Kansas",
+      "conf": "Big 12",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 5.0434782609,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.4285714286,
+      "orb_g": 0.1739130435,
+      "drb_g": 0.4347826087,
+      "trb_g": 0.6086956522,
+      "ast_g": 0.3043478261,
+      "stl_g": 0.2173913043,
+      "blk_g": 0.0434782609,
+      "tov_g": 0.6086956522,
+      "pf_g": 0.5652173913,
+      "pts_g": 0.7391304348
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rakease-passmore-1.html",
+  "last_scraped": "2025-11-01T00:52:57.541Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "vasean-allette-1",
+  "name": "Vasean Allette",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Old Dominion",
+      "conf": "Sun Belt",
+      "gp": 19,
+      "gs": 18,
+      "mp_g": 32.1578947368,
+      "fg_pct": 0.4520547945,
+      "fg3_pct": 0.3544303797,
+      "ft_pct": 0.609375,
+      "orb_g": 1,
+      "drb_g": 4.7368421053,
+      "trb_g": 5.7368421053,
+      "ast_g": 3.1052631579,
+      "stl_g": 1.8421052632,
+      "blk_g": 0,
+      "tov_g": 2.2631578947,
+      "pf_g": 2.2631578947,
+      "pts_g": 17.4210526316
+    },
+    {
+      "season": "2024-25",
+      "team": "TCU",
+      "conf": "Big 12",
+      "gp": 32,
+      "gs": 25,
+      "mp_g": 29.15625,
+      "fg_pct": 0.375328084,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.7126436782,
+      "orb_g": 1.03125,
+      "drb_g": 3.09375,
+      "trb_g": 4.125,
+      "ast_g": 3.53125,
+      "stl_g": 1.3125,
+      "blk_g": 0.1875,
+      "tov_g": 2.90625,
+      "pf_g": 1.96875,
+      "pts_g": 11.4375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/vasean-allette-1.html",
+  "last_scraped": "2025-11-01T00:57:24.545Z"
+}

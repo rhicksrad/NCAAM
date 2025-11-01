@@ -1,0 +1,48 @@
+{
+  "slug": "blake-buchanan-3",
+  "name": "Blake Buchanan",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Virginia",
+      "conf": "ACC",
+      "gp": 34,
+      "gs": 6,
+      "mp_g": 15.0294117647,
+      "fg_pct": 0.4144144144,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 1.2647058824,
+      "drb_g": 1.8823529412,
+      "trb_g": 3.1470588235,
+      "ast_g": 0.3529411765,
+      "stl_g": 0.4117647059,
+      "blk_g": 0.8823529412,
+      "tov_g": 0.4411764706,
+      "pf_g": 1.8235294118,
+      "pts_g": 3.3823529412
+    },
+    {
+      "season": "2024-25",
+      "team": "Virginia",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 22,
+      "mp_g": 21.96875,
+      "fg_pct": 0.534351145,
+      "fg3_pct": 0,
+      "ft_pct": 0.5409836066,
+      "orb_g": 1.8125,
+      "drb_g": 3.5,
+      "trb_g": 5.3125,
+      "ast_g": 1.40625,
+      "stl_g": 0.53125,
+      "blk_g": 1.125,
+      "tov_g": 0.84375,
+      "pf_g": 2.3125,
+      "pts_g": 5.40625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/blake-buchanan-3.html",
+  "last_scraped": "2025-11-01T00:31:37.276Z"
+}

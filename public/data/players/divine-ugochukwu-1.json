@@ -1,0 +1,28 @@
+{
+  "slug": "divine-ugochukwu-1",
+  "name": "Divine Ugochukwu",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 28,
+      "gs": 16,
+      "mp_g": 20.2142857143,
+      "fg_pct": 0.4827586207,
+      "fg3_pct": 0.1764705882,
+      "ft_pct": 0.6304347826,
+      "orb_g": 0.3571428571,
+      "drb_g": 1.5,
+      "trb_g": 1.8571428571,
+      "ast_g": 2.2857142857,
+      "stl_g": 1.0357142857,
+      "blk_g": 0.1071428571,
+      "tov_g": 1.6071428571,
+      "pf_g": 2.1428571429,
+      "pts_g": 5.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/divine-ugochukwu-1.html",
+  "last_scraped": "2025-11-01T00:37:30.335Z"
+}

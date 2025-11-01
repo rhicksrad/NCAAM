@@ -1,0 +1,48 @@
+{
+  "slug": "devon-pryor-1",
+  "name": "Devon Pryor",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Texas",
+      "conf": "Big 12",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 3.5714285714,
+      "fg_pct": 0.2222222222,
+      "fg3_pct": 0.2,
+      "ft_pct": null,
+      "orb_g": 0.7142857143,
+      "drb_g": 0.2857142857,
+      "trb_g": 1,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.4285714286,
+      "pts_g": 0.7142857143
+    },
+    {
+      "season": "2024-25",
+      "team": "Texas",
+      "conf": "SEC",
+      "gp": 23,
+      "gs": 2,
+      "mp_g": 12.0869565217,
+      "fg_pct": 0.5178571429,
+      "fg3_pct": 0.1875,
+      "ft_pct": 0.8125,
+      "orb_g": 0.7826086957,
+      "drb_g": 1.1739130435,
+      "trb_g": 1.9565217391,
+      "ast_g": 0.4782608696,
+      "stl_g": 0.2608695652,
+      "blk_g": 0.0869565217,
+      "tov_g": 0.347826087,
+      "pf_g": 1.0434782609,
+      "pts_g": 3.2173913043
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/devon-pryor-1.html",
+  "last_scraped": "2025-11-01T00:37:19.455Z"
+}

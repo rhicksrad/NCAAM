@@ -1,0 +1,28 @@
+{
+  "slug": "jalil-bethea-1",
+  "name": "Jalil Bethea",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 31,
+      "gs": 16,
+      "mp_g": 18.935483871,
+      "fg_pct": 0.3676470588,
+      "fg3_pct": 0.3260869565,
+      "ft_pct": 0.82,
+      "orb_g": 0.0967741935,
+      "drb_g": 2,
+      "trb_g": 2.0967741935,
+      "ast_g": 1.1612903226,
+      "stl_g": 0.5806451613,
+      "blk_g": 0.064516129,
+      "tov_g": 1.0967741935,
+      "pf_g": 1.3870967742,
+      "pts_g": 7.1290322581
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jalil-bethea-1.html",
+  "last_scraped": "2025-11-01T00:43:01.889Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "jack-janicki-1",
+  "name": "Jack Janicki",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Wisconsin",
+      "conf": "Big Ten",
+      "gp": 37,
+      "gs": 0,
+      "mp_g": 11.3783783784,
+      "fg_pct": 0.3913043478,
+      "fg3_pct": 0.2765957447,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0.2972972973,
+      "drb_g": 1.0540540541,
+      "trb_g": 1.3513513514,
+      "ast_g": 0.8378378378,
+      "stl_g": 0.4054054054,
+      "blk_g": 0.2432432432,
+      "tov_g": 0.2162162162,
+      "pf_g": 1.1351351351,
+      "pts_g": 1.8918918919
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jack-janicki-1.html",
+  "last_scraped": "2025-11-01T00:41:43.321Z"
+}

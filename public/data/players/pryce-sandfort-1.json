@@ -1,0 +1,48 @@
+{
+  "slug": "pryce-sandfort-1",
+  "name": "Pryce Sandfort",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Iowa",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 8.6875,
+      "fg_pct": 0.3561643836,
+      "fg3_pct": 0.3469387755,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.09375,
+      "drb_g": 0.96875,
+      "trb_g": 1.0625,
+      "ast_g": 0.4375,
+      "stl_g": 0.125,
+      "blk_g": 0.125,
+      "tov_g": 0.09375,
+      "pf_g": 0.65625,
+      "pts_g": 2.28125
+    },
+    {
+      "season": "2024-25",
+      "team": "Iowa",
+      "conf": "Big Ten",
+      "gp": 33,
+      "gs": 2,
+      "mp_g": 22.3636363636,
+      "fg_pct": 0.4882629108,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.6363636364,
+      "orb_g": 0.8181818182,
+      "drb_g": 2.0606060606,
+      "trb_g": 2.8787878788,
+      "ast_g": 1.303030303,
+      "stl_g": 0.5757575758,
+      "blk_g": 0.2424242424,
+      "tov_g": 0.4242424242,
+      "pf_g": 1.3939393939,
+      "pts_g": 8.8484848485
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/pryce-sandfort-1.html",
+  "last_scraped": "2025-11-01T00:52:49.633Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ibrahim-souare-1",
+  "name": "Ibrahim Souare",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Georgia Tech",
+      "conf": "ACC",
+      "gp": 30,
+      "gs": 14,
+      "mp_g": 17,
+      "fg_pct": 0.5967741935,
+      "fg3_pct": 0,
+      "ft_pct": 0.3125,
+      "orb_g": 1.2,
+      "drb_g": 2.4,
+      "trb_g": 3.6,
+      "ast_g": 0.2333333333,
+      "stl_g": 0.2333333333,
+      "blk_g": 0.5666666667,
+      "tov_g": 0.5333333333,
+      "pf_g": 2.2333333333,
+      "pts_g": 2.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ibrahim-souare-1.html",
+  "last_scraped": "2025-11-01T00:40:45.983Z"
+}

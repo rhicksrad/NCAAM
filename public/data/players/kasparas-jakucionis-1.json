@@ -1,0 +1,28 @@
+{
+  "slug": "kasparas-jakucionis-1",
+  "name": "Kasparas Jakucionis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Illinois",
+      "conf": "Big Ten",
+      "gp": 33,
+      "gs": 33,
+      "mp_g": 31.8484848485,
+      "fg_pct": 0.4395280236,
+      "fg3_pct": 0.3176470588,
+      "ft_pct": 0.8452380952,
+      "orb_g": 1.3939393939,
+      "drb_g": 4.303030303,
+      "trb_g": 5.696969697,
+      "ast_g": 4.7272727273,
+      "stl_g": 0.8787878788,
+      "blk_g": 0.2727272727,
+      "tov_g": 3.7272727273,
+      "pf_g": 2.6666666667,
+      "pts_g": 14.9696969697
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kasparas-jakucionis-1.html",
+  "last_scraped": "2025-11-01T00:46:53.786Z"
+}

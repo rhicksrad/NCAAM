@@ -1,0 +1,48 @@
+{
+  "slug": "mookie-cook-1",
+  "name": "Mookie Cook",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Oregon",
+      "conf": "Pac-12",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 6.4,
+      "fg_pct": 0.6,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.6,
+      "trb_g": 0.6,
+      "ast_g": 0.2,
+      "stl_g": 0.4,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.6,
+      "pts_g": 1.2
+    },
+    {
+      "season": "2024-25",
+      "team": "Oregon",
+      "conf": "Big Ten",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 4.25,
+      "fg_pct": 0.5882352941,
+      "fg3_pct": 0.4444444444,
+      "ft_pct": 0.5,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.2916666667,
+      "trb_g": 0.4583333333,
+      "ast_g": 0.0833333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.2083333333,
+      "tov_g": 0.0416666667,
+      "pf_g": 0.5416666667,
+      "pts_g": 1.125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mookie-cook-1.html",
+  "last_scraped": "2025-11-01T00:50:54.254Z"
+}

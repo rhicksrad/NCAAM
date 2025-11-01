@@ -1,0 +1,48 @@
+{
+  "slug": "david-thomas-3",
+  "name": "David Thomas",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mercer",
+      "conf": "Southern",
+      "gp": 31,
+      "gs": 8,
+      "mp_g": 22.8709677419,
+      "fg_pct": 0.4518272425,
+      "fg3_pct": 0.4022988506,
+      "ft_pct": 0.7173913043,
+      "orb_g": 0.7096774194,
+      "drb_g": 1.7096774194,
+      "trb_g": 2.4193548387,
+      "ast_g": 2.2580645161,
+      "stl_g": 0.6129032258,
+      "blk_g": 0.0967741935,
+      "tov_g": 1,
+      "pf_g": 2,
+      "pts_g": 10.9677419355
+    },
+    {
+      "season": "2024-25",
+      "team": "DePaul",
+      "conf": "Big East",
+      "gp": 27,
+      "gs": 2,
+      "mp_g": 15.0740740741,
+      "fg_pct": 0.4408602151,
+      "fg3_pct": 0.2682926829,
+      "ft_pct": 0.7142857143,
+      "orb_g": 0.2962962963,
+      "drb_g": 1.1481481481,
+      "trb_g": 1.4444444444,
+      "ast_g": 1.4444444444,
+      "stl_g": 0.4814814815,
+      "blk_g": 0.2222222222,
+      "tov_g": 1.4444444444,
+      "pf_g": 1.1851851852,
+      "pts_g": 4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/david-thomas-3.html",
+  "last_scraped": "2025-11-01T00:36:32.652Z"
+}

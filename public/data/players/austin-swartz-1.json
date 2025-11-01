@@ -1,0 +1,28 @@
+{
+  "slug": "austin-swartz-1",
+  "name": "Austin Swartz",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 29,
+      "gs": 7,
+      "mp_g": 18.5862068966,
+      "fg_pct": 0.3765432099,
+      "fg3_pct": 0.3035714286,
+      "ft_pct": 0.875,
+      "orb_g": 0.1034482759,
+      "drb_g": 0.9310344828,
+      "trb_g": 1.0344827586,
+      "ast_g": 0.8620689655,
+      "stl_g": 0.6206896552,
+      "blk_g": 0.2068965517,
+      "tov_g": 0.6896551724,
+      "pf_g": 1.2068965517,
+      "pts_g": 5.8620689655
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/austin-swartz-1.html",
+  "last_scraped": "2025-11-01T00:31:02.509Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "trent-perry-2",
+  "name": "Trent Perry",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UCLA",
+      "conf": "Big Ten",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 11.34375,
+      "fg_pct": 0.369047619,
+      "fg3_pct": 0.3428571429,
+      "ft_pct": 0.862745098,
+      "orb_g": 0.53125,
+      "drb_g": 1.125,
+      "trb_g": 1.65625,
+      "ast_g": 0.6875,
+      "stl_g": 0.59375,
+      "blk_g": 0.09375,
+      "tov_g": 0.5,
+      "pf_g": 1.0625,
+      "pts_g": 3.6875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trent-perry-2.html",
+  "last_scraped": "2025-11-01T00:56:24.299Z"
+}

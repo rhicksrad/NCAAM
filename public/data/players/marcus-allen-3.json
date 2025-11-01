@@ -1,0 +1,28 @@
+{
+  "slug": "marcus-allen-3",
+  "name": "Marcus Allen",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Missouri",
+      "conf": "SEC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 9.1538461538,
+      "fg_pct": 0.4390243902,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.8823529412,
+      "orb_g": 0.6538461538,
+      "drb_g": 1.3076923077,
+      "trb_g": 1.9615384615,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.3461538462,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.5769230769,
+      "pf_g": 1.1538461538,
+      "pts_g": 2.6153846154
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marcus-allen-3.html",
+  "last_scraped": "2025-11-01T00:49:19.856Z"
+}

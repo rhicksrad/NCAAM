@@ -1,0 +1,48 @@
+{
+  "slug": "frank-mitchell-2",
+  "name": "Frank Mitchell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Canisius",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 29.1612903226,
+      "fg_pct": 0.5609756098,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.4298245614,
+      "orb_g": 4.0967741935,
+      "drb_g": 7.5483870968,
+      "trb_g": 11.6451612903,
+      "ast_g": 1.4838709677,
+      "stl_g": 0.6774193548,
+      "blk_g": 0.935483871,
+      "tov_g": 2,
+      "pf_g": 2.8064516129,
+      "pts_g": 12.064516129
+    },
+    {
+      "season": "2024-25",
+      "team": "Minnesota",
+      "conf": "Big Ten",
+      "gp": 29,
+      "gs": 9,
+      "mp_g": 15.5517241379,
+      "fg_pct": 0.6632653061,
+      "fg3_pct": null,
+      "ft_pct": 0.40625,
+      "orb_g": 2.3793103448,
+      "drb_g": 2.3103448276,
+      "trb_g": 4.6896551724,
+      "ast_g": 0.724137931,
+      "stl_g": 0.275862069,
+      "blk_g": 0.6206896552,
+      "tov_g": 0.9655172414,
+      "pf_g": 2.1034482759,
+      "pts_g": 4.9310344828
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/frank-mitchell-2.html",
+  "last_scraped": "2025-11-01T00:39:23.108Z"
+}

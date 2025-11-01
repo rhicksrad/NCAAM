@@ -1,0 +1,48 @@
+{
+  "slug": "christian-king-1",
+  "name": "Christian King",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - dnp",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Washington",
+      "conf": "Big Ten",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 8.9,
+      "fg_pct": 0.4210526316,
+      "fg3_pct": 0.3846153846,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.35,
+      "drb_g": 1.2,
+      "trb_g": 1.55,
+      "ast_g": 0.25,
+      "stl_g": 0.2,
+      "blk_g": 0.25,
+      "tov_g": 0.1,
+      "pf_g": 0.9,
+      "pts_g": 2.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/christian-king-1.html",
+  "last_scraped": "2025-11-01T00:34:30.971Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "kase-wynott-1",
+  "name": "Kase Wynott",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Washington State",
+      "conf": "WCC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 13.4166666667,
+      "fg_pct": 0.2972972973,
+      "fg3_pct": 0.2592592593,
+      "ft_pct": 0,
+      "orb_g": 0.625,
+      "drb_g": 0.8333333333,
+      "trb_g": 1.4583333333,
+      "ast_g": 0.625,
+      "stl_g": 0.2083333333,
+      "blk_g": 0.0416666667,
+      "tov_g": 0.4583333333,
+      "pf_g": 1.125,
+      "pts_g": 1.2083333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kase-wynott-1.html",
+  "last_scraped": "2025-11-01T00:46:50.620Z"
+}

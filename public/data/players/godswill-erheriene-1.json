@@ -1,0 +1,28 @@
+{
+  "slug": "godswill-erheriene-1",
+  "name": "Godswill Erheriene",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Seton Hall",
+      "conf": "Big East",
+      "gp": 32,
+      "gs": 23,
+      "mp_g": 14.1875,
+      "fg_pct": 0.5616438356,
+      "fg3_pct": null,
+      "ft_pct": 0.3076923077,
+      "orb_g": 1.21875,
+      "drb_g": 1.65625,
+      "trb_g": 2.875,
+      "ast_g": 0.21875,
+      "stl_g": 0.125,
+      "blk_g": 0.5,
+      "tov_g": 0.71875,
+      "pf_g": 1.375,
+      "pts_g": 2.8125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/godswill-erheriene-1.html",
+  "last_scraped": "2025-11-01T00:39:49.471Z"
+}

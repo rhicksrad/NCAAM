@@ -1,0 +1,28 @@
+{
+  "slug": "johan-munch-1",
+  "name": "Johan Munch",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Oregon State",
+      "conf": "WCC",
+      "gp": 23,
+      "gs": 1,
+      "mp_g": 4.9130434783,
+      "fg_pct": 0.35,
+      "fg3_pct": null,
+      "ft_pct": 0.7647058824,
+      "orb_g": 0.3043478261,
+      "drb_g": 0.4347826087,
+      "trb_g": 0.7391304348,
+      "ast_g": 0.1739130435,
+      "stl_g": 0.2173913043,
+      "blk_g": 0.2173913043,
+      "tov_g": 0.1739130435,
+      "pf_g": 0.7391304348,
+      "pts_g": 1.1739130435
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/johan-munch-1.html",
+  "last_scraped": "2025-11-01T00:44:45.943Z"
+}

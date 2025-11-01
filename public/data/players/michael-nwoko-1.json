@@ -1,0 +1,48 @@
+{
+  "slug": "michael-nwoko-1",
+  "name": "Michael Nwoko",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Miami (FL)",
+      "conf": "ACC",
+      "gp": 29,
+      "gs": 1,
+      "mp_g": 8.8965517241,
+      "fg_pct": 0.5593220339,
+      "fg3_pct": 0,
+      "ft_pct": 0.6111111111,
+      "orb_g": 0.8965517241,
+      "drb_g": 1.1034482759,
+      "trb_g": 2,
+      "ast_g": 0.1034482759,
+      "stl_g": 0.2068965517,
+      "blk_g": 0.2068965517,
+      "tov_g": 0.3448275862,
+      "pf_g": 0.9310344828,
+      "pts_g": 2.6551724138
+    },
+    {
+      "season": "2024-25",
+      "team": "Mississippi State",
+      "conf": "SEC",
+      "gp": 34,
+      "gs": 32,
+      "mp_g": 15.3823529412,
+      "fg_pct": 0.5253164557,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.6086956522,
+      "orb_g": 1.9117647059,
+      "drb_g": 2.6764705882,
+      "trb_g": 4.5882352941,
+      "ast_g": 0.7058823529,
+      "stl_g": 0.3823529412,
+      "blk_g": 0.7941176471,
+      "tov_g": 0.6764705882,
+      "pf_g": 2.2647058824,
+      "pts_g": 6.1470588235
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/michael-nwoko-1.html",
+  "last_scraped": "2025-11-01T00:50:24.537Z"
+}
