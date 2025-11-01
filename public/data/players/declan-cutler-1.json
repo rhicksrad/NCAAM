@@ -1,0 +1,28 @@
+{
+  "slug": "declan-cutler-1",
+  "name": "Declan Cutler",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 30,
+      "gs": 10,
+      "mp_g": 9.6666666667,
+      "fg_pct": 0.5609756098,
+      "fg3_pct": null,
+      "ft_pct": 0.4210526316,
+      "orb_g": 0.8,
+      "drb_g": 1.3333333333,
+      "trb_g": 2.1333333333,
+      "ast_g": 0.2666666667,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.1666666667,
+      "tov_g": 0.5,
+      "pf_g": 0.9666666667,
+      "pts_g": 1.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/declan-cutler-1.html",
+  "last_scraped": "2025-11-01T04:40:34.269Z"
+}

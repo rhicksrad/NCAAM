@@ -1,0 +1,28 @@
+{
+  "slug": "walt-andrews-jr-1",
+  "name": "Walt Andrews Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 13.9230769231,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.3076923077,
+      "drb_g": 1.6153846154,
+      "trb_g": 1.9230769231,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.3076923077,
+      "blk_g": 0.1538461538,
+      "tov_g": 1.3846153846,
+      "pf_g": 1.2307692308,
+      "pts_g": 3.3076923077
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/walt-andrews-jr-1.html",
+  "last_scraped": "2025-11-01T04:47:34.933Z"
+}

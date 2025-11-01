@@ -1,0 +1,28 @@
+{
+  "slug": "colin-darby-1",
+  "name": "Colin Darby",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cal State Bakersfield",
+      "conf": "Big West",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 4,
+      "fg_pct": 0.25,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 1.2,
+      "trb_g": 1.2,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.1,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/colin-darby-1.html",
+  "last_scraped": "2025-11-01T04:39:14.294Z"
+}

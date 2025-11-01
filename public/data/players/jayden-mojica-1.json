@@ -1,0 +1,48 @@
+{
+  "slug": "jayden-mojica-1",
+  "name": "Jayden Mojica",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UC Riverside",
+      "conf": "Big West",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "UC Riverside",
+      "conf": "Big West",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 2.25,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": 0.5,
+      "orb_g": 0.5,
+      "drb_g": 0,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 1.5,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jayden-mojica-1.html",
+  "last_scraped": "2025-11-01T04:42:49.943Z"
+}

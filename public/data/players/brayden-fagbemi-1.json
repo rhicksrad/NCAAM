@@ -1,0 +1,48 @@
+{
+  "slug": "brayden-fagbemi-1",
+  "name": "Brayden Fagbemi",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - non-major team",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Central Arkansas",
+      "conf": "A-Sun",
+      "gp": 31,
+      "gs": 27,
+      "mp_g": 32.935483871,
+      "fg_pct": 0.3776435045,
+      "fg3_pct": 0.2807017544,
+      "ft_pct": 0.8208955224,
+      "orb_g": 0.7096774194,
+      "drb_g": 3.3870967742,
+      "trb_g": 4.0967741935,
+      "ast_g": 4.7096774194,
+      "stl_g": 1.4838709677,
+      "blk_g": 0.0322580645,
+      "tov_g": 2.4838709677,
+      "pf_g": 1.1612903226,
+      "pts_g": 11.3870967742
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brayden-fagbemi-1.html",
+  "last_scraped": "2025-11-01T04:37:15.045Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "michael-evbagharu-1",
+  "name": "Michael Evbagharu",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 18,
+      "gs": 7,
+      "mp_g": 23.9444444444,
+      "fg_pct": 0.4174757282,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.4666666667,
+      "orb_g": 2.1111111111,
+      "drb_g": 3.5555555556,
+      "trb_g": 5.6666666667,
+      "ast_g": 1.8333333333,
+      "stl_g": 0.3888888889,
+      "blk_g": 0.3333333333,
+      "tov_g": 2.2777777778,
+      "pf_g": 1.8888888889,
+      "pts_g": 5.7777777778
+    },
+    {
+      "season": "2024-25",
+      "team": "Central Arkansas",
+      "conf": "A-Sun",
+      "gp": 30,
+      "gs": 19,
+      "mp_g": 26.1,
+      "fg_pct": 0.4117647059,
+      "fg3_pct": 0.1911764706,
+      "ft_pct": 0.65,
+      "orb_g": 1.9666666667,
+      "drb_g": 3.6333333333,
+      "trb_g": 5.6,
+      "ast_g": 1.2666666667,
+      "stl_g": 1,
+      "blk_g": 0.0333333333,
+      "tov_g": 1.6333333333,
+      "pf_g": 1.4666666667,
+      "pts_g": 7.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/michael-evbagharu-1.html",
+  "last_scraped": "2025-11-01T04:45:10.021Z"
+}

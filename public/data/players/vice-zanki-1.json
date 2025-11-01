@@ -1,0 +1,48 @@
+{
+  "slug": "vice-zanki-1",
+  "name": "Vice Zanki",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 14,
+      "gs": 0,
+      "mp_g": 6.7857142857,
+      "fg_pct": 0.4482758621,
+      "fg3_pct": 0.2631578947,
+      "ft_pct": null,
+      "orb_g": 0.2142857143,
+      "drb_g": 0.5714285714,
+      "trb_g": 0.7857142857,
+      "ast_g": 0.7142857143,
+      "stl_g": 0,
+      "blk_g": 0.1428571429,
+      "tov_g": 0.2142857143,
+      "pf_g": 0.5,
+      "pts_g": 2.2142857143
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Washington",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 16.5625,
+      "fg_pct": 0.3735632184,
+      "fg3_pct": 0.3274336283,
+      "ft_pct": 0.3636363636,
+      "orb_g": 0.5,
+      "drb_g": 1.78125,
+      "trb_g": 2.28125,
+      "ast_g": 0.59375,
+      "stl_g": 0.625,
+      "blk_g": 0.28125,
+      "tov_g": 0.90625,
+      "pf_g": 0.875,
+      "pts_g": 5.34375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/vice-zanki-1.html",
+  "last_scraped": "2025-11-01T04:47:34.799Z"
+}

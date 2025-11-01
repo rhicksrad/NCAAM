@@ -1,0 +1,48 @@
+{
+  "slug": "bowyn-beatty-1",
+  "name": "Bowyn Beatty",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 34,
+      "gs": 14,
+      "mp_g": 17.5,
+      "fg_pct": 0.3953488372,
+      "fg3_pct": 0.35,
+      "ft_pct": 0.7450980392,
+      "orb_g": 1.7352941176,
+      "drb_g": 2.7352941176,
+      "trb_g": 4.4705882353,
+      "ast_g": 1,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.2941176471,
+      "tov_g": 1.2941176471,
+      "pf_g": 1.5,
+      "pts_g": 4.3235294118
+    },
+    {
+      "season": "2024-25",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 16,
+      "gs": 1,
+      "mp_g": 14.1875,
+      "fg_pct": 0.3225806452,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.875,
+      "drb_g": 2.3125,
+      "trb_g": 3.1875,
+      "ast_g": 0.75,
+      "stl_g": 0.25,
+      "blk_g": 0.625,
+      "tov_g": 0.875,
+      "pf_g": 1.6875,
+      "pts_g": 2.0625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bowyn-beatty-1.html",
+  "last_scraped": "2025-11-01T04:36:55.807Z"
+}

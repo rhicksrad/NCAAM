@@ -5,7 +5,7 @@ import * as cheerio from "cheerio";
 import { fetchHtml } from "./lib/http.js";
 
 const BASE_URL = "https://www.sports-reference.com";
-const CONCURRENCY = 2;
+const CONCURRENCY = 6;
 const playerLimitEnv = process.env.CBB_PLAYER_LIMIT ? Number.parseInt(process.env.CBB_PLAYER_LIMIT, 10) : null;
 const PLAYER_LIMIT = Number.isFinite(playerLimitEnv ?? null) && (playerLimitEnv ?? 0) > 0 ? playerLimitEnv : null;
 

@@ -1,0 +1,48 @@
+{
+  "slug": "darren-buchanan-jr-1",
+  "name": "Darren Buchanan Jr.",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "George Washington",
+      "conf": "A-10",
+      "gp": 29,
+      "gs": 21,
+      "mp_g": 30.8965517241,
+      "fg_pct": 0.5460750853,
+      "fg3_pct": 0.3225806452,
+      "ft_pct": 0.6340206186,
+      "orb_g": 1.724137931,
+      "drb_g": 4.8275862069,
+      "trb_g": 6.5517241379,
+      "ast_g": 2.3793103448,
+      "stl_g": 1.3103448276,
+      "blk_g": 0.4482758621,
+      "tov_g": 2.2413793103,
+      "pf_g": 1.724137931,
+      "pts_g": 15.6206896552
+    },
+    {
+      "season": "2024-25",
+      "team": "George Washington",
+      "conf": "A-10",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 28.4375,
+      "fg_pct": 0.4552845528,
+      "fg3_pct": 0.175,
+      "ft_pct": 0.6625766871,
+      "orb_g": 1.65625,
+      "drb_g": 4.15625,
+      "trb_g": 5.8125,
+      "ast_g": 2.09375,
+      "stl_g": 0.9375,
+      "blk_g": 0.40625,
+      "tov_g": 1.9375,
+      "pf_g": 1.96875,
+      "pts_g": 10.59375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/darren-buchanan-jr-1.html",
+  "last_scraped": "2025-11-01T04:40:24.234Z"
+}

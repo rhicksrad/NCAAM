@@ -1,0 +1,48 @@
+{
+  "slug": "takai-hardy-1",
+  "name": "Takai Hardy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Idaho",
+      "conf": "Big Sky",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 7.36,
+      "fg_pct": 0.5106382979,
+      "fg3_pct": 0,
+      "ft_pct": 0.5294117647,
+      "orb_g": 0.72,
+      "drb_g": 0.72,
+      "trb_g": 1.44,
+      "ast_g": 0.08,
+      "stl_g": 0.12,
+      "blk_g": 0.08,
+      "tov_g": 0.32,
+      "pf_g": 1,
+      "pts_g": 2.28
+    },
+    {
+      "season": "2024-25",
+      "team": "Idaho",
+      "conf": "Big Sky",
+      "gp": 22,
+      "gs": 2,
+      "mp_g": 8.4545454545,
+      "fg_pct": 0.3829787234,
+      "fg3_pct": null,
+      "ft_pct": 0.5454545455,
+      "orb_g": 0.7727272727,
+      "drb_g": 0.9545454545,
+      "trb_g": 1.7272727273,
+      "ast_g": 0.2272727273,
+      "stl_g": 0.0454545455,
+      "blk_g": 0.0909090909,
+      "tov_g": 0.4545454545,
+      "pf_g": 1.5454545455,
+      "pts_g": 2.1818181818
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/takai-hardy-1.html",
+  "last_scraped": "2025-11-01T04:46:51.547Z"
+}

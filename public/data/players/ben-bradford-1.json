@@ -1,0 +1,28 @@
+{
+  "slug": "ben-bradford-1",
+  "name": "Ben Bradford",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Charlotte",
+      "conf": "AAC",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 8.52,
+      "fg_pct": 0.3684210526,
+      "fg3_pct": 0.1538461538,
+      "ft_pct": 0.5294117647,
+      "orb_g": 0.36,
+      "drb_g": 0.88,
+      "trb_g": 1.24,
+      "ast_g": 0.52,
+      "stl_g": 0.28,
+      "blk_g": 0.24,
+      "tov_g": 0.44,
+      "pf_g": 0.88,
+      "pts_g": 2.48
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ben-bradford-1.html",
+  "last_scraped": "2025-11-01T04:36:21.109Z"
+}

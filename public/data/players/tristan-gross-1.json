@@ -1,0 +1,48 @@
+{
+  "slug": "tristan-gross-1",
+  "name": "Tristan Gross",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 35,
+      "gs": 14,
+      "mp_g": 19.6,
+      "fg_pct": 0.4214876033,
+      "fg3_pct": 0.3780487805,
+      "ft_pct": 0.7272727273,
+      "orb_g": 0.4285714286,
+      "drb_g": 1.4285714286,
+      "trb_g": 1.8571428571,
+      "ast_g": 0.6571428571,
+      "stl_g": 0.4,
+      "blk_g": 0.0571428571,
+      "tov_g": 0.5714285714,
+      "pf_g": 1.3714285714,
+      "pts_g": 4.0285714286
+    },
+    {
+      "season": "2024-25",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 24,
+      "gs": 13,
+      "mp_g": 23.4166666667,
+      "fg_pct": 0.35,
+      "fg3_pct": 0.3472222222,
+      "ft_pct": 0.7333333333,
+      "orb_g": 0.5416666667,
+      "drb_g": 1.8333333333,
+      "trb_g": 2.375,
+      "ast_g": 0.75,
+      "stl_g": 0.75,
+      "blk_g": 0.2083333333,
+      "tov_g": 1.1666666667,
+      "pf_g": 1.2916666667,
+      "pts_g": 5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/tristan-gross-1.html",
+  "last_scraped": "2025-11-01T04:47:16.915Z"
+}

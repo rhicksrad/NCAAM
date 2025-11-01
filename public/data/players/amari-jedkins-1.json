@@ -1,0 +1,48 @@
+{
+  "slug": "amari-jedkins-1",
+  "name": "Amari Jedkins",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Green Bay",
+      "conf": "Horizon",
+      "gp": 11,
+      "gs": 2,
+      "mp_g": 15.6363636364,
+      "fg_pct": 0.6060606061,
+      "fg3_pct": null,
+      "ft_pct": 0.3636363636,
+      "orb_g": 0.7272727273,
+      "drb_g": 1.4545454545,
+      "trb_g": 2.1818181818,
+      "ast_g": 0.5454545455,
+      "stl_g": 0.9090909091,
+      "blk_g": 0.1818181818,
+      "tov_g": 0.9090909091,
+      "pf_g": 1.9090909091,
+      "pts_g": 4
+    },
+    {
+      "season": "2024-25",
+      "team": "Montana",
+      "conf": "Big Sky",
+      "gp": 29,
+      "gs": 1,
+      "mp_g": 8.9310344828,
+      "fg_pct": 0.4516129032,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.6153846154,
+      "orb_g": 0.4482758621,
+      "drb_g": 1.2068965517,
+      "trb_g": 1.6551724138,
+      "ast_g": 0.2413793103,
+      "stl_g": 0.2068965517,
+      "blk_g": 0.275862069,
+      "tov_g": 0.3793103448,
+      "pf_g": 1.275862069,
+      "pts_g": 1.3103448276
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/amari-jedkins-1.html",
+  "last_scraped": "2025-11-01T04:35:06.317Z"
+}

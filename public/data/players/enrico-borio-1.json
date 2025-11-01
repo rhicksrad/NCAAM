@@ -1,0 +1,28 @@
+{
+  "slug": "enrico-borio-1",
+  "name": "Enrico Borio",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jacksonville",
+      "conf": "A-Sun",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 14.1538461538,
+      "fg_pct": 0.5135135135,
+      "fg3_pct": 0.5238095238,
+      "ft_pct": 0.5,
+      "orb_g": 0.3076923077,
+      "drb_g": 1.5384615385,
+      "trb_g": 1.8461538462,
+      "ast_g": 0.4615384615,
+      "stl_g": 0.5384615385,
+      "blk_g": 0.3846153846,
+      "tov_g": 0.9230769231,
+      "pf_g": 1.1538461538,
+      "pts_g": 3.8461538462
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/enrico-borio-1.html",
+  "last_scraped": "2025-11-01T04:41:09.011Z"
+}

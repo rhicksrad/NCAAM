@@ -1,0 +1,28 @@
+{
+  "slug": "jack-turner-4",
+  "name": "Jack Turner",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Loyola Chicago",
+      "conf": "A-10",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 0.4444444444,
+      "fg3_pct": 0.4285714286,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.1818181818,
+      "trb_g": 0.1818181818,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.2727272727,
+      "pf_g": 0.1818181818,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jack-turner-4.html",
+  "last_scraped": "2025-11-01T04:42:06.446Z"
+}

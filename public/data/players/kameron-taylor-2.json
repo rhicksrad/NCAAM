@@ -1,0 +1,28 @@
+{
+  "slug": "kameron-taylor-2",
+  "name": "Kameron Taylor",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UNC Asheville",
+      "conf": "Big South",
+      "gp": 31,
+      "gs": 2,
+      "mp_g": 22.1290322581,
+      "fg_pct": 0.5050505051,
+      "fg3_pct": 0.2413793103,
+      "ft_pct": 0.7325581395,
+      "orb_g": 1.6129032258,
+      "drb_g": 2.6129032258,
+      "trb_g": 4.2258064516,
+      "ast_g": 0.8064516129,
+      "stl_g": 0.7419354839,
+      "blk_g": 0.3870967742,
+      "tov_g": 0.4838709677,
+      "pf_g": 2.5161290323,
+      "pts_g": 8.935483871
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kameron-taylor-2.html",
+  "last_scraped": "2025-11-01T04:43:40.703Z"
+}

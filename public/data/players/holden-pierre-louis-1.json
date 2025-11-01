@@ -1,0 +1,28 @@
+{
+  "slug": "holden-pierre-louis-1",
+  "name": "Holden Pierre-Louis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Temple",
+      "conf": "AAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.6666666667,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/holden-pierre-louis-1.html",
+  "last_scraped": "2025-11-01T04:41:40.213Z"
+}

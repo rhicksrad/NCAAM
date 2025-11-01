@@ -1,0 +1,28 @@
+{
+  "slug": "jamie-phillips-jr-1",
+  "name": "Jamie Phillips Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Stetson",
+      "conf": "A-Sun",
+      "gp": 25,
+      "gs": 24,
+      "mp_g": 29.96,
+      "fg_pct": 0.4507042254,
+      "fg3_pct": 0.3676470588,
+      "ft_pct": 0.7111111111,
+      "orb_g": 1.08,
+      "drb_g": 3.16,
+      "trb_g": 4.24,
+      "ast_g": 2,
+      "stl_g": 0.56,
+      "blk_g": 0.08,
+      "tov_g": 1.44,
+      "pf_g": 1.68,
+      "pts_g": 11.24
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jamie-phillips-jr-1.html",
+  "last_scraped": "2025-11-01T04:42:33.386Z"
+}

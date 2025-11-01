@@ -1,0 +1,28 @@
+{
+  "slug": "brock-vice-1",
+  "name": "Brock Vice",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Texas",
+      "conf": "AAC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 3.6,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.2,
+      "drb_g": 0.4,
+      "trb_g": 0.6,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.8,
+      "pts_g": 1.2
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/brock-vice-1.html",
+  "last_scraped": "2025-11-01T04:37:30.650Z"
+}

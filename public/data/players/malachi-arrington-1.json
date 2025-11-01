@@ -1,0 +1,28 @@
+{
+  "slug": "malachi-arrington-1",
+  "name": "Malachi Arrington",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 22,
+      "gs": 3,
+      "mp_g": 9.0909090909,
+      "fg_pct": 0.64,
+      "fg3_pct": null,
+      "ft_pct": 0.5263157895,
+      "orb_g": 0.6363636364,
+      "drb_g": 1,
+      "trb_g": 1.6363636364,
+      "ast_g": 0.0454545455,
+      "stl_g": 0.1818181818,
+      "blk_g": 0.4090909091,
+      "tov_g": 0.5,
+      "pf_g": 1.6818181818,
+      "pts_g": 1.9090909091
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malachi-arrington-1.html",
+  "last_scraped": "2025-11-01T04:44:39.063Z"
+}

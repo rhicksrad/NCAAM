@@ -1,0 +1,28 @@
+{
+  "slug": "ramel-lloyd-jr-1",
+  "name": "Ramel Lloyd Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Long Beach State",
+      "conf": "Big West",
+      "gp": 10,
+      "gs": 5,
+      "mp_g": 15.6,
+      "fg_pct": 0.3125,
+      "fg3_pct": 0.1904761905,
+      "ft_pct": 0.65,
+      "orb_g": 0.5,
+      "drb_g": 1.1,
+      "trb_g": 1.6,
+      "ast_g": 0.4,
+      "stl_g": 0.2,
+      "blk_g": 0.1,
+      "tov_g": 0.6,
+      "pf_g": 1.7,
+      "pts_g": 4.7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ramel-lloyd-jr-1.html",
+  "last_scraped": "2025-11-01T04:46:05.465Z"
+}

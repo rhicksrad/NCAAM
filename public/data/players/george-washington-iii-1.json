@@ -1,0 +1,48 @@
+{
+  "slug": "george-washington-iii-1",
+  "name": "George Washington III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Michigan",
+      "conf": "Big Ten",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 6.5454545455,
+      "fg_pct": 0.1851851852,
+      "fg3_pct": 0.2222222222,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0,
+      "drb_g": 0.3181818182,
+      "trb_g": 0.3181818182,
+      "ast_g": 0.2727272727,
+      "stl_g": 0.0909090909,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.2727272727,
+      "pf_g": 0.5909090909,
+      "pts_g": 1.1818181818
+    },
+    {
+      "season": "2024-25",
+      "team": "Richmond",
+      "conf": "A-10",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 5.1111111111,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0,
+      "drb_g": 0.1111111111,
+      "trb_g": 0.1111111111,
+      "ast_g": 0.4444444444,
+      "stl_g": 0.2222222222,
+      "blk_g": 0,
+      "tov_g": 0.4444444444,
+      "pf_g": 1,
+      "pts_g": 1.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/george-washington-iii-1.html",
+  "last_scraped": "2025-11-01T04:41:22.060Z"
+}

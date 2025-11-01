@@ -1,0 +1,28 @@
+{
+  "slug": "mari-jordan-1",
+  "name": "Mari Jordan",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulane",
+      "conf": "AAC",
+      "gp": 32,
+      "gs": 11,
+      "mp_g": 19.59375,
+      "fg_pct": 0.3948717949,
+      "fg3_pct": 0.3488372093,
+      "ft_pct": 0.8163265306,
+      "orb_g": 0.75,
+      "drb_g": 2.875,
+      "trb_g": 3.625,
+      "ast_g": 0.71875,
+      "stl_g": 0.71875,
+      "blk_g": 0.34375,
+      "tov_g": 0.875,
+      "pf_g": 2,
+      "pts_g": 7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mari-jordan-1.html",
+  "last_scraped": "2025-11-01T04:44:47.459Z"
+}

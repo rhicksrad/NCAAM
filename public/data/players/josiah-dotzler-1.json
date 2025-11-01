@@ -1,0 +1,48 @@
+{
+  "slug": "josiah-dotzler-1",
+  "name": "Josiah Dotzler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Creighton",
+      "conf": "Big East",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 4.0526315789,
+      "fg_pct": 0.4347826087,
+      "fg3_pct": 0.1818181818,
+      "ft_pct": 0.6,
+      "orb_g": 0.0526315789,
+      "drb_g": 0.3157894737,
+      "trb_g": 0.3684210526,
+      "ast_g": 0.1578947368,
+      "stl_g": 0.1578947368,
+      "blk_g": 0,
+      "tov_g": 0.3684210526,
+      "pf_g": 0.3684210526,
+      "pts_g": 1.3157894737
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Louis",
+      "conf": "A-10",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 11.6666666667,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 1.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.6666666667,
+      "pts_g": 3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josiah-dotzler-1.html",
+  "last_scraped": "2025-11-01T04:43:21.376Z"
+}

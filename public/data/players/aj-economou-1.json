@@ -1,0 +1,28 @@
+{
+  "slug": "aj-economou-1",
+  "name": "AJ Economou",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hawaii",
+      "conf": "Big West",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 1.6363636364,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.0909090909,
+      "drb_g": 0,
+      "trb_g": 0.0909090909,
+      "ast_g": 0.0909090909,
+      "stl_g": 0.0909090909,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1818181818,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aj-economou-1.html",
+  "last_scraped": "2025-11-01T04:34:36.047Z"
+}

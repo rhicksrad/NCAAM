@@ -1,0 +1,28 @@
+{
+  "slug": "reece-holbrook-1",
+  "name": "Reece Holbrook",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Eastern Kentucky",
+      "conf": "A-Sun",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 1.3333333333,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/reece-holbrook-1.html",
+  "last_scraped": "2025-11-01T04:46:07.021Z"
+}

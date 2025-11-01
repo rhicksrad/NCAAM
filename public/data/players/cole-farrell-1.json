@@ -1,0 +1,48 @@
+{
+  "slug": "cole-farrell-1",
+  "name": "Cole Farrell",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Portland State",
+      "conf": "Big Sky",
+      "gp": 28,
+      "gs": 3,
+      "mp_g": 11.3928571429,
+      "fg_pct": 0.396039604,
+      "fg3_pct": 0.2608695652,
+      "ft_pct": 0.641025641,
+      "orb_g": 0.3928571429,
+      "drb_g": 1.0357142857,
+      "trb_g": 1.4285714286,
+      "ast_g": 1.1428571429,
+      "stl_g": 0.4642857143,
+      "blk_g": 0.1785714286,
+      "tov_g": 0.8928571429,
+      "pf_g": 1.1785714286,
+      "pts_g": 3.9642857143
+    },
+    {
+      "season": "2024-25",
+      "team": "Portland State",
+      "conf": "Big Sky",
+      "gp": 31,
+      "gs": 1,
+      "mp_g": 18.6129032258,
+      "fg_pct": 0.4277777778,
+      "fg3_pct": 0.3770491803,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.6129032258,
+      "drb_g": 1.3548387097,
+      "trb_g": 1.9677419355,
+      "ast_g": 0.9032258065,
+      "stl_g": 0.7096774194,
+      "blk_g": 0.1612903226,
+      "tov_g": 0.5483870968,
+      "pf_g": 1.3548387097,
+      "pts_g": 6.5161290323
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cole-farrell-1.html",
+  "last_scraped": "2025-11-01T04:39:10.294Z"
+}

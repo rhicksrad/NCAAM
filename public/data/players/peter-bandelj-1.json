@@ -1,0 +1,28 @@
+{
+  "slug": "peter-bandelj-1",
+  "name": "Peter Bandelj",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cal Poly",
+      "conf": "Big West",
+      "gp": 35,
+      "gs": 15,
+      "mp_g": 25.0571428571,
+      "fg_pct": 0.4568965517,
+      "fg3_pct": 0.3203883495,
+      "ft_pct": 0.8040540541,
+      "orb_g": 1.1714285714,
+      "drb_g": 3.1142857143,
+      "trb_g": 4.2857142857,
+      "ast_g": 2.2571428571,
+      "stl_g": 0.5142857143,
+      "blk_g": 0.0571428571,
+      "tov_g": 1.1714285714,
+      "pf_g": 1.8285714286,
+      "pts_g": 10.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/peter-bandelj-1.html",
+  "last_scraped": "2025-11-01T04:45:48.786Z"
+}

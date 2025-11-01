@@ -1,0 +1,48 @@
+{
+  "slug": "rahmir-barno-1",
+  "name": "Rahmir Barno",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Florida Gulf Coast",
+      "conf": "A-Sun",
+      "gp": 31,
+      "gs": 14,
+      "mp_g": 19.9677419355,
+      "fg_pct": 0.3851351351,
+      "fg3_pct": 0.2424242424,
+      "ft_pct": 0.6153846154,
+      "orb_g": 0.3870967742,
+      "drb_g": 1.6129032258,
+      "trb_g": 2,
+      "ast_g": 2.4516129032,
+      "stl_g": 1.064516129,
+      "blk_g": 0.1612903226,
+      "tov_g": 1.4838709677,
+      "pf_g": 1.6451612903,
+      "pts_g": 4.7096774194
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida Gulf Coast",
+      "conf": "A-Sun",
+      "gp": 25,
+      "gs": 10,
+      "mp_g": 28.32,
+      "fg_pct": 0.4606741573,
+      "fg3_pct": 0.2380952381,
+      "ft_pct": 0.7441860465,
+      "orb_g": 0.4,
+      "drb_g": 3.72,
+      "trb_g": 4.12,
+      "ast_g": 3.72,
+      "stl_g": 1.4,
+      "blk_g": 0.12,
+      "tov_g": 2.28,
+      "pf_g": 1.84,
+      "pts_g": 8.04
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/rahmir-barno-1.html",
+  "last_scraped": "2025-11-01T04:46:03.587Z"
+}

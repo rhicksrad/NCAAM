@@ -1,0 +1,28 @@
+{
+  "slug": "cayden-ward-1",
+  "name": "Cayden Ward",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Cal Poly",
+      "conf": "Big West",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 16.5217391304,
+      "fg_pct": 0.4084507042,
+      "fg3_pct": 0.3484848485,
+      "ft_pct": 0.7619047619,
+      "orb_g": 1.1304347826,
+      "drb_g": 2.652173913,
+      "trb_g": 3.7826086957,
+      "ast_g": 0.7826086957,
+      "stl_g": 0.4782608696,
+      "blk_g": 0.1739130435,
+      "tov_g": 1.5217391304,
+      "pf_g": 2.2608695652,
+      "pts_g": 7.4347826087
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cayden-ward-1.html",
+  "last_scraped": "2025-11-01T04:38:25.211Z"
+}

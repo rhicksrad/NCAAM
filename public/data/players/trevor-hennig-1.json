@@ -1,0 +1,28 @@
+{
+  "slug": "trevor-hennig-1",
+  "name": "Trevor Hennig",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 34,
+      "gs": 11,
+      "mp_g": 21.3823529412,
+      "fg_pct": 0.4502617801,
+      "fg3_pct": 0.3150684932,
+      "ft_pct": 0.8023255814,
+      "orb_g": 0.1764705882,
+      "drb_g": 1.8823529412,
+      "trb_g": 2.0588235294,
+      "ast_g": 1.0882352941,
+      "stl_g": 0.6764705882,
+      "blk_g": 0.1470588235,
+      "tov_g": 1.0294117647,
+      "pf_g": 1.3529411765,
+      "pts_g": 7.7647058824
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trevor-hennig-1.html",
+  "last_scraped": "2025-11-01T04:47:13.876Z"
+}

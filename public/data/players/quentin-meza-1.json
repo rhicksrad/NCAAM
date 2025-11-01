@@ -1,0 +1,48 @@
+{
+  "slug": "quentin-meza-1",
+  "name": "Quentin Meza",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Wofford",
+      "conf": "Southern",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 17.78125,
+      "fg_pct": 0.3865546218,
+      "fg3_pct": 0.3636363636,
+      "ft_pct": 0.7222222222,
+      "orb_g": 0.21875,
+      "drb_g": 1.4375,
+      "trb_g": 1.65625,
+      "ast_g": 1.6875,
+      "stl_g": 0.5,
+      "blk_g": 0,
+      "tov_g": 0.84375,
+      "pf_g": 1.15625,
+      "pts_g": 4.15625
+    },
+    {
+      "season": "2024-25",
+      "team": "Idaho State",
+      "conf": "Big Sky",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7.380952381,
+      "fg_pct": 0.2682926829,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.9166666667,
+      "orb_g": 0.0476190476,
+      "drb_g": 0.5238095238,
+      "trb_g": 0.5714285714,
+      "ast_g": 1.4761904762,
+      "stl_g": 0.2857142857,
+      "blk_g": 0,
+      "tov_g": 0.4761904762,
+      "pf_g": 0.5714285714,
+      "pts_g": 1.9523809524
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/quentin-meza-1.html",
+  "last_scraped": "2025-11-01T04:45:56.864Z"
+}

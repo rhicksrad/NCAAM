@@ -1,0 +1,28 @@
+{
+  "slug": "amadou-doumbia-1",
+  "name": "Amadou Doumbia",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 15,
+      "gs": 0,
+      "mp_g": 4.2666666667,
+      "fg_pct": 0.5294117647,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.6,
+      "drb_g": 0.8666666667,
+      "trb_g": 1.4666666667,
+      "ast_g": 0,
+      "stl_g": 0.2,
+      "blk_g": 0.2,
+      "tov_g": 0.2,
+      "pf_g": 1.4,
+      "pts_g": 1.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/amadou-doumbia-1.html",
+  "last_scraped": "2025-11-01T04:35:01.624Z"
+}

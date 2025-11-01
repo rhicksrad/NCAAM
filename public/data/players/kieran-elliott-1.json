@@ -1,0 +1,48 @@
+{
+  "slug": "kieran-elliott-1",
+  "name": "Kieran Elliott",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - non-major team",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Cal Poly",
+      "conf": "Big West",
+      "gp": 11,
+      "gs": 2,
+      "mp_g": 15,
+      "fg_pct": 0.4897959184,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.5882352941,
+      "orb_g": 1.4545454545,
+      "drb_g": 2.2727272727,
+      "trb_g": 3.7272727273,
+      "ast_g": 0.4545454545,
+      "stl_g": 0.2727272727,
+      "blk_g": 0,
+      "tov_g": 1.3636363636,
+      "pf_g": 1.5454545455,
+      "pts_g": 5.3636363636
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kieran-elliott-1.html",
+  "last_scraped": "2025-11-01T04:43:58.743Z"
+}

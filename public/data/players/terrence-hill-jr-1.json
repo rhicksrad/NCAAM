@@ -1,0 +1,28 @@
+{
+  "slug": "terrence-hill-jr-1",
+  "name": "Terrence Hill Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "VCU",
+      "conf": "A-10",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 6.2608695652,
+      "fg_pct": 0.4464285714,
+      "fg3_pct": 0.34375,
+      "ft_pct": 1,
+      "orb_g": 0.0869565217,
+      "drb_g": 0.4782608696,
+      "trb_g": 0.5652173913,
+      "ast_g": 0.3043478261,
+      "stl_g": 0.2173913043,
+      "blk_g": 0,
+      "tov_g": 0.652173913,
+      "pf_g": 0.652173913,
+      "pts_g": 3.3913043478
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/terrence-hill-jr-1.html",
+  "last_scraped": "2025-11-01T04:46:57.757Z"
+}

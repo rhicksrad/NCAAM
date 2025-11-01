@@ -1,0 +1,48 @@
+{
+  "slug": "bobby-durkin-1",
+  "name": "Bobby Durkin",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Davidson",
+      "conf": "A-10",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 28,
+      "fg_pct": 0.3729508197,
+      "fg3_pct": 0.3390804598,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.75,
+      "drb_g": 3.625,
+      "trb_g": 4.375,
+      "ast_g": 1.125,
+      "stl_g": 0.96875,
+      "blk_g": 0.09375,
+      "tov_g": 0.75,
+      "pf_g": 1.1875,
+      "pts_g": 8.46875
+    },
+    {
+      "season": "2024-25",
+      "team": "Davidson",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 32,
+      "mp_g": 33.7575757576,
+      "fg_pct": 0.4064171123,
+      "fg3_pct": 0.35546875,
+      "ft_pct": 0.85,
+      "orb_g": 0.6666666667,
+      "drb_g": 5.2727272727,
+      "trb_g": 5.9393939394,
+      "ast_g": 2.3939393939,
+      "stl_g": 1.3333333333,
+      "blk_g": 0.1212121212,
+      "tov_g": 0.7575757576,
+      "pf_g": 1.4242424242,
+      "pts_g": 13.5151515152
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bobby-durkin-1.html",
+  "last_scraped": "2025-11-01T04:36:51.086Z"
+}

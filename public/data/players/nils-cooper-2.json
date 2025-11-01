@@ -1,0 +1,48 @@
+{
+  "slug": "nils-cooper-2",
+  "name": "Nils Cooper",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Pepperdine",
+      "conf": "WCC",
+      "gp": 33,
+      "gs": 2,
+      "mp_g": 19.8787878788,
+      "fg_pct": 0.4655172414,
+      "fg3_pct": 0.2105263158,
+      "ft_pct": 0.6805555556,
+      "orb_g": 1.1515151515,
+      "drb_g": 1.6060606061,
+      "trb_g": 2.7575757576,
+      "ast_g": 0.9393939394,
+      "stl_g": 0.8787878788,
+      "blk_g": 0.2727272727,
+      "tov_g": 0.4242424242,
+      "pf_g": 1.6363636364,
+      "pts_g": 5
+    },
+    {
+      "season": "2024-25",
+      "team": "UC Davis",
+      "conf": "Big West",
+      "gp": 30,
+      "gs": 5,
+      "mp_g": 17.8,
+      "fg_pct": 0.4814814815,
+      "fg3_pct": 0.0769230769,
+      "ft_pct": 0.74,
+      "orb_g": 1.4333333333,
+      "drb_g": 2.0666666667,
+      "trb_g": 3.5,
+      "ast_g": 0.6,
+      "stl_g": 0.6,
+      "blk_g": 0.1333333333,
+      "tov_g": 0.4333333333,
+      "pf_g": 1.8666666667,
+      "pts_g": 3.8666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nils-cooper-2.html",
+  "last_scraped": "2025-11-01T04:45:36.052Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "josh-harris-1",
+  "name": "Josh Harris",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "North Florida",
+      "conf": "A-Sun",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 22.5333333333,
+      "fg_pct": 0.5566666667,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6951219512,
+      "orb_g": 3,
+      "drb_g": 4.0666666667,
+      "trb_g": 7.0666666667,
+      "ast_g": 0.5666666667,
+      "stl_g": 0.7,
+      "blk_g": 0.5,
+      "tov_g": 1.0333333333,
+      "pf_g": 2.7,
+      "pts_g": 13.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-harris-1.html",
+  "last_scraped": "2025-11-01T04:43:18.221Z"
+}

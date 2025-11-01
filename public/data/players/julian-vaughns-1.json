@@ -1,0 +1,28 @@
+{
+  "slug": "julian-vaughns-1",
+  "name": "Julian Vaughns",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 24,
+      "gs": 19,
+      "mp_g": 23.25,
+      "fg_pct": 0.4044444444,
+      "fg3_pct": 0.347826087,
+      "ft_pct": 0.7843137255,
+      "orb_g": 0.9583333333,
+      "drb_g": 1.875,
+      "trb_g": 2.8333333333,
+      "ast_g": 1.375,
+      "stl_g": 0.7916666667,
+      "blk_g": 0.25,
+      "tov_g": 1.0833333333,
+      "pf_g": 3.0833333333,
+      "pts_g": 10.9166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/julian-vaughns-1.html",
+  "last_scraped": "2025-11-01T04:43:24.656Z"
+}

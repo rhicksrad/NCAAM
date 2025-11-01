@@ -1,0 +1,28 @@
+{
+  "slug": "kam-williams-2",
+  "name": "Kam Williams",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Tulane",
+      "conf": "AAC",
+      "gp": 33,
+      "gs": 28,
+      "mp_g": 32.3636363636,
+      "fg_pct": 0.4848484848,
+      "fg3_pct": 0.4117647059,
+      "ft_pct": 0.76,
+      "orb_g": 0.696969697,
+      "drb_g": 3.7878787879,
+      "trb_g": 4.4848484848,
+      "ast_g": 1.3333333333,
+      "stl_g": 1.3939393939,
+      "blk_g": 1.0606060606,
+      "tov_g": 0.8484848485,
+      "pf_g": 1.5757575758,
+      "pts_g": 9.2727272727
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kam-williams-2.html",
+  "last_scraped": "2025-11-01T04:43:40.745Z"
+}

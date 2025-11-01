@@ -1,0 +1,28 @@
+{
+  "slug": "lase-olalere-1",
+  "name": "Lase Olalere",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Charleston Southern",
+      "conf": "Big South",
+      "gp": 24,
+      "gs": 10,
+      "mp_g": 11.6666666667,
+      "fg_pct": 0.2777777778,
+      "fg3_pct": null,
+      "ft_pct": 0.4090909091,
+      "orb_g": 1.1666666667,
+      "drb_g": 1.7083333333,
+      "trb_g": 2.875,
+      "ast_g": 0.0833333333,
+      "stl_g": 0.125,
+      "blk_g": 0.2916666667,
+      "tov_g": 0.5,
+      "pf_g": 2.1666666667,
+      "pts_g": 0.7916666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lase-olalere-1.html",
+  "last_scraped": "2025-11-01T04:44:16.479Z"
+}

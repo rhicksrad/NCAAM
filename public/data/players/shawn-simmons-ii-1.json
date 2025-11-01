@@ -1,0 +1,48 @@
+{
+  "slug": "shawn-simmons-ii-1",
+  "name": "Shawn Simmons II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Saint Joseph's",
+      "conf": "A-10",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 8.5909090909,
+      "fg_pct": 0.3414634146,
+      "fg3_pct": 0,
+      "ft_pct": 0.4,
+      "orb_g": 0.6363636364,
+      "drb_g": 1,
+      "trb_g": 1.6363636364,
+      "ast_g": 0.2272727273,
+      "stl_g": 0.2272727273,
+      "blk_g": 0.2272727273,
+      "tov_g": 0.1818181818,
+      "pf_g": 0.8181818182,
+      "pts_g": 1.3636363636
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Joseph's",
+      "conf": "A-10",
+      "gp": 30,
+      "gs": 0,
+      "mp_g": 6.1,
+      "fg_pct": 0.6,
+      "fg3_pct": null,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.5,
+      "drb_g": 0.6,
+      "trb_g": 1.1,
+      "ast_g": 0.2333333333,
+      "stl_g": 0.1333333333,
+      "blk_g": 0.2333333333,
+      "tov_g": 0.4,
+      "pf_g": 0.6333333333,
+      "pts_g": 1.5333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/shawn-simmons-ii-1.html",
+  "last_scraped": "2025-11-01T04:46:38.171Z"
+}

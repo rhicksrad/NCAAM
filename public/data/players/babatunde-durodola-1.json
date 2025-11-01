@@ -1,0 +1,28 @@
+{
+  "slug": "babatunde-durodola-1",
+  "name": "Babatunde Durodola",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Temple",
+      "conf": "AAC",
+      "gp": 32,
+      "gs": 32,
+      "mp_g": 16.28125,
+      "fg_pct": 0.4862385321,
+      "fg3_pct": null,
+      "ft_pct": 0.6825396825,
+      "orb_g": 1.78125,
+      "drb_g": 2.4375,
+      "trb_g": 4.21875,
+      "ast_g": 0.59375,
+      "stl_g": 0.34375,
+      "blk_g": 0.34375,
+      "tov_g": 0.59375,
+      "pf_g": 3.0625,
+      "pts_g": 4.65625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/babatunde-durodola-1.html",
+  "last_scraped": "2025-11-01T04:36:10.010Z"
+}

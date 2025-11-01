@@ -1,0 +1,28 @@
+{
+  "slug": "ethan-thomas-1",
+  "name": "Ethan Thomas",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Central Arkansas",
+      "conf": "A-Sun",
+      "gp": 23,
+      "gs": 2,
+      "mp_g": 6.3043478261,
+      "fg_pct": 0.36,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.6,
+      "orb_g": 0.2608695652,
+      "drb_g": 0.2608695652,
+      "trb_g": 0.5217391304,
+      "ast_g": 0.6956521739,
+      "stl_g": 0.2608695652,
+      "blk_g": 0,
+      "tov_g": 0.3043478261,
+      "pf_g": 0.2608695652,
+      "pts_g": 1.1304347826
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ethan-thomas-1.html",
+  "last_scraped": "2025-11-01T04:41:12.365Z"
+}

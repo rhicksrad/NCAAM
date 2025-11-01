@@ -1,0 +1,28 @@
+{
+  "slug": "antoni-siewruk-1",
+  "name": "Antoni Siewruk",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "New Hampshire",
+      "conf": "AEC",
+      "gp": 28,
+      "gs": 4,
+      "mp_g": 9.9642857143,
+      "fg_pct": 0.4235294118,
+      "fg3_pct": 0.3859649123,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.1785714286,
+      "drb_g": 0.5357142857,
+      "trb_g": 0.7142857143,
+      "ast_g": 0.2142857143,
+      "stl_g": 0.0357142857,
+      "blk_g": 0.2142857143,
+      "tov_g": 0.3571428571,
+      "pf_g": 0.3571428571,
+      "pts_g": 3.6428571429
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/antoni-siewruk-1.html",
+  "last_scraped": "2025-11-01T04:35:43.129Z"
+}

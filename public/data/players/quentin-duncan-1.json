@@ -1,0 +1,28 @@
+{
+  "slug": "quentin-duncan-1",
+  "name": "Quentin Duncan",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 12.9166666667,
+      "fg_pct": 0.4576271186,
+      "fg3_pct": 0.425,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.4166666667,
+      "drb_g": 0.75,
+      "trb_g": 1.1666666667,
+      "ast_g": 0.4166666667,
+      "stl_g": 0.4166666667,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.25,
+      "pts_g": 6.3333333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/quentin-duncan-1.html",
+  "last_scraped": "2025-11-01T04:45:55.124Z"
+}

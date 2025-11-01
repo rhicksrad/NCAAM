@@ -1,0 +1,28 @@
+{
+  "slug": "jordan-rogers-4",
+  "name": "Jordan Rogers",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 31,
+      "gs": 18,
+      "mp_g": 23.0967741935,
+      "fg_pct": 0.4742268041,
+      "fg3_pct": 0.4324324324,
+      "ft_pct": 0.7441860465,
+      "orb_g": 1.3870967742,
+      "drb_g": 2.8064516129,
+      "trb_g": 4.1935483871,
+      "ast_g": 1.5161290323,
+      "stl_g": 0.7741935484,
+      "blk_g": 0.4516129032,
+      "tov_g": 1.2903225806,
+      "pf_g": 3.4516129032,
+      "pts_g": 4.5161290323
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jordan-rogers-4.html",
+  "last_scraped": "2025-11-01T04:43:14.935Z"
+}

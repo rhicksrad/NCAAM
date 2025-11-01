@@ -1,0 +1,28 @@
+{
+  "slug": "anthony-gause-1",
+  "name": "Anthony Gause",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Charleston Southern",
+      "conf": "Big South",
+      "gp": 17,
+      "gs": 1,
+      "mp_g": 11.6470588235,
+      "fg_pct": 0.3506493506,
+      "fg3_pct": 0.2619047619,
+      "ft_pct": 0.4814814815,
+      "orb_g": 0.0588235294,
+      "drb_g": 0.5882352941,
+      "trb_g": 0.6470588235,
+      "ast_g": 0.5882352941,
+      "stl_g": 0.2941176471,
+      "blk_g": 0.1176470588,
+      "tov_g": 0.6470588235,
+      "pf_g": 1.1764705882,
+      "pts_g": 4.5882352941
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-gause-1.html",
+  "last_scraped": "2025-11-01T04:35:37.585Z"
+}

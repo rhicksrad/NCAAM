@@ -1,0 +1,28 @@
+{
+  "slug": "gavin-davis-1",
+  "name": "Gavin Davis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC Riverside",
+      "conf": "Big West",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 5.46875,
+      "fg_pct": 0.3783783784,
+      "fg3_pct": 0.2608695652,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.21875,
+      "drb_g": 0.125,
+      "trb_g": 0.34375,
+      "ast_g": 0.15625,
+      "stl_g": 0.125,
+      "blk_g": 0.125,
+      "tov_g": 0.3125,
+      "pf_g": 0.78125,
+      "pts_g": 1.125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/gavin-davis-1.html",
+  "last_scraped": "2025-11-01T04:41:18.861Z"
+}

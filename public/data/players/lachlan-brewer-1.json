@@ -1,0 +1,28 @@
+{
+  "slug": "lachlan-brewer-1",
+  "name": "Lachlan Brewer",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Sacramento State",
+      "conf": "Big Sky",
+      "gp": 31,
+      "gs": 28,
+      "mp_g": 27.064516129,
+      "fg_pct": 0.4788732394,
+      "fg3_pct": 0.4457831325,
+      "ft_pct": 0.4285714286,
+      "orb_g": 0.6774193548,
+      "drb_g": 2.5161290323,
+      "trb_g": 3.1935483871,
+      "ast_g": 1.064516129,
+      "stl_g": 0.8709677419,
+      "blk_g": 0.0967741935,
+      "tov_g": 1.2903225806,
+      "pf_g": 1.935483871,
+      "pts_g": 5.9677419355
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lachlan-brewer-1.html",
+  "last_scraped": "2025-11-01T04:44:11.558Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "hunter-adam-1",
+  "name": "Hunter Adam",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Davidson",
+      "conf": "A-10",
+      "gp": 32,
+      "gs": 1,
+      "mp_g": 13.59375,
+      "fg_pct": 0.4125,
+      "fg3_pct": 0.26,
+      "ft_pct": 0.9230769231,
+      "orb_g": 0.59375,
+      "drb_g": 1.1875,
+      "trb_g": 1.78125,
+      "ast_g": 0.46875,
+      "stl_g": 0.28125,
+      "blk_g": 0.375,
+      "tov_g": 0.59375,
+      "pf_g": 1.375,
+      "pts_g": 2.84375
+    },
+    {
+      "season": "2024-25",
+      "team": "Davidson",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 6,
+      "mp_g": 14.4545454545,
+      "fg_pct": 0.5342465753,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.619047619,
+      "orb_g": 0.8484848485,
+      "drb_g": 1.8484848485,
+      "trb_g": 2.696969697,
+      "ast_g": 0.4545454545,
+      "stl_g": 0.303030303,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.303030303,
+      "pf_g": 2,
+      "pts_g": 3.2424242424
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/hunter-adam-1.html",
+  "last_scraped": "2025-11-01T04:41:40.130Z"
+}

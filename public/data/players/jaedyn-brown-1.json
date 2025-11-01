@@ -1,0 +1,28 @@
+{
+  "slug": "jaedyn-brown-1",
+  "name": "Jaedyn Brown",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Idaho State",
+      "conf": "Big Sky",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 5.2,
+      "fg_pct": 0.3833333333,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.56,
+      "drb_g": 0.72,
+      "trb_g": 1.28,
+      "ast_g": 0.28,
+      "stl_g": 0.28,
+      "blk_g": 0,
+      "tov_g": 0.28,
+      "pf_g": 0.2,
+      "pts_g": 2.68
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaedyn-brown-1.html",
+  "last_scraped": "2025-11-01T04:42:17.984Z"
+}

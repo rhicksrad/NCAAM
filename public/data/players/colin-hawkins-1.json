@@ -1,0 +1,28 @@
+{
+  "slug": "colin-hawkins-1",
+  "name": "Colin Hawkins",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Gardner-Webb",
+      "conf": "Big South",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 11.95,
+      "fg_pct": 0.2711864407,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.7857142857,
+      "orb_g": 0.05,
+      "drb_g": 0.55,
+      "trb_g": 0.6,
+      "ast_g": 0.65,
+      "stl_g": 0.35,
+      "blk_g": 0,
+      "tov_g": 1.1,
+      "pf_g": 1.05,
+      "pts_g": 2.35
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/colin-hawkins-1.html",
+  "last_scraped": "2025-11-01T04:39:15.854Z"
+}

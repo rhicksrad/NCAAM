@@ -1,0 +1,48 @@
+{
+  "slug": "mayar-wol-1",
+  "name": "Mayar Wol",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "College of Charleston",
+      "conf": "CAA",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 5.1818181818,
+      "fg_pct": 0.1914893617,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 1,
+      "orb_g": 0.3636363636,
+      "drb_g": 1.1363636364,
+      "trb_g": 1.5,
+      "ast_g": 0.1818181818,
+      "stl_g": 0.2727272727,
+      "blk_g": 0.0454545455,
+      "tov_g": 0.3636363636,
+      "pf_g": 0.7272727273,
+      "pts_g": 1.1363636364
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Kentucky",
+      "conf": "A-Sun",
+      "gp": 32,
+      "gs": 20,
+      "mp_g": 23.90625,
+      "fg_pct": 0.404,
+      "fg3_pct": 0.3286713287,
+      "ft_pct": 0.7551020408,
+      "orb_g": 1.25,
+      "drb_g": 3.5625,
+      "trb_g": 4.8125,
+      "ast_g": 0.875,
+      "stl_g": 0.8125,
+      "blk_g": 0.4375,
+      "tov_g": 0.875,
+      "pf_g": 1.625,
+      "pts_g": 8.9375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mayar-wol-1.html",
+  "last_scraped": "2025-11-01T04:45:03.650Z"
+}

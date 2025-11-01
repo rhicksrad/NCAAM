@@ -1,0 +1,28 @@
+{
+  "slug": "ryder-elisaldez-1",
+  "name": "Ryder Elisaldez",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC San Diego",
+      "conf": "Big West",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 5.4,
+      "fg_pct": 0.5,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.5,
+      "orb_g": 0.3,
+      "drb_g": 0.35,
+      "trb_g": 0.65,
+      "ast_g": 0.8,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0.15,
+      "pf_g": 0.6,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryder-elisaldez-1.html",
+  "last_scraped": "2025-11-01T04:46:23.611Z"
+}

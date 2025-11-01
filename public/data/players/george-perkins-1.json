@@ -1,0 +1,48 @@
+{
+  "slug": "george-perkins-1",
+  "name": "George Perkins",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Rice",
+      "conf": "AAC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 2.25,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.5,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Rice",
+      "conf": "AAC",
+      "gp": 5,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.4,
+      "drb_g": 0.2,
+      "trb_g": 0.6,
+      "ast_g": 0,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.4
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/george-perkins-1.html",
+  "last_scraped": "2025-11-01T04:41:21.950Z"
+}

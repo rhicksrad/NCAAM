@@ -1,0 +1,28 @@
+{
+  "slug": "billy-rayer-1",
+  "name": "Billy Rayer",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Joseph's",
+      "conf": "A-10",
+      "gp": 6,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0.1666666667,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1666666667,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/billy-rayer-1.html",
+  "last_scraped": "2025-11-01T04:36:38.548Z"
+}

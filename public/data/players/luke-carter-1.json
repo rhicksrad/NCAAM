@@ -1,0 +1,28 @@
+{
+  "slug": "luke-carter-1",
+  "name": "Luke Carter",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Lipscomb",
+      "conf": "A-Sun",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 1.8,
+      "fg_pct": 0.3333333333,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0.1,
+      "drb_g": 0.1,
+      "trb_g": 0.2,
+      "ast_g": 0.1,
+      "stl_g": 0.2,
+      "blk_g": 0,
+      "tov_g": 0.2,
+      "pf_g": 0.2,
+      "pts_g": 0.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/luke-carter-1.html",
+  "last_scraped": "2025-11-01T04:44:32.685Z"
+}

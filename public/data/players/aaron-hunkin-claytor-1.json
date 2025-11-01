@@ -1,0 +1,28 @@
+{
+  "slug": "aaron-hunkin-claytor-1",
+  "name": "Aaron Hunkin-Claytor",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Hawaii",
+      "conf": "Big West",
+      "gp": 29,
+      "gs": 11,
+      "mp_g": 17.9310344828,
+      "fg_pct": 0.3978494624,
+      "fg3_pct": 0.3913043478,
+      "ft_pct": 0.7,
+      "orb_g": 0.3103448276,
+      "drb_g": 1.8620689655,
+      "trb_g": 2.1724137931,
+      "ast_g": 2.4827586207,
+      "stl_g": 0.724137931,
+      "blk_g": 0.1379310345,
+      "tov_g": 1.0344827586,
+      "pf_g": 1.0689655172,
+      "pts_g": 3.8275862069
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aaron-hunkin-claytor-1.html",
+  "last_scraped": "2025-11-01T04:34:11.001Z"
+}

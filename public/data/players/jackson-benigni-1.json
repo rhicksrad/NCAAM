@@ -1,0 +1,48 @@
+{
+  "slug": "jackson-benigni-1",
+  "name": "Jackson Benigni",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Stonehill",
+      "conf": "NEC",
+      "gp": 23,
+      "gs": 18,
+      "mp_g": 27.2173913043,
+      "fg_pct": 0.4043478261,
+      "fg3_pct": 0.3211009174,
+      "ft_pct": 0.7169811321,
+      "orb_g": 0.2173913043,
+      "drb_g": 2.4347826087,
+      "trb_g": 2.652173913,
+      "ast_g": 0.9565217391,
+      "stl_g": 1.3913043478,
+      "blk_g": 0,
+      "tov_g": 1.9130434783,
+      "pf_g": 1.4347826087,
+      "pts_g": 11.2608695652
+    },
+    {
+      "season": "2024-25",
+      "team": "Binghamton",
+      "conf": "AEC",
+      "gp": 7,
+      "gs": 0,
+      "mp_g": 13.7142857143,
+      "fg_pct": 0.1666666667,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.8571428571,
+      "orb_g": 0.2857142857,
+      "drb_g": 1.7142857143,
+      "trb_g": 2,
+      "ast_g": 0.8571428571,
+      "stl_g": 0.4285714286,
+      "blk_g": 0,
+      "tov_g": 0.5714285714,
+      "pf_g": 1.7142857143,
+      "pts_g": 1.8571428571
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jackson-benigni-1.html",
+  "last_scraped": "2025-11-01T04:42:07.953Z"
+}

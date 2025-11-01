@@ -1,0 +1,48 @@
+{
+  "slug": "jacoi-hutchinson-1",
+  "name": "Jacoi Hutchinson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "George Washington",
+      "conf": "A-10",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 27.6875,
+      "fg_pct": 0.4175257732,
+      "fg3_pct": 0.3958333333,
+      "ft_pct": 0.7906976744,
+      "orb_g": 0.28125,
+      "drb_g": 2.59375,
+      "trb_g": 2.875,
+      "ast_g": 2.28125,
+      "stl_g": 1.125,
+      "blk_g": 0.09375,
+      "tov_g": 1.59375,
+      "pf_g": 1.65625,
+      "pts_g": 7.3125
+    },
+    {
+      "season": "2024-25",
+      "team": "George Washington",
+      "conf": "A-10",
+      "gp": 33,
+      "gs": 13,
+      "mp_g": 23.4848484848,
+      "fg_pct": 0.3367875648,
+      "fg3_pct": 0.2526315789,
+      "ft_pct": 0.7763157895,
+      "orb_g": 0.3636363636,
+      "drb_g": 1.8484848485,
+      "trb_g": 2.2121212121,
+      "ast_g": 2.3636363636,
+      "stl_g": 1.303030303,
+      "blk_g": 0.1818181818,
+      "tov_g": 1.9393939394,
+      "pf_g": 1.7878787879,
+      "pts_g": 6.4545454545
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jacoi-hutchinson-1.html",
+  "last_scraped": "2025-11-01T04:42:14.885Z"
+}

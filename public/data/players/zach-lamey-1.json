@@ -1,0 +1,48 @@
+{
+  "slug": "zach-lamey-1",
+  "name": "Zach Lamey",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Lipscomb",
+      "conf": "A-Sun",
+      "gp": 11,
+      "gs": 0,
+      "mp_g": 1.9090909091,
+      "fg_pct": 0.6,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.0909090909,
+      "drb_g": 0.1818181818,
+      "trb_g": 0.2727272727,
+      "ast_g": 0.0909090909,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.1818181818,
+      "pts_g": 0.5454545455
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zach-lamey-1.html",
+  "last_scraped": "2025-11-01T04:47:49.482Z"
+}

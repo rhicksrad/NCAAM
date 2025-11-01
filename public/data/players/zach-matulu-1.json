@@ -1,0 +1,48 @@
+{
+  "slug": "zach-matulu-1",
+  "name": "Zach Matulu",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Albany (NY)",
+      "conf": "AEC",
+      "gp": 24,
+      "gs": 2,
+      "mp_g": 8.25,
+      "fg_pct": 0.2894736842,
+      "fg3_pct": 0.2631578947,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.5833333333,
+      "drb_g": 0.75,
+      "trb_g": 1.3333333333,
+      "ast_g": 0.4583333333,
+      "stl_g": 0.25,
+      "blk_g": 0.0416666667,
+      "tov_g": 0.5,
+      "pf_g": 1.1666666667,
+      "pts_g": 1.2916666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/zach-matulu-1.html",
+  "last_scraped": "2025-11-01T04:47:51.024Z"
+}

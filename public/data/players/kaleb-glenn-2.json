@@ -1,0 +1,48 @@
+{
+  "slug": "kaleb-glenn-2",
+  "name": "Kaleb Glenn",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Louisville",
+      "conf": "ACC",
+      "gp": 32,
+      "gs": 11,
+      "mp_g": 15.03125,
+      "fg_pct": 0.4857142857,
+      "fg3_pct": 0.1111111111,
+      "ft_pct": 0.6470588235,
+      "orb_g": 1.09375,
+      "drb_g": 2.46875,
+      "trb_g": 3.5625,
+      "ast_g": 0.21875,
+      "stl_g": 0.375,
+      "blk_g": 0.15625,
+      "tov_g": 0.6875,
+      "pf_g": 1.90625,
+      "pts_g": 3.90625
+    },
+    {
+      "season": "2024-25",
+      "team": "Florida Atlantic",
+      "conf": "AAC",
+      "gp": 34,
+      "gs": 5,
+      "mp_g": 25.7647058824,
+      "fg_pct": 0.5310344828,
+      "fg3_pct": 0.4102564103,
+      "ft_pct": 0.6239316239,
+      "orb_g": 1.7647058824,
+      "drb_g": 3.0588235294,
+      "trb_g": 4.8235294118,
+      "ast_g": 0.5882352941,
+      "stl_g": 0.5588235294,
+      "blk_g": 0.2941176471,
+      "tov_g": 1.2058823529,
+      "pf_g": 2.1470588235,
+      "pts_g": 12.6176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kaleb-glenn-2.html",
+  "last_scraped": "2025-11-01T04:43:36.037Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "marcus-millender-1",
+  "name": "Marcus Millender",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "South Alabama",
+      "conf": "Sun Belt",
+      "gp": 32,
+      "gs": 15,
+      "mp_g": 27.9375,
+      "fg_pct": 0.4227642276,
+      "fg3_pct": 0.4383561644,
+      "ft_pct": 0.7752808989,
+      "orb_g": 0.25,
+      "drb_g": 2.65625,
+      "trb_g": 2.90625,
+      "ast_g": 3.34375,
+      "stl_g": 0.84375,
+      "blk_g": 0.0625,
+      "tov_g": 1.96875,
+      "pf_g": 2.15625,
+      "pts_g": 9.65625
+    },
+    {
+      "season": "2024-25",
+      "team": "UTSA",
+      "conf": "AAC",
+      "gp": 31,
+      "gs": 28,
+      "mp_g": 34.5483870968,
+      "fg_pct": 0.4413407821,
+      "fg3_pct": 0.4375,
+      "ft_pct": 0.8720930233,
+      "orb_g": 0.8387096774,
+      "drb_g": 2.1290322581,
+      "trb_g": 2.9677419355,
+      "ast_g": 3.2903225806,
+      "stl_g": 1.7096774194,
+      "blk_g": 0.0322580645,
+      "tov_g": 1.6451612903,
+      "pf_g": 2.064516129,
+      "pts_g": 14.8709677419
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marcus-millender-1.html",
+  "last_scraped": "2025-11-01T04:44:45.761Z"
+}

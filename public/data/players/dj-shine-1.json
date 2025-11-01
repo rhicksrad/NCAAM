@@ -1,0 +1,28 @@
+{
+  "slug": "dj-shine-1",
+  "name": "DJ Shine",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Queens (NC)",
+      "conf": "A-Sun",
+      "gp": 18,
+      "gs": 1,
+      "mp_g": 4.3888888889,
+      "fg_pct": 0.6428571429,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.7894736842,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.4444444444,
+      "ast_g": 0.6111111111,
+      "stl_g": 0.1666666667,
+      "blk_g": 0,
+      "tov_g": 0.2777777778,
+      "pf_g": 0.3333333333,
+      "pts_g": 3.0555555556
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dj-shine-1.html",
+  "last_scraped": "2025-11-01T04:40:48.971Z"
+}

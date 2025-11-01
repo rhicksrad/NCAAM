@@ -1,0 +1,48 @@
+{
+  "slug": "seth-joba-1",
+  "name": "Seth Joba",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Vermont",
+      "conf": "AEC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 7.3125,
+      "fg_pct": 0.4827586207,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6,
+      "orb_g": 0.3125,
+      "drb_g": 0.9375,
+      "trb_g": 1.25,
+      "ast_g": 0.25,
+      "stl_g": 0.125,
+      "blk_g": 0.25,
+      "tov_g": 0.625,
+      "pf_g": 1.0625,
+      "pts_g": 2.25
+    },
+    {
+      "season": "2024-25",
+      "team": "Vermont",
+      "conf": "AEC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 8.5769230769,
+      "fg_pct": 0.2916666667,
+      "fg3_pct": 0.3235294118,
+      "ft_pct": 0.5,
+      "orb_g": 0.4615384615,
+      "drb_g": 0.7307692308,
+      "trb_g": 1.1923076923,
+      "ast_g": 0.1538461538,
+      "stl_g": 0.1153846154,
+      "blk_g": 0.1153846154,
+      "tov_g": 0.5,
+      "pf_g": 1.0384615385,
+      "pts_g": 1.6153846154
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/seth-joba-1.html",
+  "last_scraped": "2025-11-01T04:46:33.168Z"
+}

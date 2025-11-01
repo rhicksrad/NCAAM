@@ -1,0 +1,28 @@
+{
+  "slug": "kent-jackson-1",
+  "name": "Kent Jackson",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Jacksonville",
+      "conf": "A-Sun",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 10.78125,
+      "fg_pct": 0.3258426966,
+      "fg3_pct": 0.3246753247,
+      "ft_pct": 0.8,
+      "orb_g": 0.125,
+      "drb_g": 0.46875,
+      "trb_g": 0.59375,
+      "ast_g": 0.46875,
+      "stl_g": 0.28125,
+      "blk_g": 0.03125,
+      "tov_g": 0.34375,
+      "pf_g": 1.09375,
+      "pts_g": 2.71875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kent-jackson-1.html",
+  "last_scraped": "2025-11-01T04:43:54.012Z"
+}

@@ -16,7 +16,7 @@
     "scrape:cbb:players": "tsx scripts/scrape/cbb_player_stats.ts",
     "scrape:cbb:validate": "tsx scripts/scrape/cbb_validate.ts",
     "build:data:bbr": "pnpm run scrape:cbb:index && pnpm run scrape:cbb:players && pnpm run scrape:cbb:validate",
-    "build:data": "pnpm run build:data:bbr && (python3 scripts/build_site.py || true)",
+    "build:data": "(python3 scripts/build_site.py || true)",
     "build:sitemap": "node scripts/build_sitemap.mjs || true",
     "build": "pnpm run clean && pnpm run prepare:logos && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:sitemap",
     "dev": "node scripts/dev/serve-public.js"

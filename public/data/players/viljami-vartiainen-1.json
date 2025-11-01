@@ -1,0 +1,48 @@
+{
+  "slug": "viljami-vartiainen-1",
+  "name": "Viljami Vartiainen",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 0,
+      "mp_g": 17.03125,
+      "fg_pct": 0.4086956522,
+      "fg3_pct": 0.3571428571,
+      "ft_pct": 0.6808510638,
+      "orb_g": 0.1875,
+      "drb_g": 1.375,
+      "trb_g": 1.5625,
+      "ast_g": 0.21875,
+      "stl_g": 0.21875,
+      "blk_g": 0.0625,
+      "tov_g": 0.78125,
+      "pf_g": 1.53125,
+      "pts_g": 4.875
+    },
+    {
+      "season": "2024-25",
+      "team": "Weber State",
+      "conf": "Big Sky",
+      "gp": 34,
+      "gs": 19,
+      "mp_g": 25.3529411765,
+      "fg_pct": 0.4049586777,
+      "fg3_pct": 0.406779661,
+      "ft_pct": 0.72,
+      "orb_g": 0.1764705882,
+      "drb_g": 2.0882352941,
+      "trb_g": 2.2647058824,
+      "ast_g": 0.9705882353,
+      "stl_g": 0.5294117647,
+      "blk_g": 0.0882352941,
+      "tov_g": 0.9117647059,
+      "pf_g": 2.6470588235,
+      "pts_g": 8.9411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/viljami-vartiainen-1.html",
+  "last_scraped": "2025-11-01T04:47:35.116Z"
+}

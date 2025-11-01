@@ -1,0 +1,28 @@
+{
+  "slug": "bryce-howard-1",
+  "name": "Bryce Howard",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC Santa Barbara",
+      "conf": "Big West",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 1.75,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0.5,
+      "trb_g": 0.5,
+      "ast_g": 0,
+      "stl_g": 0.25,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.5,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bryce-howard-1.html",
+  "last_scraped": "2025-11-01T04:37:38.398Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "carl-parrish-1",
+  "name": "Carl Parrish",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Presbyterian",
+      "conf": "Big South",
+      "gp": 22,
+      "gs": 3,
+      "mp_g": 8,
+      "fg_pct": 0.4074074074,
+      "fg3_pct": 0.4117647059,
+      "ft_pct": 1,
+      "orb_g": 0.0454545455,
+      "drb_g": 0.6363636364,
+      "trb_g": 0.6818181818,
+      "ast_g": 0.8181818182,
+      "stl_g": 0.2727272727,
+      "blk_g": 0,
+      "tov_g": 0.5909090909,
+      "pf_g": 0.7727272727,
+      "pts_g": 2.8181818182
+    },
+    {
+      "season": "2024-25",
+      "team": "Presbyterian",
+      "conf": "Big South",
+      "gp": 32,
+      "gs": 10,
+      "mp_g": 18.3125,
+      "fg_pct": 0.4777070064,
+      "fg3_pct": 0.393258427,
+      "ft_pct": 0.9210526316,
+      "orb_g": 0.25,
+      "drb_g": 1.8125,
+      "trb_g": 2.0625,
+      "ast_g": 0.78125,
+      "stl_g": 0.4375,
+      "blk_g": 0.0625,
+      "tov_g": 0.8125,
+      "pf_g": 1.25,
+      "pts_g": 6.875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/carl-parrish-1.html",
+  "last_scraped": "2025-11-01T04:38:20.547Z"
+}

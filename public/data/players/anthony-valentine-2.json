@@ -1,0 +1,48 @@
+{
+  "slug": "anthony-valentine-2",
+  "name": "Ace Valentine",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UMBC",
+      "conf": "AEC",
+      "gp": 32,
+      "gs": 21,
+      "mp_g": 25.78125,
+      "fg_pct": 0.4482758621,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.6976744186,
+      "orb_g": 0.5625,
+      "drb_g": 3.125,
+      "trb_g": 3.6875,
+      "ast_g": 2.65625,
+      "stl_g": 0.9375,
+      "blk_g": 0.0625,
+      "tov_g": 1.4375,
+      "pf_g": 1.28125,
+      "pts_g": 6.34375
+    },
+    {
+      "season": "2024-25",
+      "team": "UMBC",
+      "conf": "AEC",
+      "gp": 31,
+      "gs": 21,
+      "mp_g": 26.6774193548,
+      "fg_pct": 0.5222222222,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.671875,
+      "orb_g": 0.2903225806,
+      "drb_g": 2.3225806452,
+      "trb_g": 2.6129032258,
+      "ast_g": 3.2258064516,
+      "stl_g": 1,
+      "blk_g": 0.0967741935,
+      "tov_g": 1.5483870968,
+      "pf_g": 1.1612903226,
+      "pts_g": 8.0322580645
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/anthony-valentine-2.html",
+  "last_scraped": "2025-11-01T04:34:23.369Z"
+}

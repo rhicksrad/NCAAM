@@ -1,0 +1,48 @@
+{
+  "slug": "kristian-gonzalez-1",
+  "name": "Kristian Gonzalez",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Idaho",
+      "conf": "Big Sky",
+      "gp": 29,
+      "gs": 1,
+      "mp_g": 16,
+      "fg_pct": 0.3846153846,
+      "fg3_pct": 0.2678571429,
+      "ft_pct": 0.7435897436,
+      "orb_g": 0.2413793103,
+      "drb_g": 1.724137931,
+      "trb_g": 1.9655172414,
+      "ast_g": 0.7586206897,
+      "stl_g": 0.4827586207,
+      "blk_g": 0.1034482759,
+      "tov_g": 0.6206896552,
+      "pf_g": 1.1379310345,
+      "pts_g": 4.275862069
+    },
+    {
+      "season": "2024-25",
+      "team": "Idaho",
+      "conf": "Big Sky",
+      "gp": 32,
+      "gs": 29,
+      "mp_g": 25.40625,
+      "fg_pct": 0.4471830986,
+      "fg3_pct": 0.3496503497,
+      "ft_pct": 0.8219178082,
+      "orb_g": 0.96875,
+      "drb_g": 1.65625,
+      "trb_g": 2.625,
+      "ast_g": 1.125,
+      "stl_g": 0.53125,
+      "blk_g": 0.1875,
+      "tov_g": 1.0625,
+      "pf_g": 1.0625,
+      "pts_g": 11.375
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kristian-gonzalez-1.html",
+  "last_scraped": "2025-11-01T04:44:06.676Z"
+}

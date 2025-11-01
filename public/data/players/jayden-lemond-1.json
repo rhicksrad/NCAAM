@@ -1,0 +1,48 @@
+{
+  "slug": "jayden-lemond-1",
+  "name": "Jayden Lemond",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "William & Mary",
+      "conf": "CAA",
+      "gp": 22,
+      "gs": 0,
+      "mp_g": 8.6818181818,
+      "fg_pct": 0.4545454545,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5555555556,
+      "orb_g": 0.1363636364,
+      "drb_g": 0.8636363636,
+      "trb_g": 1,
+      "ast_g": 0.8181818182,
+      "stl_g": 0.1818181818,
+      "blk_g": 0,
+      "tov_g": 0.5454545455,
+      "pf_g": 0.8636363636,
+      "pts_g": 1.4545454545
+    },
+    {
+      "season": "2024-25",
+      "team": "Binghamton",
+      "conf": "AEC",
+      "gp": 21,
+      "gs": 9,
+      "mp_g": 12.7619047619,
+      "fg_pct": 0.2702702703,
+      "fg3_pct": 0,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.0952380952,
+      "drb_g": 0.8571428571,
+      "trb_g": 0.9523809524,
+      "ast_g": 1.7142857143,
+      "stl_g": 0.380952381,
+      "blk_g": 0.0952380952,
+      "tov_g": 1.380952381,
+      "pf_g": 1.3333333333,
+      "pts_g": 1.1904761905
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jayden-lemond-1.html",
+  "last_scraped": "2025-11-01T04:42:48.334Z"
+}

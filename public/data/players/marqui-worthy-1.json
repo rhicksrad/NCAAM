@@ -1,0 +1,48 @@
+{
+  "slug": "marqui-worthy-1",
+  "name": "Marqui Worthy",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 25,
+      "gs": 0,
+      "mp_g": 11.32,
+      "fg_pct": 0.3384615385,
+      "fg3_pct": 0.0952380952,
+      "ft_pct": 0.3076923077,
+      "orb_g": 0.12,
+      "drb_g": 0.48,
+      "trb_g": 0.6,
+      "ast_g": 0.84,
+      "stl_g": 0.28,
+      "blk_g": 0.16,
+      "tov_g": 0.56,
+      "pf_g": 1.36,
+      "pts_g": 2
+    },
+    {
+      "season": "2024-25",
+      "team": "Massachusetts",
+      "conf": "A-10",
+      "gp": 31,
+      "gs": 3,
+      "mp_g": 18.1935483871,
+      "fg_pct": 0.4093567251,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.7,
+      "orb_g": 0.3225806452,
+      "drb_g": 1.1935483871,
+      "trb_g": 1.5161290323,
+      "ast_g": 1.8709677419,
+      "stl_g": 0.7096774194,
+      "blk_g": 0.1935483871,
+      "tov_g": 1.6774193548,
+      "pf_g": 1.5806451613,
+      "pts_g": 5.8064516129
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/marqui-worthy-1.html",
+  "last_scraped": "2025-11-01T04:44:47.428Z"
+}

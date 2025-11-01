@@ -1,0 +1,28 @@
+{
+  "slug": "ryan-pettis-1",
+  "name": "Ryan Pettis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Fordham",
+      "conf": "A-10",
+      "gp": 24,
+      "gs": 1,
+      "mp_g": 7.6666666667,
+      "fg_pct": 0.2307692308,
+      "fg3_pct": 0.1333333333,
+      "ft_pct": 0.6428571429,
+      "orb_g": 0.2916666667,
+      "drb_g": 0.7083333333,
+      "trb_g": 1,
+      "ast_g": 0.7083333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.0416666667,
+      "tov_g": 0.5,
+      "pf_g": 1.125,
+      "pts_g": 0.9583333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ryan-pettis-1.html",
+  "last_scraped": "2025-11-01T04:46:20.354Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "dillon-battie-1",
+  "name": "Dillon Battie",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Temple",
+      "conf": "AAC",
+      "gp": 20,
+      "gs": 1,
+      "mp_g": 7.9,
+      "fg_pct": 0.6829268293,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.6818181818,
+      "orb_g": 0.75,
+      "drb_g": 1,
+      "trb_g": 1.75,
+      "ast_g": 0.15,
+      "stl_g": 0.15,
+      "blk_g": 0.25,
+      "tov_g": 0.1,
+      "pf_g": 0.9,
+      "pts_g": 3.6
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/dillon-battie-1.html",
+  "last_scraped": "2025-11-01T04:40:47.323Z"
+}

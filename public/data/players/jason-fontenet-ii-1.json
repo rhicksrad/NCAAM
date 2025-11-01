@@ -1,0 +1,48 @@
+{
+  "slug": "jason-fontenet-ii-1",
+  "name": "Jason Fontenet II",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "UC Santa Barbara",
+      "conf": "Big West",
+      "gp": 31,
+      "gs": 0,
+      "mp_g": 23.1612903226,
+      "fg_pct": 0.3560606061,
+      "fg3_pct": 0.3376623377,
+      "ft_pct": 0.7755102041,
+      "orb_g": 0.3870967742,
+      "drb_g": 3.7419354839,
+      "trb_g": 4.1290322581,
+      "ast_g": 1.4516129032,
+      "stl_g": 0.6129032258,
+      "blk_g": 0.2258064516,
+      "tov_g": 1.2903225806,
+      "pf_g": 2.2903225806,
+      "pts_g": 5.0967741935
+    },
+    {
+      "season": "2024-25",
+      "team": "UC Santa Barbara",
+      "conf": "Big West",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 29.5294117647,
+      "fg_pct": 0.4160305344,
+      "fg3_pct": 0.3177570093,
+      "ft_pct": 0.7706422018,
+      "orb_g": 1.0588235294,
+      "drb_g": 4.9117647059,
+      "trb_g": 5.9705882353,
+      "ast_g": 2.6764705882,
+      "stl_g": 0.8529411765,
+      "blk_g": 0.2941176471,
+      "tov_g": 1.6470588235,
+      "pf_g": 2.6176470588,
+      "pts_g": 9.8823529412
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jason-fontenet-ii-1.html",
+  "last_scraped": "2025-11-01T04:42:39.953Z"
+}

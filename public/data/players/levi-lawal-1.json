@@ -1,0 +1,48 @@
+{
+  "slug": "levi-lawal-1",
+  "name": "Levi Lawal",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 24,
+      "gs": 19,
+      "mp_g": 22.5833333333,
+      "fg_pct": 0.6176470588,
+      "fg3_pct": 0,
+      "ft_pct": 0.5454545455,
+      "orb_g": 2,
+      "drb_g": 3.9583333333,
+      "trb_g": 5.9583333333,
+      "ast_g": 0.125,
+      "stl_g": 0.625,
+      "blk_g": 0.7083333333,
+      "tov_g": 1.2083333333,
+      "pf_g": 3.4583333333,
+      "pts_g": 6.5
+    },
+    {
+      "season": "2024-25",
+      "team": "NJIT",
+      "conf": "AEC",
+      "gp": 21,
+      "gs": 9,
+      "mp_g": 19.8571428571,
+      "fg_pct": 0.4125,
+      "fg3_pct": 0.34375,
+      "ft_pct": 0.1666666667,
+      "orb_g": 1.3333333333,
+      "drb_g": 3,
+      "trb_g": 4.3333333333,
+      "ast_g": 0.2380952381,
+      "stl_g": 0.2857142857,
+      "blk_g": 0.4285714286,
+      "tov_g": 0.619047619,
+      "pf_g": 2.1904761905,
+      "pts_g": 3.7619047619
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/levi-lawal-1.html",
+  "last_scraped": "2025-11-01T04:44:21.304Z"
+}

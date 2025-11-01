@@ -1,0 +1,48 @@
+{
+  "slug": "george-kimble-iii-1",
+  "name": "George Kimble III",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - juco",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Kentucky",
+      "conf": "A-Sun",
+      "gp": 25,
+      "gs": 25,
+      "mp_g": 29.72,
+      "fg_pct": 0.3796791444,
+      "fg3_pct": 0.347826087,
+      "ft_pct": 0.8512396694,
+      "orb_g": 1.12,
+      "drb_g": 2.56,
+      "trb_g": 3.68,
+      "ast_g": 3.24,
+      "stl_g": 2.6,
+      "blk_g": 0.36,
+      "tov_g": 2.6,
+      "pf_g": 1.8,
+      "pts_g": 18.04
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/george-kimble-iii-1.html",
+  "last_scraped": "2025-11-01T04:41:22.099Z"
+}

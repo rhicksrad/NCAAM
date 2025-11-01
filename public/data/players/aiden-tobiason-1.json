@@ -1,0 +1,28 @@
+{
+  "slug": "aiden-tobiason-1",
+  "name": "Aiden Tobiason",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Temple",
+      "conf": "AAC",
+      "gp": 27,
+      "gs": 22,
+      "mp_g": 20.4814814815,
+      "fg_pct": 0.4588235294,
+      "fg3_pct": 0.4117647059,
+      "ft_pct": 0.7692307692,
+      "orb_g": 0.9259259259,
+      "drb_g": 1.2222222222,
+      "trb_g": 2.1481481481,
+      "ast_g": 0.962962963,
+      "stl_g": 0.7777777778,
+      "blk_g": 0.2962962963,
+      "tov_g": 0.2592592593,
+      "pf_g": 1.7037037037,
+      "pts_g": 4.7777777778
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aiden-tobiason-1.html",
+  "last_scraped": "2025-11-01T04:34:31.298Z"
+}

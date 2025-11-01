@@ -1,0 +1,28 @@
+{
+  "slug": "matas-vokietaitis-1",
+  "name": "Matas Vokietaitis",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Florida Atlantic",
+      "conf": "AAC",
+      "gp": 34,
+      "gs": 20,
+      "mp_g": 17.6176470588,
+      "fg_pct": 0.6772486772,
+      "fg3_pct": 0,
+      "ft_pct": 0.6363636364,
+      "orb_g": 2.1470588235,
+      "drb_g": 3.2941176471,
+      "trb_g": 5.4411764706,
+      "ast_g": 0.2647058824,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.7647058824,
+      "tov_g": 1.2352941176,
+      "pf_g": 2.7058823529,
+      "pts_g": 10.2058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/matas-vokietaitis-1.html",
+  "last_scraped": "2025-11-01T04:44:52.247Z"
+}

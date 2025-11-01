@@ -1,0 +1,48 @@
+{
+  "slug": "donovan-rivers-1",
+  "name": "Donovan Rivers",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Jacksonville",
+      "conf": "A-Sun",
+      "gp": 33,
+      "gs": 8,
+      "mp_g": 16.9393939394,
+      "fg_pct": 0.5666666667,
+      "fg3_pct": 0,
+      "ft_pct": 0.5818181818,
+      "orb_g": 1.6060606061,
+      "drb_g": 1.9696969697,
+      "trb_g": 3.5757575758,
+      "ast_g": 0.4242424242,
+      "stl_g": 0.3939393939,
+      "blk_g": 0.5454545455,
+      "tov_g": 1,
+      "pf_g": 2,
+      "pts_g": 3.0303030303
+    },
+    {
+      "season": "2024-25",
+      "team": "Jacksonville",
+      "conf": "A-Sun",
+      "gp": 31,
+      "gs": 10,
+      "mp_g": 14.4193548387,
+      "fg_pct": 0.5230769231,
+      "fg3_pct": null,
+      "ft_pct": 0.3684210526,
+      "orb_g": 1.1290322581,
+      "drb_g": 1.9677419355,
+      "trb_g": 3.0967741935,
+      "ast_g": 0.1612903226,
+      "stl_g": 0.3870967742,
+      "blk_g": 1,
+      "tov_g": 0.5483870968,
+      "pf_g": 2.064516129,
+      "pts_g": 2.4193548387
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/donovan-rivers-1.html",
+  "last_scraped": "2025-11-01T04:40:52.213Z"
+}

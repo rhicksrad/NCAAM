@@ -1,0 +1,28 @@
+{
+  "slug": "parker-strauss-1",
+  "name": "Parker Strauss",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "UC Riverside",
+      "conf": "Big West",
+      "gp": 26,
+      "gs": 1,
+      "mp_g": 13.3076923077,
+      "fg_pct": 0.4225352113,
+      "fg3_pct": 0.3529411765,
+      "ft_pct": 0.7777777778,
+      "orb_g": 0.6153846154,
+      "drb_g": 1.8076923077,
+      "trb_g": 2.4230769231,
+      "ast_g": 0.6923076923,
+      "stl_g": 0.6923076923,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.8076923077,
+      "pf_g": 1.5384615385,
+      "pts_g": 3.2692307692
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/parker-strauss-1.html",
+  "last_scraped": "2025-11-01T04:45:45.451Z"
+}
