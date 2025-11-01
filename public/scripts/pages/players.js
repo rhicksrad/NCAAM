@@ -103,7 +103,6 @@ if (introParagraph && restrictToMetaConferences) {
 }
 const playerIndexByKey = new Map();
 const playerIndexByName = new Map();
-const teamIndexByKey = new Map();
 for (const entry of playerIndexEntries) {
     const nameKey = entry.name_key ?? normaliseName(entry.name);
     const teamKey = entry.team_key ?? normaliseTeam(entry.team);
@@ -112,16 +111,10 @@ for (const entry of playerIndexEntries) {
     const bucket = playerIndexByName.get(nameKey) ?? [];
     bucket.push(entry);
     playerIndexByName.set(nameKey, bucket);
-    if (!teamIndexByKey.has(teamKey)) {
-        if (!latestPlayerIndexSeason || entry.season === latestPlayerIndexSeason) {
-            teamIndexByKey.set(teamKey, entry);
-        }
-    }
 }
 for (const bucket of playerIndexByName.values()) {
     bucket.sort((a, b) => seasonLabelToYear(a.season) - seasonLabelToYear(b.season));
 }
-const restrictTeamsToIndex = teamIndexByKey.size > 0;
 const playerSlugCache = new Map();
 const playerStatsCache = new Map();
 const playerStatsRequests = new Map();
@@ -131,12 +124,6 @@ for (const team of teamsResponse.data) {
         continue;
     if (!conferenceMap.has(team.conference_id))
         continue;
-    if (restrictTeamsToIndex) {
-        const indexKey = normaliseTeam(team.full_name || team.name || team.college || "");
-        if (!teamIndexByKey.has(indexKey)) {
-            continue;
-        }
-    }
     if (!seenTeams.has(team.id)) {
         seenTeams.set(team.id, team);
     }
@@ -320,34 +307,11 @@ function updatePlayerStatsSection(section, slug, doc) {
         return;
     }
     section.innerHTML = "";
-    const header = document.createElement("div");
-    header.className = "player-card__stats-header";
-    const title = document.createElement("h3");
-    title.textContent = "College stats";
-    header.append(title);
-    const source = document.createElement("p");
-    source.className = "player-card__stats-meta";
-    source.textContent = "Source: College Basketball Reference";
-    header.append(source);
-    section.append(header);
+    const tableWrapper = document.createElement("div");
+    tableWrapper.className = "player-card__stats-scroll";
     const table = createPlayerStatsTable(seasons);
-    section.append(table);
-    const updated = lastUpdatedLabel(doc.last_scraped);
-    if (updated) {
-        const updatedRow = document.createElement("p");
-        updatedRow.className = "player-card__stats-meta";
-        updatedRow.textContent = `Last updated ${updated}`;
-        section.append(updatedRow);
-    }
-    const linkRow = document.createElement("p");
-    linkRow.className = "player-card__stats-meta";
-    const anchor = document.createElement("a");
-    anchor.href = doc.source;
-    anchor.target = "_blank";
-    anchor.rel = "noopener";
-    anchor.textContent = "View on College Basketball Reference";
-    linkRow.append(anchor);
-    section.append(linkRow);
+    tableWrapper.append(table);
+    section.append(tableWrapper);
 }
 function createPlayerStatsTable(seasons) {
     const table = document.createElement("table");
@@ -526,14 +490,6 @@ function ensureStatsForSlug(slug) {
     })();
     playerStatsRequests.set(slug, request);
     return request;
-}
-function lastUpdatedLabel(value) {
-    if (!value)
-        return null;
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime()))
-        return null;
-    return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
 function normaliseName(value) {
     return value

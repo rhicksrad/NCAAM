@@ -681,53 +681,60 @@ html[data-theme="dark"] .teams-map__tooltip {
   gap: var(--space-xs);
 }
 
-.player-card__stats-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.25rem;
-  font-size: 0.8rem;
-  color: color-mix(in oklab, var(--color-steel) 85%, var(--color-ink) 15%);
+.player-card__stats-scroll {
+  margin: 0 calc(var(--space-md) * -1);
+  padding: 0 calc(var(--space-md));
+  overflow-x: auto;
 }
 
-.player-card__stats-header strong {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.player-card__stats-scroll::-webkit-scrollbar {
+  height: 0.4rem;
 }
 
-.player-card__stats-header span {
-  font-variant-numeric: tabular-nums;
+.player-card__stats-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-steel) 45%, transparent);
+  border-radius: 999px;
 }
 
-.player-card__stats-grid {
-  display: grid;
-  gap: 0.3rem;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+.player-card__stats-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.player-card__stat {
-  position: relative;
-  display: grid;
-  place-items: center;
-  padding: 0.35rem 0.25rem;
-  border-radius: var(--radius-sm);
-  background: color-mix(in oklab, var(--color-cream) 82%, transparent);
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+.player-card__stats-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
   color: color-mix(in oklab, var(--color-ink) 88%, var(--color-steel) 12%);
-  text-align: center;
-  line-height: 1.1;
 }
 
-.player-card__stat::after {
-  content: attr(data-label);
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
+.player-card__stats-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in oklab, var(--color-cream) 94%, transparent);
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--color-steel) 78%, var(--color-ink) 22%);
-  margin-top: 0.1rem;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  color: color-mix(in oklab, var(--color-steel) 80%, var(--color-ink) 20%);
+}
+
+.player-card__stats-table th,
+.player-card__stats-table td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+  white-space: nowrap;
+}
+
+.player-card__stats-table th.numeric,
+.player-card__stats-table td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-card__stats-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .player-card__stats-empty {
@@ -767,13 +774,17 @@ html[data-theme="dark"] .teams-map__tooltip {
   border-top-color: color-mix(in oklab, white 14%, transparent);
 }
 
-[data-theme="dark"] .player-card__stat {
-  background: color-mix(in oklab, var(--color-slate) 68%, transparent);
+[data-theme="dark"] .player-card__stats-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, white 30%, transparent);
+}
+
+[data-theme="dark"] .player-card__stats-table {
   color: color-mix(in oklab, white 88%, transparent);
 }
 
-[data-theme="dark"] .player-card__stat::after {
-  color: color-mix(in oklab, white 72%, transparent);
+[data-theme="dark"] .player-card__stats-table thead th {
+  background: color-mix(in oklab, var(--color-slate) 70%, transparent);
+  color: color-mix(in oklab, white 78%, transparent);
 }
 
 [data-theme="dark"] .player-card__stats-empty {
