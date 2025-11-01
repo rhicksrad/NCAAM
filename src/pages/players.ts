@@ -302,8 +302,9 @@ function renderRoster(container: HTMLElement, players: Player[]): void {
     return;
   }
 
-  const list = document.createElement("div");
-  list.className = "roster-grid";
+  const list = document.createElement("ul");
+  list.className = "roster-list";
+  list.setAttribute("role", "list");
 
   const sorted = [...players].sort((a, b) => {
     const last = a.last_name.localeCompare(b.last_name, "en", { sensitivity: "base" });
@@ -312,7 +313,10 @@ function renderRoster(container: HTMLElement, players: Player[]): void {
   });
 
   for (const player of sorted) {
-    list.append(renderPlayerCard(player));
+    const item = document.createElement("li");
+    item.className = "roster-list__item";
+    item.append(renderPlayerCard(player));
+    list.append(item);
   }
 
   container.innerHTML = "";

@@ -608,11 +608,17 @@ html[data-theme="dark"] .teams-map__tooltip {
   gap: var(--space-sm);
 }
 
-.roster-grid {
+.roster-list {
   margin-top: var(--space-md);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-sm);
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  list-style: none;
+  padding: 0;
+}
+
+.roster-list__item {
+  display: block;
 }
 
 .roster-status {
