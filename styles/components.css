@@ -834,6 +834,13 @@ html[data-theme="dark"] .teams-map__tooltip {
   font-size: 0.9rem;
 }
 
+.player-leaderboard__note {
+  margin: 0;
+  padding-inline: 0.5rem;
+  font-size: 0.75rem;
+  color: color-mix(in oklab, var(--color-steel) 78%, var(--color-ink) 22%);
+}
+
 .player-leaderboard__list {
   list-style: none;
   margin: 0;
