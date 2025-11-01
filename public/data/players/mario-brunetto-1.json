@@ -1,0 +1,28 @@
+{
+  "slug": "mario-brunetto-1",
+  "name": "Mario Brunetto",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Eastern Michigan",
+      "conf": "MAC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 3.75,
+      "fg_pct": 0.2,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.3333333333,
+      "orb_g": 0,
+      "drb_g": 0.75,
+      "trb_g": 0.75,
+      "ast_g": 0.5,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.25,
+      "pf_g": 0,
+      "pts_g": 1
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mario-brunetto-1.html",
+  "last_scraped": "2025-11-01T15:06:36.550Z"
+}

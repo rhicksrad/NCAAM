@@ -1,0 +1,28 @@
+{
+  "slug": "cole-mccabe-1",
+  "name": "Cole McCabe",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rider",
+      "conf": "MAAC",
+      "gp": 26,
+      "gs": 1,
+      "mp_g": 7.3461538462,
+      "fg_pct": 0.625,
+      "fg3_pct": 0,
+      "ft_pct": 0.6086956522,
+      "orb_g": 0.7692307692,
+      "drb_g": 0.7307692308,
+      "trb_g": 1.5,
+      "ast_g": 0.2692307692,
+      "stl_g": 0.0769230769,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.4230769231,
+      "pf_g": 1.0769230769,
+      "pts_g": 2.0769230769
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cole-mccabe-1.html",
+  "last_scraped": "2025-11-01T15:00:49.417Z"
+}

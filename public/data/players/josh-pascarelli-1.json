@@ -1,0 +1,48 @@
+{
+  "slug": "josh-pascarelli-1",
+  "name": "Josh Pascarelli",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marist",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 28,
+      "mp_g": 27.1290322581,
+      "fg_pct": 0.4375,
+      "fg3_pct": 0.3780487805,
+      "ft_pct": 0.6538461538,
+      "orb_g": 0.1935483871,
+      "drb_g": 2.7741935484,
+      "trb_g": 2.9677419355,
+      "ast_g": 1.4193548387,
+      "stl_g": 0.1935483871,
+      "blk_g": 0.064516129,
+      "tov_g": 1.2580645161,
+      "pf_g": 1.064516129,
+      "pts_g": 10.6774193548
+    },
+    {
+      "season": "2024-25",
+      "team": "Marist",
+      "conf": "MAAC",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 34.4666666667,
+      "fg_pct": 0.4478371501,
+      "fg3_pct": 0.3932038835,
+      "ft_pct": 0.7678571429,
+      "orb_g": 0.3666666667,
+      "drb_g": 3.2,
+      "trb_g": 3.5666666667,
+      "ast_g": 2.3333333333,
+      "stl_g": 0.7,
+      "blk_g": 0.1666666667,
+      "tov_g": 1.7,
+      "pf_g": 1.2333333333,
+      "pts_g": 15.8666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/josh-pascarelli-1.html",
+  "last_scraped": "2025-11-01T15:01:19.243Z"
+}

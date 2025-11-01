@@ -1,0 +1,28 @@
+{
+  "slug": "frederiks-meinarts-1",
+  "name": "Frederiks Meinarts",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 9.4166666667,
+      "fg_pct": 0.5333333333,
+      "fg3_pct": 0.5,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.25,
+      "drb_g": 1.4166666667,
+      "trb_g": 1.6666666667,
+      "ast_g": 0.3333333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0.375,
+      "tov_g": 0.25,
+      "pf_g": 1.125,
+      "pts_g": 2.4583333333
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/frederiks-meinarts-1.html",
+  "last_scraped": "2025-11-01T15:06:12.412Z"
+}

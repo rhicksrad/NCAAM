@@ -1,0 +1,28 @@
+{
+  "slug": "abdou-khadre-kebe-1",
+  "name": "Abdou Khadre Kébé",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Mount St. Mary's",
+      "conf": "MAAC",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 11.1034482759,
+      "fg_pct": 0.3095238095,
+      "fg3_pct": 0.2352941176,
+      "ft_pct": 0.6875,
+      "orb_g": 0.3448275862,
+      "drb_g": 1,
+      "trb_g": 1.3448275862,
+      "ast_g": 0.4482758621,
+      "stl_g": 0.5862068966,
+      "blk_g": 0.0344827586,
+      "tov_g": 1.0344827586,
+      "pf_g": 1.2413793103,
+      "pts_g": 2.5862068966
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/abdou-khadre-kebe-1.html",
+  "last_scraped": "2025-11-01T15:00:30.470Z"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ben-michaels-1",
+  "name": "Ben Michaels",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 29,
+      "gs": 15,
+      "mp_g": 22.4137931034,
+      "fg_pct": 0.4564102564,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.6808510638,
+      "orb_g": 1.724137931,
+      "drb_g": 2.275862069,
+      "trb_g": 4,
+      "ast_g": 1,
+      "stl_g": 0.6551724138,
+      "blk_g": 0.7931034483,
+      "tov_g": 1.0344827586,
+      "pf_g": 2.8275862069,
+      "pts_g": 8.0689655172
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ben-michaels-1.html",
+  "last_scraped": "2025-11-01T15:05:51.564Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "arne-osojnik-1",
+  "name": "Arne Osojnik",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Eastern Michigan",
+      "conf": "MAC",
+      "gp": 31,
+      "gs": 24,
+      "mp_g": 26.8387096774,
+      "fg_pct": 0.3944223108,
+      "fg3_pct": 0.3651685393,
+      "ft_pct": 0.6470588235,
+      "orb_g": 0.7419354839,
+      "drb_g": 2.7419354839,
+      "trb_g": 3.4838709677,
+      "ast_g": 0.6129032258,
+      "stl_g": 1,
+      "blk_g": 0.4838709677,
+      "tov_g": 0.8709677419,
+      "pf_g": 2.1935483871,
+      "pts_g": 8.8387096774
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Michigan",
+      "conf": "MAC",
+      "gp": 31,
+      "gs": 20,
+      "mp_g": 26.5483870968,
+      "fg_pct": 0.43,
+      "fg3_pct": 0.3333333333,
+      "ft_pct": 0.9230769231,
+      "orb_g": 0.6774193548,
+      "drb_g": 2.9677419355,
+      "trb_g": 3.6451612903,
+      "ast_g": 0.9032258065,
+      "stl_g": 1.2258064516,
+      "blk_g": 0.3870967742,
+      "tov_g": 0.8709677419,
+      "pf_g": 2.4193548387,
+      "pts_g": 7.6451612903
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/arne-osojnik-1.html",
+  "last_scraped": "2025-11-01T15:05:48.584Z"
+}

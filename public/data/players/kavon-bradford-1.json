@@ -1,0 +1,28 @@
+{
+  "slug": "kavon-bradford-1",
+  "name": "Kavon Bradford",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 29,
+      "gs": 0,
+      "mp_g": 10.8275862069,
+      "fg_pct": 0.4512195122,
+      "fg3_pct": 0.4166666667,
+      "ft_pct": 0.619047619,
+      "orb_g": 0.3448275862,
+      "drb_g": 1.3448275862,
+      "trb_g": 1.6896551724,
+      "ast_g": 1.1724137931,
+      "stl_g": 0.4827586207,
+      "blk_g": 0.275862069,
+      "tov_g": 1.3793103448,
+      "pf_g": 1.5862068966,
+      "pts_g": 4.0689655172
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kavon-bradford-1.html",
+  "last_scraped": "2025-11-01T15:06:33.477Z"
+}

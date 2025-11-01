@@ -1,0 +1,48 @@
+{
+  "slug": "jaden-winston-1",
+  "name": "Jaden Winston",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 34.7666666667,
+      "fg_pct": 0.3975903614,
+      "fg3_pct": 0.2666666667,
+      "ft_pct": 0.7215189873,
+      "orb_g": 0.7,
+      "drb_g": 3.2333333333,
+      "trb_g": 3.9333333333,
+      "ast_g": 4.9666666667,
+      "stl_g": 2.1666666667,
+      "blk_g": 0.0666666667,
+      "tov_g": 2.8666666667,
+      "pf_g": 2.7,
+      "pts_g": 9.3
+    },
+    {
+      "season": "2024-25",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 33.2903225806,
+      "fg_pct": 0.4155844156,
+      "fg3_pct": 0.2873563218,
+      "ft_pct": 0.7397260274,
+      "orb_g": 0.4193548387,
+      "drb_g": 2.8709677419,
+      "trb_g": 3.2903225806,
+      "ast_g": 4.2580645161,
+      "stl_g": 2,
+      "blk_g": 0.1612903226,
+      "tov_g": 2.0967741935,
+      "pf_g": 2.5161290323,
+      "pts_g": 8.7419354839
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-winston-1.html",
+  "last_scraped": "2025-11-01T15:01:06.815Z"
+}

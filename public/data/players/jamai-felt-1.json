@@ -1,0 +1,28 @@
+{
+  "slug": "jamai-felt-1",
+  "name": "Jamai Felt",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Bowling Green",
+      "conf": "MAC",
+      "gp": 32,
+      "gs": 24,
+      "mp_g": 20.5625,
+      "fg_pct": 0.6422018349,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.5735294118,
+      "orb_g": 2.15625,
+      "drb_g": 4.09375,
+      "trb_g": 6.25,
+      "ast_g": 0.34375,
+      "stl_g": 0.4375,
+      "blk_g": 1.4375,
+      "tov_g": 1.09375,
+      "pf_g": 2.59375,
+      "pts_g": 5.65625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jamai-felt-1.html",
+  "last_scraped": "2025-11-01T15:06:20.570Z"
+}

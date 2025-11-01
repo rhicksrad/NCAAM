@@ -1,0 +1,28 @@
+{
+  "slug": "justin-menard-1",
+  "name": "Justin Menard",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Iona",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 8,
+      "mp_g": 22.1612903226,
+      "fg_pct": 0.3464052288,
+      "fg3_pct": 0.3551401869,
+      "ft_pct": 0.8709677419,
+      "orb_g": 0.1290322581,
+      "drb_g": 0.9032258065,
+      "trb_g": 1.0322580645,
+      "ast_g": 2.6129032258,
+      "stl_g": 0.6774193548,
+      "blk_g": 0.1290322581,
+      "tov_g": 0.7419354839,
+      "pf_g": 1.7741935484,
+      "pts_g": 5.5161290323
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/justin-menard-1.html",
+  "last_scraped": "2025-11-01T15:01:20.703Z"
+}

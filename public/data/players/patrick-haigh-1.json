@@ -1,0 +1,48 @@
+{
+  "slug": "patrick-haigh-1",
+  "name": "Patrick Haigh",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Mount St. Mary's",
+      "conf": "MAAC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 3.5833333333,
+      "fg_pct": 0.4,
+      "fg3_pct": 0.4444444444,
+      "ft_pct": null,
+      "orb_g": 0.0833333333,
+      "drb_g": 0.1666666667,
+      "trb_g": 0.25,
+      "ast_g": 0.1666666667,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0.0833333333,
+      "pf_g": 0.1666666667,
+      "pts_g": 1
+    },
+    {
+      "season": "2024-25",
+      "team": "Mount St. Mary's",
+      "conf": "MAAC",
+      "gp": 19,
+      "gs": 0,
+      "mp_g": 6.4736842105,
+      "fg_pct": 0.2666666667,
+      "fg3_pct": 0.243902439,
+      "ft_pct": null,
+      "orb_g": 0.2105263158,
+      "drb_g": 0.2631578947,
+      "trb_g": 0.4736842105,
+      "ast_g": 0.1578947368,
+      "stl_g": 0.0526315789,
+      "blk_g": 0.1052631579,
+      "tov_g": 0.2631578947,
+      "pf_g": 0.5263157895,
+      "pts_g": 1.7894736842
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/patrick-haigh-1.html",
+  "last_scraped": "2025-11-01T15:01:42.539Z"
+}

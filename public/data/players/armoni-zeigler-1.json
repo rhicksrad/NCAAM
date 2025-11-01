@@ -1,0 +1,48 @@
+{
+  "slug": "armoni-zeigler-1",
+  "name": "Armoni Zeigler",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Saint Peter's",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 10,
+      "mp_g": 18.9393939394,
+      "fg_pct": 0.3865979381,
+      "fg3_pct": 0.3484848485,
+      "ft_pct": 0.62,
+      "orb_g": 1.0303030303,
+      "drb_g": 1.4848484848,
+      "trb_g": 2.5151515152,
+      "ast_g": 1.1515151515,
+      "stl_g": 0.8787878788,
+      "blk_g": 0.4848484848,
+      "tov_g": 0.9696969697,
+      "pf_g": 1,
+      "pts_g": 6.1818181818
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Peter's",
+      "conf": "MAAC",
+      "gp": 27,
+      "gs": 23,
+      "mp_g": 30.5555555556,
+      "fg_pct": 0.4653061224,
+      "fg3_pct": 0.3015873016,
+      "ft_pct": 0.7123287671,
+      "orb_g": 1.4444444444,
+      "drb_g": 4.6666666667,
+      "trb_g": 6.1111111111,
+      "ast_g": 1.5185185185,
+      "stl_g": 1.5925925926,
+      "blk_g": 0.2592592593,
+      "tov_g": 2.1481481481,
+      "pf_g": 1.7407407407,
+      "pts_g": 11.0740740741
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/armoni-zeigler-1.html",
+  "last_scraped": "2025-11-01T15:00:40.000Z"
+}

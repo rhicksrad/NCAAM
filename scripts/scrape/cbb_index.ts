@@ -119,6 +119,8 @@ const CONFERENCE_SLUG_OVERRIDES = new Map<string, ConferenceDetail>([
   ["cusa", { code: "CUSA", name: "Conference USA" }],
   ["horizon", { code: "HORIZ", name: "Horizon League" }],
   ["ivy", { code: "IVY", name: "Ivy League" }],
+  ["maac", { code: "MAAC", name: "Metro Atlantic Athletic Conference" }],
+  ["mac", { code: "MAC", name: "Mid-American Conference" }],
 ]);
 
 const conferenceTeamCache = new Map<string, Promise<string[]>>();

@@ -1,0 +1,28 @@
+{
+  "slug": "flash-burton-1",
+  "name": "Flash Burton",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Rider",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 12,
+      "mp_g": 22.5454545455,
+      "fg_pct": 0.3963963964,
+      "fg3_pct": 0.26,
+      "ft_pct": 0.6853932584,
+      "orb_g": 0.303030303,
+      "drb_g": 1.9696969697,
+      "trb_g": 2.2727272727,
+      "ast_g": 2.1515151515,
+      "stl_g": 0.9090909091,
+      "blk_g": 0.3636363636,
+      "tov_g": 1.5151515152,
+      "pf_g": 1.7575757576,
+      "pts_g": 7.5757575758
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/flash-burton-1.html",
+  "last_scraped": "2025-11-01T15:00:58.897Z"
+}

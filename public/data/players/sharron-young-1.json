@@ -1,0 +1,28 @@
+{
+  "slug": "sharron-young-1",
+  "name": "Sharron Young",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Akron",
+      "conf": "MAC",
+      "gp": 35,
+      "gs": 0,
+      "mp_g": 16.0285714286,
+      "fg_pct": 0.46,
+      "fg3_pct": 0.3982300885,
+      "ft_pct": 0.8157894737,
+      "orb_g": 0.5428571429,
+      "drb_g": 1.3142857143,
+      "trb_g": 1.8571428571,
+      "ast_g": 1.6857142857,
+      "stl_g": 1,
+      "blk_g": 0,
+      "tov_g": 1.2285714286,
+      "pf_g": 1.9714285714,
+      "pts_g": 7.4285714286
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/sharron-young-1.html",
+  "last_scraped": "2025-11-01T15:06:57.247Z"
+}

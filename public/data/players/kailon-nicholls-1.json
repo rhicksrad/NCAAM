@@ -1,0 +1,48 @@
+{
+  "slug": "kailon-nicholls-1",
+  "name": "Kailon Nicholls",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Duquesne",
+      "conf": "A-10",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 6.5555555556,
+      "fg_pct": 0.5,
+      "fg3_pct": 1,
+      "ft_pct": null,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.4444444444,
+      "trb_g": 0.5555555556,
+      "ast_g": 0.8888888889,
+      "stl_g": 0.2222222222,
+      "blk_g": 0,
+      "tov_g": 0.6666666667,
+      "pf_g": 0.4444444444,
+      "pts_g": 1
+    },
+    {
+      "season": "2024-25",
+      "team": "Northern Illinois",
+      "conf": "MAC",
+      "gp": 31,
+      "gs": 12,
+      "mp_g": 22.3548387097,
+      "fg_pct": 0.367816092,
+      "fg3_pct": 0.313253012,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.0967741935,
+      "drb_g": 1.5806451613,
+      "trb_g": 1.6774193548,
+      "ast_g": 1.5483870968,
+      "stl_g": 0.6451612903,
+      "blk_g": 0.0967741935,
+      "tov_g": 1.6129032258,
+      "pf_g": 2.1290322581,
+      "pts_g": 5.4193548387
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kailon-nicholls-1.html",
+  "last_scraped": "2025-11-01T15:06:31.842Z"
+}

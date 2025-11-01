@@ -1,0 +1,48 @@
+{
+  "slug": "ife-west-ingram-1",
+  "name": "Ife West-Ingram",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Rider",
+      "conf": "MAAC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 6.45,
+      "fg_pct": 0.3414634146,
+      "fg3_pct": null,
+      "ft_pct": 0.5714285714,
+      "orb_g": 0.6,
+      "drb_g": 1.35,
+      "trb_g": 1.95,
+      "ast_g": 0.35,
+      "stl_g": 0.2,
+      "blk_g": 0.25,
+      "tov_g": 0.35,
+      "pf_g": 1.05,
+      "pts_g": 1.8
+    },
+    {
+      "season": "2024-25",
+      "team": "Rider",
+      "conf": "MAAC",
+      "gp": 26,
+      "gs": 7,
+      "mp_g": 12.6538461538,
+      "fg_pct": 0.582278481,
+      "fg3_pct": 0,
+      "ft_pct": 0.5909090909,
+      "orb_g": 1.0769230769,
+      "drb_g": 1.5384615385,
+      "trb_g": 2.6153846154,
+      "ast_g": 0.9230769231,
+      "stl_g": 0.1153846154,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.8461538462,
+      "pf_g": 1.8076923077,
+      "pts_g": 4.0384615385
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/ife-west-ingram-1.html",
+  "last_scraped": "2025-11-01T15:01:01.963Z"
+}

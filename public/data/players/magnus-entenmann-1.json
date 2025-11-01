@@ -1,0 +1,48 @@
+{
+  "slug": "magnus-entenmann-1",
+  "name": "Magnus Entenmann",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kent State",
+      "conf": "MAC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 7.4285714286,
+      "fg_pct": 0.4,
+      "fg3_pct": 0,
+      "ft_pct": 0.8333333333,
+      "orb_g": 0.5238095238,
+      "drb_g": 1.0952380952,
+      "trb_g": 1.619047619,
+      "ast_g": 0.0476190476,
+      "stl_g": 0.0952380952,
+      "blk_g": 0.0476190476,
+      "tov_g": 0.380952381,
+      "pf_g": 1.1904761905,
+      "pts_g": 1
+    },
+    {
+      "season": "2024-25",
+      "team": "Kent State",
+      "conf": "MAC",
+      "gp": 23,
+      "gs": 0,
+      "mp_g": 5,
+      "fg_pct": 0.4166666667,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.6666666667,
+      "orb_g": 0.4347826087,
+      "drb_g": 0.3043478261,
+      "trb_g": 0.7391304348,
+      "ast_g": 0.1739130435,
+      "stl_g": 0.1739130435,
+      "blk_g": 0.2608695652,
+      "tov_g": 0.2173913043,
+      "pf_g": 0.5217391304,
+      "pts_g": 1.1739130435
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/magnus-entenmann-1.html",
+  "last_scraped": "2025-11-01T15:06:34.976Z"
+}

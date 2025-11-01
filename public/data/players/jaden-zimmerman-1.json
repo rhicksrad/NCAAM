@@ -1,0 +1,28 @@
+{
+  "slug": "jaden-zimmerman-1",
+  "name": "Jaden Zimmerman",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Quinnipiac",
+      "conf": "MAAC",
+      "gp": 33,
+      "gs": 20,
+      "mp_g": 24.2121212121,
+      "fg_pct": 0.4507042254,
+      "fg3_pct": 0.347107438,
+      "ft_pct": 0.6565656566,
+      "orb_g": 0.6363636364,
+      "drb_g": 1.4545454545,
+      "trb_g": 2.0909090909,
+      "ast_g": 0.6060606061,
+      "stl_g": 0.5454545455,
+      "blk_g": 0.303030303,
+      "tov_g": 1.0303030303,
+      "pf_g": 1.9696969697,
+      "pts_g": 11
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-zimmerman-1.html",
+  "last_scraped": "2025-11-01T15:01:06.774Z"
+}

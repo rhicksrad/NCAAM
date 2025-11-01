@@ -1,0 +1,28 @@
+{
+  "slug": "elijah-elliott-3",
+  "name": "Elijah Elliott",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Ohio",
+      "conf": "MAC",
+      "gp": 30,
+      "gs": 14,
+      "mp_g": 16.4666666667,
+      "fg_pct": 0.4390243902,
+      "fg3_pct": 0.3928571429,
+      "ft_pct": 0.6111111111,
+      "orb_g": 0.4333333333,
+      "drb_g": 2.7666666667,
+      "trb_g": 3.2,
+      "ast_g": 1.4333333333,
+      "stl_g": 0.4,
+      "blk_g": 0.2333333333,
+      "tov_g": 0.8333333333,
+      "pf_g": 1.5666666667,
+      "pts_g": 5.0666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/elijah-elliott-3.html",
+  "last_scraped": "2025-11-01T15:06:07.794Z"
+}

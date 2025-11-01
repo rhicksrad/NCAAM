@@ -1,0 +1,48 @@
+{
+  "slug": "lloyd-mcveigh-1",
+  "name": "Lloyd McVeigh",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 30,
+      "gs": 1,
+      "mp_g": 12.7,
+      "fg_pct": 0.3442622951,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": 0.75,
+      "orb_g": 0.6666666667,
+      "drb_g": 1.6666666667,
+      "trb_g": 2.3333333333,
+      "ast_g": 0.6666666667,
+      "stl_g": 0.3666666667,
+      "blk_g": 0.1,
+      "tov_g": 0.6666666667,
+      "pf_g": 1.2333333333,
+      "pts_g": 1.9
+    },
+    {
+      "season": "2024-25",
+      "team": "Buffalo",
+      "conf": "MAC",
+      "gp": 16,
+      "gs": 0,
+      "mp_g": 9.875,
+      "fg_pct": 0.3913043478,
+      "fg3_pct": 0.1578947368,
+      "ft_pct": 0.5789473684,
+      "orb_g": 0.4375,
+      "drb_g": 1.8125,
+      "trb_g": 2.25,
+      "ast_g": 0.4375,
+      "stl_g": 0.1875,
+      "blk_g": 0.125,
+      "tov_g": 0.5625,
+      "pf_g": 0.875,
+      "pts_g": 3.125
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/lloyd-mcveigh-1.html",
+  "last_scraped": "2025-11-01T15:06:35.010Z"
+}

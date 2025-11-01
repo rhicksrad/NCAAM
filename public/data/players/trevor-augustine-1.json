@@ -1,0 +1,28 @@
+{
+  "slug": "trevor-augustine-1",
+  "name": "Trevor Augustine",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Canisius",
+      "conf": "MAAC",
+      "gp": 4,
+      "gs": 0,
+      "mp_g": 1.25,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.25,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/trevor-augustine-1.html",
+  "last_scraped": "2025-11-01T15:01:57.991Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "jadin-collins-1",
+  "name": "Jadin Collins",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Marist",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 28.7419354839,
+      "fg_pct": 0.4565217391,
+      "fg3_pct": 0.2424242424,
+      "ft_pct": 0.6630434783,
+      "orb_g": 0.6129032258,
+      "drb_g": 3.064516129,
+      "trb_g": 3.6774193548,
+      "ast_g": 3.0322580645,
+      "stl_g": 1.6774193548,
+      "blk_g": 0.0967741935,
+      "tov_g": 2.5806451613,
+      "pf_g": 1.935483871,
+      "pts_g": 9
+    },
+    {
+      "season": "2024-25",
+      "team": "Marist",
+      "conf": "MAAC",
+      "gp": 30,
+      "gs": 30,
+      "mp_g": 32.9666666667,
+      "fg_pct": 0.4583333333,
+      "fg3_pct": 0.1666666667,
+      "ft_pct": 0.6615384615,
+      "orb_g": 1.4,
+      "drb_g": 3.9,
+      "trb_g": 5.3,
+      "ast_g": 3.7333333333,
+      "stl_g": 1.2333333333,
+      "blk_g": 0.1666666667,
+      "tov_g": 2.1,
+      "pf_g": 1.8666666667,
+      "pts_g": 8.3
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jadin-collins-1.html",
+  "last_scraped": "2025-11-01T15:01:08.355Z"
+}

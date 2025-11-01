@@ -1,0 +1,28 @@
+{
+  "slug": "fraser-roxburgh-1",
+  "name": "Fraser Roxburgh",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 19,
+      "gs": 1,
+      "mp_g": 20.4736842105,
+      "fg_pct": 0.5412844037,
+      "fg3_pct": 0.4782608696,
+      "ft_pct": 0.6571428571,
+      "orb_g": 1.3157894737,
+      "drb_g": 2.7894736842,
+      "trb_g": 4.1052631579,
+      "ast_g": 1.2105263158,
+      "stl_g": 0.1052631579,
+      "blk_g": 0.3157894737,
+      "tov_g": 1,
+      "pf_g": 1.0526315789,
+      "pts_g": 8.5789473684
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/fraser-roxburgh-1.html",
+  "last_scraped": "2025-11-01T15:01:00.493Z"
+}

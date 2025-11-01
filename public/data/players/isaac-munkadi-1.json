@@ -1,0 +1,28 @@
+{
+  "slug": "isaac-munkadi-1",
+  "name": "Isaac Munkadi",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Fairfield",
+      "conf": "MAAC",
+      "gp": 31,
+      "gs": 4,
+      "mp_g": 10.5483870968,
+      "fg_pct": 0.5471698113,
+      "fg3_pct": 0,
+      "ft_pct": 0.6086956522,
+      "orb_g": 1.2258064516,
+      "drb_g": 1.4516129032,
+      "trb_g": 2.6774193548,
+      "ast_g": 0.2580645161,
+      "stl_g": 0.1290322581,
+      "blk_g": 1.0322580645,
+      "tov_g": 0.6451612903,
+      "pf_g": 1.7096774194,
+      "pts_g": 2.3225806452
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaac-munkadi-1.html",
+  "last_scraped": "2025-11-01T15:01:03.701Z"
+}

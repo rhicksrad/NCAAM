@@ -1,0 +1,28 @@
+{
+  "slug": "alijah-curry-1",
+  "name": "Alijah Curry",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Manhattan",
+      "conf": "MAAC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 7.0588235294,
+      "fg_pct": 0.4444444444,
+      "fg3_pct": 0.4,
+      "ft_pct": 0.5,
+      "orb_g": 0.3529411765,
+      "drb_g": 0.7647058824,
+      "trb_g": 1.1176470588,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.1764705882,
+      "blk_g": 0.0588235294,
+      "tov_g": 0.4117647059,
+      "pf_g": 0.7058823529,
+      "pts_g": 1.1176470588
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/alijah-curry-1.html",
+  "last_scraped": "2025-11-01T15:00:33.762Z"
+}

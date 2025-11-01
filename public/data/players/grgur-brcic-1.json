@@ -1,0 +1,48 @@
+{
+  "slug": "grgur-brcic-1",
+  "name": "Grgur Brcic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Toledo",
+      "conf": "MAC",
+      "gp": 18,
+      "gs": 1,
+      "mp_g": 9.4444444444,
+      "fg_pct": 0.48,
+      "fg3_pct": null,
+      "ft_pct": 0.4545454545,
+      "orb_g": 0.6666666667,
+      "drb_g": 0.8333333333,
+      "trb_g": 1.5,
+      "ast_g": 0.3888888889,
+      "stl_g": 0.2777777778,
+      "blk_g": 0.0555555556,
+      "tov_g": 0.3333333333,
+      "pf_g": 1.2777777778,
+      "pts_g": 1.6111111111
+    },
+    {
+      "season": "2024-25",
+      "team": "Toledo",
+      "conf": "MAC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 9,
+      "fg_pct": 0.6428571429,
+      "fg3_pct": null,
+      "ft_pct": 0.3928571429,
+      "orb_g": 1.0384615385,
+      "drb_g": 1.1923076923,
+      "trb_g": 2.2307692308,
+      "ast_g": 0.1923076923,
+      "stl_g": 0.1923076923,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.1923076923,
+      "pf_g": 1.3846153846,
+      "pts_g": 2.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/grgur-brcic-1.html",
+  "last_scraped": "2025-11-01T15:06:14.182Z"
+}

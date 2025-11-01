@@ -1,0 +1,28 @@
+{
+  "slug": "samuel-cole-1",
+  "name": "Samuel Cole",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Niagara",
+      "conf": "MAAC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1.5,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": 0.5,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0.5,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0.5
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/samuel-cole-1.html",
+  "last_scraped": "2025-11-01T15:01:48.738Z"
+}

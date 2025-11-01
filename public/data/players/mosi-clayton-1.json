@@ -1,0 +1,48 @@
+{
+  "slug": "mosi-clayton-1",
+  "name": "Mosi Clayton",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 2,
+      "gs": 0,
+      "mp_g": 1,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    },
+    {
+      "season": "2024-25",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 1,
+      "gs": 0,
+      "mp_g": 2,
+      "fg_pct": 0,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0,
+      "drb_g": 0,
+      "trb_g": 0,
+      "ast_g": 1,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0,
+      "pts_g": 0
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/mosi-clayton-1.html",
+  "last_scraped": "2025-11-01T15:01:37.789Z"
+}

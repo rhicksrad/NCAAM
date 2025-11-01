@@ -1,0 +1,48 @@
+{
+  "slug": "bralyn-smith-1",
+  "name": "Bralyn Smith",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 30,
+      "gs": 13,
+      "mp_g": 23,
+      "fg_pct": 0.288590604,
+      "fg3_pct": 0.1607142857,
+      "ft_pct": 0.8823529412,
+      "orb_g": 0.3333333333,
+      "drb_g": 1.7333333333,
+      "trb_g": 2.0666666667,
+      "ast_g": 1.2333333333,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.2,
+      "tov_g": 1.4666666667,
+      "pf_g": 1.1,
+      "pts_g": 3.6666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Siena",
+      "conf": "MAAC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 5.3333333333,
+      "fg_pct": 0,
+      "fg3_pct": 0,
+      "ft_pct": 1,
+      "orb_g": 0,
+      "drb_g": 0.3333333333,
+      "trb_g": 0.3333333333,
+      "ast_g": 0,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0,
+      "pts_g": 0.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bralyn-smith-1.html",
+  "last_scraped": "2025-11-01T15:00:41.568Z"
+}
