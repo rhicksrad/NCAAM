@@ -1,0 +1,48 @@
+{
+  "slug": "nikola-milosevic-2",
+  "name": "Nikola Milosevic",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 3.3333333333,
+      "fg_pct": 0.2727272727,
+      "fg3_pct": 0.25,
+      "ft_pct": null,
+      "orb_g": 0.0833333333,
+      "drb_g": 0.5833333333,
+      "trb_g": 0.6666666667,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.0833333333,
+      "tov_g": 0.1666666667,
+      "pf_g": 0.6666666667,
+      "pts_g": 0.5833333333
+    },
+    {
+      "season": "2024-25",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 5.3,
+      "fg_pct": 0.3,
+      "fg3_pct": 0.2857142857,
+      "ft_pct": null,
+      "orb_g": 0.3,
+      "drb_g": 0.4,
+      "trb_g": 0.7,
+      "ast_g": 0.2,
+      "stl_g": 0,
+      "blk_g": 0.3,
+      "tov_g": 0.5,
+      "pf_g": 0.7,
+      "pts_g": 0.8
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/nikola-milosevic-2.html",
+  "last_scraped": "2025-11-01T16:15:23.976Z"
+}

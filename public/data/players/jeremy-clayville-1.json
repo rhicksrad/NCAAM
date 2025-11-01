@@ -1,0 +1,28 @@
+{
+  "slug": "jeremy-clayville-1",
+  "name": "Jeremy Clayville",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 32,
+      "gs": 7,
+      "mp_g": 19.21875,
+      "fg_pct": 0.4103773585,
+      "fg3_pct": 0.3885350318,
+      "ft_pct": 0.6923076923,
+      "orb_g": 0.34375,
+      "drb_g": 1.03125,
+      "trb_g": 1.375,
+      "ast_g": 1.53125,
+      "stl_g": 0.90625,
+      "blk_g": 0.03125,
+      "tov_g": 1.09375,
+      "pf_g": 1.15625,
+      "pts_g": 7.625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jeremy-clayville-1.html",
+  "last_scraped": "2025-11-01T16:14:46.961Z"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "bobby-rosenberger-1",
+  "name": "Bobby Rosenberger",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 30,
+      "gs": 26,
+      "mp_g": 26.2,
+      "fg_pct": 0.3769230769,
+      "fg3_pct": 0.314516129,
+      "ft_pct": 0.68,
+      "orb_g": 1.9333333333,
+      "drb_g": 2.8666666667,
+      "trb_g": 4.8,
+      "ast_g": 1.8,
+      "stl_g": 0.6,
+      "blk_g": 0.2333333333,
+      "tov_g": 1.0666666667,
+      "pf_g": 2.0666666667,
+      "pts_g": 8.9666666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 34,
+      "gs": 23,
+      "mp_g": 21.6764705882,
+      "fg_pct": 0.3956043956,
+      "fg3_pct": 0.2368421053,
+      "ft_pct": 0.7551020408,
+      "orb_g": 1,
+      "drb_g": 2.6470588235,
+      "trb_g": 3.6470588235,
+      "ast_g": 1.3823529412,
+      "stl_g": 0.5294117647,
+      "blk_g": 0.3235294118,
+      "tov_g": 1.1764705882,
+      "pf_g": 1.7941176471,
+      "pts_g": 8.2352941176
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/bobby-rosenberger-1.html",
+  "last_scraped": "2025-11-01T16:13:52.201Z"
+}

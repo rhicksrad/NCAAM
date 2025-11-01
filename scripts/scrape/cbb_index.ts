@@ -124,6 +124,8 @@ const CONFERENCE_SLUG_OVERRIDES = new Map<string, ConferenceDetail>([
   ["meac", { code: "MEAC", name: "Mid-Eastern Athletic Conference" }],
   ["mvc", { code: "MVC", name: "Missouri Valley Conference" }],
   ["mwc", { code: "MWC", name: "Mountain West Conference" }],
+  ["northeast", { code: "NEC", name: "Northeast Conference" }],
+  ["ovc", { code: "OVC", name: "Ohio Valley Conference" }],
 ]);
 
 const conferenceTeamCache = new Map<string, Promise<string[]>>();

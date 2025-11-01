@@ -1,0 +1,28 @@
+{
+  "slug": "terry-mcmorris-1",
+  "name": "Terry McMorris",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Eastern Illinois",
+      "conf": "OVC",
+      "gp": 20,
+      "gs": 0,
+      "mp_g": 6.3,
+      "fg_pct": 0.6315789474,
+      "fg3_pct": 1,
+      "ft_pct": 0.4090909091,
+      "orb_g": 0.3,
+      "drb_g": 1.15,
+      "trb_g": 1.45,
+      "ast_g": 0.25,
+      "stl_g": 0.5,
+      "blk_g": 0.05,
+      "tov_g": 0.15,
+      "pf_g": 0.35,
+      "pts_g": 1.7
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/terry-mcmorris-1.html",
+  "last_scraped": "2025-11-01T16:15:47.982Z"
+}

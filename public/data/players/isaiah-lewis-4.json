@@ -1,0 +1,48 @@
+{
+  "slug": "isaiah-lewis-4",
+  "name": "Isaiah Lewis",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - juco",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 33,
+      "gs": 25,
+      "mp_g": 31.0606060606,
+      "fg_pct": 0.3502994012,
+      "fg3_pct": 0.2869565217,
+      "ft_pct": 0.7719298246,
+      "orb_g": 0.5454545455,
+      "drb_g": 3.0303030303,
+      "trb_g": 3.5757575758,
+      "ast_g": 2.9696969697,
+      "stl_g": 1.5757575758,
+      "blk_g": 0.1818181818,
+      "tov_g": 2.696969697,
+      "pf_g": 2.4242424242,
+      "pts_g": 9.4242424242
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/isaiah-lewis-4.html",
+  "last_scraped": "2025-11-01T16:14:30.834Z"
+}

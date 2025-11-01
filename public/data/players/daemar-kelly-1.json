@@ -1,0 +1,48 @@
+{
+  "slug": "daemar-kelly-1",
+  "name": "Daemar Kelly",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Quinnipiac",
+      "conf": "MAAC",
+      "gp": 26,
+      "gs": 0,
+      "mp_g": 8.1538461538,
+      "fg_pct": 0.4411764706,
+      "fg3_pct": 0.3684210526,
+      "ft_pct": 1,
+      "orb_g": 0.2692307692,
+      "drb_g": 0.7307692308,
+      "trb_g": 1,
+      "ast_g": 0.1923076923,
+      "stl_g": 0.3076923077,
+      "blk_g": 0.2307692308,
+      "tov_g": 0.1153846154,
+      "pf_g": 0.7692307692,
+      "pts_g": 1.5384615385
+    },
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 34,
+      "gs": 34,
+      "mp_g": 29.9411764706,
+      "fg_pct": 0.4268292683,
+      "fg3_pct": 0.3083333333,
+      "ft_pct": 0.7894736842,
+      "orb_g": 0.4411764706,
+      "drb_g": 2.7941176471,
+      "trb_g": 3.2352941176,
+      "ast_g": 1.7058823529,
+      "stl_g": 0.7647058824,
+      "blk_g": 0.5882352941,
+      "tov_g": 1.7352941176,
+      "pf_g": 1.9117647059,
+      "pts_g": 8.1470588235
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/daemar-kelly-1.html",
+  "last_scraped": "2025-11-01T16:14:11.228Z"
+}

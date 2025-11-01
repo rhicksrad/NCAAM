@@ -1,0 +1,28 @@
+{
+  "slug": "jaden-webb-1",
+  "name": "Jaden Webb",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Morehead State",
+      "conf": "OVC",
+      "gp": 10,
+      "gs": 0,
+      "mp_g": 4.8,
+      "fg_pct": 0.5714285714,
+      "fg3_pct": null,
+      "ft_pct": 0.2,
+      "orb_g": 0.4,
+      "drb_g": 0.4,
+      "trb_g": 0.8,
+      "ast_g": 0,
+      "stl_g": 0,
+      "blk_g": 0.3,
+      "tov_g": 0.2,
+      "pf_g": 1,
+      "pts_g": 0.9
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jaden-webb-1.html",
+  "last_scraped": "2025-11-01T16:14:34.006Z"
+}

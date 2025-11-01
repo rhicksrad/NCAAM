@@ -1,0 +1,48 @@
+{
+  "slug": "christian-hughes-1",
+  "name": "Christian Hughes",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Did not play - redshirt",
+      "conf": "—",
+      "gp": null,
+      "gs": null,
+      "mp_g": null,
+      "fg_pct": null,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": null,
+      "drb_g": null,
+      "trb_g": null,
+      "ast_g": null,
+      "stl_g": null,
+      "blk_g": null,
+      "tov_g": null,
+      "pf_g": null,
+      "pts_g": null
+    },
+    {
+      "season": "2024-25",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 21,
+      "gs": 0,
+      "mp_g": 8.380952381,
+      "fg_pct": 0.36,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.5,
+      "orb_g": 0.3333333333,
+      "drb_g": 0.5238095238,
+      "trb_g": 0.8571428571,
+      "ast_g": 0.2857142857,
+      "stl_g": 0.4761904762,
+      "blk_g": 0,
+      "tov_g": 0.4761904762,
+      "pf_g": 1.0476190476,
+      "pts_g": 1.0476190476
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/christian-hughes-1.html",
+  "last_scraped": "2025-11-01T16:14:06.481Z"
+}

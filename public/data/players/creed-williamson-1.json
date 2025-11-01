@@ -1,0 +1,48 @@
+{
+  "slug": "creed-williamson-1",
+  "name": "Creed Williamson",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 29,
+      "gs": 1,
+      "mp_g": 10.724137931,
+      "fg_pct": 0.6444444444,
+      "fg3_pct": null,
+      "ft_pct": 0.4090909091,
+      "orb_g": 0.5517241379,
+      "drb_g": 1.4827586207,
+      "trb_g": 2.0344827586,
+      "ast_g": 0.6896551724,
+      "stl_g": 0.1034482759,
+      "blk_g": 0.0344827586,
+      "tov_g": 0.8275862069,
+      "pf_g": 0.724137931,
+      "pts_g": 2.3103448276
+    },
+    {
+      "season": "2024-25",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 12,
+      "gs": 0,
+      "mp_g": 10.4166666667,
+      "fg_pct": 0.4324324324,
+      "fg3_pct": null,
+      "ft_pct": 0.4666666667,
+      "orb_g": 0.6666666667,
+      "drb_g": 0.9166666667,
+      "trb_g": 1.5833333333,
+      "ast_g": 1.0833333333,
+      "stl_g": 0.1666666667,
+      "blk_g": 0,
+      "tov_g": 0.75,
+      "pf_g": 1.4166666667,
+      "pts_g": 3.25
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/creed-williamson-1.html",
+  "last_scraped": "2025-11-01T16:14:11.256Z"
+}

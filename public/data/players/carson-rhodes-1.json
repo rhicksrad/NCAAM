@@ -1,0 +1,28 @@
+{
+  "slug": "carson-rhodes-1",
+  "name": "Carson Rhodes",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 3,
+      "gs": 0,
+      "mp_g": 3,
+      "fg_pct": 1,
+      "fg3_pct": null,
+      "ft_pct": null,
+      "orb_g": 0.6666666667,
+      "drb_g": 0.3333333333,
+      "trb_g": 1,
+      "ast_g": 0.3333333333,
+      "stl_g": 0,
+      "blk_g": 0,
+      "tov_g": 0,
+      "pf_g": 0.3333333333,
+      "pts_g": 0.6666666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/carson-rhodes-1.html",
+  "last_scraped": "2025-11-01T16:14:03.297Z"
+}

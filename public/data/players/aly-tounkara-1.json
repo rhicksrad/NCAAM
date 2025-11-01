@@ -1,0 +1,28 @@
+{
+  "slug": "aly-tounkara-1",
+  "name": "Aly Tounkara",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Lindenwood",
+      "conf": "OVC",
+      "gp": 29,
+      "gs": 6,
+      "mp_g": 14.9310344828,
+      "fg_pct": 0.602739726,
+      "fg3_pct": 0,
+      "ft_pct": 0.3421052632,
+      "orb_g": 2.1034482759,
+      "drb_g": 2.5517241379,
+      "trb_g": 4.6551724138,
+      "ast_g": 0.3448275862,
+      "stl_g": 0.6206896552,
+      "blk_g": 0.8965517241,
+      "tov_g": 0.6551724138,
+      "pf_g": 2.3793103448,
+      "pts_g": 3.4827586207
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/aly-tounkara-1.html",
+  "last_scraped": "2025-11-01T16:13:43.983Z"
+}

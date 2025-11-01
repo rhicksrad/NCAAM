@@ -1,0 +1,48 @@
+{
+  "slug": "kristiyan-popov-1",
+  "name": "Kristiyan Popov",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 12,
+      "gs": 1,
+      "mp_g": 4.5833333333,
+      "fg_pct": 0.5,
+      "fg3_pct": 1,
+      "ft_pct": 0.5,
+      "orb_g": 0.1666666667,
+      "drb_g": 0.4166666667,
+      "trb_g": 0.5833333333,
+      "ast_g": 0.5,
+      "stl_g": 0.3333333333,
+      "blk_g": 0.3333333333,
+      "tov_g": 0.25,
+      "pf_g": 0.75,
+      "pts_g": 0.4166666667
+    },
+    {
+      "season": "2024-25",
+      "team": "Little Rock",
+      "conf": "OVC",
+      "gp": 17,
+      "gs": 0,
+      "mp_g": 7.2352941176,
+      "fg_pct": 0.2857142857,
+      "fg3_pct": 0,
+      "ft_pct": null,
+      "orb_g": 0.1176470588,
+      "drb_g": 0.6470588235,
+      "trb_g": 0.7647058824,
+      "ast_g": 0.2941176471,
+      "stl_g": 0.1176470588,
+      "blk_g": 0.1176470588,
+      "tov_g": 0.3529411765,
+      "pf_g": 0.8823529412,
+      "pts_g": 0.9411764706
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/kristiyan-popov-1.html",
+  "last_scraped": "2025-11-01T16:15:04.938Z"
+}

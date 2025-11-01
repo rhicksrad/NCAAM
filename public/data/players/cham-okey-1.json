@@ -1,0 +1,28 @@
+{
+  "slug": "cham-okey-1",
+  "name": "Cham Okey",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "SIU Edwardsville",
+      "conf": "OVC",
+      "gp": 13,
+      "gs": 0,
+      "mp_g": 5.6923076923,
+      "fg_pct": 0.3225806452,
+      "fg3_pct": 0.3888888889,
+      "ft_pct": null,
+      "orb_g": 0.3076923077,
+      "drb_g": 1.1538461538,
+      "trb_g": 1.4615384615,
+      "ast_g": 0.2307692308,
+      "stl_g": 0.2307692308,
+      "blk_g": 0.0769230769,
+      "tov_g": 0.1538461538,
+      "pf_g": 0.2307692308,
+      "pts_g": 2.0769230769
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/cham-okey-1.html",
+  "last_scraped": "2025-11-01T16:14:03.347Z"
+}

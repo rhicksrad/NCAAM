@@ -1,0 +1,28 @@
+{
+  "slug": "shadrak-lasu-1",
+  "name": "Shadrak Lasu",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "LIU",
+      "conf": "NEC",
+      "gp": 31,
+      "gs": 31,
+      "mp_g": 28.9032258065,
+      "fg_pct": 0.5365853659,
+      "fg3_pct": 0.2,
+      "ft_pct": 0.625,
+      "orb_g": 2.8387096774,
+      "drb_g": 4.4516129032,
+      "trb_g": 7.2903225806,
+      "ast_g": 0.5161290323,
+      "stl_g": 0.8064516129,
+      "blk_g": 1.3548387097,
+      "tov_g": 0.935483871,
+      "pf_g": 2.935483871,
+      "pts_g": 5.7741935484
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/shadrak-lasu-1.html",
+  "last_scraped": "2025-11-01T16:15:41.800Z"
+}

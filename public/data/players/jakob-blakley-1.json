@@ -1,0 +1,28 @@
+{
+  "slug": "jakob-blakley-1",
+  "name": "Jakob Blakley",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Le Moyne",
+      "conf": "NEC",
+      "gp": 24,
+      "gs": 0,
+      "mp_g": 10.75,
+      "fg_pct": 0.3108108108,
+      "fg3_pct": 0.2608695652,
+      "ft_pct": 0.8,
+      "orb_g": 0.2916666667,
+      "drb_g": 1.0833333333,
+      "trb_g": 1.375,
+      "ast_g": 0.5,
+      "stl_g": 0.3333333333,
+      "blk_g": 0,
+      "tov_g": 0.5,
+      "pf_g": 1.25,
+      "pts_g": 2.9166666667
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/jakob-blakley-1.html",
+  "last_scraped": "2025-11-01T16:14:37.286Z"
+}

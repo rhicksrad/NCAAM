@@ -1,0 +1,48 @@
+{
+  "slug": "louie-semona-1",
+  "name": "Louie Semona",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Stonehill",
+      "conf": "NEC",
+      "gp": 31,
+      "gs": 14,
+      "mp_g": 17.9677419355,
+      "fg_pct": 0.3375,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.625,
+      "orb_g": 0.6129032258,
+      "drb_g": 1.9677419355,
+      "trb_g": 2.5806451613,
+      "ast_g": 0.8709677419,
+      "stl_g": 0.5806451613,
+      "blk_g": 0.1612903226,
+      "tov_g": 1.1290322581,
+      "pf_g": 1.0322580645,
+      "pts_g": 4.5483870968
+    },
+    {
+      "season": "2024-25",
+      "team": "Stonehill",
+      "conf": "NEC",
+      "gp": 32,
+      "gs": 16,
+      "mp_g": 27.84375,
+      "fg_pct": 0.4637223975,
+      "fg3_pct": 0.375,
+      "ft_pct": 0.7840909091,
+      "orb_g": 0.90625,
+      "drb_g": 3.21875,
+      "trb_g": 4.125,
+      "ast_g": 1.5,
+      "stl_g": 0.625,
+      "blk_g": 0.1875,
+      "tov_g": 1.59375,
+      "pf_g": 1.25,
+      "pts_g": 13.21875
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/louie-semona-1.html",
+  "last_scraped": "2025-11-01T16:15:08.047Z"
+}

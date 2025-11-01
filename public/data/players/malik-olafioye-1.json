@@ -1,0 +1,48 @@
+{
+  "slug": "malik-olafioye-1",
+  "name": "Malik Olafioye",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "Kansas City",
+      "conf": "Summit",
+      "gp": 9,
+      "gs": 0,
+      "mp_g": 4.1111111111,
+      "fg_pct": 0.1666666667,
+      "fg3_pct": 0.1428571429,
+      "ft_pct": 0.625,
+      "orb_g": 0.1111111111,
+      "drb_g": 0.8888888889,
+      "trb_g": 1,
+      "ast_g": 0.2222222222,
+      "stl_g": 0.4444444444,
+      "blk_g": 0,
+      "tov_g": 0.3333333333,
+      "pf_g": 0.4444444444,
+      "pts_g": 1.1111111111
+    },
+    {
+      "season": "2024-25",
+      "team": "Eastern Illinois",
+      "conf": "OVC",
+      "gp": 23,
+      "gs": 12,
+      "mp_g": 20.652173913,
+      "fg_pct": 0.3863636364,
+      "fg3_pct": 0.1578947368,
+      "ft_pct": 0.5925925926,
+      "orb_g": 0.1304347826,
+      "drb_g": 1.6086956522,
+      "trb_g": 1.7391304348,
+      "ast_g": 1.6086956522,
+      "stl_g": 0.7826086957,
+      "blk_g": 0.2173913043,
+      "tov_g": 1.1304347826,
+      "pf_g": 2.2608695652,
+      "pts_g": 3.7826086957
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/malik-olafioye-1.html",
+  "last_scraped": "2025-11-01T16:15:11.286Z"
+}

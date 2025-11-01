@@ -1,0 +1,48 @@
+{
+  "slug": "terrence-brown-1",
+  "name": "Terrence Brown",
+  "seasons": [
+    {
+      "season": "2023-24",
+      "team": "FDU",
+      "conf": "NEC",
+      "gp": 32,
+      "gs": 17,
+      "mp_g": 21.8125,
+      "fg_pct": 0.3918918919,
+      "fg3_pct": 0.25,
+      "ft_pct": 0.6875,
+      "orb_g": 0.3125,
+      "drb_g": 2.5625,
+      "trb_g": 2.875,
+      "ast_g": 2.15625,
+      "stl_g": 1.4375,
+      "blk_g": 0.1875,
+      "tov_g": 1.53125,
+      "pf_g": 1.96875,
+      "pts_g": 7.75
+    },
+    {
+      "season": "2024-25",
+      "team": "FDU",
+      "conf": "NEC",
+      "gp": 32,
+      "gs": 31,
+      "mp_g": 34.59375,
+      "fg_pct": 0.4476190476,
+      "fg3_pct": 0.296,
+      "ft_pct": 0.7587939698,
+      "orb_g": 1.09375,
+      "drb_g": 4.46875,
+      "trb_g": 5.5625,
+      "ast_g": 3.1875,
+      "stl_g": 2.15625,
+      "blk_g": 0.40625,
+      "tov_g": 3.28125,
+      "pf_g": 2.125,
+      "pts_g": 20.5625
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/terrence-brown-1.html",
+  "last_scraped": "2025-11-01T16:15:46.641Z"
+}

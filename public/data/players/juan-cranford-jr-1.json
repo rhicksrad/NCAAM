@@ -1,0 +1,28 @@
+{
+  "slug": "juan-cranford-jr-1",
+  "name": "Juan Cranford Jr.",
+  "seasons": [
+    {
+      "season": "2024-25",
+      "team": "Saint Francis (PA)",
+      "conf": "NEC",
+      "gp": 34,
+      "gs": 22,
+      "mp_g": 27.7647058824,
+      "fg_pct": 0.456928839,
+      "fg3_pct": 0.3945578231,
+      "ft_pct": 0.8823529412,
+      "orb_g": 0.7941176471,
+      "drb_g": 3.4117647059,
+      "trb_g": 4.2058823529,
+      "ast_g": 1.8823529412,
+      "stl_g": 1,
+      "blk_g": 0.0588235294,
+      "tov_g": 1.3529411765,
+      "pf_g": 1.4705882353,
+      "pts_g": 10.2058823529
+    }
+  ],
+  "source": "https://www.sports-reference.com/cbb/players/juan-cranford-jr-1.html",
+  "last_scraped": "2025-11-01T16:14:56.668Z"
+}
