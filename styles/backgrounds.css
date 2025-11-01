@@ -42,6 +42,14 @@ html[data-theme="dark"] body {
   color: color-mix(in oklab, var(--color-ink) 70%, var(--color-steel) 30%);
 }
 
+.hero__season-note {
+  margin: 0;
+  font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklab, var(--color-ink) 65%, var(--color-steel) 35%);
+}
+
 .hero--compact {
   padding-block: clamp(2.5rem, 2.1rem + 1vw, 3.5rem);
 }
@@ -56,4 +64,8 @@ html[data-theme="dark"] .hero {
 
 html[data-theme="dark"] .hero__lede {
   color: color-mix(in oklab, white 78%, transparent);
+}
+
+html[data-theme="dark"] .hero__season-note {
+  color: color-mix(in oklab, white 80%, transparent);
 }

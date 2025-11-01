@@ -13,6 +13,8 @@ const HERO_STACK = (heading, lede, compact, ctas = []) => {
   return `<section class="${className}">\n  <div class="container hero__inner">\n    <div class="stack" data-gap="${stackGap}">\n      <h1>${heading}</h1>\n      <p class="hero__lede">${lede}</p>${buttons}\n    </div>\n  </div>\n</section>`;
 };
 
+const HERO_NOTE = (note) => `<section class="hero hero--compact">\n  <div class="container hero__inner">\n    <div class="stack" data-gap="sm">\n      <h1 class="hero__season-note">${note}</h1>\n    </div>\n  </div>\n</section>`;
+
 const HEADER = `<header class="site-header">\n  <div class="container site-header__inner">\n    <a class="site-brand" href="./index.html">\n      <span class="site-brand__title">NCAAM Hub</span>\n      <span class="site-brand__sub">Men's College Basketball</span>\n    </a>\n    <div class="site-header__tools">\n      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false">\n        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">\n          <path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5A6.5 6.5 0 0 1 12 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>\n          <path d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32 2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32 2.12-2.12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"></path>\n        </svg>\n        <span>Theme</span>\n      </button>\n    </div>\n  </div>\n  <div class="container site-header__nav">\n    <div id="site-nav"></div>\n  </div>\n</header>`;
 
 const PAGES = [
@@ -53,11 +55,7 @@ const PAGES = [
     description: "Track impact players with sortable scouting cards and quick bios.",
     ogTitle: "Players · NCAAM Hub",
     ogDescription: "Track impact players with sortable scouting cards and quick bios.",
-    hero: HERO_STACK(
-      "Players",
-      "Dive into player cards with vitals, production, and pace-adjusted numbers for every rotation.",
-      true
-    )
+    hero: HERO_NOTE("2025-2026 Active Players")
   },
   {
     file: "games.html",
