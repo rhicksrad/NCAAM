@@ -23,17 +23,20 @@ const LEADERBOARD_COLOR_PALETTE = [
     "#ec4899",
     "#14b8a6",
 ];
-const LEADERBOARD_DEFAULT_MINIMUM_SAMPLE_SIZE = 10;
-const LEADERBOARD_MINIMUM_SAMPLE_SIZE = {
-    mp: 12,
-    fgPct: 15,
-    fg3Pct: 15,
-    ftPct: 15,
-    rebounds: 12,
-    assists: 12,
-    stocks: 12,
-    turnovers: 12,
-    points: 12,
+const LEADERBOARD_DEFAULT_MINIMUM_REQUIREMENT = {
+    type: "games",
+    value: 10,
+};
+const LEADERBOARD_MINIMUM_REQUIREMENTS = {
+    mp: { type: "games", value: 12 },
+    fgPct: { type: "games", value: 15 },
+    fg3Pct: { type: "games", value: 15 },
+    ftPct: { type: "freeThrowAttempts", value: 25 },
+    rebounds: { type: "games", value: 12 },
+    assists: { type: "games", value: 12 },
+    stocks: { type: "games", value: 12 },
+    turnovers: { type: "games", value: 12 },
+    points: { type: "games", value: 12 },
 };
 const LEADERBOARD_PRESENTATION = {
     mp: {
@@ -57,7 +60,7 @@ const LEADERBOARD_PRESENTATION = {
     ftPct: {
         kicker: "Stripe snipers",
         title: "Free throw percentage",
-        description: "Steadiest performers at the charity stripe this season.",
+        description: "Steadiest performers at the charity stripe after at least 25 attempts this season.",
         accentColor: "#f97316",
     },
     rebounds: {
@@ -151,9 +154,19 @@ app.innerHTML = `
   <section id="player-leaderboard" class="player-leaderboard" aria-live="polite" aria-busy="true">
     <div class="player-leaderboard__status">Loading 2024-25 player leaderboards…</div>
   </section>
-  <input class="search" placeholder="Search by team or conference" aria-label="Filter teams">
-  <div id="roster-groups" class="conference-groups roster-groups" aria-live="polite"></div>
-  <p id="roster-empty" class="empty-state" hidden>No teams match your search.</p>
+  <section class="player-rosters">
+    <div class="player-rosters__header">
+      <div class="player-rosters__titles">
+        <h2 class="player-rosters__title">Active rosters</h2>
+        <p class="player-rosters__season hero__season-note">2025-2026 Active Players</p>
+      </div>
+      <div class="player-rosters__search">
+        <input class="search" placeholder="Search by team or conference" aria-label="Filter teams">
+      </div>
+    </div>
+    <div id="roster-groups" class="conference-groups roster-groups" aria-live="polite"></div>
+    <p id="roster-empty" class="empty-state" hidden>No teams match your search.</p>
+  </section>
 `;
 const leaderboardSectionEl = app.querySelector("#player-leaderboard");
 if (!leaderboardSectionEl) {
@@ -736,22 +749,56 @@ async function renderPlayerLeaderboards(container, doc) {
     }
     container.append(grid);
 }
-function getLeaderboardMinimumSample(metricId) {
-    const raw = LEADERBOARD_MINIMUM_SAMPLE_SIZE[metricId];
-    if (typeof raw === "number" && Number.isFinite(raw) && raw >= 0) {
-        return raw;
+function getLeaderboardMinimumRequirement(metricId) {
+    const requirement = LEADERBOARD_MINIMUM_REQUIREMENTS[metricId];
+    if (requirement &&
+        typeof requirement.value === "number" &&
+        Number.isFinite(requirement.value) &&
+        requirement.value >= 0 &&
+        requirement.type) {
+        return requirement;
     }
-    return LEADERBOARD_DEFAULT_MINIMUM_SAMPLE_SIZE;
+    return LEADERBOARD_DEFAULT_MINIMUM_REQUIREMENT;
 }
-function leaderboardEntryMeetsMinimumSample(entry, minimumGames) {
-    if (minimumGames <= 0) {
+function formatLeaderboardMinimumNote(requirement) {
+    switch (requirement.type) {
+        case "freeThrowAttempts":
+            return `Minimum ${requirement.value} free throw attempts`;
+        case "games":
+        default:
+            return `Minimum ${requirement.value} games played`;
+    }
+}
+function formatLeaderboardMinimumEmptyState(requirement) {
+    switch (requirement.type) {
+        case "freeThrowAttempts":
+            return `No players meet the minimum ${requirement.value} free throw attempts yet.`;
+        case "games":
+        default:
+            return `No players meet the minimum ${requirement.value}-game requirement yet.`;
+    }
+}
+function leaderboardEntryMeetsMinimumRequirement(entry, requirement) {
+    if (requirement.value <= 0) {
         return true;
     }
-    const games = entry.games;
-    if (typeof games !== "number" || !Number.isFinite(games)) {
-        return false;
+    switch (requirement.type) {
+        case "freeThrowAttempts": {
+            const attempts = entry.attempts;
+            if (typeof attempts === "number" && Number.isFinite(attempts)) {
+                return attempts >= requirement.value;
+            }
+            return true;
+        }
+        case "games":
+        default: {
+            const games = entry.games;
+            if (typeof games !== "number" || !Number.isFinite(games)) {
+                return false;
+            }
+            return games >= requirement.value;
+        }
     }
-    return games >= minimumGames;
 }
 async function createLeaderboardCard(metricId, metric, fallbackColor, doc) {
     const presentation = LEADERBOARD_PRESENTATION[metricId];
@@ -776,23 +823,23 @@ async function createLeaderboardCard(metricId, metric, fallbackColor, doc) {
     subtitle.textContent = presentation?.description || metric.label || metric.shortLabel || metricId;
     header.append(title, subtitle);
     card.append(header);
-    const minimumGames = getLeaderboardMinimumSample(metricId);
-    if (minimumGames > 0) {
+    const minimumRequirement = getLeaderboardMinimumRequirement(metricId);
+    if (minimumRequirement.value > 0) {
         const note = document.createElement("p");
         note.className = "player-leaderboard__note";
-        note.textContent = `Minimum ${minimumGames} games played`;
+        note.textContent = formatLeaderboardMinimumNote(minimumRequirement);
         card.append(note);
     }
     const leaders = metric.leaders
         .filter(isValidLeaderboardEntry)
-        .filter(leader => leaderboardEntryMeetsMinimumSample(leader, minimumGames))
+        .filter(leader => leaderboardEntryMeetsMinimumRequirement(leader, minimumRequirement))
         .slice(0, 10);
     if (leaders.length === 0) {
         const empty = document.createElement("p");
         empty.className = "player-leaderboard__status player-leaderboard__status--empty";
         empty.textContent =
-            minimumGames > 0
-                ? `No players meet the minimum ${minimumGames}-game requirement yet.`
+            minimumRequirement.value > 0
+                ? formatLeaderboardMinimumEmptyState(minimumRequirement)
                 : "No data available.";
         card.append(empty);
         return card;
@@ -859,7 +906,11 @@ function createLeaderboardListItem(metricId, leader, index, maxValue) {
     if (leader.team) {
         meta.push(leader.team);
     }
-    if (typeof leader.games === "number" && Number.isFinite(leader.games)) {
+    const attempts = leader.attempts;
+    if (metricId === "ftPct" && typeof attempts === "number" && Number.isFinite(attempts)) {
+        meta.push(`${attempts} FTA`);
+    }
+    else if (typeof leader.games === "number" && Number.isFinite(leader.games)) {
         meta.push(`${leader.games} GP`);
     }
     team.textContent = meta.join(" · ");

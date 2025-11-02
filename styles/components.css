@@ -380,6 +380,50 @@ input.search:focus-visible {
   outline-offset: 2px;
 }
 
+.player-rosters {
+  margin-top: var(--space-xl);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.player-rosters__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.player-rosters__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.player-rosters__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.65rem);
+}
+
+.player-rosters__season {
+  margin: 0;
+}
+
+.player-rosters__search {
+  flex: 1 1 280px;
+  display: flex;
+}
+
+.player-rosters__search input {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .player-rosters {
+    margin-top: calc(var(--space-xl) * 1.25);
+  }
+}
+
 .empty-state {
   border: 1px dashed color-mix(in oklab, var(--color-ink) 15%, transparent);
   background: color-mix(in oklab, var(--color-cream) 96%, transparent);

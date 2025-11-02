@@ -55,7 +55,11 @@ const PAGES = [
     description: "Track impact players with sortable scouting cards and quick bios.",
     ogTitle: "Players · NCAAM Hub",
     ogDescription: "Track impact players with sortable scouting cards and quick bios.",
-    hero: HERO_NOTE("2025-2026 Active Players")
+    hero: HERO_STACK(
+      "Players",
+      "Track impact players with sortable scouting cards and quick bios.",
+      true
+    )
   },
   {
     file: "games.html",
