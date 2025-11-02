@@ -17,28 +17,19 @@
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand" href="./index.html">
-      <span class="site-brand__title">NCAAM Hub</span>
-      <span class="site-brand__sub">Men's College Basketball</span>
-    </a>
-  </div>
-  <div class="container site-header__nav">
-    <div id="site-nav"></div>
+    <a class="site-brand" href="./index.html">NCAAM Hub</a>
+    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
   </div>
 </header>
-<section class="hero">
-  <div class="container hero__inner">
-    <div class="stack" data-gap="lg">
-      <h1>The pulse of men's college hoops.</h1>
-      <p class="hero__lede">From preseason projections to March chaos, explore a data newsroom built for diehard NCAA fans. Track teams, scout players, and see how the bracket is shaping up.</p>
-      <div class="stack" data-gap="sm">
-        <a class="button" data-variant="primary" href="./teams.html">Explore teams</a>
-        <a class="button" data-variant="ghost" href="./standings.html">View standings</a>
-      </div>
+<main>
+  <div class="container page">
+    <div class="page-intro">
+      <p class="page-label">Season pulse</p>
+      <p class="page-summary">Men's college basketball, updated without the fluff.</p>
     </div>
+    <div id="app" class="page-content"></div>
   </div>
-</section>
-<main id="app" class="container"></main>
+</main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/home.js"></script>
 </body>

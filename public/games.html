@@ -17,24 +17,19 @@
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand" href="./index.html">
-      <span class="site-brand__title">NCAAM Hub</span>
-      <span class="site-brand__sub">Men's College Basketball</span>
-    </a>
-  </div>
-  <div class="container site-header__nav">
-    <div id="site-nav"></div>
+    <a class="site-brand" href="./index.html">NCAAM Hub</a>
+    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
   </div>
 </header>
-<section class="hero hero--compact">
-  <div class="container hero__inner">
-    <div class="stack" data-gap="sm">
-      <h1>Games</h1>
-      <p class="hero__lede">Scan the latest results, filter by date, and trace momentum across the national slate.</p>
+<main>
+  <div class="container page">
+    <div class="page-intro">
+      <p class="page-label">Games</p>
+      <p class="page-summary">Recent matchups with score, tempo, and context in one place.</p>
     </div>
+    <div id="app" class="page-content"></div>
   </div>
-</section>
-<main id="app" class="container"></main>
+</main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/games.js"></script>
 </body>

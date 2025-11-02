@@ -9,8 +9,8 @@ import { extent } from "d3-array";
 import { scaleBand, scaleLinear, scalePoint, scaleTime, ScaleBand, ScaleLinear, ScalePoint, ScaleTime } from "d3-scale";
 import { select } from "d3-selection";
 import type { Selection } from "d3-selection";
-import { pixelAlign } from "./frame";
-import { ChartTheme, defaultTheme, formatDate, formatNumber } from "./theme";
+import { pixelAlign } from "./frame.js";
+import { ChartTheme, defaultTheme, formatDate, formatNumber } from "./theme.js";
 
 export type NumericDomain = number;
 export type TimeDomain = Date;
@@ -259,7 +259,7 @@ function updateAxisLabel(
     return;
   }
   if (text.empty()) {
-    text = group.append("text").attr("class", className);
+    text = group.append("text").attr("class", className) as Selection<SVGTextElement, unknown, null, undefined> ;
   }
   text
     .attr("fill", theme.fg)
@@ -297,7 +297,7 @@ export function drawGrid(
 ): void {
   const theme = options.theme ?? defaultTheme;
   const selection = select(g);
-  const grid = selection.selectAll<SVGGElement, unknown>(".grid").data([null]);
+  const grid = selection.selectAll<SVGGElement>(".grid").data([null]);
   const gridEnter = grid.enter().append("g").attr("class", "grid");
   const gridGroup = gridEnter.merge(grid as any);
   const yScale = scales.y;
@@ -349,7 +349,7 @@ export function drawLegend(
   selection.attr("class", "legend");
 
   const itemSelection = selection
-    .selectAll<SVGGElement, LegendItem>("g.legend-item")
+    .selectAll<SVGGElement>("g.legend-item")
     .data(items, (d: LegendItem) => d.label);
   const enter = itemSelection
     .enter()

@@ -17,24 +17,19 @@
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand" href="./index.html">
-      <span class="site-brand__title">NCAAM Hub</span>
-      <span class="site-brand__sub">Men's College Basketball</span>
-    </a>
-  </div>
-  <div class="container site-header__nav">
-    <div id="site-nav"></div>
+    <a class="site-brand" href="./index.html">NCAAM Hub</a>
+    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
   </div>
 </header>
-<section class="hero hero--compact">
-  <div class="container hero__inner">
-    <div class="stack" data-gap="sm">
-      <h1>Standings</h1>
-      <p class="hero__lede">Track conference races, streaks, and seed lines with sortable, zebra-striped tables.</p>
+<main>
+  <div class="container page">
+    <div class="page-intro">
+      <p class="page-label">Standings</p>
+      <p class="page-summary">Conference races, streaks, and seed context at a glance.</p>
     </div>
+    <div id="app" class="page-content"></div>
   </div>
-</section>
-<main id="app" class="container"></main>
+</main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/standings.js"></script>
 </body>

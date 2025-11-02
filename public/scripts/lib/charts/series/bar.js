@@ -3,7 +3,7 @@
  * @module charts/series/bar
  */
 import { select } from "d3-selection";
-import { defaultTheme } from "../theme";
+import { defaultTheme } from "../theme.js";
 function isBandScale(scale) {
     return typeof scale.bandwidth === "function";
 }
@@ -51,7 +51,9 @@ export function renderBars(g, data, scales, options) {
     const gap = options.gap ?? 4;
     const minWidth = options.minWidth ?? 4;
     const selection = select(g);
-    const join = selection.selectAll("rect.series--bar").data(data, (d) => d.x);
+    const join = selection
+        .selectAll("rect.series--bar")
+        .data(data, (d) => d.x);
     const enter = join
         .enter()
         .append("rect")

@@ -6,7 +6,6 @@ import { renderBars } from "../lib/charts/series/bar.js";
 import type { BarDatum } from "../lib/charts/series/bar.js";
 import { createTooltip, type TooltipHandle } from "../lib/charts/tooltip.js";
 import {
-  applyTheme,
   defaultTheme,
   formatNumber,
   type ChartTheme,
@@ -1304,8 +1303,6 @@ function mountLeaderboardChart(
     const tooltipHandle = ensureTooltip();
     tooltipHandle.hide();
 
-    applyTheme(container, theme);
-
     const width = container.clientWidth || 640;
     const height = Math.max(
       320,
@@ -1317,6 +1314,7 @@ function mountLeaderboardChart(
     const svg = createSVG(surface!, width, height, {
       title: options.title,
       description: options.description,
+      theme,
     });
 
     const plot = select(svg)
@@ -1385,7 +1383,7 @@ function mountLeaderboardChart(
 
     const xAxis = select(axisGroup).select<SVGGElement>(".axis--x");
     xAxis
-      .selectAll<SVGTextElement, unknown>("text")
+      .selectAll<SVGTextElement>("text")
       .attr("transform", "rotate(-35)")
       .attr("text-anchor", "end")
       .attr("dx", "-0.6em")
@@ -1412,7 +1410,7 @@ function mountLeaderboardChart(
       .attr("focusable", "true")
       .attr("aria-hidden", null)
       .attr("role", "img")
-      .attr("aria-label", datum => `${datum.leader.name}: ${formatLeaderboardValue(options.metricId, datum.leader)}`)
+      .attr("aria-label", (datum: LeaderboardChartDatum) => `${datum.leader.name}: ${formatLeaderboardValue(options.metricId, datum.leader)}`)
       .on("mouseenter", (event: MouseEvent, datum: LeaderboardChartDatum) => {
         const target = event.currentTarget as Element | null;
         if (target) {

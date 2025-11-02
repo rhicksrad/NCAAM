@@ -4,7 +4,7 @@
  */
 import { line as d3Line, curveLinear, curveMonotoneX } from "d3-shape";
 import { select } from "d3-selection";
-import { defaultTheme } from "../theme";
+import { defaultTheme } from "../theme.js";
 const prefersReducedMotion = () => {
     if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
         return false;
@@ -38,7 +38,9 @@ function valueY(scale, value) {
 export function renderLine(g, data, scales, options = {}) {
     const theme = options.theme ?? defaultTheme;
     const selection = select(g);
-    const path = selection.selectAll("path.series--line").data([null]);
+    const path = selection
+        .selectAll("path.series--line")
+        .data([data]);
     const enter = path
         .enter()
         .append("path")
@@ -49,9 +51,9 @@ export function renderLine(g, data, scales, options = {}) {
         .attr("vector-effect", "non-scaling-stroke");
     const merged = enter.merge(path);
     const lineGenerator = d3Line()
-        .defined(options.defined ?? ((d) => Number.isFinite(d.y)))
-        .x((d) => position(scales.x, d.x))
-        .y((d) => valueY(scales.y, d.y))
+        .defined(options.defined ?? ((datum) => Number.isFinite(datum.y)))
+        .x((datum) => position(scales.x, datum.x))
+        .y((datum) => valueY(scales.y, datum.y))
         .curve(options.smoothing ? curveMonotoneX : curveLinear);
     const dAttribute = lineGenerator(data);
     merged
