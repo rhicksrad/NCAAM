@@ -175,14 +175,84 @@ const searchInput = searchInputEl;
 const rosterGroups = rosterGroupsEl;
 const emptyState = emptyStateEl;
 const rosterState = new Map();
-const assetUrl = (path) => {
-    const base = typeof document !== "undefined" ? document.baseURI : undefined;
-    const origin = typeof window !== "undefined" ? window.location.origin : "";
-    const root = base ?? origin ?? "";
-    const normalisedPath = path.startsWith("/") ? path.slice(1) : path;
-    return new URL(normalisedPath, root).toString();
+const normaliseBasePath = (pathname) => {
+    if (!pathname || pathname === "/") {
+        return "/";
+    }
+    if (pathname.endsWith("/")) {
+        return pathname;
+    }
+    const lastSlashIndex = pathname.lastIndexOf("/");
+    if (lastSlashIndex === -1) {
+        return "/";
+    }
+    const lastSegment = pathname.slice(lastSlashIndex + 1);
+    if (lastSegment && !lastSegment.includes(".")) {
+        return `${pathname}/`;
+    }
+    const withoutFile = pathname.slice(0, lastSlashIndex + 1);
+    return withoutFile === "" ? "/" : withoutFile;
 };
-void loadPlayerLeaderboards(leaderboardSectionEl);
+let assetBase;
+const resolveAssetBase = () => {
+    try {
+        const scriptRoot = new URL("../../", import.meta.url);
+        scriptRoot.pathname = normaliseBasePath(scriptRoot.pathname);
+        scriptRoot.search = "";
+        scriptRoot.hash = "";
+        return scriptRoot.toString();
+    }
+    catch {
+        // Ignore script URL resolution errors and fall back to DOM-based heuristics.
+    }
+    if (typeof document !== "undefined") {
+        try {
+            const baseElement = document.querySelector("base[href]");
+            const href = baseElement?.href ?? document.baseURI;
+            if (href) {
+                const baseUrl = new URL(href, typeof window !== "undefined" && window.location ? window.location.href : undefined);
+                baseUrl.pathname = normaliseBasePath(baseUrl.pathname);
+                baseUrl.search = "";
+                baseUrl.hash = "";
+                return baseUrl.toString();
+            }
+        }
+        catch {
+            // Ignore invalid base tags and fall back to window-derived paths.
+        }
+    }
+    if (typeof window !== "undefined" && window.location) {
+        try {
+            const { origin, pathname } = window.location;
+            const basePath = normaliseBasePath(pathname ?? "");
+            return `${origin ?? ""}${basePath}`;
+        }
+        catch {
+            // Ignore window resolution errors and fall through to the default case.
+        }
+    }
+    return null;
+};
+const getAssetBase = () => {
+    if (assetBase !== undefined) {
+        return assetBase;
+    }
+    assetBase = resolveAssetBase();
+    return assetBase;
+};
+const assetUrl = (path) => {
+    const base = getAssetBase();
+    const normalisedPath = path.startsWith("/") ? path.slice(1) : path;
+    if (!base) {
+        return path;
+    }
+    try {
+        return new URL(normalisedPath, base).toString();
+    }
+    catch {
+        return path;
+    }
+};
 const [conferenceMap, teamsResponse, playersIndexDoc] = await Promise.all([
     getConferenceMap(),
     NCAAM.teams(1, 400),
@@ -219,6 +289,7 @@ for (const bucket of playerIndexByName.values()) {
 const playerSlugCache = new Map();
 const playerStatsCache = new Map();
 const playerStatsRequests = new Map();
+void loadPlayerLeaderboards(leaderboardSectionEl);
 const seenTeams = new Map();
 for (const team of teamsResponse.data) {
     if (!team.conference_id)
