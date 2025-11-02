@@ -74,17 +74,19 @@ function computeWidth(
 /**
  * Render bar rectangles.
  */
-export function renderBars(
+export function renderBars<Datum extends BarDatum>(
   g: SVGGElement,
-  data: readonly BarDatum[],
+  data: readonly Datum[],
   scales: BuiltScales,
   options: BarOptions
-): Selection<SVGRectElement, BarDatum, SVGGElement, unknown> {
+): Selection<SVGRectElement, Datum, SVGGElement, unknown> {
   const theme = options.theme ?? defaultTheme;
   const gap = options.gap ?? 4;
   const minWidth = options.minWidth ?? 4;
   const selection = select(g);
-  const join = selection.selectAll<SVGRectElement, BarDatum>("rect.series--bar").data(data, (d: any) => d.x as any);
+  const join = selection
+    .selectAll<SVGRectElement, Datum>("rect.series--bar")
+    .data(data, (d: any) => d.x as any);
   const enter = join
     .enter()
     .append("rect")
@@ -93,7 +95,7 @@ export function renderBars(
     .attr("ry", options.cornerRadius ?? 2)
     .attr("vector-effect", "non-scaling-stroke");
 
-  const merged = enter.merge(join as any);
+  const merged = enter.merge(join);
 
   const positions = data.map((d) => getXPosition(scales.x, d.x));
   const width = computeWidth(scales.x, positions, { gap, minWidth });
@@ -107,7 +109,7 @@ export function renderBars(
     .attr("role", "presentation")
     .attr("aria-hidden", "true");
 
-  merged.each(function (this: SVGRectElement, datum: BarDatum, index: number) {
+  merged.each(function (this: SVGRectElement, datum: Datum, index: number) {
     const xPos = positions[index];
     const valueY = getBaseY(scales.y, datum.y);
     const positive = valueY <= baseline;
@@ -120,5 +122,5 @@ export function renderBars(
   });
 
   join.exit().remove();
-  return merged as any;
+  return merged;
 }
