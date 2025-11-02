@@ -1,0 +1,166 @@
+/* public/styles/charts.css */
+:root {
+  --chart-font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  --chart-font-size: 13;
+  --chart-line-width: 1.5;
+  --chart-grid-width: 1;
+  --chart-fg: #102a43;
+  --chart-fg-muted: #486581;
+  --chart-bg: #ffffff;
+  --chart-grid: #d9e2ec;
+  --chart-accent: #1b998b;
+  --chart-accent-muted: #cde1de;
+  --chart-categorical-0: #0d3b66;
+  --chart-categorical-1: #ef8354;
+  --chart-categorical-2: #2a9d8f;
+  --chart-categorical-3: #8ab17d;
+  --chart-categorical-4: #f4d35e;
+  --chart-categorical-5: #e36414;
+  --chart-categorical-6: #4f5d75;
+  --chart-categorical-7: #9a031e;
+  --chart-categorical-8: #577590;
+  --chart-categorical-9: #bc4749;
+  --chart-categorical-10: #3a86ff;
+  --chart-categorical-11: #8338ec;
+  --chart-sequential-cool-0: #d9ed92;
+  --chart-sequential-cool-1: #99d98c;
+  --chart-sequential-cool-2: #52b69a;
+  --chart-sequential-cool-3: #168aad;
+  --chart-sequential-cool-4: #1a759f;
+  --chart-sequential-cool-5: #1e6091;
+  --chart-sequential-warm-0: #ffe5d9;
+  --chart-sequential-warm-1: #ffc9b9;
+  --chart-sequential-warm-2: #ffb4a2;
+  --chart-sequential-warm-3: #e5989b;
+  --chart-sequential-warm-4: #b5838d;
+  --chart-sequential-warm-5: #6d597a;
+}
+
+[data-theme="dark"] {
+  --chart-fg: #f0f4f8;
+  --chart-fg-muted: #9fb3c8;
+  --chart-bg: #0b1f2a;
+  --chart-grid: #1f3a52;
+  --chart-accent: #4ecdc4;
+  --chart-accent-muted: #1f3a52;
+  --chart-categorical-0: #4ecdc4;
+  --chart-categorical-1: #ff6b6b;
+  --chart-categorical-2: #ffe66d;
+  --chart-categorical-3: #1a535c;
+  --chart-categorical-4: #5f0f40;
+  --chart-categorical-5: #9a031e;
+  --chart-categorical-6: #fb8b24;
+  --chart-categorical-7: #4361ee;
+  --chart-categorical-8: #ffd60a;
+  --chart-categorical-9: #adb5bd;
+  --chart-categorical-10: #00b4d8;
+  --chart-categorical-11: #a2d2ff;
+  --chart-sequential-cool-0: #0b7285;
+  --chart-sequential-cool-1: #0c8599;
+  --chart-sequential-cool-2: #0ca678;
+  --chart-sequential-cool-3: #099268;
+  --chart-sequential-cool-4: #2b8a3e;
+  --chart-sequential-cool-5: #37b24d;
+  --chart-sequential-warm-0: #862e9c;
+  --chart-sequential-warm-1: #b5179e;
+  --chart-sequential-warm-2: #e5383b;
+  --chart-sequential-warm-3: #ff6b6b;
+  --chart-sequential-warm-4: #ff922b;
+  --chart-sequential-warm-5: #ffd43b;
+}
+
+svg.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--chart-bg);
+  color: var(--chart-fg);
+  font-family: var(--chart-font-family);
+  font-size: calc(var(--chart-font-size) * 1px);
+}
+
+svg.chart text {
+  font-family: inherit;
+  fill: var(--chart-fg);
+}
+
+.axis path,
+.axis line {
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: var(--chart-fg);
+  font-weight: 500;
+}
+
+.axis-label {
+  fill: var(--chart-fg);
+  font-size: calc(var(--chart-font-size) * 1px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.grid line {
+  stroke: var(--chart-grid);
+  stroke-width: calc(var(--chart-grid-width) * 1px);
+  vector-effect: non-scaling-stroke;
+}
+
+.series {
+  transition: opacity 150ms ease;
+}
+
+.series--bar:hover,
+.series--bar:focus {
+  opacity: 0.85;
+}
+
+.legend {
+  display: block;
+  font-family: var(--chart-font-family);
+  font-size: calc(var(--chart-font-size) * 1px);
+  color: var(--chart-fg);
+}
+
+.legend-item {
+  cursor: default;
+  outline: none;
+}
+
+.legend-item:focus-visible {
+  outline: 2px solid var(--chart-accent);
+  outline-offset: 2px;
+}
+
+.legend-label {
+  dominant-baseline: middle;
+}
+
+.tooltip {
+  background: var(--chart-bg);
+  color: var(--chart-fg);
+  border: 1px solid var(--chart-grid);
+  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.18);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--chart-font-family);
+  font-size: calc(var(--chart-font-size) * 1px);
+  pointer-events: none;
+  max-width: 260px;
+  z-index: 10;
+}
+
+.tooltip:focus {
+  outline: 2px solid var(--chart-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .series {
+    transition: none;
+  }
+  .tooltip {
+    transition: none !important;
+  }
+}
