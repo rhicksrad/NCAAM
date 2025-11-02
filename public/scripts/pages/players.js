@@ -176,7 +176,7 @@ app.innerHTML = `
     <div class="player-rosters__header">
       <div class="player-rosters__titles">
         <h2 class="player-rosters__title">Active rosters</h2>
-        <p class="player-rosters__season hero__season-note">2025-2026 Active Players</p>
+        <p class="player-rosters__season hero__season-note">2024-2025 Active Players</p>
       </div>
       <div class="player-rosters__search">
         <input class="search" placeholder="Search by team or conference" aria-label="Filter teams">
