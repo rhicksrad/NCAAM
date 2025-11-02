@@ -1,3 +1,16 @@
+import { select } from "d3-selection";
+import type { Selection } from "d3-selection";
+import { buildScales, drawAxes, drawGrid } from "../lib/charts/axes.js";
+import { computeInnerSize, createSVG } from "../lib/charts/frame.js";
+import { renderBars } from "../lib/charts/series/bar.js";
+import type { BarDatum } from "../lib/charts/series/bar.js";
+import { createTooltip, type TooltipHandle } from "../lib/charts/tooltip.js";
+import {
+  applyTheme,
+  defaultTheme,
+  formatNumber,
+  type ChartTheme,
+} from "../lib/charts/theme.js";
 import { NCAAM, type Player, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import {
@@ -259,6 +272,32 @@ const LEADERBOARD_PRESENTATION: Record<LeaderboardMetricId, LeaderboardMetricPre
     description: "Highest scoring averages per game for the 2024-25 campaign.",
     accentColor: "#2563eb",
   },
+};
+
+const LEADERBOARD_PERCENT_METRICS = new Set<LeaderboardMetricId>(["fgPct", "fg3Pct", "ftPct"]);
+
+const LEADERBOARD_AXIS_LABELS: Partial<Record<LeaderboardMetricId, string>> = {
+  mp: "Minutes per game",
+  fgPct: "Field-goal percentage",
+  fg3Pct: "Three-point percentage",
+  ftPct: "Free-throw percentage",
+  rebounds: "Rebounds per game",
+  assists: "Assists per game",
+  stocks: "Stocks per game",
+  turnovers: "Turnovers per game",
+  points: "Points per game",
+};
+
+type LeaderboardChartDatum = BarDatum & {
+  leader: PlayerLeaderboardEntry;
+};
+
+type LeaderboardChartOptions = {
+  metricId: LeaderboardMetricId;
+  accentColor: string;
+  yLabel: string;
+  title: string;
+  description: string;
 };
 
 function decorateAvatar(el: HTMLElement, team: Team): void {
@@ -1145,6 +1184,20 @@ async function createLeaderboardCard(
     return card;
   }
 
+  const chartContainer = document.createElement("div");
+  card.append(chartContainer);
+  const chartTitle = presentation?.title || metric.shortLabel || metric.label || metricId.toUpperCase();
+  const chartDescription =
+    presentation?.description ||
+    `Bar chart showing the top 10 players ranked by ${metric.label || metric.shortLabel || metricId}.`;
+  mountLeaderboardChart(chartContainer, leaders, {
+    metricId,
+    accentColor,
+    yLabel: getLeaderboardAxisLabel(metricId, metric),
+    title: chartTitle,
+    description: chartDescription,
+  });
+
   const list = document.createElement("ol");
   list.className = "player-leaderboard__list";
   list.setAttribute("role", "list");
@@ -1218,6 +1271,271 @@ function createLeaderboardListItem(
 
   item.append(bar, rank, info, value);
   return item;
+}
+
+function mountLeaderboardChart(
+  container: HTMLElement,
+  leaders: PlayerLeaderboardEntry[],
+  options: LeaderboardChartOptions,
+): void {
+  const theme = createLeaderboardChartTheme(options.accentColor);
+  container.classList.add("player-leaderboard__chart");
+
+  let surface = container.querySelector<HTMLElement>('[data-chart-surface="true"]');
+  if (!surface) {
+    surface = document.createElement("div");
+    surface.className = "player-leaderboard__chart-surface";
+    surface.dataset.chartSurface = "true";
+    container.append(surface);
+  }
+
+  let tooltip: TooltipHandle | null = null;
+  const ensureTooltip = (): TooltipHandle => {
+    if (!tooltip) {
+      tooltip = createTooltip(container);
+    }
+    return tooltip;
+  };
+
+  const margin = { top: 48, right: 32, bottom: 110, left: 68 };
+  const isPercentMetric = usesPercentScale(options.metricId);
+
+  const render = () => {
+    const tooltipHandle = ensureTooltip();
+    tooltipHandle.hide();
+
+    applyTheme(container, theme);
+
+    const width = container.clientWidth || 640;
+    const height = Math.max(
+      320,
+      margin.top + margin.bottom + leaders.length * 28,
+    );
+
+    surface!.innerHTML = "";
+
+    const svg = createSVG(surface!, width, height, {
+      title: options.title,
+      description: options.description,
+    });
+
+    const plot = select(svg)
+      .append("g")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+    const { iw, ih } = computeInnerSize(width, height, margin);
+    const data: LeaderboardChartDatum[] = leaders.map(leader => ({
+      x: leader.name,
+      y: Math.max(0, leader.value),
+      leader,
+    }));
+
+    const maxValue = data.reduce((max, datum) => Math.max(max, datum.y), 0);
+    const safeMax = maxValue > 0 ? maxValue : 1;
+    const paddedMax = safeMax < 1 ? safeMax * 1.05 : safeMax * 1.1;
+
+    const scales = buildScales({
+      x: {
+        type: "band",
+        domain: data.map(datum => datum.x),
+        range: [0, iw],
+        paddingInner: 0.4,
+        paddingOuter: 0.2,
+      },
+      y: {
+        type: "linear",
+        domain: [0, paddedMax],
+        range: [ih, 0],
+        nice: true,
+      },
+    });
+
+    drawGrid(plot.append("g").node() as SVGGElement, scales, {
+      innerWidth: iw,
+      innerHeight: ih,
+      theme,
+    });
+
+    const bars = renderBars(plot.append("g").node() as SVGGElement, data, scales, {
+      theme,
+      gap: 12,
+      minWidth: 16,
+      cornerRadius: 4,
+      baseline: 0,
+      innerHeight: ih,
+    }) as Selection<SVGRectElement, LeaderboardChartDatum, SVGGElement, unknown>;
+
+    const formatAxis = (value: number): string =>
+      isPercentMetric
+        ? formatNumber(value, { style: "percent", digits: value < 0.5 ? 1 : 0 })
+        : formatNumber(value, { digits: value >= 10 ? 0 : 1 });
+
+    const axisGroup = plot.append("g").node() as SVGGElement;
+    drawAxes(axisGroup, scales, {
+      innerWidth: iw,
+      innerHeight: ih,
+      theme,
+      xLabel: "Players",
+      yLabel: options.yLabel,
+      format: {
+        x: value => abbreviatePlayerName(String(value ?? "")),
+        y: value => formatAxis(Number(value)),
+      },
+    });
+
+    const xAxis = select(axisGroup).select<SVGGElement>(".axis--x");
+    xAxis
+      .selectAll<SVGTextElement, unknown>("text")
+      .attr("transform", "rotate(-35)")
+      .attr("text-anchor", "end")
+      .attr("dx", "-0.6em")
+      .attr("dy", "0.35em");
+
+    const showTooltip = (target: Element, datum: LeaderboardChartDatum) => {
+      const rect = target.getBoundingClientRect();
+      const parentRect = container.getBoundingClientRect();
+      const x = rect.left - parentRect.left + rect.width / 2;
+      const y = rect.top - parentRect.top - 12;
+      tooltipHandle.show(x, y, formatLeaderboardTooltip(options.metricId, datum.leader));
+    };
+
+    const moveTooltip = (target: Element) => {
+      const rect = target.getBoundingClientRect();
+      const parentRect = container.getBoundingClientRect();
+      const x = rect.left - parentRect.left + rect.width / 2;
+      const y = rect.top - parentRect.top - 12;
+      tooltipHandle.move(x, y);
+    };
+
+    bars
+      .attr("tabindex", 0)
+      .attr("focusable", "true")
+      .attr("aria-hidden", null)
+      .attr("role", "img")
+      .attr("aria-label", datum => `${datum.leader.name}: ${formatLeaderboardValue(options.metricId, datum.leader)}`)
+      .on("mouseenter", (event: MouseEvent, datum: LeaderboardChartDatum) => {
+        const target = event.currentTarget as Element | null;
+        if (target) {
+          showTooltip(target, datum);
+        }
+      })
+      .on("mouseleave", () => {
+        tooltipHandle.hide();
+      })
+      .on("mousemove", (event: MouseEvent) => {
+        const target = event.currentTarget as Element | null;
+        if (target) {
+          moveTooltip(target);
+        }
+      })
+      .on("focus", (event: FocusEvent, datum: LeaderboardChartDatum) => {
+        const target = event.currentTarget as Element | null;
+        if (target) {
+          showTooltip(target, datum);
+        }
+      })
+      .on("blur", () => {
+        tooltipHandle.hide();
+      });
+  };
+
+  render();
+
+  if (typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(() => {
+      window.requestAnimationFrame(render);
+    });
+    observer.observe(container);
+  }
+}
+
+function createLeaderboardChartTheme(accentColor: string): ChartTheme {
+  if (!accentColor) {
+    return defaultTheme;
+  }
+  return {
+    ...defaultTheme,
+    accent: accentColor,
+    accentMuted: accentColor,
+  } satisfies ChartTheme;
+}
+
+function usesPercentScale(metricId: LeaderboardMetricId): boolean {
+  return LEADERBOARD_PERCENT_METRICS.has(metricId);
+}
+
+function abbreviatePlayerName(name: string): string {
+  const trimmed = name.trim();
+  if (!trimmed) {
+    return name;
+  }
+  const parts = trimmed.split(/\s+/);
+  const suffixes = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+  let last = parts[parts.length - 1];
+  if (suffixes.has(last.replace(/[^a-z0-9]/gi, "").toLowerCase()) && parts.length > 2) {
+    last = parts[parts.length - 2];
+  }
+  const first = parts[0] ?? "";
+  const initial = first.charAt(0);
+  if (!initial) {
+    return last;
+  }
+  return `${initial.toUpperCase()}. ${last}`;
+}
+
+function formatLeaderboardTooltip(
+  metricId: LeaderboardMetricId,
+  leader: PlayerLeaderboardEntry,
+): string {
+  const value = formatLeaderboardValue(metricId, leader);
+  const meta: string[] = [];
+  if (leader.team) {
+    meta.push(leader.team);
+  }
+  if (typeof leader.games === "number" && Number.isFinite(leader.games)) {
+    meta.push(`${leader.games} GP`);
+  }
+  return [
+    `<strong>${escapeHtml(leader.name)}</strong>`,
+    escapeHtml(value),
+    meta.length
+      ? `<span class="player-leaderboard__tooltip-meta">${escapeHtml(meta.join(" · "))}</span>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("<br>");
+}
+
+function getLeaderboardAxisLabel(
+  metricId: LeaderboardMetricId,
+  metric: PlayerLeaderboardMetric,
+): string {
+  return (
+    LEADERBOARD_AXIS_LABELS[metricId] ??
+    metric.shortLabel ??
+    metric.label ??
+    LEADERBOARD_PRESENTATION[metricId]?.title ??
+    metricId.toUpperCase()
+  );
+}
+
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>"']/g, character => {
+    switch (character) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#39;";
+      default:
+        return character;
+    }
+  });
 }
 
 async function createStackedLeaderboardContent(
