@@ -488,7 +488,7 @@ async function renderMap(teams) {
         .join("circle")
         .attr("class", "teams-map__dot")
         .attr("tabindex", 0)
-        .attr("data-team-id", team => String(team.id))
+        .attr("data-team-id", (team) => String(team.id))
         .attr("r", 5)
         .each(function (team) {
         const { location } = team;

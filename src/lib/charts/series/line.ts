@@ -5,8 +5,9 @@
 
 import { line as d3Line, curveLinear, curveMonotoneX } from "d3-shape";
 import { select } from "d3-selection";
-import type { BuiltScales } from "../axes";
-import { ChartTheme, defaultTheme } from "../theme";
+import type { Selection } from "d3-selection";
+import type { BuiltScales } from "../axes.js";
+import { ChartTheme, defaultTheme } from "../theme.js";
 
 export interface LineDatum {
   x: number | Date;
@@ -63,7 +64,9 @@ export function renderLine(
 ): SVGPathElement {
   const theme = options.theme ?? defaultTheme;
   const selection = select(g);
-  const path = selection.selectAll<SVGPathElement, LineDatum>("path.series--line").data([null]);
+  const path = selection
+    .selectAll<SVGPathElement>("path.series--line")
+    .data([data]);
   const enter = path
     .enter()
     .append("path")
@@ -73,12 +76,12 @@ export function renderLine(
     .attr("stroke-linejoin", "round")
     .attr("vector-effect", "non-scaling-stroke");
 
-  const merged = enter.merge(path as any);
+  const merged: Selection<SVGPathElement, readonly LineDatum[]> = enter.merge(path);
 
   const lineGenerator = d3Line<LineDatum>()
-    .defined(options.defined ?? ((d: LineDatum) => Number.isFinite(d.y)))
-    .x((d) => position(scales.x, d.x))
-    .y((d) => valueY(scales.y, d.y))
+    .defined(options.defined ?? ((datum: LineDatum) => Number.isFinite(datum.y)))
+    .x((datum: LineDatum) => position(scales.x, datum.x))
+    .y((datum: LineDatum) => valueY(scales.y, datum.y))
     .curve(options.smoothing ? curveMonotoneX : curveLinear);
 
   const dAttribute = lineGenerator(data);

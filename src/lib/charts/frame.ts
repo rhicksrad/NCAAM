@@ -3,6 +3,9 @@
  * @module charts/frame
  */
 
+import { applyTheme, defaultTheme } from "./theme.js";
+import type { ChartTheme } from "./theme.js";
+
 export interface Margin {
   top: number;
   right: number;
@@ -14,6 +17,7 @@ export interface CreateSVGOptions {
   title?: string;
   description?: string;
   id?: string;
+  theme?: ChartTheme;
 }
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -33,6 +37,11 @@ export function createSVG(
   options: CreateSVGOptions = {}
 ): SVGSVGElement {
   const doc = container.ownerDocument ?? document;
+  const theme = options.theme ?? defaultTheme;
+  if (!container.classList.contains("chart-surface")) {
+    container.classList.add("chart-surface");
+  }
+  applyTheme(container, theme);
   const svg = doc.createElementNS(SVG_NS, "svg");
   const viewWidth = Math.max(1, width);
   const viewHeight = Math.max(1, height);

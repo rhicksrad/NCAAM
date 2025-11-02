@@ -4,7 +4,7 @@
  */
 import { area as d3Area, curveLinear, curveMonotoneX } from "d3-shape";
 import { select } from "d3-selection";
-import { defaultTheme } from "../theme";
+import { defaultTheme } from "../theme.js";
 function position(scale, value) {
     const scaled = scale(value instanceof Date ? value : value);
     if (typeof scaled === "number")
@@ -30,7 +30,9 @@ function valueY(scale, value) {
 export function renderArea(g, data, scales, options = {}) {
     const theme = options.theme ?? defaultTheme;
     const selection = select(g);
-    const path = selection.selectAll("path.series--area").data([null]);
+    const path = selection
+        .selectAll("path.series--area")
+        .data([data]);
     const enter = path
         .enter()
         .append("path")
@@ -44,9 +46,9 @@ export function renderArea(g, data, scales, options = {}) {
             ? Math.max(...yRange)
             : 0;
     const areaGenerator = d3Area()
-        .defined(options.defined ?? ((d) => Number.isFinite(d.y)))
-        .x((d) => position(scales.x, d.x))
-        .y1((d) => valueY(scales.y, d.y))
+        .defined(options.defined ?? ((datum) => Number.isFinite(datum.y)))
+        .x((datum) => position(scales.x, datum.x))
+        .y1((datum) => valueY(scales.y, datum.y))
         .y0(() => baseline)
         .curve(options.smoothing ? curveMonotoneX : curveLinear);
     const dAttribute = areaGenerator(data);

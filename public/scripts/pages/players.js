@@ -3,7 +3,7 @@ import { buildScales, drawAxes, drawGrid } from "../lib/charts/axes.js";
 import { computeInnerSize, createSVG } from "../lib/charts/frame.js";
 import { renderBars } from "../lib/charts/series/bar.js";
 import { createTooltip } from "../lib/charts/tooltip.js";
-import { applyTheme, defaultTheme, formatNumber, } from "../lib/charts/theme.js";
+import { defaultTheme, formatNumber, } from "../lib/charts/theme.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
@@ -973,13 +973,13 @@ function mountLeaderboardChart(container, leaders, options) {
     const render = () => {
         const tooltipHandle = ensureTooltip();
         tooltipHandle.hide();
-        applyTheme(container, theme);
         const width = container.clientWidth || 640;
         const height = Math.max(320, margin.top + margin.bottom + leaders.length * 28);
         surface.innerHTML = "";
         const svg = createSVG(surface, width, height, {
             title: options.title,
             description: options.description,
+            theme,
         });
         const plot = select(svg)
             .append("g")
@@ -1062,18 +1062,27 @@ function mountLeaderboardChart(container, leaders, options) {
             .attr("focusable", "true")
             .attr("aria-hidden", null)
             .attr("role", "img")
-            .attr("aria-label", datum => `${datum.leader.name}: ${formatLeaderboardValue(options.metricId, datum.leader)}`)
-            .on("mouseenter", function (event, datum) {
-            showTooltip(this, datum);
+            .attr("aria-label", (datum) => `${datum.leader.name}: ${formatLeaderboardValue(options.metricId, datum.leader)}`)
+            .on("mouseenter", (event, datum) => {
+            const target = event.currentTarget;
+            if (target) {
+                showTooltip(target, datum);
+            }
         })
             .on("mouseleave", () => {
             tooltipHandle.hide();
         })
-            .on("mousemove", function () {
-            moveTooltip(this);
+            .on("mousemove", (event) => {
+            const target = event.currentTarget;
+            if (target) {
+                moveTooltip(target);
+            }
         })
-            .on("focus", function (event, datum) {
-            showTooltip(this, datum);
+            .on("focus", (event, datum) => {
+            const target = event.currentTarget;
+            if (target) {
+                showTooltip(target, datum);
+            }
         })
             .on("blur", () => {
             tooltipHandle.hide();

@@ -5,8 +5,9 @@
 
 import { area as d3Area, curveLinear, curveMonotoneX } from "d3-shape";
 import { select } from "d3-selection";
-import type { BuiltScales } from "../axes";
-import { ChartTheme, defaultTheme } from "../theme";
+import type { Selection } from "d3-selection";
+import type { BuiltScales } from "../axes.js";
+import { ChartTheme, defaultTheme } from "../theme.js";
 
 export interface AreaDatum {
   x: number | Date;
@@ -52,14 +53,16 @@ export function renderArea(
 ): SVGPathElement {
   const theme = options.theme ?? defaultTheme;
   const selection = select(g);
-  const path = selection.selectAll<SVGPathElement, AreaDatum>("path.series--area").data([null]);
+  const path = selection
+    .selectAll<SVGPathElement>("path.series--area")
+    .data([data]);
   const enter = path
     .enter()
     .append("path")
     .attr("class", "series series--area")
     .attr("vector-effect", "non-scaling-stroke");
 
-  const merged = enter.merge(path as any);
+  const merged: Selection<SVGPathElement, readonly AreaDatum[]> = enter.merge(path);
   const yRange = (scales.y as any).range?.() as [number, number];
   const baseline =
     options.baseline !== undefined
@@ -69,9 +72,9 @@ export function renderArea(
         : 0;
 
   const areaGenerator = d3Area<AreaDatum>()
-    .defined(options.defined ?? ((d: AreaDatum) => Number.isFinite(d.y)))
-    .x((d) => position(scales.x, d.x))
-    .y1((d) => valueY(scales.y, d.y))
+    .defined(options.defined ?? ((datum: AreaDatum) => Number.isFinite(datum.y)))
+    .x((datum: AreaDatum) => position(scales.x, datum.x))
+    .y1((datum: AreaDatum) => valueY(scales.y, datum.y))
     .y0(() => baseline)
     .curve(options.smoothing ? curveMonotoneX : curveLinear);
 

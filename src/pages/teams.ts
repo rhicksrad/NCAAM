@@ -593,9 +593,9 @@ async function renderMap(teams: TeamCardData[]) {
     .join("circle")
     .attr("class", "teams-map__dot")
     .attr("tabindex", 0)
-    .attr("data-team-id", team => String(team.id))
+    .attr("data-team-id", (team: TeamCardData) => String(team.id))
     .attr("r", 5)
-    .each(function (team) {
+    .each(function (this: SVGCircleElement, team: TeamCardData) {
       const { location } = team;
       if (!location) {
         return;
@@ -612,39 +612,39 @@ async function renderMap(teams: TeamCardData[]) {
         .attr("stroke", "rgba(255,255,255,0.9)")
         .attr("stroke-width", 1.2);
     })
-    .on("pointerenter", function (event, team) {
+    .on("pointerenter", function (this: SVGCircleElement, event: PointerEvent, team: TeamCardData) {
       if (!team.location) {
         return;
       }
       (this as SVGCircleElement).classList.add("is-hovered");
       showTooltip(this as SVGCircleElement, `${team.full_name} · ${team.location.arena}`);
     })
-    .on("pointermove", function (event, team) {
+    .on("pointermove", function (this: SVGCircleElement, event: PointerEvent, team: TeamCardData) {
       if (!team.location || tooltip.hidden) {
         return;
       }
       showTooltip(this as SVGCircleElement, `${team.full_name} · ${team.location.arena}`);
     })
-    .on("pointerleave", function () {
+    .on("pointerleave", function (this: SVGCircleElement) {
       (this as SVGCircleElement).classList.remove("is-hovered");
       hideTooltip();
     })
-    .on("focus", function (event, team) {
+    .on("focus", function (this: SVGCircleElement, event: FocusEvent, team: TeamCardData) {
       if (!team.location) {
         return;
       }
       (this as SVGCircleElement).classList.add("is-hovered");
       showTooltip(this as SVGCircleElement, `${team.full_name} · ${team.location.arena}`);
     })
-    .on("blur", function () {
+    .on("blur", function (this: SVGCircleElement) {
       (this as SVGCircleElement).classList.remove("is-hovered");
       hideTooltip();
     })
-    .on("click", function (event, team) {
+    .on("click", function (this: SVGCircleElement, event: MouseEvent, team: TeamCardData) {
       event.preventDefault();
       openTeamCard(team.id, { focus: true });
     })
-    .on("keydown", function (event, team) {
+    .on("keydown", function (this: SVGCircleElement, event: KeyboardEvent, team: TeamCardData) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         openTeamCard(team.id, { focus: true });

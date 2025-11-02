@@ -5,8 +5,8 @@
 
 import { select } from "d3-selection";
 import type { Selection } from "d3-selection";
-import type { BuiltScales } from "../axes";
-import { ChartTheme, defaultTheme } from "../theme";
+import type { BuiltScales } from "../axes.js";
+import { ChartTheme, defaultTheme } from "../theme.js";
 
 export interface BarDatum {
   x: string | number | Date;
@@ -85,7 +85,7 @@ export function renderBars<Datum extends BarDatum>(
   const minWidth = options.minWidth ?? 4;
   const selection = select(g);
   const join = selection
-    .selectAll<SVGRectElement, Datum>("rect.series--bar")
+    .selectAll<SVGRectElement>("rect.series--bar")
     .data(data, (d: any) => d.x as any);
   const enter = join
     .enter()

@@ -6,8 +6,8 @@ import { axisBottom, axisLeft } from "d3-axis";
 import { extent } from "d3-array";
 import { scaleBand, scaleLinear, scalePoint, scaleTime } from "d3-scale";
 import { select } from "d3-selection";
-import { pixelAlign } from "./frame";
-import { defaultTheme, formatDate, formatNumber } from "./theme";
+import { pixelAlign } from "./frame.js";
+import { defaultTheme, formatDate, formatNumber } from "./theme.js";
 /**
  * Build x/y scales with sensible defaults.
  *

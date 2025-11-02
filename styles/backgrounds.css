@@ -2,70 +2,13 @@
 
 body {
   background-image:
-    radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--color-arc) 20%, transparent), transparent),
-    url("../bg-bracket.svg"),
-    url("../bg-court.svg");
-  background-color: var(--color-cream);
-  background-repeat: no-repeat, repeat, repeat;
-  background-size: auto, cover, 1200px;
+    radial-gradient(900px 600px at 20% 10%, color-mix(in srgb, var(--color-arc) 14%, transparent), transparent 70%),
+    radial-gradient(700px 520px at 80% 15%, color-mix(in srgb, var(--color-accent-teal) 12%, transparent), transparent 72%),
+    linear-gradient(160deg, color-mix(in srgb, var(--color-slate) 92%, transparent), var(--color-cream));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 html[data-theme="dark"] body {
-  background-image:
-    radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--color-arc) 20%, transparent), transparent),
-    url("../bg-bracket.svg"),
-    url("../bg-court.svg");
-  background-color: var(--color-cream);
-  color: color-mix(in oklab, white 92%, var(--color-ink) 8%);
-}
-
-.hero {
-  position: relative;
-  padding-block: clamp(4rem, 3.2rem + 2vw, 6rem);
-  color: color-mix(in oklab, var(--color-ink) 92%, var(--color-steel) 8%);
-  background-image:
-    linear-gradient(180deg, color-mix(in oklab, var(--color-ink) 8%, transparent), transparent 65%),
-    url("../dot-grid.svg");
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 800px;
-}
-
-.hero__inner {
-  display: grid;
-  gap: var(--space-lg);
-  align-items: start;
-}
-
-.hero__lede {
-  font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.4rem);
-  max-width: 46ch;
-  color: color-mix(in oklab, var(--color-ink) 70%, var(--color-steel) 30%);
-}
-
-.hero__season-note {
-  margin: 0;
-  font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: color-mix(in oklab, var(--color-ink) 65%, var(--color-steel) 35%);
-}
-
-.hero--compact {
-  padding-block: clamp(2.5rem, 2.1rem + 1vw, 3.5rem);
-}
-
-.hero--compact h1 {
-  font-size: clamp(2rem, 1.7rem + 1vw, 2.8rem);
-}
-
-html[data-theme="dark"] .hero {
-  color: color-mix(in oklab, white 92%, transparent);
-}
-
-html[data-theme="dark"] .hero__lede {
-  color: color-mix(in oklab, white 78%, transparent);
-}
-
-html[data-theme="dark"] .hero__season-note {
-  color: color-mix(in oklab, white 80%, transparent);
+  color: var(--color-ink);
 }

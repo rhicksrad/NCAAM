@@ -1,24 +1,47 @@
 import { BASE } from "../config.js";
 
-const links: [string,string][] = [
-  ["index.html","Home"],
-  ["teams.html","Teams"],
-  ["players.html","Players"],
-  ["games.html","Games"],
-  ["rankings.html","Rankings"],
-  ["standings.html","Standings"]
-];
+const LINKS: readonly [string, string][] = [
+  ["index.html", "Home"],
+  ["teams.html", "Teams"],
+  ["players.html", "Players"],
+  ["games.html", "Games"],
+  ["rankings.html", "Rankings"],
+  ["standings.html", "Standings"],
+] as const;
 
-function isCurrent(href: string) {
-  const here = location.pathname.replace(BASE, "") || "index.html";
-  return here === href ? ' class="active"' : "";
+function resolveCurrent(): string {
+  const raw = location.pathname.replace(BASE, "");
+  return raw === "" ? "index.html" : raw;
 }
 
-export function mountNav() {
+export function mountNav(): void {
   const el = document.getElementById("site-nav");
   if (!el) return;
-  el.innerHTML = `<nav class="nav">` +
-    links.map(([href, label]) => `<a href="${BASE}${href}"${isCurrent(href)}>${label}</a>`).join(" · ") +
-    `</nav>`;
+  const doc = el.ownerDocument ?? document;
+  const here = resolveCurrent();
+
+  el.innerHTML = "";
+  el.classList.add("site-nav");
+  if (!el.hasAttribute("role")) {
+    el.setAttribute("role", "navigation");
+  }
+  if (!el.hasAttribute("aria-label")) {
+    el.setAttribute("aria-label", "Site");
+  }
+
+  const fragment = doc.createDocumentFragment();
+  for (const [href, label] of LINKS) {
+    const anchor = doc.createElement("a");
+    anchor.href = `${BASE}${href}`;
+    anchor.textContent = label;
+    anchor.className = "site-nav__link";
+    if (here === href) {
+      anchor.setAttribute("aria-current", "page");
+    }
+    fragment.appendChild(anchor);
+  }
+
+  el.appendChild(fragment);
 }
+
 mountNav();

@@ -17,24 +17,19 @@
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand" href="./index.html">
-      <span class="site-brand__title">NCAAM Hub</span>
-      <span class="site-brand__sub">Men's College Basketball</span>
-    </a>
-  </div>
-  <div class="container site-header__nav">
-    <div id="site-nav"></div>
+    <a class="site-brand" href="./index.html">NCAAM Hub</a>
+    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
   </div>
 </header>
-<section class="hero hero--compact">
-  <div class="container hero__inner">
-    <div class="stack" data-gap="sm">
-      <h1>Rankings</h1>
-      <p class="hero__lede">Compare AP polls, resumes, and heat checks to see who’s rising before Selection Sunday.</p>
+<main>
+  <div class="container page">
+    <div class="page-intro">
+      <p class="page-label">Rankings</p>
+      <p class="page-summary">Poll snapshots and efficiency notes without the clutter.</p>
     </div>
+    <div id="app" class="page-content"></div>
   </div>
-</section>
-<main id="app" class="container"></main>
+</main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/rankings.js"></script>
 </body>

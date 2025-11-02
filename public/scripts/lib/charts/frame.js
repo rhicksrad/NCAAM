@@ -2,6 +2,7 @@
  * Chart framing utilities.
  * @module charts/frame
  */
+import { applyTheme, defaultTheme } from "./theme.js";
 const SVG_NS = "http://www.w3.org/2000/svg";
 /**
  * Create an accessible, responsive SVG element within a container.
@@ -13,6 +14,11 @@ const SVG_NS = "http://www.w3.org/2000/svg";
  */
 export function createSVG(container, width, height, options = {}) {
     const doc = container.ownerDocument ?? document;
+    const theme = options.theme ?? defaultTheme;
+    if (!container.classList.contains("chart-surface")) {
+        container.classList.add("chart-surface");
+    }
+    applyTheme(container, theme);
     const svg = doc.createElementNS(SVG_NS, "svg");
     const viewWidth = Math.max(1, width);
     const viewHeight = Math.max(1, height);
