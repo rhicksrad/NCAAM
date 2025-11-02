@@ -1,4 +1,6 @@
 import { API, CACHE_TTL_MS } from "../config.js";
+const SAFE_PAGE_SIZE = 100;
+const MAX_PAGINATION_REQUESTS = 50;
 function buildSearchParams(params) {
     const search = new URLSearchParams();
     for (const [key, value] of Object.entries(params)) {
@@ -24,31 +26,127 @@ function key(path, params) {
     const q = buildSearchParams(params).toString();
     return `NCAAM:${path}?${q}`;
 }
-async function get(path, params = {}) {
-    const k = key(path, params), now = Date.now();
+function readCache(cacheKey, now) {
     try {
-        const c = localStorage.getItem(k);
-        if (c) {
-            const { t, v } = JSON.parse(c);
-            if (now - t < CACHE_TTL_MS)
-                return v;
+        const cached = localStorage.getItem(cacheKey);
+        if (!cached)
+            return null;
+        const { t, v } = JSON.parse(cached);
+        if (typeof t === "number" && now - t < CACHE_TTL_MS) {
+            return v;
         }
     }
     catch { }
-    const q = buildSearchParams(params).toString();
-    const url = `${API}${path}${q ? `?${q}` : ""}`;
-    const res = await fetch(url, { headers: { "Accept": "application/json" } });
-    if (!res.ok)
-        throw new Error(`API ${res.status}`);
-    const v = await res.json();
+    return null;
+}
+function writeCache(cacheKey, now, value) {
     try {
-        localStorage.setItem(k, JSON.stringify({ t: now, v }));
+        localStorage.setItem(cacheKey, JSON.stringify({ t: now, v: value }));
     }
     catch { }
-    return v;
+}
+async function get(path, params = {}) {
+    const cacheKey = key(path, params);
+    const now = Date.now();
+    const cached = readCache(cacheKey, now);
+    if (cached !== null) {
+        return cached;
+    }
+    const q = buildSearchParams(params).toString();
+    const url = `${API}${path}${q ? `?${q}` : ""}`;
+    const res = await fetch(url, { headers: { Accept: "application/json" } });
+    if (!res.ok)
+        throw new Error(`API ${res.status}`);
+    const value = (await res.json());
+    writeCache(cacheKey, now, value);
+    return value;
+}
+function resolveNextPage(meta, currentPage) {
+    if (!meta) {
+        return null;
+    }
+    const { next_page, current_page, total_pages } = meta;
+    if (typeof next_page === "number" && Number.isFinite(next_page)) {
+        return next_page === currentPage ? null : next_page;
+    }
+    if (next_page === null) {
+        return null;
+    }
+    if (typeof current_page === "number" &&
+        Number.isFinite(current_page) &&
+        typeof total_pages === "number" &&
+        Number.isFinite(total_pages)) {
+        if (current_page >= total_pages) {
+            return null;
+        }
+        return current_page + 1;
+    }
+    return null;
+}
+function shouldRetryWithPagination(error) {
+    if (!(error instanceof Error)) {
+        return false;
+    }
+    return /^API 4\d\d/.test(error.message);
+}
+async function getTeamsPaginated(page, perPage) {
+    const desiredTotal = perPage > 0 ? perPage : SAFE_PAGE_SIZE;
+    const cacheKey = key("/teams", { page, per_page: desiredTotal });
+    const now = Date.now();
+    const cached = readCache(cacheKey, now);
+    if (cached !== null) {
+        return cached;
+    }
+    const aggregated = [];
+    let currentPage = page;
+    let remaining = desiredTotal;
+    let lastMeta;
+    let iterations = 0;
+    while (iterations < MAX_PAGINATION_REQUESTS) {
+        iterations += 1;
+        const pageSize = Math.min(SAFE_PAGE_SIZE, Math.max(remaining, 1));
+        const response = await get("/teams", {
+            page: currentPage,
+            per_page: pageSize,
+        });
+        const pageData = Array.isArray(response.data) ? response.data : [];
+        aggregated.push(...pageData);
+        lastMeta = response.meta;
+        if (aggregated.length >= desiredTotal) {
+            break;
+        }
+        if (pageData.length === 0) {
+            break;
+        }
+        const nextPage = resolveNextPage(lastMeta, currentPage);
+        if (!nextPage || nextPage === currentPage) {
+            break;
+        }
+        currentPage = nextPage;
+        remaining = desiredTotal - aggregated.length;
+    }
+    const result = {
+        data: aggregated.slice(0, desiredTotal),
+        meta: lastMeta,
+    };
+    writeCache(cacheKey, now, result);
+    return result;
 }
 export const NCAAM = {
-    teams: (page = 1, per_page = 200) => get("/teams", { page, per_page }),
+    teams: async (page = 1, per_page = 200) => {
+        if (per_page > SAFE_PAGE_SIZE) {
+            return getTeamsPaginated(page, per_page);
+        }
+        try {
+            return await get("/teams", { page, per_page });
+        }
+        catch (error) {
+            if (shouldRetryWithPagination(error)) {
+                return getTeamsPaginated(page, per_page);
+            }
+            throw error;
+        }
+    },
     players: (page = 1, per_page = 200, search = "") => get("/players", { page, per_page, search }),
     activePlayersByTeam: (teamId) => get("/players/active", { "team_ids[]": teamId, per_page: 100 }),
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
