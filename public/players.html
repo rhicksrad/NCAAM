@@ -12,6 +12,7 @@
 <meta name="theme-color" content="#0B1024" />
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="stylesheet" href="./styles/index.css">
+<link rel="stylesheet" href="./styles/charts.css">
 <script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
 <script type="importmap">
 {
@@ -42,6 +43,17 @@
     <div id="app" class="page-content"></div>
   </div>
 </main>
+<div id="boot-errors" style="display:none;background:#fee2e2;color:#7f1d1d;padding:8px 12px;font:14px ui-sans-serif,system-ui"></div>
+<script type="module">
+  const errBox = document.getElementById('boot-errors');
+  const showErr = (e) => {
+    errBox.style.display = 'block';
+    errBox.textContent = e?.message || e;
+    console.error(e);
+  };
+  window.addEventListener('error', (ev) => showErr(ev.error || ev.message));
+  window.addEventListener('unhandledrejection', (ev) => showErr(ev.reason || ev));
+</script>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/players.js"></script>
 </body>
