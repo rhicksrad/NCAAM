@@ -147,3 +147,21 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
 
 MIT unless noted otherwise in subfolders.
 
+
+## Chart Theme Toolkit
+
+The reusable chart system lives under `src/lib/charts/` and is built with D3 v7 modules only (`selection`, `scale`, `axis`, `shape`, `array`, `format`, `interpolate`). Highlights:
+
+- **Theme tokens** (`theme.ts`): Light/dark palettes, CSS variable application, numeric/date formatting helpers, and automatic text-contrast utilities.
+- **Frame utilities** (`frame.ts`): Accessible SVG scaffolding with deterministic IDs, responsive viewBoxes, and pixel alignment helpers.
+- **Axes & Grid** (`axes.ts`): Scale builders for linear/time/band domains, responsive tick heuristics, crisp gridlines, and an optional wrapping legend.
+- **Series primitives** (`series/`): Optimized line, area, and bar renderers with non-scaling strokes and reduced-motion-aware micro-animations.
+- **Tooltips** (`tooltip.ts`): Keyboard and screen-reader friendly overlays backed by an aria-live region.
+
+Shared styles are defined in `public/styles/charts.css` with CSS custom properties for both light and dark modes. Example integrations are available in `examples/bar-basic.ts` and `examples/line-basic.ts`; each script wires up ResizeObserver-driven redraws, accessible tooltips, and shared margin conventions.
+
+Run the focused unit tests with:
+
+```bash
+pnpm vitest run tests/theme.spec.ts
+```
