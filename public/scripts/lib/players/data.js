@@ -1,4 +1,14 @@
-const resolveDataUrl = (path) => new URL(path, import.meta.url).toString();
+const DATA_ROOT = "/data/";
+const resolveDataUrl = (path) => {
+    if (/^(?:https?:)?\/\//i.test(path)) {
+        return path;
+    }
+    if (path.startsWith("/")) {
+        return path;
+    }
+    const normalized = path.replace(/^\/+/, "");
+    return `${DATA_ROOT}${normalized}`;
+};
 export async function loadJson(path) {
     const response = await fetch(resolveDataUrl(path));
     if (!response.ok) {
@@ -7,9 +17,9 @@ export async function loadJson(path) {
     return (await response.json());
 }
 export const PLAYER_DATA_PATHS = {
-    leaderboard: "../../../data/player_stat_leaders_2024-25.json",
-    index: "../../../data/players_index.json",
-    playerStats: (slug) => `../../../data/players/${slug}.json`,
+    leaderboard: "/data/player_stat_leaders_2024-25.json",
+    index: "/data/players_index.json",
+    playerStats: (slug) => `/data/players/${slug}.json`,
 };
 export const DEFAULT_METRIC_ORDER = [
     "points",
