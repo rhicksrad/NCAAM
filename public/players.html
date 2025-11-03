@@ -5,43 +5,51 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <base href="./">
 <title>Players · NCAAM Hub</title>
-<meta name="description" content="Explore stat leaderboards and every Division I roster by conference for the latest season.">
+<meta name="description" content="Track impact players with sortable scouting cards and quick bios.">
 <meta property="og:title" content="Players · NCAAM Hub" />
-<meta property="og:description" content="Explore stat leaderboards and every Division I roster by conference for the latest season." />
+<meta property="og:description" content="Track impact players with sortable scouting cards and quick bios." />
 <meta property="og:image" content="./og-base.svg" />
 <meta name="theme-color" content="#0B1024" />
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="./styles/charts.css">
 <script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
+<script type="importmap">
+{
+  "imports": {
+    "d3-axis": "https://esm.sh/d3-axis@3?pin=v135",
+    "d3-array": "https://esm.sh/d3-array@3?pin=v135",
+    "d3-scale": "https://esm.sh/d3-scale@4?pin=v135",
+    "d3-selection": "https://esm.sh/d3-selection@3?pin=v135",
+    "d3-format": "https://esm.sh/d3-format@3?pin=v135",
+    "d3-interpolate": "https://esm.sh/d3-interpolate@3?pin=v135",
+    "d3-time": "https://esm.sh/d3-time@3?pin=v135",
+    "d3-time-format": "https://esm.sh/d3-time-format@4?pin=v135",
+    "d3-color": "https://esm.sh/d3-color@3?pin=v135"
+  }
+}
+</script>
 </head>
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand" href="./index.html">NCAAM Hub</a>
-    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
+    <a class="site-brand" href="./index.html">
+      <span class="site-brand__title">NCAAM Hub</span>
+      <span class="site-brand__sub">Men's College Basketball</span>
+    </a>
+  </div>
+  <div class="container site-header__nav">
+    <div id="site-nav"></div>
   </div>
 </header>
-<main>
-  <div class="container page">
-    <div class="page-intro">
-      <p class="page-label">Players</p>
-      <p class="page-summary">Fresh leaderboards plus expandable conference cards with complete team-by-team rosters.</p>
+<section class="hero hero--compact">
+  <div class="container hero__inner">
+    <div class="stack" data-gap="sm">
+      <h1>Players</h1>
+      <p class="hero__lede">Track impact players with sortable scouting cards and quick bios.</p>
     </div>
-    <div id="app" class="page-content"></div>
   </div>
-</main>
-<div id="boot-errors" style="display:none;background:#fee2e2;color:#7f1d1d;padding:8px 12px;font:14px ui-sans-serif,system-ui"></div>
-<script type="module">
-  const errBox = document.getElementById('boot-errors');
-  const showErr = (e) => {
-    errBox.style.display = 'block';
-    errBox.textContent = e?.message || e;
-    console.error(e);
-  };
-  window.addEventListener('error', (ev) => showErr(ev.error || ev.message));
-  window.addEventListener('unhandledrejection', (ev) => showErr(ev.reason || ev));
-</script>
+</section>
+<main id="app" class="container"></main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/players.js"></script>
 </body>

@@ -1,0 +1,386 @@
+@import url("./tokens.css");
+
+.players-page {
+  position: relative;
+}
+
+.feature-card {
+  position: relative;
+}
+
+.feature-card__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-ink) 65%, white 35%);
+}
+
+.feature-card__title {
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-ink) 92%, white 8%);
+}
+
+.feature-card__meta {
+  color: var(--color-muted);
+  max-width: 62ch;
+}
+
+.players-leaderboard-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  min-height: 100%;
+}
+
+.stat-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.stat-card__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-card__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-ink) 65%, white 35%);
+  font-weight: 700;
+}
+
+.stat-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-ink) 88%, white 12%);
+}
+
+.stat-card__season {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--color-arc) 20%, transparent);
+  color: color-mix(in srgb, var(--color-arc) 80%, white 20%);
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+}
+
+.stat-card__chart {
+  min-height: 240px;
+}
+
+.stat-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-card__leader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.stat-card__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-arc) 18%, transparent);
+  color: color-mix(in srgb, var(--color-arc) 85%, white 15%);
+  font-weight: 700;
+}
+
+.stat-card__player {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.stat-card__name {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-ink) 90%, white 10%);
+}
+
+.stat-card__team {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.stat-card__value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--color-ink) 80%, white 20%);
+}
+
+.stat-card__loading,
+.stat-card__empty,
+.stat-card--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-muted);
+  min-height: 200px;
+}
+
+.stat-card--empty,
+.stat-card--error {
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+}
+
+.players-conference-directory {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.conference-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.conference-panel__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+}
+
+.conference-panel__summary::-webkit-details-marker {
+  display: none;
+}
+
+.conference-panel__summary:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-arc) 55%, white 45%);
+  outline-offset: 4px;
+}
+
+.conference-panel__summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.conference-panel__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.conference-panel__meta {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.conference-panel__chevron {
+  display: inline-flex;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.conference-panel__chevron::before {
+  content: "";
+  display: block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-top: 2px solid var(--color-ink);
+  border-right: 2px solid var(--color-ink);
+  transform: rotate(45deg);
+  transition: transform var(--transition-base);
+}
+
+.conference-panel[open] .conference-panel__chevron::before {
+  transform: rotate(135deg) translateY(-2px);
+}
+
+.conference-panel__body {
+  display: grid;
+  gap: var(--space-lg);
+  padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.conference-panel__placeholder,
+.conference-panel__loading,
+.conference-panel__message {
+  margin: 0;
+  padding: var(--space-md);
+  background: color-mix(in srgb, var(--color-paper) 95%, transparent);
+  border-radius: var(--radius-card);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.conference-panel__message--error,
+.conference-panel__placeholder--error {
+  color: color-mix(in srgb, var(--color-arc) 70%, var(--color-ink) 30%);
+}
+
+.team-roster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-1);
+}
+
+.team-roster__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.team-roster__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.team-roster__meta {
+  margin: 0.15rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.team-roster__table {
+  background: color-mix(in srgb, var(--color-paper) 98%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-radius: 1rem;
+  padding: 0.4rem;
+  overflow-x: auto;
+}
+
+.team-roster__table::-webkit-scrollbar {
+  height: 8px;
+}
+
+.team-roster__table::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-radius: 999px;
+}
+
+.team-roster__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.team-roster__row {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(220px, 2.4fr) repeat(10, minmax(72px, 1fr));
+  gap: var(--space-xs);
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 5%, transparent);
+  min-width: 820px;
+}
+
+.team-roster__row--header {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-muted);
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.team-roster__row--empty {
+  text-align: center;
+  grid-column: 1 / -1;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.team-roster__name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-ink) 88%, white 12%);
+}
+
+.team-roster__name a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.team-roster__name a:hover,
+.team-roster__name a:focus-visible {
+  text-decoration: underline;
+}
+
+.team-roster__team {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.team-roster__stat {
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--color-ink) 80%, white 20%);
+}
+
+@media (max-width: 900px) {
+  .stat-card__chart {
+    min-height: 200px;
+  }
+
+  .team-roster__row {
+    min-width: 680px;
+    grid-template-columns: minmax(200px, 2fr) repeat(10, minmax(64px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .conference-panel__summary {
+    padding-inline: var(--space-md);
+  }
+
+  .conference-panel__body {
+    padding-inline: var(--space-md);
+  }
+}
