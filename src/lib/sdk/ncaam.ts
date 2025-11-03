@@ -37,9 +37,17 @@ function buildSearchParams(params: Record<string, QueryValue>): URLSearchParams 
   return search;
 }
 
+function normalizePath(path: string): string {
+  if (!path) {
+    return "/";
+  }
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
 function key(path: string, params: Record<string, QueryValue>) {
+  const normalizedPath = normalizePath(path);
   const q = buildSearchParams(params).toString();
-  return `NCAAM:${path}?${q}`;
+  return q ? `NCAAM:${normalizedPath}?${q}` : `NCAAM:${normalizedPath}`;
 }
 
 function readCache<T>(cacheKey: string, now: number): T | null {
@@ -68,8 +76,9 @@ async function get<T = JSONV>(path: string, params: Record<string, QueryValue> =
     return cached;
   }
 
+  const normalizedPath = normalizePath(path);
   const q = buildSearchParams(params).toString();
-  const url = `${API}${path}${q ? `?${q}` : ""}`;
+  const url = q ? `${API}${normalizedPath}?${q}` : `${API}${normalizedPath}`;
   const res = await fetch(url, { headers: { Accept: "application/json" } });
   if (!res.ok) throw new Error(`API ${res.status}`);
   const value = (await res.json()) as T;

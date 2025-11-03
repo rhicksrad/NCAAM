@@ -22,9 +22,16 @@ function buildSearchParams(params) {
     }
     return search;
 }
+function normalizePath(path) {
+    if (!path) {
+        return "/";
+    }
+    return path.startsWith("/") ? path : `/${path}`;
+}
 function key(path, params) {
+    const normalizedPath = normalizePath(path);
     const q = buildSearchParams(params).toString();
-    return `NCAAM:${path}?${q}`;
+    return q ? `NCAAM:${normalizedPath}?${q}` : `NCAAM:${normalizedPath}`;
 }
 function readCache(cacheKey, now) {
     try {
@@ -52,8 +59,9 @@ async function get(path, params = {}) {
     if (cached !== null) {
         return cached;
     }
+    const normalizedPath = normalizePath(path);
     const q = buildSearchParams(params).toString();
-    const url = `${API}${path}${q ? `?${q}` : ""}`;
+    const url = q ? `${API}${normalizedPath}?${q}` : `${API}${normalizedPath}`;
     const res = await fetch(url, { headers: { Accept: "application/json" } });
     if (!res.ok)
         throw new Error(`API ${res.status}`);
