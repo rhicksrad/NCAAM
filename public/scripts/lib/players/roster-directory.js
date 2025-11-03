@@ -1,6 +1,6 @@
 import { NCAAM } from "../sdk/ncaam.js";
 import { loadPlayerIndexDocument, loadPlayerStatsDocument, pickSeasonStats, } from "./data.js";
-const ACTIVE_ROSTER_SEASON = "2024-25";
+const ACTIVE_ROSTER_SEASON = "2025-26";
 const teamRosterCache = new Map();
 let playerIndexLookupPromise = null;
 function parseSeasonEndYear(label) {

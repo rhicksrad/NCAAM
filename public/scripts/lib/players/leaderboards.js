@@ -13,6 +13,14 @@ const CARD_TONE_CLASSES = [
     "stat-card--tone-3",
     "stat-card--tone-4",
 ];
+const LEADERBOARD_SEASON_SPAN_LABEL = "2022-2025 seasons";
+function resolveLeaderboardSeasonLabel(document) {
+    const season = document.season?.trim();
+    if (!season) {
+        return LEADERBOARD_SEASON_SPAN_LABEL;
+    }
+    return season === "2024-25" ? LEADERBOARD_SEASON_SPAN_LABEL : season;
+}
 export async function renderLeaderboardFeature(grid, meta, title) {
     const skeleton = createSkeletonCard();
     grid.innerHTML = "";
@@ -21,15 +29,16 @@ export async function renderLeaderboardFeature(grid, meta, title) {
         const document = await loadLeaderboardDocument();
         const metrics = document.metrics ?? {};
         const orderedIds = buildMetricOrder(metrics);
+        const displaySeasonLabel = resolveLeaderboardSeasonLabel(document);
         if (title) {
-            title.textContent = `Top 10 stat leaders for ${document.season}`;
+            title.textContent = `Top 10 stat leaders (${displaySeasonLabel})`;
         }
         if (meta) {
             const updated = new Date(document.generatedAt);
             const updatedText = Number.isNaN(updated.valueOf())
                 ? "Recently updated"
                 : `Updated ${updated.toLocaleDateString()}`;
-            meta.textContent = updatedText;
+            meta.textContent = `${updatedText} · Stats aggregated from ${displaySeasonLabel}.`;
         }
         grid.innerHTML = "";
         if (!orderedIds.length) {
@@ -40,7 +49,7 @@ export async function renderLeaderboardFeature(grid, meta, title) {
             const metric = metrics[id];
             if (!metric)
                 return;
-            grid.appendChild(createLeaderboardCard(id, metric, document, index));
+            grid.appendChild(createLeaderboardCard(id, metric, index, displaySeasonLabel));
         });
     }
     catch (error) {
@@ -62,19 +71,19 @@ function createSkeletonCard() {
     card.innerHTML = `<div class="stat-card__loading">Loading leaderboards…</div>`;
     return card;
 }
-function createLeaderboardCard(metricId, metric, leaderboardDoc, orderIndex) {
+function createLeaderboardCard(metricId, metric, orderIndex, seasonLabel) {
     const card = document.createElement("article");
     card.className = "stat-card";
     card.dataset.metricId = metricId;
     const toneClass = CARD_TONE_CLASSES[orderIndex % CARD_TONE_CLASSES.length];
     card.classList.add(toneClass);
     const chartId = `metric-chart-${metricId}`;
-    const description = `${metric.label} leaders for ${leaderboardDoc.season}`;
+    const description = `${metric.label} leaders for ${seasonLabel}`;
     const leaders = (metric.leaders ?? []).slice(0, 10);
     card.innerHTML = `
     <header class="stat-card__head">
       <h3 class="stat-card__title">${metric.label}</h3>
-      <span class="stat-card__season">${leaderboardDoc.season}</span>
+      <span class="stat-card__season">${seasonLabel}</span>
     </header>
     <div class="stat-card__body">
       <div id="${chartId}" class="stat-card__chart" role="img" aria-label="${description}"></div>
@@ -84,7 +93,7 @@ function createLeaderboardCard(metricId, metric, leaderboardDoc, orderIndex) {
     const chartHost = card.querySelector(`#${CSS.escape(chartId)}`);
     const list = card.querySelector(".stat-card__list");
     if (chartHost) {
-        renderMetricChart(chartHost, metric, leaderboardDoc);
+        renderMetricChart(chartHost, metric, seasonLabel);
     }
     if (list) {
         list.innerHTML = "";
@@ -104,7 +113,7 @@ function createLeaderboardCard(metricId, metric, leaderboardDoc, orderIndex) {
     }
     return card;
 }
-function renderMetricChart(container, metric, leaderboardDoc) {
+function renderMetricChart(container, metric, seasonLabel) {
     const leaders = (metric.leaders ?? []).slice(0, 10);
     if (!leaders.length) {
         container.innerHTML = `<p class="stat-card__empty">No data available.</p>`;
@@ -114,7 +123,7 @@ function renderMetricChart(container, metric, leaderboardDoc) {
     const { iw, ih } = computeInnerSize(width, height, margin);
     const svg = createSVG(container, width, height, {
         title: `${metric.label} leaders`,
-        description: `${metric.label} leaders for ${leaderboardDoc.season}`,
+        description: `${metric.label} leaders for ${seasonLabel}`,
     });
     const plot = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
     plot.setAttribute("transform", `translate(${margin.left},${margin.top})`);
