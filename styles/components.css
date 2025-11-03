@@ -200,6 +200,43 @@
   object-fit: contain;
 }
 
+.team-card__logo {
+  width: clamp(2.1rem, 1.7rem + 1vw, 2.75rem);
+  height: clamp(2.1rem, 1.7rem + 1vw, 2.75rem);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.team-card__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.team-card__logo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--team-accent) 85%, white 15%),
+    color-mix(
+      in srgb,
+      var(--team-accent-secondary, var(--team-accent)) 80%,
+      var(--team-accent) 20%
+    )
+  );
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .poll-card__logo-fallback {
   display: flex;
   align-items: center;
