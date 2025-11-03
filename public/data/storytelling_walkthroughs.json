@@ -77,42 +77,6 @@
       "sources": [
         "team_performance.json"
       ]
-    },
-    {
-      "id": "triple-double-era",
-      "title": "Triple-double era keeps compounding",
-      "lede": "Playmaking surges continue even as workloads normalize.",
-      "metric": {
-        "label": "Peak triple-doubles",
-        "value": "192",
-        "unit": "games",
-        "context": "Set during the 2021 season with 45,847 player-game logs."
-      },
-      "editorial": [
-        "League tracking shows triple-doubles jumping from 60 in 2015 to 96 in 2016, a 60% year-over-year surge that reset baseline expectations.",
-        "The 2021 campaign produced 192 triple-doubles across 45,847 player-game logs; even with fewer games in 2024 (37,584), the pace held at 175, signalling sustained versatility.",
-        "The current 2025 snapshot already counts 96 triple-doubles in 22,216 logged player games, keeping the narrative alive for another spike once the full season closes."
-      ],
-      "spotlights": [
-        {
-          "label": "2015 season",
-          "value": "60 triple-doubles",
-          "context": "Baseline before the era of nightly versatility."
-        },
-        {
-          "label": "2016 spike",
-          "value": "+36 YoY",
-          "context": "A 96 total that marked a 60% leap from 2015."
-        },
-        {
-          "label": "2024 tally",
-          "value": "175",
-          "context": "Delivered across 37,584 player-game logs."
-        }
-      ],
-      "sources": [
-        "player_season_insights.json"
-      ]
     }
   ]
 }
