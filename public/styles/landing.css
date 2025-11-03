@@ -12,7 +12,7 @@
   --accent: #38bdf8;
   --accent-strong: #f97316;
   --shadow-xl: 0 40px 120px rgba(15, 23, 42, 0.55);
-  --basketball-texture: url('/assets/textures/basketball-texture.svg');
+  --basketball-texture: url('../assets/textures/basketball-texture.svg');
 }
 
 * {
