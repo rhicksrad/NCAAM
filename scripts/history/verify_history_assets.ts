@@ -8,6 +8,19 @@ async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(raw) as T;
 }
 
+async function pathExists(filePath: string): Promise<boolean> {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch (error) {
+    if ((error as { code?: string }).code === "ENOENT") {
+      return false;
+    }
+
+    throw error;
+  }
+}
+
 type CatalogDocument = {
   count: number;
   cursor_hops: number;
@@ -18,6 +31,22 @@ async function main(): Promise<void> {
   const historyRoot = getHistoryRoot();
   const fullPath = path.join(historyRoot, "players.index.json");
   const minPath = path.join(historyRoot, "players.index.min.json");
+
+  const [fullExists, minExists] = await Promise.all([
+    pathExists(fullPath),
+    pathExists(minPath),
+  ]);
+
+  if (!fullExists && !minExists) {
+    console.log("History catalog assets not present; skipping verification.");
+    return;
+  }
+
+  if (fullExists !== minExists) {
+    throw new Error(
+      "History catalog assets must include both the full and minified documents when present.",
+    );
+  }
 
   const full = await readJson<CatalogDocument>(fullPath);
   const min = await readJson<Array<{ id: number }>>(minPath);
