@@ -150,6 +150,31 @@
   background: color-mix(in srgb, var(--color-paper) 85%, transparent);
 }
 
+.rankings-polls {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.rankings-poll {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.rankings-poll .table-shell {
+  overflow-x: auto;
+}
+
+.rankings-poll .table-shell table {
+  min-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .rankings-polls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
