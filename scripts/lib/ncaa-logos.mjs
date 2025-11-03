@@ -1,81 +1,70 @@
-import { createWriteStream } from 'node:fs';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { pipeline } from 'node:stream/promises';
-import { Open } from 'unzipper';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
-const ARCHIVE_PATH = path.join(ROOT, 'public/FBS-Logo-Library-main.zip');
-export const LOGOS_DIR = path.join(ROOT, 'public/assets/logos/ncaa');
-const MARKER_PATH = path.join(LOGOS_DIR, '.source.json');
-const ZIP_PREFIX = 'FBS-Logo-Library-main/CFB Logos/';
+export const LOGOS_DIR = path.join(ROOT, 'public/data/logos');
+const METADATA_FILENAME = 'metadata.json';
 
-async function hasExistingLogos() {
-  try {
-    const entries = await fs.readdir(LOGOS_DIR);
-    return entries.some(entry => entry.toLowerCase().endsWith('.png'));
-  } catch {
-    return false;
-  }
+function formatMissingMetadataMessage(metadataPath) {
+  return [
+    `NCAA logo metadata missing or unreadable at ${metadataPath}.`,
+    'Populate public/data/logos with the curated assets and metadata JSON before running this command.'
+  ].join(' ');
 }
 
-async function clearExistingLogos() {
+export async function verifyNcaALogos() {
+  let stats;
   try {
-    const entries = await fs.readdir(LOGOS_DIR, { withFileTypes: true });
-    await Promise.all(
-      entries.map(async entry => {
-        const target = path.join(LOGOS_DIR, entry.name);
-        if (entry.isFile()) {
-          if (entry.name.toLowerCase().endsWith('.png') || entry.name === '.source.json') {
-            await fs.rm(target, { force: true });
-          }
-          return;
-        }
-        if (entry.isDirectory()) {
-          await fs.rm(target, { recursive: true, force: true });
-        }
-      })
-    );
+    stats = await fs.stat(LOGOS_DIR);
   } catch (error) {
     if (error && error.code === 'ENOENT') {
-      return;
+      throw new Error(
+        `NCAA logo directory missing at ${LOGOS_DIR}. Populate public/data/logos before continuing.`
+      );
     }
     throw error;
   }
-}
 
-export async function ensureNcaALogos() {
-  const stat = await fs.stat(ARCHIVE_PATH).catch(error => {
+  if (!stats.isDirectory()) {
+    throw new Error(`Expected NCAA logo directory at ${LOGOS_DIR}, but found a non-directory file.`);
+  }
+
+  const entries = await fs.readdir(LOGOS_DIR);
+  const pngs = entries.filter(entry => entry.toLowerCase().endsWith('.png'));
+  if (pngs.length === 0) {
+    throw new Error(
+      `No logo PNG files were found in ${LOGOS_DIR}. Ensure public/data/logos has been synced before running this task.`
+    );
+  }
+
+  const metadataPath = path.join(LOGOS_DIR, METADATA_FILENAME);
+  let metadataRaw;
+  try {
+    metadataRaw = await fs.readFile(metadataPath, 'utf8');
+  } catch (error) {
     if (error && error.code === 'ENOENT') {
-      throw new Error(`NCAA logo archive missing at ${ARCHIVE_PATH}`);
+      throw new Error(formatMissingMetadataMessage(metadataPath));
     }
-    throw error;
-  });
-
-  await fs.mkdir(LOGOS_DIR, { recursive: true });
-
-  const signature = JSON.stringify({ size: stat.size, mtimeMs: stat.mtimeMs });
-  const existingSignature = await fs.readFile(MARKER_PATH, 'utf8').catch(() => null);
-  if (existingSignature && existingSignature.trim() === signature) {
-    if (await hasExistingLogos()) {
-      return;
-    }
+    throw new Error(`${formatMissingMetadataMessage(metadataPath)} (${error.message ?? error})`);
   }
 
-  await clearExistingLogos();
-
-  const directory = await Open.file(ARCHIVE_PATH);
-  for (const entry of directory.files) {
-    if (entry.type !== 'File') continue;
-    if (!entry.path.startsWith(ZIP_PREFIX)) continue;
-    if (!entry.path.toLowerCase().endsWith('.png')) continue;
-
-    const filename = entry.path.slice(ZIP_PREFIX.length);
-    const destination = path.join(LOGOS_DIR, filename);
-    await fs.mkdir(path.dirname(destination), { recursive: true });
-    await pipeline(entry.stream(), createWriteStream(destination));
+  let metadata;
+  try {
+    metadata = JSON.parse(metadataRaw);
+  } catch (error) {
+    throw new Error(`${formatMissingMetadataMessage(metadataPath)} (invalid JSON: ${error.message})`);
   }
 
-  await fs.writeFile(MARKER_PATH, `${signature}\n`, 'utf8');
+  if (!metadata || typeof metadata !== 'object') {
+    throw new Error(`${formatMissingMetadataMessage(metadataPath)} (expected a JSON object).`);
+  }
+
+  for (const field of ['source', 'updated']) {
+    if (typeof metadata[field] !== 'string' || metadata[field].trim() === '') {
+      throw new Error(
+        `${formatMissingMetadataMessage(metadataPath)} (missing required "${field}" string field).`
+      );
+    }
+  }
 }
