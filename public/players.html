@@ -69,7 +69,16 @@
 </script>
 <script type="module-shim" src="./scripts/nav.js"></script>
 <script type="module-shim" src="./scripts/players.js"></script>
-<script type="module" src="./scripts/nav.js"></script>
-<script type="module" src="./scripts/players.js"></script>
+<script type="module">
+  if (HTMLScriptElement.supports?.("importmap")) {
+    Promise.all([
+      import("./scripts/nav.js"),
+      import("./scripts/players.js"),
+    ]).catch((error) => {
+      window.dispatchEvent(new ErrorEvent("error", { error }));
+      throw error;
+    });
+  }
+</script>
 </body>
 </html>
