@@ -1,5 +1,3341 @@
 {
-  "source": "Custom curated NCAA logo exports stored in public/data/logos",
-  "updated": "2024-10-15",
-  "notes": "PNG logos are maintained directly in the repository. Do not rehydrate from the deprecated FBS zip archive."
+  "source": "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams",
+  "updated": "2025-11-03T15:55:14.115Z",
+  "logos": {
+    "2": {
+      "name": "Auburn Tigers",
+      "aliases": [
+        "AUB",
+        "Auburn"
+      ]
+    },
+    "3": {
+      "name": "Birmingham-Southern Panthers",
+      "aliases": [
+        "Birm-Southern",
+        "BIRMI",
+        "Birmingham-Southern"
+      ]
+    },
+    "5": {
+      "name": "UAB Blazers",
+      "aliases": [
+        "UAB"
+      ]
+    },
+    "6": {
+      "name": "South Alabama Jaguars",
+      "aliases": [
+        "South Alabama",
+        "USA"
+      ]
+    },
+    "7": {
+      "name": "Amherst Mammoths",
+      "aliases": [
+        "AMH",
+        "Amherst"
+      ]
+    },
+    "8": {
+      "name": "Arkansas Razorbacks",
+      "aliases": [
+        "ARK",
+        "Arkansas"
+      ]
+    },
+    "9": {
+      "name": "Arizona State Sun Devils",
+      "aliases": [
+        "Arizona St",
+        "Arizona State",
+        "ASU"
+      ]
+    },
+    "12": {
+      "name": "Arizona Wildcats",
+      "aliases": [
+        "ARIZ",
+        "Arizona"
+      ]
+    },
+    "13": {
+      "name": "Cal Poly Mustangs",
+      "aliases": [
+        "Cal Poly",
+        "CP"
+      ]
+    },
+    "16": {
+      "name": "Sacramento State Hornets",
+      "aliases": [
+        "SAC",
+        "Sacramento St",
+        "Sacramento State"
+      ]
+    },
+    "17": {
+      "name": "Claremont Mudd Scripps Stags",
+      "aliases": [
+        "Claremont Mudd Scripps",
+        "Claremont-M-S",
+        "CMS"
+      ]
+    },
+    "18": {
+      "name": "Bridgewater State (MA) Bears",
+      "aliases": [
+        "Bridgewater St",
+        "Bridgewater State (MA)",
+        "BRIS"
+      ]
+    },
+    "21": {
+      "name": "San Diego State Aztecs",
+      "aliases": [
+        "San Diego St",
+        "San Diego State",
+        "SDSU"
+      ]
+    },
+    "23": {
+      "name": "San José State Spartans",
+      "aliases": [
+        "San José St",
+        "San José State",
+        "SJSU"
+      ]
+    },
+    "24": {
+      "name": "Stanford Cardinal",
+      "aliases": [
+        "STAN",
+        "Stanford"
+      ]
+    },
+    "25": {
+      "name": "California Golden Bears",
+      "aliases": [
+        "CAL",
+        "California"
+      ]
+    },
+    "26": {
+      "name": "UCLA Bruins",
+      "aliases": [
+        "UCLA"
+      ]
+    },
+    "29": {
+      "name": "Redlands Bulldogs",
+      "aliases": [
+        "RED",
+        "Redlands"
+      ]
+    },
+    "30": {
+      "name": "USC Trojans",
+      "aliases": [
+        "USC"
+      ]
+    },
+    "32": {
+      "name": "Carroll (WI) Pioneers",
+      "aliases": [
+        "CAR",
+        "Carroll (WI)"
+      ]
+    },
+    "33": {
+      "name": "Colby White Mules",
+      "aliases": [
+        "Colby",
+        "COLBY"
+      ]
+    },
+    "36": {
+      "name": "Colorado State Rams",
+      "aliases": [
+        "Colorado St",
+        "Colorado State",
+        "CSU"
+      ]
+    },
+    "38": {
+      "name": "Colorado Buffaloes",
+      "aliases": [
+        "COLO",
+        "Colorado"
+      ]
+    },
+    "41": {
+      "name": "UConn Huskies",
+      "aliases": [
+        "CONN",
+        "UConn"
+      ]
+    },
+    "43": {
+      "name": "Yale Bulldogs",
+      "aliases": [
+        "Yale",
+        "YALE"
+      ]
+    },
+    "46": {
+      "name": "Georgetown Hoyas",
+      "aliases": [
+        "Georgetown",
+        "GTWN"
+      ]
+    },
+    "47": {
+      "name": "Howard Bison",
+      "aliases": [
+        "HOW",
+        "Howard"
+      ]
+    },
+    "48": {
+      "name": "Delaware Blue Hens",
+      "aliases": [
+        "DEL",
+        "Delaware"
+      ]
+    },
+    "50": {
+      "name": "Florida A&M Rattlers",
+      "aliases": [
+        "FAMU",
+        "Florida A&M"
+      ]
+    },
+    "52": {
+      "name": "Florida State Seminoles",
+      "aliases": [
+        "Florida St",
+        "Florida State",
+        "FSU"
+      ]
+    },
+    "53": {
+      "name": "Florida Tech Panthers",
+      "aliases": [
+        "FIT",
+        "Florida Tech"
+      ]
+    },
+    "55": {
+      "name": "Jacksonville State Gamecocks",
+      "aliases": [
+        "Jacksonville State",
+        "Jax State",
+        "JXST"
+      ]
+    },
+    "56": {
+      "name": "Stetson Hatters",
+      "aliases": [
+        "STET",
+        "Stetson"
+      ]
+    },
+    "57": {
+      "name": "Florida Gators",
+      "aliases": [
+        "FLA",
+        "Florida"
+      ]
+    },
+    "58": {
+      "name": "South Florida Bulls",
+      "aliases": [
+        "South Florida",
+        "USF"
+      ]
+    },
+    "59": {
+      "name": "Georgia Tech Yellow Jackets",
+      "aliases": [
+        "Georgia Tech",
+        "GT"
+      ]
+    },
+    "60": {
+      "name": "Morehouse Maroon Tigers",
+      "aliases": [
+        "Morehouse",
+        "MRHO"
+      ]
+    },
+    "61": {
+      "name": "Georgia Bulldogs",
+      "aliases": [
+        "Georgia",
+        "UGA"
+      ]
+    },
+    "62": {
+      "name": "Hawai'i Rainbow Warriors",
+      "aliases": [
+        "HAW",
+        "Hawai'i",
+        "Hawai’i"
+      ]
+    },
+    "63": {
+      "name": "Buena Vista Beavers",
+      "aliases": [
+        "Buena Vista",
+        "BVU"
+      ]
+    },
+    "65": {
+      "name": "Grinnell Pioneers",
+      "aliases": [
+        "GRI",
+        "Grinnell"
+      ]
+    },
+    "66": {
+      "name": "Iowa State Cyclones",
+      "aliases": [
+        "Iowa State",
+        "ISU"
+      ]
+    },
+    "68": {
+      "name": "Boise State Broncos",
+      "aliases": [
+        "BOIS",
+        "Boise St",
+        "Boise State"
+      ]
+    },
+    "70": {
+      "name": "Idaho Vandals",
+      "aliases": [
+        "Idaho",
+        "IDHO"
+      ]
+    },
+    "77": {
+      "name": "Northwestern Wildcats",
+      "aliases": [
+        "Northwestern",
+        "NU"
+      ]
+    },
+    "79": {
+      "name": "Southern Illinois Salukis",
+      "aliases": [
+        "S Illinois",
+        "SIU",
+        "Southern Illinois"
+      ]
+    },
+    "80": {
+      "name": "Chicago Maroons",
+      "aliases": [
+        "CHI",
+        "Chicago"
+      ]
+    },
+    "81": {
+      "name": "Springfield Pride",
+      "aliases": [
+        "SPR",
+        "Springfield",
+        "Sprngfield"
+      ]
+    },
+    "84": {
+      "name": "Indiana Hoosiers",
+      "aliases": [
+        "Indiana",
+        "IU"
+      ]
+    },
+    "87": {
+      "name": "Notre Dame Fighting Irish",
+      "aliases": [
+        "ND",
+        "Notre Dame"
+      ]
+    },
+    "93": {
+      "name": "Murray State Racers",
+      "aliases": [
+        "MUR",
+        "Murray St",
+        "Murray State"
+      ]
+    },
+    "96": {
+      "name": "Kentucky Wildcats",
+      "aliases": [
+        "Kentucky",
+        "UK"
+      ]
+    },
+    "97": {
+      "name": "Louisville Cardinals",
+      "aliases": [
+        "LOU",
+        "Louisville"
+      ]
+    },
+    "98": {
+      "name": "Western Kentucky Hilltoppers",
+      "aliases": [
+        "Western Kentucky",
+        "Western KY",
+        "WKU"
+      ]
+    },
+    "99": {
+      "name": "LSU Tigers",
+      "aliases": [
+        "LSU"
+      ]
+    },
+    "103": {
+      "name": "Boston College Eagles",
+      "aliases": [
+        "BC",
+        "Boston College"
+      ]
+    },
+    "107": {
+      "name": "Holy Cross Crusaders",
+      "aliases": [
+        "HC",
+        "Holy Cross"
+      ]
+    },
+    "108": {
+      "name": "Harvard Crimson",
+      "aliases": [
+        "HARV",
+        "Harvard"
+      ]
+    },
+    "109": {
+      "name": "MIT Engineers",
+      "aliases": [
+        "MIT"
+      ]
+    },
+    "111": {
+      "name": "Northeastern Huskies",
+      "aliases": [
+        "NE",
+        "Northeastern"
+      ]
+    },
+    "113": {
+      "name": "Massachusetts Minutemen",
+      "aliases": [
+        "MASS",
+        "Massachusetts",
+        "UMass"
+      ]
+    },
+    "114": {
+      "name": "Fitchburg State Falcons",
+      "aliases": [
+        "FITCH",
+        "Fitchburg",
+        "Fitchburg State"
+      ]
+    },
+    "118": {
+      "name": "Johns Hopkins University Blue Jays",
+      "aliases": [
+        "JHOP",
+        "Johns Hopkins",
+        "Johns Hopkins University"
+      ]
+    },
+    "119": {
+      "name": "Towson Tigers",
+      "aliases": [
+        "TOW",
+        "Towson"
+      ]
+    },
+    "120": {
+      "name": "Maryland Terrapins",
+      "aliases": [
+        "Maryland",
+        "MD"
+      ]
+    },
+    "125": {
+      "name": "Grand Valley State Lakers",
+      "aliases": [
+        "Grand Valley State",
+        "Grd Vly St",
+        "GVSU"
+      ]
+    },
+    "127": {
+      "name": "Michigan State Spartans",
+      "aliases": [
+        "Michigan St",
+        "Michigan State",
+        "MSU"
+      ]
+    },
+    "128": {
+      "name": "Northern Michigan Wildcats",
+      "aliases": [
+        "N Michigan",
+        "NMI",
+        "Northern Michigan"
+      ]
+    },
+    "129": {
+      "name": "Saginaw Valley State Cardinals",
+      "aliases": [
+        "SAGI",
+        "Saginaw",
+        "Saginaw Valley State"
+      ]
+    },
+    "130": {
+      "name": "Michigan Wolverines",
+      "aliases": [
+        "MICH",
+        "Michigan"
+      ]
+    },
+    "131": {
+      "name": "Wayne State (MI) Warriors",
+      "aliases": [
+        "Wayne St (MI)",
+        "Wayne State (MI)",
+        "WSMI"
+      ]
+    },
+    "132": {
+      "name": "Bemidji State Beavers",
+      "aliases": [
+        "Bemidji St",
+        "Bemidji State",
+        "BST"
+      ]
+    },
+    "134": {
+      "name": "Minnesota Duluth Bulldogs",
+      "aliases": [
+        "Minn Duluth",
+        "Minnesota Duluth",
+        "UMD"
+      ]
+    },
+    "135": {
+      "name": "Minnesota Golden Gophers",
+      "aliases": [
+        "MINN",
+        "Minnesota"
+      ]
+    },
+    "138": {
+      "name": "Northwest Missouri St Bearcats",
+      "aliases": [
+        "Northwest Missouri St",
+        "NW MO St",
+        "NWMS"
+      ]
+    },
+    "142": {
+      "name": "Missouri Tigers",
+      "aliases": [
+        "Missouri",
+        "MIZ"
+      ]
+    },
+    "143": {
+      "name": "Washington University (St. Louis) Bears",
+      "aliases": [
+        "WAS",
+        "Wash St Louis",
+        "Washington University (St. Louis)"
+      ]
+    },
+    "145": {
+      "name": "Ole Miss Rebels",
+      "aliases": [
+        "MISS",
+        "Ole Miss"
+      ]
+    },
+    "146": {
+      "name": "Grove City Wolverines",
+      "aliases": [
+        "GRO",
+        "Grove City"
+      ]
+    },
+    "147": {
+      "name": "Montana State Bobcats",
+      "aliases": [
+        "Montana St",
+        "Montana State",
+        "MTST"
+      ]
+    },
+    "149": {
+      "name": "Montana Grizzlies",
+      "aliases": [
+        "MONT",
+        "Montana"
+      ]
+    },
+    "150": {
+      "name": "Duke Blue Devils",
+      "aliases": [
+        "Duke",
+        "DUKE"
+      ]
+    },
+    "151": {
+      "name": "East Carolina Pirates",
+      "aliases": [
+        "East Carolina",
+        "ECU"
+      ]
+    },
+    "152": {
+      "name": "NC State Wolfpack",
+      "aliases": [
+        "NC State",
+        "NCSU"
+      ]
+    },
+    "153": {
+      "name": "North Carolina Tar Heels",
+      "aliases": [
+        "North Carolina",
+        "UNC"
+      ]
+    },
+    "154": {
+      "name": "Wake Forest Demon Deacons",
+      "aliases": [
+        "WAKE",
+        "Wake Forest"
+      ]
+    },
+    "155": {
+      "name": "North Dakota Fighting Hawks",
+      "aliases": [
+        "North Dakota",
+        "UND"
+      ]
+    },
+    "158": {
+      "name": "Nebraska Cornhuskers",
+      "aliases": [
+        "NEB",
+        "Nebraska"
+      ]
+    },
+    "159": {
+      "name": "Dartmouth Big Green",
+      "aliases": [
+        "DART",
+        "Dartmouth"
+      ]
+    },
+    "160": {
+      "name": "New Hampshire Wildcats",
+      "aliases": [
+        "New Hampshire",
+        "UNH"
+      ]
+    },
+    "163": {
+      "name": "Princeton Tigers",
+      "aliases": [
+        "PRIN",
+        "Princeton"
+      ]
+    },
+    "164": {
+      "name": "Rutgers Scarlet Knights",
+      "aliases": [
+        "RUTG",
+        "Rutgers"
+      ]
+    },
+    "166": {
+      "name": "New Mexico State Aggies",
+      "aliases": [
+        "New Mexico St",
+        "New Mexico State",
+        "NMSU"
+      ]
+    },
+    "167": {
+      "name": "New Mexico Lobos",
+      "aliases": [
+        "New Mexico",
+        "UNM"
+      ]
+    },
+    "171": {
+      "name": "Columbia Lions",
+      "aliases": [
+        "COLU",
+        "Columbia"
+      ]
+    },
+    "172": {
+      "name": "Cornell Big Red",
+      "aliases": [
+        "COR",
+        "Cornell"
+      ]
+    },
+    "174": {
+      "name": "Hobart College Statesmen",
+      "aliases": [
+        "HBRT",
+        "Hobart",
+        "Hobart College"
+      ]
+    },
+    "175": {
+      "name": "Ithaca College Bombers",
+      "aliases": [
+        "ITH",
+        "Ithaca",
+        "Ithaca College"
+      ]
+    },
+    "183": {
+      "name": "Syracuse Orange",
+      "aliases": [
+        "SYR",
+        "Syracuse"
+      ]
+    },
+    "184": {
+      "name": "University of Rochester (NY) Yellow Jackets",
+      "aliases": [
+        "ROC",
+        "Rochester",
+        "University of Rochester (NY)"
+      ]
+    },
+    "189": {
+      "name": "Bowling Green Falcons",
+      "aliases": [
+        "BGSU",
+        "Bowling Green"
+      ]
+    },
+    "193": {
+      "name": "Miami (OH) RedHawks",
+      "aliases": [
+        "M-OH",
+        "Miami (OH)",
+        "Miami OH"
+      ]
+    },
+    "194": {
+      "name": "Ohio State Buckeyes",
+      "aliases": [
+        "Ohio State",
+        "OSU"
+      ]
+    },
+    "195": {
+      "name": "Ohio Bobcats",
+      "aliases": [
+        "Ohio",
+        "OHIO"
+      ]
+    },
+    "197": {
+      "name": "Oklahoma State Cowboys",
+      "aliases": [
+        "Oklahoma St",
+        "Oklahoma State",
+        "OKST"
+      ]
+    },
+    "199": {
+      "name": "Southeastern Oklahoma State Savage Storm",
+      "aliases": [
+        "SE Okla St",
+        "SEOS",
+        "Southeastern Oklahoma State"
+      ]
+    },
+    "200": {
+      "name": "Southern Nazarene Crimson Storm",
+      "aliases": [
+        "SNAZARENE",
+        "Southern Nazarene",
+        "STN"
+      ]
+    },
+    "201": {
+      "name": "Oklahoma Sooners",
+      "aliases": [
+        "Oklahoma",
+        "OU"
+      ]
+    },
+    "202": {
+      "name": "Tulsa Golden Hurricane",
+      "aliases": [
+        "TLSA",
+        "Tulsa"
+      ]
+    },
+    "204": {
+      "name": "Oregon State Beavers",
+      "aliases": [
+        "Oregon St",
+        "Oregon State",
+        "ORST"
+      ]
+    },
+    "209": {
+      "name": "Lock Haven University Bald Eagles",
+      "aliases": [
+        "LHU",
+        "Lock Haven",
+        "Lock Haven University"
+      ]
+    },
+    "210": {
+      "name": "Millersville Marauders",
+      "aliases": [
+        "MIL",
+        "Millersville",
+        "Millersvll"
+      ]
+    },
+    "213": {
+      "name": "Penn State Nittany Lions",
+      "aliases": [
+        "Penn State",
+        "PSU"
+      ]
+    },
+    "215": {
+      "name": "Slippery Rock The Rock",
+      "aliases": [
+        "Slippery Rock",
+        "SRU"
+      ]
+    },
+    "218": {
+      "name": "Temple Owls",
+      "aliases": [
+        "TEM",
+        "Temple"
+      ]
+    },
+    "219": {
+      "name": "Pennsylvania Quakers",
+      "aliases": [
+        "Penn",
+        "PENN",
+        "Pennsylvania"
+      ]
+    },
+    "221": {
+      "name": "Pittsburgh Panthers",
+      "aliases": [
+        "Pitt",
+        "PITT",
+        "Pittsburgh"
+      ]
+    },
+    "222": {
+      "name": "Villanova Wildcats",
+      "aliases": [
+        "VILL",
+        "Villanova"
+      ]
+    },
+    "223": {
+      "name": "West Chester Golden Rams",
+      "aliases": [
+        "WCHT",
+        "West Chester"
+      ]
+    },
+    "225": {
+      "name": "Brown Bears",
+      "aliases": [
+        "Brown",
+        "BRWN"
+      ]
+    },
+    "227": {
+      "name": "Rhode Island Rams",
+      "aliases": [
+        "Rhode Island",
+        "URI"
+      ]
+    },
+    "228": {
+      "name": "Clemson Tigers",
+      "aliases": [
+        "CLEM",
+        "Clemson"
+      ]
+    },
+    "231": {
+      "name": "Furman Paladins",
+      "aliases": [
+        "FUR",
+        "Furman"
+      ]
+    },
+    "233": {
+      "name": "South Dakota Coyotes",
+      "aliases": [
+        "SDAK",
+        "South Dakota"
+      ]
+    },
+    "235": {
+      "name": "Memphis Tigers",
+      "aliases": [
+        "MEM",
+        "Memphis"
+      ]
+    },
+    "236": {
+      "name": "Chattanooga Mocs",
+      "aliases": [
+        "Chattanooga",
+        "UTC"
+      ]
+    },
+    "237": {
+      "name": "Union (TN) Bulldogs",
+      "aliases": [
+        "UNI",
+        "Union (TN)",
+        "Union TN"
+      ]
+    },
+    "238": {
+      "name": "Vanderbilt Commodores",
+      "aliases": [
+        "VAN",
+        "Vanderbilt"
+      ]
+    },
+    "239": {
+      "name": "Baylor Bears",
+      "aliases": [
+        "BAY",
+        "Baylor"
+      ]
+    },
+    "242": {
+      "name": "Rice Owls",
+      "aliases": [
+        "Rice",
+        "RICE"
+      ]
+    },
+    "245": {
+      "name": "Texas A&M Aggies",
+      "aliases": [
+        "TA&M",
+        "Texas A&M"
+      ]
+    },
+    "248": {
+      "name": "Houston Cougars",
+      "aliases": [
+        "HOU",
+        "Houston"
+      ]
+    },
+    "249": {
+      "name": "North Texas Mean Green",
+      "aliases": [
+        "North Texas",
+        "UNT"
+      ]
+    },
+    "251": {
+      "name": "Texas Longhorns",
+      "aliases": [
+        "TEX",
+        "Texas"
+      ]
+    },
+    "252": {
+      "name": "BYU Cougars",
+      "aliases": [
+        "BYU"
+      ]
+    },
+    "253": {
+      "name": "Southern Utah Thunderbirds",
+      "aliases": [
+        "Southern Utah",
+        "SUU"
+      ]
+    },
+    "254": {
+      "name": "Utah Utes",
+      "aliases": [
+        "Utah",
+        "UTAH"
+      ]
+    },
+    "255": {
+      "name": "Knox Prairie Fire",
+      "aliases": [
+        "KNO",
+        "Knox"
+      ]
+    },
+    "256": {
+      "name": "James Madison Dukes",
+      "aliases": [
+        "James Madison",
+        "JMU"
+      ]
+    },
+    "257": {
+      "name": "Richmond Spiders",
+      "aliases": [
+        "RICH",
+        "Richmond"
+      ]
+    },
+    "258": {
+      "name": "Virginia Cavaliers",
+      "aliases": [
+        "UVA",
+        "Virginia"
+      ]
+    },
+    "259": {
+      "name": "Virginia Tech Hokies",
+      "aliases": [
+        "Virginia Tech",
+        "VT"
+      ]
+    },
+    "262": {
+      "name": "Lake Forest Foresters",
+      "aliases": [
+        "LAK",
+        "Lake For",
+        "Lake Forest"
+      ]
+    },
+    "264": {
+      "name": "Washington Huskies",
+      "aliases": [
+        "WASH",
+        "Washington"
+      ]
+    },
+    "265": {
+      "name": "Washington State Cougars",
+      "aliases": [
+        "Washington St",
+        "Washington State",
+        "WSU"
+      ]
+    },
+    "268": {
+      "name": "Lawrence University Vikings",
+      "aliases": [
+        "LAW",
+        "Lawrence",
+        "Lawrence University"
+      ]
+    },
+    "271": {
+      "name": "Wisconsin Oshkosh Titans",
+      "aliases": [
+        "Uw-Oshkosh",
+        "WISCO",
+        "Wisconsin Oshkosh"
+      ]
+    },
+    "272": {
+      "name": "UW-Platteville Pioneers",
+      "aliases": [
+        "UW-Platteville",
+        "Uw-Plattvl",
+        "WIS"
+      ]
+    },
+    "275": {
+      "name": "Wisconsin Badgers",
+      "aliases": [
+        "WIS",
+        "Wisconsin"
+      ]
+    },
+    "276": {
+      "name": "Marshall Thundering Herd",
+      "aliases": [
+        "Marshall",
+        "MRSH"
+      ]
+    },
+    "277": {
+      "name": "West Virginia Mountaineers",
+      "aliases": [
+        "West Virginia",
+        "WVU"
+      ]
+    },
+    "278": {
+      "name": "Fresno State Bulldogs",
+      "aliases": [
+        "FRES",
+        "Fresno St",
+        "Fresno State"
+      ]
+    },
+    "282": {
+      "name": "Indiana State Sycamores",
+      "aliases": [
+        "Indiana St",
+        "Indiana State",
+        "INST"
+      ]
+    },
+    "284": {
+      "name": "Stonehill Skyhawks",
+      "aliases": [
+        "STO",
+        "Stonehill"
+      ]
+    },
+    "290": {
+      "name": "Georgia Southern Eagles",
+      "aliases": [
+        "GA Southern",
+        "GASO",
+        "Georgia Southern"
+      ]
+    },
+    "294": {
+      "name": "Jacksonville Dolphins",
+      "aliases": [
+        "Jacksonville",
+        "JAX"
+      ]
+    },
+    "295": {
+      "name": "Old Dominion Monarchs",
+      "aliases": [
+        "ODU",
+        "Old Dominion"
+      ]
+    },
+    "301": {
+      "name": "San Diego Toreros",
+      "aliases": [
+        "San Diego",
+        "USD"
+      ]
+    },
+    "302": {
+      "name": "UC Davis Aggies",
+      "aliases": [
+        "UC Davis",
+        "UCD"
+      ]
+    },
+    "304": {
+      "name": "Idaho State Bengals",
+      "aliases": [
+        "Idaho St",
+        "Idaho State",
+        "IDST"
+      ]
+    },
+    "308": {
+      "name": "Ashland Eagles",
+      "aliases": [
+        "ASH",
+        "Ashland"
+      ]
+    },
+    "309": {
+      "name": "Louisiana Ragin' Cajuns",
+      "aliases": [
+        "Louisiana",
+        "UL"
+      ]
+    },
+    "311": {
+      "name": "Maine Black Bears",
+      "aliases": [
+        "Maine",
+        "ME"
+      ]
+    },
+    "319": {
+      "name": "Oklahoma Baptist Bison",
+      "aliases": [
+        "OB",
+        "Okla Bapt",
+        "Oklahoma Baptist"
+      ]
+    },
+    "322": {
+      "name": "Lafayette Leopards",
+      "aliases": [
+        "LAF",
+        "Lafayette"
+      ]
+    },
+    "324": {
+      "name": "Coastal Carolina Chanticleers",
+      "aliases": [
+        "CCU",
+        "Coastal",
+        "Coastal Carolina"
+      ]
+    },
+    "326": {
+      "name": "Texas State Bobcats",
+      "aliases": [
+        "Texas St",
+        "Texas State",
+        "TXST"
+      ]
+    },
+    "328": {
+      "name": "Utah State Aggies",
+      "aliases": [
+        "USU",
+        "Utah State"
+      ]
+    },
+    "330": {
+      "name": "Virginia St Trojans",
+      "aliases": [
+        "Virginia St",
+        "VSU"
+      ]
+    },
+    "331": {
+      "name": "Eastern Washington Eagles",
+      "aliases": [
+        "E Washington",
+        "Eastern Washington",
+        "EWU"
+      ]
+    },
+    "333": {
+      "name": "Alabama Crimson Tide",
+      "aliases": [
+        "ALA",
+        "Alabama"
+      ]
+    },
+    "338": {
+      "name": "Kennesaw State Owls",
+      "aliases": [
+        "KENN",
+        "Kennesaw St",
+        "Kennesaw State"
+      ]
+    },
+    "344": {
+      "name": "Mississippi State Bulldogs",
+      "aliases": [
+        "Mississippi St",
+        "Mississippi State",
+        "MSST"
+      ]
+    },
+    "349": {
+      "name": "Army Black Knights",
+      "aliases": [
+        "Army",
+        "ARMY"
+      ]
+    },
+    "356": {
+      "name": "Illinois Fighting Illini",
+      "aliases": [
+        "ILL",
+        "Illinois"
+      ]
+    },
+    "365": {
+      "name": "Alfred University Saxons",
+      "aliases": [
+        "ALF",
+        "Alfred",
+        "Alfred University"
+      ]
+    },
+    "367": {
+      "name": "Gannon Golden Knights",
+      "aliases": [
+        "GAN",
+        "Gannon"
+      ]
+    },
+    "379": {
+      "name": "Massachusetts-Dartmouth Mass. Dartmouth",
+      "aliases": [
+        "Massachusetts-Dartmouth",
+        "MASSDART",
+        "UMass-Dart"
+      ]
+    },
+    "395": {
+      "name": "Saint Augustine's Falcons",
+      "aliases": [
+        "Augustine",
+        "Saint Augustine's",
+        "STAUG"
+      ]
+    },
+    "396": {
+      "name": "Wheaton Thunder",
+      "aliases": [
+        "WCIL",
+        "Wheaton",
+        "Wheaton (IL)"
+      ]
+    },
+    "399": {
+      "name": "UAlbany Great Danes",
+      "aliases": [
+        "UALB",
+        "UAlbany"
+      ]
+    },
+    "402": {
+      "name": "Worcester State Lancers",
+      "aliases": [
+        "WORC",
+        "Worcester St",
+        "Worcester State"
+      ]
+    },
+    "437": {
+      "name": "Lake Erie Storm",
+      "aliases": [
+        "Lake Erie",
+        "LAKEERIE"
+      ]
+    },
+    "490": {
+      "name": "Mid-Eastern Athletic Conference",
+      "aliases": [
+        "MEAC"
+      ]
+    },
+    "512": {
+      "name": "Dakota State Trojans",
+      "aliases": [
+        "DAKO",
+        "Dakota St",
+        "Dakota State"
+      ]
+    },
+    "530": {
+      "name": "Graceland University Jackets",
+      "aliases": [
+        "Graceland",
+        "Graceland University",
+        "GRC"
+      ]
+    },
+    "559": {
+      "name": "University of Mary Marauders",
+      "aliases": [
+        "MARY",
+        "Univ of Mary",
+        "University of Mary"
+      ]
+    },
+    "587": {
+      "name": "Notre Dame College (OH) Blue Falcons",
+      "aliases": [
+        "ND Ohio",
+        "NDOH",
+        "Notre Dame College (OH)"
+      ]
+    },
+    "611": {
+      "name": "Western Athletic Conference",
+      "aliases": [
+        "WAC",
+        "Western Athletic"
+      ]
+    },
+    "2000": {
+      "name": "Abilene Christian Wildcats",
+      "aliases": [
+        "Abilene Christian",
+        "Abilene Chrstn",
+        "ACU"
+      ]
+    },
+    "2005": {
+      "name": "Air Force Falcons",
+      "aliases": [
+        "AF",
+        "Air Force"
+      ]
+    },
+    "2006": {
+      "name": "Akron Zips",
+      "aliases": [
+        "AKR",
+        "Akron"
+      ]
+    },
+    "2010": {
+      "name": "Alabama A&M Bulldogs",
+      "aliases": [
+        "AAMU",
+        "Alabama A&M"
+      ]
+    },
+    "2011": {
+      "name": "Alabama State Hornets",
+      "aliases": [
+        "Alabama St",
+        "Alabama State",
+        "ALST"
+      ]
+    },
+    "2013": {
+      "name": "Albany St (GA) Golden Rams",
+      "aliases": [
+        "ABSU",
+        "Albany St",
+        "Albany St (GA)"
+      ]
+    },
+    "2016": {
+      "name": "Alcorn State Braves",
+      "aliases": [
+        "ALCN",
+        "Alcorn St",
+        "Alcorn State"
+      ]
+    },
+    "2017": {
+      "name": "Alderson-Broaddus Battlers",
+      "aliases": [
+        "ABC",
+        "Alderson-Broaddus",
+        "Aldrsn-Broaddus"
+      ]
+    },
+    "2018": {
+      "name": "Allegheny Gators",
+      "aliases": [
+        "ALL",
+        "Allegheny"
+      ]
+    },
+    "2019": {
+      "name": "Allen University Yellow Jackets",
+      "aliases": [
+        "Allen",
+        "Allen University",
+        "ALNU"
+      ]
+    },
+    "2022": {
+      "name": "American International Yellow Jackets",
+      "aliases": [
+        "AIC",
+        "American Int'l",
+        "American International"
+      ]
+    },
+    "2023": {
+      "name": "Anderson (IN) Ravens",
+      "aliases": [
+        "Anderson (IN)",
+        "ANIN"
+      ]
+    },
+    "2025": {
+      "name": "Angelo State Rams",
+      "aliases": [
+        "ANG",
+        "Angelo State"
+      ]
+    },
+    "2026": {
+      "name": "App State Mountaineers",
+      "aliases": [
+        "APP",
+        "App State"
+      ]
+    },
+    "2028": {
+      "name": "Arkansas-Monticello Boll Weevils",
+      "aliases": [
+        "Ark-Monticello",
+        "Arkansas-Monticello",
+        "ARKMONT"
+      ]
+    },
+    "2029": {
+      "name": "Arkansas-Pine Bluff Golden Lions",
+      "aliases": [
+        "AR-Pine Bluff",
+        "Arkansas-Pine Bluff",
+        "UAPB"
+      ]
+    },
+    "2032": {
+      "name": "Arkansas State Red Wolves",
+      "aliases": [
+        "Arkansas St",
+        "Arkansas State",
+        "ARST"
+      ]
+    },
+    "2033": {
+      "name": "Arkansas Tech Wonder Boys",
+      "aliases": [
+        "Arkansas Tech",
+        "ARTE"
+      ]
+    },
+    "2046": {
+      "name": "Austin Peay Governors",
+      "aliases": [
+        "APSU",
+        "Austin Peay"
+      ]
+    },
+    "2050": {
+      "name": "Ball State Cardinals",
+      "aliases": [
+        "BALL",
+        "Ball State"
+      ]
+    },
+    "2060": {
+      "name": "Bentley Falcons",
+      "aliases": [
+        "BENT",
+        "Bentley"
+      ]
+    },
+    "2062": {
+      "name": "Bethany (WV) Bison",
+      "aliases": [
+        "BCWV",
+        "Bethany (WV)"
+      ]
+    },
+    "2064": {
+      "name": "Bethel (TN) Wildcats",
+      "aliases": [
+        "Bethel (TN)",
+        "BETHTN"
+      ]
+    },
+    "2065": {
+      "name": "Bethune-Cookman Wildcats",
+      "aliases": [
+        "BCU",
+        "Bethune",
+        "Bethune-Cookman"
+      ]
+    },
+    "2069": {
+      "name": "Black Hills State Yellow Jackets",
+      "aliases": [
+        "BHST",
+        "Black Hills",
+        "Black Hills State"
+      ]
+    },
+    "2071": {
+      "name": "Bloomsburg Huskies",
+      "aliases": [
+        "BBU",
+        "Bloomsburg"
+      ]
+    },
+    "2075": {
+      "name": "Bowie State Bulldogs",
+      "aliases": [
+        "BOWE",
+        "Bowie State"
+      ]
+    },
+    "2079": {
+      "name": "Bridgewater College (VA) Eagles",
+      "aliases": [
+        "BRDVA",
+        "Bridgewater College (VA)",
+        "Bridgewater VA"
+      ]
+    },
+    "2083": {
+      "name": "Bucknell Bison",
+      "aliases": [
+        "BUCK",
+        "Bucknell"
+      ]
+    },
+    "2084": {
+      "name": "Buffalo Bulls",
+      "aliases": [
+        "BUF",
+        "Buffalo"
+      ]
+    },
+    "2085": {
+      "name": "Buffalo State Bengals",
+      "aliases": [
+        "BUF",
+        "Buffalo St",
+        "Buffalo State"
+      ]
+    },
+    "2086": {
+      "name": "Butler Bulldogs",
+      "aliases": [
+        "BUT",
+        "Butler"
+      ]
+    },
+    "2097": {
+      "name": "Campbell Fighting Camels",
+      "aliases": [
+        "CAM",
+        "Campbell"
+      ]
+    },
+    "2102": {
+      "name": "Carnegie Mellon Tartans",
+      "aliases": [
+        "Carn Mellon",
+        "Carnegie Mellon",
+        "CGMU"
+      ]
+    },
+    "2108": {
+      "name": "Catholic Cardinals",
+      "aliases": [
+        "CATH",
+        "Catholic"
+      ]
+    },
+    "2110": {
+      "name": "Central Arkansas Bears",
+      "aliases": [
+        "C Arkansas",
+        "CARK",
+        "Central Arkansas"
+      ]
+    },
+    "2115": {
+      "name": "Central Connecticut Blue Devils",
+      "aliases": [
+        "C Connecticut",
+        "CCSU",
+        "Central Connecticut"
+      ]
+    },
+    "2116": {
+      "name": "UCF Knights",
+      "aliases": [
+        "UCF"
+      ]
+    },
+    "2117": {
+      "name": "Central Michigan Chippewas",
+      "aliases": [
+        "C Michigan",
+        "Central Michigan",
+        "CMU"
+      ]
+    },
+    "2119": {
+      "name": "Central State (OH) Marauders",
+      "aliases": [
+        "Cent St OH",
+        "Central State (OH)",
+        "CSO"
+      ]
+    },
+    "2120": {
+      "name": "Central Washington Wildcats",
+      "aliases": [
+        "C Wash",
+        "Central Washington",
+        "CWAU"
+      ]
+    },
+    "2127": {
+      "name": "Charleston Southern Buccaneers",
+      "aliases": [
+        "Charleston So",
+        "Charleston Southern",
+        "CHSO"
+      ]
+    },
+    "2132": {
+      "name": "Cincinnati Bearcats",
+      "aliases": [
+        "CIN",
+        "Cincinnati"
+      ]
+    },
+    "2134": {
+      "name": "Clarion Golden Eagles",
+      "aliases": [
+        "Clarion",
+        "CLARION"
+      ]
+    },
+    "2142": {
+      "name": "Colgate Raiders",
+      "aliases": [
+        "COLG",
+        "Colgate"
+      ]
+    },
+    "2144": {
+      "name": "Colorado College Tigers",
+      "aliases": [
+        "COLC",
+        "Colorado Coll",
+        "Colorado College"
+      ]
+    },
+    "2148": {
+      "name": "Concord Mountain Lions",
+      "aliases": [
+        "CONC",
+        "Concord"
+      ]
+    },
+    "2155": {
+      "name": "Cornell College (IA) Rams",
+      "aliases": [
+        "Cornell College (IA)",
+        "Cornell IA",
+        "CORNELLIA"
+      ]
+    },
+    "2166": {
+      "name": "Davidson Wildcats",
+      "aliases": [
+        "DAV",
+        "Davidson"
+      ]
+    },
+    "2168": {
+      "name": "Dayton Flyers",
+      "aliases": [
+        "DAY",
+        "Dayton"
+      ]
+    },
+    "2169": {
+      "name": "Delaware State Hornets",
+      "aliases": [
+        "Delaware St",
+        "Delaware State",
+        "DSU"
+      ]
+    },
+    "2170": {
+      "name": "Delta State Statesmen",
+      "aliases": [
+        "Delta St",
+        "Delta State",
+        "DELTAST"
+      ]
+    },
+    "2171": {
+      "name": "Denison Big Red",
+      "aliases": [
+        "Denison",
+        "DENISON"
+      ]
+    },
+    "2181": {
+      "name": "Drake Bulldogs",
+      "aliases": [
+        "Drake",
+        "DRKE"
+      ]
+    },
+    "2184": {
+      "name": "Duquesne Dukes",
+      "aliases": [
+        "DUQ",
+        "Duquesne"
+      ]
+    },
+    "2188": {
+      "name": "East Stroudsburg University Warriors",
+      "aliases": [
+        "E Stroud",
+        "East Stroudsburg University",
+        "ESTROUD"
+      ]
+    },
+    "2191": {
+      "name": "East Central (OK) Tigers",
+      "aliases": [
+        "E Cent OK",
+        "East Central (OK)",
+        "ECTLOK"
+      ]
+    },
+    "2193": {
+      "name": "East Tennessee State Buccaneers",
+      "aliases": [
+        "East Tennessee State",
+        "ETSU"
+      ]
+    },
+    "2197": {
+      "name": "Eastern Illinois Panthers",
+      "aliases": [
+        "E Illinois",
+        "Eastern Illinois",
+        "EIU"
+      ]
+    },
+    "2198": {
+      "name": "Eastern Kentucky Colonels",
+      "aliases": [
+        "E Kentucky",
+        "Eastern Kentucky",
+        "EKU"
+      ]
+    },
+    "2199": {
+      "name": "Eastern Michigan Eagles",
+      "aliases": [
+        "E Michigan",
+        "Eastern Michigan",
+        "EMU"
+      ]
+    },
+    "2201": {
+      "name": "E. New Mexico Greyhounds",
+      "aliases": [
+        "E. New Mexico",
+        "Eastern NM",
+        "ENMU"
+      ]
+    },
+    "2205": {
+      "name": "Edinboro Fighting Scots",
+      "aliases": [
+        "Edinboro",
+        "EDINBORO"
+      ]
+    },
+    "2206": {
+      "name": "Edward Waters Tigers",
+      "aliases": [
+        "EDW",
+        "Edward Waters"
+      ]
+    },
+    "2207": {
+      "name": "Elizabeth City State Vikings",
+      "aliases": [
+        "ECSU",
+        "Elizabeth City",
+        "Elizabeth City State"
+      ]
+    },
+    "2210": {
+      "name": "Elon Phoenix",
+      "aliases": [
+        "Elon",
+        "ELON"
+      ]
+    },
+    "2220": {
+      "name": "Fayetteville St Broncos",
+      "aliases": [
+        "Fayetteville St",
+        "Fayettvlle",
+        "FAYVLST"
+      ]
+    },
+    "2222": {
+      "name": "Ferris State Bulldogs",
+      "aliases": [
+        "Ferris St",
+        "Ferris State",
+        "FRST"
+      ]
+    },
+    "2224": {
+      "name": "Findlay Oilers",
+      "aliases": [
+        "Findlay",
+        "FINDLAY"
+      ]
+    },
+    "2226": {
+      "name": "Florida Atlantic Owls",
+      "aliases": [
+        "FAU",
+        "Florida Atlantic"
+      ]
+    },
+    "2229": {
+      "name": "Florida International Panthers",
+      "aliases": [
+        "FIU",
+        "Florida International"
+      ]
+    },
+    "2230": {
+      "name": "Fordham Rams",
+      "aliases": [
+        "FOR",
+        "Fordham"
+      ]
+    },
+    "2232": {
+      "name": "Fort Valley State Wildcats",
+      "aliases": [
+        "Fort Valley St",
+        "Fort Valley State",
+        "FVSU"
+      ]
+    },
+    "2241": {
+      "name": "Gardner-Webb Runnin' Bulldogs",
+      "aliases": [
+        "Gardner-Webb",
+        "GWEB"
+      ]
+    },
+    "2242": {
+      "name": "Geneva Golden Tornadoes",
+      "aliases": [
+        "GEN",
+        "Geneva"
+      ]
+    },
+    "2244": {
+      "name": "George Mason Patriots",
+      "aliases": [
+        "George Mason",
+        "GMU"
+      ]
+    },
+    "2247": {
+      "name": "Georgia State Panthers",
+      "aliases": [
+        "GAST",
+        "Georgia St",
+        "Georgia State"
+      ]
+    },
+    "2261": {
+      "name": "Hampton Pirates",
+      "aliases": [
+        "HAMP",
+        "Hampton"
+      ]
+    },
+    "2264": {
+      "name": "Harding Bisons",
+      "aliases": [
+        "Harding",
+        "HARDING"
+      ]
+    },
+    "2271": {
+      "name": "Henderson State Reddies",
+      "aliases": [
+        "HENDERSON",
+        "Henderson State",
+        "Hendrsn St"
+      ]
+    },
+    "2273": {
+      "name": "Hillsdale Chargers",
+      "aliases": [
+        "Hillsdale",
+        "HILLSDALE"
+      ]
+    },
+    "2275": {
+      "name": "Hofstra Pride",
+      "aliases": [
+        "HOF",
+        "Hofstra"
+      ]
+    },
+    "2277": {
+      "name": "Houston Christian Huskies",
+      "aliases": [
+        "HCU",
+        "Hou Christian",
+        "Houston Christian"
+      ]
+    },
+    "2286": {
+      "name": "Illinois College Blueboys",
+      "aliases": [
+        "Ill Coll",
+        "ILLCOLL",
+        "Illinois College"
+      ]
+    },
+    "2287": {
+      "name": "Illinois State Redbirds",
+      "aliases": [
+        "Illinois St",
+        "Illinois State",
+        "ILST"
+      ]
+    },
+    "2291": {
+      "name": "Indiana-Pennsylvania Crimson Hawks",
+      "aliases": [
+        "Indiana PA",
+        "Indiana-Pennsylvania",
+        "INDIANAPA"
+      ]
+    },
+    "2292": {
+      "name": "Indianapolis Greyhounds",
+      "aliases": [
+        "Indianapolis",
+        "Indnapolis",
+        "INDY"
+      ]
+    },
+    "2294": {
+      "name": "Iowa Hawkeyes",
+      "aliases": [
+        "Iowa",
+        "IOWA"
+      ]
+    },
+    "2296": {
+      "name": "Jackson State Tigers",
+      "aliases": [
+        "Jackson St",
+        "Jackson State",
+        "JKST"
+      ]
+    },
+    "2304": {
+      "name": "Johnson C Smith Golden Bulls",
+      "aliases": [
+        "JCSU",
+        "Johnson C Smith",
+        "Johnson C Smth"
+      ]
+    },
+    "2305": {
+      "name": "Kansas Jayhawks",
+      "aliases": [
+        "Kansas",
+        "KU"
+      ]
+    },
+    "2306": {
+      "name": "Kansas State Wildcats",
+      "aliases": [
+        "Kansas St",
+        "Kansas State",
+        "KSU"
+      ]
+    },
+    "2309": {
+      "name": "Kent State Golden Flashes",
+      "aliases": [
+        "KENT",
+        "Kent State"
+      ]
+    },
+    "2310": {
+      "name": "Kentucky State Thorobreds",
+      "aliases": [
+        "Kentucky St",
+        "Kentucky State",
+        "KYSU"
+      ]
+    },
+    "2315": {
+      "name": "Kutztown State Golden Bears",
+      "aliases": [
+        "KUT",
+        "KUTZTOWN",
+        "Kutztown State"
+      ]
+    },
+    "2316": {
+      "name": "Kentucky Wesleyan Panthers",
+      "aliases": [
+        "Kentucky Wesleyan",
+        "KY Wesleyn",
+        "KYWESL"
+      ]
+    },
+    "2320": {
+      "name": "Lamar Cardinals",
+      "aliases": [
+        "LAM",
+        "Lamar"
+      ]
+    },
+    "2323": {
+      "name": "Summit League",
+      "aliases": [
+        "The Summit League"
+      ]
+    },
+    "2329": {
+      "name": "Lehigh Mountain Hawks",
+      "aliases": [
+        "LEH",
+        "Lehigh"
+      ]
+    },
+    "2331": {
+      "name": "Lenoir-Rhyne Bears",
+      "aliases": [
+        "Len-Rhyne",
+        "Lenoir-Rhyne",
+        "LENRHYNE"
+      ]
+    },
+    "2335": {
+      "name": "Liberty Flames",
+      "aliases": [
+        "LIB",
+        "Liberty"
+      ]
+    },
+    "2339": {
+      "name": "Lincoln (PA) Lions",
+      "aliases": [
+        "Lincoln (PA)",
+        "LNPA"
+      ]
+    },
+    "2348": {
+      "name": "Louisiana Tech Bulldogs",
+      "aliases": [
+        "Louisiana Tech",
+        "LT"
+      ]
+    },
+    "2349": {
+      "name": "UMass Lowell River Hawks",
+      "aliases": [
+        "UMass Lowell",
+        "UML"
+      ]
+    },
+    "2359": {
+      "name": "Macalester Scots",
+      "aliases": [
+        "MACALES",
+        "Macalester"
+      ]
+    },
+    "2364": {
+      "name": "Minnesota State Mavericks",
+      "aliases": [
+        "MIN",
+        "Minnesota Stat",
+        "Minnesota State"
+      ]
+    },
+    "2368": {
+      "name": "Marist Red Foxes",
+      "aliases": [
+        "Marist",
+        "MRST"
+      ]
+    },
+    "2369": {
+      "name": "Mars Hill Mountain Lions",
+      "aliases": [
+        "Mars Hill",
+        "MHU"
+      ]
+    },
+    "2377": {
+      "name": "McNeese Cowboys",
+      "aliases": [
+        "MCN",
+        "McNeese"
+      ]
+    },
+    "2382": {
+      "name": "Mercer Bears",
+      "aliases": [
+        "MER",
+        "Mercer"
+      ]
+    },
+    "2383": {
+      "name": "Merchant Marine Academy Mariners",
+      "aliases": [
+        "Merch Marn",
+        "Merchant Marine Academy",
+        "MERCHMAR"
+      ]
+    },
+    "2385": {
+      "name": "Mercyhurst Lakers",
+      "aliases": [
+        "MERC",
+        "Mercyhurst"
+      ]
+    },
+    "2390": {
+      "name": "Miami Hurricanes",
+      "aliases": [
+        "MIA",
+        "Miami"
+      ]
+    },
+    "2392": {
+      "name": "Michigan Tech Huskies",
+      "aliases": [
+        "Michigan Tech",
+        "MTU"
+      ]
+    },
+    "2393": {
+      "name": "Middle Tennessee Blue Raiders",
+      "aliases": [
+        "Middle Tennessee",
+        "MTSU"
+      ]
+    },
+    "2396": {
+      "name": "Miles Golden Bears",
+      "aliases": [
+        "MIL",
+        "Miles"
+      ]
+    },
+    "2400": {
+      "name": "Mississippi Valley State Delta Devils",
+      "aliases": [
+        "Miss Valley St",
+        "Mississippi Valley State",
+        "MVSU"
+      ]
+    },
+    "2402": {
+      "name": "Missouri S&T Miners",
+      "aliases": [
+        "Missouri S&T",
+        "MS&T"
+      ]
+    },
+    "2405": {
+      "name": "Monmouth Hawks",
+      "aliases": [
+        "MONM",
+        "Monmouth"
+      ]
+    },
+    "2413": {
+      "name": "Morehead State Eagles",
+      "aliases": [
+        "MORE",
+        "Morehead St",
+        "Morehead State"
+      ]
+    },
+    "2415": {
+      "name": "Morgan State Bears",
+      "aliases": [
+        "MORG",
+        "Morgan St",
+        "Morgan State"
+      ]
+    },
+    "2422": {
+      "name": "Muhlenberg Mules",
+      "aliases": [
+        "MHLBRG",
+        "Muhlenberg"
+      ]
+    },
+    "2424": {
+      "name": "New Mexico Highlands Cowboys",
+      "aliases": [
+        "New Mexico Highlands",
+        "NM Highlands",
+        "NMHU"
+      ]
+    },
+    "2426": {
+      "name": "Navy Midshipmen",
+      "aliases": [
+        "Navy",
+        "NAVY"
+      ]
+    },
+    "2428": {
+      "name": "North Carolina Central Eagles",
+      "aliases": [
+        "NC Central",
+        "NCCU",
+        "North Carolina Central"
+      ]
+    },
+    "2429": {
+      "name": "Charlotte 49ers",
+      "aliases": [
+        "Charlotte",
+        "CLT"
+      ]
+    },
+    "2433": {
+      "name": "UL Monroe Warhawks",
+      "aliases": [
+        "UL Monroe",
+        "ULM"
+      ]
+    },
+    "2437": {
+      "name": "Omaha Mavericks",
+      "aliases": [
+        "OMA",
+        "Omaha"
+      ]
+    },
+    "2439": {
+      "name": "UNLV Rebels",
+      "aliases": [
+        "UNLV"
+      ]
+    },
+    "2440": {
+      "name": "Nevada Wolf Pack",
+      "aliases": [
+        "NEV",
+        "Nevada"
+      ]
+    },
+    "2441": {
+      "name": "New Haven Chargers",
+      "aliases": [
+        "New Haven",
+        "NHVN"
+      ]
+    },
+    "2447": {
+      "name": "Nicholls Colonels",
+      "aliases": [
+        "NICH",
+        "Nicholls"
+      ]
+    },
+    "2448": {
+      "name": "North Carolina A&T Aggies",
+      "aliases": [
+        "NC A&T",
+        "NCAT",
+        "North Carolina A&T"
+      ]
+    },
+    "2449": {
+      "name": "North Dakota State Bison",
+      "aliases": [
+        "N Dakota St",
+        "NDSU",
+        "North Dakota State"
+      ]
+    },
+    "2450": {
+      "name": "Norfolk State Spartans",
+      "aliases": [
+        "NORF",
+        "Norfolk St",
+        "Norfolk State"
+      ]
+    },
+    "2453": {
+      "name": "North Alabama Lions",
+      "aliases": [
+        "North Alabama",
+        "UNA"
+      ]
+    },
+    "2458": {
+      "name": "Northern Colorado Bears",
+      "aliases": [
+        "N Colorado",
+        "Northern Colorado",
+        "UNCO"
+      ]
+    },
+    "2459": {
+      "name": "Northern Illinois Huskies",
+      "aliases": [
+        "N Illinois",
+        "NIU",
+        "Northern Illinois"
+      ]
+    },
+    "2460": {
+      "name": "Northern Iowa Panthers",
+      "aliases": [
+        "Northern Iowa",
+        "UNI"
+      ]
+    },
+    "2464": {
+      "name": "Northern Arizona Lumberjacks",
+      "aliases": [
+        "N Arizona",
+        "NAU",
+        "Northern Arizona"
+      ]
+    },
+    "2466": {
+      "name": "Northwestern State Demons",
+      "aliases": [
+        "N'Western St",
+        "Northwestern State",
+        "NWST"
+      ]
+    },
+    "2467": {
+      "name": "Norwich Cadets",
+      "aliases": [
+        "NOR",
+        "Norwich"
+      ]
+    },
+    "2477": {
+      "name": "Ohio Dominican Panthers",
+      "aliases": [
+        "ODM",
+        "Ohio Dom",
+        "Ohio Dominican"
+      ]
+    },
+    "2483": {
+      "name": "Oregon Ducks",
+      "aliases": [
+        "ORE",
+        "Oregon"
+      ]
+    },
+    "2502": {
+      "name": "Portland State Vikings",
+      "aliases": [
+        "Portland St",
+        "Portland State",
+        "PRST"
+      ]
+    },
+    "2504": {
+      "name": "Prairie View A&M Panthers",
+      "aliases": [
+        "Prairie View",
+        "Prairie View A&M",
+        "PV"
+      ]
+    },
+    "2506": {
+      "name": "Presbyterian Blue Hose",
+      "aliases": [
+        "PRES",
+        "Presbyterian"
+      ]
+    },
+    "2509": {
+      "name": "Purdue Boilermakers",
+      "aliases": [
+        "PUR",
+        "Purdue"
+      ]
+    },
+    "2523": {
+      "name": "Robert Morris Colonials",
+      "aliases": [
+        "RMU",
+        "Robert Morris"
+      ]
+    },
+    "2528": {
+      "name": "Rensselaer Engineers",
+      "aliases": [
+        "Rensselaer",
+        "RPI"
+      ]
+    },
+    "2529": {
+      "name": "Sacred Heart Pioneers",
+      "aliases": [
+        "Sacred Heart",
+        "SHU"
+      ]
+    },
+    "2534": {
+      "name": "Sam Houston Bearkats",
+      "aliases": [
+        "Sam Houston",
+        "SHSU"
+      ]
+    },
+    "2535": {
+      "name": "Samford Bulldogs",
+      "aliases": [
+        "SAM",
+        "Samford"
+      ]
+    },
+    "2542": {
+      "name": "Savannah State Tigers",
+      "aliases": [
+        "SAV",
+        "Savannah St",
+        "Savannah State"
+      ]
+    },
+    "2545": {
+      "name": "SE Louisiana Lions",
+      "aliases": [
+        "SE Louisiana",
+        "SELA"
+      ]
+    },
+    "2546": {
+      "name": "Southeast Missouri State Redhawks",
+      "aliases": [
+        "SE Missouri",
+        "SEMO",
+        "Southeast Missouri State"
+      ]
+    },
+    "2551": {
+      "name": "Shaw Bears",
+      "aliases": [
+        "SHA",
+        "Shaw"
+      ]
+    },
+    "2557": {
+      "name": "Coast Guard Bears",
+      "aliases": [
+        "Coast Guard",
+        "USCGA"
+      ]
+    },
+    "2559": {
+      "name": "Shippensburg Raiders",
+      "aliases": [
+        "Shippensburg",
+        "Shppnsburg",
+        "SHPSBRG"
+      ]
+    },
+    "2560": {
+      "name": "Shorter Hawks",
+      "aliases": [
+        "Shorter",
+        "SHOU"
+      ]
+    },
+    "2567": {
+      "name": "SMU Mustangs",
+      "aliases": [
+        "SMU"
+      ]
+    },
+    "2568": {
+      "name": "Southern Arkansas Muleriders",
+      "aliases": [
+        "S Arkansas",
+        "SAR",
+        "Southern Arkansas"
+      ]
+    },
+    "2569": {
+      "name": "South Carolina State Bulldogs",
+      "aliases": [
+        "SC State",
+        "SCST",
+        "South Carolina State"
+      ]
+    },
+    "2571": {
+      "name": "South Dakota State Jackrabbits",
+      "aliases": [
+        "S Dakota St",
+        "SDST",
+        "South Dakota State"
+      ]
+    },
+    "2572": {
+      "name": "Southern Miss Golden Eagles",
+      "aliases": [
+        "Southern Miss",
+        "USM"
+      ]
+    },
+    "2579": {
+      "name": "South Carolina Gamecocks",
+      "aliases": [
+        "SC",
+        "South Carolina"
+      ]
+    },
+    "2582": {
+      "name": "Southern Jaguars",
+      "aliases": [
+        "SOU",
+        "Southern"
+      ]
+    },
+    "2584": {
+      "name": "Southern Oregon Raiders",
+      "aliases": [
+        "SOU",
+        "Southern Oregon",
+        "Sthrn Oregon"
+      ]
+    },
+    "2586": {
+      "name": "Southwest Baptist Bearcats",
+      "aliases": [
+        "Southwest Baptist",
+        "SW Baptist",
+        "SWB"
+      ]
+    },
+    "2591": {
+      "name": "St. Ambrose Fighting Bees",
+      "aliases": [
+        "St. Ambrose",
+        "STA"
+      ]
+    },
+    "2594": {
+      "name": "St. Cloud State Huskies",
+      "aliases": [
+        "SCSU",
+        "St Cloud St",
+        "St. Cloud State"
+      ]
+    },
+    "2598": {
+      "name": "Saint Francis Red Flash",
+      "aliases": [
+        "Saint Francis",
+        "SFPA"
+      ]
+    },
+    "2600": {
+      "name": "Saint John's (MN) Johnnies",
+      "aliases": [
+        "Saint John's (MN)",
+        "St John's (MN)",
+        "ST. J"
+      ]
+    },
+    "2612": {
+      "name": "Saint Peter's Peacocks",
+      "aliases": [
+        "Saint Peter's",
+        "SPU"
+      ]
+    },
+    "2614": {
+      "name": "Saint Vincent Bearcats",
+      "aliases": [
+        "Saint Vincent",
+        "STV"
+      ]
+    },
+    "2617": {
+      "name": "Stephen F. Austin Lumberjacks",
+      "aliases": [
+        "SF Austin",
+        "SFA",
+        "Stephen F. Austin"
+      ]
+    },
+    "2619": {
+      "name": "Stony Brook Seawolves",
+      "aliases": [
+        "STBK",
+        "Stony Brook"
+      ]
+    },
+    "2623": {
+      "name": "Missouri State Bears",
+      "aliases": [
+        "Missouri St",
+        "Missouri State",
+        "MOST"
+      ]
+    },
+    "2627": {
+      "name": "Tarleton State Texans",
+      "aliases": [
+        "TAR",
+        "Tarleton St",
+        "Tarleton State"
+      ]
+    },
+    "2628": {
+      "name": "TCU Horned Frogs",
+      "aliases": [
+        "TCU"
+      ]
+    },
+    "2630": {
+      "name": "UT Martin Skyhawks",
+      "aliases": [
+        "UT Martin",
+        "UTM"
+      ]
+    },
+    "2633": {
+      "name": "Tennessee Volunteers",
+      "aliases": [
+        "TENN",
+        "Tennessee"
+      ]
+    },
+    "2634": {
+      "name": "Tennessee State Tigers",
+      "aliases": [
+        "Tennessee St",
+        "Tennessee State",
+        "TNST"
+      ]
+    },
+    "2635": {
+      "name": "Tennessee Tech Golden Eagles",
+      "aliases": [
+        "Tennessee Tech",
+        "TNTC"
+      ]
+    },
+    "2636": {
+      "name": "UTSA Roadrunners",
+      "aliases": [
+        "UTSA"
+      ]
+    },
+    "2638": {
+      "name": "UTEP Miners",
+      "aliases": [
+        "UTEP"
+      ]
+    },
+    "2640": {
+      "name": "Texas Southern Tigers",
+      "aliases": [
+        "Texas Southern",
+        "TXSO"
+      ]
+    },
+    "2641": {
+      "name": "Texas Tech Red Raiders",
+      "aliases": [
+        "Texas Tech",
+        "TTU"
+      ]
+    },
+    "2643": {
+      "name": "The Citadel Bulldogs",
+      "aliases": [
+        "CIT",
+        "The Citadel"
+      ]
+    },
+    "2644": {
+      "name": "Thiel Tomcats",
+      "aliases": [
+        "THI",
+        "Thiel"
+      ]
+    },
+    "2649": {
+      "name": "Toledo Rockets",
+      "aliases": [
+        "TOL",
+        "Toledo"
+      ]
+    },
+    "2652": {
+      "name": "Trinity Christian (IL) Trolls",
+      "aliases": [
+        "TRII",
+        "Trinity (IL)",
+        "Trinity Christian (IL)"
+      ]
+    },
+    "2653": {
+      "name": "Troy Trojans",
+      "aliases": [
+        "Troy",
+        "TROY"
+      ]
+    },
+    "2654": {
+      "name": "Truman State Bulldogs",
+      "aliases": [
+        "TRU",
+        "Truman St",
+        "Truman State"
+      ]
+    },
+    "2655": {
+      "name": "Tulane Green Wave",
+      "aliases": [
+        "Tulane",
+        "TULN"
+      ]
+    },
+    "2657": {
+      "name": "Tuskegee Golden Tigers",
+      "aliases": [
+        "TUS",
+        "Tuskegee"
+      ]
+    },
+    "2658": {
+      "name": "Texas A&M-Kingsville Javelinas",
+      "aliases": [
+        "TAMK",
+        "TAMU Kingsvlle",
+        "Texas A&M-Kingsville"
+      ]
+    },
+    "2673": {
+      "name": "Valdosta State Blazers",
+      "aliases": [
+        "VAL",
+        "Valdosta State",
+        "Valdsta St"
+      ]
+    },
+    "2674": {
+      "name": "Valparaiso Beacons",
+      "aliases": [
+        "VAL",
+        "Valparaiso"
+      ]
+    },
+    "2676": {
+      "name": "Virginia Union Panthers",
+      "aliases": [
+        "Va Union",
+        "VIRGI",
+        "Virginia Union"
+      ]
+    },
+    "2678": {
+      "name": "VMI Keydets",
+      "aliases": [
+        "VMI"
+      ]
+    },
+    "2681": {
+      "name": "Wagner Seahawks",
+      "aliases": [
+        "WAG",
+        "Wagner"
+      ]
+    },
+    "2686": {
+      "name": "Washington & Jefferson Presidents",
+      "aliases": [
+        "WAS",
+        "Wash & Jeff",
+        "Washington & Jefferson"
+      ]
+    },
+    "2692": {
+      "name": "Weber State Wildcats",
+      "aliases": [
+        "WEB",
+        "Weber St",
+        "Weber State"
+      ]
+    },
+    "2695": {
+      "name": "West Alabama Tigers",
+      "aliases": [
+        "UWA",
+        "West Alabama"
+      ]
+    },
+    "2701": {
+      "name": "Montana-Western Bulldogs",
+      "aliases": [
+        "Montana-Western",
+        "MTW",
+        "W Montana"
+      ]
+    },
+    "2703": {
+      "name": "Western New Mexico Mustangs",
+      "aliases": [
+        "Western New Mexico",
+        "Western NM",
+        "WNMU"
+      ]
+    },
+    "2704": {
+      "name": "West Texas A&M Buffaloes",
+      "aliases": [
+        "West Texas A&M",
+        "WTAM"
+      ]
+    },
+    "2706": {
+      "name": "WVU Tech Golden Bears",
+      "aliases": [
+        "WVU Tech",
+        "WVUT"
+      ]
+    },
+    "2710": {
+      "name": "Western Illinois Leathernecks",
+      "aliases": [
+        "W Illinois",
+        "Western Illinois",
+        "WIU"
+      ]
+    },
+    "2711": {
+      "name": "Western Michigan Broncos",
+      "aliases": [
+        "W Michigan",
+        "Western Michigan",
+        "WMU"
+      ]
+    },
+    "2717": {
+      "name": "Western Carolina Catamounts",
+      "aliases": [
+        "W Carolina",
+        "WCU",
+        "Western Carolina"
+      ]
+    },
+    "2723": {
+      "name": "University of Wisconsin River Falls Falcons",
+      "aliases": [
+        "University of Wisconsin River Falls",
+        "Uw-Riv Fls",
+        "WISCO"
+      ]
+    },
+    "2729": {
+      "name": "William & Mary Tribe",
+      "aliases": [
+        "W&M",
+        "William & Mary"
+      ]
+    },
+    "2736": {
+      "name": "Winston-Salem Rams",
+      "aliases": [
+        "Winston-Salem",
+        "WSSU"
+      ]
+    },
+    "2738": {
+      "name": "UW-Eau Claire Blugolds",
+      "aliases": [
+        "UW-Eau Claire",
+        "Uw-Eau Clr",
+        "WIS"
+      ]
+    },
+    "2743": {
+      "name": "University of Wisconsin Stevens Pt Pointers",
+      "aliases": [
+        "University of Wisconsin Stevens Pt",
+        "Uw-Stev Pt",
+        "WISCSP"
+      ]
+    },
+    "2744": {
+      "name": "Wisconsin-Stout Blue Devils",
+      "aliases": [
+        "UW Stout",
+        "UWST",
+        "Wisconsin-Stout"
+      ]
+    },
+    "2745": {
+      "name": "Wisconsin-Whitewater Warhawks",
+      "aliases": [
+        "Whitewater",
+        "Wisconsin-Whitewater",
+        "WISCWW"
+      ]
+    },
+    "2747": {
+      "name": "Wofford Terriers",
+      "aliases": [
+        "WOF",
+        "Wofford"
+      ]
+    },
+    "2749": {
+      "name": "WPI Engineers",
+      "aliases": [
+        "WPI"
+      ]
+    },
+    "2750": {
+      "name": "Wright State Raiders",
+      "aliases": [
+        "Wright St",
+        "Wright State",
+        "WRST"
+      ]
+    },
+    "2751": {
+      "name": "Wyoming Cowboys",
+      "aliases": [
+        "WYO",
+        "Wyoming"
+      ]
+    },
+    "2754": {
+      "name": "Youngstown State Penguins",
+      "aliases": [
+        "Youngstown St",
+        "Youngstown State",
+        "YSU"
+      ]
+    },
+    "2755": {
+      "name": "Grambling Tigers",
+      "aliases": [
+        "GRAM",
+        "Grambling"
+      ]
+    },
+    "2771": {
+      "name": "Merrimack Warriors",
+      "aliases": [
+        "Merrimack",
+        "MRMK"
+      ]
+    },
+    "2779": {
+      "name": "St. Lawrence Saints",
+      "aliases": [
+        "St Lawrence",
+        "St. Lawrence",
+        "USL"
+      ]
+    },
+    "2790": {
+      "name": "Albion Britons",
+      "aliases": [
+        "ALBI",
+        "Albion",
+        "ALBION"
+      ]
+    },
+    "2803": {
+      "name": "Bryant Bulldogs",
+      "aliases": [
+        "BRY",
+        "Bryant"
+      ]
+    },
+    "2804": {
+      "name": "Chowan Hawks",
+      "aliases": [
+        "CHOWA",
+        "Chowan"
+      ]
+    },
+    "2805": {
+      "name": "Clark Atlanta Panthers",
+      "aliases": [
+        "Clark Atl",
+        "Clark Atlanta",
+        "CLK"
+      ]
+    },
+    "2815": {
+      "name": "Lindenwood Lions",
+      "aliases": [
+        "LIN",
+        "Lindenwood"
+      ]
+    },
+    "2816": {
+      "name": "McKendree Bearcats",
+      "aliases": [
+        "MAN",
+        "McKendree"
+      ]
+    },
+    "2817": {
+      "name": "Minnesota State Moorhead Dragons",
+      "aliases": [
+        "Minn St Mr",
+        "MINNE",
+        "Minnesota State Moorhead"
+      ]
+    },
+    "2822": {
+      "name": "North Greenville Crusaders",
+      "aliases": [
+        "N Greenville",
+        "NGU",
+        "North Greenville"
+      ]
+    },
+    "2823": {
+      "name": "Northwestern Oklahoma State Rangers",
+      "aliases": [
+        "Northwestern Oklahoma State",
+        "NW Okla St",
+        "NWO"
+      ]
+    },
+    "2825": {
+      "name": "Quincy Hawks",
+      "aliases": [
+        "QUI",
+        "Quincy"
+      ]
+    },
+    "2827": {
+      "name": "Rowan Profs",
+      "aliases": [
+        "ROW",
+        "Rowan"
+      ]
+    },
+    "2828": {
+      "name": "Shenandoah Hornets",
+      "aliases": [
+        "SHENAN",
+        "Shenandoah"
+      ]
+    },
+    "2829": {
+      "name": "Simon Fraser Red Leafs",
+      "aliases": [
+        "SIMFRA",
+        "Simon Fraser"
+      ]
+    },
+    "2832": {
+      "name": "St. Norbert Green Knights",
+      "aliases": [
+        "St Norbert",
+        "St. Norbert",
+        "STN"
+      ]
+    },
+    "2834": {
+      "name": "Sul Ross State Lobos",
+      "aliases": [
+        "SUL",
+        "Sul Ross State"
+      ]
+    },
+    "2837": {
+      "name": "East Texas A&M Lions",
+      "aliases": [
+        "E Texas A&M",
+        "East Texas A&M",
+        "ETAM"
+      ]
+    },
+    "2838": {
+      "name": "Tiffin Dragons",
+      "aliases": [
+        "TIF",
+        "Tiffin"
+      ]
+    },
+    "2845": {
+      "name": "Waynesburg Yellow Jackets",
+      "aliases": [
+        "WAYNEB",
+        "Waynesburg"
+      ]
+    },
+    "2848": {
+      "name": "Western Oregon Wolves",
+      "aliases": [
+        "Western Oregon",
+        "WORU"
+      ]
+    },
+    "2849": {
+      "name": "Westminster (PA) Titans",
+      "aliases": [
+        "WCPA",
+        "Westminster (PA)",
+        "Westminster PA"
+      ]
+    },
+    "2858": {
+      "name": "PennWest California Vulcans",
+      "aliases": [
+        "PennWest CA",
+        "PennWest California",
+        "PW CAL"
+      ]
+    },
+    "2880": {
+      "name": "Missouri Baptist Spartans",
+      "aliases": [
+        "Missouri Bapt",
+        "Missouri Baptist",
+        "MOBU"
+      ]
+    },
+    "2886": {
+      "name": "Northwood (MI) Timberwolves",
+      "aliases": [
+        "NAR",
+        "Northwood",
+        "Northwood (MI)"
+      ]
+    },
+    "2888": {
+      "name": "Ouachita Baptist Tigers",
+      "aliases": [
+        "OBU",
+        "Ouachita Bapt",
+        "Ouachita Baptist"
+      ]
+    },
+    "2891": {
+      "name": "Ripon Red Hawks",
+      "aliases": [
+        "Ripon",
+        "RIPON"
+      ]
+    },
+    "2900": {
+      "name": "St. Thomas-Minnesota Tommies",
+      "aliases": [
+        "St Thomas (MN)",
+        "St. Thomas-Minnesota",
+        "STMN"
+      ]
+    },
+    "2911": {
+      "name": "William Jewell Cardinals",
+      "aliases": [
+        "William Jewell",
+        "WJC"
+      ]
+    },
+    "2916": {
+      "name": "Incarnate Word Cardinals",
+      "aliases": [
+        "Incarnate Word",
+        "UIW"
+      ]
+    },
+    "2919": {
+      "name": "Monmouth (IL) Fighting Scots",
+      "aliases": [
+        "MONMIL",
+        "Monmouth (IL)",
+        "Monmouthil"
+      ]
+    },
+    "2927": {
+      "name": "Southwestern Oklahoma State Bulldogs",
+      "aliases": [
+        "Southwestern Oklahoma State",
+        "Sw Ok St",
+        "SWO"
+      ]
+    },
+    "2940": {
+      "name": "Livingstone Blue Bears",
+      "aliases": [
+        "LIV",
+        "Livingstone"
+      ]
+    },
+    "2974": {
+      "name": "Shepherd Rams",
+      "aliases": [
+        "SHE",
+        "Shepherd"
+      ]
+    },
+    "3101": {
+      "name": "Utah Tech Trailblazers",
+      "aliases": [
+        "Utah Tech",
+        "UTU"
+      ]
+    },
+    "110243": {
+      "name": "CollegeInsider.com Tournament",
+      "aliases": [
+        "CIT",
+        "College Insider Tournament"
+      ]
+    },
+    "110254": {
+      "name": "National Invitation Tournament",
+      "aliases": [
+        "NIT"
+      ]
+    },
+    "112358": {
+      "name": "NCAA Division I Men's Basketball Tournament",
+      "aliases": [
+        "NCAA Tournament",
+        "March Madness"
+      ]
+    },
+    "124180": {
+      "name": "College Basketball Invitational",
+      "aliases": [
+        "CBI"
+      ]
+    }
+  }
 }
