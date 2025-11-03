@@ -1,5 +1,10 @@
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
 import {
+  getTeamLogoUrl,
+  getTeamMonogram,
+} from "../ui/logos.js";
+import { type Team } from "../sdk/ncaam.js";
+import {
   loadRosterDirectory,
   loadTeamRosterPlayers,
   type ConferenceGroup,
@@ -141,6 +146,8 @@ function renderTeamRoster(team: TeamRoster, season: string): HTMLElement {
   const summary = document.createElement("summary");
   summary.className = "team-roster__summary";
 
+  const logo = createTeamLogo(team);
+
   const labelContainer = document.createElement("div");
   labelContainer.className = "team-roster__labels";
 
@@ -158,7 +165,7 @@ function renderTeamRoster(team: TeamRoster, season: string): HTMLElement {
   chevron.className = "team-roster__chevron";
   chevron.setAttribute("aria-hidden", "true");
 
-  summary.append(labelContainer, chevron);
+  summary.append(logo, labelContainer, chevron);
 
   const body = document.createElement("div");
   body.className = "team-roster__body";
@@ -190,6 +197,40 @@ function renderTeamRoster(team: TeamRoster, season: string): HTMLElement {
   });
 
   return details;
+}
+
+function createTeamLogo(team: TeamRoster): HTMLElement {
+  const wrapper = document.createElement("div");
+  wrapper.className = "team-roster__logo";
+
+  const sdkTeam: Team = {
+    id: team.id,
+    full_name: team.fullName,
+    name: team.name,
+    abbreviation: team.abbreviation ?? undefined,
+    conference_id: team.conferenceId ?? undefined,
+    college: team.fullName,
+  };
+
+  const logoUrl = getTeamLogoUrl(sdkTeam);
+  if (logoUrl) {
+    const img = document.createElement("img");
+    img.className = "team-roster__logo-image";
+    img.src = logoUrl;
+    img.alt = `${team.fullName} logo`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    wrapper.appendChild(img);
+    return wrapper;
+  }
+
+  const fallback = document.createElement("span");
+  fallback.className = "team-roster__logo-fallback";
+  fallback.setAttribute("role", "img");
+  fallback.setAttribute("aria-label", `${team.fullName} logo`);
+  fallback.textContent = getTeamMonogram(sdkTeam);
+  wrapper.appendChild(fallback);
+  return wrapper;
 }
 
 function renderRosterTable(team: TeamRoster, players: RosterPlayer[]): HTMLElement {

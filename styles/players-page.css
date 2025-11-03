@@ -357,6 +357,36 @@
   cursor: pointer;
 }
 
+.team-roster__logo {
+  width: clamp(2.25rem, 1.8rem + 1.2vw, 3rem);
+  height: clamp(2.25rem, 1.8rem + 1.2vw, 3rem);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent);
+  flex-shrink: 0;
+}
+
+.team-roster__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.team-roster__logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+}
+
 .team-roster__summary::-webkit-details-marker {
   display: none;
 }
@@ -370,6 +400,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .team-roster__chevron {
