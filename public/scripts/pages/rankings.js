@@ -45,7 +45,7 @@ try {
     const latestEntries = apEntries
         .filter((entry) => entry.week === finalWeek)
         .slice()
-        .sort((a, b) => ((a.rank ?? 0) - (b.rank ?? 0)));
+        .sort((a, b) => (a.rank ?? 0) - (b.rank ?? 0));
     if (!Number.isFinite(finalWeek) || latestEntries.length === 0) {
         rows.innerHTML = `<tr><td colspan="5">No AP rankings are available for the conclusion of the 2024 season yet.</td></tr>`;
     }

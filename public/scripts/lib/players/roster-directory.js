@@ -1,9 +1,9 @@
 import { NCAAM } from "../sdk/ncaam.js";
-const ACTIVE_ROSTER_SEASON = "2025-26";
+const ACTIVE_ROSTER_SEASON = "2025-2026";
 const ACTIVE_PLAYER_PAGE_SIZE = 200;
 const MAX_ACTIVE_PLAYER_PAGES = 250;
 function parseSeasonEndYear(label) {
-    const match = label.match(/^(\d{4})-(\d{2})$/);
+    const match = label.match(/^(\d{4})-(\d{2}|\d{4})$/);
     if (!match) {
         return null;
     }
@@ -11,7 +11,29 @@ function parseSeasonEndYear(label) {
     if (!Number.isFinite(startYear)) {
         return null;
     }
-    return startYear + 1;
+    const endFragment = match[2] ?? "";
+    if (endFragment.length === 2) {
+        const suffix = Number.parseInt(endFragment, 10);
+        if (!Number.isFinite(suffix)) {
+            return null;
+        }
+        const baseCentury = Math.floor(startYear / 100) * 100;
+        let endYear = baseCentury + suffix;
+        if (endYear <= startYear) {
+            endYear += 100;
+        }
+        return endYear;
+    }
+    const endYear = Number.parseInt(endFragment, 10);
+    return Number.isFinite(endYear) ? endYear : null;
+}
+function parseSeasonStartYear(label) {
+    const match = label.match(/^(\d{4})/);
+    if (!match) {
+        return null;
+    }
+    const startYear = Number.parseInt(match[1] ?? "", 10);
+    return Number.isFinite(startYear) ? startYear : null;
 }
 function buildConferenceNameLookup(conferences) {
     const map = new Map();
@@ -76,11 +98,13 @@ function buildRosterPlayer(teamName, player) {
 async function fetchActivePlayers(seasonLabel) {
     const players = [];
     const seasonEndYear = parseSeasonEndYear(seasonLabel);
+    const seasonStartYear = parseSeasonStartYear(seasonLabel);
+    const seasonParam = seasonEndYear ?? seasonStartYear ?? undefined;
     let cursor;
     let iterations = 0;
     while (iterations < MAX_ACTIVE_PLAYER_PAGES) {
         iterations += 1;
-        const response = await NCAAM.activePlayers(ACTIVE_PLAYER_PAGE_SIZE, cursor, seasonEndYear ?? undefined);
+        const response = await NCAAM.activePlayers(ACTIVE_PLAYER_PAGE_SIZE, cursor, seasonParam);
         const data = Array.isArray(response.data) ? response.data : [];
         if (data.length === 0) {
             break;
