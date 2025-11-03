@@ -623,7 +623,9 @@ function resolveSourceUrl(raw) {
     }
 }
 function renderHeightSnapshot(contentEl, footerEl, snapshot) {
-    const measured = snapshot.teams.filter(hasMeasuredAverage);
+    const measured = snapshot.teams
+        .filter(hasMeasuredAverage)
+        .sort((a, b) => b.average_height_inches - a.average_height_inches);
     if (measured.length === 0) {
         contentEl.innerHTML = '<p class="height-card__empty">No roster height data is available yet. Check back soon.</p>';
         footerEl.textContent = "";
