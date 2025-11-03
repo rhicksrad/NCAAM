@@ -164,4 +164,5 @@ export const NCAAM = {
     activePlayersByTeam: (teamId) => get("/players/active", { "team_ids[]": teamId, per_page: 100 }),
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
     conferences: () => get("/conferences"),
+    rankings: (params = {}) => get("/rankings", params),
 };
