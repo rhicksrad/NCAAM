@@ -202,6 +202,17 @@ export type Player = {
 };
 export type Game = { id:number; date:string; status:string; home_team:Team; visitor_team:Team; home_team_score?:number; visitor_team_score?:number; };
 export type Conference = { id:number; name:string; short_name?:string };
+export type Ranking = {
+  poll: string;
+  team: Team;
+  season: number;
+  week: number;
+  rank: number;
+  first_place_votes?: number | null;
+  trend?: string | null;
+  points?: number | null;
+  record?: string | null;
+};
 export const NCAAM = {
   teams: async (page = 1, per_page = 200) => {
     if (per_page > SAFE_PAGE_SIZE) {
@@ -226,4 +237,6 @@ export const NCAAM = {
   activePlayersByTeam: (teamId:number) => get<{data:Player[]}>("/players/active", { "team_ids[]": teamId, per_page: 100 }),
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
   conferences: () => get<{data:Conference[]}>("/conferences"),
+  rankings: (params: { season?: number | string; week?: number | string; poll?: string } = {}) =>
+    get<{data:Ranking[]}>("/rankings", params),
 };
