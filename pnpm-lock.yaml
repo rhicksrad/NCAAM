@@ -69,6 +69,9 @@ importers:
       '@types/node':
         specifier: 20.12.7
         version: 20.12.7
+      esbuild:
+        specifier: ^0.25.10
+        version: 0.25.10
       jsdom:
         specifier: ^24.0.0
         version: 24.1.3
