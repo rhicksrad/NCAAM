@@ -2,7 +2,15 @@ import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
-app.innerHTML = `<h1>Standings</h1><div id="wrap" class="conference-groups"></div>`;
+app.innerHTML = `
+  <section class="card stack" data-gap="md">
+    <header class="stack" data-gap="xs">
+      <h2 class="section-title">Conference standings directory</h2>
+      <p class="section-summary">Alphabetized conference groupings with placeholder records until the live feed unlocks.</p>
+    </header>
+    <div id="wrap" class="conference-groups stack" data-gap="sm"></div>
+  </section>
+`;
 const wrap = document.getElementById("wrap");
 const [teamsResponse, conferenceMap] = await Promise.all([
     NCAAM.teams(1, 500),
@@ -85,17 +93,25 @@ wrap.innerHTML = orderedGroups
       `)
         .join("");
     const body = teamRows
-        ? `<table class="standings-table">
-          <thead>
-            <tr><th scope="col">Team</th><th scope="col">W</th><th scope="col">L</th><th scope="col">Pct</th></tr>
-          </thead>
-          <tbody>${teamRows}</tbody>
-        </table>`
+        ? `<div class="table-shell">
+          <table class="standings-table">
+            <thead>
+              <tr><th scope="col">Team</th><th scope="col">W</th><th scope="col">L</th><th scope="col">Pct</th></tr>
+            </thead>
+            <tbody>${teamRows}</tbody>
+          </table>
+        </div>`
         : `<p class="empty">No teams assigned.</p>`;
     return `
-      <details class="conference" data-conference="${group.name}">
-        <summary><span>${label}</span><span class="count">${group.teams.length}</span></summary>
-        <div class="group">
+      <details class="conference-card card" data-conference="${group.name}">
+        <summary class="conference-card__summary">
+          <span class="conference-card__label">${label}</span>
+          <span class="conference-card__meta">
+            <span class="conference-card__count" aria-label="${group.teams.length} teams">${group.teams.length}</span>
+            <span class="conference-card__chevron" aria-hidden="true"></span>
+          </span>
+        </summary>
+        <div class="conference-card__body">
           ${body}
         </div>
       </details>

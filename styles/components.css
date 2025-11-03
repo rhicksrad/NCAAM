@@ -73,6 +73,106 @@
   box-shadow: var(--shadow-2);
 }
 
+.section-title {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.section-summary {
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.conference-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.conference-card__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  cursor: pointer;
+}
+
+.conference-card__summary::-webkit-details-marker {
+  display: none;
+}
+
+.conference-card__summary:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-arc) 55%, white 45%);
+  outline-offset: 4px;
+}
+
+.conference-card__label {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.conference-card__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: color-mix(in srgb, var(--color-muted) 90%, white 10%);
+}
+
+.conference-card__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  color: var(--color-ink);
+}
+
+.conference-card__chevron {
+  display: inline-flex;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.conference-card__chevron::before {
+  content: "";
+  display: block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-top: 2px solid var(--color-ink);
+  border-right: 2px solid var(--color-ink);
+  transform: rotate(45deg);
+  transition: transform var(--transition-base);
+}
+
+.conference-card[open] .conference-card__chevron::before {
+  transform: rotate(135deg) translateY(-2px);
+}
+
+.conference-card__body {
+  display: grid;
+  gap: var(--space-md);
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+.conference-card__group {
+  gap: var(--space-md);
+}
+
 .button {
   display: inline-flex;
   align-items: center;
