@@ -57,7 +57,9 @@ export type RosterDirectory = {
   };
 };
 
-const ACTIVE_ROSTER_SEASON = "2025-26";
+const DEFAULT_ACTIVE_ROSTER_SEASON = "2024-25";
+
+let activeRosterSeasonPromise: Promise<string> | null = null;
 
 type MutableConferenceGroup = {
   id: number | null;
@@ -71,7 +73,7 @@ type PlayerIndexLookup = {
   byNameTeam: Map<string, PlayerIndexEntry[]>;
 };
 
-const teamRosterCache = new Map<number, Promise<RosterPlayer[]>>();
+const teamRosterCache = new Map<string, Promise<RosterPlayer[]>>();
 let playerIndexLookupPromise: Promise<PlayerIndexLookup> | null = null;
 
 function parseSeasonEndYear(label: string): number | null {
@@ -184,6 +186,28 @@ function buildPlayerIndexLookup(document: PlayerIndexDocument): PlayerIndexLooku
   }
 
   return { byName, byNameTeam } satisfies PlayerIndexLookup;
+}
+
+async function getActiveRosterSeason(): Promise<string> {
+  if (!activeRosterSeasonPromise) {
+    activeRosterSeasonPromise = (async () => {
+      try {
+        const document = await loadPlayerIndexDocument();
+        const seasons = document.seasons ?? [];
+        if (seasons.length > 0) {
+          const latest = seasons[0] ?? seasons[seasons.length - 1];
+          if (latest) {
+            return latest;
+          }
+        }
+      } catch (error) {
+        console.error("Unable to determine active roster season", error);
+      }
+      return DEFAULT_ACTIVE_ROSTER_SEASON;
+    })();
+  }
+
+  return await activeRosterSeasonPromise;
 }
 
 async function getPlayerIndexLookup(): Promise<PlayerIndexLookup> {
@@ -356,7 +380,12 @@ async function fetchTeamRosterPlayers(team: TeamRoster, seasonLabel: string): Pr
   return roster;
 }
 
+function getTeamRosterCacheKey(teamId: number, seasonLabel: string): string {
+  return `${teamId}:${seasonLabel}`;
+}
+
 export async function loadRosterDirectory(): Promise<RosterDirectory> {
+  const season = await getActiveRosterSeason();
   const [{ data: teams = [] }, { data: conferences = [] }] = await Promise.all([
     NCAAM.teams(1, 400),
     NCAAM.conferences(),
@@ -407,7 +436,7 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
   const totalTeams = orderedGroups.reduce((sum, group) => sum + group.teams.length, 0);
 
   return {
-    season: ACTIVE_ROSTER_SEASON,
+    season,
     conferences: orderedGroups.map((group) => ({
       id: group.id,
       name: group.name,
@@ -428,13 +457,16 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
   } satisfies RosterDirectory;
 }
 
-export async function loadTeamRosterPlayers(team: TeamRoster, seasonLabel = ACTIVE_ROSTER_SEASON): Promise<RosterPlayer[]> {
-  if (!teamRosterCache.has(team.id)) {
-    const load = fetchTeamRosterPlayers(team, seasonLabel).catch((error) => {
-      teamRosterCache.delete(team.id);
+export async function loadTeamRosterPlayers(team: TeamRoster, seasonLabel?: string): Promise<RosterPlayer[]> {
+  const season = seasonLabel ?? (await getActiveRosterSeason());
+  const cacheKey = getTeamRosterCacheKey(team.id, season);
+
+  if (!teamRosterCache.has(cacheKey)) {
+    const load = fetchTeamRosterPlayers(team, season).catch((error) => {
+      teamRosterCache.delete(cacheKey);
       throw error;
     });
-    teamRosterCache.set(team.id, load);
+    teamRosterCache.set(cacheKey, load);
   }
-  return await teamRosterCache.get(team.id)!;
+  return await teamRosterCache.get(cacheKey)!;
 }

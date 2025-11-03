@@ -1,6 +1,7 @@
 import { NCAAM } from "../sdk/ncaam.js";
 import { loadPlayerIndexDocument, loadPlayerStatsDocument, pickSeasonStats, } from "./data.js";
-const ACTIVE_ROSTER_SEASON = "2025-26";
+const DEFAULT_ACTIVE_ROSTER_SEASON = "2024-25";
+let activeRosterSeasonPromise = null;
 const teamRosterCache = new Map();
 let playerIndexLookupPromise = null;
 function parseSeasonEndYear(label) {
@@ -101,6 +102,27 @@ function buildPlayerIndexLookup(document) {
         }
     }
     return { byName, byNameTeam };
+}
+async function getActiveRosterSeason() {
+    if (!activeRosterSeasonPromise) {
+        activeRosterSeasonPromise = (async () => {
+            try {
+                const document = await loadPlayerIndexDocument();
+                const seasons = document.seasons ?? [];
+                if (seasons.length > 0) {
+                    const latest = seasons[0] ?? seasons[seasons.length - 1];
+                    if (latest) {
+                        return latest;
+                    }
+                }
+            }
+            catch (error) {
+                console.error("Unable to determine active roster season", error);
+            }
+            return DEFAULT_ACTIVE_ROSTER_SEASON;
+        })();
+    }
+    return await activeRosterSeasonPromise;
 }
 async function getPlayerIndexLookup() {
     if (!playerIndexLookupPromise) {
@@ -244,7 +266,11 @@ async function fetchTeamRosterPlayers(team, seasonLabel) {
     roster.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
     return roster;
 }
+function getTeamRosterCacheKey(teamId, seasonLabel) {
+    return `${teamId}:${seasonLabel}`;
+}
 export async function loadRosterDirectory() {
+    const season = await getActiveRosterSeason();
     const [{ data: teams = [] }, { data: conferences = [] }] = await Promise.all([
         NCAAM.teams(1, 400),
         NCAAM.conferences(),
@@ -283,7 +309,7 @@ export async function loadRosterDirectory() {
     });
     const totalTeams = orderedGroups.reduce((sum, group) => sum + group.teams.length, 0);
     return {
-        season: ACTIVE_ROSTER_SEASON,
+        season,
         conferences: orderedGroups.map((group) => ({
             id: group.id,
             name: group.name,
@@ -303,13 +329,15 @@ export async function loadRosterDirectory() {
         },
     };
 }
-export async function loadTeamRosterPlayers(team, seasonLabel = ACTIVE_ROSTER_SEASON) {
-    if (!teamRosterCache.has(team.id)) {
-        const load = fetchTeamRosterPlayers(team, seasonLabel).catch((error) => {
-            teamRosterCache.delete(team.id);
+export async function loadTeamRosterPlayers(team, seasonLabel) {
+    const season = seasonLabel ?? (await getActiveRosterSeason());
+    const cacheKey = getTeamRosterCacheKey(team.id, season);
+    if (!teamRosterCache.has(cacheKey)) {
+        const load = fetchTeamRosterPlayers(team, season).catch((error) => {
+            teamRosterCache.delete(cacheKey);
             throw error;
         });
-        teamRosterCache.set(team.id, load);
+        teamRosterCache.set(cacheKey, load);
     }
-    return await teamRosterCache.get(team.id);
+    return await teamRosterCache.get(cacheKey);
 }
