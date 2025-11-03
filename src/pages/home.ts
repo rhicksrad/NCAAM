@@ -1,3 +1,6 @@
+import type { Team } from "../lib/sdk/ncaam.js";
+import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
+
 const app = document.getElementById("app")!;
 
 type PollNote = {
@@ -31,6 +34,31 @@ type HeightSnapshot = {
 };
 
 const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
+
+function createSnapshotTeam(entry: HeightSnapshotTeam): Team {
+  const label = entry.team?.trim() ?? "";
+  const fullName = label || `Team ${entry.team_id}`;
+  return {
+    id: entry.team_id,
+    full_name: fullName,
+    name: fullName,
+    abbreviation: entry.abbreviation ?? undefined,
+    conference: entry.conference ?? undefined,
+    college: fullName,
+  };
+}
+
+function renderHeightLogo(entry: HeightSnapshotTeam): string {
+  const team = createSnapshotTeam(entry);
+  const alt = escapeHtml(`${team.full_name} logo`);
+  const logoUrl = getTeamLogoUrl(team);
+  if (logoUrl) {
+    return `<img class="height-card__logo-image" src="${logoUrl}" alt="${alt}" loading="lazy" decoding="async">`;
+  }
+
+  const monogram = escapeHtml(getTeamMonogram(team));
+  return `<span class="height-card__logo-fallback" role="img" aria-label="${alt}">${monogram}</span>`;
+}
 
 const poll: PollEntry[] = [
   {
@@ -598,7 +626,8 @@ function renderHeightColumn(title: string, entries: HeightSnapshotTeam[]): strin
       const formattedHeight = formatAverageHeight(entry.average_height_inches);
       const formattedInches = formatAverageInches(entry.average_height_inches);
       const sample = `${entry.measured_count} ${pluralize(entry.measured_count, "player", "players")} measured`;
-      return `<li class="height-card__item">\n        <span class="height-card__rank">${rank}</span>\n        <div class="height-card__body">\n          <span class="height-card__team">${teamName}${abbreviation}</span>\n          <span class="height-card__meta">${formattedHeight} avg · ${formattedInches} · ${sample}</span>\n        </div>\n      </li>`;
+      const logo = renderHeightLogo(entry);
+      return `<li class="height-card__item">\n        <span class="height-card__rank">${rank}</span>\n        <div class="height-card__logo">${logo}</div>\n        <div class="height-card__body">\n          <span class="height-card__team">${teamName}${abbreviation}</span>\n          <span class="height-card__meta">${formattedHeight} avg · ${formattedInches} · ${sample}</span>\n        </div>\n      </li>`;
     })
     .filter(Boolean)
     .join("");
