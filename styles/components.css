@@ -414,7 +414,7 @@
 
 @media (min-width: 1024px) {
   .home-layout {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     align-items: start;
   }
 }
@@ -433,13 +433,7 @@
 
 .height-card__lists {
   display: grid;
-  gap: var(--space-md);
-}
-
-@media (min-width: 768px) {
-  .height-card__lists {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  gap: var(--space-lg);
 }
 
 .height-card__column {
