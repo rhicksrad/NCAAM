@@ -44,6 +44,10 @@ function resolvePathname(rawPathname) {
     return stripped.startsWith('/') ? stripped : `/${stripped}`;
   }
 
+  if (!extname(rawPathname) && !rawPathname.endsWith('/')) {
+    return `${rawPathname}.html`;
+  }
+
   return rawPathname;
 }
 
