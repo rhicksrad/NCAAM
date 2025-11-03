@@ -1,10 +1,14 @@
 @import url("./tokens.css");
 
-.player-section {
+.players-page {
   position: relative;
 }
 
-.eyebrow {
+.feature-card {
+  position: relative;
+}
+
+.feature-card__eyebrow {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -12,44 +16,44 @@
   color: color-mix(in srgb, var(--color-ink) 65%, white 35%);
 }
 
-.player-section__title {
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+.feature-card__title {
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
   font-weight: 700;
-  color: color-mix(in srgb, var(--color-ink) 90%, white 10%);
+  color: color-mix(in srgb, var(--color-ink) 92%, white 8%);
 }
 
-.player-section__meta {
+.feature-card__meta {
   color: var(--color-muted);
-  max-width: 60ch;
+  max-width: 62ch;
 }
 
-.leaderboard-grid {
+.players-leaderboard-grid {
   display: grid;
   gap: var(--space-lg);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.leaderboard-card {
+.stat-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
   min-height: 100%;
 }
 
-.leaderboard-card__head {
+.stat-card__head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-md);
 }
 
-.leaderboard-card__labels {
+.stat-card__labels {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.leaderboard-card__kicker {
+.stat-card__eyebrow {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -57,13 +61,13 @@
   font-weight: 700;
 }
 
-.leaderboard-card__title {
-  font-size: 1.2rem;
+.stat-card__title {
+  font-size: 1.25rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--color-ink) 88%, white 12%);
 }
 
-.leaderboard-card__season {
+.stat-card__season {
   align-self: flex-start;
   font-size: 0.75rem;
   font-weight: 600;
@@ -75,11 +79,11 @@
   border-radius: 999px;
 }
 
-.leaderboard-card__chart {
+.stat-card__chart {
   min-height: 240px;
 }
 
-.leaderboard-card__list {
+.stat-card__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -88,7 +92,7 @@
   gap: 0.4rem;
 }
 
-.leaderboard-card__list-item {
+.stat-card__leader {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,7 +103,7 @@
   border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
-.leaderboard-card__rank {
+.stat-card__rank {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +115,7 @@
   font-weight: 700;
 }
 
-.leaderboard-card__player {
+.stat-card__player {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -119,48 +123,52 @@
   min-width: 0;
 }
 
-.leaderboard-card__name {
+.stat-card__name {
   font-weight: 600;
-  color: color-mix(in srgb, var(--color-ink) 88%, white 12%);
+  color: color-mix(in srgb, var(--color-ink) 90%, white 10%);
 }
 
-.leaderboard-card__team {
+.stat-card__team {
   font-size: 0.8rem;
   color: var(--color-muted);
 }
 
-.leaderboard-card__value {
+.stat-card__value {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: color-mix(in srgb, var(--color-ink) 80%, white 20%);
 }
 
-.leaderboard-card__empty,
-.leaderboard-card__error,
-.leaderboard-card__loading {
-  margin: 0;
-  padding: var(--space-lg);
-  text-align: center;
-  color: var(--color-muted);
-}
-
-.leaderboard-card--loading {
+.stat-card__loading,
+.stat-card__empty,
+.stat-card--loading {
+  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: var(--color-muted);
+  min-height: 200px;
 }
 
-.conference-directory {
+.stat-card--empty,
+.stat-card--error {
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+}
+
+.players-conference-directory {
   display: grid;
   gap: var(--space-lg);
 }
 
-.conference-card {
-  position: relative;
+.conference-panel {
   padding: 0;
   overflow: hidden;
 }
 
-.conference-card__summary {
+.conference-panel__summary {
   list-style: none;
   display: flex;
   align-items: center;
@@ -170,32 +178,32 @@
   cursor: pointer;
 }
 
-.conference-card__summary::-webkit-details-marker {
+.conference-panel__summary::-webkit-details-marker {
   display: none;
 }
 
-.conference-card__summary:focus-visible {
+.conference-panel__summary:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--color-arc) 55%, white 45%);
   outline-offset: 4px;
 }
 
-.conference-card__summary-content {
+.conference-panel__summary-content {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
 
-.conference-card__title {
-  font-size: 1.1rem;
+.conference-panel__title {
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
-.conference-card__meta {
+.conference-panel__meta {
   color: var(--color-muted);
   font-size: 0.85rem;
 }
 
-.conference-card__chevron {
+.conference-panel__chevron {
   display: inline-flex;
   width: 1.75rem;
   height: 1.75rem;
@@ -203,10 +211,9 @@
   align-items: center;
   justify-content: center;
   background: color-mix(in srgb, var(--color-ink) 8%, transparent);
-  position: relative;
 }
 
-.conference-card__chevron::before {
+.conference-panel__chevron::before {
   content: "";
   display: block;
   width: 0.45rem;
@@ -217,24 +224,30 @@
   transition: transform var(--transition-base);
 }
 
-.conference-card[open] .conference-card__chevron::before {
+.conference-panel[open] .conference-panel__chevron::before {
   transform: rotate(135deg) translateY(-2px);
 }
 
-.conference-card__body {
+.conference-panel__body {
   display: grid;
   gap: var(--space-lg);
   padding: 0 var(--space-lg) var(--space-lg);
 }
 
-.conference-card__placeholder,
-.conference-card__error,
-.conference-card__empty {
+.conference-panel__placeholder,
+.conference-panel__loading,
+.conference-panel__message {
   margin: 0;
   padding: var(--space-md);
   background: color-mix(in srgb, var(--color-paper) 95%, transparent);
   border-radius: var(--radius-card);
   color: var(--color-muted);
+  text-align: center;
+}
+
+.conference-panel__message--error,
+.conference-panel__placeholder--error {
+  color: color-mix(in srgb, var(--color-arc) 70%, var(--color-ink) 30%);
 }
 
 .team-roster {
@@ -282,7 +295,7 @@
   border-radius: 999px;
 }
 
-.roster-list {
+.team-roster__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -291,7 +304,7 @@
   gap: 0.35rem;
 }
 
-.roster-grid {
+.team-roster__row {
   list-style: none;
   display: grid;
   grid-template-columns: minmax(220px, 2.4fr) repeat(10, minmax(72px, 1fr));
@@ -304,7 +317,7 @@
   min-width: 820px;
 }
 
-.roster-grid--header {
+.team-roster__row--header {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -314,15 +327,14 @@
   border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
 }
 
-.roster-grid--loading,
-.roster-grid--empty {
+.team-roster__row--empty {
   text-align: center;
   grid-column: 1 / -1;
   justify-content: center;
   font-weight: 600;
 }
 
-.roster-grid__name {
+.team-roster__name {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -330,22 +342,22 @@
   color: color-mix(in srgb, var(--color-ink) 88%, white 12%);
 }
 
-.roster-grid__name a {
+.team-roster__name a {
   color: currentColor;
   text-decoration: none;
 }
 
-.roster-grid__name a:hover,
-.roster-grid__name a:focus-visible {
+.team-roster__name a:hover,
+.team-roster__name a:focus-visible {
   text-decoration: underline;
 }
 
-.roster-grid__team {
+.team-roster__team {
   font-size: 0.75rem;
   color: var(--color-muted);
 }
 
-.roster-grid__stat {
+.team-roster__stat {
   text-align: center;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -353,22 +365,22 @@
 }
 
 @media (max-width: 900px) {
-  .leaderboard-card__chart {
+  .stat-card__chart {
     min-height: 200px;
   }
 
-  .roster-grid {
+  .team-roster__row {
     min-width: 680px;
     grid-template-columns: minmax(200px, 2fr) repeat(10, minmax(64px, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .conference-card__summary {
+  .conference-panel__summary {
     padding-inline: var(--space-md);
   }
 
-  .conference-card__body {
+  .conference-panel__body {
     padding-inline: var(--space-md);
   }
 }

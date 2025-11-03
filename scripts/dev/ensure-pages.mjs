@@ -17,6 +17,14 @@ const HERO_NOTE = (note) => `<section class="hero hero--compact">\n  <div class=
 
 const HEADER = `<header class="site-header">\n  <div class="container site-header__inner">\n    <a class="site-brand" href="./index.html">\n      <span class="site-brand__title">NCAAM Hub</span>\n      <span class="site-brand__sub">Men's College Basketball</span>\n    </a>\n  </div>\n  <div class="container site-header__nav">\n    <div id="site-nav"></div>\n  </div>\n</header>`;
 
+const renderImportMap = (imports) => {
+  if (!imports || Object.keys(imports).length === 0) {
+    return "";
+  }
+  const payload = JSON.stringify({ imports }, null, 2);
+  return `<script type="importmap">\n${payload}\n</script>`;
+};
+
 const PAGES = [
   {
     file: "index.html",
@@ -59,7 +67,18 @@ const PAGES = [
       "Players",
       "Track impact players with sortable scouting cards and quick bios.",
       true
-    )
+    ),
+    importMap: {
+      "d3-axis": "https://esm.sh/d3-axis@3?pin=v135",
+      "d3-array": "https://esm.sh/d3-array@3?pin=v135",
+      "d3-scale": "https://esm.sh/d3-scale@4?pin=v135",
+      "d3-selection": "https://esm.sh/d3-selection@3?pin=v135",
+      "d3-format": "https://esm.sh/d3-format@3?pin=v135",
+      "d3-interpolate": "https://esm.sh/d3-interpolate@3?pin=v135",
+      "d3-time": "https://esm.sh/d3-time@3?pin=v135",
+      "d3-time-format": "https://esm.sh/d3-time-format@4?pin=v135",
+      "d3-color": "https://esm.sh/d3-color@3?pin=v135"
+    }
   },
   {
     file: "games.html",
@@ -117,6 +136,7 @@ const shell = (page) => `<!doctype html>
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="stylesheet" href="./styles/index.css">
 <script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
+${renderImportMap(page.importMap)}
 </head>
 <body>
 ${HEADER}
