@@ -45,15 +45,9 @@ function detectBaseFromModule() {
         if (!moduleUrl) {
             return undefined;
         }
-        const resolved = new URL(moduleUrl);
+        const resolved = new URL("../../..", moduleUrl);
         if (resolved.protocol !== "http:" && resolved.protocol !== "https:") {
             return undefined;
-        }
-        const marker = "/scripts/";
-        const markerIndex = resolved.pathname.indexOf(marker);
-        if (markerIndex !== -1) {
-            const basePath = resolved.pathname.slice(0, markerIndex + 1);
-            return basePath ? ensureTrailingSlash(basePath) : DEFAULT_BASE;
         }
         return detectBaseFromPath(resolved.pathname);
     }
@@ -67,11 +61,11 @@ function detectBaseFromDocument() {
     }
     try {
         const baseElement = document.querySelector("base[href]");
-        const rawBase = (baseElement === null || baseElement === void 0 ? void 0 : baseElement.href) ?? document.baseURI;
+        const rawBase = baseElement?.href ?? document.baseURI;
         if (!rawBase) {
             return undefined;
-    }
-    const resolved = new URL(rawBase, typeof location !== "undefined" && (location === null || location === void 0 ? void 0 : location.href) ? location.href : rawBase);
+        }
+        const resolved = new URL(rawBase, typeof location !== "undefined" && location?.href ? location.href : rawBase);
         if (resolved.protocol !== "http:" && resolved.protocol !== "https:") {
             return undefined;
         }
@@ -124,7 +118,10 @@ function detectBaseFromLocation() {
     }
     return detectBaseFromPath(location.pathname);
 }
-export const BASE = readBaseOverride() ?? detectBaseFromModule() ?? detectBaseFromDocument() ?? detectBaseFromLocation();
+export const BASE = readBaseOverride() ??
+    detectBaseFromDocument() ??
+    detectBaseFromModule() ??
+    detectBaseFromLocation();
 function readGlobalWorkerUrl() {
     if (typeof globalThis === "undefined" || !globalThis) {
         return undefined;
