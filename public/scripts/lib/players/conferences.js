@@ -1,5 +1,5 @@
-import { buildRosterPlayers, loadPlayerIndexDocument } from "./data.js";
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
+import { loadRosterDirectory, } from "./roster-directory.js";
 const ROSTER_COLUMNS = [
     { key: "gp", label: "GP", formatter: (value) => formatInteger(value) },
     { key: "mp_g", label: "MIN", formatter: (value) => formatDecimal(value, 1) },
@@ -15,17 +15,17 @@ const ROSTER_COLUMNS = [
 export async function renderConferenceDirectory(container, intro) {
     container.innerHTML = `<p class="conference-panel__loading">Loading conferences…</p>`;
     try {
-        const index = await loadPlayerIndexDocument();
-        const players = (index.players ?? []).filter((player) => player.conference && player.team);
-        if (!players.length) {
+        const directory = await loadRosterDirectory();
+        const groups = directory.conferences ?? [];
+        const totalPlayers = directory.totals?.players ?? 0;
+        const totalTeams = directory.totals?.teams ?? 0;
+        if (!totalPlayers || !groups.length) {
             container.innerHTML = `<p class="conference-panel__message">No conference roster data is available right now.</p>`;
             return;
         }
-        const groups = buildConferenceGroups(players);
-        const uniqueTeams = new Set(players.map((player) => `${player.conference}::${player.team}`));
         if (intro) {
-            const season = index.seasons?.[0] ?? players[0]?.season ?? "current season";
-            intro.textContent = `${groups.length} conferences, ${uniqueTeams.size} teams, ${players.length} players tracked for ${season}.`;
+            const season = directory.season ?? "current season";
+            intro.textContent = `${groups.length} conferences, ${totalTeams} teams, ${totalPlayers} players tracked for ${season}.`;
         }
         container.innerHTML = "";
         groups.forEach((group) => {
@@ -37,33 +37,6 @@ export async function renderConferenceDirectory(container, intro) {
         container.innerHTML = `<p class="conference-panel__message conference-panel__message--error">We couldn't reach the roster index. Please refresh to try again.</p>`;
     }
 }
-function buildConferenceGroups(entries) {
-    const map = new Map();
-    for (const entry of entries) {
-        const conference = entry.conference;
-        const team = entry.team;
-        if (!conference || !team)
-            continue;
-        if (!map.has(conference)) {
-            map.set(conference, new Map());
-        }
-        const teamMap = map.get(conference);
-        if (!teamMap.has(team)) {
-            teamMap.set(team, []);
-        }
-        teamMap.get(team).push(entry);
-    }
-    const groups = [];
-    for (const [name, teams] of map.entries()) {
-        let totalPlayers = 0;
-        for (const roster of teams.values()) {
-            totalPlayers += roster.length;
-        }
-        groups.push({ name, teams, totalPlayers });
-    }
-    groups.sort((a, b) => a.name.localeCompare(b.name));
-    return groups;
-}
 function createConferencePanel(group) {
     const details = document.createElement("details");
     details.className = "conference-panel card";
@@ -72,7 +45,7 @@ function createConferencePanel(group) {
     summary.innerHTML = `
     <div class="conference-panel__summary-content">
       <h3 class="conference-panel__title">${group.name}</h3>
-      <p class="conference-panel__meta">${group.teams.size} teams · ${group.totalPlayers} players</p>
+      <p class="conference-panel__meta">${group.teams.length} teams · ${group.totalPlayers} players</p>
     </div>
     <span class="conference-panel__chevron" aria-hidden="true"></span>
   `;
@@ -85,7 +58,7 @@ function createConferencePanel(group) {
         if (!details.open || details.dataset.loaded === "true")
             return;
         if (!loader) {
-            loader = hydrateConferenceBody(body, group)
+            loader = hydrateConferenceBody(body, group.teams)
                 .then(() => {
                 details.dataset.loaded = "true";
             })
@@ -100,23 +73,25 @@ function createConferencePanel(group) {
     });
     return details;
 }
-async function hydrateConferenceBody(container, group) {
+async function hydrateConferenceBody(container, teams) {
     container.innerHTML = "";
-    const teams = [...group.teams.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-    for (const [teamName, rosterEntries] of teams) {
-        const roster = await buildRosterPlayers(rosterEntries);
-        container.appendChild(renderTeamRoster(teamName, roster));
+    if (!teams.length) {
+        container.innerHTML = `<p class="conference-panel__placeholder">Roster data is not available.</p>`;
+        return;
     }
+    teams.forEach((team) => {
+        container.appendChild(renderTeamRoster(team));
+    });
 }
-function renderTeamRoster(teamName, roster) {
+function renderTeamRoster(team) {
     const card = document.createElement("article");
     card.className = "team-roster";
     const header = document.createElement("header");
     header.className = "team-roster__head";
     header.innerHTML = `
     <div class="team-roster__labels">
-      <h4 class="team-roster__title">${teamName}</h4>
-      <p class="team-roster__meta">${roster.length} players</p>
+      <h4 class="team-roster__title">${team.fullName}</h4>
+      <p class="team-roster__meta">${team.players.length} players</p>
     </div>
   `;
     const table = document.createElement("div");
@@ -124,15 +99,15 @@ function renderTeamRoster(teamName, roster) {
     table.appendChild(createRosterHeader());
     const list = document.createElement("ul");
     list.className = "team-roster__list";
-    list.setAttribute("aria-label", `${teamName} roster`);
-    if (!roster.length) {
+    list.setAttribute("aria-label", `${team.fullName} roster`);
+    if (!team.players.length) {
         const empty = document.createElement("li");
         empty.className = "team-roster__row team-roster__row--empty";
         empty.textContent = "Roster data is not available.";
         list.appendChild(empty);
     }
     else {
-        roster.forEach((player) => list.appendChild(createRosterRow(player)));
+        team.players.forEach((player) => list.appendChild(createRosterRow(player)));
     }
     table.appendChild(list);
     card.append(header, table);
@@ -151,27 +126,29 @@ function createRosterHeader() {
     });
     return header;
 }
+function buildPlayerMeta(player) {
+    const parts = [
+        player.position?.trim() || null,
+        player.jersey ? `#${player.jersey}` : null,
+        player.height?.trim() || null,
+        player.weight?.trim() || null,
+    ].filter(Boolean);
+    return parts.length ? parts.join(" · ") : null;
+}
 function createRosterRow(player) {
     const row = document.createElement("li");
     row.className = "team-roster__row";
-    row.dataset.player = player.entry.slug;
+    row.dataset.player = player.id;
     const nameCell = document.createElement("span");
     nameCell.className = "team-roster__name";
-    if (player.entry.url) {
-        const link = document.createElement("a");
-        link.href = player.entry.url;
-        link.target = "_blank";
-        link.rel = "noreferrer noopener";
-        link.textContent = player.entry.name;
-        nameCell.appendChild(link);
+    nameCell.textContent = player.name;
+    const meta = buildPlayerMeta(player);
+    if (meta) {
+        const metaEl = document.createElement("span");
+        metaEl.className = "team-roster__team";
+        metaEl.textContent = meta;
+        nameCell.appendChild(metaEl);
     }
-    else {
-        nameCell.textContent = player.entry.name;
-    }
-    const team = document.createElement("span");
-    team.className = "team-roster__team";
-    team.textContent = player.entry.team;
-    nameCell.appendChild(team);
     row.appendChild(nameCell);
     ROSTER_COLUMNS.forEach((column) => {
         const cell = document.createElement("span");

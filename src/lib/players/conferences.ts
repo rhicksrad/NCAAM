@@ -1,29 +1,16 @@
-import { buildRosterPlayers, loadPlayerIndexDocument, type PlayerIndexEntry } from "./data.js";
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
-
-type ConferenceGroup = {
-  name: string;
-  teams: Map<string, PlayerIndexEntry[]>;
-  totalPlayers: number;
-};
+import {
+  loadRosterDirectory,
+  type ConferenceGroup,
+  type TeamRoster,
+  type RosterPlayer,
+  type PlayerStatsSnapshot,
+} from "./roster-directory.js";
 
 type RosterColumn = {
   key: keyof PlayerStatsSnapshot;
   label: string;
   formatter: (value: number | null | undefined) => string;
-};
-
-type PlayerStatsSnapshot = {
-  gp: number | null;
-  mp_g: number | null;
-  pts_g: number | null;
-  trb_g: number | null;
-  ast_g: number | null;
-  stl_g: number | null;
-  blk_g: number | null;
-  fg_pct: number | null;
-  fg3_pct: number | null;
-  ft_pct: number | null;
 };
 
 const ROSTER_COLUMNS: RosterColumn[] = [
@@ -39,8 +26,6 @@ const ROSTER_COLUMNS: RosterColumn[] = [
   { key: "ft_pct", label: "FT%", formatter: (value) => formatPercent(value) },
 ];
 
-type Roster = Awaited<ReturnType<typeof buildRosterPlayers>>;
-
 export async function renderConferenceDirectory(
   container: HTMLElement,
   intro: HTMLElement | null,
@@ -48,20 +33,19 @@ export async function renderConferenceDirectory(
   container.innerHTML = `<p class="conference-panel__loading">Loading conferences…</p>`;
 
   try {
-    const index = await loadPlayerIndexDocument();
-    const players = (index.players ?? []).filter((player) => player.conference && player.team);
+    const directory = await loadRosterDirectory();
+    const groups = directory.conferences ?? [];
+    const totalPlayers = directory.totals?.players ?? 0;
+    const totalTeams = directory.totals?.teams ?? 0;
 
-    if (!players.length) {
+    if (!totalPlayers || !groups.length) {
       container.innerHTML = `<p class="conference-panel__message">No conference roster data is available right now.</p>`;
       return;
     }
 
-    const groups = buildConferenceGroups(players);
-    const uniqueTeams = new Set(players.map((player) => `${player.conference}::${player.team}`));
-
     if (intro) {
-      const season = index.seasons?.[0] ?? players[0]?.season ?? "current season";
-      intro.textContent = `${groups.length} conferences, ${uniqueTeams.size} teams, ${players.length} players tracked for ${season}.`;
+      const season = directory.season ?? "current season";
+      intro.textContent = `${groups.length} conferences, ${totalTeams} teams, ${totalPlayers} players tracked for ${season}.`;
     }
 
     container.innerHTML = "";
@@ -74,37 +58,6 @@ export async function renderConferenceDirectory(
   }
 }
 
-function buildConferenceGroups(entries: PlayerIndexEntry[]): ConferenceGroup[] {
-  const map = new Map<string, Map<string, PlayerIndexEntry[]>>();
-
-  for (const entry of entries) {
-    const conference = entry.conference;
-    const team = entry.team;
-    if (!conference || !team) continue;
-
-    if (!map.has(conference)) {
-      map.set(conference, new Map());
-    }
-    const teamMap = map.get(conference)!;
-    if (!teamMap.has(team)) {
-      teamMap.set(team, []);
-    }
-    teamMap.get(team)!.push(entry);
-  }
-
-  const groups: ConferenceGroup[] = [];
-  for (const [name, teams] of map.entries()) {
-    let totalPlayers = 0;
-    for (const roster of teams.values()) {
-      totalPlayers += roster.length;
-    }
-    groups.push({ name, teams, totalPlayers });
-  }
-
-  groups.sort((a, b) => a.name.localeCompare(b.name));
-  return groups;
-}
-
 function createConferencePanel(group: ConferenceGroup): HTMLElement {
   const details = document.createElement("details");
   details.className = "conference-panel card";
@@ -114,7 +67,7 @@ function createConferencePanel(group: ConferenceGroup): HTMLElement {
   summary.innerHTML = `
     <div class="conference-panel__summary-content">
       <h3 class="conference-panel__title">${group.name}</h3>
-      <p class="conference-panel__meta">${group.teams.size} teams · ${group.totalPlayers} players</p>
+      <p class="conference-panel__meta">${group.teams.length} teams · ${group.totalPlayers} players</p>
     </div>
     <span class="conference-panel__chevron" aria-hidden="true"></span>
   `;
@@ -129,7 +82,7 @@ function createConferencePanel(group: ConferenceGroup): HTMLElement {
   details.addEventListener("toggle", () => {
     if (!details.open || details.dataset.loaded === "true") return;
     if (!loader) {
-      loader = hydrateConferenceBody(body, group)
+      loader = hydrateConferenceBody(body, group.teams)
         .then(() => {
           details.dataset.loaded = "true";
         })
@@ -146,17 +99,20 @@ function createConferencePanel(group: ConferenceGroup): HTMLElement {
   return details;
 }
 
-async function hydrateConferenceBody(container: HTMLElement, group: ConferenceGroup): Promise<void> {
+async function hydrateConferenceBody(container: HTMLElement, teams: TeamRoster[]): Promise<void> {
   container.innerHTML = "";
-  const teams = [...group.teams.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 
-  for (const [teamName, rosterEntries] of teams) {
-    const roster = await buildRosterPlayers(rosterEntries);
-    container.appendChild(renderTeamRoster(teamName, roster));
+  if (!teams.length) {
+    container.innerHTML = `<p class="conference-panel__placeholder">Roster data is not available.</p>`;
+    return;
   }
+
+  teams.forEach((team) => {
+    container.appendChild(renderTeamRoster(team));
+  });
 }
 
-function renderTeamRoster(teamName: string, roster: Roster): HTMLElement {
+function renderTeamRoster(team: TeamRoster): HTMLElement {
   const card = document.createElement("article");
   card.className = "team-roster";
 
@@ -164,8 +120,8 @@ function renderTeamRoster(teamName: string, roster: Roster): HTMLElement {
   header.className = "team-roster__head";
   header.innerHTML = `
     <div class="team-roster__labels">
-      <h4 class="team-roster__title">${teamName}</h4>
-      <p class="team-roster__meta">${roster.length} players</p>
+      <h4 class="team-roster__title">${team.fullName}</h4>
+      <p class="team-roster__meta">${team.players.length} players</p>
     </div>
   `;
 
@@ -175,15 +131,15 @@ function renderTeamRoster(teamName: string, roster: Roster): HTMLElement {
 
   const list = document.createElement("ul");
   list.className = "team-roster__list";
-  list.setAttribute("aria-label", `${teamName} roster`);
+  list.setAttribute("aria-label", `${team.fullName} roster`);
 
-  if (!roster.length) {
+  if (!team.players.length) {
     const empty = document.createElement("li");
     empty.className = "team-roster__row team-roster__row--empty";
     empty.textContent = "Roster data is not available.";
     list.appendChild(empty);
   } else {
-    roster.forEach((player) => list.appendChild(createRosterRow(player)));
+    team.players.forEach((player) => list.appendChild(createRosterRow(player)));
   }
 
   table.appendChild(list);
@@ -207,28 +163,33 @@ function createRosterHeader(): HTMLElement {
   return header;
 }
 
-function createRosterRow(player: Roster[number]): HTMLElement {
+function buildPlayerMeta(player: RosterPlayer): string | null {
+  const parts = [
+    player.position?.trim() || null,
+    player.jersey ? `#${player.jersey}` : null,
+    player.height?.trim() || null,
+    player.weight?.trim() || null,
+  ].filter(Boolean) as string[];
+
+  return parts.length ? parts.join(" · ") : null;
+}
+
+function createRosterRow(player: RosterPlayer): HTMLElement {
   const row = document.createElement("li");
   row.className = "team-roster__row";
-  row.dataset.player = player.entry.slug;
+  row.dataset.player = player.id;
 
   const nameCell = document.createElement("span");
   nameCell.className = "team-roster__name";
-  if (player.entry.url) {
-    const link = document.createElement("a");
-    link.href = player.entry.url;
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    link.textContent = player.entry.name;
-    nameCell.appendChild(link);
-  } else {
-    nameCell.textContent = player.entry.name;
-  }
+  nameCell.textContent = player.name;
 
-  const team = document.createElement("span");
-  team.className = "team-roster__team";
-  team.textContent = player.entry.team;
-  nameCell.appendChild(team);
+  const meta = buildPlayerMeta(player);
+  if (meta) {
+    const metaEl = document.createElement("span");
+    metaEl.className = "team-roster__team";
+    metaEl.textContent = meta;
+    nameCell.appendChild(metaEl);
+  }
   row.appendChild(nameCell);
 
   ROSTER_COLUMNS.forEach((column) => {
