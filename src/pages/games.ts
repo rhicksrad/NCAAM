@@ -1,4 +1,9 @@
 import { NCAAM, type Game } from "../lib/sdk/ncaam.js";
+import {
+  getTeamAccentColors,
+  getTeamLogoUrl,
+  getTeamMonogram,
+} from "../lib/ui/logos.js";
 
 const REFRESH_INTERVAL_MS = 30_000;
 const REFRESH_WINDOW_MS = 6 * 60 * 60 * 1000;
@@ -26,6 +31,14 @@ type LineScoreSegment = {
   away: number | null | undefined;
   home: number | null | undefined;
 };
+
+function escapeAttr(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
 
 function toLocalISODate(value: Date): string {
   const date = new Date(value.getTime());
@@ -134,10 +147,36 @@ function shouldPollGame(game: Game): boolean {
   return true;
 }
 
-function renderTeamRow(team: Game["home_team"], score: number | null | undefined, isLeading: boolean, side: "home" | "away"): string {
+function renderTeamLogo(team: Game["home_team"]): string {
+  const label = team.full_name ?? team.name ?? "Team";
+  const logoUrl = getTeamLogoUrl(team);
+  if (logoUrl) {
+    const safeUrl = escapeAttr(logoUrl);
+    const alt = escapeAttr(`${label} logo`);
+    return `<span class="game-card__team-logo">
+      <img class="game-card__team-logo-image" src="${safeUrl}" alt="${alt}" loading="lazy" decoding="async">
+    </span>`;
+  }
+
+  const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
+  const monogram = getTeamMonogram(team);
+  const safeLabel = escapeAttr(`${label} logo`);
+  const style = escapeAttr(
+    `--team-accent-primary: ${accentPrimary}; --team-accent-secondary: ${accentSecondary};`,
+  );
+  return `<span class="game-card__team-logo game-card__team-logo--fallback" role="img" aria-label="${safeLabel}" style="${style}">${monogram}</span>`;
+}
+
+function renderTeamRow(
+  team: Game["home_team"],
+  score: number | null | undefined,
+  isLeading: boolean,
+  side: "home" | "away",
+): string {
   const name = team.full_name ?? team.name;
   const abbr = team.abbreviation ?? (side === "home" ? "HOME" : "AWAY");
   return `<div class="game-card__team game-card__team--${side}${isLeading ? " is-leading" : ""}">
+    ${renderTeamLogo(team)}
     <span class="game-card__team-abbr" aria-hidden="true">${abbr}</span>
     <span class="game-card__team-name">${name}</span>
     <span class="game-card__team-score">${formatScore(score)}</span>

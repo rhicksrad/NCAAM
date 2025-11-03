@@ -696,7 +696,7 @@
 
 .game-card__team {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
   gap: 0.65rem;
   align-items: center;
   padding: 0.55rem 0.75rem;
@@ -708,6 +708,39 @@
 .game-card__team.is-leading {
   background: color-mix(in srgb, var(--color-arc) 20%, transparent);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-arc) 38%, transparent);
+}
+
+.game-card__team-logo {
+  width: clamp(1.75rem, 1.35rem + 0.8vw, 2.25rem);
+  height: clamp(1.75rem, 1.35rem + 0.8vw, 2.25rem);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 14%, transparent);
+  overflow: hidden;
+}
+
+.game-card__team-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.game-card__team-logo--fallback {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: color-mix(in srgb, white 92%, var(--color-ink) 8%);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--color-ink) 45%, transparent);
+  background: linear-gradient(
+    135deg,
+    var(--team-accent-primary, color-mix(in srgb, var(--color-ink) 10%, transparent)),
+    var(--team-accent-secondary, color-mix(in srgb, var(--color-ink) 20%, transparent))
+  );
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 14%, transparent);
 }
 
 .game-card__team-abbr {
