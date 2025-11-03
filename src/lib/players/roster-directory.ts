@@ -1,4 +1,12 @@
 import { NCAAM, type Player, type Team, type Conference } from "../sdk/ncaam.js";
+import {
+  loadPlayerIndexDocument,
+  loadPlayerStatsDocument,
+  pickSeasonStats,
+  type PlayerIndexDocument,
+  type PlayerIndexEntry,
+  type PlayerStatsSeason,
+} from "./data.js";
 
 export type PlayerStatsSnapshot = {
   gp: number | null;
@@ -31,35 +39,40 @@ export type TeamRoster = {
   abbreviation: string | null;
   conferenceId: number | null;
   conferenceName: string;
-  players: RosterPlayer[];
 };
 
 export type ConferenceGroup = {
   id: number | null;
   name: string;
   teams: TeamRoster[];
-  totalPlayers: number;
+  totalPlayers: number | null;
 };
 
 export type RosterDirectory = {
   season: string;
   conferences: ConferenceGroup[];
   totals: {
-    players: number;
+    players: number | null;
     teams: number;
   };
 };
 
 const ACTIVE_ROSTER_SEASON = "2025-2026";
-const ACTIVE_PLAYER_PAGE_SIZE = 200;
-const MAX_ACTIVE_PLAYER_PAGES = 250;
 
 type MutableConferenceGroup = {
   id: number | null;
   name: string;
   teams: TeamRoster[];
-  totalPlayers: number;
+  totalPlayers: number | null;
 };
+
+type PlayerIndexLookup = {
+  byName: Map<string, PlayerIndexEntry[]>;
+  byNameTeam: Map<string, PlayerIndexEntry[]>;
+};
+
+const teamRosterCache = new Map<number, Promise<RosterPlayer[]>>();
+let playerIndexLookupPromise: Promise<PlayerIndexLookup> | null = null;
 
 function parseSeasonEndYear(label: string): number | null {
   const match = label.match(/^(\d{4})-(\d{2}|\d{4})$/);
@@ -129,27 +142,186 @@ function ensureTeamMap(teams: Team[]): Map<number, Team> {
   return map;
 }
 
-function createEmptyStats(): PlayerStatsSnapshot {
-  return {
-    gp: null,
-    mp_g: null,
-    pts_g: null,
-    trb_g: null,
-    ast_g: null,
-    stl_g: null,
-    blk_g: null,
-    fg_pct: null,
-    fg3_pct: null,
-    ft_pct: null,
-  };
-}
-
 function normaliseName(value: string | null | undefined): string {
   const trimmed = value?.trim();
   return trimmed && trimmed.length ? trimmed : "Unknown";
 }
 
-function buildRosterPlayer(teamName: string, player: Player): RosterPlayer {
+function normaliseKey(value: string | null | undefined): string | null {
+  const text = value?.normalize("NFD");
+  if (!text) {
+    return null;
+  }
+  const stripped = text.replace(/[\p{M}]+/gu, "");
+  const collapsed = stripped.replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  if (!collapsed) {
+    return null;
+  }
+  return collapsed.toLowerCase();
+}
+
+function buildPlayerIndexLookup(document: PlayerIndexDocument): PlayerIndexLookup {
+  const byName = new Map<string, PlayerIndexEntry[]>();
+  const byNameTeam = new Map<string, PlayerIndexEntry[]>();
+  const entries = document.players ?? [];
+
+  for (const entry of entries) {
+    const nameKey = normaliseKey(entry.name_key ?? entry.name);
+    if (!nameKey) continue;
+    if (!byName.has(nameKey)) {
+      byName.set(nameKey, []);
+    }
+    byName.get(nameKey)!.push(entry);
+
+    const teamKey = normaliseKey(entry.team_key ?? entry.team);
+    if (teamKey) {
+      const combinedKey = `${nameKey}::${teamKey}`;
+      if (!byNameTeam.has(combinedKey)) {
+        byNameTeam.set(combinedKey, []);
+      }
+      byNameTeam.get(combinedKey)!.push(entry);
+    }
+  }
+
+  return { byName, byNameTeam } satisfies PlayerIndexLookup;
+}
+
+async function getPlayerIndexLookup(): Promise<PlayerIndexLookup> {
+  if (!playerIndexLookupPromise) {
+    playerIndexLookupPromise = loadPlayerIndexDocument()
+      .then((document) => buildPlayerIndexLookup(document))
+      .catch((error) => {
+        playerIndexLookupPromise = null;
+        throw error;
+      });
+  }
+  return await playerIndexLookupPromise;
+}
+
+function buildTeamKeyCandidates(team: TeamRoster, playerTeam: Player["team"] | undefined): string[] {
+  const keys = new Set<string>();
+  const candidates = [
+    team.fullName,
+    team.name,
+    team.abbreviation,
+    playerTeam?.full_name,
+    playerTeam?.name,
+    playerTeam?.abbreviation,
+  ];
+  for (const candidate of candidates) {
+    const key = normaliseKey(candidate);
+    if (key) {
+      keys.add(key);
+    }
+  }
+  return [...keys];
+}
+
+function extractSeasonYear(entry: PlayerIndexEntry): number | null {
+  if (typeof entry.season_year === "number" && Number.isFinite(entry.season_year)) {
+    return entry.season_year;
+  }
+  return parseSeasonEndYear(entry.season ?? "");
+}
+
+function pickPlayerIndexEntry(
+  lookup: PlayerIndexLookup,
+  nameKey: string,
+  teamKeys: string[],
+  seasonEndYear: number | null,
+): PlayerIndexEntry | null {
+  const candidates: PlayerIndexEntry[] = [];
+  const seen = new Set<PlayerIndexEntry>();
+
+  for (const teamKey of teamKeys) {
+    const teamEntries = lookup.byNameTeam.get(`${nameKey}::${teamKey}`) ?? [];
+    for (const entry of teamEntries) {
+      if (seen.has(entry)) continue;
+      seen.add(entry);
+      candidates.push(entry);
+    }
+  }
+
+  const nameEntries = lookup.byName.get(nameKey) ?? [];
+  for (const entry of nameEntries) {
+    if (seen.has(entry)) continue;
+    seen.add(entry);
+    candidates.push(entry);
+  }
+
+  if (!candidates.length) {
+    return null;
+  }
+
+  let filtered = candidates;
+
+  if (seasonEndYear !== null) {
+    const seasonMatches = candidates.filter((entry) => extractSeasonYear(entry) === seasonEndYear);
+    if (seasonMatches.length) {
+      filtered = seasonMatches;
+    }
+  }
+
+  if (teamKeys.length) {
+    const teamMatches = filtered.filter((entry) => {
+      const entryKey = normaliseKey(entry.team_key ?? entry.team);
+      return entryKey ? teamKeys.includes(entryKey) : false;
+    });
+    if (teamMatches.length) {
+      filtered = teamMatches;
+    }
+  }
+
+  filtered.sort((a, b) => (extractSeasonYear(b) ?? 0) - (extractSeasonYear(a) ?? 0));
+  return filtered[0] ?? null;
+}
+
+function toPlayerStatsSnapshot(season: PlayerStatsSeason | null): PlayerStatsSnapshot | null {
+  if (!season) {
+    return null;
+  }
+  return {
+    gp: season.gp ?? null,
+    mp_g: season.mp_g ?? null,
+    pts_g: season.pts_g ?? null,
+    trb_g: season.trb_g ?? null,
+    ast_g: season.ast_g ?? null,
+    stl_g: season.stl_g ?? null,
+    blk_g: season.blk_g ?? null,
+    fg_pct: season.fg_pct ?? null,
+    fg3_pct: season.fg3_pct ?? null,
+    ft_pct: season.ft_pct ?? null,
+  } satisfies PlayerStatsSnapshot;
+}
+
+async function resolvePlayerStats(
+  player: Player,
+  team: TeamRoster,
+  seasonLabel: string,
+  seasonEndYear: number | null,
+): Promise<PlayerStatsSnapshot | null> {
+  const nameKey = normaliseKey(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
+  if (!nameKey) {
+    return null;
+  }
+
+  try {
+    const lookup = await getPlayerIndexLookup();
+    const teamKeys = buildTeamKeyCandidates(team, player.team);
+    const entry = pickPlayerIndexEntry(lookup, nameKey, teamKeys, seasonEndYear);
+    if (!entry) {
+      return null;
+    }
+    const document = await loadPlayerStatsDocument(entry.slug);
+    const seasonStats = pickSeasonStats(document, seasonLabel);
+    return toPlayerStatsSnapshot(seasonStats);
+  } catch (error) {
+    console.error(`Unable to load stats for ${player.first_name} ${player.last_name}`, error);
+    return null;
+  }
+}
+
+function buildRosterPlayer(teamName: string, player: Player, stats: PlayerStatsSnapshot | null): RosterPlayer {
   const first = player.first_name?.trim() ?? "";
   const last = player.last_name?.trim() ?? "";
   const name = `${first} ${last}`.trim() || first || last || "Unknown";
@@ -161,35 +333,27 @@ function buildRosterPlayer(teamName: string, player: Player): RosterPlayer {
     jersey: player.jersey_number?.trim() ?? null,
     height: player.height?.trim() ?? null,
     weight: player.weight?.trim() ?? null,
-    stats: createEmptyStats(),
+    stats,
   } satisfies RosterPlayer;
 }
 
-async function fetchActivePlayers(seasonLabel: string): Promise<Player[]> {
-  const players: Player[] = [];
-  const seasonEndYear = parseSeasonEndYear(seasonLabel);
+async function fetchTeamRosterPlayers(team: TeamRoster, seasonLabel: string): Promise<RosterPlayer[]> {
   const seasonStartYear = parseSeasonStartYear(seasonLabel);
-  const seasonParam = seasonEndYear ?? seasonStartYear ?? undefined;
-  let cursor: number | string | null | undefined;
-  let iterations = 0;
+  const seasonEndYear = parseSeasonEndYear(seasonLabel);
+  const seasonParam = seasonStartYear ?? seasonEndYear ?? undefined;
 
-  while (iterations < MAX_ACTIVE_PLAYER_PAGES) {
-    iterations += 1;
-    const response = await NCAAM.activePlayers(ACTIVE_PLAYER_PAGE_SIZE, cursor, seasonParam);
-    const data = Array.isArray(response.data) ? response.data : [];
-    if (data.length === 0) {
-      break;
-    }
-    players.push(...data);
+  const response = await NCAAM.activePlayersByTeam(team.id, seasonParam);
+  const players = Array.isArray(response.data) ? response.data : [];
 
-    const nextCursor = response.meta?.next_cursor ?? null;
-    if (!nextCursor || nextCursor === cursor) {
-      break;
-    }
-    cursor = nextCursor;
-  }
+  const roster = await Promise.all(
+    players.map(async (player) => {
+      const stats = await resolvePlayerStats(player, team, seasonLabel, seasonEndYear);
+      return buildRosterPlayer(team.fullName, player, stats);
+    }),
+  );
 
-  return players;
+  roster.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+  return roster;
 }
 
 export async function loadRosterDirectory(): Promise<RosterDirectory> {
@@ -200,27 +364,10 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
 
   const conferenceMap = buildConferenceNameLookup(conferences ?? []);
   const teamMap = ensureTeamMap(teams ?? []);
-  const players = await fetchActivePlayers(ACTIVE_ROSTER_SEASON);
-
-  const playersByTeam = new Map<number, Player[]>();
-  for (const player of players) {
-    const teamId = player.team?.id;
-    if (typeof teamId !== "number") continue;
-    if (!playersByTeam.has(teamId)) {
-      playersByTeam.set(teamId, []);
-    }
-    playersByTeam.get(teamId)!.push(player);
-  }
-
   const groups = new Map<string, MutableConferenceGroup>();
 
-  for (const [teamId, rosterPlayers] of playersByTeam.entries()) {
-    const teamRecord = teamMap.get(teamId) ?? rosterPlayers[0]?.team;
-    if (!teamRecord) {
-      continue;
-    }
-
-    const conferenceId = teamRecord.conference_id ?? rosterPlayers[0]?.team?.conference_id ?? null;
+  for (const teamRecord of teamMap.values()) {
+    const conferenceId = teamRecord.conference_id ?? null;
     const conferenceName = resolveConferenceName(conferenceId, conferenceMap);
     const groupKey = `${conferenceId ?? "independent"}`;
 
@@ -229,31 +376,24 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
         id: conferenceId,
         name: conferenceName,
         teams: [],
-        totalPlayers: 0,
+        totalPlayers: null,
       });
     }
 
-    const fullName = normaliseName(teamRecord.full_name ?? rosterPlayers[0]?.team?.full_name);
-    const shortName = normaliseName(teamRecord.name ?? rosterPlayers[0]?.team?.name ?? fullName);
-    const abbreviation = teamRecord.abbreviation?.trim() ?? rosterPlayers[0]?.team?.abbreviation?.trim() ?? null;
-
-    const formattedPlayers = rosterPlayers
-      .map((player) => buildRosterPlayer(fullName, player))
-      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+    const fullName = normaliseName(teamRecord.full_name ?? teamRecord.name);
+    const shortName = normaliseName(teamRecord.name ?? teamRecord.full_name ?? fullName);
+    const abbreviation = teamRecord.abbreviation?.trim() ?? null;
 
     const teamRoster: TeamRoster = {
-      id: teamId,
+      id: teamRecord.id,
       name: shortName,
       fullName,
       abbreviation,
       conferenceId,
       conferenceName,
-      players: formattedPlayers,
     };
 
-    const group = groups.get(groupKey)!;
-    group.teams.push(teamRoster);
-    group.totalPlayers += formattedPlayers.length;
+    groups.get(groupKey)!.teams.push(teamRoster);
   }
 
   const orderedGroups = [...groups.values()].sort((a, b) =>
@@ -264,7 +404,6 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
     group.teams.sort((a, b) => a.fullName.localeCompare(b.fullName, undefined, { sensitivity: "base" }));
   });
 
-  const totalPlayers = orderedGroups.reduce((sum, group) => sum + group.totalPlayers, 0);
   const totalTeams = orderedGroups.reduce((sum, group) => sum + group.teams.length, 0);
 
   return {
@@ -280,12 +419,22 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
         abbreviation: team.abbreviation,
         conferenceId: team.conferenceId,
         conferenceName: team.conferenceName,
-        players: team.players.map((player) => ({ ...player })),
       })),
     })),
     totals: {
-      players: totalPlayers,
+      players: null,
       teams: totalTeams,
     },
   } satisfies RosterDirectory;
+}
+
+export async function loadTeamRosterPlayers(team: TeamRoster, seasonLabel = ACTIVE_ROSTER_SEASON): Promise<RosterPlayer[]> {
+  if (!teamRosterCache.has(team.id)) {
+    const load = fetchTeamRosterPlayers(team, seasonLabel).catch((error) => {
+      teamRosterCache.delete(team.id);
+      throw error;
+    });
+    teamRosterCache.set(team.id, load);
+  }
+  return await teamRosterCache.get(team.id)!;
 }

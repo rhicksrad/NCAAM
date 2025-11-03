@@ -228,13 +228,23 @@ export const NCAAM = {
     }
   },
   players: (page=1, per_page=200, search="") => get<{data:Player[]}>("/players", { page, per_page, search }),
-  activePlayers: (per_page=SAFE_PAGE_SIZE, cursor?: number | string | null, season?: string | number) =>
-    get<CursorPaginatedResponse<Player>>("/players/active", {
+  activePlayers: (per_page=SAFE_PAGE_SIZE, cursor?: number | string | null, season?: string | number) => {
+    const params: Record<string, QueryValue> = {
       per_page,
       cursor,
-      season,
-    }),
-  activePlayersByTeam: (teamId:number) => get<{data:Player[]}>("/players/active", { "team_ids[]": teamId, per_page: 100 }),
+    };
+    if (season !== undefined && season !== null && `${season}`.length > 0) {
+      params["seasons[]"] = season;
+    }
+    return get<CursorPaginatedResponse<Player>>("/players/active", params);
+  },
+  activePlayersByTeam: (teamId:number, season?: string | number) => {
+    const params: Record<string, QueryValue> = { "team_ids[]": teamId, per_page: 100 };
+    if (season !== undefined && season !== null && `${season}`.length > 0) {
+      params["seasons[]"] = season;
+    }
+    return get<{data:Player[]}>("/players/active", params);
+  },
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
   conferences: () => get<{data:Conference[]}>("/conferences"),
   rankings: (params: { season?: number | string; week?: number | string; poll?: string } = {}) =>

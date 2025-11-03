@@ -1,5 +1,5 @@
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
-import { loadRosterDirectory, } from "./roster-directory.js";
+import { loadRosterDirectory, loadTeamRosterPlayers, } from "./roster-directory.js";
 const ROSTER_COLUMNS = [
     { key: "gp", label: "GP", formatter: (value) => formatInteger(value) },
     { key: "mp_g", label: "MIN", formatter: (value) => formatDecimal(value, 1) },
@@ -17,19 +17,22 @@ export async function renderConferenceDirectory(container, intro) {
     try {
         const directory = await loadRosterDirectory();
         const groups = directory.conferences ?? [];
-        const totalPlayers = directory.totals?.players ?? 0;
         const totalTeams = directory.totals?.teams ?? 0;
-        if (!totalPlayers || !groups.length) {
+        if (!groups.length) {
             container.innerHTML = `<p class="conference-panel__message">No conference roster data is available right now.</p>`;
             return;
         }
         if (intro) {
             const season = directory.season ?? "current season";
-            intro.textContent = `${groups.length} conferences, ${totalTeams} teams, ${totalPlayers} players tracked for ${season}.`;
+            const pieces = [`${groups.length} conferences`, `${totalTeams} teams`];
+            if (directory.totals?.players != null) {
+                pieces.push(`${directory.totals.players} players`);
+            }
+            intro.textContent = `${pieces.join(", ")} tracked for ${season}.`;
         }
         container.innerHTML = "";
         groups.forEach((group) => {
-            container.appendChild(createConferencePanel(group));
+            container.appendChild(createConferencePanel(group, directory.season));
         });
     }
     catch (error) {
@@ -37,18 +40,24 @@ export async function renderConferenceDirectory(container, intro) {
         container.innerHTML = `<p class="conference-panel__message conference-panel__message--error">We couldn't reach the roster index. Please refresh to try again.</p>`;
     }
 }
-function createConferencePanel(group) {
+function createConferencePanel(group, season) {
     const details = document.createElement("details");
     details.className = "conference-panel card";
     const summary = document.createElement("summary");
     summary.className = "conference-panel__summary";
-    summary.innerHTML = `
-    <div class="conference-panel__summary-content">
-      <h3 class="conference-panel__title">${group.name}</h3>
-      <p class="conference-panel__meta">${group.teams.length} teams · ${group.totalPlayers} players</p>
-    </div>
-    <span class="conference-panel__chevron" aria-hidden="true"></span>
-  `;
+    const summaryContent = document.createElement("div");
+    summaryContent.className = "conference-panel__summary-content";
+    const title = document.createElement("h3");
+    title.className = "conference-panel__title";
+    title.textContent = group.name;
+    const meta = document.createElement("p");
+    meta.className = "conference-panel__meta";
+    meta.textContent = `${group.teams.length} teams${group.totalPlayers != null ? ` · ${group.totalPlayers} players` : ""}`;
+    summaryContent.append(title, meta);
+    const chevron = document.createElement("span");
+    chevron.className = "conference-panel__chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    summary.append(summaryContent, chevron);
     const body = document.createElement("div");
     body.className = "conference-panel__body";
     body.innerHTML = `<p class="conference-panel__placeholder">Open to load rosters…</p>`;
@@ -58,7 +67,7 @@ function createConferencePanel(group) {
         if (!details.open || details.dataset.loaded === "true")
             return;
         if (!loader) {
-            loader = hydrateConferenceBody(body, group.teams)
+            loader = hydrateConferenceBody(body, group.teams, season)
                 .then(() => {
                 details.dataset.loaded = "true";
             })
@@ -73,49 +82,81 @@ function createConferencePanel(group) {
     });
     return details;
 }
-async function hydrateConferenceBody(container, teams) {
+async function hydrateConferenceBody(container, teams, season) {
     container.innerHTML = "";
     if (!teams.length) {
         container.innerHTML = `<p class="conference-panel__placeholder">Roster data is not available.</p>`;
         return;
     }
     teams.forEach((team) => {
-        container.appendChild(renderTeamRoster(team));
+        container.appendChild(renderTeamRoster(team, season));
     });
 }
-function renderTeamRoster(team) {
+function renderTeamRoster(team, season) {
     const details = document.createElement("details");
     details.className = "team-roster";
     const summary = document.createElement("summary");
     summary.className = "team-roster__summary";
-    summary.innerHTML = `
-    <div class="team-roster__labels">
-      <h4 class="team-roster__title">${team.fullName}</h4>
-      <p class="team-roster__meta">${team.players.length} players</p>
-    </div>
-    <span class="team-roster__chevron" aria-hidden="true"></span>
-  `;
+    const labelContainer = document.createElement("div");
+    labelContainer.className = "team-roster__labels";
+    const title = document.createElement("h4");
+    title.className = "team-roster__title";
+    title.textContent = team.fullName;
+    const meta = document.createElement("p");
+    meta.className = "team-roster__meta";
+    meta.textContent = "Open to load roster";
+    labelContainer.append(title, meta);
+    const chevron = document.createElement("span");
+    chevron.className = "team-roster__chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    summary.append(labelContainer, chevron);
     const body = document.createElement("div");
     body.className = "team-roster__body";
+    body.innerHTML = `<p class="conference-panel__placeholder">Open to load roster…</p>`;
+    details.append(summary, body);
+    let loader = null;
+    details.addEventListener("toggle", () => {
+        if (!details.open || details.dataset.loaded === "true")
+            return;
+        if (!loader) {
+            body.innerHTML = `<p class="conference-panel__placeholder">Loading roster…</p>`;
+            loader = loadTeamRosterPlayers(team, season)
+                .then((players) => {
+                const table = renderRosterTable(team, players);
+                body.innerHTML = "";
+                body.appendChild(table);
+                meta.textContent = `${players.length} players`;
+                details.dataset.loaded = "true";
+            })
+                .catch((error) => {
+                console.error(error);
+                body.innerHTML = `<p class="conference-panel__placeholder conference-panel__placeholder--error">Unable to load roster for ${team.fullName}. Please try again later.</p>`;
+            })
+                .finally(() => {
+                loader = null;
+            });
+        }
+    });
+    return details;
+}
+function renderRosterTable(team, players) {
     const table = document.createElement("div");
     table.className = "team-roster__table";
     table.appendChild(createRosterHeader());
     const list = document.createElement("ul");
     list.className = "team-roster__list";
     list.setAttribute("aria-label", `${team.fullName} roster`);
-    if (!team.players.length) {
+    if (!players.length) {
         const empty = document.createElement("li");
         empty.className = "team-roster__row team-roster__row--empty";
         empty.textContent = "Roster data is not available.";
         list.appendChild(empty);
     }
     else {
-        team.players.forEach((player) => list.appendChild(createRosterRow(player)));
+        players.forEach((player) => list.appendChild(createRosterRow(player)));
     }
     table.appendChild(list);
-    body.appendChild(table);
-    details.append(summary, body);
-    return details;
+    return table;
 }
 function createRosterHeader() {
     const header = document.createElement("div");
