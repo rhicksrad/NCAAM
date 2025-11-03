@@ -113,17 +113,21 @@ async function hydrateConferenceBody(container: HTMLElement, teams: TeamRoster[]
 }
 
 function renderTeamRoster(team: TeamRoster): HTMLElement {
-  const card = document.createElement("article");
-  card.className = "team-roster";
+  const details = document.createElement("details");
+  details.className = "team-roster";
 
-  const header = document.createElement("header");
-  header.className = "team-roster__head";
-  header.innerHTML = `
+  const summary = document.createElement("summary");
+  summary.className = "team-roster__summary";
+  summary.innerHTML = `
     <div class="team-roster__labels">
       <h4 class="team-roster__title">${team.fullName}</h4>
       <p class="team-roster__meta">${team.players.length} players</p>
     </div>
+    <span class="team-roster__chevron" aria-hidden="true"></span>
   `;
+
+  const body = document.createElement("div");
+  body.className = "team-roster__body";
 
   const table = document.createElement("div");
   table.className = "team-roster__table";
@@ -143,8 +147,9 @@ function renderTeamRoster(team: TeamRoster): HTMLElement {
   }
 
   table.appendChild(list);
-  card.append(header, table);
-  return card;
+  body.appendChild(table);
+  details.append(summary, body);
+  return details;
 }
 
 function createRosterHeader(): HTMLElement {

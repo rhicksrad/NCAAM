@@ -340,20 +340,79 @@
 }
 
 .team-roster {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
   background: color-mix(in srgb, var(--color-paper) 94%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
   border-radius: var(--radius-card);
-  padding: var(--space-md);
   box-shadow: var(--shadow-1);
+  overflow: hidden;
 }
 
-.team-roster__head {
+.team-roster__summary {
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+}
+
+.team-roster__summary::-webkit-details-marker {
+  display: none;
+}
+
+.team-roster__summary:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-arc) 55%, white 45%);
+  outline-offset: 4px;
+}
+
+.team-roster__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.team-roster__chevron {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  transition: transform var(--transition-base);
+}
+
+.team-roster__chevron::before {
+  content: "";
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-top: 2px solid var(--color-ink);
+  border-right: 2px solid var(--color-ink);
+  transform: rotate(45deg);
+  transition: transform var(--transition-base);
+}
+
+.team-roster[open] .team-roster__chevron {
+  transform: rotate(180deg);
+}
+
+.team-roster[open] .team-roster__chevron::before {
+  transform: rotate(135deg) translateY(-2px);
+}
+
+.team-roster__body {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 97%, transparent);
+}
+
+.team-roster[open] .team-roster__body {
+  display: flex;
 }
 
 .team-roster__title {
