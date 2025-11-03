@@ -1,5 +1,6 @@
 "use strict";
 const app = document.getElementById("app");
+const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
 const poll = [
     {
         rank: 1,
@@ -508,11 +509,163 @@ const pollItems = poll
 </li>`;
 })
     .join("");
+function escapeHtml(value) {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+function hasMeasuredAverage(entry) {
+    return typeof entry.average_height_inches === "number" && Number.isFinite(entry.average_height_inches);
+}
+function formatAverageHeight(inches) {
+    if (!Number.isFinite(inches) || inches <= 0) {
+        return "—";
+    }
+    const feet = Math.floor(inches / 12);
+    const remainderRaw = Math.round((inches - feet * 12) * 10) / 10;
+    const remainder = Number.isFinite(remainderRaw) ? remainderRaw : 0;
+    const remainderLabel = Number.isInteger(remainder)
+        ? `${Math.trunc(remainder)}`
+        : remainder.toFixed(1).replace(/0+$/u, "").replace(/\.$/u, "");
+    return `${feet}′ ${remainderLabel}″`;
+}
+function formatAverageInches(inches) {
+    if (!Number.isFinite(inches) || inches <= 0) {
+        return "—";
+    }
+    return `${inches.toFixed(1)} in`;
+}
+function pluralize(value, singular, plural) {
+    return value === 1 ? singular : plural;
+}
+function renderHeightColumn(title, entries) {
+    const items = entries
+        .map((entry, index) => {
+        if (!hasMeasuredAverage(entry)) {
+            return "";
+        }
+        const rank = index + 1;
+        const teamName = escapeHtml(entry.team);
+        const abbreviation = entry.abbreviation ? ` <span class="height-card__abbr">${escapeHtml(entry.abbreviation)}</span>` : "";
+        const formattedHeight = formatAverageHeight(entry.average_height_inches);
+        const formattedInches = formatAverageInches(entry.average_height_inches);
+        const sample = `${entry.measured_count} ${pluralize(entry.measured_count, "player", "players")} measured`;
+        return `<li class="height-card__item">\n        <span class="height-card__rank">${rank}</span>\n        <div class="height-card__body">\n          <span class="height-card__team">${teamName}${abbreviation}</span>\n          <span class="height-card__meta">${formattedHeight} avg · ${formattedInches} · ${sample}</span>\n        </div>\n      </li>`;
+    })
+        .filter(Boolean)
+        .join("");
+    if (!items) {
+        return "";
+    }
+    return `<div class="height-card__column">\n    <h3>${title}</h3>\n    <ol class="height-card__list" role="list">\n      ${items}\n    </ol>\n  </div>`;
+}
+function formatUpdatedAt(raw) {
+    if (!raw)
+        return "";
+    const date = new Date(raw);
+    if (Number.isNaN(date.getTime())) {
+        return "";
+    }
+    return new Intl.DateTimeFormat(undefined, {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+    }).format(date);
+}
+function resolveSourceUrl(raw) {
+    if (!raw) {
+        return "https://ncaam.hicksrch.workers.dev/v1/players/active";
+    }
+    try {
+        const url = new URL(raw, window.location.origin);
+        return url.toString();
+    }
+    catch {
+        return "https://ncaam.hicksrch.workers.dev/v1/players/active";
+    }
+}
+function renderHeightSnapshot(contentEl, footerEl, snapshot) {
+    const measured = snapshot.teams.filter(hasMeasuredAverage);
+    if (measured.length === 0) {
+        contentEl.innerHTML = '<p class="height-card__empty">No roster height data is available yet. Check back soon.</p>';
+        footerEl.textContent = "";
+        return;
+    }
+    const limit = Math.min(10, measured.length);
+    const tallest = measured.slice(0, limit);
+    const shortest = measured.slice(-limit).reverse();
+    const columns = [
+        renderHeightColumn("Tallest rosters", tallest),
+        renderHeightColumn("Shortest rosters", shortest),
+    ].filter(Boolean);
+    contentEl.innerHTML = columns.join("");
+    footerEl.textContent = "";
+    const meta = document.createElement("small");
+    meta.className = "height-card__timestamp";
+    const updatedAt = formatUpdatedAt(snapshot.generated_at);
+    if (updatedAt) {
+        meta.append(`Updated ${updatedAt}`);
+    }
+    else {
+        meta.append("Updated recently");
+    }
+    const sourceLink = document.createElement("a");
+    sourceLink.href = resolveSourceUrl(snapshot.source);
+    sourceLink.target = "_blank";
+    sourceLink.rel = "noopener noreferrer";
+    sourceLink.textContent = "NCAAM worker";
+    meta.append(" · Source: ", sourceLink);
+    footerEl.append(meta);
+}
+async function loadHeightSnapshot(contentEl, footerEl) {
+    try {
+        const response = await fetch(HEIGHT_SNAPSHOT_PATH, {
+            headers: { Accept: "application/json" },
+        });
+        if (!response.ok) {
+            throw new Error(`Failed to load roster height snapshot: ${response.status} ${response.statusText}`);
+        }
+        const payload = (await response.json());
+        if (!payload || !Array.isArray(payload.teams)) {
+            throw new Error("Roster height snapshot is missing team data.");
+        }
+        renderHeightSnapshot(contentEl, footerEl, payload);
+    }
+    catch (error) {
+        console.error(error);
+        contentEl.innerHTML = '<p class="height-card__error">Unable to load roster height leaders right now.</p>';
+        footerEl.textContent = "";
+    }
+}
 app.innerHTML = `
-<section class="card" data-card>
-  <h2>Power Poll</h2>
-  <p class="page-intro">Weekly snapshot of the top national contenders, how they win, and what we're monitoring next.</p>
-</section>
-<ol class="stack" data-gap="md" style="list-style:none; margin:0; padding:0;" role="list">
-  ${pollItems}
-</ol>`;
+<div class="home-layout">
+  <div class="home-layout__main stack" data-gap="lg">
+    <section class="card" data-card>
+      <h2>Power Poll</h2>
+      <p class="page-intro">Weekly snapshot of the top national contenders, how they win, and what we're monitoring next.</p>
+    </section>
+    <ol class="stack" data-gap="md" style="list-style:none; margin:0; padding:0;" role="list">
+      ${pollItems}
+    </ol>
+  </div>
+  <aside class="home-layout__aside">
+    <section class="card height-card" data-card>
+      <h2>Roster Height Watch</h2>
+      <p class="height-card__intro">Average heights for active Division I rosters via the secure NCAAM worker.</p>
+      <div class="height-card__lists" id="height-card-content">
+        <p class="height-card__loading">Loading roster height leaders…</p>
+      </div>
+      <footer class="height-card__footer" id="height-card-footer"></footer>
+    </section>
+  </aside>
+</div>`;
+const heightCardContent = document.getElementById("height-card-content");
+const heightCardFooter = document.getElementById("height-card-footer");
+if (heightCardContent instanceof HTMLElement && heightCardFooter instanceof HTMLElement) {
+    void loadHeightSnapshot(heightCardContent, heightCardFooter);
+}
