@@ -14,6 +14,17 @@ type PaginatedResponse<T> = {
   meta?: PaginationMeta;
 };
 
+type CursorPaginationMeta = {
+  next_cursor?: number | null;
+  prev_cursor?: number | null;
+  per_page?: number | null;
+};
+
+type CursorPaginatedResponse<T> = {
+  data: T[];
+  meta?: CursorPaginationMeta;
+};
+
 const SAFE_PAGE_SIZE = 100;
 const MAX_PAGINATION_REQUESTS = 50;
 
@@ -206,6 +217,12 @@ export const NCAAM = {
     }
   },
   players: (page=1, per_page=200, search="") => get<{data:Player[]}>("/players", { page, per_page, search }),
+  activePlayers: (per_page=SAFE_PAGE_SIZE, cursor?: number | string | null, season?: string | number) =>
+    get<CursorPaginatedResponse<Player>>("/players/active", {
+      per_page,
+      cursor,
+      season,
+    }),
   activePlayersByTeam: (teamId:number) => get<{data:Player[]}>("/players/active", { "team_ids[]": teamId, per_page: 100 }),
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
   conferences: () => get<{data:Conference[]}>("/conferences"),

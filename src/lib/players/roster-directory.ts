@@ -1,0 +1,264 @@
+import { NCAAM, type Player, type Team, type Conference } from "../sdk/ncaam.js";
+
+export type PlayerStatsSnapshot = {
+  gp: number | null;
+  mp_g: number | null;
+  pts_g: number | null;
+  trb_g: number | null;
+  ast_g: number | null;
+  stl_g: number | null;
+  blk_g: number | null;
+  fg_pct: number | null;
+  fg3_pct: number | null;
+  ft_pct: number | null;
+};
+
+export type RosterPlayer = {
+  id: string;
+  name: string;
+  team: string;
+  position: string | null;
+  jersey: string | null;
+  height: string | null;
+  weight: string | null;
+  stats: PlayerStatsSnapshot | null;
+};
+
+export type TeamRoster = {
+  id: number;
+  name: string;
+  fullName: string;
+  abbreviation: string | null;
+  conferenceId: number | null;
+  conferenceName: string;
+  players: RosterPlayer[];
+};
+
+export type ConferenceGroup = {
+  id: number | null;
+  name: string;
+  teams: TeamRoster[];
+  totalPlayers: number;
+};
+
+export type RosterDirectory = {
+  season: string;
+  conferences: ConferenceGroup[];
+  totals: {
+    players: number;
+    teams: number;
+  };
+};
+
+const ACTIVE_ROSTER_SEASON = "2025-26";
+const ACTIVE_PLAYER_PAGE_SIZE = 200;
+const MAX_ACTIVE_PLAYER_PAGES = 250;
+
+type MutableConferenceGroup = {
+  id: number | null;
+  name: string;
+  teams: TeamRoster[];
+  totalPlayers: number;
+};
+
+function parseSeasonEndYear(label: string): number | null {
+  const match = label.match(/^(\d{4})-(\d{2})$/);
+  if (!match) {
+    return null;
+  }
+  const startYear = Number.parseInt(match[1] ?? "", 10);
+  if (!Number.isFinite(startYear)) {
+    return null;
+  }
+  return startYear + 1;
+}
+
+function buildConferenceNameLookup(conferences: Conference[]): Map<number, string> {
+  const map = new Map<number, string>();
+  for (const conference of conferences) {
+    if (!conference || typeof conference.id !== "number") continue;
+    const label = conference.short_name?.trim() || conference.name?.trim();
+    if (label && label.length) {
+      map.set(conference.id, label);
+    }
+  }
+  return map;
+}
+
+function resolveConferenceName(
+  conferenceId: number | null | undefined,
+  conferenceMap: Map<number, string>,
+): string {
+  if (conferenceId == null) {
+    return "Independents";
+  }
+  return conferenceMap.get(conferenceId) ?? `Conference ${conferenceId}`;
+}
+
+function ensureTeamMap(teams: Team[]): Map<number, Team> {
+  const map = new Map<number, Team>();
+  for (const team of teams) {
+    if (!team || typeof team.id !== "number") continue;
+    map.set(team.id, team);
+  }
+  return map;
+}
+
+function createEmptyStats(): PlayerStatsSnapshot {
+  return {
+    gp: null,
+    mp_g: null,
+    pts_g: null,
+    trb_g: null,
+    ast_g: null,
+    stl_g: null,
+    blk_g: null,
+    fg_pct: null,
+    fg3_pct: null,
+    ft_pct: null,
+  };
+}
+
+function normaliseName(value: string | null | undefined): string {
+  const trimmed = value?.trim();
+  return trimmed && trimmed.length ? trimmed : "Unknown";
+}
+
+function buildRosterPlayer(teamName: string, player: Player): RosterPlayer {
+  const first = player.first_name?.trim() ?? "";
+  const last = player.last_name?.trim() ?? "";
+  const name = `${first} ${last}`.trim() || first || last || "Unknown";
+  return {
+    id: `bdl-${player.id}`,
+    name,
+    team: teamName,
+    position: player.position?.trim() ?? null,
+    jersey: player.jersey_number?.trim() ?? null,
+    height: player.height?.trim() ?? null,
+    weight: player.weight?.trim() ?? null,
+    stats: createEmptyStats(),
+  } satisfies RosterPlayer;
+}
+
+async function fetchActivePlayers(seasonLabel: string): Promise<Player[]> {
+  const players: Player[] = [];
+  const seasonEndYear = parseSeasonEndYear(seasonLabel);
+  let cursor: number | string | null | undefined;
+  let iterations = 0;
+
+  while (iterations < MAX_ACTIVE_PLAYER_PAGES) {
+    iterations += 1;
+    const response = await NCAAM.activePlayers(ACTIVE_PLAYER_PAGE_SIZE, cursor, seasonEndYear ?? undefined);
+    const data = Array.isArray(response.data) ? response.data : [];
+    if (data.length === 0) {
+      break;
+    }
+    players.push(...data);
+
+    const nextCursor = response.meta?.next_cursor ?? null;
+    if (!nextCursor || nextCursor === cursor) {
+      break;
+    }
+    cursor = nextCursor;
+  }
+
+  return players;
+}
+
+export async function loadRosterDirectory(): Promise<RosterDirectory> {
+  const [{ data: teams = [] }, { data: conferences = [] }] = await Promise.all([
+    NCAAM.teams(1, 400),
+    NCAAM.conferences(),
+  ]);
+
+  const conferenceMap = buildConferenceNameLookup(conferences ?? []);
+  const teamMap = ensureTeamMap(teams ?? []);
+  const players = await fetchActivePlayers(ACTIVE_ROSTER_SEASON);
+
+  const playersByTeam = new Map<number, Player[]>();
+  for (const player of players) {
+    const teamId = player.team?.id;
+    if (typeof teamId !== "number") continue;
+    if (!playersByTeam.has(teamId)) {
+      playersByTeam.set(teamId, []);
+    }
+    playersByTeam.get(teamId)!.push(player);
+  }
+
+  const groups = new Map<string, MutableConferenceGroup>();
+
+  for (const [teamId, rosterPlayers] of playersByTeam.entries()) {
+    const teamRecord = teamMap.get(teamId) ?? rosterPlayers[0]?.team;
+    if (!teamRecord) {
+      continue;
+    }
+
+    const conferenceId = teamRecord.conference_id ?? rosterPlayers[0]?.team?.conference_id ?? null;
+    const conferenceName = resolveConferenceName(conferenceId, conferenceMap);
+    const groupKey = `${conferenceId ?? "independent"}`;
+
+    if (!groups.has(groupKey)) {
+      groups.set(groupKey, {
+        id: conferenceId,
+        name: conferenceName,
+        teams: [],
+        totalPlayers: 0,
+      });
+    }
+
+    const fullName = normaliseName(teamRecord.full_name ?? rosterPlayers[0]?.team?.full_name);
+    const shortName = normaliseName(teamRecord.name ?? rosterPlayers[0]?.team?.name ?? fullName);
+    const abbreviation = teamRecord.abbreviation?.trim() ?? rosterPlayers[0]?.team?.abbreviation?.trim() ?? null;
+
+    const formattedPlayers = rosterPlayers
+      .map((player) => buildRosterPlayer(fullName, player))
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+
+    const teamRoster: TeamRoster = {
+      id: teamId,
+      name: shortName,
+      fullName,
+      abbreviation,
+      conferenceId,
+      conferenceName,
+      players: formattedPlayers,
+    };
+
+    const group = groups.get(groupKey)!;
+    group.teams.push(teamRoster);
+    group.totalPlayers += formattedPlayers.length;
+  }
+
+  const orderedGroups = [...groups.values()].sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
+  );
+
+  orderedGroups.forEach((group) => {
+    group.teams.sort((a, b) => a.fullName.localeCompare(b.fullName, undefined, { sensitivity: "base" }));
+  });
+
+  const totalPlayers = orderedGroups.reduce((sum, group) => sum + group.totalPlayers, 0);
+  const totalTeams = orderedGroups.reduce((sum, group) => sum + group.teams.length, 0);
+
+  return {
+    season: ACTIVE_ROSTER_SEASON,
+    conferences: orderedGroups.map((group) => ({
+      id: group.id,
+      name: group.name,
+      totalPlayers: group.totalPlayers,
+      teams: group.teams.map((team) => ({
+        id: team.id,
+        name: team.name,
+        fullName: team.fullName,
+        abbreviation: team.abbreviation,
+        conferenceId: team.conferenceId,
+        conferenceName: team.conferenceName,
+        players: team.players.map((player) => ({ ...player })),
+      })),
+    })),
+    totals: {
+      players: totalPlayers,
+      teams: totalTeams,
+    },
+  } satisfies RosterDirectory;
+}
