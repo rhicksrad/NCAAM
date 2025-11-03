@@ -1,11 +1,13 @@
-"use strict";
+import { BASE } from "../lib/config.js";
+import { NCAA_LOGO_ALIASES, NCAA_LOGO_INDEX } from "../lib/data/ncaa-logo-map.js";
+
 const app = document.getElementById("app");
 const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
 const poll = [
     {
         rank: 1,
         team: "Purdue",
-        logo: "assets/logos/ncaa/Purdue_Boilermakers_logo-300x300.png",
+        slug: "purdue-boilermakers",
         notes: [
             {
                 label: "Identity",
@@ -24,7 +26,7 @@ const poll = [
     {
         rank: 2,
         team: "Houston",
-        logo: "assets/logos/ncaa/Houston_Cougars_logo-300x300.png",
+        slug: "houston-cougars",
         notes: [
             {
                 label: "Identity",
@@ -43,7 +45,7 @@ const poll = [
     {
         rank: 3,
         team: "Florida",
-        logo: "assets/logos/ncaa/Florida_Gators_logo-300x300.png",
+        slug: "florida-gators",
         notes: [
             {
                 label: "Identity",
@@ -62,7 +64,7 @@ const poll = [
     {
         rank: 4,
         team: "UConn",
-        logo: "assets/logos/ncaa/Connecticut_Huskies_logo-300x300.png",
+        slug: "uconn-huskies",
         notes: [
             {
                 label: "Identity",
@@ -81,6 +83,7 @@ const poll = [
     {
         rank: 5,
         team: "St. John’s",
+        slug: "st-john-s-red-storm",
         notes: [
             {
                 label: "Identity",
@@ -99,7 +102,7 @@ const poll = [
     {
         rank: 6,
         team: "Duke",
-        logo: "assets/logos/ncaa/Duke_Blue_Devils_logo-300x300.png",
+        slug: "duke-blue-devils",
         notes: [
             {
                 label: "Identity",
@@ -118,7 +121,7 @@ const poll = [
     {
         rank: 7,
         team: "Michigan",
-        logo: "assets/logos/ncaa/Michigan_Wolverines_logo-300x300.png",
+        slug: "michigan-wolverines",
         notes: [
             {
                 label: "Identity",
@@ -137,7 +140,7 @@ const poll = [
     {
         rank: 8,
         team: "BYU",
-        logo: "assets/logos/ncaa/BYU_Cougars_logo-300x300.png",
+        slug: "byu-cougars",
         notes: [
             {
                 label: "Identity",
@@ -156,7 +159,7 @@ const poll = [
     {
         rank: 9,
         team: "Kentucky",
-        logo: "assets/logos/ncaa/Kentucky_Wildcats_logo-300x300.png",
+        slug: "kentucky-wildcats",
         notes: [
             {
                 label: "Identity",
@@ -175,7 +178,7 @@ const poll = [
     {
         rank: 10,
         team: "Texas Tech",
-        logo: "assets/logos/ncaa/Texas_Tech_Red_Raiders_logo-300x300.png",
+        slug: "texas-tech-red-raiders",
         notes: [
             {
                 label: "Identity",
@@ -194,7 +197,7 @@ const poll = [
     {
         rank: 11,
         team: "Louisville",
-        logo: "assets/logos/ncaa/Louisville_Cardinals_logo-300x300.png",
+        slug: "louisville-cardinals",
         notes: [
             {
                 label: "Identity",
@@ -213,7 +216,7 @@ const poll = [
     {
         rank: 12,
         team: "UCLA",
-        logo: "assets/logos/ncaa/UCLA_Bruins_logo-300x300.png",
+        slug: "ucla-bruins",
         notes: [
             {
                 label: "Identity",
@@ -232,7 +235,7 @@ const poll = [
     {
         rank: 13,
         team: "Arizona",
-        logo: "assets/logos/ncaa/Arizona_Wildcats_logo-300x300.png",
+        slug: "arizona-wildcats",
         notes: [
             {
                 label: "Identity",
@@ -251,7 +254,7 @@ const poll = [
     {
         rank: 14,
         team: "Arkansas",
-        logo: "assets/logos/ncaa/Arkansas_Razorbacks_logo-300x300.png",
+        slug: "arkansas-razorbacks",
         notes: [
             {
                 label: "Identity",
@@ -270,7 +273,7 @@ const poll = [
     {
         rank: 15,
         team: "Alabama",
-        logo: "assets/logos/ncaa/Alabama_Crimson_Tide_logo-300x300.png",
+        slug: "alabama-crimson-tide",
         notes: [
             {
                 label: "Identity",
@@ -289,7 +292,7 @@ const poll = [
     {
         rank: 16,
         team: "Iowa State",
-        logo: "assets/logos/ncaa/Iowa_State_Cyclones_logo-300x300.png",
+        slug: "iowa-state-cyclones",
         notes: [
             {
                 label: "Identity",
@@ -308,7 +311,7 @@ const poll = [
     {
         rank: 17,
         team: "Illinois",
-        logo: "assets/logos/ncaa/Illinois_Fighting_Illini_logo-300x300.png",
+        slug: "illinois-fighting-illini",
         notes: [
             {
                 label: "Identity",
@@ -327,7 +330,7 @@ const poll = [
     {
         rank: 18,
         team: "Tennessee",
-        logo: "assets/logos/ncaa/Tennessee_Volunteers_logo-300x300.png",
+        slug: "tennessee-volunteers",
         notes: [
             {
                 label: "Identity",
@@ -346,7 +349,7 @@ const poll = [
     {
         rank: 19,
         team: "Kansas",
-        logo: "assets/logos/ncaa/Kansas_Jayhawks_logo-300x300.png",
+        slug: "kansas-jayhawks",
         notes: [
             {
                 label: "Identity",
@@ -365,7 +368,7 @@ const poll = [
     {
         rank: 20,
         team: "Auburn",
-        logo: "assets/logos/ncaa/Auburn_Tigers_logo-300x300.png",
+        slug: "auburn-tigers",
         notes: [
             {
                 label: "Identity",
@@ -384,6 +387,7 @@ const poll = [
     {
         rank: 21,
         team: "Gonzaga",
+        slug: "gonzaga-bulldogs",
         notes: [
             {
                 label: "Identity",
@@ -402,7 +406,7 @@ const poll = [
     {
         rank: 22,
         team: "Michigan State",
-        logo: "assets/logos/ncaa/Michigan_State_Spartans_logo-300x300.png",
+        slug: "michigan-state-spartans",
         notes: [
             {
                 label: "Identity",
@@ -421,6 +425,7 @@ const poll = [
     {
         rank: 23,
         team: "Creighton",
+        slug: "creighton-bluejays",
         notes: [
             {
                 label: "Identity",
@@ -439,7 +444,7 @@ const poll = [
     {
         rank: 24,
         team: "Wisconsin",
-        logo: "assets/logos/ncaa/Wisconsin_Badgers_logo-300x300.png",
+        slug: "wisconsin-badgers",
         notes: [
             {
                 label: "Identity",
@@ -458,7 +463,7 @@ const poll = [
     {
         rank: 25,
         team: "North Carolina",
-        logo: "assets/logos/ncaa/North_Carolina_Tar_Heels_logo-300x300.png",
+        slug: "north-carolina-tar-heels",
         notes: [
             {
                 label: "Identity",
@@ -475,6 +480,33 @@ const poll = [
         ],
     },
 ];
+const LOGO_BASE = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
+function resolveLogoEntry(slug) {
+    if (!slug)
+        return undefined;
+    const normalized = String(slug).toLowerCase();
+    const direct = NCAA_LOGO_INDEX[normalized];
+    if (direct) {
+        return direct;
+    }
+    const alias = NCAA_LOGO_ALIASES?.[normalized];
+    if (alias) {
+        return NCAA_LOGO_INDEX[alias];
+    }
+    return undefined;
+}
+function getPollLogoUrl(entry) {
+    const slug = entry.slug ?? entry.logoSlug;
+    if (!slug) {
+        return undefined;
+    }
+    const logo = resolveLogoEntry(slug);
+    if (!logo) {
+        return undefined;
+    }
+    const trimmedPath = logo.path.replace(/^\/+/, "");
+    return `${LOGO_BASE}${trimmedPath}`;
+}
 function getInitials(team) {
     const matches = team.match(/[A-Za-z]+/g) ?? [];
     const filtered = matches.filter(part => part.length > 1);
@@ -489,8 +521,9 @@ function getInitials(team) {
 }
 const pollItems = poll
     .map(entry => {
-    const logo = entry.logo
-        ? `<img class="poll-card__logo-image" src="${entry.logo}" alt="${entry.team} logo" loading="lazy" decoding="async">`
+    const logoUrl = getPollLogoUrl(entry);
+    const logo = logoUrl
+        ? `<img class="poll-card__logo-image" src="${logoUrl}" alt="${entry.team} logo" loading="lazy" decoding="async">`
         : `<span class="poll-card__logo-fallback" role="img" aria-label="${entry.team} logo">${getInitials(entry.team)}</span>`;
     const notes = entry.notes
         .map(note => `<div class="poll-card__note"><dt>${note.label}</dt><dd>${note.value}</dd></div>`)
