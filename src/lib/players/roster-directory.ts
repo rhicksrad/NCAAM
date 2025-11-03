@@ -37,6 +37,7 @@ export type TeamRoster = {
   name: string;
   fullName: string;
   abbreviation: string | null;
+  college: string | null;
   conferenceId: number | null;
   conferenceName: string;
 };
@@ -154,12 +155,26 @@ function normaliseKey(value: string | null | undefined): string | null {
   if (!text) {
     return null;
   }
-  const stripped = text.replace(/[\p{M}]+/gu, "");
+  const replaced = text.replace(/&/gu, " and ");
+  const stripped = replaced.replace(/[\p{M}]+/gu, "");
   const collapsed = stripped.replace(/[^\p{L}\p{N}]+/gu, " ").trim();
   if (!collapsed) {
     return null;
   }
   return collapsed.toLowerCase();
+}
+
+function buildKeyVariants(value: string | null | undefined): string[] {
+  const key = normaliseKey(value);
+  if (!key) {
+    return [];
+  }
+  const variants = new Set<string>([key]);
+  const compact = key.replace(/\s+/g, "");
+  if (compact.length) {
+    variants.add(compact);
+  }
+  return [...variants];
 }
 
 function buildPlayerIndexLookup(document: PlayerIndexDocument): PlayerIndexLookup {
@@ -168,20 +183,30 @@ function buildPlayerIndexLookup(document: PlayerIndexDocument): PlayerIndexLooku
   const entries = document.players ?? [];
 
   for (const entry of entries) {
-    const nameKey = normaliseKey(entry.name_key ?? entry.name);
-    if (!nameKey) continue;
-    if (!byName.has(nameKey)) {
-      byName.set(nameKey, []);
-    }
-    byName.get(nameKey)!.push(entry);
+    const nameKeys = new Set<string>([
+      ...buildKeyVariants(entry.name_key ?? null),
+      ...buildKeyVariants(entry.name ?? null),
+    ]);
+    const teamKeys = new Set<string>([
+      ...buildKeyVariants(entry.team_key ?? null),
+      ...buildKeyVariants(entry.team ?? null),
+    ]);
 
-    const teamKey = normaliseKey(entry.team_key ?? entry.team);
-    if (teamKey) {
-      const combinedKey = `${nameKey}::${teamKey}`;
-      if (!byNameTeam.has(combinedKey)) {
-        byNameTeam.set(combinedKey, []);
+    for (const nameKey of nameKeys) {
+      if (!byName.has(nameKey)) {
+        byName.set(nameKey, []);
       }
-      byNameTeam.get(combinedKey)!.push(entry);
+      byName.get(nameKey)!.push(entry);
+    }
+
+    for (const nameKey of nameKeys) {
+      for (const teamKey of teamKeys) {
+        const combinedKey = `${nameKey}::${teamKey}`;
+        if (!byNameTeam.has(combinedKey)) {
+          byNameTeam.set(combinedKey, []);
+        }
+        byNameTeam.get(combinedKey)!.push(entry);
+      }
     }
   }
 
@@ -228,13 +253,14 @@ function buildTeamKeyCandidates(team: TeamRoster, playerTeam: Player["team"] | u
     team.fullName,
     team.name,
     team.abbreviation,
+    team.college,
     playerTeam?.full_name,
     playerTeam?.name,
     playerTeam?.abbreviation,
+    playerTeam?.college,
   ];
   for (const candidate of candidates) {
-    const key = normaliseKey(candidate);
-    if (key) {
+    for (const key of buildKeyVariants(candidate)) {
       keys.add(key);
     }
   }
@@ -250,27 +276,31 @@ function extractSeasonYear(entry: PlayerIndexEntry): number | null {
 
 function pickPlayerIndexEntry(
   lookup: PlayerIndexLookup,
-  nameKey: string,
+  nameKeys: string[],
   teamKeys: string[],
   seasonEndYear: number | null,
 ): PlayerIndexEntry | null {
   const candidates: PlayerIndexEntry[] = [];
   const seen = new Set<PlayerIndexEntry>();
 
-  for (const teamKey of teamKeys) {
-    const teamEntries = lookup.byNameTeam.get(`${nameKey}::${teamKey}`) ?? [];
-    for (const entry of teamEntries) {
+  for (const nameKey of nameKeys) {
+    for (const teamKey of teamKeys) {
+      const teamEntries = lookup.byNameTeam.get(`${nameKey}::${teamKey}`) ?? [];
+      for (const entry of teamEntries) {
+        if (seen.has(entry)) continue;
+        seen.add(entry);
+        candidates.push(entry);
+      }
+    }
+  }
+
+  for (const nameKey of nameKeys) {
+    const nameEntries = lookup.byName.get(nameKey) ?? [];
+    for (const entry of nameEntries) {
       if (seen.has(entry)) continue;
       seen.add(entry);
       candidates.push(entry);
     }
-  }
-
-  const nameEntries = lookup.byName.get(nameKey) ?? [];
-  for (const entry of nameEntries) {
-    if (seen.has(entry)) continue;
-    seen.add(entry);
-    candidates.push(entry);
   }
 
   if (!candidates.length) {
@@ -288,8 +318,8 @@ function pickPlayerIndexEntry(
 
   if (teamKeys.length) {
     const teamMatches = filtered.filter((entry) => {
-      const entryKey = normaliseKey(entry.team_key ?? entry.team);
-      return entryKey ? teamKeys.includes(entryKey) : false;
+      const entryTeamKeys = buildKeyVariants(entry.team_key ?? entry.team);
+      return entryTeamKeys.some((entryKey) => teamKeys.includes(entryKey));
     });
     if (teamMatches.length) {
       filtered = teamMatches;
@@ -324,15 +354,15 @@ async function resolvePlayerStats(
   seasonLabel: string,
   seasonEndYear: number | null,
 ): Promise<PlayerStatsSnapshot | null> {
-  const nameKey = normaliseKey(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
-  if (!nameKey) {
+  const nameKeys = buildKeyVariants(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
+  if (!nameKeys.length) {
     return null;
   }
 
   try {
     const lookup = await getPlayerIndexLookup();
     const teamKeys = buildTeamKeyCandidates(team, player.team);
-    const entry = pickPlayerIndexEntry(lookup, nameKey, teamKeys, seasonEndYear);
+    const entry = pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear);
     if (!entry) {
       return null;
     }
@@ -418,6 +448,7 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
       name: shortName,
       fullName,
       abbreviation,
+      college: teamRecord.college?.trim() ?? null,
       conferenceId,
       conferenceName,
     };
@@ -446,6 +477,7 @@ export async function loadRosterDirectory(): Promise<RosterDirectory> {
         name: team.name,
         fullName: team.fullName,
         abbreviation: team.abbreviation,
+        college: team.college,
         conferenceId: team.conferenceId,
         conferenceName: team.conferenceName,
       })),

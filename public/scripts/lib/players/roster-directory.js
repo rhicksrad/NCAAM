@@ -73,32 +73,53 @@ function normaliseKey(value) {
     if (!text) {
         return null;
     }
-    const stripped = text.replace(/[\p{M}]+/gu, "");
+    const replaced = text.replace(/&/gu, " and ");
+    const stripped = replaced.replace(/[\p{M}]+/gu, "");
     const collapsed = stripped.replace(/[^\p{L}\p{N}]+/gu, " ").trim();
     if (!collapsed) {
         return null;
     }
     return collapsed.toLowerCase();
 }
+function buildKeyVariants(value) {
+    const key = normaliseKey(value);
+    if (!key) {
+        return [];
+    }
+    const variants = new Set([key]);
+    const compact = key.replace(/\s+/g, "");
+    if (compact.length) {
+        variants.add(compact);
+    }
+    return [...variants];
+}
 function buildPlayerIndexLookup(document) {
     const byName = new Map();
     const byNameTeam = new Map();
     const entries = document.players ?? [];
     for (const entry of entries) {
-        const nameKey = normaliseKey(entry.name_key ?? entry.name);
-        if (!nameKey)
-            continue;
-        if (!byName.has(nameKey)) {
-            byName.set(nameKey, []);
-        }
-        byName.get(nameKey).push(entry);
-        const teamKey = normaliseKey(entry.team_key ?? entry.team);
-        if (teamKey) {
-            const combinedKey = `${nameKey}::${teamKey}`;
-            if (!byNameTeam.has(combinedKey)) {
-                byNameTeam.set(combinedKey, []);
+        const nameKeys = new Set([
+            ...buildKeyVariants(entry.name_key ?? null),
+            ...buildKeyVariants(entry.name ?? null),
+        ]);
+        const teamKeys = new Set([
+            ...buildKeyVariants(entry.team_key ?? null),
+            ...buildKeyVariants(entry.team ?? null),
+        ]);
+        for (const nameKey of nameKeys) {
+            if (!byName.has(nameKey)) {
+                byName.set(nameKey, []);
             }
-            byNameTeam.get(combinedKey).push(entry);
+            byName.get(nameKey).push(entry);
+        }
+        for (const nameKey of nameKeys) {
+            for (const teamKey of teamKeys) {
+                const combinedKey = `${nameKey}::${teamKey}`;
+                if (!byNameTeam.has(combinedKey)) {
+                    byNameTeam.set(combinedKey, []);
+                }
+                byNameTeam.get(combinedKey).push(entry);
+            }
         }
     }
     return { byName, byNameTeam };
@@ -141,13 +162,14 @@ function buildTeamKeyCandidates(team, playerTeam) {
         team.fullName,
         team.name,
         team.abbreviation,
+        team.college,
         playerTeam?.full_name,
         playerTeam?.name,
         playerTeam?.abbreviation,
+        playerTeam?.college,
     ];
     for (const candidate of candidates) {
-        const key = normaliseKey(candidate);
-        if (key) {
+        for (const key of buildKeyVariants(candidate)) {
             keys.add(key);
         }
     }
@@ -159,24 +181,28 @@ function extractSeasonYear(entry) {
     }
     return parseSeasonEndYear(entry.season ?? "");
 }
-function pickPlayerIndexEntry(lookup, nameKey, teamKeys, seasonEndYear) {
+function pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear) {
     const candidates = [];
     const seen = new Set();
-    for (const teamKey of teamKeys) {
-        const teamEntries = lookup.byNameTeam.get(`${nameKey}::${teamKey}`) ?? [];
-        for (const entry of teamEntries) {
+    for (const nameKey of nameKeys) {
+        for (const teamKey of teamKeys) {
+            const teamEntries = lookup.byNameTeam.get(`${nameKey}::${teamKey}`) ?? [];
+            for (const entry of teamEntries) {
+                if (seen.has(entry))
+                    continue;
+                seen.add(entry);
+                candidates.push(entry);
+            }
+        }
+    }
+    for (const nameKey of nameKeys) {
+        const nameEntries = lookup.byName.get(nameKey) ?? [];
+        for (const entry of nameEntries) {
             if (seen.has(entry))
                 continue;
             seen.add(entry);
             candidates.push(entry);
         }
-    }
-    const nameEntries = lookup.byName.get(nameKey) ?? [];
-    for (const entry of nameEntries) {
-        if (seen.has(entry))
-            continue;
-        seen.add(entry);
-        candidates.push(entry);
     }
     if (!candidates.length) {
         return null;
@@ -190,8 +216,8 @@ function pickPlayerIndexEntry(lookup, nameKey, teamKeys, seasonEndYear) {
     }
     if (teamKeys.length) {
         const teamMatches = filtered.filter((entry) => {
-            const entryKey = normaliseKey(entry.team_key ?? entry.team);
-            return entryKey ? teamKeys.includes(entryKey) : false;
+            const entryTeamKeys = buildKeyVariants(entry.team_key ?? entry.team);
+            return entryTeamKeys.some((entryKey) => teamKeys.includes(entryKey));
         });
         if (teamMatches.length) {
             filtered = teamMatches;
@@ -218,14 +244,14 @@ function toPlayerStatsSnapshot(season) {
     };
 }
 async function resolvePlayerStats(player, team, seasonLabel, seasonEndYear) {
-    const nameKey = normaliseKey(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
-    if (!nameKey) {
+    const nameKeys = buildKeyVariants(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
+    if (!nameKeys.length) {
         return null;
     }
     try {
         const lookup = await getPlayerIndexLookup();
         const teamKeys = buildTeamKeyCandidates(team, player.team);
-        const entry = pickPlayerIndexEntry(lookup, nameKey, teamKeys, seasonEndYear);
+        const entry = pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear);
         if (!entry) {
             return null;
         }
@@ -298,6 +324,7 @@ export async function loadRosterDirectory() {
             name: shortName,
             fullName,
             abbreviation,
+            college: teamRecord.college?.trim() ?? null,
             conferenceId,
             conferenceName,
         };
@@ -319,6 +346,7 @@ export async function loadRosterDirectory() {
                 name: team.name,
                 fullName: team.fullName,
                 abbreviation: team.abbreviation,
+                college: team.college,
                 conferenceId: team.conferenceId,
                 conferenceName: team.conferenceName,
             })),
