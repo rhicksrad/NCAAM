@@ -94,13 +94,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
-  padding: var(--space-md);
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   cursor: pointer;
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
 .conference-card__summary::-webkit-details-marker {
   display: none;
+}
+
+.conference-card__summary:hover {
+  background: color-mix(in srgb, var(--color-paper) 98%, transparent);
+}
+
+details[open] > summary.conference-card__summary {
+  background: color-mix(in srgb, var(--color-paper) 99%, transparent);
 }
 
 .conference-card__summary:focus-visible {
@@ -108,69 +118,137 @@
   outline-offset: 4px;
 }
 
-.conference-card__label {
+
+.conference-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
   flex: 1;
   min-width: 0;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+}
+
+.conference-identity__logo {
+  width: clamp(2.4rem, 2rem + 1.2vw, 3rem);
+  height: clamp(2.4rem, 2rem + 1.2vw, 3rem);
+  border-radius: 0.95rem;
+  background: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 12%, transparent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.conference-identity__logo-image {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.conference-identity__logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+}
+
+.conference-identity__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.conference-identity__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+.conference-identity__subtext {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
 }
 
 .conference-card__meta {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  color: color-mix(in srgb, var(--color-muted) 90%, white 10%);
+  gap: var(--space-sm);
+  color: color-mix(in srgb, var(--color-muted) 75%, white 25%);
 }
 
 .conference-card__count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.75rem;
-  height: 1.75rem;
-  padding: 0 0.35rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: color-mix(in srgb, var(--color-ink) 10%, transparent);
-  color: var(--color-ink);
-}
-
-.conference-card__chevron {
-  display: inline-flex;
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 999px;
-  align-items: center;
-  justify-content: center;
-  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
-}
-
-.conference-card__chevron::before {
-  content: "";
-  display: block;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-top: 2px solid var(--color-ink);
-  border-right: 2px solid var(--color-ink);
-  transform: rotate(45deg);
-  transition: transform var(--transition-base);
-}
-
-.conference-card[open] .conference-card__chevron::before {
-  transform: rotate(135deg) translateY(-2px);
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  color: color-mix(in srgb, var(--color-ink) 86%, white 14%);
 }
 
 .conference-card__body {
   display: grid;
   gap: var(--space-md);
-  padding: 0 var(--space-md) var(--space-md);
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 97%, transparent);
 }
 
 .conference-card__group {
   gap: var(--space-md);
+}
+
+.disclosure-indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.disclosure-indicator::before,
+.disclosure-indicator::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: color-mix(in srgb, var(--color-ink) 88%, white 12%);
+  border-radius: 999px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.disclosure-indicator::after {
+  transform: rotate(90deg);
+}
+
+details[open] > summary .disclosure-indicator {
+  background: color-mix(in srgb, var(--color-paper) 98%, transparent);
+  border-color: color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+details[open] > summary .disclosure-indicator::after {
+  transform: rotate(90deg) scaleX(0.2);
+  opacity: 0;
 }
 
 .button {

@@ -74,6 +74,124 @@ function findLogoByName(value: string | undefined): LogoEntry | undefined {
 }
 
 const teamLogoCache = new Map<number, LogoEntry | null>();
+const labelLogoCache = new Map<string, LogoEntry | null>();
+
+function cacheKeyForLabel(label: string): string | null {
+  const normalized = normalize(label);
+  return normalized || null;
+}
+
+export function getLogoEntryForLabel(value: string | undefined): LogoEntry | undefined {
+  if (!value) {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+
+  const key = cacheKeyForLabel(trimmed);
+  if (!key) {
+    return undefined;
+  }
+
+  if (labelLogoCache.has(key)) {
+    return labelLogoCache.get(key) ?? undefined;
+  }
+
+  const entry = findLogoByName(trimmed);
+  labelLogoCache.set(key, entry ?? null);
+  return entry;
+}
+
+type LabelVariantOptions = {
+  includeConferenceVariants?: boolean;
+};
+
+function collectLabelVariants(
+  labels: readonly (string | null | undefined)[],
+  { includeConferenceVariants = false }: LabelVariantOptions = {},
+): string[] {
+  const variants: string[] = [];
+  const seen = new Set<string>();
+
+  const push = (label: string | undefined) => {
+    const base = label?.trim();
+    if (!base) {
+      return;
+    }
+
+    const normalized = base.toLowerCase();
+    if (seen.has(normalized)) {
+      return;
+    }
+
+    seen.add(normalized);
+    variants.push(base);
+
+    if (!includeConferenceVariants) {
+      return;
+    }
+
+    const withoutConference = base.replace(/\bconference\b/gi, "").trim();
+    if (withoutConference && withoutConference !== base) {
+      push(withoutConference);
+    } else if (!/\bconference\b/i.test(base)) {
+      push(`${base} Conference`);
+    }
+
+    const withoutLeague = base.replace(/\bleague\b/gi, "").trim();
+    if (withoutLeague && withoutLeague !== base) {
+      push(withoutLeague);
+    }
+
+    const withoutMens = base.replace(/\bmen['’]?s\b/gi, "").trim();
+    if (withoutMens && withoutMens !== base) {
+      push(withoutMens);
+    }
+  };
+
+  for (const label of labels) {
+    push(label ?? undefined);
+  }
+
+  return variants;
+}
+
+export function getLogoEntryForLabels(labels: readonly (string | null | undefined)[]): LogoEntry | undefined {
+  for (const variant of collectLabelVariants(labels)) {
+    const entry = getLogoEntryForLabel(variant);
+    if (entry) {
+      return entry;
+    }
+  }
+  return undefined;
+}
+
+export function getConferenceLogo(
+  name: string | undefined,
+  { shortName, aliases = [] }: { shortName?: string | null; aliases?: readonly (string | null | undefined)[] } = {},
+): LogoEntry | undefined {
+  const variants = collectLabelVariants([name, shortName, ...aliases], { includeConferenceVariants: true });
+  for (const variant of variants) {
+    const entry = getLogoEntryForLabel(variant);
+    if (entry) {
+      return entry;
+    }
+  }
+  return undefined;
+}
+
+function resolveLogoUrl(entry: LogoEntry | undefined): string | undefined {
+  if (!entry) {
+    return undefined;
+  }
+
+  const trimmedPath = entry.path.replace(/^\/+/, "");
+  const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
+  return `${base}${trimmedPath}`;
+}
 
 export function getTeamLogo(team: Team): LogoEntry | undefined {
   if (teamLogoCache.has(team.id)) {
@@ -95,7 +213,7 @@ export function getTeamLogo(team: Team): LogoEntry | undefined {
   push(team.college);
 
   for (const candidate of names) {
-    const direct = findLogoByName(candidate);
+    const direct = getLogoEntryForLabel(candidate);
     if (direct) {
       teamLogoCache.set(team.id, direct);
       return direct;
@@ -145,14 +263,7 @@ export function getTeamLogo(team: Team): LogoEntry | undefined {
 }
 
 export function getTeamLogoUrl(team: Team): string | undefined {
-  const logo = getTeamLogo(team);
-  if (!logo) {
-    return undefined;
-  }
-
-  const trimmedPath = logo.path.replace(/^\/+/, "");
-  const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
-  return `${base}${trimmedPath}`;
+  return resolveLogoUrl(getTeamLogo(team));
 }
 
 export function getTeamMonogram(team: Team): string {
@@ -199,4 +310,50 @@ export function getTeamAccentColors(team: Team): [string, string] {
   const primary = `hsl(${hue}, 70%, 48%)`;
   const secondary = `hsl(${(hue + 35) % 360}, 72%, 40%)`;
   return [primary, secondary];
+}
+
+export function getConferenceLogoUrl(
+  name: string | undefined,
+  options: { shortName?: string | null; aliases?: readonly (string | null | undefined)[] } = {},
+): string | undefined {
+  return resolveLogoUrl(getConferenceLogo(name, options));
+}
+
+export function getConferenceMonogram(name: string | undefined): string {
+  const source = name ?? "Conference";
+  const cleaned = source
+    .replace(/[^0-9A-Za-z\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!cleaned) {
+    return "CONF";
+  }
+
+  const tokens = cleaned.split(" ").filter(Boolean);
+  if (tokens.length === 0) {
+    return cleaned.slice(0, 3).toUpperCase() || "CONF";
+  }
+
+  let monogram = "";
+  for (const token of tokens) {
+    if (/^\d+$/.test(token)) {
+      monogram += token;
+    } else {
+      monogram += token[0]!;
+    }
+    if (monogram.length >= 3) {
+      break;
+    }
+  }
+
+  if (monogram.length < 2) {
+    monogram = cleaned.replace(/\s+/g, "").slice(0, 3);
+  }
+
+  return monogram.slice(0, 3).toUpperCase() || "CONF";
+}
+
+export function getLogoUrl(entry: LogoEntry | undefined): string | undefined {
+  return resolveLogoUrl(entry);
 }
