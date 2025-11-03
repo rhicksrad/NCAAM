@@ -5,6 +5,12 @@ import { extname, resolve } from 'node:path';
 import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
 import { ensureConferencePlayers } from './ensure-cbb-player-stats.js';
 
+const SCRAPE_ON_START = (() => {
+  const raw = process.env.CBB_SCRAPE_ON_START;
+  if (!raw) return false;
+  return /^(1|true|yes)$/iu.test(raw);
+})();
+
 const DEFAULT_PORT = 4173;
 const PUBLIC_ROOT = resolve(new URL('../../public', import.meta.url).pathname);
 
@@ -93,16 +99,22 @@ function sendJson(res, statusCode, payload) {
 
 await ensureNcaALogos();
 
-try {
-  const meta = await ensureConferencePlayers();
-  if (meta) {
-    const { player_count: playerCount, conferences } = meta;
-    console.log(
-      `Prepared College Basketball Reference stats for ${playerCount} players across ${conferences.length} conferences.`,
-    );
+if (SCRAPE_ON_START) {
+  try {
+    const meta = await ensureConferencePlayers();
+    if (meta) {
+      const { player_count: playerCount, conferences } = meta;
+      console.log(
+        `Prepared College Basketball Reference stats for ${playerCount} players across ${conferences.length} conferences.`,
+      );
+    }
+  } catch (error) {
+    console.error('Unable to prepare College Basketball Reference player stats before startup.', error);
   }
-} catch (error) {
-  console.error('Unable to prepare College Basketball Reference player stats before startup.', error);
+} else {
+  console.log(
+    'Skipping College Basketball player stat refresh on startup. Using the committed data. Set CBB_SCRAPE_ON_START=1 to refresh.',
+  );
 }
 
 const server = createServer(async (req, res) => {

@@ -101,6 +101,12 @@ const PRUNE_STALE_PLAYERS = (() => {
   return /^(1|true|yes)$/iu.test(raw);
 })();
 
+const SCRAPE_ON_START = (() => {
+  const raw = process.env.CBB_SCRAPE_ON_START;
+  if (!raw) return false;
+  return /^(1|true|yes)$/iu.test(raw);
+})();
+
 async function removeStalePlayerFiles(validSlugs) {
   await mkdir(PLAYERS_DIR, { recursive: true });
   const files = await readdir(PLAYERS_DIR, { withFileTypes: true });
@@ -187,7 +193,18 @@ let ensurePromise = null;
 
 export async function ensureConferencePlayers() {
   if (!ensurePromise) {
-    ensurePromise = ensureConferencePlayerStats().catch(error => {
+    const work = SCRAPE_ON_START
+      ? ensureConferencePlayerStats()
+      : (async () => {
+          const meta = await loadMeta();
+          if (!meta) {
+            console.warn(
+              'CBB_SCRAPE_ON_START is disabled and no existing College Basketball player metadata was found. Enable the flag to refresh the dataset.',
+            );
+          }
+          return meta;
+        })();
+    ensurePromise = work.catch(error => {
       ensurePromise = null;
       throw error;
     });

@@ -84,6 +84,16 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
   curl -sS https://ncaam.hicksrch.workers.dev/diag | jq .
   ```
 
+### Refreshing College Basketball player data
+
+Committed player stat JSON lives under `public/data`. The static dev server (`scripts/dev/serve-public.js`) reuses that data by default for fast startup. To opt in to a fresh scrape when booting the dev server, set the environment variable `CBB_SCRAPE_ON_START` to a truthy value (for example `1`, `true`, or `yes`).
+
+```bash
+CBB_SCRAPE_ON_START=1 pnpm exec node scripts/dev/serve-public.js
+```
+
+When the flag is absent or false, the previously scraped conference and player files remain untouched.
+
 ## Scripts (optional; add as needed)
 
 * Typecheck:
