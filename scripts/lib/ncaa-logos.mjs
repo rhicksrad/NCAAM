@@ -13,6 +13,35 @@ function formatMissingMetadataMessage(metadataPath) {
   ].join(' ');
 }
 
+function normalizeAliasList(rawAliases, metadataPath, id) {
+  if (rawAliases === undefined) {
+    return [];
+  }
+
+  if (!Array.isArray(rawAliases)) {
+    throw new Error(
+      `${formatMissingMetadataMessage(metadataPath)} (expected "logos.${id}.aliases" to be an array).`
+    );
+  }
+
+  const aliases = [];
+  const seen = new Set();
+  for (const alias of rawAliases) {
+    if (typeof alias !== 'string') {
+      throw new Error(
+        `${formatMissingMetadataMessage(metadataPath)} (found non-string alias for "${id}").`
+      );
+    }
+    const trimmed = alias.trim();
+    if (!trimmed || seen.has(trimmed)) {
+      continue;
+    }
+    seen.add(trimmed);
+    aliases.push(trimmed);
+  }
+  return aliases;
+}
+
 export async function verifyNcaALogos() {
   let stats;
   try {
@@ -67,4 +96,46 @@ export async function verifyNcaALogos() {
       );
     }
   }
+
+  if (!metadata.logos || typeof metadata.logos !== 'object') {
+    throw new Error(
+      `${formatMissingMetadataMessage(metadataPath)} (missing required "logos" mapping).`
+    );
+  }
+
+  const normalizedLogos = new Map();
+  for (const [id, rawValue] of Object.entries(metadata.logos)) {
+    if (typeof id !== 'string' || !/^\d+$/.test(id)) {
+      throw new Error(
+        `${formatMissingMetadataMessage(metadataPath)} (invalid logo identifier "${id}").`
+      );
+    }
+
+    if (!rawValue || typeof rawValue !== 'object') {
+      throw new Error(
+        `${formatMissingMetadataMessage(metadataPath)} (expected "logos.${id}" to be an object).`
+      );
+    }
+
+    const name = typeof rawValue.name === 'string' ? rawValue.name.trim() : '';
+    if (!name) {
+      throw new Error(
+        `${formatMissingMetadataMessage(metadataPath)} (missing name for "${id}").`
+      );
+    }
+
+    const aliases = normalizeAliasList(rawValue.aliases, metadataPath, id);
+    normalizedLogos.set(id, { name, aliases });
+  }
+
+  if (normalizedLogos.size === 0) {
+    throw new Error(
+      `${formatMissingMetadataMessage(metadataPath)} (found zero logo entries after validation).`
+    );
+  }
+
+  return {
+    metadata,
+    logos: normalizedLogos,
+  };
 }
