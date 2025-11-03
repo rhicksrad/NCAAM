@@ -1,13 +1,74 @@
-import { BASE } from "../lib/config.js";
-import { NCAA_LOGO_ALIASES, NCAA_LOGO_INDEX } from "../lib/data/ncaa-logo-map.js";
-
+import { buildTeamKeys } from "../lib/data/program-keys.js";
+import { getDivisionOneProgramIndex } from "../lib/data/division-one.js";
+import { NCAAM } from "../lib/sdk/ncaam.js";
+import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
 const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
+function escapeHtml(value) {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+function createPollTeam(entry) {
+    const program = entry.program;
+    const fullName = program.full_name.trim();
+    const fallbackName = program.name ?? entry.team;
+    const college = program.college ?? entry.team;
+    return {
+        id: program.id,
+        full_name: fullName,
+        name: fallbackName,
+        abbreviation: program.abbreviation ?? undefined,
+        college,
+        conference: program.conference ?? undefined,
+    };
+}
+function renderPollLogo(entry) {
+    const team = createPollTeam(entry);
+    const alt = escapeHtml(`${team.full_name} logo`);
+    const logoUrl = getTeamLogoUrl(team);
+    if (logoUrl) {
+        return `<img class="poll-card__logo-image" src="${logoUrl}" alt="${alt}" loading="lazy" decoding="async">`;
+    }
+    const monogram = escapeHtml(getTeamMonogram(team));
+    return `<span class="poll-card__logo-fallback" role="img" aria-label="${alt}">${monogram}</span>`;
+}
+function createSnapshotTeam(entry) {
+    const label = entry.team?.trim() ?? "";
+    const fullName = label || `Team ${entry.team_id}`;
+    return {
+        id: entry.team_id,
+        full_name: fullName,
+        name: fullName,
+        abbreviation: entry.abbreviation ?? undefined,
+        conference: entry.conference ?? undefined,
+        college: fullName,
+    };
+}
+function renderHeightLogo(entry) {
+    const team = createSnapshotTeam(entry);
+    const alt = escapeHtml(`${team.full_name} logo`);
+    const logoUrl = getTeamLogoUrl(team);
+    if (logoUrl) {
+        return `<img class="height-card__logo-image" src="${logoUrl}" alt="${alt}" loading="lazy" decoding="async">`;
+    }
+    const monogram = escapeHtml(getTeamMonogram(team));
+    return `<span class="height-card__logo-fallback" role="img" aria-label="${alt}">${monogram}</span>`;
+}
 const poll = [
     {
         rank: 1,
         team: "Purdue",
-        slug: "purdue-boilermakers",
+        program: {
+            id: 125,
+            full_name: "Purdue Boilermakers",
+            name: "Boilermakers",
+            abbreviation: "PUR",
+            college: "Purdue",
+        },
         notes: [
             {
                 label: "Identity",
@@ -26,7 +87,13 @@ const poll = [
     {
         rank: 2,
         team: "Houston",
-        slug: "houston-cougars",
+        program: {
+            id: 73,
+            full_name: "Houston Cougars",
+            name: "Cougars",
+            abbreviation: "HOU",
+            college: "Houston",
+        },
         notes: [
             {
                 label: "Identity",
@@ -45,7 +112,13 @@ const poll = [
     {
         rank: 3,
         team: "Florida",
-        slug: "florida-gators",
+        program: {
+            id: 277,
+            full_name: "Florida Gators",
+            name: "Gators",
+            abbreviation: "FLA",
+            college: "Florida",
+        },
         notes: [
             {
                 label: "Identity",
@@ -64,7 +137,13 @@ const poll = [
     {
         rank: 4,
         team: "UConn",
-        slug: "uconn-huskies",
+        program: {
+            id: 91,
+            full_name: "UConn Huskies",
+            name: "Huskies",
+            abbreviation: "CONN",
+            college: "UConn",
+        },
         notes: [
             {
                 label: "Identity",
@@ -82,8 +161,14 @@ const poll = [
     },
     {
         rank: 5,
-        team: "St. John’s",
-        slug: "st-john-s-red-storm",
+        team: "St. John's",
+        program: {
+            id: 90,
+            full_name: "St. John's Red Storm",
+            name: "Red Storm",
+            abbreviation: "SJU",
+            college: "St. John's",
+        },
         notes: [
             {
                 label: "Identity",
@@ -102,7 +187,13 @@ const poll = [
     {
         rank: 6,
         team: "Duke",
-        slug: "duke-blue-devils",
+        program: {
+            id: 4,
+            full_name: "Duke Blue Devils",
+            name: "Blue Devils",
+            abbreviation: "DUKE",
+            college: "Duke",
+        },
         notes: [
             {
                 label: "Identity",
@@ -121,7 +212,13 @@ const poll = [
     {
         rank: 7,
         team: "Michigan",
-        slug: "michigan-wolverines",
+        program: {
+            id: 118,
+            full_name: "Michigan Wolverines",
+            name: "Wolverines",
+            abbreviation: "MICH",
+            college: "Michigan",
+        },
         notes: [
             {
                 label: "Identity",
@@ -140,7 +237,13 @@ const poll = [
     {
         rank: 8,
         team: "BYU",
-        slug: "byu-cougars",
+        program: {
+            id: 69,
+            full_name: "BYU Cougars",
+            name: "Cougars",
+            abbreviation: "BYU",
+            college: "BYU",
+        },
         notes: [
             {
                 label: "Identity",
@@ -159,7 +262,13 @@ const poll = [
     {
         rank: 9,
         team: "Kentucky",
-        slug: "kentucky-wildcats",
+        program: {
+            id: 279,
+            full_name: "Kentucky Wildcats",
+            name: "Wildcats",
+            abbreviation: "UK",
+            college: "Kentucky",
+        },
         notes: [
             {
                 label: "Identity",
@@ -178,7 +287,13 @@ const poll = [
     {
         rank: 10,
         team: "Texas Tech",
-        slug: "texas-tech-red-raiders",
+        program: {
+            id: 79,
+            full_name: "Texas Tech Red Raiders",
+            name: "Red Raiders",
+            abbreviation: "TTU",
+            college: "Texas Tech",
+        },
         notes: [
             {
                 label: "Identity",
@@ -197,7 +312,13 @@ const poll = [
     {
         rank: 11,
         team: "Louisville",
-        slug: "louisville-cardinals",
+        program: {
+            id: 7,
+            full_name: "Louisville Cardinals",
+            name: "Cardinals",
+            abbreviation: "LOU",
+            college: "Louisville",
+        },
         notes: [
             {
                 label: "Identity",
@@ -216,7 +337,13 @@ const poll = [
     {
         rank: 12,
         team: "UCLA",
-        slug: "ucla-bruins",
+        program: {
+            id: 127,
+            full_name: "UCLA Bruins",
+            name: "Bruins",
+            abbreviation: "UCLA",
+            college: "UCLA",
+        },
         notes: [
             {
                 label: "Identity",
@@ -235,7 +362,13 @@ const poll = [
     {
         rank: 13,
         team: "Arizona",
-        slug: "arizona-wildcats",
+        program: {
+            id: 68,
+            full_name: "Arizona Wildcats",
+            name: "Wildcats",
+            abbreviation: "ARIZ",
+            college: "Arizona",
+        },
         notes: [
             {
                 label: "Identity",
@@ -254,7 +387,13 @@ const poll = [
     {
         rank: 14,
         team: "Arkansas",
-        slug: "arkansas-razorbacks",
+        program: {
+            id: 275,
+            full_name: "Arkansas Razorbacks",
+            name: "Razorbacks",
+            abbreviation: "ARK",
+            college: "Arkansas",
+        },
         notes: [
             {
                 label: "Identity",
@@ -273,7 +412,13 @@ const poll = [
     {
         rank: 15,
         team: "Alabama",
-        slug: "alabama-crimson-tide",
+        program: {
+            id: 274,
+            full_name: "Alabama Crimson Tide",
+            name: "Crimson Tide",
+            abbreviation: "ALA",
+            college: "Alabama",
+        },
         notes: [
             {
                 label: "Identity",
@@ -292,7 +437,13 @@ const poll = [
     {
         rank: 16,
         team: "Iowa State",
-        slug: "iowa-state-cyclones",
+        program: {
+            id: 74,
+            full_name: "Iowa State Cyclones",
+            name: "Cyclones",
+            abbreviation: "ISU",
+            college: "Iowa State",
+        },
         notes: [
             {
                 label: "Identity",
@@ -311,7 +462,13 @@ const poll = [
     {
         rank: 17,
         team: "Illinois",
-        slug: "illinois-fighting-illini",
+        program: {
+            id: 113,
+            full_name: "Illinois Fighting Illini",
+            name: "Fighting Illini",
+            abbreviation: "ILL",
+            college: "Illinois",
+        },
         notes: [
             {
                 label: "Identity",
@@ -330,7 +487,13 @@ const poll = [
     {
         rank: 18,
         team: "Tennessee",
-        slug: "tennessee-volunteers",
+        program: {
+            id: 286,
+            full_name: "Tennessee Volunteers",
+            name: "Volunteers",
+            abbreviation: "TENN",
+            college: "Tennessee",
+        },
         notes: [
             {
                 label: "Identity",
@@ -349,7 +512,13 @@ const poll = [
     {
         rank: 19,
         team: "Kansas",
-        slug: "kansas-jayhawks",
+        program: {
+            id: 75,
+            full_name: "Kansas Jayhawks",
+            name: "Jayhawks",
+            abbreviation: "KU",
+            college: "Kansas",
+        },
         notes: [
             {
                 label: "Identity",
@@ -368,7 +537,13 @@ const poll = [
     {
         rank: 20,
         team: "Auburn",
-        slug: "auburn-tigers",
+        program: {
+            id: 276,
+            full_name: "Auburn Tigers",
+            name: "Tigers",
+            abbreviation: "AUB",
+            college: "Auburn",
+        },
         notes: [
             {
                 label: "Identity",
@@ -387,7 +562,13 @@ const poll = [
     {
         rank: 21,
         team: "Gonzaga",
-        slug: "gonzaga-bulldogs",
+        program: {
+            id: 354,
+            full_name: "Gonzaga Bulldogs",
+            name: "Bulldogs",
+            abbreviation: "GONZ",
+            college: "Gonzaga",
+        },
         notes: [
             {
                 label: "Identity",
@@ -406,7 +587,13 @@ const poll = [
     {
         rank: 22,
         team: "Michigan State",
-        slug: "michigan-state-spartans",
+        program: {
+            id: 117,
+            full_name: "Michigan State Spartans",
+            name: "Spartans",
+            abbreviation: "MSU",
+            college: "Michigan State",
+        },
         notes: [
             {
                 label: "Identity",
@@ -425,7 +612,13 @@ const poll = [
     {
         rank: 23,
         team: "Creighton",
-        slug: "creighton-bluejays",
+        program: {
+            id: 84,
+            full_name: "Creighton Bluejays",
+            name: "Bluejays",
+            abbreviation: "CREI",
+            college: "Creighton",
+        },
         notes: [
             {
                 label: "Identity",
@@ -444,7 +637,13 @@ const poll = [
     {
         rank: 24,
         team: "Wisconsin",
-        slug: "wisconsin-badgers",
+        program: {
+            id: 130,
+            full_name: "Wisconsin Badgers",
+            name: "Badgers",
+            abbreviation: "WIS",
+            college: "Wisconsin",
+        },
         notes: [
             {
                 label: "Identity",
@@ -463,7 +662,13 @@ const poll = [
     {
         rank: 25,
         team: "North Carolina",
-        slug: "north-carolina-tar-heels",
+        program: {
+            id: 10,
+            full_name: "North Carolina Tar Heels",
+            name: "Tar Heels",
+            abbreviation: "UNC",
+            college: "North Carolina",
+        },
         notes: [
             {
                 label: "Identity",
@@ -480,60 +685,23 @@ const poll = [
         ],
     },
 ];
-const LOGO_BASE = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
-function resolveLogoEntry(slug) {
-    if (!slug)
-        return undefined;
-    const normalized = String(slug).toLowerCase();
-    const direct = NCAA_LOGO_INDEX[normalized];
-    if (direct) {
-        return direct;
-    }
-    const alias = NCAA_LOGO_ALIASES?.[normalized];
-    if (alias) {
-        return NCAA_LOGO_INDEX[alias];
-    }
-    return undefined;
-}
-function getPollLogoUrl(entry) {
-    const slug = entry.slug ?? entry.logoSlug;
-    if (!slug) {
-        return undefined;
-    }
-    const logo = resolveLogoEntry(slug);
-    if (!logo) {
-        return undefined;
-    }
-    const trimmedPath = logo.path.replace(/^\/+/, "");
-    return `${LOGO_BASE}${trimmedPath}`;
-}
-function getInitials(team) {
-    const matches = team.match(/[A-Za-z]+/g) ?? [];
-    const filtered = matches.filter(part => part.length > 1);
-    const source = filtered.length > 0 ? filtered : matches;
-    if (source.length === 0) {
-        return team.slice(0, 3).toUpperCase();
-    }
-    if (source.length === 1) {
-        return source[0].slice(0, 3).toUpperCase();
-    }
-    return source.map(part => part[0]).join("").slice(0, 3).toUpperCase();
-}
 const pollItems = poll
     .map(entry => {
-    const logoUrl = getPollLogoUrl(entry);
-    const logo = logoUrl
-        ? `<img class="poll-card__logo-image" src="${logoUrl}" alt="${entry.team} logo" loading="lazy" decoding="async">`
-        : `<span class="poll-card__logo-fallback" role="img" aria-label="${entry.team} logo">${getInitials(entry.team)}</span>`;
+    const logo = renderPollLogo(entry);
     const notes = entry.notes
-        .map(note => `<div class="poll-card__note"><dt>${note.label}</dt><dd>${note.value}</dd></div>`)
+        .map(note => {
+        const label = escapeHtml(note.label);
+        const value = escapeHtml(note.value);
+        return `<div class="poll-card__note"><dt>${label}</dt><dd>${value}</dd></div>`;
+    })
         .join("");
+    const teamName = escapeHtml(entry.team);
     return `<li>
   <article class="card poll-card" data-card>
     <header class="poll-card__header">
       <span class="badge" data-variant="arc" aria-label="Rank ${entry.rank}">#${entry.rank}</span>
       <div class="poll-card__logo">${logo}</div>
-      <div class="poll-card__title"><h3>${entry.team}</h3></div>
+      <div class="poll-card__title"><h3>${teamName}</h3></div>
     </header>
     <dl class="poll-card__notes">
       ${notes}
@@ -542,14 +710,6 @@ const pollItems = poll
 </li>`;
 })
     .join("");
-function escapeHtml(value) {
-    return value
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
 function hasMeasuredAverage(entry) {
     return typeof entry.average_height_inches === "number" && Number.isFinite(entry.average_height_inches);
 }
@@ -586,7 +746,8 @@ function renderHeightColumn(title, entries) {
         const formattedHeight = formatAverageHeight(entry.average_height_inches);
         const formattedInches = formatAverageInches(entry.average_height_inches);
         const sample = `${entry.measured_count} ${pluralize(entry.measured_count, "player", "players")} measured`;
-        return `<li class="height-card__item">\n        <span class="height-card__rank">${rank}</span>\n        <div class="height-card__body">\n          <span class="height-card__team">${teamName}${abbreviation}</span>\n          <span class="height-card__meta">${formattedHeight} avg · ${formattedInches} · ${sample}</span>\n        </div>\n      </li>`;
+        const logo = renderHeightLogo(entry);
+        return `<li class="height-card__item">\n        <span class="height-card__rank">${rank}</span>\n        <div class="height-card__logo">${logo}</div>\n        <div class="height-card__body">\n          <span class="height-card__team">${teamName}${abbreviation}</span>\n          <span class="height-card__meta">${formattedHeight} avg · ${formattedInches} · ${sample}</span>\n        </div>\n      </li>`;
     })
         .filter(Boolean)
         .join("");
@@ -625,6 +786,7 @@ function resolveSourceUrl(raw) {
 function renderHeightSnapshot(contentEl, footerEl, snapshot) {
     const measured = snapshot.teams
         .filter(hasMeasuredAverage)
+        .slice()
         .sort((a, b) => b.average_height_inches - a.average_height_inches);
     if (measured.length === 0) {
         contentEl.innerHTML = '<p class="height-card__empty">No roster height data is available yet. Check back soon.</p>';
@@ -659,17 +821,34 @@ function renderHeightSnapshot(contentEl, footerEl, snapshot) {
 }
 async function loadHeightSnapshot(contentEl, footerEl) {
     try {
-        const response = await fetch(HEIGHT_SNAPSHOT_PATH, {
-            headers: { Accept: "application/json" },
-        });
-        if (!response.ok) {
-            throw new Error(`Failed to load roster height snapshot: ${response.status} ${response.statusText}`);
-        }
-        const payload = (await response.json());
+        const [divisionOneIndex, teamsResponse, payload] = await Promise.all([
+            getDivisionOneProgramIndex(),
+            NCAAM.teams(1, 600),
+            fetch(HEIGHT_SNAPSHOT_PATH, { headers: { Accept: "application/json" } }).then(res => {
+                if (!res.ok) {
+                    throw new Error(`Failed to load roster height snapshot: ${res.status} ${res.statusText}`);
+                }
+                return res.json();
+            }),
+        ]);
         if (!payload || !Array.isArray(payload.teams)) {
             throw new Error("Roster height snapshot is missing team data.");
         }
-        renderHeightSnapshot(contentEl, footerEl, payload);
+        const divisionOneTeamIds = new Set();
+        for (const team of teamsResponse.data) {
+            const keys = buildTeamKeys(team);
+            if (keys.some(key => divisionOneIndex.keys.has(key))) {
+                divisionOneTeamIds.add(team.id);
+            }
+        }
+        const filteredTeams = payload.teams.filter(team => typeof team.team_id === "number" && divisionOneTeamIds.has(team.team_id));
+        const filteredSnapshot = {
+            ...payload,
+            team_count: filteredTeams.length,
+            measured_team_count: filteredTeams.filter(hasMeasuredAverage).length,
+            teams: filteredTeams,
+        };
+        renderHeightSnapshot(contentEl, footerEl, filteredSnapshot);
     }
     catch (error) {
         console.error(error);
