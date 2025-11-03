@@ -156,12 +156,23 @@ export const NCAAM = {
         }
     },
     players: (page = 1, per_page = 200, search = "") => get("/players", { page, per_page, search }),
-    activePlayers: (per_page = SAFE_PAGE_SIZE, cursor, season) => get("/players/active", {
-        per_page,
-        cursor,
-        season,
-    }),
-    activePlayersByTeam: (teamId) => get("/players/active", { "team_ids[]": teamId, per_page: 100 }),
+    activePlayers: (per_page = SAFE_PAGE_SIZE, cursor, season) => {
+        const params = {
+            per_page,
+            cursor,
+        };
+        if (season !== undefined && season !== null && `${season}`.length > 0) {
+            params["seasons[]"] = season;
+        }
+        return get("/players/active", params);
+    },
+    activePlayersByTeam: (teamId, season) => {
+        const params = { "team_ids[]": teamId, per_page: 100 };
+        if (season !== undefined && season !== null && `${season}`.length > 0) {
+            params["seasons[]"] = season;
+        }
+        return get("/players/active", params);
+    },
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
     conferences: () => get("/conferences"),
     rankings: (params = {}) => get("/rankings", params),
