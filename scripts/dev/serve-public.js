@@ -11,7 +11,7 @@ const SCRAPE_ON_START = (() => {
   return /^(1|true|yes)$/iu.test(raw);
 })();
 
-const DEFAULT_PORT = 4173;
+const DEFAULT_PORT = 8787;
 const PUBLIC_ROOT = resolve(new URL('../../public', import.meta.url).pathname);
 
 const MIME_TYPES = new Map([
@@ -144,9 +144,14 @@ const server = createServer(async (req, res) => {
   }
 });
 
+const envPort = Number.parseInt(process.env.PORT ?? process.env.DEV_PORT ?? '', 10);
 const portArg = Number.parseInt(process.argv[2] ?? '', 10);
-const port = Number.isFinite(portArg) ? portArg : DEFAULT_PORT;
+const port = Number.isFinite(portArg)
+  ? portArg
+  : Number.isFinite(envPort)
+    ? envPort
+    : DEFAULT_PORT;
 
 server.listen(port, () => {
-  console.log(`Static server listening on http://127.0.0.1:${port}/NBA/index.html`);
+  console.log(`Static server listening on http://127.0.0.1:${port}/index.html`);
 });
