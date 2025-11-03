@@ -503,27 +503,25 @@ function getInitials(team: string) {
 const pollItems = poll
   .map(entry => {
     const logo = entry.logo
-      ? `<img src="${entry.logo}" alt="${entry.team} logo" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;">`
-      : `<span role="img" aria-label="${entry.team} logo" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">${getInitials(entry.team)}</span>`;
+      ? `<img class="poll-card__logo-image" src="${entry.logo}" alt="${entry.team} logo" loading="lazy" decoding="async">`
+      : `<span class="poll-card__logo-fallback" role="img" aria-label="${entry.team} logo">${getInitials(entry.team)}</span>`;
 
     const notes = entry.notes
-      .map(note => `<div class="team-card__meta"><strong>${note.label}:</strong> ${note.value}</div>`)
+      .map(
+        note => `<div class="poll-card__note"><dt>${note.label}</dt><dd>${note.value}</dd></div>`
+      )
       .join("");
 
     return `<li>
   <article class="card poll-card" data-card>
-    <div class="stack" data-gap="sm">
-      <div class="roster-team__identity">
-        <span class="badge" data-variant="arc" aria-label="Rank ${entry.rank}">#${entry.rank}</span>
-        <div class="team-card__logo">${logo}</div>
-        <div class="roster-team__text">
-          <h3>${entry.team}</h3>
-          <div class="stack" data-gap="sm">
-            ${notes}
-          </div>
-        </div>
-      </div>
-    </div>
+    <header class="poll-card__header">
+      <span class="badge" data-variant="arc" aria-label="Rank ${entry.rank}">#${entry.rank}</span>
+      <div class="poll-card__logo">${logo}</div>
+      <div class="poll-card__title"><h3>${entry.team}</h3></div>
+    </header>
+    <dl class="poll-card__notes">
+      ${notes}
+    </dl>
   </article>
 </li>`;
   })
@@ -534,6 +532,6 @@ app.innerHTML = `
   <h2>Power Poll</h2>
   <p class="page-intro">Weekly snapshot of the top national contenders, how they win, and what we're monitoring next.</p>
 </section>
-<ol class="stack" data-gap="lg" style="list-style:none; margin:0; padding:0;" role="list">
+<ol class="stack" data-gap="md" style="list-style:none; margin:0; padding:0;" role="list">
   ${pollItems}
 </ol>`;
