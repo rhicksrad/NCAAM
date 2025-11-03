@@ -1,0 +1,5 @@
+{
+  "source": "Custom curated NCAA logo exports stored in public/data/logos",
+  "updated": "2024-10-15",
+  "notes": "PNG logos are maintained directly in the repository. Do not rehydrate from the deprecated FBS zip archive."
+}

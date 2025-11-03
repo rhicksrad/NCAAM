@@ -46,6 +46,13 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
   * `/standings?season=2025`
   * `/rankings?season=2025&week=1`
 
+### NCAA logos
+
+- Curated logo PNGs live under `public/data/logos`; filenames map to upstream team identifiers.
+- The directory includes a `metadata.json` descriptor that documents the current source and update date.
+- Run `pnpm run prepare:logos` to validate that the directory and metadata are present before generating logo maps.
+- The legacy `public/FBS-Logo-Library-main.zip` archive is no longer used.
+
 ## Agents and rules (summary)
 
 * Do not add Authorization headers in client code.

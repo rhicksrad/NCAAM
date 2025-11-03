@@ -1,3 +1,3 @@
-import { ensureNcaALogos } from './lib/ncaa-logos.mjs';
+import { verifyNcaALogos } from './lib/ncaa-logos.mjs';
 
-await ensureNcaALogos();
+await verifyNcaALogos();

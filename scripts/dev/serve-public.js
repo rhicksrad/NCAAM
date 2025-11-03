@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
 
-import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
+import { verifyNcaALogos } from '../lib/ncaa-logos.mjs';
 import { ensureConferencePlayers } from './ensure-cbb-player-stats.js';
 import { ensureTeamHeightSnapshot } from './ensure-team-heights.js';
 
@@ -102,7 +102,7 @@ function sendJson(res, statusCode, payload) {
   send(res, statusCode, body, { 'Content-Type': 'application/json; charset=utf-8' });
 }
 
-await ensureNcaALogos();
+await verifyNcaALogos();
 
 try {
   const snapshot = await ensureTeamHeightSnapshot();

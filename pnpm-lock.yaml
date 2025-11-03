@@ -81,9 +81,6 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
-      unzipper:
-        specifier: ^0.12.3
-        version: 0.12.3
       vite:
         specifier: ^5.4.0
         version: 5.4.20(@types/node@20.12.7)
@@ -1309,9 +1306,6 @@ packages:
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-
-  unzipper@0.12.3:
-    resolution: {integrity: sha512-PZ8hTS+AqcGxsaQntl3IRBw65QrBI6lxzqDEL7IAo/XCEqRTKGfOX56Vea5TH9SZczRVxuzk1re04z/YjuYCJA==}
 
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
@@ -2602,14 +2596,6 @@ snapshots:
   universalify@0.2.0: {}
 
   universalify@2.0.1: {}
-
-  unzipper@0.12.3:
-    dependencies:
-      bluebird: 3.7.2
-      duplexer2: 0.1.4
-      fs-extra: 11.3.2
-      graceful-fs: 4.2.11
-      node-int64: 0.4.0
 
   url-parse@1.5.10:
     dependencies:
