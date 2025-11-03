@@ -1,5 +1,6 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
+import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
 app.innerHTML = `<h1>Standings</h1><div id="wrap" class="conference-groups"></div>`;
 const wrap = document.getElementById("wrap");
@@ -57,6 +58,14 @@ for (const team of teams) {
     const group = findGroupForTeam(team);
     group.teams.push(team);
 }
+function renderTeamCell(team) {
+    const displayName = team.full_name ?? team.name ?? "Team";
+    const logoUrl = getTeamLogoUrl(team);
+    const logo = logoUrl
+        ? `<img class="standings-team__logo-image" src="${logoUrl}" alt="${displayName} logo" loading="lazy" decoding="async">`
+        : `<span class="standings-team__logo-fallback" role="img" aria-label="${displayName} logo">${getTeamMonogram(team)}</span>`;
+    return `<span class="standings-team"><span class="standings-team__logo">${logo}</span><span class="standings-team__name">${displayName}</span></span>`;
+}
 const orderedGroups = Array.from(groups.values()).sort((a, b) => {
     return a.name.localeCompare(b.name);
 });
@@ -68,7 +77,7 @@ wrap.innerHTML = orderedGroups
         .sort((a, b) => a.full_name.localeCompare(b.full_name))
         .map(team => `
         <tr>
-          <th scope="row">${team.full_name}</th>
+          <th scope="row">${renderTeamCell(team)}</th>
           <td>0</td>
           <td>0</td>
           <td>0.000</td>
