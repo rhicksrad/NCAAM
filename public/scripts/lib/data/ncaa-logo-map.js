@@ -5086,6 +5086,8 @@ export const NCAA_LOGOS = [
   }
 ];
 
+export const NCAA_LOGO_INDEX = Object.fromEntries(NCAA_LOGOS.map(entry => [entry.slug, entry]));
+
 export const NCAA_LOGO_ALIASES = {
   "alabama-birmingham-blazers": "uab-blazers",
   "brigham-young-cougars": "byu-cougars",
