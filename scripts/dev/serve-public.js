@@ -4,6 +4,7 @@ import { extname, resolve } from 'node:path';
 
 import { ensureNcaALogos } from '../lib/ncaa-logos.mjs';
 import { ensureConferencePlayers } from './ensure-cbb-player-stats.js';
+import { ensureTeamHeightSnapshot } from './ensure-team-heights.js';
 
 const SCRAPE_ON_START = (() => {
   const raw = process.env.CBB_SCRAPE_ON_START;
@@ -98,6 +99,17 @@ function sendJson(res, statusCode, payload) {
 }
 
 await ensureNcaALogos();
+
+try {
+  const snapshot = await ensureTeamHeightSnapshot();
+  if (snapshot) {
+    console.log(
+      `Prepared roster height snapshot for ${snapshot.measured_team_count}/${snapshot.team_count} teams.`,
+    );
+  }
+} catch (error) {
+  console.error('Unable to prepare roster height snapshot before startup.', error);
+}
 
 if (SCRAPE_ON_START) {
   try {
