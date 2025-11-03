@@ -1,5 +1,5 @@
 import { buildProgramLabelKeys } from "./program-keys.js";
-const DIVISION_ONE_PROGRAMS_URL = new URL("../../data/division-one-programs.json", import.meta.url).toString();
+const DIVISION_ONE_PROGRAMS_URL = new URL("../../../data/division-one-programs.json", import.meta.url).toString();
 let divisionOnePromise = null;
 async function fetchDivisionOnePrograms() {
     const response = await fetch(DIVISION_ONE_PROGRAMS_URL, {

@@ -5,7 +5,10 @@ type DivisionOneProgramIndex = {
   keys: Set<string>;
 };
 
-const DIVISION_ONE_PROGRAMS_URL = new URL("../../data/division-one-programs.json", import.meta.url).toString();
+const DIVISION_ONE_PROGRAMS_URL = new URL(
+  "../../../data/division-one-programs.json",
+  import.meta.url,
+).toString();
 
 let divisionOnePromise: Promise<DivisionOneProgramIndex> | null = null;
 
