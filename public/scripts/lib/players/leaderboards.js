@@ -3,9 +3,9 @@ import { computeInnerSize, createSVG } from "../charts/frame.js";
 import { defaultTheme, formatNumber } from "../charts/theme.js";
 import { DEFAULT_METRIC_ORDER, loadLeaderboardDocument, } from "./data.js";
 const CHART_DIMENSIONS = {
-    width: 720,
-    height: 420,
-    margin: { top: 36, right: 40, bottom: 80, left: 220 },
+    width: 640,
+    height: 360,
+    margin: { top: 24, right: 32, bottom: 60, left: 180 },
 };
 const CARD_TONE_CLASSES = [
     "stat-card--tone-1",
@@ -134,8 +134,8 @@ function renderMetricChart(container, metric, leaderboardDoc) {
             type: "band",
             domain: leaders.map((leader) => leader.name),
             range: [0, ih],
-            paddingInner: 0.25,
-            paddingOuter: 0.2,
+            paddingInner: 0.18,
+            paddingOuter: 0.12,
         },
     });
     const barLayer = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
