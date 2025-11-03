@@ -6,6 +6,8 @@ import {
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import {
+  getConferenceLogoUrl,
+  getConferenceMonogram,
   getTeamAccentColors,
   getTeamLogoUrl,
   getTeamMonogram,
@@ -61,8 +63,18 @@ type TeamSummary = {
   } | null;
 };
 
+type ConferenceIdentity = {
+  key: string;
+  name: string;
+  shortName: string | null;
+  logoUrl?: string;
+  monogram: string;
+};
+
 type TeamCardData = Team & {
   conference: string;
+  conferenceKey: string;
+  conferenceShortName: string | null;
   logoUrl?: string;
   accentPrimary: string;
   accentSecondary: string;
@@ -149,11 +161,59 @@ for (const [label, summary] of Object.entries(teamSummaries)) {
 }
 const summaryKeys = Array.from(summaryIndex.keys());
 
+const conferenceIdentities = new Map<string, ConferenceIdentity>();
+
+function normalizeConferenceKey(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]+/g, "")
+    .replace(/[^0-9A-Za-z\s]+/g, " ")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+}
+
+function ensureConferenceIdentity(team: Team): ConferenceIdentity {
+  const conferenceRecord = team.conference_id != null ? conferenceMap.get(team.conference_id) : undefined;
+  const rawConference = team.conference && team.conference !== "N/A" ? team.conference : null;
+  const name = conferenceRecord?.name ?? rawConference ?? "Independent";
+  const shortName = conferenceRecord?.short_name ?? (rawConference && rawConference !== name ? rawConference : null);
+  const key = conferenceRecord ? `id-${conferenceRecord.id}` : `name-${normalizeConferenceKey(name || "conference")}`;
+  const existing = conferenceIdentities.get(key);
+  if (existing) {
+    if (!existing.logoUrl) {
+      const aliasSet = new Set<string>([existing.name, existing.shortName ?? "", rawConference ?? ""]);
+      const logoUrl = getConferenceLogoUrl(existing.name, {
+        shortName: existing.shortName,
+        aliases: Array.from(aliasSet).filter(Boolean),
+      });
+      if (logoUrl) {
+        const updated: ConferenceIdentity = { ...existing, logoUrl };
+        conferenceIdentities.set(key, updated);
+        return updated;
+      }
+    }
+    return existing;
+  }
+
+  const aliasSet = new Set<string>([name, shortName ?? "", rawConference ?? ""]);
+  const logoUrl = getConferenceLogoUrl(name, {
+    shortName,
+    aliases: Array.from(aliasSet).filter(Boolean),
+  });
+  const identity: ConferenceIdentity = {
+    key,
+    name,
+    shortName,
+    logoUrl,
+    monogram: getConferenceMonogram(name),
+  };
+  conferenceIdentities.set(key, identity);
+  return identity;
+}
+
 const data: TeamCardData[] = divisionOneTeams.map(team => {
-  const conference = team.conference ?? (() => {
-    const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
-    return lookup?.short_name ?? lookup?.name;
-  })();
+  const identity = ensureConferenceIdentity(team);
   const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
   const keys = buildTeamKeys(team);
   let location: TeamLocation | undefined;
@@ -192,7 +252,9 @@ const data: TeamCardData[] = divisionOneTeams.map(team => {
   }
   return {
     ...team,
-    conference: conference ?? "N/A",
+    conference: identity.name,
+    conferenceKey: identity.key,
+    conferenceShortName: identity.shortName,
     logoUrl: getTeamLogoUrl(team),
     accentPrimary,
     accentSecondary,
@@ -372,23 +434,23 @@ function render(q = "") {
   const ql = q.trim().toLowerCase();
   const openSet = new Set<string>(
     Array.from(list.querySelectorAll<HTMLDetailsElement>("details[open]"))
-      .map(details => details.dataset.conference || "")
+      .map(details => details.dataset.conferenceKey || details.dataset.conference || "")
       .filter(Boolean)
   );
 
   const groups = new Map<string, TeamCardData[]>();
 
   for (const team of data) {
-    const haystack = `${team.full_name} ${team.name} ${team.conference ?? ""}`.toLowerCase();
+    const haystack = `${team.full_name} ${team.name} ${team.conference ?? ""} ${team.conferenceShortName ?? ""}`.toLowerCase();
     if (ql && !haystack.includes(ql)) {
       continue;
     }
 
-    const conference = team.conference ?? "N/A";
-    if (!groups.has(conference)) {
-      groups.set(conference, []);
+    const conferenceKey = team.conferenceKey;
+    if (!groups.has(conferenceKey)) {
+      groups.set(conferenceKey, []);
     }
-    groups.get(conference)!.push(team);
+    groups.get(conferenceKey)!.push(team);
   }
 
   if (groups.size === 0) {
@@ -397,16 +459,35 @@ function render(q = "") {
   }
 
   const sections = Array.from(groups.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([conference, teams]) => {
+    .sort(([a], [b]) => {
+      const aIdentity = conferenceIdentities.get(a);
+      const bIdentity = conferenceIdentities.get(b);
+      const aName = aIdentity?.name ?? a;
+      const bName = bIdentity?.name ?? b;
+      return aName.localeCompare(bName);
+    })
+    .map(([conferenceKey, teams]) => {
       teams.sort((a, b) => a.full_name.localeCompare(b.full_name));
-      const isOpen = openSet.has(conference) || ql.length > 0;
-      return `<details class="conference-card card" data-conference="${conference}"${isOpen ? " open" : ""}>
+      const identity = conferenceIdentities.get(conferenceKey);
+      const conferenceName = identity?.name ?? teams[0]?.conference ?? "Conference";
+      const shortName = identity?.shortName && identity.shortName !== conferenceName ? identity.shortName : null;
+      const logoMarkup = identity?.logoUrl
+        ? `<img class="conference-identity__logo-image" src="${identity.logoUrl}" alt="${conferenceName} logo" loading="lazy" decoding="async">`
+        : `<span class="conference-identity__logo-fallback">${identity?.monogram ?? getConferenceMonogram(conferenceName)}</span>`;
+      const teamCountLabel = `${teams.length} team${teams.length === 1 ? "" : "s"}`;
+      const isOpen = openSet.has(conferenceKey) || ql.length > 0;
+      return `<details class="conference-card card" data-conference-key="${conferenceKey}" data-conference="${conferenceName}"${isOpen ? " open" : ""}>
   <summary class="conference-card__summary">
-    <span class="conference-card__label">${conference}</span>
+    <span class="conference-identity">
+      <span class="conference-identity__logo">${logoMarkup}</span>
+      <span class="conference-identity__text">
+        <span class="conference-identity__name">${conferenceName}</span>
+        ${shortName ? `<span class="conference-identity__subtext">${shortName}</span>` : ""}
+      </span>
+    </span>
     <span class="conference-card__meta">
-      <span class="conference-card__count" aria-label="${teams.length} teams">${teams.length}</span>
-      <span class="conference-card__chevron" aria-hidden="true"></span>
+      <span class="conference-card__count" aria-label="${teamCountLabel}">${teamCountLabel}</span>
+      <span class="disclosure-indicator" aria-hidden="true"></span>
     </span>
   </summary>
   <div class="conference-card__body">
@@ -416,7 +497,10 @@ function render(q = "") {
         const logo = team.logoUrl
           ? `<img class="team-card__logo-image" src="${team.logoUrl}" alt="${team.full_name} logo" loading="lazy" decoding="async">`
           : `<span class="team-card__logo-placeholder" aria-hidden="true" style="--team-accent:${team.accentPrimary}; --team-accent-secondary:${team.accentSecondary};">${team.monogram}</span>`;
-        const meta = team.abbreviation ? `${team.conference} · ${team.abbreviation}` : team.conference;
+        const conferenceLabel = team.conferenceShortName && team.conferenceShortName !== team.conference
+          ? `${team.conferenceShortName} · ${team.conference}`
+          : team.conference;
+        const meta = team.abbreviation ? `${conferenceLabel} · ${team.abbreviation}` : conferenceLabel;
         const stats = renderTeamStats(team);
         return `<article class="card team-card" tabindex="-1" data-team-id="${team.id}" id="team-${team.id}">
   <div class="team-card__logo">${logo}</div>

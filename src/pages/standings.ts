@@ -1,6 +1,11 @@
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
-import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
+import {
+  getConferenceLogoUrl,
+  getConferenceMonogram,
+  getTeamLogoUrl,
+  getTeamMonogram,
+} from "../lib/ui/logos.js";
 
 const app = document.getElementById("app")!;
 app.innerHTML = `
@@ -28,7 +33,47 @@ type Group = {
   teams: Team[];
 };
 
+type ConferenceIdentity = {
+  key: string;
+  name: string;
+  shortName: string | null;
+  logoUrl?: string;
+  monogram: string;
+};
+
 const groups = new Map<string, Group>();
+const conferenceIdentities = new Map<string, ConferenceIdentity>();
+
+function ensureConferenceIdentity(group: Group): ConferenceIdentity {
+  const key = group.key;
+  const existing = conferenceIdentities.get(key);
+  if (existing) {
+    return existing;
+  }
+
+  const aliasSet = new Set<string>([group.name, group.shortName ?? ""]);
+  for (const team of group.teams) {
+    if (team.conference && team.conference !== group.name) {
+      aliasSet.add(team.conference);
+    }
+  }
+
+  const logoUrl = getConferenceLogoUrl(group.name, {
+    shortName: group.shortName ?? null,
+    aliases: Array.from(aliasSet).filter(Boolean),
+  });
+
+  const identity: ConferenceIdentity = {
+    key,
+    name: group.name,
+    shortName: group.shortName ?? null,
+    logoUrl,
+    monogram: getConferenceMonogram(group.name),
+  };
+  conferenceIdentities.set(key, identity);
+  return identity;
+}
+
 for (const conference of conferenceMap.values()) {
   const key = `id-${conference.id}`;
   groups.set(key, {
@@ -68,6 +113,7 @@ function findGroupForTeam(team: Team): Group {
       groups.set(key, {
         key,
         name: team.conference,
+        shortName: null,
         teams: [],
       });
     }
@@ -98,7 +144,13 @@ const orderedGroups = Array.from(groups.values()).sort((a, b) => {
 
 wrap.innerHTML = orderedGroups
   .map(group => {
-    const label = group.shortName ? `${group.shortName} · ${group.name}` : group.name;
+    const identity = ensureConferenceIdentity(group);
+    const shortName = identity.shortName && identity.shortName !== identity.name ? identity.shortName : null;
+    const label = shortName ? `${shortName} · ${identity.name}` : identity.name;
+    const logoMarkup = identity.logoUrl
+      ? `<img class="conference-identity__logo-image" src="${identity.logoUrl}" alt="${identity.name} logo" loading="lazy" decoding="async">`
+      : `<span class="conference-identity__logo-fallback">${identity.monogram}</span>`;
+    const teamCountLabel = `${group.teams.length} team${group.teams.length === 1 ? "" : "s"}`;
     const teamRows = group.teams
       .slice()
       .sort((a, b) => a.full_name.localeCompare(b.full_name))
@@ -124,12 +176,18 @@ wrap.innerHTML = orderedGroups
       : `<p class="empty">No teams assigned.</p>`;
 
     return `
-      <details class="conference-card card" data-conference="${group.name}">
+      <details class="conference-card card" data-conference-key="${group.key}" data-conference="${identity.name}">
         <summary class="conference-card__summary">
-          <span class="conference-card__label">${label}</span>
+          <span class="conference-identity">
+            <span class="conference-identity__logo">${logoMarkup}</span>
+            <span class="conference-identity__text">
+              <span class="conference-identity__name">${identity.name}</span>
+              ${shortName ? `<span class="conference-identity__subtext">${shortName}</span>` : ""}
+            </span>
+          </span>
           <span class="conference-card__meta">
-            <span class="conference-card__count" aria-label="${group.teams.length} teams">${group.teams.length}</span>
-            <span class="conference-card__chevron" aria-hidden="true"></span>
+            <span class="conference-card__count" aria-label="${teamCountLabel}">${teamCountLabel}</span>
+            <span class="disclosure-indicator" aria-hidden="true"></span>
           </span>
         </summary>
         <div class="conference-card__body">

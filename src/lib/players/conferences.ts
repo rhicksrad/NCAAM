@@ -1,5 +1,7 @@
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
 import {
+  getConferenceLogoUrl,
+  getConferenceMonogram,
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../ui/logos.js";
@@ -74,26 +76,72 @@ function createConferencePanel(group: ConferenceGroup, season: string): HTMLElem
   const summary = document.createElement("summary");
   summary.className = "conference-panel__summary";
 
-  const summaryContent = document.createElement("div");
-  summaryContent.className = "conference-panel__summary-content";
+  const aliasSet = new Set<string>([group.name]);
+  for (const team of group.teams) {
+    aliasSet.add(team.conferenceName);
+  }
 
-  const title = document.createElement("h3");
-  title.className = "conference-panel__title";
+  const logoUrl = getConferenceLogoUrl(group.name, {
+    aliases: Array.from(aliasSet).filter(Boolean),
+  });
+  const monogram = getConferenceMonogram(group.name);
+
+  const identity = document.createElement("span");
+  identity.className = "conference-identity";
+
+  const logo = document.createElement("span");
+  logo.className = "conference-identity__logo";
+  if (logoUrl) {
+    const img = document.createElement("img");
+    img.className = "conference-identity__logo-image";
+    img.src = logoUrl;
+    img.alt = `${group.name} logo`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    logo.append(img);
+  } else {
+    const fallback = document.createElement("span");
+    fallback.className = "conference-identity__logo-fallback";
+    fallback.textContent = monogram;
+    logo.append(fallback);
+  }
+
+  const textWrap = document.createElement("span");
+  textWrap.className = "conference-identity__text";
+
+  const title = document.createElement("span");
+  title.className = "conference-identity__name";
   title.textContent = group.name;
+  textWrap.append(title);
 
-  const meta = document.createElement("p");
-  meta.className = "conference-panel__meta";
-  meta.textContent = `${group.teams.length} teams${
-    group.totalPlayers != null ? ` · ${group.totalPlayers} players` : ""
-  }`;
+  const subtitleParts: string[] = [];
+  if (group.totalPlayers != null) {
+    subtitleParts.push(`${group.totalPlayers} players`);
+  }
+  subtitleParts.push(`Season ${season}`);
+  const subtitle = document.createElement("span");
+  subtitle.className = "conference-panel__subtitle";
+  subtitle.textContent = subtitleParts.join(" · ");
+  textWrap.append(subtitle);
 
-  summaryContent.append(title, meta);
+  identity.append(logo, textWrap);
 
-  const chevron = document.createElement("span");
-  chevron.className = "conference-panel__chevron";
-  chevron.setAttribute("aria-hidden", "true");
+  const metaWrap = document.createElement("span");
+  metaWrap.className = "conference-card__meta conference-panel__meta";
 
-  summary.append(summaryContent, chevron);
+  const teamCount = document.createElement("span");
+  teamCount.className = "conference-card__count";
+  const countLabel = `${group.teams.length} team${group.teams.length === 1 ? "" : "s"}`;
+  teamCount.textContent = countLabel;
+  teamCount.setAttribute("aria-label", countLabel);
+  metaWrap.append(teamCount);
+
+  const indicator = document.createElement("span");
+  indicator.className = "disclosure-indicator";
+  indicator.setAttribute("aria-hidden", "true");
+  metaWrap.append(indicator);
+
+  summary.append(identity, metaWrap);
 
   const body = document.createElement("div");
   body.className = "conference-panel__body";
