@@ -1,16 +1,13 @@
-import { execFile } from 'node:child_process';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { promisify } from 'node:util';
-import { Agent } from 'undici';
+import { createEspnFetchClient } from './lib/ncaa-logos.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const LOGOS_DIR = path.join(ROOT, 'public/data/logos');
 const METADATA_PATH = path.join(LOGOS_DIR, 'metadata.json');
 const TEAM_BASE_URL = 'https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams';
 const USER_AGENT = 'NCAAM Logo Metadata Generator/1.0 (+https://github.com/hicksrch/NCAAM)';
-const execFileAsync = promisify(execFile);
 
 const MANUAL_LOGO_METADATA = new Map([
   [
@@ -64,38 +61,10 @@ const MANUAL_LOGO_METADATA = new Map([
   ],
 ]);
 
-const ipv4Agent = new Agent({
-  connect: {
-    family: 4,
-  },
-});
-
-let fetchSupported = true;
+const espnClient = createEspnFetchClient({ userAgent: USER_AGENT });
 
 async function fetchJson(url) {
-  if (fetchSupported) {
-    try {
-      const response = await fetch(url, {
-        headers: {
-          'User-Agent': USER_AGENT,
-        },
-        dispatcher: ipv4Agent,
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status} ${response.statusText}`);
-      }
-
-      return await response.json();
-    } catch (error) {
-      fetchSupported = false;
-      const reason = error instanceof Error ? error.message : String(error);
-      console.warn(`Direct fetch for ${url} failed (${reason}). Switching to curl for the remaining requests.`);
-    }
-  }
-
-  const { stdout } = await execFileAsync('curl', ['-sSfL', '-A', USER_AGENT, url]);
-  return JSON.parse(stdout);
+  return espnClient.json(url);
 }
 
 function createAliasList(team) {
@@ -198,5 +167,5 @@ async function main() {
 try {
   await main();
 } finally {
-  ipv4Agent.close();
+  espnClient.close();
 }
