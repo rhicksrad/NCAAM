@@ -6,7 +6,7 @@ body {
     linear-gradient(150deg, color-mix(in srgb, #8a3f1f 16%, transparent), transparent 62%),
     radial-gradient(900px 600px at 20% 10%, color-mix(in srgb, var(--color-arc) 14%, transparent), transparent 70%),
     radial-gradient(720px 520px at 78% 12%, color-mix(in srgb, var(--color-accent-teal) 12%, transparent), transparent 74%),
-    url("../bg-bracket.svg");
+    url("/bg-bracket.svg");
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
   background-size: 1400px 900px, 1100px 760px, 1000px 720px, 1600px 900px;
   background-position: center top, 0 0, 100% 5%, center top;
