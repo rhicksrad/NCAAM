@@ -6,6 +6,7 @@ const LINKS = [
     ["games.html", "Games"],
     ["rankings.html", "Rankings"],
     ["standings.html", "Standings"],
+    ["about.html", "About"],
 ];
 function resolveCurrent() {
     const raw = location.pathname.replace(BASE, "");

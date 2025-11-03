@@ -7,6 +7,7 @@ const LINKS: readonly [string, string][] = [
   ["games.html", "Games"],
   ["rankings.html", "Rankings"],
   ["standings.html", "Standings"],
+  ["about.html", "About"],
 ] as const;
 
 function resolveCurrent(): string {
