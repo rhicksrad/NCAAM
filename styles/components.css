@@ -146,6 +146,49 @@
   border-top: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
+.rankings-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.rankings-team__logo {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 0.6rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rankings-team__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rankings-team__logo--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+}
+
+.rankings-team__name {
+  display: inline-block;
+  min-width: 0;
+}
+
 .table-shell tbody tr:nth-child(even) td {
   background: color-mix(in srgb, var(--color-paper) 85%, transparent);
 }
