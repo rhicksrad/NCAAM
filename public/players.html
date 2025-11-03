@@ -67,18 +67,18 @@
   window.addEventListener('error', (ev) => showErr(ev.error || ev.message));
   window.addEventListener('unhandledrejection', (ev) => showErr(ev.reason || ev));
 </script>
-<script type="module-shim" src="./scripts/nav.js"></script>
-<script type="module-shim" src="./scripts/players.js"></script>
+<script type="module-shim">
+  import "./scripts/nav.js";
+  import "./scripts/players.js";
+</script>
 <script type="module">
-  if (HTMLScriptElement.supports?.("importmap")) {
-    Promise.all([
-      import("./scripts/nav.js"),
-      import("./scripts/players.js"),
-    ]).catch((error) => {
-      window.dispatchEvent(new ErrorEvent("error", { error }));
-      throw error;
-    });
-  }
+  Promise.all([
+    import("./scripts/nav.js"),
+    import("./scripts/players.js"),
+  ]).catch((error) => {
+    window.dispatchEvent(new ErrorEvent("error", { error }));
+    throw error;
+  });
 </script>
 </body>
 </html>
