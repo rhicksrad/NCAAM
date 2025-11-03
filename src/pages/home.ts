@@ -1,4 +1,6 @@
-import type { Team } from "../lib/sdk/ncaam.js";
+import { buildTeamKeys } from "../lib/data/program-keys.js";
+import { getDivisionOneProgramIndex } from "../lib/data/division-one.js";
+import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
 
 const app = document.getElementById("app")!;
@@ -667,7 +669,10 @@ function resolveSourceUrl(raw?: string): string {
 }
 
 function renderHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement, snapshot: HeightSnapshot): void {
-  const measured = snapshot.teams.filter(hasMeasuredAverage);
+  const measured = snapshot.teams
+    .filter(hasMeasuredAverage)
+    .slice()
+    .sort((a, b) => b.average_height_inches - a.average_height_inches);
   if (measured.length === 0) {
     contentEl.innerHTML = '<p class="height-card__empty">No roster height data is available yet. Check back soon.</p>';
     footerEl.textContent = "";
@@ -706,17 +711,41 @@ function renderHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement, sna
 
 async function loadHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement): Promise<void> {
   try {
-    const response = await fetch(HEIGHT_SNAPSHOT_PATH, {
-      headers: { Accept: "application/json" },
-    });
-    if (!response.ok) {
-      throw new Error(`Failed to load roster height snapshot: ${response.status} ${response.statusText}`);
-    }
-    const payload = (await response.json()) as HeightSnapshot;
+    const [divisionOneIndex, teamsResponse, payload] = await Promise.all([
+      getDivisionOneProgramIndex(),
+      NCAAM.teams(1, 600),
+      fetch(HEIGHT_SNAPSHOT_PATH, { headers: { Accept: "application/json" } }).then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load roster height snapshot: ${res.status} ${res.statusText}`);
+        }
+        return res.json() as Promise<HeightSnapshot>;
+      }),
+    ]);
+
     if (!payload || !Array.isArray(payload.teams)) {
       throw new Error("Roster height snapshot is missing team data.");
     }
-    renderHeightSnapshot(contentEl, footerEl, payload);
+
+    const divisionOneTeamIds = new Set<number>();
+    for (const team of teamsResponse.data) {
+      const keys = buildTeamKeys(team);
+      if (keys.some(key => divisionOneIndex.keys.has(key))) {
+        divisionOneTeamIds.add(team.id);
+      }
+    }
+
+    const filteredTeams = payload.teams.filter(team =>
+      typeof team.team_id === "number" && divisionOneTeamIds.has(team.team_id),
+    );
+
+    const filteredSnapshot: HeightSnapshot = {
+      ...payload,
+      team_count: filteredTeams.length,
+      measured_team_count: filteredTeams.filter(hasMeasuredAverage).length,
+      teams: filteredTeams,
+    };
+
+    renderHeightSnapshot(contentEl, footerEl, filteredSnapshot);
   } catch (error) {
     console.error(error);
     contentEl.innerHTML = '<p class="height-card__error">Unable to load roster height leaders right now.</p>';

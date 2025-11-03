@@ -1,3 +1,8 @@
+import { buildProgramLabelKeys, buildTeamKeys } from "../lib/data/program-keys.js";
+import {
+  getDivisionOneProgramIndex,
+  isDivisionOneProgram,
+} from "../lib/data/division-one.js";
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import {
@@ -91,8 +96,8 @@ const mapCount = app.querySelector(".teams-map__count") as HTMLElement | null;
 
 const dataUrl = (path: string) => new URL(path, import.meta.url).toString();
 
-const [teamsResponse, conferenceMap, locationRecords, teamSummaries] = await Promise.all([
-  NCAAM.teams(1, 400),
+const [teamsResponse, conferenceMap, locationRecordsRaw, teamSummariesRaw, divisionOneIndex] = await Promise.all([
+  NCAAM.teams(1, 600),
   getConferenceMap(),
   fetch(dataUrl("../../data/team_home_locations.json"))
     .then(res => {
@@ -106,93 +111,21 @@ const [teamsResponse, conferenceMap, locationRecords, teamSummaries] = await Pro
       return res.json() as Promise<Record<string, TeamSummary>>;
     })
     .catch(() => ({} as Record<string, TeamSummary>)),
+  getDivisionOneProgramIndex(),
 ]);
 
-const locationTransforms = [
-  (value: string) => value.replace(/\u2013/g, "-"),
-  (value: string) => value.replace(/&/g, "and"),
-  (value: string) => value.replace(/A\s*&\s*M/gi, "A and M"),
-  (value: string) => value.replace(/\bUniv\.?\b/gi, "University"),
-  (value: string) => value.replace(/\bU\.?\b/gi, "University"),
-  (value: string) => value.replace(/\bIntl\.?\b/gi, "International"),
-  (value: string) => value.replace(/\bInt\.?\b/gi, "International"),
-  (value: string) => value.replace(/\bMt\.?\b/gi, "Mount"),
-  (value: string) => value.replace(/\bCal St\.?\b/gi, "California State"),
-  (value: string) => value.replace(/\bApp St\b/gi, "Appalachian State"),
-  (value: string) => value.replace(/\bGa\.?\b/gi, "Georgia"),
-  (value: string) => value.replace(/\bN\.?\b/gi, "North"),
-  (value: string) => value.replace(/\bS\.?\b/gi, "South"),
-  (value: string) => value.replace(/\bE\.?\b/gi, "East"),
-  (value: string) => value.replace(/\bW\.?\b/gi, "West"),
-  (value: string) => value.replace(/\bSt\.?\b/gi, "State"),
-  (value: string) => value.replace(/\bSt\.?\b/gi, "Saint"),
-];
-
-function normalizeLabel(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
-    .replace(/[^a-z0-9]+/g, "");
-}
-
-function buildLocationKeys(label: string) {
-  const queue = [label];
-  const seen = new Set<string>();
-  for (let i = 0; i < queue.length; i += 1) {
-    const value = queue[i];
-    if (seen.has(value)) {
-      continue;
-    }
-    seen.add(value);
-    for (const transform of locationTransforms) {
-      const next = transform(value);
-      if (!seen.has(next)) {
-        queue.push(next);
-      }
-    }
-  }
-  const keys = new Set<string>();
-  for (const value of seen) {
-    const normalized = normalizeLabel(value);
-    if (normalized) {
-      keys.add(normalized);
-    }
-  }
-  return Array.from(keys);
-}
-
-function getSchoolName(team: Team) {
-  const { full_name, name } = team;
-  if (full_name?.toLowerCase().endsWith(name.toLowerCase())) {
-    return full_name.slice(0, full_name.length - name.length).trim();
-  }
-  return team.college ?? full_name;
-}
-
-function buildTeamKeys(team: Team) {
-  const base = [
-    team.college,
-    getSchoolName(team),
-    team.full_name,
-    team.full_name.replace(/\bmen's\s+/i, ""),
-  ];
-  const keys = new Set<string>();
-  for (const value of base) {
-    if (!value) {
-      continue;
-    }
-    const prepared = value.replace(/\u2013/g, "-");
-    keys.add(normalizeLabel(prepared));
-    keys.add(normalizeLabel(prepared.replace(/State University/i, "State")));
-    keys.add(normalizeLabel(prepared.replace(/University of /i, "")));
-  }
-  return Array.from(keys).filter(Boolean);
-}
+const locationRecords = locationRecordsRaw.filter(record => isDivisionOneProgram(record.team, divisionOneIndex));
+const teamSummaries = Object.fromEntries(
+  Object.entries(teamSummariesRaw).filter(([label]) => isDivisionOneProgram(label, divisionOneIndex)),
+) as Record<string, TeamSummary>;
+const divisionOneTeams = teamsResponse.data.filter(team => {
+  const keys = buildTeamKeys(team);
+  return keys.some(key => divisionOneIndex.keys.has(key));
+});
 
 const locationIndex = new Map<string, TeamLocation>();
 for (const record of locationRecords) {
-  const keys = buildLocationKeys(record.team);
+  const keys = buildProgramLabelKeys(record.team);
   for (const key of keys) {
     if (!locationIndex.has(key)) {
       locationIndex.set(key, record);
@@ -203,7 +136,7 @@ const locationKeys = Array.from(locationIndex.keys());
 
 const summaryIndex = new Map<string, TeamSummary>();
 for (const [label, summary] of Object.entries(teamSummaries)) {
-  const keys = buildLocationKeys(label);
+  const keys = buildProgramLabelKeys(label);
   for (const key of keys) {
     if (!summaryIndex.has(key)) {
       summaryIndex.set(key, summary);
@@ -212,7 +145,7 @@ for (const [label, summary] of Object.entries(teamSummaries)) {
 }
 const summaryKeys = Array.from(summaryIndex.keys());
 
-const data: TeamCardData[] = teamsResponse.data.map(team => {
+const data: TeamCardData[] = divisionOneTeams.map(team => {
   const conference = team.conference ?? (() => {
     const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
     return lookup?.short_name ?? lookup?.name;
