@@ -73,7 +73,7 @@ type TeamCardData = Team & {
 
 const app = document.getElementById("app")!;
 app.innerHTML = `<div class="stack" data-gap="lg">
-  <section class="teams-map card">
+  <section class="teams-map card stack" data-gap="md">
     <div class="teams-map__header">
       <div class="teams-map__intro">
         <h2 class="teams-map__title">Division I home map</h2>
@@ -83,9 +83,13 @@ app.innerHTML = `<div class="stack" data-gap="lg">
     </div>
     <div id="team-map" class="teams-map__viewport" role="presentation"></div>
   </section>
-  <section class="teams-directory stack" data-gap="sm">
+  <section class="teams-directory card stack" data-gap="md">
+    <header class="stack" data-gap="xs">
+      <h2 class="section-title">Conference &amp; team directory</h2>
+      <p class="section-summary">Filter by name or conference to jump between program cards.</p>
+    </header>
     <input id="team-search" class="search" type="search" placeholder="Filter name or conference" aria-label="Filter teams by name or conference" autocomplete="off">
-    <div id="list" class="conference-groups"></div>
+    <div id="list" class="conference-groups stack" data-gap="sm"></div>
   </section>
 </div>`;
 
@@ -397,9 +401,16 @@ function render(q = "") {
     .map(([conference, teams]) => {
       teams.sort((a, b) => a.full_name.localeCompare(b.full_name));
       const isOpen = openSet.has(conference) || ql.length > 0;
-      return `<details class="conference" data-conference="${conference}"${isOpen ? " open" : ""}>
-  <summary><span>${conference}</span><span class="count">${teams.length}</span></summary>
-  <div class="group grid cols-3">
+      return `<details class="conference-card card" data-conference="${conference}"${isOpen ? " open" : ""}>
+  <summary class="conference-card__summary">
+    <span class="conference-card__label">${conference}</span>
+    <span class="conference-card__meta">
+      <span class="conference-card__count" aria-label="${teams.length} teams">${teams.length}</span>
+      <span class="conference-card__chevron" aria-hidden="true"></span>
+    </span>
+  </summary>
+  <div class="conference-card__body">
+    <div class="conference-card__group grid cols-3">
     ${teams
       .map(team => {
         const logo = team.logoUrl
@@ -417,6 +428,7 @@ function render(q = "") {
 </article>`;
       })
       .join("")}
+    </div>
   </div>
 </details>`;
     });
