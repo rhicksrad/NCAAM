@@ -57,7 +57,7 @@ export type RosterDirectory = {
   };
 };
 
-const ACTIVE_ROSTER_SEASON = "2025-2026";
+const ACTIVE_ROSTER_SEASON = "2024-25";
 
 type MutableConferenceGroup = {
   id: number | null;

@@ -3,9 +3,9 @@ import { computeInnerSize, createSVG } from "../charts/frame.js";
 import { defaultTheme, formatNumber } from "../charts/theme.js";
 import { DEFAULT_METRIC_ORDER, loadLeaderboardDocument, } from "./data.js";
 const CHART_DIMENSIONS = {
-    width: 640,
-    height: 360,
-    margin: { top: 24, right: 32, bottom: 60, left: 180 },
+    width: 720,
+    height: 420,
+    margin: { top: 24, right: 32, bottom: 40, left: 220 },
 };
 const CARD_TONE_CLASSES = [
     "stat-card--tone-1",
@@ -13,7 +13,7 @@ const CARD_TONE_CLASSES = [
     "stat-card--tone-3",
     "stat-card--tone-4",
 ];
-export async function renderLeaderboardFeature(grid, intro) {
+export async function renderLeaderboardFeature(grid, meta, title) {
     const skeleton = createSkeletonCard();
     grid.innerHTML = "";
     grid.appendChild(skeleton);
@@ -21,12 +21,15 @@ export async function renderLeaderboardFeature(grid, intro) {
         const document = await loadLeaderboardDocument();
         const metrics = document.metrics ?? {};
         const orderedIds = buildMetricOrder(metrics);
-        if (intro) {
+        if (title) {
+            title.textContent = `Top 10 stat leaders for ${document.season}`;
+        }
+        if (meta) {
             const updated = new Date(document.generatedAt);
             const updatedText = Number.isNaN(updated.valueOf())
-                ? "recent updates"
-                : updated.toLocaleDateString();
-            intro.textContent = `Top 10 leaders for ${document.season}. Updated ${updatedText}.`;
+                ? "Recently updated"
+                : `Updated ${updated.toLocaleDateString()}`;
+            meta.textContent = updatedText;
         }
         grid.innerHTML = "";
         if (!orderedIds.length) {
@@ -42,6 +45,9 @@ export async function renderLeaderboardFeature(grid, intro) {
     }
     catch (error) {
         console.error(error);
+        if (meta) {
+            meta.textContent = "Unable to load stat leaders right now.";
+        }
         grid.innerHTML = `<p class="stat-card stat-card--error">We couldn't load the leaderboard data. Please try again later.</p>`;
     }
 }
@@ -65,17 +71,9 @@ function createLeaderboardCard(metricId, metric, leaderboardDoc, orderIndex) {
     const chartId = `metric-chart-${metricId}`;
     const description = `${metric.label} leaders for ${leaderboardDoc.season}`;
     const leaders = (metric.leaders ?? []).slice(0, 10);
-    const eyebrow = (metric.shortLabel || metric.label || "Leaders").toUpperCase();
-    const subtitle = leaders.length
-        ? `Top ${leaders.length} players this season`
-        : "Fresh stats coming soon";
     card.innerHTML = `
     <header class="stat-card__head">
-      <div class="stat-card__labels">
-        <p class="stat-card__eyebrow">${eyebrow}</p>
-        <h3 class="stat-card__title">${metric.label}</h3>
-        <p class="stat-card__subtitle">${subtitle}</p>
-      </div>
+      <h3 class="stat-card__title">${metric.label}</h3>
       <span class="stat-card__season">${leaderboardDoc.season}</span>
     </header>
     <div class="stat-card__body">
@@ -116,7 +114,7 @@ function renderMetricChart(container, metric, leaderboardDoc) {
     const { iw, ih } = computeInnerSize(width, height, margin);
     const svg = createSVG(container, width, height, {
         title: `${metric.label} leaders`,
-        description: `Top 10 ${metric.label.toLowerCase()} for ${leaderboardDoc.season}`,
+        description: `${metric.label} leaders for ${leaderboardDoc.season}`,
     });
     const plot = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
     plot.setAttribute("transform", `translate(${margin.left},${margin.top})`);
@@ -195,7 +193,6 @@ function renderMetricChart(container, metric, leaderboardDoc) {
         innerWidth: iw,
         innerHeight: ih,
         theme: defaultTheme,
-        xLabel: metric.label,
         tickCount: { x: 4, y: leaders.length },
         format: {
             x: (value) => formatNumber(Number(value)),

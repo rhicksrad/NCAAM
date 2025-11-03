@@ -8,38 +8,32 @@
   position: relative;
 }
 
-.feature-card__eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-muted) 75%, white 25%);
-}
-
 .feature-card__title {
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
   font-weight: 700;
   color: var(--color-ink);
 }
 
 .feature-card__meta {
-  color: color-mix(in srgb, var(--color-muted) 90%, white 10%);
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+  font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 62ch;
 }
 
 .players-leaderboard-grid {
   display: grid;
-  gap: clamp(1.1rem, 2vw, 1.75rem);
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.25rem, 2.4vw, 2.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  align-items: stretch;
 }
 
 .stat-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.85rem, 1.6vw, 1.25rem);
+  gap: clamp(1rem, 1.8vw, 1.5rem);
   min-height: 100%;
-  padding: clamp(1.2rem, 2.5vw, 1.75rem);
+  padding: clamp(1.5rem, 2.8vw, 2.25rem);
   border-radius: 1.25rem;
   background: color-mix(in srgb, var(--color-paper) 92%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
@@ -77,33 +71,11 @@
   z-index: 1;
 }
 
-.stat-card__labels {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  max-width: min(28ch, 100%);
-}
-
-.stat-card__eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--stat-card-ink);
-  font-weight: 700;
-}
-
 .stat-card__title {
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 800;
   line-height: 1.15;
   color: var(--stat-card-ink);
-}
-
-.stat-card__subtitle {
-  margin: 0;
-  font-size: clamp(0.85rem, 1.35vw, 0.95rem);
-  color: var(--stat-card-muted);
-  font-weight: 500;
 }
 
 .stat-card__season {
@@ -111,7 +83,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.72rem;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -124,7 +96,7 @@
 
 .stat-card__body {
   position: relative;
-  min-height: clamp(220px, 40vw, 300px);
+  min-height: clamp(320px, 45vw, 420px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,7 +124,8 @@
 
 .stat-card__chart .axis text {
   fill: var(--stat-card-ink);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.1vw, 1.55rem);
 }
 
 .stat-card__chart .axis-label {
@@ -163,7 +136,7 @@
 }
 
 .stat-card__chart .bar-value {
-  font-size: clamp(0.85rem, 1.25vw, 0.95rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
   font-weight: 700;
   fill: var(--stat-card-ink);
 }
