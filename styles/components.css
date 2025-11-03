@@ -164,3 +164,111 @@
 .hero {
   display: none;
 }
+
+.poll-card {
+  display: grid;
+  gap: var(--space-sm);
+  padding: calc(var(--space-sm) * 0.9) var(--space-md);
+}
+
+.poll-card__header {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.poll-card__header .badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  letter-spacing: 0.16em;
+}
+
+.poll-card__logo {
+  width: clamp(2.1rem, 1.7rem + 1vw, 2.75rem);
+  height: clamp(2.1rem, 1.7rem + 1vw, 2.75rem);
+  border-radius: 0.65rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.poll-card__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.poll-card__logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+}
+
+.poll-card__title h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.poll-card__notes {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(0.45rem, 0.4rem + 0.25vw, 0.65rem);
+}
+
+.poll-card__note {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 0.35rem 0.6rem;
+  align-items: start;
+}
+
+.poll-card__note dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+}
+
+.poll-card__note dd {
+  margin: 0;
+  margin-inline-start: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+}
+
+@media (max-width: 600px) {
+  .poll-card {
+    padding: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .poll-card__header {
+    gap: var(--space-xs);
+  }
+
+  .poll-card__logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .poll-card__title h3 {
+    font-size: 0.95rem;
+  }
+
+  .poll-card__note {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
