@@ -4,24 +4,30 @@ const app = document.getElementById("app")!;
 app.innerHTML = `
   <h1 id="ranking-title">Final 2024 Rankings</h1>
   <p id="ranking-note" class="card">The final AP Top 25 and Coaches Poll for the 2024 season will appear here once the ballots are released.</p>
-  <section>
-    <h2 id="ap-heading">AP Top 25</h2>
-    <table aria-describedby="ap-heading">
-      <thead>
-        <tr><th>#</th><th>Team</th><th>Record</th><th>Points</th><th>1st</th></tr>
-      </thead>
-      <tbody id="ap-rows"><tr><td colspan="5">Loading final AP Top 25…</td></tr></tbody>
-    </table>
-  </section>
-  <section>
-    <h2 id="coaches-heading">Coaches Poll</h2>
-    <table aria-describedby="coaches-heading">
-      <thead>
-        <tr><th>#</th><th>Team</th><th>Record</th><th>Points</th><th>1st</th></tr>
-      </thead>
-      <tbody id="coaches-rows"><tr><td colspan="5">Loading final Coaches Poll…</td></tr></tbody>
-    </table>
-  </section>
+  <div class="rankings-polls">
+    <section class="rankings-poll">
+      <h2 id="ap-heading">AP Top 25</h2>
+      <div class="table-shell">
+        <table aria-describedby="ap-heading">
+          <thead>
+            <tr><th>#</th><th>Team</th><th>Record</th><th>Points</th><th>1st</th></tr>
+          </thead>
+          <tbody id="ap-rows"><tr><td colspan="5">Loading final AP Top 25…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="rankings-poll">
+      <h2 id="coaches-heading">Coaches Poll</h2>
+      <div class="table-shell">
+        <table aria-describedby="coaches-heading">
+          <thead>
+            <tr><th>#</th><th>Team</th><th>Record</th><th>Points</th><th>1st</th></tr>
+          </thead>
+          <tbody id="coaches-rows"><tr><td colspan="5">Loading final Coaches Poll…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
 `;
 
 const apRows = document.getElementById("ap-rows")!;
@@ -58,7 +64,7 @@ try {
   const entries = Array.isArray(response?.data) ? response.data : [];
 
   const apResults = extractLatestPoll(entries, "ap");
-  const coachesResults = extractLatestPoll(entries, "coaches");
+  const coachesResults = extractLatestPoll(entries, ["coaches", "coach"]);
 
   renderPoll(apRows, apHeading, apResults, "AP Top 25");
   renderPoll(coachesRows, coachesHeading, coachesResults, "Coaches Poll");
@@ -97,13 +103,33 @@ type RankingEntry = {
   team?: { full_name?: string; name?: string } | null;
 };
 
-function extractLatestPoll(entries: unknown[], pollKey: string): { week: number; entries: RankingEntry[] } {
+function extractLatestPoll(entries: unknown[], pollKey: string | string[]): { week: number; entries: RankingEntry[] } {
+  const candidateKeys = Array.isArray(pollKey) ? pollKey : [pollKey];
+  const normalizedKeys = new Set(
+    candidateKeys
+      .map((key) => (typeof key === "string" ? key.trim().toLowerCase() : ""))
+      .filter((key) => key.length > 0)
+  );
+
+  for (const key of Array.from(normalizedKeys)) {
+    if (key === "coaches" || key === "coach") {
+      normalizedKeys.add("coach");
+      normalizedKeys.add("coaches");
+      normalizedKeys.add("coaches poll");
+      normalizedKeys.add("usa today coaches");
+    }
+  }
+
+  if (normalizedKeys.size === 0) {
+    return { week: Number.NEGATIVE_INFINITY, entries: [] };
+  }
+
   const pollEntries = entries.filter(
     (entry): entry is RankingEntry =>
       !!entry &&
       typeof entry === "object" &&
       typeof (entry as RankingEntry).poll === "string" &&
-      (entry as RankingEntry).poll!.toLowerCase() === pollKey.toLowerCase()
+      normalizedKeys.has((entry as RankingEntry).poll!.trim().toLowerCase())
   );
 
   const latestWeek = pollEntries.reduce((max, entry) => {
