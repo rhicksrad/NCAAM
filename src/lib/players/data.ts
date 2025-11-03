@@ -1,16 +1,33 @@
-const DATA_ROOT = "/data/";
+const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 
-const resolveDataUrl = (path: string): string => {
-  if (/^(?:https?:)?\/\//i.test(path)) {
-    return path;
+const DATA_BASE_URL = (() => {
+  if (typeof window !== "undefined" && typeof window.location !== "undefined") {
+    return new URL(".", window.location.href).href;
   }
 
-  if (path.startsWith("/")) {
+  if (typeof document !== "undefined" && typeof document.baseURI === "string") {
+    return new URL(".", document.baseURI).href;
+  }
+
+  if (typeof import.meta !== "undefined" && import.meta.url) {
+    return new URL(".", import.meta.url).href;
+  }
+
+  return null;
+})();
+
+const resolveDataUrl = (path: string): string => {
+  if (ABSOLUTE_URL_PATTERN.test(path)) {
     return path;
   }
 
   const normalized = path.replace(/^\/+/, "");
-  return `${DATA_ROOT}${normalized}`;
+
+  if (DATA_BASE_URL) {
+    return new URL(normalized, DATA_BASE_URL).href;
+  }
+
+  return `/${normalized}`;
 };
 
 export async function loadJson<T>(path: string): Promise<T> {

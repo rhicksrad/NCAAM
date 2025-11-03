@@ -10,8 +10,8 @@ app.innerHTML = `
   <div class="players-page stack" data-gap="xl">
     <section class="players-feature stack" data-gap="md">
       <header class="feature-card card stack" data-gap="xs">
-        <h2 id="players-leaderboard-title" class="feature-card__title">Top 10 stat leaders (2022-2025)</h2>
-        <p id="players-leaderboard-meta" class="feature-card__meta">Loading multi-season stat leaders from 2022 through 2025…</p>
+        <h2 id="players-leaderboard-title" class="feature-card__title">Top 10 stat leaders</h2>
+        <p id="players-leaderboard-meta" class="feature-card__meta">Loading the latest player stat leaders…</p>
       </header>
       <div id="players-leaderboard-grid" class="players-leaderboard-grid" aria-live="polite"></div>
     </section>

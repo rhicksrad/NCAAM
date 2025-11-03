@@ -22,15 +22,46 @@ const CARD_TONE_CLASSES = [
   "stat-card--tone-4",
 ] as const;
 
-const LEADERBOARD_SEASON_SPAN_LABEL = "2022-2025 seasons" as const;
+const DEFAULT_SEASON_LABEL = "recent seasons" as const;
 
-function resolveLeaderboardSeasonLabel(document: PlayerLeaderboardDocument): string {
-  const season = document.season?.trim();
-  if (!season) {
-    return LEADERBOARD_SEASON_SPAN_LABEL;
+function buildSeasonLabel(season: string): string {
+  const trimmed = season.trim();
+  if (!trimmed) return DEFAULT_SEASON_LABEL;
+
+  if (/^\d{4}$/.test(trimmed)) {
+    return `${trimmed} season`;
   }
 
-  return season === "2024-25" ? LEADERBOARD_SEASON_SPAN_LABEL : season;
+  const shortRangeMatch = trimmed.match(/^(\d{4})-(\d{2})$/);
+  if (shortRangeMatch) {
+    const startYear = Number.parseInt(shortRangeMatch[1] ?? "", 10);
+    const endSuffix = Number.parseInt(shortRangeMatch[2] ?? "", 10);
+    if (!Number.isNaN(startYear) && !Number.isNaN(endSuffix)) {
+      const startCentury = Math.floor(startYear / 100) * 100;
+      const startYearSuffix = startYear % 100;
+      let endYear = startCentury + endSuffix;
+      if (endYear < startYear || endSuffix < startYearSuffix) {
+        endYear += 100;
+      }
+      return `${startYear}-${endYear} season`;
+    }
+    return `${trimmed} season`;
+  }
+
+  if (/^\d{4}-\d{4}$/.test(trimmed)) {
+    return `${trimmed} seasons`;
+  }
+
+  return trimmed;
+}
+
+function resolveLeaderboardSeasonLabel(document: PlayerLeaderboardDocument): string {
+  const season = document.season;
+  if (!season) {
+    return DEFAULT_SEASON_LABEL;
+  }
+
+  return buildSeasonLabel(season);
 }
 
 export async function renderLeaderboardFeature(
