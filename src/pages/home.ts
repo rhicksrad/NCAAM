@@ -10,10 +10,19 @@ type PollNote = {
   value: string;
 };
 
+type PollProgram = {
+  id: number;
+  full_name: string;
+  name?: string;
+  abbreviation?: string;
+  college?: string;
+  conference?: string;
+};
+
 type PollEntry = {
   rank: number;
   team: string;
-  logo?: string;
+  program: PollProgram;
   notes: PollNote[];
 };
 
@@ -36,6 +45,42 @@ type HeightSnapshot = {
 };
 
 const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function createPollTeam(entry: PollEntry): Team {
+  const program = entry.program;
+  const fullName = program.full_name.trim();
+  const fallbackName = program.name ?? entry.team;
+  const college = program.college ?? entry.team;
+  return {
+    id: program.id,
+    full_name: fullName,
+    name: fallbackName,
+    abbreviation: program.abbreviation ?? undefined,
+    college,
+    conference: program.conference ?? undefined,
+  };
+}
+
+function renderPollLogo(entry: PollEntry): string {
+  const team = createPollTeam(entry);
+  const alt = escapeHtml(`${team.full_name} logo`);
+  const logoUrl = getTeamLogoUrl(team);
+  if (logoUrl) {
+    return `<img class="poll-card__logo-image" src="${logoUrl}" alt="${alt}" loading="lazy" decoding="async">`;
+  }
+
+  const monogram = escapeHtml(getTeamMonogram(team));
+  return `<span class="poll-card__logo-fallback" role="img" aria-label="${alt}">${monogram}</span>`;
+}
 
 function createSnapshotTeam(entry: HeightSnapshotTeam): Team {
   const label = entry.team?.trim() ?? "";
@@ -66,7 +111,13 @@ const poll: PollEntry[] = [
   {
     rank: 1,
     team: "Purdue",
-    logo: "assets/logos/ncaa/Purdue_Boilermakers_logo-300x300.png",
+    program: {
+      id: 125,
+      full_name: "Purdue Boilermakers",
+      name: "Boilermakers",
+      abbreviation: "PUR",
+      college: "Purdue",
+    },
     notes: [
       {
         label: "Identity",
@@ -85,7 +136,13 @@ const poll: PollEntry[] = [
   {
     rank: 2,
     team: "Houston",
-    logo: "assets/logos/ncaa/Houston_Cougars_logo-300x300.png",
+    program: {
+      id: 73,
+      full_name: "Houston Cougars",
+      name: "Cougars",
+      abbreviation: "HOU",
+      college: "Houston",
+    },
     notes: [
       {
         label: "Identity",
@@ -104,7 +161,13 @@ const poll: PollEntry[] = [
   {
     rank: 3,
     team: "Florida",
-    logo: "assets/logos/ncaa/Florida_Gators_logo-300x300.png",
+    program: {
+      id: 277,
+      full_name: "Florida Gators",
+      name: "Gators",
+      abbreviation: "FLA",
+      college: "Florida",
+    },
     notes: [
       {
         label: "Identity",
@@ -123,7 +186,13 @@ const poll: PollEntry[] = [
   {
     rank: 4,
     team: "UConn",
-    logo: "assets/logos/ncaa/Connecticut_Huskies_logo-300x300.png",
+    program: {
+      id: 91,
+      full_name: "UConn Huskies",
+      name: "Huskies",
+      abbreviation: "CONN",
+      college: "UConn",
+    },
     notes: [
       {
         label: "Identity",
@@ -141,7 +210,14 @@ const poll: PollEntry[] = [
   },
   {
     rank: 5,
-    team: "St. John’s",
+    team: "St. John's",
+    program: {
+      id: 90,
+      full_name: "St. John's Red Storm",
+      name: "Red Storm",
+      abbreviation: "SJU",
+      college: "St. John's",
+    },
     notes: [
       {
         label: "Identity",
@@ -160,7 +236,13 @@ const poll: PollEntry[] = [
   {
     rank: 6,
     team: "Duke",
-    logo: "assets/logos/ncaa/Duke_Blue_Devils_logo-300x300.png",
+    program: {
+      id: 4,
+      full_name: "Duke Blue Devils",
+      name: "Blue Devils",
+      abbreviation: "DUKE",
+      college: "Duke",
+    },
     notes: [
       {
         label: "Identity",
@@ -179,7 +261,13 @@ const poll: PollEntry[] = [
   {
     rank: 7,
     team: "Michigan",
-    logo: "assets/logos/ncaa/Michigan_Wolverines_logo-300x300.png",
+    program: {
+      id: 118,
+      full_name: "Michigan Wolverines",
+      name: "Wolverines",
+      abbreviation: "MICH",
+      college: "Michigan",
+    },
     notes: [
       {
         label: "Identity",
@@ -198,7 +286,13 @@ const poll: PollEntry[] = [
   {
     rank: 8,
     team: "BYU",
-    logo: "assets/logos/ncaa/BYU_Cougars_logo-300x300.png",
+    program: {
+      id: 69,
+      full_name: "BYU Cougars",
+      name: "Cougars",
+      abbreviation: "BYU",
+      college: "BYU",
+    },
     notes: [
       {
         label: "Identity",
@@ -217,7 +311,13 @@ const poll: PollEntry[] = [
   {
     rank: 9,
     team: "Kentucky",
-    logo: "assets/logos/ncaa/Kentucky_Wildcats_logo-300x300.png",
+    program: {
+      id: 279,
+      full_name: "Kentucky Wildcats",
+      name: "Wildcats",
+      abbreviation: "UK",
+      college: "Kentucky",
+    },
     notes: [
       {
         label: "Identity",
@@ -236,7 +336,13 @@ const poll: PollEntry[] = [
   {
     rank: 10,
     team: "Texas Tech",
-    logo: "assets/logos/ncaa/Texas_Tech_Red_Raiders_logo-300x300.png",
+    program: {
+      id: 79,
+      full_name: "Texas Tech Red Raiders",
+      name: "Red Raiders",
+      abbreviation: "TTU",
+      college: "Texas Tech",
+    },
     notes: [
       {
         label: "Identity",
@@ -255,7 +361,13 @@ const poll: PollEntry[] = [
   {
     rank: 11,
     team: "Louisville",
-    logo: "assets/logos/ncaa/Louisville_Cardinals_logo-300x300.png",
+    program: {
+      id: 7,
+      full_name: "Louisville Cardinals",
+      name: "Cardinals",
+      abbreviation: "LOU",
+      college: "Louisville",
+    },
     notes: [
       {
         label: "Identity",
@@ -274,7 +386,13 @@ const poll: PollEntry[] = [
   {
     rank: 12,
     team: "UCLA",
-    logo: "assets/logos/ncaa/UCLA_Bruins_logo-300x300.png",
+    program: {
+      id: 127,
+      full_name: "UCLA Bruins",
+      name: "Bruins",
+      abbreviation: "UCLA",
+      college: "UCLA",
+    },
     notes: [
       {
         label: "Identity",
@@ -293,7 +411,13 @@ const poll: PollEntry[] = [
   {
     rank: 13,
     team: "Arizona",
-    logo: "assets/logos/ncaa/Arizona_Wildcats_logo-300x300.png",
+    program: {
+      id: 68,
+      full_name: "Arizona Wildcats",
+      name: "Wildcats",
+      abbreviation: "ARIZ",
+      college: "Arizona",
+    },
     notes: [
       {
         label: "Identity",
@@ -312,7 +436,13 @@ const poll: PollEntry[] = [
   {
     rank: 14,
     team: "Arkansas",
-    logo: "assets/logos/ncaa/Arkansas_Razorbacks_logo-300x300.png",
+    program: {
+      id: 275,
+      full_name: "Arkansas Razorbacks",
+      name: "Razorbacks",
+      abbreviation: "ARK",
+      college: "Arkansas",
+    },
     notes: [
       {
         label: "Identity",
@@ -331,7 +461,13 @@ const poll: PollEntry[] = [
   {
     rank: 15,
     team: "Alabama",
-    logo: "assets/logos/ncaa/Alabama_Crimson_Tide_logo-300x300.png",
+    program: {
+      id: 274,
+      full_name: "Alabama Crimson Tide",
+      name: "Crimson Tide",
+      abbreviation: "ALA",
+      college: "Alabama",
+    },
     notes: [
       {
         label: "Identity",
@@ -350,7 +486,13 @@ const poll: PollEntry[] = [
   {
     rank: 16,
     team: "Iowa State",
-    logo: "assets/logos/ncaa/Iowa_State_Cyclones_logo-300x300.png",
+    program: {
+      id: 74,
+      full_name: "Iowa State Cyclones",
+      name: "Cyclones",
+      abbreviation: "ISU",
+      college: "Iowa State",
+    },
     notes: [
       {
         label: "Identity",
@@ -369,7 +511,13 @@ const poll: PollEntry[] = [
   {
     rank: 17,
     team: "Illinois",
-    logo: "assets/logos/ncaa/Illinois_Fighting_Illini_logo-300x300.png",
+    program: {
+      id: 113,
+      full_name: "Illinois Fighting Illini",
+      name: "Fighting Illini",
+      abbreviation: "ILL",
+      college: "Illinois",
+    },
     notes: [
       {
         label: "Identity",
@@ -388,7 +536,13 @@ const poll: PollEntry[] = [
   {
     rank: 18,
     team: "Tennessee",
-    logo: "assets/logos/ncaa/Tennessee_Volunteers_logo-300x300.png",
+    program: {
+      id: 286,
+      full_name: "Tennessee Volunteers",
+      name: "Volunteers",
+      abbreviation: "TENN",
+      college: "Tennessee",
+    },
     notes: [
       {
         label: "Identity",
@@ -407,7 +561,13 @@ const poll: PollEntry[] = [
   {
     rank: 19,
     team: "Kansas",
-    logo: "assets/logos/ncaa/Kansas_Jayhawks_logo-300x300.png",
+    program: {
+      id: 75,
+      full_name: "Kansas Jayhawks",
+      name: "Jayhawks",
+      abbreviation: "KU",
+      college: "Kansas",
+    },
     notes: [
       {
         label: "Identity",
@@ -426,7 +586,13 @@ const poll: PollEntry[] = [
   {
     rank: 20,
     team: "Auburn",
-    logo: "assets/logos/ncaa/Auburn_Tigers_logo-300x300.png",
+    program: {
+      id: 276,
+      full_name: "Auburn Tigers",
+      name: "Tigers",
+      abbreviation: "AUB",
+      college: "Auburn",
+    },
     notes: [
       {
         label: "Identity",
@@ -445,6 +611,13 @@ const poll: PollEntry[] = [
   {
     rank: 21,
     team: "Gonzaga",
+    program: {
+      id: 354,
+      full_name: "Gonzaga Bulldogs",
+      name: "Bulldogs",
+      abbreviation: "GONZ",
+      college: "Gonzaga",
+    },
     notes: [
       {
         label: "Identity",
@@ -463,7 +636,13 @@ const poll: PollEntry[] = [
   {
     rank: 22,
     team: "Michigan State",
-    logo: "assets/logos/ncaa/Michigan_State_Spartans_logo-300x300.png",
+    program: {
+      id: 117,
+      full_name: "Michigan State Spartans",
+      name: "Spartans",
+      abbreviation: "MSU",
+      college: "Michigan State",
+    },
     notes: [
       {
         label: "Identity",
@@ -482,6 +661,13 @@ const poll: PollEntry[] = [
   {
     rank: 23,
     team: "Creighton",
+    program: {
+      id: 84,
+      full_name: "Creighton Bluejays",
+      name: "Bluejays",
+      abbreviation: "CREI",
+      college: "Creighton",
+    },
     notes: [
       {
         label: "Identity",
@@ -500,7 +686,13 @@ const poll: PollEntry[] = [
   {
     rank: 24,
     team: "Wisconsin",
-    logo: "assets/logos/ncaa/Wisconsin_Badgers_logo-300x300.png",
+    program: {
+      id: 130,
+      full_name: "Wisconsin Badgers",
+      name: "Badgers",
+      abbreviation: "WIS",
+      college: "Wisconsin",
+    },
     notes: [
       {
         label: "Identity",
@@ -519,7 +711,13 @@ const poll: PollEntry[] = [
   {
     rank: 25,
     team: "North Carolina",
-    logo: "assets/logos/ncaa/North_Carolina_Tar_Heels_logo-300x300.png",
+    program: {
+      id: 10,
+      full_name: "North Carolina Tar Heels",
+      name: "Tar Heels",
+      abbreviation: "UNC",
+      college: "North Carolina",
+    },
     notes: [
       {
         label: "Identity",
@@ -537,37 +735,24 @@ const poll: PollEntry[] = [
   },
 ];
 
-function getInitials(team: string) {
-  const matches = team.match(/[A-Za-z]+/g) ?? [];
-  const filtered = matches.filter(part => part.length > 1);
-  const source = filtered.length > 0 ? filtered : matches;
-  if (source.length === 0) {
-    return team.slice(0, 3).toUpperCase();
-  }
-  if (source.length === 1) {
-    return source[0]!.slice(0, 3).toUpperCase();
-  }
-  return source.map(part => part[0]!).join("").slice(0, 3).toUpperCase();
-}
-
 const pollItems = poll
   .map(entry => {
-    const logo = entry.logo
-      ? `<img class="poll-card__logo-image" src="${entry.logo}" alt="${entry.team} logo" loading="lazy" decoding="async">`
-      : `<span class="poll-card__logo-fallback" role="img" aria-label="${entry.team} logo">${getInitials(entry.team)}</span>`;
-
+    const logo = renderPollLogo(entry);
     const notes = entry.notes
-      .map(
-        note => `<div class="poll-card__note"><dt>${note.label}</dt><dd>${note.value}</dd></div>`
-      )
+      .map(note => {
+        const label = escapeHtml(note.label);
+        const value = escapeHtml(note.value);
+        return `<div class="poll-card__note"><dt>${label}</dt><dd>${value}</dd></div>`;
+      })
       .join("");
+    const teamName = escapeHtml(entry.team);
 
     return `<li>
   <article class="card poll-card" data-card>
     <header class="poll-card__header">
       <span class="badge" data-variant="arc" aria-label="Rank ${entry.rank}">#${entry.rank}</span>
       <div class="poll-card__logo">${logo}</div>
-      <div class="poll-card__title"><h3>${entry.team}</h3></div>
+      <div class="poll-card__title"><h3>${teamName}</h3></div>
     </header>
     <dl class="poll-card__notes">
       ${notes}
@@ -576,15 +761,6 @@ const pollItems = poll
 </li>`;
   })
   .join("");
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
 
 function hasMeasuredAverage(entry: HeightSnapshotTeam): entry is HeightSnapshotTeam & {
   average_height_inches: number;

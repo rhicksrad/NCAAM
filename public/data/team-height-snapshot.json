@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-03T04:39:34.015Z",
+  "generated_at": "2025-11-03T17:26:44.040Z",
   "source": "https://ncaam.hicksrch.workers.dev/v1/players/active",
   "team_count": 372,
   "measured_team_count": 371,
@@ -158,15 +158,6 @@
       "average_height_inches": 78.8
     },
     {
-      "team_id": 12,
-      "team": "Pittsburgh Panthers",
-      "abbreviation": "PITT",
-      "conference": null,
-      "roster_count": 14,
-      "measured_count": 14,
-      "average_height_inches": 78.79
-    },
-    {
       "team_id": 128,
       "team": "USC Trojans",
       "abbreviation": "USC",
@@ -255,6 +246,15 @@
       "roster_count": 16,
       "measured_count": 16,
       "average_height_inches": 78.56
+    },
+    {
+      "team_id": 12,
+      "team": "Pittsburgh Panthers",
+      "abbreviation": "PITT",
+      "conference": null,
+      "roster_count": 15,
+      "measured_count": 15,
+      "average_height_inches": 78.53
     },
     {
       "team_id": 17,
@@ -347,6 +347,15 @@
       "average_height_inches": 78.4
     },
     {
+      "team_id": 206,
+      "team": "South Carolina State Bulldogs",
+      "abbreviation": "SCST",
+      "conference": null,
+      "roster_count": 20,
+      "measured_count": 20,
+      "average_height_inches": 78.4
+    },
+    {
       "team_id": 241,
       "team": "Utah State Aggies",
       "abbreviation": "USU",
@@ -354,15 +363,6 @@
       "roster_count": 15,
       "measured_count": 15,
       "average_height_inches": 78.4
-    },
-    {
-      "team_id": 141,
-      "team": "UC Santa Barbara Gauchos",
-      "abbreviation": "UCSB",
-      "conference": null,
-      "roster_count": 16,
-      "measured_count": 16,
-      "average_height_inches": 78.38
     },
     {
       "team_id": 183,
@@ -408,6 +408,15 @@
       "roster_count": 14,
       "measured_count": 14,
       "average_height_inches": 78.36
+    },
+    {
+      "team_id": 141,
+      "team": "UC Santa Barbara Gauchos",
+      "abbreviation": "UCSB",
+      "conference": null,
+      "roster_count": 17,
+      "measured_count": 17,
+      "average_height_inches": 78.35
     },
     {
       "team_id": 9,
@@ -770,15 +779,6 @@
       "average_height_inches": 78
     },
     {
-      "team_id": 266,
-      "team": "Boston University Terriers",
-      "abbreviation": "BU",
-      "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
-      "average_height_inches": 78
-    },
-    {
       "team_id": 278,
       "team": "Georgia Bulldogs",
       "abbreviation": "UGA",
@@ -860,15 +860,6 @@
       "average_height_inches": 77.93
     },
     {
-      "team_id": 139,
-      "team": "UC Riverside Highlanders",
-      "abbreviation": "UCR",
-      "conference": null,
-      "roster_count": 14,
-      "measured_count": 14,
-      "average_height_inches": 77.93
-    },
-    {
       "team_id": 161,
       "team": "Middle Tennessee Blue Raiders",
       "abbreviation": "MTSU",
@@ -896,12 +887,12 @@
       "average_height_inches": 77.93
     },
     {
-      "team_id": 181,
-      "team": "Dartmouth Big Green",
-      "abbreviation": "DART",
+      "team_id": 142,
+      "team": "Campbell Fighting Camels",
+      "abbreviation": "CAM",
       "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
+      "roster_count": 12,
+      "measured_count": 12,
       "average_height_inches": 77.92
     },
     {
@@ -926,6 +917,15 @@
       "team_id": 131,
       "team": "Cal Poly Mustangs",
       "abbreviation": "CP",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 77.88
+    },
+    {
+      "team_id": 266,
+      "team": "Boston University Terriers",
+      "abbreviation": "BU",
       "conference": null,
       "roster_count": 16,
       "measured_count": 16,
@@ -995,15 +995,6 @@
       "average_height_inches": 77.86
     },
     {
-      "team_id": 228,
-      "team": "Southern Illinois Salukis",
-      "abbreviation": "SIU",
-      "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
-      "average_height_inches": 77.85
-    },
-    {
       "team_id": 48,
       "team": "Tulane Green Wave",
       "abbreviation": "TULN",
@@ -1061,6 +1052,15 @@
       "team_id": 127,
       "team": "UCLA Bruins",
       "abbreviation": "UCLA",
+      "conference": null,
+      "roster_count": 15,
+      "measured_count": 15,
+      "average_height_inches": 77.8
+    },
+    {
+      "team_id": 139,
+      "team": "UC Riverside Highlanders",
+      "abbreviation": "UCR",
       "conference": null,
       "roster_count": 15,
       "measured_count": 15,
@@ -1148,6 +1148,15 @@
       "average_height_inches": 77.75
     },
     {
+      "team_id": 301,
+      "team": "Texas Southern Tigers",
+      "abbreviation": "TXSO",
+      "conference": null,
+      "roster_count": 12,
+      "measured_count": 12,
+      "average_height_inches": 77.75
+    },
+    {
       "team_id": 328,
       "team": "Omaha Mavericks",
       "abbreviation": "OMA",
@@ -1190,15 +1199,6 @@
       "conference": null,
       "roster_count": 15,
       "measured_count": 15,
-      "average_height_inches": 77.73
-    },
-    {
-      "team_id": 206,
-      "team": "South Carolina State Bulldogs",
-      "abbreviation": "SCST",
-      "conference": null,
-      "roster_count": 11,
-      "measured_count": 11,
       "average_height_inches": 77.73
     },
     {
@@ -1274,9 +1274,36 @@
       "average_height_inches": 77.71
     },
     {
+      "team_id": 228,
+      "team": "Southern Illinois Salukis",
+      "abbreviation": "SIU",
+      "conference": null,
+      "roster_count": 14,
+      "measured_count": 14,
+      "average_height_inches": 77.71
+    },
+    {
       "team_id": 236,
       "team": "Nevada Wolf Pack",
       "abbreviation": "NEV",
+      "conference": null,
+      "roster_count": 14,
+      "measured_count": 14,
+      "average_height_inches": 77.71
+    },
+    {
+      "team_id": 258,
+      "team": "Southeast Missouri State Redhawks",
+      "abbreviation": "SEMO",
+      "conference": null,
+      "roster_count": 14,
+      "measured_count": 14,
+      "average_height_inches": 77.71
+    },
+    {
+      "team_id": 346,
+      "team": "UL Monroe Warhawks",
+      "abbreviation": "ULM",
       "conference": null,
       "roster_count": 14,
       "measured_count": 14,
@@ -1427,6 +1454,15 @@
       "average_height_inches": 77.6
     },
     {
+      "team_id": 181,
+      "team": "Dartmouth Big Green",
+      "abbreviation": "DART",
+      "conference": null,
+      "roster_count": 14,
+      "measured_count": 14,
+      "average_height_inches": 77.57
+    },
+    {
       "team_id": 318,
       "team": "Nicholls Colonels",
       "abbreviation": "NICH",
@@ -1472,15 +1508,6 @@
       "average_height_inches": 77.54
     },
     {
-      "team_id": 346,
-      "team": "UL Monroe Warhawks",
-      "abbreviation": "ULM",
-      "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
-      "average_height_inches": 77.54
-    },
-    {
       "team_id": 47,
       "team": "Temple Owls",
       "abbreviation": "TEM",
@@ -1514,6 +1541,15 @@
       "conference": null,
       "roster_count": 15,
       "measured_count": 15,
+      "average_height_inches": 77.53
+    },
+    {
+      "team_id": 262,
+      "team": "UT Martin Skyhawks",
+      "abbreviation": "UTM",
+      "conference": null,
+      "roster_count": 19,
+      "measured_count": 19,
       "average_height_inches": 77.53
     },
     {
@@ -1661,6 +1697,15 @@
       "average_height_inches": 77.44
     },
     {
+      "team_id": 37,
+      "team": "UMBC Retrievers",
+      "abbreviation": "UMBC",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 77.44
+    },
+    {
       "team_id": 39,
       "team": "Vermont Catamounts",
       "abbreviation": "UVM",
@@ -1724,15 +1769,6 @@
       "average_height_inches": 77.43
     },
     {
-      "team_id": 142,
-      "team": "Campbell Fighting Camels",
-      "abbreviation": "CAM",
-      "conference": null,
-      "roster_count": 12,
-      "measured_count": 12,
-      "average_height_inches": 77.42
-    },
-    {
       "team_id": 195,
       "team": "Rider Broncs",
       "abbreviation": "RID",
@@ -1748,15 +1784,6 @@
       "conference": null,
       "roster_count": 15,
       "measured_count": 15,
-      "average_height_inches": 77.4
-    },
-    {
-      "team_id": 252,
-      "team": "Wagner Seahawks",
-      "abbreviation": "WAG",
-      "conference": null,
-      "roster_count": 10,
-      "measured_count": 10,
       "average_height_inches": 77.4
     },
     {
@@ -1877,15 +1904,6 @@
       "average_height_inches": 77.33
     },
     {
-      "team_id": 262,
-      "team": "UT Martin Skyhawks",
-      "abbreviation": "UTM",
-      "conference": null,
-      "roster_count": 18,
-      "measured_count": 18,
-      "average_height_inches": 77.33
-    },
-    {
       "team_id": 263,
       "team": "Western Illinois Leathernecks",
       "abbreviation": "WIU",
@@ -1958,6 +1976,15 @@
       "average_height_inches": 77.27
     },
     {
+      "team_id": 156,
+      "team": "Florida International Panthers",
+      "abbreviation": "FIU",
+      "conference": null,
+      "roster_count": 15,
+      "measured_count": 15,
+      "average_height_inches": 77.27
+    },
+    {
       "team_id": 240,
       "team": "UNLV Rebels",
       "abbreviation": "UNLV",
@@ -2021,21 +2048,21 @@
       "average_height_inches": 77.24
     },
     {
+      "team_id": 270,
+      "team": "Lafayette Leopards",
+      "abbreviation": "LAF",
+      "conference": null,
+      "roster_count": 19,
+      "measured_count": 18,
+      "average_height_inches": 77.22
+    },
+    {
       "team_id": 106,
       "team": "High Point Panthers",
       "abbreviation": "HPU",
       "conference": null,
       "roster_count": 19,
       "measured_count": 19,
-      "average_height_inches": 77.21
-    },
-    {
-      "team_id": 156,
-      "team": "Florida International Panthers",
-      "abbreviation": "FIU",
-      "conference": null,
-      "roster_count": 14,
-      "measured_count": 14,
       "average_height_inches": 77.21
     },
     {
@@ -2156,15 +2183,6 @@
       "average_height_inches": 77.18
     },
     {
-      "team_id": 270,
-      "team": "Lafayette Leopards",
-      "abbreviation": "LAF",
-      "conference": null,
-      "roster_count": 12,
-      "measured_count": 12,
-      "average_height_inches": 77.17
-    },
-    {
       "team_id": 218,
       "team": "Toledo Rockets",
       "abbreviation": "TOL",
@@ -2172,24 +2190,6 @@
       "roster_count": 13,
       "measured_count": 13,
       "average_height_inches": 77.15
-    },
-    {
-      "team_id": 258,
-      "team": "Southeast Missouri State Redhawks",
-      "abbreviation": "SEMO",
-      "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
-      "average_height_inches": 77.15
-    },
-    {
-      "team_id": 37,
-      "team": "UMBC Retrievers",
-      "abbreviation": "UMBC",
-      "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
-      "average_height_inches": 77.13
     },
     {
       "team_id": 52,
@@ -2235,15 +2235,6 @@
       "roster_count": 15,
       "measured_count": 15,
       "average_height_inches": 77.13
-    },
-    {
-      "team_id": 295,
-      "team": "Florida A&M Rattlers",
-      "abbreviation": "FAMU",
-      "conference": null,
-      "roster_count": 11,
-      "measured_count": 11,
-      "average_height_inches": 77.09
     },
     {
       "team_id": 27,
@@ -2363,6 +2354,15 @@
       "average_height_inches": 77.07
     },
     {
+      "team_id": 315,
+      "team": "Lamar Cardinals",
+      "abbreviation": "LAM",
+      "conference": null,
+      "roster_count": 15,
+      "measured_count": 15,
+      "average_height_inches": 77.07
+    },
+    {
       "team_id": 24,
       "team": "Jacksonville Dolphins",
       "abbreviation": "JAX",
@@ -2432,15 +2432,6 @@
       "conference": null,
       "roster_count": 16,
       "measured_count": 16,
-      "average_height_inches": 77
-    },
-    {
-      "team_id": 192,
-      "team": "Mount St. Mary's Mountaineers",
-      "abbreviation": "MSM",
-      "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
       "average_height_inches": 77
     },
     {
@@ -2543,6 +2534,15 @@
       "average_height_inches": 76.94
     },
     {
+      "team_id": 216,
+      "team": "Northern Illinois Huskies",
+      "abbreviation": "NIU",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 76.94
+    },
+    {
       "team_id": 336,
       "team": "Georgia Southern Eagles",
       "abbreviation": "GASO",
@@ -2579,21 +2579,21 @@
       "average_height_inches": 76.93
     },
     {
-      "team_id": 210,
-      "team": "Buffalo Bulls",
-      "abbreviation": "BUF",
+      "team_id": 172,
+      "team": "Northern Kentucky Norse",
+      "abbreviation": "NKU",
       "conference": null,
       "roster_count": 14,
       "measured_count": 14,
       "average_height_inches": 76.93
     },
     {
-      "team_id": 216,
-      "team": "Northern Illinois Huskies",
-      "abbreviation": "NIU",
+      "team_id": 210,
+      "team": "Buffalo Bulls",
+      "abbreviation": "BUF",
       "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
+      "roster_count": 14,
+      "measured_count": 14,
       "average_height_inches": 76.93
     },
     {
@@ -2606,13 +2606,13 @@
       "average_height_inches": 76.93
     },
     {
-      "team_id": 315,
-      "team": "Lamar Cardinals",
-      "abbreviation": "LAM",
+      "team_id": 295,
+      "team": "Florida A&M Rattlers",
+      "abbreviation": "FAMU",
       "conference": null,
-      "roster_count": 14,
-      "measured_count": 14,
-      "average_height_inches": 76.93
+      "roster_count": 12,
+      "measured_count": 12,
+      "average_height_inches": 76.92
     },
     {
       "team_id": 180,
@@ -2622,15 +2622,6 @@
       "roster_count": 20,
       "measured_count": 20,
       "average_height_inches": 76.9
-    },
-    {
-      "team_id": 301,
-      "team": "Texas Southern Tigers",
-      "abbreviation": "TXSO",
-      "conference": null,
-      "roster_count": 9,
-      "measured_count": 9,
-      "average_height_inches": 76.89
     },
     {
       "team_id": 198,
@@ -2667,6 +2658,15 @@
       "roster_count": 15,
       "measured_count": 15,
       "average_height_inches": 76.87
+    },
+    {
+      "team_id": 252,
+      "team": "Wagner Seahawks",
+      "abbreviation": "WAG",
+      "conference": null,
+      "roster_count": 18,
+      "measured_count": 18,
+      "average_height_inches": 76.83
     },
     {
       "team_id": 45,
@@ -2718,14 +2718,23 @@
       "team": "UTEP Miners",
       "abbreviation": "UTEP",
       "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
-      "average_height_inches": 76.77
+      "roster_count": 14,
+      "measured_count": 14,
+      "average_height_inches": 76.79
     },
     {
       "team_id": 104,
       "team": "Charleston Southern Buccaneers",
       "abbreviation": "CHSO",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 76.75
+    },
+    {
+      "team_id": 192,
+      "team": "Mount St. Mary's Mountaineers",
+      "abbreviation": "MSM",
       "conference": null,
       "roster_count": 16,
       "measured_count": 16,
@@ -2757,15 +2766,6 @@
       "roster_count": 15,
       "measured_count": 15,
       "average_height_inches": 76.73
-    },
-    {
-      "team_id": 170,
-      "team": "IU Indianapolis Jaguars",
-      "abbreviation": "IUIN",
-      "conference": null,
-      "roster_count": 14,
-      "measured_count": 14,
-      "average_height_inches": 76.71
     },
     {
       "team_id": 173,
@@ -2816,6 +2816,15 @@
       "team_id": 19,
       "team": "Austin Peay Governors",
       "abbreviation": "APSU",
+      "conference": null,
+      "roster_count": 13,
+      "measured_count": 13,
+      "average_height_inches": 76.69
+    },
+    {
+      "team_id": 292,
+      "team": "Alcorn State Braves",
+      "abbreviation": "ALCN",
       "conference": null,
       "roster_count": 13,
       "measured_count": 13,
@@ -2894,15 +2903,6 @@
       "average_height_inches": 76.64
     },
     {
-      "team_id": 172,
-      "team": "Northern Kentucky Norse",
-      "abbreviation": "NKU",
-      "conference": null,
-      "roster_count": 13,
-      "measured_count": 13,
-      "average_height_inches": 76.62
-    },
-    {
       "team_id": 50,
       "team": "UAB Blazers",
       "abbreviation": "UAB",
@@ -2957,21 +2957,21 @@
       "average_height_inches": 76.57
     },
     {
+      "team_id": 200,
+      "team": "Delaware State Hornets",
+      "abbreviation": "DSU",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 76.56
+    },
+    {
       "team_id": 134,
       "team": "Cal State Northridge Matadors",
       "abbreviation": "CSUN",
       "conference": null,
       "roster_count": 17,
       "measured_count": 17,
-      "average_height_inches": 76.53
-    },
-    {
-      "team_id": 261,
-      "team": "Tennessee Tech Golden Eagles",
-      "abbreviation": "TNTC",
-      "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
       "average_height_inches": 76.53
     },
     {
@@ -3000,6 +3000,15 @@
       "roster_count": 14,
       "measured_count": 14,
       "average_height_inches": 76.5
+    },
+    {
+      "team_id": 170,
+      "team": "IU Indianapolis Jaguars",
+      "abbreviation": "IUIN",
+      "conference": null,
+      "roster_count": 15,
+      "measured_count": 15,
+      "average_height_inches": 76.47
     },
     {
       "team_id": 259,
@@ -3038,6 +3047,15 @@
       "average_height_inches": 76.44
     },
     {
+      "team_id": 261,
+      "team": "Tennessee Tech Golden Eagles",
+      "abbreviation": "TNTC",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 76.44
+    },
+    {
       "team_id": 253,
       "team": "Eastern Illinois Panthers",
       "abbreviation": "EIU",
@@ -3045,6 +3063,15 @@
       "roster_count": 14,
       "measured_count": 14,
       "average_height_inches": 76.43
+    },
+    {
+      "team_id": 201,
+      "team": "Howard Bison",
+      "abbreviation": "HOW",
+      "conference": null,
+      "roster_count": 16,
+      "measured_count": 16,
+      "average_height_inches": 76.38
     },
     {
       "team_id": 333,
@@ -3146,15 +3173,6 @@
       "average_height_inches": 76.27
     },
     {
-      "team_id": 292,
-      "team": "Alcorn State Braves",
-      "abbreviation": "ALCN",
-      "conference": null,
-      "roster_count": 12,
-      "measured_count": 12,
-      "average_height_inches": 76.25
-    },
-    {
       "team_id": 99,
       "team": "Northern Arizona Lumberjacks",
       "abbreviation": "NAU",
@@ -3171,15 +3189,6 @@
       "roster_count": 14,
       "measured_count": 14,
       "average_height_inches": 76.21
-    },
-    {
-      "team_id": 201,
-      "team": "Howard Bison",
-      "abbreviation": "HOW",
-      "conference": null,
-      "roster_count": 15,
-      "measured_count": 15,
-      "average_height_inches": 76.2
     },
     {
       "team_id": 248,
@@ -3290,15 +3299,6 @@
       "average_height_inches": 75.61
     },
     {
-      "team_id": 200,
-      "team": "Delaware State Hornets",
-      "abbreviation": "DSU",
-      "conference": null,
-      "roster_count": 5,
-      "measured_count": 4,
-      "average_height_inches": 75.5
-    },
-    {
       "team_id": 350,
       "team": "Tarleton State Texans",
       "abbreviation": "TAR",
@@ -3317,31 +3317,31 @@
       "average_height_inches": 75.44
     },
     {
-      "team_id": 372,
-      "team": "Birmingham-Southern Panthers",
-      "abbreviation": "BIRMI",
-      "conference": null,
-      "roster_count": 16,
-      "measured_count": 16,
-      "average_height_inches": 75.13
-    },
-    {
       "team_id": 366,
       "team": "Hartford Hawks",
       "abbreviation": "HART",
       "conference": null,
-      "roster_count": 15,
+      "roster_count": 16,
+      "measured_count": 15,
+      "average_height_inches": 75.27
+    },
+    {
+      "team_id": 372,
+      "team": "Birmingham-Southern Panthers",
+      "abbreviation": "BIRMI",
+      "conference": null,
+      "roster_count": 14,
       "measured_count": 14,
-      "average_height_inches": 75
+      "average_height_inches": 75.07
     },
     {
       "team_id": 369,
       "team": "Centenary (LA) Gentlemen",
       "abbreviation": "CENTELA",
       "conference": null,
-      "roster_count": 16,
-      "measured_count": 16,
-      "average_height_inches": 74.88
+      "roster_count": 33,
+      "measured_count": 33,
+      "average_height_inches": 74.7
     },
     {
       "team_id": 371,
