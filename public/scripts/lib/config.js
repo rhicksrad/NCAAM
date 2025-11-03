@@ -45,9 +45,15 @@ function detectBaseFromModule() {
         if (!moduleUrl) {
             return undefined;
         }
-        const resolved = new URL("../../..", moduleUrl);
+        const resolved = new URL(moduleUrl);
         if (resolved.protocol !== "http:" && resolved.protocol !== "https:") {
             return undefined;
+        }
+        const marker = "/scripts/";
+        const markerIndex = resolved.pathname.indexOf(marker);
+        if (markerIndex !== -1) {
+            const basePath = resolved.pathname.slice(0, markerIndex + 1);
+            return basePath ? ensureTrailingSlash(basePath) : DEFAULT_BASE;
         }
         return detectBaseFromPath(resolved.pathname);
     }

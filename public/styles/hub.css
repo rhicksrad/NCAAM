@@ -24,7 +24,7 @@
   --content-max: 1180px;
   background-color: var(--surface-soft);
   color: var(--text-strong);
-  --basketball-texture: url('/assets/textures/basketball-texture.svg');
+  --basketball-texture: url('../assets/textures/basketball-texture.svg');
 }
 
 * { box-sizing: border-box; }
