@@ -150,8 +150,8 @@ function detectBaseFromLocation(): string {
 
 export const BASE =
   readBaseOverride() ??
-  detectBaseFromModule() ??
   detectBaseFromDocument() ??
+  detectBaseFromModule() ??
   detectBaseFromLocation();
 
 function readGlobalWorkerUrl(): unknown {
