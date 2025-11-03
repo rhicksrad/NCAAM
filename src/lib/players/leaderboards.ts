@@ -22,6 +22,17 @@ const CARD_TONE_CLASSES = [
   "stat-card--tone-4",
 ] as const;
 
+const LEADERBOARD_SEASON_SPAN_LABEL = "2022-2025 seasons" as const;
+
+function resolveLeaderboardSeasonLabel(document: PlayerLeaderboardDocument): string {
+  const season = document.season?.trim();
+  if (!season) {
+    return LEADERBOARD_SEASON_SPAN_LABEL;
+  }
+
+  return season === "2024-25" ? LEADERBOARD_SEASON_SPAN_LABEL : season;
+}
+
 export async function renderLeaderboardFeature(
   grid: HTMLElement,
   meta: HTMLElement | null,
@@ -35,9 +46,10 @@ export async function renderLeaderboardFeature(
     const document = await loadLeaderboardDocument();
     const metrics = document.metrics ?? {};
     const orderedIds = buildMetricOrder(metrics);
+    const displaySeasonLabel = resolveLeaderboardSeasonLabel(document);
 
     if (title) {
-      title.textContent = `Top 10 stat leaders for ${document.season}`;
+      title.textContent = `Top 10 stat leaders (${displaySeasonLabel})`;
     }
 
     if (meta) {
@@ -45,7 +57,7 @@ export async function renderLeaderboardFeature(
       const updatedText = Number.isNaN(updated.valueOf())
         ? "Recently updated"
         : `Updated ${updated.toLocaleDateString()}`;
-      meta.textContent = updatedText;
+      meta.textContent = `${updatedText} · Stats aggregated from ${displaySeasonLabel}.`;
     }
 
     grid.innerHTML = "";
@@ -57,7 +69,7 @@ export async function renderLeaderboardFeature(
     orderedIds.forEach((id, index) => {
       const metric = metrics[id];
       if (!metric) return;
-      grid.appendChild(createLeaderboardCard(id, metric, document, index));
+      grid.appendChild(createLeaderboardCard(id, metric, index, displaySeasonLabel));
     });
   } catch (error) {
     console.error(error);
@@ -86,8 +98,8 @@ function createSkeletonCard(): HTMLElement {
 function createLeaderboardCard(
   metricId: LeaderboardMetricId | string,
   metric: PlayerLeaderboardMetric,
-  leaderboardDoc: PlayerLeaderboardDocument,
   orderIndex: number,
+  seasonLabel: string,
 ): HTMLElement {
   const card = document.createElement("article");
   card.className = "stat-card";
@@ -95,13 +107,13 @@ function createLeaderboardCard(
   const toneClass = CARD_TONE_CLASSES[orderIndex % CARD_TONE_CLASSES.length];
   card.classList.add(toneClass);
   const chartId = `metric-chart-${metricId}`;
-  const description = `${metric.label} leaders for ${leaderboardDoc.season}`;
+  const description = `${metric.label} leaders for ${seasonLabel}`;
   const leaders = (metric.leaders ?? []).slice(0, 10);
 
   card.innerHTML = `
     <header class="stat-card__head">
       <h3 class="stat-card__title">${metric.label}</h3>
-      <span class="stat-card__season">${leaderboardDoc.season}</span>
+      <span class="stat-card__season">${seasonLabel}</span>
     </header>
     <div class="stat-card__body">
       <div id="${chartId}" class="stat-card__chart" role="img" aria-label="${description}"></div>
@@ -113,7 +125,7 @@ function createLeaderboardCard(
   const list = card.querySelector(".stat-card__list") as HTMLOListElement | null;
 
   if (chartHost) {
-    renderMetricChart(chartHost, metric, leaderboardDoc);
+    renderMetricChart(chartHost, metric, seasonLabel);
   }
 
   if (list) {
@@ -139,7 +151,7 @@ function createLeaderboardCard(
 function renderMetricChart(
   container: HTMLElement,
   metric: PlayerLeaderboardMetric,
-  leaderboardDoc: PlayerLeaderboardDocument,
+  seasonLabel: string,
 ): void {
   const leaders = (metric.leaders ?? []).slice(0, 10);
   if (!leaders.length) {
@@ -151,7 +163,7 @@ function renderMetricChart(
   const { iw, ih } = computeInnerSize(width, height, margin);
   const svg = createSVG(container, width, height, {
     title: `${metric.label} leaders`,
-    description: `${metric.label} leaders for ${leaderboardDoc.season}`,
+    description: `${metric.label} leaders for ${seasonLabel}`,
   });
 
   const plot = svg.ownerDocument.createElementNS(svg.namespaceURI, "g") as SVGGElement;
