@@ -358,8 +358,8 @@
 }
 
 .team-roster__logo {
-  width: clamp(2.25rem, 1.8rem + 1.2vw, 3rem);
-  height: clamp(2.25rem, 1.8rem + 1.2vw, 3rem);
+  width: clamp(1.75rem, 1.25rem + 0.9vw, 2.5rem);
+  height: clamp(1.75rem, 1.25rem + 0.9vw, 2.5rem);
   border-radius: 0.75rem;
   display: grid;
   place-items: center;
