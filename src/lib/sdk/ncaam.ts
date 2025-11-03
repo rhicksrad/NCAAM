@@ -200,7 +200,23 @@ export type Player = {
   height?: string;
   weight?: string;
 };
-export type Game = { id:number; date:string; status:string; home_team:Team; visitor_team:Team; home_team_score?:number; visitor_team_score?:number; };
+export type Game = {
+  id: number;
+  date: string | null;
+  season?: number | null;
+  status: string;
+  period?: number | null;
+  home_team: Team;
+  visitor_team: Team;
+  home_score?: number | null;
+  away_score?: number | null;
+  home_score_h1?: number | null;
+  away_score_h1?: number | null;
+  home_score_h2?: number | null;
+  away_score_h2?: number | null;
+  home_score_ot?: number | null;
+  away_score_ot?: number | null;
+};
 export type Conference = { id:number; name:string; short_name?:string };
 export type Ranking = {
   poll: string;

@@ -418,3 +418,187 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.games-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.games-controls__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.games-controls__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: min(14rem, 100%);
+}
+
+.games-controls__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+}
+
+.games-controls__field input[type="date"] {
+  appearance: none;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-radius: 0.65rem;
+  padding: 0.45rem 0.65rem;
+  color: var(--color-ink);
+  min-height: 2.4rem;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.games-controls__field input[type="date"]:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.games-controls__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.games-controls__hint {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.games-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-height: 0;
+}
+
+.game-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.game-card__time {
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.game-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.game-card__team {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--color-paper) 88%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.game-card__team.is-leading {
+  background: color-mix(in srgb, var(--color-arc) 20%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-arc) 38%, transparent);
+}
+
+.game-card__team-abbr {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 80%, white 20%);
+}
+
+.game-card__team-name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.game-card__team-score {
+  justify-self: end;
+  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 2rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.game-card__team.is-leading .game-card__team-score {
+  color: var(--color-arc);
+}
+
+.game-card__line-score {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.game-card__line-score-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.game-card__line-score-row span:nth-child(2),
+.game-card__line-score-row span:last-child {
+  justify-self: end;
+}
+
+.game-card__line-score-row--labels span:nth-child(2),
+.game-card__line-score-row--labels span:last-child {
+  color: color-mix(in srgb, var(--color-muted) 80%, white 20%);
+}
+
+.game-card__message {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.game-card--loading .game-card__time::after {
+  content: "…";
+}
+
+.game-card--empty,
+.game-card--error {
+  text-align: center;
+}
+
+.game-card--empty .game-card__header,
+.game-card--error .game-card__header {
+  justify-content: center;
+}
+
+.game-card--empty .game-card__message,
+.game-card--error .game-card__message {
+  margin: 0 auto;
+  max-width: 24ch;
+}
