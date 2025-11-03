@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="./">
+<title>About · NCAAM Hub</title>
+<meta name="description" content="How the NCAAM Hub was built, the collaborators involved, and the guardrails that keep this fan project respectful.">
+<meta property="og:title" content="About · NCAAM Hub" />
+<meta property="og:description" content="Inside the NCAAM Hub: collaborators, responsibilities, and guardrails keeping this fan-made project focused." />
+<meta property="og:image" content="./og-base.svg" />
+<meta name="theme-color" content="#0B1024" />
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="stylesheet" href="./styles/index.css">
+<link rel="stylesheet" href="./styles/charts.css">
+<script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="./index.html">NCAAM Hub</a>
+    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
+  </div>
+</header>
+<main>
+  <div class="container page">
+    <div class="page-intro">
+      <p class="page-label">Inside the Hub</p>
+      <p class="page-summary">The collaborators, architecture, and principles guiding this independent NCAAM storytelling lab.</p>
+    </div>
+    <div class="page-content stack" data-gap="xl">
+      <section class="stack" data-gap="md">
+        <h2>How the NCAAM Hub was built</h2>
+        <p>A concise walkthrough of the collaborators, responsibilities, and guardrails that keep this fan-made project focused.</p>
+        <div class="card stack" data-gap="sm">
+          <h3>Legal, attribution, and respect for the game</h3>
+          <p>This project is a fan-made, educational showcase. It exists to celebrate basketball storytelling—not to infringe on the rights of the NCAA, its teams, or its players.</p>
+          <div class="stack" data-gap="sm">
+            <div class="stack" data-gap="sm">
+              <h4>Trademark acknowledgements</h4>
+              <p>All NCAA logos, team names, player likenesses, and league marks referenced or displayed here remain the exclusive property of the National Collegiate Athletic Association and its respective teams. Their appearance is purely for identification and commentary.</p>
+            </div>
+            <div class="stack" data-gap="sm">
+              <h4>No sponsorship, endorsement, or partnership is implied</h4>
+              <ul>
+                <li>Usage is intended under nominative fair use and educational commentary.</li>
+                <li>Requests for removal will be honored promptly upon verified notice.</li>
+              </ul>
+            </div>
+            <div class="stack" data-gap="sm">
+              <h4>Content purpose &amp; limitations</h4>
+              <p>The Hub provides informational analysis, creative storytelling, and fan perspectives. It is not an official NCAA product, betting service, or commercial enterprise.</p>
+              <ul>
+                <li>Materials are offered “as-is” without warranties, express or implied.</li>
+                <li>No challenge to any intellectual property rights is intended.</li>
+                <li>Contact <a href="mailto:hicksrch@gmail.com">hicksrch@gmail.com</a> for inquiries.</li>
+              </ul>
+            </div>
+            <div class="stack" data-gap="sm">
+              <h4>Good-faith collaboration</h4>
+              <p>Ryan Hicks and Codex-assisted contributors are committed to honoring takedown requests, crediting primary data sources, and keeping the tone respectful of the league.</p>
+              <ul>
+                <li>Primary data sourced from publicly available league reports and research.</li>
+                <li>Non-commercial distribution with clear attribution.</li>
+                <li>Rapid compliance with any rights-holder guidance or notices.</li>
+              </ul>
+            </div>
+          </div>
+          <p>By viewing or interacting with this site you acknowledge that it is an independent fan publication and agree not to misrepresent it as an official NCAA property.</p>
+          <p>Thanks for letting us obsess over basketball lore in peace.</p>
+        </div>
+      </section>
+      <section class="stack" data-gap="md">
+        <h2>How the project came together</h2>
+        <p>The Hub is a cohesive storytelling laboratory: part data pipeline, part design system, and part long-form magazine. Below is the framework that keeps every page connected.</p>
+        <div class="grid" data-columns>
+          <div class="card stack" data-gap="sm">
+            <h3>Creative direction &amp; authorship</h3>
+            <p>Ryan Hicks defined the tone, reporting cadence, and user journeys across the site, using OpenAI Codex as a co-creator to draft copy, wrangle data, and prototype layouts.</p>
+            <ul>
+              <li>Unified editorial voice across previews, history, and insights.</li>
+              <li>Codex-assisted iteration for narrative structures and polish.</li>
+              <li>Single-author accountability for quality and accuracy.</li>
+            </ul>
+          </div>
+          <div class="card stack" data-gap="sm">
+            <h3>Technical architecture</h3>
+            <p>A static-first build with modular HTML, CSS, and scripted data ingestion powers fast loads and maintainable updates without heavyweight frameworks. Every data pipeline pass attempts to pull the latest numbers from the Ball Don't Lie (BDL) API as the baseline before layering manual research when gaps appear.</p>
+            <ul>
+              <li>Reusable component styling in <code>styles/</code>.</li>
+              <li>Dataset automation via Python notebooks and scripts.</li>
+              <li>Accessible-by-default markup and semantic structure.</li>
+            </ul>
+          </div>
+          <div class="card stack" data-gap="sm">
+            <h3>Research &amp; storytelling engine</h3>
+            <p>Season previews, historical retrospectives, player dossiers, and data experiments all flow from a shared library of stats, league context, and scenario modeling.</p>
+            <ul>
+              <li>Cross-era comparisons and trend analysis.</li>
+              <li>Playstyle tagging for team and player pages.</li>
+              <li>Scenario planners linking insights to future updates.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="tag" data-variant="arc">Fan-made by Ryan Hicks with OpenAI Codex — celebrating the NCAA while respecting its legends and legal guardians.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<div id="boot-errors" style="display:none;background:#fee2e2;color:#7f1d1d;padding:8px 12px;font:14px ui-sans-serif,system-ui"></div>
+<script type="module">
+  const errBox = document.getElementById('boot-errors');
+  const showErr = (e) => {
+    errBox.style.display = 'block';
+    errBox.textContent = e?.message || e;
+    console.error(e);
+  };
+  window.addEventListener('error', (ev) => showErr(ev.error || ev.message));
+  window.addEventListener('unhandledrejection', (ev) => showErr(ev.reason || ev));
+</script>
+<script type="module" src="./scripts/nav.js"></script>
+</body>
+</html>
