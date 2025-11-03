@@ -51,6 +51,7 @@ Pages load shared assets from `/src/lib/*` and plain CSS. No hardcoded rosters i
 - Curated logo PNGs live under `public/data/logos`; filenames map to upstream team identifiers.
 - The directory includes a `metadata.json` descriptor that documents the current source and update date.
 - Run `pnpm run prepare:logos` to validate that the directory and metadata are present before generating logo maps.
+- The logo map generator fails with `Missing NCAA logo assets` if any Division I programs from `public/data/team-height-snapshot.json` lack a corresponding `public/data/logos/{id}.png`; rerun `node scripts/build-ncaa-logo-map.mjs` after adding new assets.
 - The legacy `public/FBS-Logo-Library-main.zip` archive is no longer used.
 
 ## Agents and rules (summary)

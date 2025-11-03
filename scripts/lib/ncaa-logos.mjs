@@ -1,10 +1,113 @@
+import { execFile } from 'node:child_process';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+import { Agent } from 'undici';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 export const LOGOS_DIR = path.join(ROOT, 'public/data/logos');
 const METADATA_FILENAME = 'metadata.json';
+const ESPN_TEAM_DIRECTORY_URL = 'https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams?limit=2000';
+const DEFAULT_USER_AGENT = 'NCAAM Logo Tooling/1.0 (+https://github.com/hicksrch/NCAAM)';
+const execFileAsync = promisify(execFile);
+
+export function createEspnFetchClient({ userAgent = DEFAULT_USER_AGENT } = {}) {
+  const agent = new Agent({
+    connect: {
+      family: 4,
+    },
+  });
+
+  let fetchSupported = typeof fetch === 'function';
+
+  return {
+    async json(url) {
+      if (fetchSupported) {
+        try {
+          const response = await fetch(url, {
+            headers: {
+              'User-Agent': userAgent,
+            },
+            dispatcher: agent,
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+          }
+
+          return await response.json();
+        } catch (error) {
+          fetchSupported = false;
+          const reason = error instanceof Error ? error.message : String(error);
+          console.warn(`Direct fetch for ${url} failed (${reason}). Switching to curl for the remaining requests.`);
+        }
+      }
+
+      const { stdout } = await execFileAsync('curl', ['-sSfL', '-A', userAgent, url]);
+      return JSON.parse(stdout);
+    },
+    close() {
+      agent.close();
+    },
+  };
+}
+
+export async function fetchEspnTeamDirectory() {
+  const client = createEspnFetchClient();
+  try {
+    const directory = await client.json(ESPN_TEAM_DIRECTORY_URL);
+    if (!directory || !Array.isArray(directory.items)) {
+      throw new Error('Unexpected response when loading the ESPN team directory.');
+    }
+
+    const refs = directory.items
+      .map(item => (item && typeof item === 'object' ? item.$ref ?? item.href ?? null : null))
+      .filter((value) => typeof value === 'string' && value);
+
+    if (refs.length === 0) {
+      return [];
+    }
+
+    const resultsById = new Map();
+    let index = 0;
+    const concurrency = Math.min(refs.length, 16);
+
+    const worker = async () => {
+      while (true) {
+        const current = index;
+        if (current >= refs.length) {
+          break;
+        }
+        index += 1;
+        const url = refs[current];
+        try {
+          const team = await client.json(url);
+          const id = team?.id;
+          const displayName = team?.displayName;
+          if (!id || typeof displayName !== 'string' || !displayName.trim()) {
+            continue;
+          }
+          const normalizedDisplayName = displayName.trim();
+          if (!resultsById.has(String(id))) {
+            resultsById.set(String(id), {
+              id: String(id),
+              displayName: normalizedDisplayName,
+            });
+          }
+        } catch (error) {
+          const reason = error instanceof Error ? error.message : String(error);
+          console.warn(`Unable to load ESPN team resource from ${url}: ${reason}`);
+        }
+      }
+    };
+
+    await Promise.all(Array.from({ length: concurrency }, () => worker()));
+    return Array.from(resultsById.values());
+  } finally {
+    client.close();
+  }
+}
 
 function formatMissingMetadataMessage(metadataPath) {
   return [
