@@ -772,6 +772,13 @@ details[open] > summary .disclosure-indicator::after {
 .teams-leaderboard__grid {
   display: grid;
   gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.teams-leaderboard__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .teams-leaderboard__body {
@@ -780,12 +787,17 @@ details[open] > summary .disclosure-indicator::after {
   padding: clamp(1rem, 1rem + 0.6vw, 1.6rem);
   overflow-x: auto;
   box-shadow: inset 0 1px 0 color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 8%, transparent);
+  flex: 1;
 }
 
 .teams-leaderboard__table {
   width: 100%;
   border-collapse: collapse;
   min-width: 520px;
+}
+
+.teams-leaderboard__table--compact {
+  min-width: 0;
 }
 
 .teams-leaderboard__table th,
