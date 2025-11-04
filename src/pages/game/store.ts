@@ -12,7 +12,8 @@ type Subscriber = (state: GameDetailState) => void;
 type CachedResult = {
   game: Game;
   playByPlay: PlayByPlayEvent[];
-  boxScore: GameBoxScore;
+  boxScore: GameBoxScore | null;
+  boxScoreError: string | null;
 };
 
 export type GameDetailState = {
@@ -24,6 +25,7 @@ export type GameDetailState = {
   game?: Game | null;
   playByPlay: PlayByPlayEvent[];
   boxScore: GameBoxScore | null;
+  boxScoreError: string | null;
 };
 
 const initialState: GameDetailState = {
@@ -35,6 +37,7 @@ const initialState: GameDetailState = {
   game: null,
   playByPlay: [],
   boxScore: null,
+  boxScoreError: null,
 };
 
 export function createGameDetailStore() {
@@ -64,6 +67,7 @@ export function createGameDetailStore() {
         game: cached.game,
         playByPlay: cached.playByPlay,
         boxScore: cached.boxScore,
+        boxScoreError: cached.boxScoreError,
       };
       notify();
       return cached;
@@ -79,11 +83,12 @@ export function createGameDetailStore() {
       game: null,
       playByPlay: [],
       boxScore: null,
+      boxScoreError: null,
     };
     notify();
 
     try {
-      const [game, playByPlay] = await Promise.all([NCAAM.game(gameId), getGamePlayByPlay(gameId)]);
+      const game = await NCAAM.game(gameId);
       if (currentToken !== requestToken) {
         return null;
       }
@@ -97,11 +102,30 @@ export function createGameDetailStore() {
           game: null,
           playByPlay: [],
           boxScore: null,
+          boxScoreError: null,
         };
         notify();
         return null;
       }
-      const boxScore = buildBoxScoreFromPlayByPlay({ game, events: playByPlay });
+      let playByPlay: PlayByPlayEvent[] = [];
+      let boxScore: GameBoxScore | null = null;
+      let boxScoreError: string | null = null;
+
+      try {
+        playByPlay = await getGamePlayByPlay(gameId);
+        boxScore = buildBoxScoreFromPlayByPlay({ game, events: playByPlay });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Unknown error";
+        if (/\b404\b/.test(message)) {
+          playByPlay = [];
+          boxScore = buildBoxScoreFromPlayByPlay({ game, events: [] });
+          boxScoreError = null;
+        } else {
+          boxScoreError = message;
+          boxScore = null;
+        }
+      }
+
       state = {
         ...state,
         status: "success",
@@ -111,8 +135,9 @@ export function createGameDetailStore() {
         game,
         playByPlay,
         boxScore,
+        boxScoreError,
       };
-      cache.set(gameId, { game, playByPlay, boxScore });
+      cache.set(gameId, { game, playByPlay, boxScore, boxScoreError });
       notify();
       return state;
     } catch (error) {
@@ -126,6 +151,7 @@ export function createGameDetailStore() {
         isLoading: false,
         isError: true,
         error: message,
+        boxScoreError: null,
       };
       notify();
       return null;

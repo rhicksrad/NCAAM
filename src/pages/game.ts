@@ -373,7 +373,7 @@ store.subscribe((state: GameDetailState) => {
     return;
   }
 
-  const boxScoreError = state.status === "error" ? state.error ?? null : null;
+  const boxScoreError = state.boxScoreError ?? (state.status === "error" ? state.error ?? null : null);
   renderGame(
     state.game,
     state.playByPlay,

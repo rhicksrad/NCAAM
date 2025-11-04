@@ -1,5 +1,6 @@
 import { BASE } from "../lib/config.js";
-import { NCAAM } from "../lib/sdk/ncaam.js";
+import { renderGameBoxScore } from "./game/GameBoxScore.js";
+import { createGameDetailStore } from "./game/store.js";
 import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
     weekday: "short",
@@ -252,12 +253,12 @@ function renderPlayItem(play, awayLabel, homeLabel) {
         metaSegments.push(`<span class="play-feed__team">${escapeHtml(teamAbbr)}</span>`);
     }
     const meta = metaSegments.length ? `<div class="play-feed__meta">${metaSegments.join("")}</div>` : "";
-    const description = play.text ? escapeHtml(play.text) : "Play update unavailable.";
-    const hasScore = isNumber(play.home_score) || isNumber(play.away_score);
+    const description = play.description ? escapeHtml(play.description) : "Play update unavailable.";
+    const hasScore = isNumber(play.homeScore) || isNumber(play.awayScore);
     const score = hasScore
-        ? `<div class="play-feed__score" aria-label="Score">${escapeHtml(`${awayLabel} ${formatScore(play.away_score)} – ${formatScore(play.home_score)} ${homeLabel}`)}</div>`
+        ? `<div class="play-feed__score" aria-label="Score">${escapeHtml(`${awayLabel} ${formatScore(play.awayScore)} – ${formatScore(play.homeScore)} ${homeLabel}`)}</div>`
         : "";
-    const scoringAttr = play.scoring_play ? " data-scoring-play=\"true\"" : "";
+    const scoringAttr = play.isScoringPlay ? " data-scoring-play=\"true\"" : "";
     return `<li class="play-feed__item"${scoringAttr}>
     ${meta}
     <p class="play-feed__text">${description}</p>
@@ -285,40 +286,50 @@ function renderPlaysSection(game, plays) {
     <ol class="play-feed__list">${items}</ol>
   </section>`;
 }
-function renderGame(game, plays) {
+function renderGame(game, plays, boxScore, isBoxScoreLoading, boxScoreError) {
     const backHref = escapeAttr(`${BASE}games.html`);
+    const boxScoreSection = renderGameBoxScore({
+        game,
+        boxScore,
+        isLoading: isBoxScoreLoading,
+        error: boxScoreError,
+    });
     container.innerHTML = `<a class="game-detail__back-link" href="${backHref}">← Back to games</a>
     ${renderScoreboard(game)}
+    ${boxScoreSection}
     ${renderPlaysSection(game, plays)}`;
 }
-async function loadGame(gameId) {
-    setBusy(true);
-    renderLoading();
-    try {
-        const [game, playsResponse] = await Promise.all([NCAAM.game(gameId), NCAAM.plays(gameId)]);
-        if (!game) {
+const store = createGameDetailStore();
+store.subscribe((state) => {
+    setBusy(state.isLoading);
+    if (state.status === "idle") {
+        renderLoading();
+        return;
+    }
+    if (state.status === "error" && !state.game) {
+        if (state.error && /not found/i.test(state.error)) {
             renderNotFound();
-            return;
         }
-        const plays = Array.isArray(playsResponse?.data) ? [...playsResponse.data] : [];
-        plays.sort((a, b) => a.order - b.order);
-        renderGame(game, plays);
-        updateHero(game);
-        updateDocumentTitle(game);
+        else {
+            renderError();
+        }
+        return;
     }
-    catch (error) {
-        console.error("Failed to load game detail", error);
-        renderError();
+    if (!state.game) {
+        renderLoading();
+        return;
     }
-    finally {
-        setBusy(false);
-    }
-}
+    const boxScoreError = state.boxScoreError ?? (state.status === "error" ? state.error ?? null : null);
+    renderGame(state.game, state.playByPlay, state.boxScore, state.isLoading && !state.boxScore, boxScoreError);
+    updateHero(state.game);
+    updateDocumentTitle(state.game);
+});
 const gameId = parseGameId();
 if (gameId === null) {
     setBusy(false);
     renderInvalidSelection();
 }
 else {
-    void loadGame(gameId);
+    renderLoading();
+    void store.load(gameId);
 }
