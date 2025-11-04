@@ -161,6 +161,17 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2022.png"
   },
   {
+    "name": "American University Eagles",
+    "slug": "american-eagles",
+    "tokens": [
+      "american",
+      "eagles",
+      "au",
+      "amer"
+    ],
+    "path": "data/logos/44.png"
+  },
+  {
     "name": "Amherst Mammoths",
     "slug": "amherst-mammoths",
     "tokens": [
@@ -328,6 +339,15 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2046.png"
   },
   {
+    "name": "BYU Cougars",
+    "slug": "byu-cougars",
+    "tokens": [
+      "byu",
+      "cougars"
+    ],
+    "path": "data/logos/252.png"
+  },
+  {
     "name": "Ball State Cardinals",
     "slug": "ball-state-cardinals",
     "tokens": [
@@ -470,6 +490,16 @@ export const NCAA_LOGOS = [
     "path": "data/logos/103.png"
   },
   {
+    "name": "Boston University Terriers",
+    "slug": "boston-terriers",
+    "tokens": [
+      "boston",
+      "terriers",
+      "bu"
+    ],
+    "path": "data/logos/104.png"
+  },
+  {
     "name": "Bowie State Bulldogs",
     "slug": "bowie-state-bulldogs",
     "tokens": [
@@ -490,6 +520,16 @@ export const NCAA_LOGOS = [
       "bgsu"
     ],
     "path": "data/logos/189.png"
+  },
+  {
+    "name": "Bradley Braves",
+    "slug": "bradley-braves",
+    "tokens": [
+      "bradley",
+      "braves",
+      "brad"
+    ],
+    "path": "data/logos/71.png"
   },
   {
     "name": "Bridgewater College (VA) Eagles",
@@ -589,15 +629,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2086.png"
   },
   {
-    "name": "BYU Cougars",
-    "slug": "byu-cougars",
-    "tokens": [
-      "byu",
-      "cougars"
-    ],
-    "path": "data/logos/252.png"
-  },
-  {
     "name": "Cal Poly Mustangs",
     "slug": "cal-poly-mustangs",
     "tokens": [
@@ -622,6 +653,31 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2239.png"
   },
   {
+    "name": "Cal State Northridge Matadors",
+    "slug": "cal-state-northridge-matadors",
+    "tokens": [
+      "cal",
+      "state",
+      "northridge",
+      "matadors",
+      "csun",
+      "st"
+    ],
+    "path": "data/logos/2463.png"
+  },
+  {
+    "name": "California Baptist Lancers",
+    "slug": "california-baptist-lancers",
+    "tokens": [
+      "california",
+      "baptist",
+      "lancers",
+      "cal",
+      "cbu"
+    ],
+    "path": "data/logos/2856.png"
+  },
+  {
     "name": "California Golden Bears",
     "slug": "california-golden-bears",
     "tokens": [
@@ -642,6 +698,16 @@ export const NCAA_LOGOS = [
       "cam"
     ],
     "path": "data/logos/2097.png"
+  },
+  {
+    "name": "Canisius Golden Griffins",
+    "slug": "canisius-golden-griffins",
+    "tokens": [
+      "canisius",
+      "golden",
+      "griffins"
+    ],
+    "path": "data/logos/2099.png"
   },
   {
     "name": "Carnegie Mellon Tartans",
@@ -849,6 +915,19 @@ export const NCAA_LOGOS = [
     "path": "data/logos/228.png"
   },
   {
+    "name": "Cleveland State Vikings",
+    "slug": "cleveland-state-vikings",
+    "tokens": [
+      "cleveland",
+      "state",
+      "vikings",
+      "st",
+      "csu",
+      "cle"
+    ],
+    "path": "data/logos/325.png"
+  },
+  {
     "name": "Coast Guard Bears",
     "slug": "coast-guard-bears",
     "tokens": [
@@ -965,6 +1044,17 @@ export const NCAA_LOGOS = [
       "conc"
     ],
     "path": "data/logos/2148.png"
+  },
+  {
+    "name": "Coppin State Eagles",
+    "slug": "coppin-state-eagles",
+    "tokens": [
+      "coppin",
+      "state",
+      "eagles",
+      "copp"
+    ],
+    "path": "data/logos/2154.png"
   },
   {
     "name": "Cornell Big Red",
@@ -1098,6 +1188,28 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2171.png"
   },
   {
+    "name": "Denver Pioneers",
+    "slug": "denver-pioneers",
+    "tokens": [
+      "denver",
+      "pioneers",
+      "du"
+    ],
+    "path": "data/logos/2172.png"
+  },
+  {
+    "name": "Detroit Mercy Titans",
+    "slug": "detroit-mercy-titans",
+    "tokens": [
+      "detroit",
+      "mercy",
+      "titans",
+      "udm",
+      "detm"
+    ],
+    "path": "data/logos/2174.png"
+  },
+  {
     "name": "Drake Bulldogs",
     "slug": "drake-bulldogs",
     "tokens": [
@@ -1106,6 +1218,16 @@ export const NCAA_LOGOS = [
       "drke"
     ],
     "path": "data/logos/2181.png"
+  },
+  {
+    "name": "Drexel Dragons",
+    "slug": "drexel-dragons",
+    "tokens": [
+      "drexel",
+      "dragons",
+      "drex"
+    ],
+    "path": "data/logos/2182.png"
   },
   {
     "name": "Duke Blue Devils",
@@ -1296,6 +1418,28 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2210.png"
   },
   {
+    "name": "Evansville Purple Aces",
+    "slug": "evansville-purple-aces",
+    "tokens": [
+      "evansville",
+      "purple",
+      "aces",
+      "ue",
+      "evan"
+    ],
+    "path": "data/logos/339.png"
+  },
+  {
+    "name": "Fairfield Stags",
+    "slug": "fairfield-stags",
+    "tokens": [
+      "fairfield",
+      "stags",
+      "fair"
+    ],
+    "path": "data/logos/2217.png"
+  },
+  {
     "name": "Fayetteville St Broncos",
     "slug": "fayetteville-st-broncos",
     "tokens": [
@@ -1371,6 +1515,18 @@ export const NCAA_LOGOS = [
       "fla"
     ],
     "path": "data/logos/57.png"
+  },
+  {
+    "name": "Florida Gulf Coast Eagles",
+    "slug": "florida-gulf-coast-eagles",
+    "tokens": [
+      "florida",
+      "gulf",
+      "coast",
+      "eagles",
+      "fgcu"
+    ],
+    "path": "data/logos/526.png"
   },
   {
     "name": "Florida International Panthers",
@@ -1496,6 +1652,18 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2244.png"
   },
   {
+    "name": "George Washington Revolutionaries",
+    "slug": "george-washington-revolutionaries",
+    "tokens": [
+      "george",
+      "washington",
+      "revolutionaries",
+      "gw",
+      "gwu"
+    ],
+    "path": "data/logos/45.png"
+  },
+  {
     "name": "Georgetown Hoyas",
     "slug": "georgetown-hoyas",
     "tokens": [
@@ -1560,7 +1728,7 @@ export const NCAA_LOGOS = [
       "gonz",
       "zags"
     ],
-    "path": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png"
+    "path": "data/logos/2250.png"
   },
   {
     "name": "Graceland University Jackets",
@@ -1581,6 +1749,17 @@ export const NCAA_LOGOS = [
       "gram"
     ],
     "path": "data/logos/2755.png"
+  },
+  {
+    "name": "Grand Canyon Lopes",
+    "slug": "grand-canyon-lopes",
+    "tokens": [
+      "grand",
+      "canyon",
+      "lopes",
+      "gcu"
+    ],
+    "path": "data/logos/2253.png"
   },
   {
     "name": "Grand Valley State Lakers",
@@ -1672,6 +1851,17 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2271.png"
   },
   {
+    "name": "High Point Panthers",
+    "slug": "high-point-panthers",
+    "tokens": [
+      "high",
+      "point",
+      "panthers",
+      "hpu"
+    ],
+    "path": "data/logos/2272.png"
+  },
+  {
     "name": "Hillsdale Chargers",
     "slug": "hillsdale-chargers",
     "tokens": [
@@ -1742,6 +1932,19 @@ export const NCAA_LOGOS = [
       "how"
     ],
     "path": "data/logos/47.png"
+  },
+  {
+    "name": "IU Indianapolis Jaguars",
+    "slug": "iu-indianapolis-jaguars",
+    "tokens": [
+      "iu",
+      "indianapolis",
+      "jaguars",
+      "indiana",
+      "iupui",
+      "iuin"
+    ],
+    "path": "data/logos/85.png"
   },
   {
     "name": "Idaho State Bengals",
@@ -1858,6 +2061,15 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2292.png"
   },
   {
+    "name": "Iona Gaels",
+    "slug": "iona-gaels",
+    "tokens": [
+      "iona",
+      "gaels"
+    ],
+    "path": "data/logos/314.png"
+  },
+  {
     "name": "Iowa Hawkeyes",
     "slug": "iowa-hawkeyes",
     "tokens": [
@@ -1957,6 +2169,18 @@ export const NCAA_LOGOS = [
       "smth"
     ],
     "path": "data/logos/2304.png"
+  },
+  {
+    "name": "Kansas City Roos",
+    "slug": "kansas-city-roos",
+    "tokens": [
+      "kansas",
+      "city",
+      "roos",
+      "kc",
+      "umkc"
+    ],
+    "path": "data/logos/140.png"
   },
   {
     "name": "Kansas Jayhawks",
@@ -2062,6 +2286,26 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2315.png"
   },
   {
+    "name": "LSU Tigers",
+    "slug": "lsu-tigers",
+    "tokens": [
+      "lsu",
+      "tigers"
+    ],
+    "path": "data/logos/99.png"
+  },
+  {
+    "name": "La Salle Explorers",
+    "slug": "la-salle-explorers",
+    "tokens": [
+      "la",
+      "salle",
+      "explorers",
+      "las"
+    ],
+    "path": "data/logos/2325.png"
+  },
+  {
     "name": "Lafayette Leopards",
     "slug": "lafayette-leopards",
     "tokens": [
@@ -2112,6 +2356,17 @@ export const NCAA_LOGOS = [
       "law"
     ],
     "path": "data/logos/268.png"
+  },
+  {
+    "name": "Le Moyne Dolphins",
+    "slug": "le-moyne-dolphins",
+    "tokens": [
+      "le",
+      "moyne",
+      "dolphins",
+      "lem"
+    ],
+    "path": "data/logos/2330.png"
   },
   {
     "name": "Lehigh Mountain Hawks",
@@ -2191,6 +2446,39 @@ export const NCAA_LOGOS = [
     "path": "data/logos/209.png"
   },
   {
+    "name": "Long Beach State Beach",
+    "slug": "long-beach-state-beach",
+    "tokens": [
+      "long",
+      "beach",
+      "state",
+      "beach",
+      "lbsu"
+    ],
+    "path": "data/logos/299.png"
+  },
+  {
+    "name": "Long Island University Sharks",
+    "slug": "long-island-sharks",
+    "tokens": [
+      "long",
+      "island",
+      "sharks",
+      "liu"
+    ],
+    "path": "data/logos/112358.png"
+  },
+  {
+    "name": "Longwood Lancers",
+    "slug": "longwood-lancers",
+    "tokens": [
+      "longwood",
+      "lancers",
+      "long"
+    ],
+    "path": "data/logos/2344.png"
+  },
+  {
     "name": "Louisiana Ragin' Cajuns",
     "slug": "louisiana-ragin-cajuns",
     "tokens": [
@@ -2223,13 +2511,48 @@ export const NCAA_LOGOS = [
     "path": "data/logos/97.png"
   },
   {
-    "name": "LSU Tigers",
-    "slug": "lsu-tigers",
+    "name": "Loyola Chicago Ramblers",
+    "slug": "loyola-chicago-ramblers",
     "tokens": [
-      "lsu",
-      "tigers"
+      "loyola",
+      "chicago",
+      "ramblers",
+      "il",
+      "luc"
     ],
-    "path": "data/logos/99.png"
+    "path": "data/logos/2350.png"
+  },
+  {
+    "name": "Loyola Maryland Greyhounds",
+    "slug": "loyola-maryland-greyhounds",
+    "tokens": [
+      "loyola",
+      "maryland",
+      "greyhounds",
+      "md",
+      "l"
+    ],
+    "path": "data/logos/2352.png"
+  },
+  {
+    "name": "Loyola Marymount Lions",
+    "slug": "loyola-marymount-lions",
+    "tokens": [
+      "loyola",
+      "marymount",
+      "lions",
+      "lmu"
+    ],
+    "path": "data/logos/2351.png"
+  },
+  {
+    "name": "MIT Engineers",
+    "slug": "mit-engineers",
+    "tokens": [
+      "mit",
+      "engineers"
+    ],
+    "path": "data/logos/109.png"
   },
   {
     "name": "Macalester Scots",
@@ -2295,6 +2618,18 @@ export const NCAA_LOGOS = [
       "mrsh"
     ],
     "path": "data/logos/276.png"
+  },
+  {
+    "name": "Maryland Eastern Shore Hawks",
+    "slug": "maryland-eastern-shore-hawks",
+    "tokens": [
+      "maryland",
+      "eastern",
+      "shore",
+      "hawks",
+      "umes"
+    ],
+    "path": "data/logos/2379.png"
   },
   {
     "name": "Maryland Terrapins",
@@ -2506,6 +2841,18 @@ export const NCAA_LOGOS = [
     "path": "data/logos/210.png"
   },
   {
+    "name": "Milwaukee Panthers",
+    "slug": "milwaukee-panthers",
+    "tokens": [
+      "milwaukee",
+      "panthers",
+      "uw",
+      "uwm",
+      "milw"
+    ],
+    "path": "data/logos/270.png"
+  },
+  {
     "name": "Minnesota Duluth Bulldogs",
     "slug": "minnesota-duluth-bulldogs",
     "tokens": [
@@ -2629,15 +2976,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/142.png"
   },
   {
-    "name": "MIT Engineers",
-    "slug": "mit-engineers",
-    "tokens": [
-      "mit",
-      "engineers"
-    ],
-    "path": "data/logos/109.png"
-  },
-  {
     "name": "Monmouth (IL) Fighting Scots",
     "slug": "monmouth-il-fighting-scots",
     "tokens": [
@@ -2730,6 +3068,20 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2415.png"
   },
   {
+    "name": "Mount St. Mary's Mountaineers",
+    "slug": "mount-st-mary-s-mountaineers",
+    "tokens": [
+      "mount",
+      "st",
+      "mary",
+      "s",
+      "mountaineers",
+      "marys",
+      "msm"
+    ],
+    "path": "data/logos/116.png"
+  },
+  {
     "name": "Muhlenberg Mules",
     "slug": "muhlenberg-mules",
     "tokens": [
@@ -2752,6 +3104,31 @@ export const NCAA_LOGOS = [
     "path": "data/logos/93.png"
   },
   {
+    "name": "NC State Wolfpack",
+    "slug": "nc-state-wolfpack",
+    "tokens": [
+      "nc",
+      "state",
+      "wolfpack",
+      "ncsu"
+    ],
+    "path": "data/logos/152.png"
+  },
+  {
+    "name": "NJIT Highlanders",
+    "slug": "njit-highlanders",
+    "tokens": [
+      "njit",
+      "highlanders",
+      "new",
+      "jersey",
+      "tech",
+      "institute",
+      "technology"
+    ],
+    "path": "data/logos/2885.png"
+  },
+  {
     "name": "National Invitation Tournament",
     "slug": "national-invitation-tournament",
     "tokens": [
@@ -2770,33 +3147,6 @@ export const NCAA_LOGOS = [
       "midshipmen"
     ],
     "path": "data/logos/2426.png"
-  },
-  {
-    "name": "NC State Wolfpack",
-    "slug": "nc-state-wolfpack",
-    "tokens": [
-      "nc",
-      "state",
-      "wolfpack",
-      "ncsu"
-    ],
-    "path": "data/logos/152.png"
-  },
-  {
-    "name": "NCAA Division I Men's Basketball Tournament",
-    "slug": "ncaa-division-i-men-s-basketball-tournament",
-    "tokens": [
-      "ncaa",
-      "division",
-      "i",
-      "men",
-      "s",
-      "basketball",
-      "tournament",
-      "march",
-      "madness"
-    ],
-    "path": "data/logos/112358.png"
   },
   {
     "name": "Nebraska Cornhuskers",
@@ -2877,6 +3227,28 @@ export const NCAA_LOGOS = [
       "nmsu"
     ],
     "path": "data/logos/166.png"
+  },
+  {
+    "name": "New Orleans Privateers",
+    "slug": "new-orleans-privateers",
+    "tokens": [
+      "new",
+      "orleans",
+      "privateers",
+      "uno"
+    ],
+    "path": "data/logos/2443.png"
+  },
+  {
+    "name": "Niagara Purple Eagles",
+    "slug": "niagara-purple-eagles",
+    "tokens": [
+      "niagara",
+      "purple",
+      "eagles",
+      "nia"
+    ],
+    "path": "data/logos/315.png"
   },
   {
     "name": "Nicholls Colonels",
@@ -2977,6 +3349,17 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2449.png"
   },
   {
+    "name": "North Florida Ospreys",
+    "slug": "north-florida-ospreys",
+    "tokens": [
+      "north",
+      "florida",
+      "ospreys",
+      "unf"
+    ],
+    "path": "data/logos/2454.png"
+  },
+  {
     "name": "North Greenville Crusaders",
     "slug": "north-greenville-crusaders",
     "tokens": [
@@ -3056,6 +3439,17 @@ export const NCAA_LOGOS = [
       "uni"
     ],
     "path": "data/logos/2460.png"
+  },
+  {
+    "name": "Northern Kentucky Norse",
+    "slug": "northern-kentucky-norse",
+    "tokens": [
+      "northern",
+      "kentucky",
+      "norse",
+      "nku"
+    ],
+    "path": "data/logos/94.png"
   },
   {
     "name": "Northern Michigan Wildcats",
@@ -3169,6 +3563,17 @@ export const NCAA_LOGOS = [
       "nd"
     ],
     "path": "data/logos/87.png"
+  },
+  {
+    "name": "Oakland Golden Grizzlies",
+    "slug": "oakland-golden-grizzlies",
+    "tokens": [
+      "oakland",
+      "golden",
+      "grizzlies",
+      "oak"
+    ],
+    "path": "data/logos/2473.png"
   },
   {
     "name": "Ohio Bobcats",
@@ -3315,16 +3720,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/213.png"
   },
   {
-    "name": "Pennsylvania Quakers",
-    "slug": "pennsylvania-quakers",
-    "tokens": [
-      "pennsylvania",
-      "quakers",
-      "penn"
-    ],
-    "path": "data/logos/219.png"
-  },
-  {
     "name": "PennWest California Vulcans",
     "slug": "pennwest-california-vulcans",
     "tokens": [
@@ -3338,6 +3733,26 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2858.png"
   },
   {
+    "name": "Pennsylvania Quakers",
+    "slug": "pennsylvania-quakers",
+    "tokens": [
+      "pennsylvania",
+      "quakers",
+      "penn"
+    ],
+    "path": "data/logos/219.png"
+  },
+  {
+    "name": "Pepperdine Waves",
+    "slug": "pepperdine-waves",
+    "tokens": [
+      "pepperdine",
+      "waves",
+      "pepp"
+    ],
+    "path": "data/logos/2492.png"
+  },
+  {
     "name": "Pittsburgh Panthers",
     "slug": "pittsburgh-panthers",
     "tokens": [
@@ -3346,6 +3761,16 @@ export const NCAA_LOGOS = [
       "pitt"
     ],
     "path": "data/logos/221.png"
+  },
+  {
+    "name": "Portland Pilots",
+    "slug": "portland-pilots",
+    "tokens": [
+      "portland",
+      "pilots",
+      "port"
+    ],
+    "path": "data/logos/2501.png"
   },
   {
     "name": "Portland State Vikings",
@@ -3394,6 +3819,17 @@ export const NCAA_LOGOS = [
     "path": "data/logos/163.png"
   },
   {
+    "name": "Providence Friars",
+    "slug": "providence-friars",
+    "tokens": [
+      "providence",
+      "friars",
+      "pc",
+      "prov"
+    ],
+    "path": "data/logos/2507.png"
+  },
+  {
     "name": "Purdue Boilermakers",
     "slug": "purdue-boilermakers",
     "tokens": [
@@ -3404,6 +3840,18 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2509.png"
   },
   {
+    "name": "Purdue Fort Wayne Mastodons",
+    "slug": "purdue-fort-wayne-mastodons",
+    "tokens": [
+      "purdue",
+      "fort",
+      "wayne",
+      "mastodons",
+      "pfw"
+    ],
+    "path": "data/logos/2870.png"
+  },
+  {
     "name": "Quincy Hawks",
     "slug": "quincy-hawks",
     "tokens": [
@@ -3412,6 +3860,16 @@ export const NCAA_LOGOS = [
       "qui"
     ],
     "path": "data/logos/2825.png"
+  },
+  {
+    "name": "Radford Highlanders",
+    "slug": "radford-highlanders",
+    "tokens": [
+      "radford",
+      "highlanders",
+      "rad"
+    ],
+    "path": "data/logos/2515.png"
   },
   {
     "name": "Redlands Bulldogs",
@@ -3464,6 +3922,16 @@ export const NCAA_LOGOS = [
     "path": "data/logos/257.png"
   },
   {
+    "name": "Rider Broncs",
+    "slug": "rider-broncs",
+    "tokens": [
+      "rider",
+      "broncs",
+      "rid"
+    ],
+    "path": "data/logos/2520.png"
+  },
+  {
     "name": "Ripon Red Hawks",
     "slug": "ripon-red-hawks",
     "tokens": [
@@ -3504,6 +3972,26 @@ export const NCAA_LOGOS = [
       "rutg"
     ],
     "path": "data/logos/164.png"
+  },
+  {
+    "name": "SE Louisiana Lions",
+    "slug": "se-louisiana-lions",
+    "tokens": [
+      "se",
+      "louisiana",
+      "lions",
+      "sela"
+    ],
+    "path": "data/logos/2545.png"
+  },
+  {
+    "name": "SMU Mustangs",
+    "slug": "smu-mustangs",
+    "tokens": [
+      "smu",
+      "mustangs"
+    ],
+    "path": "data/logos/2567.png"
   },
   {
     "name": "Sacramento State Hornets",
@@ -3579,6 +4067,47 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2600.png"
   },
   {
+    "name": "Saint Joseph's Hawks",
+    "slug": "saint-joseph-s-hawks",
+    "tokens": [
+      "saint",
+      "joseph",
+      "s",
+      "hawks",
+      "st",
+      "sju",
+      "joes"
+    ],
+    "path": "data/logos/2603.png"
+  },
+  {
+    "name": "Saint Louis Billikens",
+    "slug": "saint-louis-billikens",
+    "tokens": [
+      "saint",
+      "louis",
+      "billikens",
+      "st",
+      "slu"
+    ],
+    "path": "data/logos/139.png"
+  },
+  {
+    "name": "Saint Mary's Gaels",
+    "slug": "saint-mary-s-gaels",
+    "tokens": [
+      "saint",
+      "mary",
+      "s",
+      "gaels",
+      "marys",
+      "st",
+      "ca",
+      "smc"
+    ],
+    "path": "data/logos/2608.png"
+  },
+  {
     "name": "Saint Peter's Peacocks",
     "slug": "saint-peter-s-peacocks",
     "tokens": [
@@ -3647,6 +4176,18 @@ export const NCAA_LOGOS = [
     "path": "data/logos/301.png"
   },
   {
+    "name": "San Francisco Dons",
+    "slug": "san-francisco-dons",
+    "tokens": [
+      "san",
+      "francisco",
+      "dons",
+      "usf",
+      "sf"
+    ],
+    "path": "data/logos/2539.png"
+  },
+  {
     "name": "San José State Spartans",
     "slug": "san-jos-state-spartans",
     "tokens": [
@@ -3658,6 +4199,17 @@ export const NCAA_LOGOS = [
       "sjsu"
     ],
     "path": "data/logos/23.png"
+  },
+  {
+    "name": "Santa Clara Broncos",
+    "slug": "santa-clara-broncos",
+    "tokens": [
+      "santa",
+      "clara",
+      "broncos",
+      "scu"
+    ],
+    "path": "data/logos/2541.png"
   },
   {
     "name": "Savannah State Tigers",
@@ -3672,15 +4224,26 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2542.png"
   },
   {
-    "name": "SE Louisiana Lions",
-    "slug": "se-louisiana-lions",
+    "name": "Seattle U Redhawks",
+    "slug": "seattle-u-redhawks",
     "tokens": [
-      "se",
-      "louisiana",
-      "lions",
-      "sela"
+      "seattle",
+      "u",
+      "redhawks",
+      "sea"
     ],
-    "path": "data/logos/2545.png"
+    "path": "data/logos/2547.png"
+  },
+  {
+    "name": "Seton Hall Pirates",
+    "slug": "seton-hall-pirates",
+    "tokens": [
+      "seton",
+      "hall",
+      "pirates",
+      "shu"
+    ],
+    "path": "data/logos/2550.png"
   },
   {
     "name": "Shaw Bears",
@@ -3734,6 +4297,16 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2560.png"
   },
   {
+    "name": "Siena Saints",
+    "slug": "siena-saints",
+    "tokens": [
+      "siena",
+      "saints",
+      "sie"
+    ],
+    "path": "data/logos/2561.png"
+  },
+  {
     "name": "Simon Fraser Red Leafs",
     "slug": "simon-fraser-red-leafs",
     "tokens": [
@@ -3755,15 +4328,6 @@ export const NCAA_LOGOS = [
       "sru"
     ],
     "path": "data/logos/215.png"
-  },
-  {
-    "name": "SMU Mustangs",
-    "slug": "smu-mustangs",
-    "tokens": [
-      "smu",
-      "mustangs"
-    ],
-    "path": "data/logos/2567.png"
   },
   {
     "name": "South Alabama Jaguars",
@@ -3998,6 +4562,18 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2591.png"
   },
   {
+    "name": "St. Bonaventure Bonnies",
+    "slug": "st-bonaventure-bonnies",
+    "tokens": [
+      "st",
+      "bonaventure",
+      "bonnies",
+      "saint",
+      "sbu"
+    ],
+    "path": "data/logos/179.png"
+  },
+  {
     "name": "St. Cloud State Huskies",
     "slug": "st-cloud-state-huskies",
     "tokens": [
@@ -4008,6 +4584,22 @@ export const NCAA_LOGOS = [
       "scsu"
     ],
     "path": "data/logos/2594.png"
+  },
+  {
+    "name": "St. John's Red Storm",
+    "slug": "st-john-s-red-storm",
+    "tokens": [
+      "st",
+      "john",
+      "s",
+      "red",
+      "storm",
+      "johns",
+      "ny",
+      "saint",
+      "sju"
+    ],
+    "path": "data/logos/2599.png"
   },
   {
     "name": "St. Lawrence Saints",
@@ -4130,6 +4722,16 @@ export const NCAA_LOGOS = [
     "path": "data/logos/183.png"
   },
   {
+    "name": "TCU Horned Frogs",
+    "slug": "tcu-horned-frogs",
+    "tokens": [
+      "tcu",
+      "horned",
+      "frogs"
+    ],
+    "path": "data/logos/2628.png"
+  },
+  {
     "name": "Tarleton State Texans",
     "slug": "tarleton-state-texans",
     "tokens": [
@@ -4140,16 +4742,6 @@ export const NCAA_LOGOS = [
       "st"
     ],
     "path": "data/logos/2627.png"
-  },
-  {
-    "name": "TCU Horned Frogs",
-    "slug": "tcu-horned-frogs",
-    "tokens": [
-      "tcu",
-      "horned",
-      "frogs"
-    ],
-    "path": "data/logos/2628.png"
   },
   {
     "name": "Temple Owls",
@@ -4415,6 +5007,40 @@ export const NCAA_LOGOS = [
     "path": "data/logos/302.png"
   },
   {
+    "name": "UC Irvine Anteaters",
+    "slug": "uc-irvine-anteaters",
+    "tokens": [
+      "uc",
+      "irvine",
+      "anteaters",
+      "uci"
+    ],
+    "path": "data/logos/300.png"
+  },
+  {
+    "name": "UC Riverside Highlanders",
+    "slug": "uc-riverside-highlanders",
+    "tokens": [
+      "uc",
+      "riverside",
+      "highlanders",
+      "ucr"
+    ],
+    "path": "data/logos/27.png"
+  },
+  {
+    "name": "UC Santa Barbara Gauchos",
+    "slug": "uc-santa-barbara-gauchos",
+    "tokens": [
+      "uc",
+      "santa",
+      "barbara",
+      "gauchos",
+      "ucsb"
+    ],
+    "path": "data/logos/2540.png"
+  },
+  {
     "name": "UCF Knights",
     "slug": "ucf-knights",
     "tokens": [
@@ -4443,6 +5069,17 @@ export const NCAA_LOGOS = [
     "path": "data/logos/41.png"
   },
   {
+    "name": "UIC Flames",
+    "slug": "uic-flames",
+    "tokens": [
+      "uic",
+      "flames",
+      "illinois",
+      "chicago"
+    ],
+    "path": "data/logos/82.png"
+  },
+  {
     "name": "UL Monroe Warhawks",
     "slug": "ul-monroe-warhawks",
     "tokens": [
@@ -4452,6 +5089,18 @@ export const NCAA_LOGOS = [
       "ulm"
     ],
     "path": "data/logos/2433.png"
+  },
+  {
+    "name": "UMBC Retrievers",
+    "slug": "umbc-retrievers",
+    "tokens": [
+      "umbc",
+      "retrievers",
+      "maryland",
+      "baltimore",
+      "county"
+    ],
+    "path": "data/logos/2378.png"
   },
   {
     "name": "UMass Lowell River Hawks",
@@ -4475,6 +5124,115 @@ export const NCAA_LOGOS = [
       "uncg"
     ],
     "path": "data/logos/2430.png"
+  },
+  {
+    "name": "UNC Wilmington Seahawks",
+    "slug": "unc-wilmington-seahawks",
+    "tokens": [
+      "unc",
+      "wilmington",
+      "seahawks",
+      "uncw"
+    ],
+    "path": "data/logos/350.png"
+  },
+  {
+    "name": "UNLV Rebels",
+    "slug": "unlv-rebels",
+    "tokens": [
+      "unlv",
+      "rebels"
+    ],
+    "path": "data/logos/2439.png"
+  },
+  {
+    "name": "USC Trojans",
+    "slug": "usc-trojans",
+    "tokens": [
+      "usc",
+      "trojans"
+    ],
+    "path": "data/logos/30.png"
+  },
+  {
+    "name": "UT Arlington Mavericks",
+    "slug": "ut-arlington-mavericks",
+    "tokens": [
+      "ut",
+      "arlington",
+      "mavericks",
+      "uta",
+      "texas"
+    ],
+    "path": "data/logos/250.png"
+  },
+  {
+    "name": "UT Martin Skyhawks",
+    "slug": "ut-martin-skyhawks",
+    "tokens": [
+      "ut",
+      "martin",
+      "skyhawks",
+      "utm"
+    ],
+    "path": "data/logos/2630.png"
+  },
+  {
+    "name": "UT Rio Grande Valley Vaqueros",
+    "slug": "ut-rio-grande-valley-vaqueros",
+    "tokens": [
+      "ut",
+      "rio",
+      "grande",
+      "valley",
+      "vaqueros",
+      "utrgv",
+      "rgv"
+    ],
+    "path": "data/logos/292.png"
+  },
+  {
+    "name": "UTEP Miners",
+    "slug": "utep-miners",
+    "tokens": [
+      "utep",
+      "miners"
+    ],
+    "path": "data/logos/2638.png"
+  },
+  {
+    "name": "UTSA Roadrunners",
+    "slug": "utsa-roadrunners",
+    "tokens": [
+      "utsa",
+      "roadrunners"
+    ],
+    "path": "data/logos/2636.png"
+  },
+  {
+    "name": "UW-Eau Claire Blugolds",
+    "slug": "uw-eau-claire-blugolds",
+    "tokens": [
+      "uw",
+      "eau",
+      "claire",
+      "blugolds",
+      "clr",
+      "wis"
+    ],
+    "path": "data/logos/2738.png"
+  },
+  {
+    "name": "UW-Platteville Pioneers",
+    "slug": "uw-platteville-pioneers",
+    "tokens": [
+      "uw",
+      "platteville",
+      "pioneers",
+      "plattvl",
+      "wis"
+    ],
+    "path": "data/logos/272.png"
   },
   {
     "name": "Union (TN) Bulldogs",
@@ -4539,35 +5297,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2743.png"
   },
   {
-    "name": "UNLV Rebels",
-    "slug": "unlv-rebels",
-    "tokens": [
-      "unlv",
-      "rebels"
-    ],
-    "path": "data/logos/2439.png"
-  },
-  {
-    "name": "USC Trojans",
-    "slug": "usc-trojans",
-    "tokens": [
-      "usc",
-      "trojans"
-    ],
-    "path": "data/logos/30.png"
-  },
-  {
-    "name": "UT Martin Skyhawks",
-    "slug": "ut-martin-skyhawks",
-    "tokens": [
-      "ut",
-      "martin",
-      "skyhawks",
-      "utm"
-    ],
-    "path": "data/logos/2630.png"
-  },
-  {
     "name": "Utah State Aggies",
     "slug": "utah-state-aggies",
     "tokens": [
@@ -4599,47 +5328,13 @@ export const NCAA_LOGOS = [
     "path": "data/logos/254.png"
   },
   {
-    "name": "UTEP Miners",
-    "slug": "utep-miners",
+    "name": "VMI Keydets",
+    "slug": "vmi-keydets",
     "tokens": [
-      "utep",
-      "miners"
+      "vmi",
+      "keydets"
     ],
-    "path": "data/logos/2638.png"
-  },
-  {
-    "name": "UTSA Roadrunners",
-    "slug": "utsa-roadrunners",
-    "tokens": [
-      "utsa",
-      "roadrunners"
-    ],
-    "path": "data/logos/2636.png"
-  },
-  {
-    "name": "UW-Eau Claire Blugolds",
-    "slug": "uw-eau-claire-blugolds",
-    "tokens": [
-      "uw",
-      "eau",
-      "claire",
-      "blugolds",
-      "clr",
-      "wis"
-    ],
-    "path": "data/logos/2738.png"
-  },
-  {
-    "name": "UW-Platteville Pioneers",
-    "slug": "uw-platteville-pioneers",
-    "tokens": [
-      "uw",
-      "platteville",
-      "pioneers",
-      "plattvl",
-      "wis"
-    ],
-    "path": "data/logos/272.png"
+    "path": "data/logos/2678.png"
   },
   {
     "name": "Valdosta State Blazers",
@@ -4673,6 +5368,16 @@ export const NCAA_LOGOS = [
       "van"
     ],
     "path": "data/logos/238.png"
+  },
+  {
+    "name": "Vermont Catamounts",
+    "slug": "vermont-catamounts",
+    "tokens": [
+      "vermont",
+      "catamounts",
+      "uvm"
+    ],
+    "path": "data/logos/261.png"
   },
   {
     "name": "Villanova Wildcats",
@@ -4729,13 +5434,25 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2676.png"
   },
   {
-    "name": "VMI Keydets",
-    "slug": "vmi-keydets",
+    "name": "WPI Engineers",
+    "slug": "wpi-engineers",
     "tokens": [
-      "vmi",
-      "keydets"
+      "wpi",
+      "engineers"
     ],
-    "path": "data/logos/2678.png"
+    "path": "data/logos/2749.png"
+  },
+  {
+    "name": "WVU Tech Golden Bears",
+    "slug": "wvu-tech-golden-bears",
+    "tokens": [
+      "wvu",
+      "tech",
+      "golden",
+      "bears",
+      "wvut"
+    ],
+    "path": "data/logos/2706.png"
   },
   {
     "name": "Wagner Seahawks",
@@ -4864,6 +5581,18 @@ export const NCAA_LOGOS = [
       "wcht"
     ],
     "path": "data/logos/223.png"
+  },
+  {
+    "name": "West Georgia Wolves",
+    "slug": "west-georgia-wolves",
+    "tokens": [
+      "west",
+      "georgia",
+      "wolves",
+      "wga",
+      "uwg"
+    ],
+    "path": "data/logos/2698.png"
   },
   {
     "name": "West Texas A&M Buffaloes",
@@ -4995,6 +5724,19 @@ export const NCAA_LOGOS = [
     "path": "data/logos/396.png"
   },
   {
+    "name": "Wichita State Shockers",
+    "slug": "wichita-state-shockers",
+    "tokens": [
+      "wichita",
+      "state",
+      "shockers",
+      "st",
+      "wsu",
+      "wich"
+    ],
+    "path": "data/logos/2724.png"
+  },
+  {
     "name": "William & Mary Tribe",
     "slug": "william-mary-tribe",
     "tokens": [
@@ -5027,6 +5769,16 @@ export const NCAA_LOGOS = [
       "wssu"
     ],
     "path": "data/logos/2736.png"
+  },
+  {
+    "name": "Winthrop Eagles",
+    "slug": "winthrop-eagles",
+    "tokens": [
+      "winthrop",
+      "eagles",
+      "win"
+    ],
+    "path": "data/logos/2737.png"
   },
   {
     "name": "Wisconsin Badgers",
@@ -5097,15 +5849,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/402.png"
   },
   {
-    "name": "WPI Engineers",
-    "slug": "wpi-engineers",
-    "tokens": [
-      "wpi",
-      "engineers"
-    ],
-    "path": "data/logos/2749.png"
-  },
-  {
     "name": "Wright State Raiders",
     "slug": "wright-state-raiders",
     "tokens": [
@@ -5118,18 +5861,6 @@ export const NCAA_LOGOS = [
     "path": "data/logos/2750.png"
   },
   {
-    "name": "WVU Tech Golden Bears",
-    "slug": "wvu-tech-golden-bears",
-    "tokens": [
-      "wvu",
-      "tech",
-      "golden",
-      "bears",
-      "wvut"
-    ],
-    "path": "data/logos/2706.png"
-  },
-  {
     "name": "Wyoming Cowboys",
     "slug": "wyoming-cowboys",
     "tokens": [
@@ -5138,6 +5869,17 @@ export const NCAA_LOGOS = [
       "wyo"
     ],
     "path": "data/logos/2751.png"
+  },
+  {
+    "name": "Xavier Musketeers",
+    "slug": "xavier-musketeers",
+    "tokens": [
+      "xavier",
+      "musketeers",
+      "xu",
+      "xav"
+    ],
+    "path": "data/logos/2752.png"
   },
   {
     "name": "Yale Bulldogs",
