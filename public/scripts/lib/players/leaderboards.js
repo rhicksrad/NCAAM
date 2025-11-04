@@ -1,16 +1,10 @@
-import { buildScales, drawAxes } from "../charts/axes.js";
-import { computeInnerSize, createSVG } from "../charts/frame.js";
-import { defaultTheme, formatNumber } from "../charts/theme.js";
+import { formatNumber } from "../charts/theme.js";
 import { DEFAULT_METRIC_ORDER, loadLeaderboardDocument, } from "./data.js";
-const BASE_CHART_DIMENSIONS = {
-    width: 720,
-    height: 420,
-    margin: { top: 24, right: 32, bottom: 40, left: 220 },
-};
-const LABEL_PADDING = 32;
-const FALLBACK_CHAR_WIDTH = 8;
-const MAX_MARGIN_LEFT = 400;
-const AXIS_LABEL_FONT = "600 13px 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif";
+const NAME_SCALE_MIN = 0.72;
+const NAME_SCALE_MAX = 1;
+const NAME_SCALE_START = 20;
+const NAME_SCALE_END = 42;
+const MIN_VISIBLE_RATIO = 0.085;
 const CARD_TONE_CLASSES = [
     "stat-card--tone-1",
     "stat-card--tone-2",
@@ -18,44 +12,6 @@ const CARD_TONE_CLASSES = [
     "stat-card--tone-4",
 ];
 const DEFAULT_SEASON_LABEL = "recent seasons";
-const measurementContexts = new WeakMap();
-function getMeasurementContext(container) {
-    const doc = container.ownerDocument ?? document;
-    if (!doc)
-        return null;
-    if (measurementContexts.has(doc)) {
-        return measurementContexts.get(doc) ?? null;
-    }
-    const canvas = doc.createElement("canvas");
-    const context = canvas.getContext("2d");
-    measurementContexts.set(doc, context);
-    return context;
-}
-function estimateLabelWidth(container, labels) {
-    const context = getMeasurementContext(container);
-    if (!context) {
-        return labels.reduce((width, label) => Math.max(width, label.length * FALLBACK_CHAR_WIDTH), 0);
-    }
-    context.font = AXIS_LABEL_FONT;
-    let maxWidth = 0;
-    for (const label of labels) {
-        const measurement = context.measureText(label);
-        maxWidth = Math.max(maxWidth, measurement.width);
-    }
-    return maxWidth;
-}
-function computeChartDimensions(container, leaders) {
-    const labels = leaders.map((leader) => leader.team ? `${leader.name} (${leader.team})` : leader.name);
-    const estimatedWidth = labels.length ? estimateLabelWidth(container, labels) : 0;
-    const desiredMarginLeft = Math.ceil(estimatedWidth + LABEL_PADDING);
-    const marginLeft = Math.min(MAX_MARGIN_LEFT, Math.max(BASE_CHART_DIMENSIONS.margin.left, desiredMarginLeft));
-    const widthAdjustment = marginLeft - BASE_CHART_DIMENSIONS.margin.left;
-    return {
-        width: BASE_CHART_DIMENSIONS.width + widthAdjustment,
-        height: BASE_CHART_DIMENSIONS.height,
-        margin: { ...BASE_CHART_DIMENSIONS.margin, left: marginLeft },
-    };
-}
 function buildSeasonLabel(season) {
     const trimmed = season.trim();
     if (!trimmed)
@@ -148,190 +104,100 @@ function createLeaderboardCard(metricId, metric, orderIndex, seasonLabel) {
     card.classList.add(toneClass);
     const chartId = `metric-chart-${metricId}`;
     const description = `${metric.label} leaders for ${seasonLabel}`;
-    const leaders = (metric.leaders ?? []).slice(0, 10);
     card.innerHTML = `
     <header class="stat-card__head">
       <h3 class="stat-card__title">${metric.label}</h3>
       <span class="stat-card__season">${seasonLabel}</span>
     </header>
     <div class="stat-card__body">
-      <div id="${chartId}" class="stat-card__chart" role="img" aria-label="${description}"></div>
+      <div
+        id="${chartId}"
+        class="stat-card__chart leaderboard-chart"
+        role="group"
+        aria-label="${description}"
+      ></div>
     </div>
-    <ol class="stat-card__list" aria-label="${description}"></ol>
   `;
     const chartHost = card.querySelector(`#${CSS.escape(chartId)}`);
-    const list = card.querySelector(".stat-card__list");
     if (chartHost) {
-        renderMetricChart(chartHost, metric, seasonLabel);
-    }
-    if (list) {
-        list.innerHTML = "";
-        leaders.forEach((leader, index) => {
-            const item = document.createElement("li");
-            item.className = "stat-card__leader";
-            item.innerHTML = `
-        <span class="stat-card__rank">${index + 1}</span>
-        <div class="stat-card__player">
-          <span class="stat-card__name">${leader.name}</span>
-          <span class="stat-card__team">${leader.team}</span>
-        </div>
-        <span class="stat-card__value">${leader.valueFormatted ?? formatNumber(leader.value)}</span>
-      `;
-            list.appendChild(item);
-        });
+        renderMetricChart(chartHost, metric);
     }
     return card;
 }
-function renderMetricChart(container, metric, seasonLabel) {
+function renderMetricChart(container, metric) {
     const leaders = (metric.leaders ?? []).slice(0, 10);
     if (!leaders.length) {
         container.innerHTML = `<p class="stat-card__empty">No data available.</p>`;
         return;
     }
-    const { width, height, margin } = computeChartDimensions(container, leaders);
-    const { iw, ih } = computeInnerSize(width, height, margin);
-    const svg = createSVG(container, width, height, {
-        title: `${metric.label} leaders`,
-        description: `${metric.label} leaders for ${seasonLabel}`,
-    });
-    const plot = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
-    plot.setAttribute("transform", `translate(${margin.left},${margin.top})`);
-    svg.appendChild(plot);
+    container.innerHTML = "";
+    container.classList.add("leaderboard-chart--hydrated");
+    const doc = container.ownerDocument;
+    const list = doc.createElement("div");
+    list.className = "leaderboard-chart__rows";
+    container.appendChild(list);
     const maxValue = Math.max(...leaders.map((leader) => leader.value));
-    const scales = buildScales({
-        x: {
-            type: "linear",
-            domain: [0, maxValue * 1.1],
-            range: [0, iw],
-            nice: true,
-            clamp: true,
-        },
-        y: {
-            type: "band",
-            domain: leaders.map((leader) => leader.name),
-            range: [0, ih],
-            paddingInner: 0.18,
-            paddingOuter: 0.12,
-        },
-    });
-    const barLayer = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
-    barLayer.setAttribute("class", "leaderboard-bars");
-    plot.appendChild(barLayer);
-    const defs = ensureDefs(svg);
-    const gradientId = `${svg.dataset.chartId ?? "chart"}-bar-gradient`;
-    const colors = resolveChartColors(container);
-    const gradient = createGradient(defs, gradientId, colors.accentMuted, colors.accent);
-    const yScale = scales.y;
-    const xScale = scales.x;
-    const band = typeof yScale.bandwidth === "function" ? yScale.bandwidth() : ih / Math.max(1, leaders.length);
-    const barHeight = Math.max(14, band - 10);
-    leaders.forEach((leader) => {
-        const rowGroup = svg.ownerDocument.createElementNS(svg.namespaceURI, "g");
-        rowGroup.setAttribute("class", "leaderboard-row");
-        const y = (yScale(leader.name) ?? 0) + (band - barHeight) / 2;
-        rowGroup.setAttribute("transform", `translate(0, ${y})`);
-        const track = svg.ownerDocument.createElementNS(svg.namespaceURI, "rect");
-        track.setAttribute("class", "leaderboard-bar-track");
-        track.setAttribute("x", "0");
-        track.setAttribute("y", "0");
-        track.setAttribute("width", `${iw}`);
-        track.setAttribute("height", `${barHeight}`);
-        track.setAttribute("fill", colors.track);
-        track.setAttribute("rx", "14");
-        track.setAttribute("ry", "14");
-        rowGroup.appendChild(track);
-        const bar = svg.ownerDocument.createElementNS(svg.namespaceURI, "rect");
-        bar.setAttribute("class", "leaderboard-bar");
-        bar.setAttribute("x", "0");
-        bar.setAttribute("y", "0");
-        bar.setAttribute("height", `${barHeight}`);
-        bar.setAttribute("rx", "14");
-        bar.setAttribute("ry", "14");
-        bar.setAttribute("fill", `url(#${gradientId})`);
-        bar.setAttribute("stroke", colors.accentStroke);
-        bar.setAttribute("stroke-width", "1");
-        const valuePosition = xScale(leader.value);
-        const clampedWidth = Math.max(0, Math.min(iw, valuePosition));
-        bar.setAttribute("width", `${clampedWidth}`);
-        rowGroup.appendChild(bar);
-        const label = svg.ownerDocument.createElementNS(svg.namespaceURI, "text");
-        label.setAttribute("class", "bar-value");
-        label.setAttribute("y", `${barHeight / 2}`);
-        label.setAttribute("dy", "0.35em");
-        label.textContent = leader.valueFormatted ?? formatNumber(leader.value);
-        const showInside = clampedWidth > iw * 0.65;
-        const labelOffset = showInside ? clampedWidth - 14 : clampedWidth + 16;
-        label.setAttribute("x", `${labelOffset}`);
-        label.setAttribute("text-anchor", showInside ? "end" : "start");
-        label.setAttribute("fill", showInside ? colors.onAccent : colors.text);
-        rowGroup.appendChild(label);
-        barLayer.appendChild(rowGroup);
-    });
-    drawAxes(plot, scales, {
-        innerWidth: iw,
-        innerHeight: ih,
-        theme: defaultTheme,
-        tickCount: { x: 4, y: leaders.length },
-        format: {
-            x: (value) => formatNumber(Number(value)),
-            y: (value) => {
-                const leader = leaders.find((entry) => entry.name === value);
-                if (leader?.team) {
-                    return `${leader.name} (${leader.team})`;
-                }
-                return `${value ?? ""}`;
-            },
-        },
+    const safeMax = Number.isFinite(maxValue) && maxValue > 0 ? maxValue : 1;
+    leaders.forEach((leader, index) => {
+        const row = createLeaderboardRow(doc, leader, index, safeMax);
+        list.appendChild(row);
     });
 }
-function ensureDefs(svg) {
-    const existing = svg.querySelector("defs");
-    if (existing)
-        return existing;
-    const defs = svg.ownerDocument.createElementNS(svg.namespaceURI, "defs");
-    svg.insertBefore(defs, svg.firstChild);
-    return defs;
-}
-function createGradient(defs, id, from, to) {
-    let gradient = defs.querySelector(`#${CSS.escape(id)}`);
-    if (!gradient) {
-        gradient = defs.ownerDocument.createElementNS(defs.namespaceURI, "linearGradient");
-        gradient.id = id;
-        gradient.setAttribute("x1", "0%");
-        gradient.setAttribute("y1", "0%");
-        gradient.setAttribute("x2", "100%");
-        gradient.setAttribute("y2", "0%");
-        defs.appendChild(gradient);
+function createLeaderboardRow(doc, leader, index, maxValue) {
+    const row = doc.createElement("div");
+    row.className = "leaderboard-chart__row";
+    row.dataset.rank = `${index + 1}`;
+    const label = doc.createElement("div");
+    label.className = "leaderboard-chart__label";
+    const rank = doc.createElement("span");
+    rank.className = "leaderboard-chart__rank";
+    rank.textContent = String(index + 1).padStart(2, "0");
+    label.appendChild(rank);
+    const identity = doc.createElement("div");
+    identity.className = "leaderboard-chart__identity";
+    const name = doc.createElement("span");
+    name.className = "leaderboard-chart__name";
+    name.textContent = leader.name;
+    identity.appendChild(name);
+    if (leader.team) {
+        const team = doc.createElement("span");
+        team.className = "leaderboard-chart__team";
+        team.textContent = leader.team;
+        identity.appendChild(team);
     }
-    else {
-        gradient.replaceChildren();
+    label.appendChild(identity);
+    row.appendChild(label);
+    const metrics = doc.createElement("div");
+    metrics.className = "leaderboard-chart__metrics";
+    const meter = doc.createElement("div");
+    meter.className = "leaderboard-chart__meter";
+    const ratio = maxValue > 0 ? Math.max(leader.value / maxValue, 0) : 0;
+    const fillRatio = ratio > 0 ? Math.max(ratio, MIN_VISIBLE_RATIO) : 0;
+    meter.style.setProperty("--leaderboard-fill", `${Math.min(fillRatio, 1)}`);
+    metrics.appendChild(meter);
+    const value = doc.createElement("span");
+    value.className = "leaderboard-chart__value";
+    value.textContent = leader.valueFormatted ?? formatNumber(leader.value);
+    metrics.appendChild(value);
+    row.appendChild(metrics);
+    const scale = computeNameScale(leader);
+    row.style.setProperty("--name-scale", `${scale}`);
+    if (leader.team) {
+        const teamScale = Math.max(NAME_SCALE_MIN, Math.min(NAME_SCALE_MAX, scale + 0.08));
+        row.style.setProperty("--team-scale", `${teamScale}`);
     }
-    const start = defs.ownerDocument.createElementNS(defs.namespaceURI, "stop");
-    start.setAttribute("offset", "0%");
-    start.setAttribute("stop-color", from);
-    start.setAttribute("stop-opacity", "1");
-    const end = defs.ownerDocument.createElementNS(defs.namespaceURI, "stop");
-    end.setAttribute("offset", "100%");
-    end.setAttribute("stop-color", to);
-    end.setAttribute("stop-opacity", "1");
-    gradient.appendChild(start);
-    gradient.appendChild(end);
-    return gradient;
+    return row;
 }
-function resolveChartColors(container) {
-    const view = container.ownerDocument?.defaultView;
-    const styles = view ? view.getComputedStyle(container) : null;
-    const accent = pickColor(styles?.getPropertyValue("--chart-accent")) ?? defaultTheme.accent;
-    const accentMuted = pickColor(styles?.getPropertyValue("--chart-accent-muted")) ?? defaultTheme.accentMuted;
-    const track = pickColor(styles?.getPropertyValue("--chart-accent-track")) ?? accentMuted;
-    const text = pickColor(styles?.getPropertyValue("--stat-card-ink")) ?? defaultTheme.fg;
-    const onAccent = pickColor(styles?.getPropertyValue("--stat-card-on-accent")) ?? "#ffffff";
-    const accentStroke = pickColor(styles?.getPropertyValue("--chart-accent-stroke")) ?? accent;
-    return { accent, accentMuted, track, text, onAccent, accentStroke };
-}
-function pickColor(value) {
-    if (!value)
-        return undefined;
-    const trimmed = value.trim();
-    return trimmed ? trimmed : undefined;
+function computeNameScale(leader) {
+    const label = leader.team ? `${leader.name} (${leader.team})` : leader.name;
+    const length = label.length;
+    if (length <= NAME_SCALE_START) {
+        return NAME_SCALE_MAX;
+    }
+    if (length >= NAME_SCALE_END) {
+        return NAME_SCALE_MIN;
+    }
+    const progress = (length - NAME_SCALE_START) / (NAME_SCALE_END - NAME_SCALE_START);
+    const scale = NAME_SCALE_MAX - progress * (NAME_SCALE_MAX - NAME_SCALE_MIN);
+    return Number(scale.toFixed(3));
 }

@@ -1,5 +1,11 @@
 @import url("./tokens.css");
 
+.container.players-page-container {
+  width: min(calc(100% - 2 * var(--space-xl)), 1980px);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-lg), 1.8vw, var(--space-xl));
+}
+
 .players-page {
   position: relative;
 }
@@ -22,8 +28,8 @@
 
 .players-leaderboard-grid {
   display: grid;
-  gap: clamp(1rem, 2vw, 2rem);
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: clamp(1rem, 2vw, 2.2rem);
+  grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
   align-items: stretch;
 }
 
@@ -97,7 +103,7 @@
 
 .stat-card__body {
   position: relative;
-  min-height: clamp(260px, 38vw, 340px);
+  min-height: clamp(300px, 42vw, 420px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,60 +117,186 @@
   min-height: inherit;
 }
 
-.stat-card__chart svg {
-  width: 100%;
-  height: auto;
-  overflow: visible;
+.leaderboard-chart {
+  --leaderboard-gap: clamp(0.85rem, 1.8vw, 1.35rem);
+  --leaderboard-name-size: clamp(1.05rem, 2vw, 1.45rem);
+  --leaderboard-team-size: clamp(0.78rem, 1.4vw, 0.98rem);
+  --leaderboard-rank-size: clamp(1rem, 1.9vw, 1.4rem);
+  --leaderboard-value-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--leaderboard-gap);
+  padding: clamp(0.5rem, 1.2vw, 1rem) clamp(0.45rem, 1.4vw, 1.2rem)
+    clamp(0.75rem, 1.6vw, 1.4rem);
 }
 
-
-.stat-card__chart .axis path,
-.stat-card__chart .axis line {
-  stroke: var(--chart-grid);
+.leaderboard-chart__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--leaderboard-gap);
 }
 
-.stat-card__chart .axis text {
-  fill: var(--stat-card-ink);
-  font-weight: 700;
-  font-size: clamp(0.95rem, 1.9vw, 1.45rem);
+.leaderboard-chart__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 2.1rem);
+  padding: clamp(0.7rem, 1.6vw, 1.15rem) clamp(0.75rem, 1.9vw, 1.4rem);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--chart-bg) 88%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-grid) 48%, transparent);
+  backdrop-filter: blur(2px);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.stat-card__chart .axis-label {
-  fill: var(--stat-card-ink);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+.leaderboard-chart__row[data-rank="1"],
+.leaderboard-chart__row[data-rank="2"],
+.leaderboard-chart__row[data-rank="3"] {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 32%, transparent),
+    0 18px 36px color-mix(in srgb, var(--chart-accent) 18%, transparent);
+}
+
+.leaderboard-chart__row[data-rank="1"] {
+  background: color-mix(in srgb, var(--chart-accent) 24%, var(--chart-bg) 76%);
+}
+
+.leaderboard-chart__row[data-rank="2"] {
+  background: color-mix(in srgb, var(--chart-accent) 18%, var(--chart-bg) 82%);
+}
+
+.leaderboard-chart__row[data-rank="3"] {
+  background: color-mix(in srgb, var(--chart-accent) 14%, var(--chart-bg) 86%);
+}
+
+.leaderboard-chart__row:hover,
+.leaderboard-chart__row:focus-within {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 38%, transparent),
+    0 22px 44px color-mix(in srgb, var(--chart-accent) 22%, transparent);
+}
+
+.leaderboard-chart__label {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 1.9vw, 1.5rem);
+  min-width: 0;
+}
+
+.leaderboard-chart__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: clamp(2.4rem, 3.2vw, 2.95rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 0.9rem;
+  font-size: var(--leaderboard-rank-size);
+  font-weight: 800;
+  color: var(--stat-card-on-accent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--chart-accent) 88%, black 12%),
+    color-mix(in srgb, var(--chart-accent) 68%, black 32%)
+  );
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--chart-accent) 32%, transparent);
+}
+
+.leaderboard-chart__identity {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.2rem, 0.6vw, 0.35rem);
+  min-width: 0;
+}
+
+.leaderboard-chart__name {
+  font-size: calc(var(--leaderboard-name-size) * var(--name-scale, 1));
+  font-weight: 750;
+  line-height: 1.12;
+  color: var(--stat-card-ink);
+  overflow-wrap: anywhere;
+}
+
+.leaderboard-chart__team {
+  font-size: calc(var(--leaderboard-team-size) * var(--team-scale, 1));
   text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 650;
+  color: var(--stat-card-muted);
+  opacity: 0.9;
 }
 
-.stat-card__chart .bar-value {
-  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
-  font-weight: 700;
-  fill: var(--stat-card-ink);
+.leaderboard-chart__metrics {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.8vw, 1.35rem);
+  min-width: 0;
 }
 
-.stat-card__chart .leaderboard-bars {
-  isolation: isolate;
-}
-
-.stat-card__chart .leaderboard-bar-track {
-  fill: color-mix(in srgb, var(--chart-accent) 32%, white 68%);
-  opacity: 1;
-}
-
-.stat-card__chart .leaderboard-bar {
-  filter: drop-shadow(0 12px 24px rgba(16, 24, 60, 0.18));
-}
-
-.stat-card__list {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+.leaderboard-chart__meter {
+  --fill: var(--leaderboard-fill, 0);
+  position: relative;
+  flex: 1;
+  height: clamp(0.85rem, 1.9vw, 1.25rem);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--chart-accent-track) 60%, transparent);
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 22%, transparent);
+}
+
+.leaderboard-chart__meter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--chart-accent-muted) 58%, white 12%),
+    color-mix(in srgb, var(--chart-accent) 92%, white 4%)
+  );
+  transform: scaleX(var(--fill));
+  transform-origin: left center;
+  transition: transform 280ms ease-out;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--chart-accent) 32%, transparent);
+}
+
+.leaderboard-chart__value {
+  font-size: var(--leaderboard-value-size);
+  font-weight: 800;
+  color: var(--stat-card-ink);
+  min-width: max-content;
+}
+
+@media (max-width: 1260px) {
+  .players-leaderboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .leaderboard-chart__row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: clamp(0.75rem, 2vw, 1.4rem);
+  }
+
+  .leaderboard-chart__metrics {
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(0.55rem, 1.5vw, 1rem);
+  }
+
+  .leaderboard-chart__value {
+    text-align: right;
+  }
+}
+
+@media (max-width: 720px) {
+  .players-leaderboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .container.players-page-container {
+    padding-inline: clamp(var(--space-md), 5vw, var(--space-lg));
+  }
 }
 
 .stat-card__loading,
@@ -221,13 +353,19 @@
   --chart-accent-stroke: #be185d;
 }
 
+
 .players-conference-directory {
   display: grid;
   gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  align-items: start;
 }
 
 .conference-panel {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -297,6 +435,9 @@ details[open] > summary.conference-panel__summary {
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .team-roster__summary {
@@ -509,6 +650,9 @@ details[open] > summary.conference-panel__summary {
 .team-roster__name {
   font-weight: 700;
   color: color-mix(in srgb, var(--color-ink) 90%, white 10%);
+  font-size: var(--player-name-font-size, 1.05rem);
+  line-height: 1.15;
+  word-break: break-word;
 }
 
 .team-roster__meta {
@@ -556,6 +700,10 @@ details[open] > summary.conference-panel__summary {
 @media (max-width: 900px) {
   .stat-card__chart {
     min-height: 200px;
+  }
+
+  .players-conference-directory {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .team-roster__header,
