@@ -11,17 +11,11 @@ app.innerHTML = `
       <header class="stack" data-gap="xs">
         <h2 class="section-title">Real-time conference standings</h2>
         <p class="section-summary">
-          Pick a conference and season to view the latest win-loss splits directly from the Ball Don't Lie NCAAB feed.
+          Open a conference card to view its live win-loss splits directly from the Ball Don't Lie NCAAB feed.
         </p>
       </header>
       <form id="standings-form" class="standings-controls" autocomplete="off">
         <div class="standings-controls__inputs">
-          <label class="standings-controls__field">
-            <span class="standings-controls__label">Conference</span>
-            <select id="standings-conference" name="conference" required>
-              <option value="" disabled selected>Loading conferences…</option>
-            </select>
-          </label>
           <label class="standings-controls__field">
             <span class="standings-controls__label">Season</span>
             <input
@@ -37,64 +31,33 @@ app.innerHTML = `
           </label>
         </div>
         <div class="standings-controls__actions">
-          <button type="submit" class="button" data-variant="primary">Get standings</button>
+          <button type="submit" class="button" data-variant="primary">Update season</button>
         </div>
       </form>
       <p id="standings-status" class="standings-status" role="status" aria-live="polite">
-        Choose a conference and season to load live standings.
+        Loading conferences…
       </p>
     </section>
-    <section id="standings-results" class="card standings-results" hidden>
-      <header class="standings-results__header">
-        <div id="standings-identity"></div>
-        <div id="standings-meta" class="standings-results__meta"></div>
-      </header>
-      <div class="table-shell">
-        <table class="standings-table">
-          <thead>
-            <tr>
-              <th scope="col">Seed</th>
-              <th scope="col">Team</th>
-              <th scope="col">W</th>
-              <th scope="col">L</th>
-              <th scope="col">Pct</th>
-              <th scope="col">GB</th>
-              <th scope="col">Conf</th>
-              <th scope="col">Home</th>
-              <th scope="col">Away</th>
-            </tr>
-          </thead>
-          <tbody id="standings-rows">
-            <tr><td colspan="9">Standings will appear here.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="standings-note">Records refresh as the Ball Don't Lie NCAAB API publishes new results.</p>
-    </section>
+    <div id="standings-directory" class="stack" data-gap="md">
+      <p class="standings-directory__placeholder">Preparing conference directory…</p>
+    </div>
   </section>
 `;
 const form = document.getElementById("standings-form");
-const conferenceSelect = document.getElementById("standings-conference");
 const seasonInput = document.getElementById("standings-season");
 const statusEl = document.getElementById("standings-status");
-const resultsSection = document.getElementById("standings-results");
-const identityEl = document.getElementById("standings-identity");
-const metaEl = document.getElementById("standings-meta");
-const rowsEl = document.getElementById("standings-rows");
-if (!form || !conferenceSelect || !seasonInput || !statusEl || !resultsSection || !identityEl || !metaEl || !rowsEl) {
+const directoryEl = document.getElementById("standings-directory");
+if (!form || !seasonInput || !statusEl || !directoryEl) {
     throw new Error("Standings view failed to initialize");
 }
 const formEl = form;
-const conferenceSelectEl = conferenceSelect;
 const seasonInputEl = seasonInput;
 const statusElement = statusEl;
-const resultsSectionEl = resultsSection;
-const identityElement = identityEl;
-const metaElement = metaEl;
-const rowsElement = rowsEl;
-const submitButton = formEl.querySelector('button[type="submit"]');
+const directoryElement = directoryEl;
 let directory = null;
-let isLoading = false;
+let currentSeason;
+let lastOpenedConferenceId = null;
+const standingsCache = new Map();
 const params = (() => {
     try {
         return new URLSearchParams(location.search);
@@ -123,6 +86,7 @@ function parseConferenceIdFromParams() {
     return Number.isFinite(parsed) ? parsed : null;
 }
 const initialSeason = parseSeasonFromParams();
+currentSeason = initialSeason;
 function escapeHtml(value) {
     return value
         .replace(/&/g, "&amp;")
@@ -183,18 +147,6 @@ function formatRecordString(value) {
     }
     return escapeHtml(trimmed);
 }
-function renderTeamCell(team) {
-    const displayName = team.full_name || team.name || "Team";
-    const safeName = escapeHtml(displayName);
-    const alt = escapeAttr(`${displayName} logo`);
-    const logoUrl = getTeamLogoUrl(team);
-    if (logoUrl) {
-        const src = escapeAttr(logoUrl);
-        return `<span class="standings-team"><span class="standings-team__logo"><img class="standings-team__logo-image" src="${src}" alt="${alt}" loading="lazy" decoding="async"></span><span class="standings-team__name">${safeName}</span></span>`;
-    }
-    const monogram = escapeHtml(getTeamMonogram(team));
-    return `<span class="standings-team"><span class="standings-team__logo"><span class="standings-team__logo-fallback" role="img" aria-label="${alt}">${monogram}</span></span><span class="standings-team__name">${safeName}</span></span>`;
-}
 function compareStandings(a, b) {
     const seedA = toNumber(a.playoff_seed);
     const seedB = toNumber(b.playoff_seed);
@@ -229,6 +181,15 @@ function compareStandings(a, b) {
     const nameA = (a.team.full_name || a.team.name || "").toLowerCase();
     const nameB = (b.team.full_name || b.team.name || "").toLowerCase();
     return nameA.localeCompare(nameB);
+}
+function createElementFromMarkup(markup) {
+    const template = document.createElement("template");
+    template.innerHTML = markup.trim();
+    const element = template.content.firstElementChild;
+    if (!element) {
+        throw new Error("Failed to create element from markup");
+    }
+    return element;
 }
 function renderConferenceIdentity(conferenceId, records) {
     const aliasSet = new Set();
@@ -291,16 +252,11 @@ function renderConferenceIdentity(conferenceId, records) {
   `;
     return { markup, name, shortName };
 }
-function renderStandings(records, conferenceId, season) {
-    if (records.length === 0) {
-        resultsSectionEl.hidden = true;
-        return;
-    }
-    const sorted = records.slice().sort(compareStandings);
-    rowsElement.innerHTML = sorted
+function renderStandingsTable(records) {
+    const rows = records
         .map((record, index) => {
         const seed = formatSeed(record.playoff_seed, index);
-        const teamCell = renderTeamCell(record.team);
+        const teamCell = renderTeamCell(record);
         const wins = formatInteger(record.wins);
         const losses = formatInteger(record.losses);
         const pct = formatPercentage(record.win_percentage);
@@ -321,11 +277,79 @@ function renderStandings(records, conferenceId, season) {
       </tr>`;
     })
         .join("");
-    const identity = renderConferenceIdentity(conferenceId, sorted);
-    identityElement.innerHTML = identity.markup;
-    const teamCountLabel = `${sorted.length} team${sorted.length === 1 ? "" : "s"}`;
-    metaElement.textContent = `Season ${season} • ${teamCountLabel}`;
-    resultsSectionEl.hidden = false;
+    return `
+    <div class="table-shell">
+      <table class="standings-table">
+        <thead>
+          <tr>
+            <th scope="col">Seed</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">Pct</th>
+            <th scope="col">GB</th>
+            <th scope="col">Conf</th>
+            <th scope="col">Home</th>
+            <th scope="col">Away</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+function renderTeamCell(record) {
+    const team = record.team;
+    const displayName = team.full_name || team.name || "Team";
+    const safeName = escapeHtml(displayName);
+    const alt = escapeAttr(`${displayName} logo`);
+    const logoUrl = getTeamLogoUrl(team);
+    if (logoUrl) {
+        const src = escapeAttr(logoUrl);
+        return `<span class="standings-team"><span class="standings-team__logo"><img class="standings-team__logo-image" src="${src}" alt="${alt}" loading="lazy" decoding="async"></span><span class="standings-team__name">${safeName}</span></span>`;
+    }
+    const monogram = escapeHtml(getTeamMonogram(team));
+    return `<span class="standings-team"><span class="standings-team__logo"><span class="standings-team__logo-fallback" role="img" aria-label="${alt}">${monogram}</span></span><span class="standings-team__name">${safeName}</span></span>`;
+}
+function updateConferenceIdentity(summaryEl, conferenceId, records) {
+    const identity = renderConferenceIdentity(conferenceId, records);
+    const replacement = createElementFromMarkup(identity.markup);
+    const existing = summaryEl.querySelector(".conference-identity");
+    if (existing) {
+        existing.replaceWith(replacement);
+    }
+    else {
+        summaryEl.insertBefore(replacement, summaryEl.firstChild);
+    }
+    const details = summaryEl.closest("details");
+    if (details) {
+        details.dataset.conferenceName = identity.name;
+    }
+    return { name: identity.name, shortName: identity.shortName };
+}
+function updateCountLabel(countEl, teamCount) {
+    if (teamCount > 0) {
+        const label = `${teamCount} team${teamCount === 1 ? "" : "s"}`;
+        countEl.textContent = label;
+        countEl.setAttribute("aria-label", label);
+    }
+    else {
+        const label = `Season ${currentSeason}`;
+        countEl.textContent = label;
+        countEl.setAttribute("aria-label", label);
+    }
+}
+function renderStandingsInto(container, records) {
+    if (!records.length) {
+        container.innerHTML = `<p class="standings-card__placeholder">No standings are available for season ${currentSeason}.</p>`;
+        return;
+    }
+    const teamCountLabel = `${records.length} team${records.length === 1 ? "" : "s"}`;
+    container.innerHTML = `
+    <div class="standings-card__meta">Season ${currentSeason} · ${teamCountLabel}</div>
+    ${renderStandingsTable(records)}
+    <p class="standings-note">Records refresh as the Ball Don't Lie NCAAB API publishes new results.</p>
+  `;
 }
 function setStatus(message, variant = "default") {
     statusElement.textContent = message;
@@ -339,22 +363,19 @@ function setStatus(message, variant = "default") {
         delete statusElement.dataset.variant;
     }
 }
-function setLoading(loading) {
-    isLoading = loading;
-    conferenceSelectEl.disabled = loading;
-    seasonInputEl.disabled = loading;
-    if (submitButton) {
-        submitButton.disabled = loading;
-    }
-}
-function updateSearchParams(conferenceId, season) {
+function updateSearchParams(season, conferenceId) {
     if (typeof history === "undefined" || typeof history.replaceState !== "function") {
         return;
     }
     try {
         const search = new URLSearchParams(location.search);
-        search.set("conference_id", String(conferenceId));
         search.set("season", String(season));
+        if (conferenceId) {
+            search.set("conference_id", String(conferenceId));
+        }
+        else {
+            search.delete("conference_id");
+        }
         const query = search.toString();
         const nextUrl = `${location.pathname}${query ? `?${query}` : ""}${location.hash}`;
         history.replaceState(null, "", nextUrl);
@@ -363,72 +384,173 @@ function updateSearchParams(conferenceId, season) {
         // ignore URL update failures
     }
 }
-async function loadStandings(conferenceId, season) {
-    if (isLoading) {
+async function fetchStandingsData(conferenceId, season) {
+    const response = await NCAAM.standings({ conference_id: conferenceId, season });
+    const data = Array.isArray(response?.data) ? response.data : [];
+    return data;
+}
+async function loadStandingsForCard(details) {
+    const idRaw = details.dataset.conferenceId;
+    if (!idRaw)
+        return;
+    const conferenceId = Number.parseInt(idRaw, 10);
+    if (!Number.isFinite(conferenceId)) {
         return;
     }
-    setLoading(true);
-    setStatus("Loading standings…", "loading");
-    resultsSectionEl.hidden = true;
-    try {
-        const response = await NCAAM.standings({ conference_id: conferenceId, season });
-        const data = Array.isArray(response?.data) ? response.data : [];
-        if (data.length === 0) {
-            setStatus(`No standings are available for ${season}.`, "default");
-            resultsSectionEl.hidden = true;
-            return;
+    const summary = details.querySelector(".conference-card__summary");
+    const body = details.querySelector(".standings-card__body");
+    const countEl = summary?.querySelector(".conference-card__count") ?? null;
+    if (!summary || !body || !countEl) {
+        return;
+    }
+    const cached = standingsCache.get(conferenceId);
+    if (cached && cached.season === currentSeason) {
+        renderStandingsInto(body, cached.records);
+        updateCountLabel(countEl, cached.records.length);
+        const identity = updateConferenceIdentity(summary, conferenceId, cached.records);
+        lastOpenedConferenceId = conferenceId;
+        updateSearchParams(currentSeason, conferenceId);
+        if (cached.records.length > 0) {
+            setStatus(`Showing ${cached.records.length} teams for ${identity.name} (${currentSeason}).`, "success");
         }
-        renderStandings(data, conferenceId, season);
-        setStatus(`Showing ${data.length} teams for season ${season}.`, "success");
-        updateSearchParams(conferenceId, season);
+        else {
+            setStatus(`No standings available for ${identity.name} in ${currentSeason}.`);
+        }
+        details.dataset.loadedSeason = String(currentSeason);
+        return;
+    }
+    if (details.dataset.loading === "true") {
+        return;
+    }
+    details.dataset.loading = "true";
+    body.innerHTML = `<p class="standings-card__placeholder">Loading standings…</p>`;
+    try {
+        const data = await fetchStandingsData(conferenceId, currentSeason);
+        const sorted = data.slice().sort(compareStandings);
+        standingsCache.set(conferenceId, { season: currentSeason, records: sorted });
+        if (sorted.length === 0) {
+            body.innerHTML = `<p class="standings-card__placeholder">No standings are available for season ${currentSeason}.</p>`;
+            updateCountLabel(countEl, 0);
+            const identity = updateConferenceIdentity(summary, conferenceId, sorted);
+            setStatus(`No standings available for ${identity.name} in ${currentSeason}.`);
+        }
+        else {
+            renderStandingsInto(body, sorted);
+            updateCountLabel(countEl, sorted.length);
+            const identity = updateConferenceIdentity(summary, conferenceId, sorted);
+            setStatus(`Showing ${sorted.length} teams for ${identity.name} (${currentSeason}).`, "success");
+        }
+        details.dataset.loadedSeason = String(currentSeason);
+        lastOpenedConferenceId = conferenceId;
+        updateSearchParams(currentSeason, conferenceId);
     }
     catch (error) {
-        console.error("Unable to load standings", error);
+        console.error(`Unable to load standings for conference ${conferenceId}`, error);
+        body.innerHTML = `<p class="standings-card__placeholder standings-card__placeholder--error">We couldn't load the standings right now. Please try again later.</p>`;
+        updateCountLabel(countEl, 0);
         setStatus("We couldn't load the standings right now. Please try again shortly.", "error");
-        resultsSectionEl.hidden = true;
     }
     finally {
-        setLoading(false);
+        delete details.dataset.loading;
     }
 }
+function clearCachedStandings() {
+    standingsCache.clear();
+    const cards = directoryElement.querySelectorAll(".standings-card");
+    cards.forEach(details => {
+        const body = details.querySelector(".standings-card__body");
+        const summary = details.querySelector(".conference-card__summary");
+        const countEl = summary?.querySelector(".conference-card__count") ?? null;
+        if (body) {
+            body.innerHTML = `<p class="standings-card__placeholder">Open to load standings for season ${currentSeason}.</p>`;
+        }
+        if (countEl) {
+            updateCountLabel(countEl, 0);
+        }
+        delete details.dataset.loadedSeason;
+        if (details.open) {
+            void loadStandingsForCard(details);
+        }
+    });
+}
+function createConferenceCard(conferenceId) {
+    const details = document.createElement("details");
+    details.className = "conference-card card standings-card";
+    details.dataset.conferenceId = String(conferenceId);
+    const summary = document.createElement("summary");
+    summary.className = "conference-card__summary";
+    const identity = renderConferenceIdentity(conferenceId, []);
+    summary.append(createElementFromMarkup(identity.markup));
+    const meta = document.createElement("span");
+    meta.className = "conference-card__meta";
+    const count = document.createElement("span");
+    count.className = "conference-card__count";
+    const seasonLabel = `Season ${currentSeason}`;
+    count.textContent = seasonLabel;
+    count.setAttribute("aria-label", seasonLabel);
+    meta.append(count);
+    const indicator = document.createElement("span");
+    indicator.className = "disclosure-indicator";
+    indicator.setAttribute("aria-hidden", "true");
+    meta.append(indicator);
+    summary.append(meta);
+    details.append(summary);
+    const body = document.createElement("div");
+    body.className = "conference-card__body standings-card__body";
+    body.innerHTML = `<p class="standings-card__placeholder">Open to load standings for season ${currentSeason}.</p>`;
+    details.append(body);
+    details.addEventListener("toggle", () => {
+        if (!details.open)
+            return;
+        void loadStandingsForCard(details);
+    });
+    return details;
+}
 async function populateConferences() {
+    setStatus("Loading conferences…", "loading");
+    directoryElement.innerHTML = `<p class="standings-directory__placeholder">Loading conferences…</p>`;
     try {
         directory = await getConferenceMap();
     }
     catch (error) {
         console.error("Unable to load conference directory", error);
+        directoryElement.innerHTML = `<p class="standings-directory__placeholder standings-directory__placeholder--error">We couldn't load the conference list. Please refresh and try again.</p>`;
         setStatus("We couldn't load the conference list. Please refresh and try again.", "error");
-        conferenceSelectEl.innerHTML = '<option value="" disabled selected>Unavailable</option>';
         return;
     }
     const entries = Array.from(directory.values()).sort((a, b) => a.name.localeCompare(b.name));
     if (entries.length === 0) {
-        conferenceSelectEl.innerHTML = '<option value="" disabled selected>No conferences found</option>';
+        directoryElement.innerHTML = `<p class="standings-directory__placeholder">No conferences are available yet.</p>`;
         setStatus("No conferences are available yet.");
         return;
     }
-    conferenceSelectEl.innerHTML = entries
-        .map(conference => `<option value="${conference.id}">${escapeHtml(conference.name)}</option>`)
-        .join("");
-    const fromParams = parseConferenceIdFromParams();
-    const defaultConferenceId = fromParams && directory.has(fromParams)
-        ? fromParams
-        : entries[0].id;
-    conferenceSelectEl.value = String(defaultConferenceId);
-    if (!seasonInputEl.value) {
-        seasonInputEl.value = String(initialSeason);
+    directoryElement.innerHTML = "";
+    entries.forEach(entry => {
+        directoryElement.appendChild(createConferenceCard(entry.id));
+    });
+    setStatus(`Open a conference to view standings for season ${currentSeason}.`);
+    const targetConference = parseConferenceIdFromParams();
+    if (targetConference && directory.has(targetConference)) {
+        const card = directoryElement.querySelector(`details.standings-card[data-conference-id="${targetConference}"]`);
+        if (card) {
+            card.open = true;
+            void loadStandingsForCard(card);
+        }
     }
-    await loadStandings(defaultConferenceId, Number.parseInt(seasonInputEl.value, 10));
 }
 formEl.addEventListener("submit", event => {
     event.preventDefault();
-    const conferenceId = Number.parseInt(conferenceSelectEl.value, 10);
-    const season = Number.parseInt(seasonInputEl.value, 10);
-    if (!Number.isFinite(conferenceId) || !Number.isFinite(season)) {
-        setStatus("Please choose a valid conference and season.", "error");
+    const raw = Number.parseInt(seasonInputEl.value, 10);
+    if (!Number.isFinite(raw)) {
+        setStatus("Please choose a valid season.", "error");
         return;
     }
-    void loadStandings(conferenceId, season);
+    const clamped = Math.min(Math.max(raw, 2002), 2100);
+    currentSeason = clamped;
+    seasonInputEl.value = String(clamped);
+    setStatus(`Season ${clamped} selected. Open a conference to load standings.`, "success");
+    updateSearchParams(currentSeason, lastOpenedConferenceId);
+    clearCachedStandings();
 });
 seasonInputEl.value = String(initialSeason);
 void populateConferences();
