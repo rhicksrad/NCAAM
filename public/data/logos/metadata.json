@@ -17,6 +17,14 @@
         "Birmingham-Southern"
       ]
     },
+    "4": {
+      "name": "Southern Indiana Screaming Eagles",
+      "aliases": [
+        "Southern Indiana",
+        "USI",
+        "S Indiana"
+      ]
+    },
     "5": {
       "name": "UAB Blazers",
       "aliases": [
@@ -999,6 +1007,14 @@
       "aliases": [
         "FUR",
         "Furman"
+      ]
+    },
+    "232": {
+      "name": "Charleston Cougars",
+      "aliases": [
+        "Charleston",
+        "College of Charleston",
+        "COFC"
       ]
     },
     "233": {
@@ -2657,6 +2673,14 @@
         "NAVY"
       ]
     },
+    "2427": {
+      "name": "UNC Asheville Bulldogs",
+      "aliases": [
+        "UNC Asheville",
+        "UNC-Asheville",
+        "UNCA"
+      ]
+    },
     "2428": {
       "name": "North Carolina Central Eagles",
       "aliases": [
@@ -3039,6 +3063,14 @@
       "aliases": [
         "Siena",
         "SIE"
+      ]
+    },
+    "2565": {
+      "name": "SIU Edwardsville Cougars",
+      "aliases": [
+        "SIU Edwardsville",
+        "SIUE",
+        "SIU-Edwardsville"
       ]
     },
     "2567": {
