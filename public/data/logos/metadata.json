@@ -2660,12 +2660,37 @@
         "SFPA"
       ]
     },
+    "2599": {
+      "name": "St. John's Red Storm",
+      "aliases": [
+        "St. John's",
+        "St Johns",
+        "St. John's (NY)",
+        "St Johns (NY)",
+        "Saint John's",
+        "Saint John's (NY)",
+        "SJU"
+      ]
+    },
     "2600": {
       "name": "Saint John's (MN) Johnnies",
       "aliases": [
         "Saint John's (MN)",
         "St John's (MN)",
         "ST. J"
+      ]
+    },
+    "2608": {
+      "name": "Saint Mary's Gaels",
+      "aliases": [
+        "Saint Mary's",
+        "Saint Marys",
+        "St. Mary's",
+        "St Mary's",
+        "St Marys",
+        "Saint Mary's (CA)",
+        "St. Mary's (CA)",
+        "SMC"
       ]
     },
     "2612": {

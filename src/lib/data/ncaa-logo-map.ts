@@ -3521,6 +3521,21 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
     "path": "data/logos/2600.png"
   },
   {
+    "name": "Saint Mary's Gaels",
+    "slug": "saint-mary-s-gaels",
+    "tokens": [
+      "saint",
+      "mary",
+      "s",
+      "gaels",
+      "st",
+      "marys",
+      "smc",
+      "ca"
+    ],
+    "path": "data/logos/2608.png"
+  },
+  {
     "name": "Saint Peter's Peacocks",
     "slug": "saint-peter-s-peacocks",
     "tokens": [
@@ -3950,6 +3965,21 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
       "scsu"
     ],
     "path": "data/logos/2594.png"
+  },
+  {
+    "name": "St. John's Red Storm",
+    "slug": "st-john-s-red-storm",
+    "tokens": [
+      "st",
+      "saint",
+      "john",
+      "johns",
+      "red",
+      "storm",
+      "sju",
+      "ny"
+    ],
+    "path": "data/logos/2599.png"
   },
   {
     "name": "St. Lawrence Saints",
