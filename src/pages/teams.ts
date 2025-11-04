@@ -104,12 +104,21 @@ app.innerHTML = `<div class="stack" data-gap="lg">
     <input id="team-search" class="search" type="search" placeholder="Filter name or conference" aria-label="Filter teams by name or conference" autocomplete="off">
     <div id="list" class="conference-groups stack" data-gap="sm"></div>
   </section>
+  <section class="teams-leaderboard stack" data-gap="md">
+    <header class="feature-card card stack" data-gap="xs">
+      <h2 class="feature-card__title">Top 10 program efficiency leaders</h2>
+      <p id="teams-leaderboard-meta" class="feature-card__meta">Compiling program efficiency leaderboard…</p>
+    </header>
+    <div id="teams-leaderboard" class="teams-leaderboard__grid" aria-live="polite"></div>
+  </section>
 </div>`;
 
 const input = app.querySelector("#team-search") as HTMLInputElement;
 const list = app.querySelector("#list") as HTMLElement;
 const mapRoot = app.querySelector("#team-map") as HTMLElement | null;
 const mapCount = app.querySelector(".teams-map__count") as HTMLElement | null;
+const leaderboardRoot = app.querySelector("#teams-leaderboard") as HTMLElement | null;
+const leaderboardMeta = app.querySelector("#teams-leaderboard-meta") as HTMLElement | null;
 
 const dataUrl = (path: string) => new URL(path, import.meta.url).toString();
 
@@ -395,12 +404,103 @@ function renderTeamStats(team: TeamCardData) {
   </dl>`;
 }
 
+function renderLeaderboard(teams: TeamCardData[]) {
+  if (!leaderboardRoot) {
+    return;
+  }
+
+  const teamsWithStats = teams.filter(team => team.stats?.averages.barthag != null);
+  if (teamsWithStats.length === 0) {
+    if (leaderboardMeta) {
+      leaderboardMeta.textContent = "Efficiency leaderboard unavailable right now.";
+    }
+    leaderboardRoot.innerHTML = `<p class="stat-card stat-card--empty">Team efficiency data unavailable right now.</p>`;
+    return;
+  }
+
+  const sorted = [...teamsWithStats].sort((a, b) => {
+    const aBarthag = a.stats?.averages.barthag ?? -Infinity;
+    const bBarthag = b.stats?.averages.barthag ?? -Infinity;
+    if (bBarthag !== aBarthag) {
+      return bBarthag - aBarthag;
+    }
+    const aWins = a.stats?.averages.wins ?? -Infinity;
+    const bWins = b.stats?.averages.wins ?? -Infinity;
+    if (bWins !== aWins) {
+      return bWins - aWins;
+    }
+    return a.full_name.localeCompare(b.full_name);
+  });
+
+  const ranked = sorted.slice(0, 10);
+  const leader = ranked[0];
+  const seasonRange = leader ? formatSeasonRange(leader.stats) ?? "tracked seasons" : "tracked seasons";
+  if (leaderboardMeta) {
+    const trackedLabel = integerFormatter.format(teamsWithStats.length);
+    leaderboardMeta.textContent = `${trackedLabel} Division I programs with Torvik efficiency archives. Ranked by average BARTHAG across ${seasonRange}.`;
+  }
+
+  const rows = ranked
+    .map((team, index) => {
+      const averages = team.stats?.averages;
+      const averageRecord = formatRecord(averages?.wins, averages?.losses, { decimals: 1 }) ?? "—";
+      const adjO = formatNumber(averages?.adjO, oneDecimalFormatter) ?? "—";
+      const adjD = formatNumber(averages?.adjD, oneDecimalFormatter) ?? "—";
+      const barthag = formatNumber(averages?.barthag, threeDecimalFormatter) ?? "—";
+      const conferenceLabel = team.conferenceShortName && team.conferenceShortName !== team.conference
+        ? `${team.conferenceShortName} · ${team.conference}`
+        : team.conference;
+      const rowClass = ["teams-leaderboard__row", index === 0 ? "teams-leaderboard__row--leader" : null]
+        .filter(Boolean)
+        .join(" ");
+      return `<tr class="${rowClass}" style="--team-accent:${team.accentPrimary};">
+        <th scope="row" class="teams-leaderboard__rank">${index + 1}</th>
+        <td class="teams-leaderboard__team">
+          <span class="teams-leaderboard__name">${team.full_name}</span>
+          <span class="teams-leaderboard__conference">${conferenceLabel ?? ""}</span>
+        </td>
+        <td class="teams-leaderboard__metric">${averageRecord}</td>
+        <td class="teams-leaderboard__metric">${adjO}</td>
+        <td class="teams-leaderboard__metric">${adjD}</td>
+        <td class="teams-leaderboard__metric teams-leaderboard__metric--highlight">${barthag}</td>
+      </tr>`;
+    })
+    .join("");
+
+  const cardStyle = leader ? ` style="--chart-accent:${leader.accentPrimary};"` : "";
+  leaderboardRoot.innerHTML = `<article class="stat-card teams-leaderboard__card"${cardStyle}>
+    <header class="stat-card__head">
+      <h3 class="stat-card__title">Top 10 program efficiency leaders</h3>
+      <span class="stat-card__season">Avg BARTHAG</span>
+    </header>
+    <div class="teams-leaderboard__body">
+      <table class="teams-leaderboard__table" aria-label="Top 10 Division I programs by average BARTHAG">
+        <thead>
+          <tr>
+            <th scope="col" class="teams-leaderboard__rank">#</th>
+            <th scope="col" class="teams-leaderboard__team">Program</th>
+            <th scope="col" class="teams-leaderboard__metric">Avg record</th>
+            <th scope="col" class="teams-leaderboard__metric">Off effic</th>
+            <th scope="col" class="teams-leaderboard__metric">Def effic</th>
+            <th scope="col" class="teams-leaderboard__metric">BARTHAG</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
+    </div>
+  </article>`;
+}
+
 const teamsWithLocations = data.filter(team => team.location);
 if (mapCount) {
   mapCount.textContent = teamsWithLocations.length > 0
     ? `${teamsWithLocations.length} home arenas mapped`
     : "Home location data unavailable";
 }
+
+renderLeaderboard(data);
 
 const scriptCache = new Map<string, Promise<unknown>>();
 
