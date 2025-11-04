@@ -410,6 +410,16 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
     "path": "data/logos/2065.png"
   },
   {
+    "name": "Binghamton Bearcats",
+    "slug": "binghamton-bearcats",
+    "tokens": [
+      "binghamton",
+      "bearcats",
+      "bing"
+    ],
+    "path": "data/logos/2066.png"
+  },
+  {
     "name": "Birmingham-Southern Panthers",
     "slug": "birmingham-southern-panthers",
     "tokens": [
@@ -604,6 +614,19 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
       "cp"
     ],
     "path": "data/logos/13.png"
+  },
+  {
+    "name": "Cal State Fullerton Titans",
+    "slug": "cal-state-fullerton-titans",
+    "tokens": [
+      "cal",
+      "state",
+      "fullerton",
+      "titans",
+      "st",
+      "csuf"
+    ],
+    "path": "data/logos/2239.png"
   },
   {
     "name": "California Golden Bears",
@@ -973,6 +996,16 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
     "path": "data/logos/2155.png"
   },
   {
+    "name": "Creighton Bluejays",
+    "slug": "creighton-bluejays",
+    "tokens": [
+      "creighton",
+      "bluejays",
+      "crei"
+    ],
+    "path": "data/logos/156.png"
+  },
+  {
     "name": "Dakota State Trojans",
     "slug": "dakota-state-trojans",
     "tokens": [
@@ -1014,6 +1047,17 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
       "day"
     ],
     "path": "data/logos/2168.png"
+  },
+  {
+    "name": "DePaul Blue Demons",
+    "slug": "depaul-blue-demons",
+    "tokens": [
+      "depaul",
+      "blue",
+      "demons",
+      "dep"
+    ],
+    "path": "data/logos/305.png"
   },
   {
     "name": "Delaware Blue Hens",
@@ -2214,6 +2258,16 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
       "me"
     ],
     "path": "data/logos/311.png"
+  },
+  {
+    "name": "Manhattan Jaspers",
+    "slug": "manhattan-jaspers",
+    "tokens": [
+      "manhattan",
+      "jaspers",
+      "man"
+    ],
+    "path": "data/logos/2363.png"
   },
   {
     "name": "Marist Red Foxes",
@@ -4447,6 +4501,17 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
       "uml"
     ],
     "path": "data/logos/2349.png"
+  },
+  {
+    "name": "UNC Greensboro Spartans",
+    "slug": "unc-greensboro-spartans",
+    "tokens": [
+      "unc",
+      "greensboro",
+      "spartans",
+      "uncg"
+    ],
+    "path": "data/logos/2430.png"
   },
   {
     "name": "Union (TN) Bulldogs",

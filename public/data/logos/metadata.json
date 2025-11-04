@@ -635,6 +635,13 @@
         "UND"
       ]
     },
+    "156": {
+      "name": "Creighton Bluejays",
+      "aliases": [
+        "Creighton",
+        "CREI"
+      ]
+    },
     "158": {
       "name": "Nebraska Cornhuskers",
       "aliases": [
@@ -1168,6 +1175,13 @@
         "IDST"
       ]
     },
+    "305": {
+      "name": "DePaul Blue Demons",
+      "aliases": [
+        "DePaul",
+        "DEP"
+      ]
+    },
     "308": {
       "name": "Ashland Eagles",
       "aliases": [
@@ -1564,6 +1578,13 @@
         "Bethune-Cookman"
       ]
     },
+    "2066": {
+      "name": "Binghamton Bearcats",
+      "aliases": [
+        "Binghamton",
+        "BING"
+      ]
+    },
     "2069": {
       "name": "Black Hills State Yellow Jackets",
       "aliases": [
@@ -1930,6 +1951,14 @@
         "FVSU"
       ]
     },
+    "2239": {
+      "name": "Cal State Fullerton Titans",
+      "aliases": [
+        "Cal State Fullerton",
+        "Cal St Fullerton",
+        "CSUF"
+      ]
+    },
     "2241": {
       "name": "Gardner-Webb Runnin' Bulldogs",
       "aliases": [
@@ -2175,6 +2204,13 @@
         "Macalester"
       ]
     },
+    "2363": {
+      "name": "Manhattan Jaspers",
+      "aliases": [
+        "Manhattan",
+        "MAN"
+      ]
+    },
     "2364": {
       "name": "Minnesota State Mavericks",
       "aliases": [
@@ -2327,6 +2363,13 @@
       "aliases": [
         "Charlotte",
         "CLT"
+      ]
+    },
+    "2430": {
+      "name": "UNC Greensboro Spartans",
+      "aliases": [
+        "UNC Greensboro",
+        "UNCG"
       ]
     },
     "2433": {
