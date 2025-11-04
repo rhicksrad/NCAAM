@@ -27,12 +27,6 @@ type LoadOptions = {
   showLoader?: boolean;
 };
 
-type LineScoreSegment = {
-  label: string;
-  away: number | null | undefined;
-  home: number | null | undefined;
-};
-
 function escapeAttr(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -85,52 +79,84 @@ function formatScore(value: number | null | undefined): string {
   return isNumber(value) ? String(value) : "—";
 }
 
+function toDisplayString(value: unknown): string | null {
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  }
+  if (typeof value === "number" && Number.isFinite(value)) {
+    const text = String(value);
+    return text.length > 0 ? text : null;
+  }
+  return null;
+}
+
 function formatPeriod(period: number | null | undefined): string | null {
   if (!isNumber(period) || period <= 0) {
     return null;
   }
-  if (period === 1) return "1st";
-  if (period === 2) return "2nd";
-  if (period === 3) return "3rd";
-  if (period === 4) return "4th";
-  if (period > 4) {
-    const overtime = period - 4;
+  if (period === 1) return "1st Half";
+  if (period === 2) return "2nd Half";
+  if (period > 2) {
+    const overtime = period - 2;
     return overtime === 1 ? "OT" : `${overtime}OT`;
   }
   return null;
 }
 
-function describeStatus(game: Game): { label: string; variant?: string } {
-  const rawStatus = game.status ?? "";
+function extractGameClock(game: Game): string | null {
+  const dynamic = game as Record<string, unknown>;
+  const candidateKeys = [
+    "display_clock",
+    "clock",
+    "status_clock",
+    "time_remaining",
+    "time_left",
+    "time",
+    "status_time",
+  ];
+  for (const key of candidateKeys) {
+    if (!(key in dynamic)) {
+      continue;
+    }
+    const text = toDisplayString(dynamic[key]);
+    if (text) {
+      return text;
+    }
+  }
+  return null;
+}
+
+function describeStatus(
+  game: Game,
+): { label: string; variant?: string; detail?: string | null } {
+  const rawStatus = toDisplayString(game.status) ?? "";
   const status = rawStatus.toLowerCase();
+  const compactStatus = status.replace(/[\s_-]+/g, "");
   if (STATUS_COMPLETE.test(status)) {
     return { label: "Final" };
   }
-  if (status === "halftime") {
-    return { label: "Halftime", variant: "arc" };
+  if (status === "halftime" || compactStatus === "halftime") {
+    return { label: "Halftime", variant: "arc", detail: "Halftime" };
   }
-  if (LIVE_STATUS.test(status)) {
+  if (status === "in" || compactStatus === "inprogress" || LIVE_STATUS.test(compactStatus)) {
     const period = formatPeriod(game.period);
-    return { label: period ? `Live • ${period}` : "Live", variant: "arc" };
+    const clock = extractGameClock(game);
+    const segments = [period, clock].filter(Boolean) as string[];
+    return {
+      label: "In Progress",
+      variant: "arc",
+      detail: segments.length > 0 ? segments.join(" • ") : null,
+    };
   }
-  if (STATUS_SCHEDULED.test(status)) {
+  if (STATUS_SCHEDULED.test(status) || STATUS_SCHEDULED.test(compactStatus)) {
     return { label: "Scheduled" };
   }
   if (!rawStatus) {
     return { label: "" };
   }
-  return { label: rawStatus.replace(/\b\w/g, char => char.toUpperCase()) };
-}
-
-function buildLineScore(game: Game): LineScoreSegment[] {
-  const segments: LineScoreSegment[] = [
-    { label: "H1", away: game.away_score_h1, home: game.home_score_h1 },
-    { label: "H2", away: game.away_score_h2, home: game.home_score_h2 },
-  ];
-  if (isNumber(game.away_score_ot) || isNumber(game.home_score_ot)) {
-    segments.push({ label: "OT", away: game.away_score_ot, home: game.home_score_ot });
-  }
-  return segments.filter(segment => isNumber(segment.away) || isNumber(segment.home));
+  const label = rawStatus.replace(/\b\w/g, char => char.toUpperCase());
+  return { label, detail: label };
 }
 
 function shouldPollGame(game: Game): boolean {
@@ -184,30 +210,6 @@ function renderTeamRow(
   </div>`;
 }
 
-function renderLineScore(game: Game): string {
-  const segments = buildLineScore(game);
-  if (segments.length === 0) {
-    return "";
-  }
-  const awayLabel = game.visitor_team.abbreviation ?? "Away";
-  const homeLabel = game.home_team.abbreviation ?? "Home";
-  const rows = segments
-    .map(segment => `<div class="game-card__line-score-row">
-      <span>${segment.label}</span>
-      <span>${formatScore(segment.away)}</span>
-      <span>${formatScore(segment.home)}</span>
-    </div>`)
-    .join("");
-  return `<div class="game-card__line-score" role="presentation">
-    <div class="game-card__line-score-row game-card__line-score-row--labels">
-      <span></span>
-      <span>${awayLabel}</span>
-      <span>${homeLabel}</span>
-    </div>
-    ${rows}
-  </div>`;
-}
-
 function renderGameCard(game: Game): string {
   const headerLabel = formatDateLabel(game.date);
   const status = describeStatus(game);
@@ -220,17 +222,22 @@ function renderGameCard(game: Game): string {
     ? `<span class="badge"${status.variant ? ` data-variant="${status.variant}"` : ""}>${status.label}</span>`
     : "";
   const href = escapeAttr(`${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`);
+  const statusDetail = status.detail
+    ? `<span class="game-card__status">${status.detail}</span>`
+    : "";
   return `<li class="card game-card" data-status="${game.status ?? ""}">
     <a class="game-card__link" href="${href}">
       <div class="game-card__header">
-        <span class="game-card__time">${headerLabel}</span>
+        <div class="game-card__meta">
+          <span class="game-card__time">${headerLabel}</span>
+          ${statusDetail}
+        </div>
         ${badge}
       </div>
       <div class="game-card__body">
         ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
         ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
       </div>
-      ${renderLineScore(game)}
     </a>
   </li>`;
 }
@@ -321,7 +328,9 @@ function scheduleLiveRefresh(games: Game[]) {
 function renderLoading() {
   list.innerHTML = `<li class="card game-card game-card--loading">
     <div class="game-card__header">
-      <span class="game-card__time">Loading games</span>
+      <div class="game-card__meta">
+        <span class="game-card__time">Loading games</span>
+      </div>
     </div>
     <p class="game-card__message">Fetching the latest schedule…</p>
   </li>`;
@@ -330,7 +339,9 @@ function renderLoading() {
 function renderEmpty() {
   list.innerHTML = `<li class="card game-card game-card--empty">
     <div class="game-card__header">
-      <span class="game-card__time">No games in this range</span>
+      <div class="game-card__meta">
+        <span class="game-card__time">No games in this range</span>
+      </div>
     </div>
     <p class="game-card__message">Try adjusting the dates to explore more matchups.</p>
   </li>`;
@@ -339,7 +350,9 @@ function renderEmpty() {
 function renderErrorMessage() {
   list.innerHTML = `<li class="card game-card game-card--error">
     <div class="game-card__header">
-      <span class="game-card__time">Unable to load games</span>
+      <div class="game-card__meta">
+        <span class="game-card__time">Unable to load games</span>
+      </div>
     </div>
     <p class="game-card__message">Please try again in a moment.</p>
   </li>`;

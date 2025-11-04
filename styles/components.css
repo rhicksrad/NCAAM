@@ -1187,14 +1187,25 @@ details[open] > summary .disclosure-indicator::after {
 
 .game-card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-sm);
+}
+
+.game-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .game-card__time {
   font-size: 0.82rem;
   color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.game-card__status {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--color-muted) 80%, white 20%);
 }
 
 .game-card__body {
