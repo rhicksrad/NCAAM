@@ -305,6 +305,7 @@ endInput.value = toLocalISODate(defaultEnd);
 
 let liveTimer: number | null = null;
 let isFetching = false;
+let pendingLoad: LoadOptions | null = null;
 
 function clearLiveTimer() {
   if (liveTimer !== null) {
@@ -373,6 +374,8 @@ function renderGames(games: Game[]) {
 
 const loadGames = async ({ showLoader = true }: LoadOptions = {}) => {
   if (isFetching) {
+    const shouldShowLoader = showLoader || (pendingLoad?.showLoader ?? false);
+    pendingLoad = { showLoader: shouldShowLoader };
     return;
   }
   const startDate = startInput.value;
@@ -388,6 +391,7 @@ const loadGames = async ({ showLoader = true }: LoadOptions = {}) => {
     return;
   }
   isFetching = true;
+  pendingLoad = null;
   loadButton.disabled = true;
   clearLiveTimer();
   list.setAttribute("aria-busy", "true");
@@ -414,6 +418,11 @@ const loadGames = async ({ showLoader = true }: LoadOptions = {}) => {
     list.setAttribute("aria-busy", "false");
     isFetching = false;
     loadButton.disabled = false;
+    const nextLoad = pendingLoad;
+    pendingLoad = null;
+    if (nextLoad) {
+      void loadGames({ showLoader: nextLoad.showLoader });
+    }
   }
 };
 
