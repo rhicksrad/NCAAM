@@ -216,7 +216,7 @@ app.innerHTML = `<div class="page stack" data-gap="lg">
         <h1>Games</h1>
         <p class="page-summary">Track Division I matchups with live updates direct from the Cloudflare worker proxy.</p>
       </div>
-      <div class="games-hero__form">
+      <form id="games-controls" class="games-hero__form games-controls" autocomplete="off">
         <div class="games-controls__inputs">
           <label class="games-controls__field">
             <span class="games-controls__label">Start</span>
@@ -228,20 +228,24 @@ app.innerHTML = `<div class="page stack" data-gap="lg">
           </label>
         </div>
         <div class="games-controls__actions">
-          <button id="load" class="button" data-variant="primary" type="button">Update</button>
+          <button id="load" class="button" data-variant="primary" type="submit">Update</button>
         </div>
         <p class="games-controls__hint">Tip-off times shown in your local time zone.</p>
-      </div>
+      </form>
     </div>
   </section>
   <section>
     <ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul>
   </section>
 </div>`;
+const formRef = app.querySelector("#games-controls");
 const startInputRef = app.querySelector("#start");
 const endInputRef = app.querySelector("#end");
 const loadButtonRef = app.querySelector("#load");
 const listRef = app.querySelector("#games-list");
+if (!formRef) {
+    throw new Error("Missing games controls form");
+}
 if (!startInputRef) {
     throw new Error("Missing start date input");
 }
@@ -258,14 +262,80 @@ const startInput = startInputRef;
 const endInput = endInputRef;
 const loadButton = loadButtonRef;
 const list = listRef;
+const form = formRef;
+function applyDateValue(input, value) {
+    const normalized = new Date(value.getTime());
+    normalized.setHours(0, 0, 0, 0);
+    input.valueAsDate = normalized;
+    input.value = toLocalISODate(normalized);
+}
+function parseDateValue(value) {
+    if (!value) {
+        return null;
+    }
+    const timestamp = Date.parse(value);
+    if (Number.isNaN(timestamp)) {
+        return null;
+    }
+    const normalized = new Date(timestamp);
+    normalized.setHours(0, 0, 0, 0);
+    return normalized;
+}
+function normalizeInputValue(input) {
+    const parsed = parseDateValue(input.value);
+    if (!parsed) {
+        input.value = "";
+        input.valueAsDate = null;
+        return null;
+    }
+    const iso = toLocalISODate(parsed);
+    input.valueAsDate = parsed;
+    input.value = iso;
+    return iso;
+}
+function clampRange(changed) {
+    const startValue = startInput.value;
+    const endValue = endInput.value;
+    if (!startValue || !endValue) {
+        return;
+    }
+    if (endValue >= startValue) {
+        return;
+    }
+    if (changed === "start") {
+        endInput.value = startValue;
+        const parsed = parseDateValue(startValue);
+        endInput.valueAsDate = parsed;
+    }
+    else {
+        startInput.value = endValue;
+        const parsed = parseDateValue(endValue);
+        startInput.valueAsDate = parsed;
+    }
+}
+function updateDateConstraints() {
+    if (startInput.value) {
+        endInput.min = startInput.value;
+    }
+    else {
+        endInput.removeAttribute("min");
+    }
+    if (endInput.value) {
+        startInput.max = endInput.value;
+    }
+    else {
+        startInput.removeAttribute("max");
+    }
+}
 const now = new Date();
 const defaultStart = startOfWeek(now);
 const defaultEnd = endOfWeek(defaultStart);
-startInput.value = toLocalISODate(defaultStart);
-endInput.value = toLocalISODate(defaultEnd);
+applyDateValue(startInput, defaultStart);
+applyDateValue(endInput, defaultEnd);
+updateDateConstraints();
 let liveTimer = null;
 let isFetching = false;
-let pendingLoad = null;
+let pendingShowLoader = null;
 function clearLiveTimer() {
     if (liveTimer !== null) {
         window.clearInterval(liveTimer);
@@ -327,8 +397,8 @@ function renderGames(games) {
 }
 const loadGames = async ({ showLoader = true } = {}) => {
     if (isFetching) {
-        const shouldShowLoader = showLoader || (pendingLoad?.showLoader ?? false);
-        pendingLoad = { showLoader: shouldShowLoader };
+        const shouldShowLoader = showLoader || (pendingShowLoader ?? false);
+        pendingShowLoader = shouldShowLoader;
         return;
     }
     const startDate = startInput.value;
@@ -344,7 +414,7 @@ const loadGames = async ({ showLoader = true } = {}) => {
         return;
     }
     isFetching = true;
-    pendingLoad = null;
+    pendingShowLoader = null;
     loadButton.disabled = true;
     clearLiveTimer();
     list.setAttribute("aria-busy", "true");
@@ -376,24 +446,37 @@ const loadGames = async ({ showLoader = true } = {}) => {
         list.setAttribute("aria-busy", "false");
         isFetching = false;
         loadButton.disabled = false;
-        const nextLoad = pendingLoad;
-        pendingLoad = null;
-        if (nextLoad) {
-            void loadGames({ showLoader: nextLoad.showLoader });
+        const nextShowLoader = pendingShowLoader;
+        pendingShowLoader = null;
+        if (nextShowLoader !== null) {
+            void loadGames({ showLoader: nextShowLoader });
         }
     }
 };
-loadButton.addEventListener("click", () => {
+function handleDateChange(changed) {
+    normalizeInputValue(changed === "start" ? startInput : endInput);
+    clampRange(changed);
+    updateDateConstraints();
+    void loadGames({ showLoader: true });
+}
+form.addEventListener("submit", event => {
+    event.preventDefault();
+    normalizeInputValue(startInput);
+    normalizeInputValue(endInput);
+    updateDateConstraints();
     void loadGames({ showLoader: true });
 });
+startInput.addEventListener("change", () => {
+    handleDateChange("start");
+});
+endInput.addEventListener("change", () => {
+    handleDateChange("end");
+});
 [startInput, endInput].forEach(input => {
-    input.addEventListener("change", () => {
-        void loadGames({ showLoader: true });
-    });
     input.addEventListener("keydown", event => {
         if (event.key === "Enter") {
             event.preventDefault();
-            void loadGames({ showLoader: true });
+            form.requestSubmit();
         }
     });
 });

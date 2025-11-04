@@ -169,7 +169,7 @@ export const NCAA_LOGOS = [
       "au",
       "amer"
     ],
-    "path": "data/logos/44.png"
+    "path": "data/logos/44.svg"
   },
   {
     "name": "Amherst Mammoths",
@@ -1728,7 +1728,7 @@ export const NCAA_LOGOS = [
       "gonz",
       "zags"
     ],
-    "path": "data/logos/2250.png"
+    "path": "data/logos/2250.svg"
   },
   {
     "name": "Graceland University Jackets",
