@@ -1,7 +1,7 @@
 {
   "season": "2024-25",
   "seasonYear": 2025,
-  "generatedAt": "2025-11-04T18:53:05Z",
+  "generatedAt": "2025-11-04T21:38:50Z",
   "metrics": {
     "mp": {
       "label": "Minutes per game",
@@ -200,94 +200,94 @@
       "shortLabel": "3P%",
       "leaders": [
         {
-          "name": "Ademide Badmus",
-          "team": "Gardner-Webb",
-          "slug": "ademide-badmus-1",
-          "url": "https://www.sports-reference.com/cbb/players/ademide-badmus-1.html",
-          "games": 29,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Louie Jordan",
+          "team": "UMBC",
+          "slug": "louie-jordan-1",
+          "url": "https://www.sports-reference.com/cbb/players/louie-jordan-1.html",
+          "games": 31,
+          "value": 0.4876033058,
+          "valueFormatted": "48.8%"
         },
         {
-          "name": "Ben Wight",
-          "team": "Stony Brook",
-          "slug": "ben-wight-1",
-          "url": "https://www.sports-reference.com/cbb/players/ben-wight-1.html",
+          "name": "Kenyon Goodin",
+          "team": "Bellarmine",
+          "slug": "kenyon-goodin-1",
+          "url": "https://www.sports-reference.com/cbb/players/kenyon-goodin-1.html",
+          "games": 27,
+          "value": 0.4833333333,
+          "valueFormatted": "48.3%"
+        },
+        {
+          "name": "Marko Maletic",
+          "team": "Western Illinois",
+          "slug": "marko-maletic-1",
+          "url": "https://www.sports-reference.com/cbb/players/marko-maletic-1.html",
+          "games": 30,
+          "value": 0.4742268041,
+          "valueFormatted": "47.4%"
+        },
+        {
+          "name": "Marvin McGhee IV",
+          "team": "Cal State Bakersfield",
+          "slug": "marvin-mcghee-iv-1",
+          "url": "https://www.sports-reference.com/cbb/players/marvin-mcghee-iv-1.html",
           "games": 32,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "value": 0.4705882353,
+          "valueFormatted": "47.1%"
         },
         {
-          "name": "Brendan Terry",
-          "team": "Southeast Missouri State",
-          "slug": "brendan-terry-1",
-          "url": "https://www.sports-reference.com/cbb/players/brendan-terry-1.html",
-          "games": 33,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Matt Allocco",
+          "team": "Notre Dame",
+          "slug": "matt-allocco-1",
+          "url": "https://www.sports-reference.com/cbb/players/matt-allocco-1.html",
+          "games": 26,
+          "value": 0.4646464646,
+          "valueFormatted": "46.5%"
         },
         {
-          "name": "Deangelo Elisee",
-          "team": "Purdue Fort Wayne",
-          "slug": "deangelo-elisee-1",
-          "url": "https://www.sports-reference.com/cbb/players/deangelo-elisee-1.html",
-          "games": 31,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Masen Miller",
+          "team": "North Dakota State",
+          "slug": "masen-miller-1",
+          "url": "https://www.sports-reference.com/cbb/players/masen-miller-1.html",
+          "games": 32,
+          "value": 0.4615384615,
+          "valueFormatted": "46.2%"
         },
         {
-          "name": "Elijah Jones",
-          "team": "College of Charleston",
-          "slug": "elijah-jones-2",
-          "url": "https://www.sports-reference.com/cbb/players/elijah-jones-2.html",
-          "games": 31,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
-        },
-        {
-          "name": "Felix Okpara",
-          "team": "Tennessee",
-          "slug": "felix-okpara-1",
-          "url": "https://www.sports-reference.com/cbb/players/felix-okpara-1.html",
-          "games": 38,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
-        },
-        {
-          "name": "Michael Imariagbe",
+          "name": "Logan Woods",
           "team": "Wright State",
-          "slug": "michael-imariagbe-1",
-          "url": "https://www.sports-reference.com/cbb/players/michael-imariagbe-1.html",
+          "slug": "logan-woods-1",
+          "url": "https://www.sports-reference.com/cbb/players/logan-woods-1.html",
           "games": 32,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "value": 0.4606741573,
+          "valueFormatted": "46.1%"
         },
         {
-          "name": "Miles Rose",
-          "team": "St. Bonaventure",
-          "slug": "rose-miles-1",
-          "url": "https://www.sports-reference.com/cbb/players/rose-miles-1.html",
-          "games": 15,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Kamari McGee",
+          "team": "Wisconsin",
+          "slug": "kamari-mcgee-1",
+          "url": "https://www.sports-reference.com/cbb/players/kamari-mcgee-1.html",
+          "games": 37,
+          "value": 0.4588235294,
+          "valueFormatted": "45.9%"
         },
         {
-          "name": "Miles Stewart",
-          "team": "Howard",
-          "slug": "miles-stewart-1",
-          "url": "https://www.sports-reference.com/cbb/players/miles-stewart-1.html",
-          "games": 31,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Jovan Milicevic",
+          "team": "New Mexico",
+          "slug": "jovan-milicevic-1",
+          "url": "https://www.sports-reference.com/cbb/players/jovan-milicevic-1.html",
+          "games": 34,
+          "value": 0.4576271186,
+          "valueFormatted": "45.8%"
         },
         {
-          "name": "Nic Codie",
-          "team": "Texas",
-          "slug": "nic-codie-1",
-          "url": "https://www.sports-reference.com/cbb/players/nic-codie-1.html",
-          "games": 19,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Marques Warrick",
+          "team": "Missouri",
+          "slug": "marques-warrick-1",
+          "url": "https://www.sports-reference.com/cbb/players/marques-warrick-1.html",
+          "games": 33,
+          "value": 0.4556962025,
+          "valueFormatted": "45.6%"
         }
       ]
     },
