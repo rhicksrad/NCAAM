@@ -1,4 +1,5 @@
 import { formatDecimal, formatInteger, formatPercent } from "./format.js";
+import { getConferenceLogoUrl, getConferenceMonogram, getTeamLogoUrl, getTeamMonogram, } from "../ui/logos.js";
 import { loadRosterDirectory, loadTeamRosterPlayers, } from "./roster-directory.js";
 const ROSTER_COLUMNS = [
     { key: "gp", label: "GP", formatter: (value) => formatInteger(value) },
@@ -45,19 +46,62 @@ function createConferencePanel(group, season) {
     details.className = "conference-panel card";
     const summary = document.createElement("summary");
     summary.className = "conference-panel__summary";
-    const summaryContent = document.createElement("div");
-    summaryContent.className = "conference-panel__summary-content";
-    const title = document.createElement("h3");
-    title.className = "conference-panel__title";
+    const aliasSet = new Set([group.name]);
+    for (const team of group.teams) {
+        aliasSet.add(team.conferenceName);
+    }
+    const logoUrl = getConferenceLogoUrl(group.name, {
+        aliases: Array.from(aliasSet).filter(Boolean),
+    });
+    const monogram = getConferenceMonogram(group.name);
+    const identity = document.createElement("span");
+    identity.className = "conference-identity";
+    const logo = document.createElement("span");
+    logo.className = "conference-identity__logo";
+    if (logoUrl) {
+        const img = document.createElement("img");
+        img.className = "conference-identity__logo-image";
+        img.src = logoUrl;
+        img.alt = `${group.name} logo`;
+        img.loading = "lazy";
+        img.decoding = "async";
+        logo.append(img);
+    }
+    else {
+        const fallback = document.createElement("span");
+        fallback.className = "conference-identity__logo-fallback";
+        fallback.textContent = monogram;
+        logo.append(fallback);
+    }
+    const textWrap = document.createElement("span");
+    textWrap.className = "conference-identity__text";
+    const title = document.createElement("span");
+    title.className = "conference-identity__name";
     title.textContent = group.name;
-    const meta = document.createElement("p");
-    meta.className = "conference-panel__meta";
-    meta.textContent = `${group.teams.length} teams${group.totalPlayers != null ? ` · ${group.totalPlayers} players` : ""}`;
-    summaryContent.append(title, meta);
-    const chevron = document.createElement("span");
-    chevron.className = "conference-panel__chevron";
-    chevron.setAttribute("aria-hidden", "true");
-    summary.append(summaryContent, chevron);
+    textWrap.append(title);
+    const subtitleParts = [];
+    if (group.totalPlayers != null) {
+        subtitleParts.push(`${group.totalPlayers} players`);
+    }
+    subtitleParts.push(`Season ${season}`);
+    const subtitle = document.createElement("span");
+    subtitle.className = "conference-panel__subtitle";
+    subtitle.textContent = subtitleParts.join(" · ");
+    textWrap.append(subtitle);
+    identity.append(logo, textWrap);
+    const metaWrap = document.createElement("span");
+    metaWrap.className = "conference-card__meta conference-panel__meta";
+    const teamCount = document.createElement("span");
+    teamCount.className = "conference-card__count";
+    const countLabel = `${group.teams.length} team${group.teams.length === 1 ? "" : "s"}`;
+    teamCount.textContent = countLabel;
+    teamCount.setAttribute("aria-label", countLabel);
+    metaWrap.append(teamCount);
+    const indicator = document.createElement("span");
+    indicator.className = "disclosure-indicator";
+    indicator.setAttribute("aria-hidden", "true");
+    metaWrap.append(indicator);
+    summary.append(identity, metaWrap);
     const body = document.createElement("div");
     body.className = "conference-panel__body";
     body.innerHTML = `<p class="conference-panel__placeholder">Open to load rosters…</p>`;
@@ -97,6 +141,7 @@ function renderTeamRoster(team, season) {
     details.className = "team-roster";
     const summary = document.createElement("summary");
     summary.className = "team-roster__summary";
+    const logo = createTeamLogo(team);
     const labelContainer = document.createElement("div");
     labelContainer.className = "team-roster__labels";
     const title = document.createElement("h4");
@@ -109,7 +154,7 @@ function renderTeamRoster(team, season) {
     const chevron = document.createElement("span");
     chevron.className = "team-roster__chevron";
     chevron.setAttribute("aria-hidden", "true");
-    summary.append(labelContainer, chevron);
+    summary.append(logo, labelContainer, chevron);
     const body = document.createElement("div");
     body.className = "team-roster__body";
     body.innerHTML = `<p class="conference-panel__placeholder">Open to load roster…</p>`;
@@ -139,6 +184,36 @@ function renderTeamRoster(team, season) {
     });
     return details;
 }
+function createTeamLogo(team) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "team-roster__logo";
+    const sdkTeam = {
+        id: team.id,
+        full_name: team.fullName,
+        name: team.name,
+        abbreviation: team.abbreviation ?? undefined,
+        conference_id: team.conferenceId ?? undefined,
+        college: team.fullName,
+    };
+    const logoUrl = getTeamLogoUrl(sdkTeam);
+    if (logoUrl) {
+        const img = document.createElement("img");
+        img.className = "team-roster__logo-image";
+        img.src = logoUrl;
+        img.alt = `${team.fullName} logo`;
+        img.loading = "lazy";
+        img.decoding = "async";
+        wrapper.appendChild(img);
+        return wrapper;
+    }
+    const fallback = document.createElement("span");
+    fallback.className = "team-roster__logo-fallback";
+    fallback.setAttribute("role", "img");
+    fallback.setAttribute("aria-label", `${team.fullName} logo`);
+    fallback.textContent = getTeamMonogram(sdkTeam);
+    wrapper.appendChild(fallback);
+    return wrapper;
+}
 function renderRosterTable(team, players) {
     const table = document.createElement("div");
     table.className = "team-roster__table";
@@ -160,15 +235,28 @@ function renderRosterTable(team, players) {
 }
 function createRosterHeader() {
     const header = document.createElement("div");
-    header.className = "team-roster__row team-roster__row--header";
-    const name = document.createElement("span");
-    name.textContent = "Player";
-    header.appendChild(name);
+    header.className = "team-roster__header";
+    const playerColumn = document.createElement("span");
+    playerColumn.className = "team-roster__header-title";
+    playerColumn.textContent = "Player";
+    header.appendChild(playerColumn);
+    const seasonHeader = document.createElement("div");
+    seasonHeader.className = "team-roster__season-grid team-roster__season-grid--header";
+    const seasonLabel = document.createElement("span");
+    seasonLabel.className = "team-roster__season-label";
+    seasonLabel.textContent = "Season";
+    seasonHeader.appendChild(seasonLabel);
+    const schoolLabel = document.createElement("span");
+    schoolLabel.className = "team-roster__season-team";
+    schoolLabel.textContent = "School";
+    seasonHeader.appendChild(schoolLabel);
     ROSTER_COLUMNS.forEach((column) => {
         const span = document.createElement("span");
+        span.className = "team-roster__stat";
         span.textContent = column.label;
-        header.appendChild(span);
+        seasonHeader.appendChild(span);
     });
+    header.appendChild(seasonHeader);
     return header;
 }
 function buildPlayerMeta(player) {
@@ -184,23 +272,54 @@ function createRosterRow(player) {
     const row = document.createElement("li");
     row.className = "team-roster__row";
     row.dataset.player = player.id;
-    const nameCell = document.createElement("span");
-    nameCell.className = "team-roster__name";
-    nameCell.textContent = player.name;
+    const profile = document.createElement("div");
+    profile.className = "team-roster__profile";
+    const name = document.createElement("span");
+    name.className = "team-roster__name";
+    name.textContent = player.name;
+    profile.appendChild(name);
     const meta = buildPlayerMeta(player);
     if (meta) {
         const metaEl = document.createElement("span");
-        metaEl.className = "team-roster__team";
+        metaEl.className = "team-roster__meta";
         metaEl.textContent = meta;
-        nameCell.appendChild(metaEl);
+        profile.appendChild(metaEl);
     }
-    row.appendChild(nameCell);
+    row.appendChild(profile);
+    const seasons = document.createElement("div");
+    seasons.className = "team-roster__seasons";
+    if (!player.history.length) {
+        const empty = document.createElement("div");
+        empty.className = "team-roster__season-empty";
+        empty.textContent = "No college stats available.";
+        seasons.appendChild(empty);
+    }
+    else {
+        player.history.forEach((season) => seasons.appendChild(createSeasonRow(season)));
+    }
+    row.appendChild(seasons);
+    return row;
+}
+function createSeasonRow(season) {
+    const row = document.createElement("div");
+    row.className = "team-roster__season-grid";
+    const seasonLabel = document.createElement("span");
+    seasonLabel.className = "team-roster__season-label";
+    seasonLabel.textContent = season.season;
+    row.appendChild(seasonLabel);
+    const school = document.createElement("span");
+    school.className = "team-roster__season-team";
+    const teamPieces = [season.team?.trim() || "Unknown school"];
+    if (season.conference) {
+        teamPieces.push(season.conference);
+    }
+    school.textContent = teamPieces.join(" · ");
+    row.appendChild(school);
     ROSTER_COLUMNS.forEach((column) => {
         const cell = document.createElement("span");
         cell.className = "team-roster__stat";
         cell.dataset.stat = column.label;
-        const stats = player.stats;
-        const value = stats ? stats[column.key] : null;
+        const value = season[column.key];
         cell.textContent = column.formatter(value ?? null);
         row.appendChild(cell);
     });
