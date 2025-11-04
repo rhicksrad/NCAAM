@@ -462,8 +462,66 @@ async function renderMap(teams) {
     const tooltip = document.createElement("div");
     tooltip.className = "teams-map__tooltip";
     tooltip.setAttribute("role", "status");
+    tooltip.setAttribute("aria-live", "polite");
     tooltip.hidden = true;
     mapRoot.appendChild(tooltip);
+    let activeTooltipTeamId = null;
+    const renderTooltipContent = (team) => {
+        if (activeTooltipTeamId === team.id) {
+            return;
+        }
+        activeTooltipTeamId = team.id;
+        tooltip.replaceChildren();
+        const logo = document.createElement("span");
+        logo.className = "teams-map__tooltip-logo";
+        const fallbackMark = () => team.monogram || team.abbreviation || team.full_name.slice(0, 3).toUpperCase();
+        if (team.logoUrl) {
+            const img = document.createElement("img");
+            img.src = team.logoUrl;
+            img.alt = "";
+            img.decoding = "async";
+            img.loading = "lazy";
+            img.addEventListener("error", () => {
+                img.remove();
+                const mark = document.createElement("span");
+                mark.className = "teams-map__tooltip-logo-mark";
+                mark.textContent = fallbackMark();
+                logo.appendChild(mark);
+            }, { once: true });
+            logo.appendChild(img);
+        }
+        else {
+            const mark = document.createElement("span");
+            mark.className = "teams-map__tooltip-logo-mark";
+            mark.textContent = fallbackMark();
+            logo.appendChild(mark);
+        }
+        const text = document.createElement("span");
+        text.className = "teams-map__tooltip-text";
+        const name = document.createElement("span");
+        name.className = "teams-map__tooltip-name";
+        name.textContent = team.full_name;
+        text.appendChild(name);
+        if (team.location?.arena) {
+            const arena = document.createElement("span");
+            arena.className = "teams-map__tooltip-arena";
+            arena.textContent = team.location.arena;
+            text.appendChild(arena);
+        }
+        tooltip.append(logo, text);
+    };
+    const positionTooltip = (circle) => {
+        const mapBounds = mapRoot.getBoundingClientRect();
+        const circleBounds = circle.getBoundingClientRect();
+        tooltip.style.left = `${circleBounds.left + circleBounds.width / 2 - mapBounds.left}px`;
+        tooltip.style.top = `${circleBounds.top - mapBounds.top}px`;
+    };
+    const showTooltip = (circle, team) => {
+        renderTooltipContent(team);
+        tooltip.style.setProperty("--teams-map-tooltip-accent", team.accentPrimary);
+        positionTooltip(circle);
+        tooltip.hidden = false;
+    };
     const [d3, topojson, topo] = await Promise.all([
         loadScript(new URL("../../vendor/d3.v7.min.js", import.meta.url).toString(), "d3"),
         loadScript(new URL("../../vendor/topojson-client.v3.min.js", import.meta.url).toString(), "topojson"),
@@ -493,16 +551,9 @@ async function renderMap(teams) {
         .attr("class", "teams-map__state")
         .attr("d", path);
     const points = svg.append("g");
-    const showTooltip = (circle, label) => {
-        const mapBounds = mapRoot.getBoundingClientRect();
-        const circleBounds = circle.getBoundingClientRect();
-        tooltip.textContent = label;
-        tooltip.style.left = `${circleBounds.left + circleBounds.width / 2 - mapBounds.left}px`;
-        tooltip.style.top = `${circleBounds.top - mapBounds.top}px`;
-        tooltip.hidden = false;
-    };
     const hideTooltip = () => {
         tooltip.hidden = true;
+        activeTooltipTeamId = null;
     };
     points.selectAll("circle")
         .data(teams)
@@ -533,13 +584,13 @@ async function renderMap(teams) {
             return;
         }
         this.classList.add("is-hovered");
-        showTooltip(this, `${team.full_name} · ${team.location.arena}`);
+        showTooltip(this, team);
     })
         .on("pointermove", function (event, team) {
         if (!team.location || tooltip.hidden) {
             return;
         }
-        showTooltip(this, `${team.full_name} · ${team.location.arena}`);
+        positionTooltip(this);
     })
         .on("pointerleave", function () {
         this.classList.remove("is-hovered");
@@ -550,7 +601,7 @@ async function renderMap(teams) {
             return;
         }
         this.classList.add("is-hovered");
-        showTooltip(this, `${team.full_name} · ${team.location.arena}`);
+        showTooltip(this, team);
     })
         .on("blur", function () {
         this.classList.remove("is-hovered");

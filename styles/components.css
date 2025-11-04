@@ -1600,3 +1600,95 @@ details[open] > summary .disclosure-indicator::after {
   margin: 0 auto;
   max-width: 24ch;
 }
+
+.teams-map__viewport {
+  position: relative;
+  min-height: 20rem;
+}
+
+.teams-map__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.teams-map__tooltip {
+  position: absolute;
+  inset: auto;
+  transform: translate(-50%, calc(-100% - 12px));
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--teams-map-tooltip-accent, var(--color-arc)) 45%, transparent);
+  box-shadow: 0 16px 28px rgba(12, 32, 58, 0.16);
+  color: var(--color-ink);
+  pointer-events: none;
+  z-index: 2;
+  max-width: min(20rem, 92vw);
+}
+
+.teams-map__tooltip::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--teams-map-tooltip-accent, var(--color-arc)) 45%, transparent) transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+.teams-map__tooltip[hidden] {
+  display: none;
+}
+
+.teams-map__tooltip-logo {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-paper) 88%, white 12%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 16%, transparent);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.teams-map__tooltip-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.teams-map__tooltip-logo-mark {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--teams-map-tooltip-accent, var(--color-arc)) 62%, var(--color-ink) 38%);
+}
+
+.teams-map__tooltip-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.teams-map__tooltip-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.teams-map__tooltip-arena {
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--color-muted) 80%, white 20%);
+  line-height: 1.25;
+}
