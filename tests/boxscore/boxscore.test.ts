@@ -6,22 +6,43 @@ import { normalizeGamePlayByPlayResponse } from "../../src/lib/api/ncaam.js";
 import { buildBoxScoreFromPlayByPlay } from "../../src/lib/boxscore.js";
 import type { Game } from "../../src/lib/sdk/ncaam.js";
 
+type Fixture = {
+  data: Array<{
+    game_id?: number;
+    order?: number;
+    type?: string;
+    text?: string;
+    home_score?: number;
+    away_score?: number;
+    period?: number;
+    clock?: string;
+    scoring_play?: boolean;
+    score_value?: number | null;
+    team?: {
+      id?: number;
+      name?: string;
+      full_name?: string;
+      abbreviation?: string;
+    } | null;
+  }>;
+};
+
 const loadFixture = (name: string) => {
   const raw = readFileSync(`tests/fixtures/playbyplay/${name}.json`, "utf8");
-  return JSON.parse(raw) as unknown;
+  return JSON.parse(raw) as Fixture;
 };
 
 describe("boxscore aggregation", () => {
   it("aggregates shooting, hustle, and penalty statistics from play-by-play", () => {
     const raw = loadFixture("basic-game");
-    const events = normalizeGamePlayByPlayResponse(raw as { data: unknown[] });
-    expect(events).toHaveLength(16);
+    const events = normalizeGamePlayByPlayResponse(raw);
+    expect(events).toHaveLength(17);
 
     const game: Game = {
       id: 1234,
       date: null,
       status: "Final",
-      period: 5,
+      period: 2,
       home_team: {
         id: 10,
         full_name: "Home Team",
@@ -60,66 +81,61 @@ describe("boxscore aggregation", () => {
     expect(boxScore.home.totals.dreb).toBe(1);
     expect(boxScore.home.totals.ast).toBe(1);
     expect(boxScore.home.totals.tov).toBe(1);
+    expect(boxScore.home.totals.stl).toBe(1);
+    expect(boxScore.home.totals.blk).toBe(1);
 
-    const guard = boxScore.home.players.find(player => player.playerId === 101);
+    const guard = boxScore.home.players.find(player => player.fullName === "Home Guard");
     expect(guard).toBeDefined();
     expect(guard?.fgm).toBe(1);
     expect(guard?.fga).toBe(1);
     expect(guard?.tpm).toBe(1);
     expect(guard?.tpa).toBe(1);
-    expect(guard?.ftm).toBe(2);
-    expect(guard?.fta).toBe(3);
-    expect(guard?.pts).toBe(5);
-    expect(guard?.starter).toBe(true);
-    expect(guard?.seconds).toBe(1200);
+    expect(guard?.ftm).toBe(1);
+    expect(guard?.fta).toBe(1);
+    expect(guard?.pts).toBe(4);
+    expect(guard?.stl).toBe(1);
+    expect(guard?.minutes).toBeNull();
 
-    const wing = boxScore.home.players.find(player => player.playerId === 102);
+    const wing = boxScore.home.players.find(player => player.fullName === "Home Wing");
     expect(wing?.ast).toBe(1);
+    expect(wing?.ftm).toBe(1);
+    expect(wing?.fta).toBe(2);
     expect(wing?.tov).toBe(1);
 
-    const big = boxScore.home.players.find(player => player.playerId === 103);
-    expect(big?.blk).toBe(1);
+    const big = boxScore.home.players.find(player => player.fullName === "Home Big");
     expect(big?.dreb).toBe(1);
+    expect(big?.blk).toBe(1);
 
-    const bench = boxScore.home.players.find(player => player.playerId === 104);
-    expect(bench?.starter).toBe(false);
-    expect(bench?.oreb).toBe(1);
-    expect(bench?.fgm).toBe(1);
-    expect(bench?.pts).toBe(2);
-
-    expect(boxScore.home.starters.map(player => player.playerId)).toEqual(
-      expect.arrayContaining([101, 102, 103]),
-    );
-    expect(boxScore.home.bench.map(player => player.playerId)).toEqual(
-      expect.arrayContaining([104]),
-    );
+    const sixth = boxScore.home.players.find(player => player.fullName === "Home Sixth");
+    expect(sixth?.fgm).toBe(1);
+    expect(sixth?.fga).toBe(1);
+    expect(sixth?.pts).toBe(2);
 
     // Away team expectations
     expect(boxScore.away.totals.fgm).toBe(1);
     expect(boxScore.away.totals.fga).toBe(2);
     expect(boxScore.away.totals.tpm).toBe(1);
-    expect(boxScore.away.totals.tpa).toBe(1);
+    expect(boxScore.away.totals.tpa).toBe(2);
+    expect(boxScore.away.totals.fta).toBe(1);
     expect(boxScore.away.totals.pts).toBe(3);
     expect(boxScore.away.totals.tov).toBe(1);
     expect(boxScore.away.totals.dreb).toBe(1);
+    expect(boxScore.away.totals.pf).toBe(1);
 
-    const awayGuard = boxScore.away.players.find(player => player.playerId === 201);
+    const awayGuard = boxScore.away.players.find(player => player.fullName === "Away Guard");
     expect(awayGuard?.fgm).toBe(1);
     expect(awayGuard?.fga).toBe(2);
     expect(awayGuard?.tpm).toBe(1);
-    expect(awayGuard?.tpa).toBe(1);
+    expect(awayGuard?.tpa).toBe(2);
+    expect(awayGuard?.fta).toBe(1);
     expect(awayGuard?.pts).toBe(3);
-    expect(awayGuard?.seconds).toBe(900);
+    expect(awayGuard?.tov).toBe(1);
 
-    const awayWing = boxScore.away.players.find(player => player.playerId === 202);
+    const awayWing = boxScore.away.players.find(player => player.fullName === "Away Wing");
     expect(awayWing?.stl).toBe(1);
-    expect(awayWing?.pf).toBe(1);
 
-    const awayCenter = boxScore.away.players.find(player => player.playerId === 203);
+    const awayCenter = boxScore.away.players.find(player => player.fullName === "Away Center");
+    expect(awayCenter?.dreb).toBe(1);
     expect(awayCenter?.pf).toBe(1);
-
-    const scoringEvents = events.filter(event => event.isScoringPlay);
-    expect(scoringEvents).toHaveLength(5);
   });
 });
-

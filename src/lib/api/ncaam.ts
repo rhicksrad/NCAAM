@@ -46,61 +46,25 @@ type RawTeam = {
   full_name?: RawMaybeString;
 };
 
-type RawParticipant = {
-  id?: RawMaybeNumber;
-  first_name?: RawMaybeString;
-  last_name?: RawMaybeString;
-  full_name?: RawMaybeString;
-  jersey_number?: RawMaybeString;
-  position?: RawMaybeString;
-  type?: RawMaybeString;
+type RawPlay = {
+  game_id?: RawMaybeNumber;
   order?: RawMaybeNumber;
-  sequence?: RawMaybeNumber;
-  team?: RawTeam | null;
-};
-
-type RawStatistic = {
-  id?: RawMaybeNumber;
   type?: RawMaybeString;
-  result?: RawMaybeString;
-  qualifier?: RawMaybeString;
-  shot_type?: RawMaybeString;
-  shot_value?: RawMaybeNumber;
-  player?: RawParticipant | null;
-  player_id?: RawMaybeNumber;
-  team?: RawTeam | null;
-  team_id?: RawMaybeNumber;
-  free_throw?: {
-    number?: RawMaybeNumber;
-    total?: RawMaybeNumber;
-  } | null;
-  turnover_type?: RawMaybeString;
-  foul_type?: RawMaybeString;
-  rebound_type?: RawMaybeString;
-  sub_type?: RawMaybeString;
-  value?: RawMaybeNumber;
-  seconds?: RawMaybeNumber;
-  duration?: RawMaybeNumber;
-};
-
-type RawPlayByPlayEvent = {
-  id?: RawMaybeNumber;
-  sequence?: RawMaybeNumber;
-  order?: RawMaybeNumber;
-  clock?: RawMaybeString;
-  period?: RawMaybeNumber;
   text?: RawMaybeString;
-  description?: RawMaybeString;
-  team?: RawTeam | null;
-  possession?: RawTeam | null;
   home_score?: RawMaybeNumber;
   away_score?: RawMaybeNumber;
-  participants?: RawParticipant[] | null;
-  statistics?: RawStatistic[] | null;
+  period?: RawMaybeNumber;
+  clock?: RawMaybeString;
+  scoring_play?: unknown;
+  score_value?: RawMaybeNumber;
+  team?: RawTeam | null;
 };
 
-type RawPlayByPlayResponse = {
-  data?: RawPlayByPlayEvent[] | null;
+type RawPlaysResponse = {
+  data?: RawPlay[] | null;
+  meta?: {
+    next_cursor?: RawMaybeNumber | RawMaybeString | null;
+  } | null;
 };
 
 export type PlayByPlayTeam = {
@@ -110,57 +74,10 @@ export type PlayByPlayTeam = {
   fullName?: string | null;
 };
 
-export type PlayByPlayParticipant = {
-  id: number | null;
-  teamId: number | null;
-  firstName?: string | null;
-  lastName?: string | null;
-  fullName?: string | null;
-  jerseyNumber?: string | null;
-  position?: string | null;
-  role?: string | null;
-  order?: number | null;
-};
-
-export type PlayByPlayStatisticType =
-  | "field_goal"
-  | "free_throw"
-  | "rebound"
-  | "assist"
-  | "block"
-  | "steal"
-  | "turnover"
-  | "foul"
-  | "lineup"
-  | "jump_ball"
-  | "substitution"
-  | "timeout"
-  | "violation"
-  | "seconds_played"
-  | "unknown";
-
-export type PlayByPlayStatistic = {
-  type: PlayByPlayStatisticType;
-  playerId: number | null;
-  teamId: number | null;
-  result?: string | null;
-  shotValue?: number | null;
-  shotType?: string | null;
-  isThreePoint?: boolean | null;
-  reboundType?: "offensive" | "defensive" | "team_offensive" | "team_defensive" | null;
-  turnoverType?: string | null;
-  foulType?: string | null;
-  qualifier?: string | null;
-  freeThrowNumber?: number | null;
-  freeThrowTotal?: number | null;
-  technical?: boolean;
-  flagrant?: boolean;
-  seconds?: number | null;
-};
-
 export type PlayByPlayEvent = {
   id: string;
   sequence: number;
+  order: number;
   period: number | null;
   clock: string | null;
   description: string;
@@ -169,10 +86,12 @@ export type PlayByPlayEvent = {
   teamId: number | null;
   team: PlayByPlayTeam | null;
   possessionTeamId: number | null;
-  participants: PlayByPlayParticipant[];
-  statistics: PlayByPlayStatistic[];
   isScoringPlay: boolean;
+  scoreValue: number | null;
+  rawType: string | null;
 };
+
+type RawPlaysMetaCursor = RawMaybeNumber | RawMaybeString | null | undefined;
 
 function toNumber(value: RawMaybeNumber): number | null {
   if (typeof value === "number" && Number.isFinite(value)) {
@@ -220,305 +139,74 @@ function normalizeTeam(team: RawTeam | null | undefined): PlayByPlayTeam | null 
   };
 }
 
-function normalizeParticipant(raw: RawParticipant, fallbackTeamId: number | null): PlayByPlayParticipant | null {
-  const id = toInteger(raw.id);
-  const teamId = toInteger(raw.team?.id ?? fallbackTeamId);
-  const firstName = toStringValue(raw.first_name);
-  const lastName = toStringValue(raw.last_name);
-  const fullName = toStringValue(raw.full_name) ??
-    (firstName || lastName ? [firstName, lastName].filter(Boolean).join(" ") : null);
-  const jerseyNumber = toStringValue(raw.jersey_number);
-  const position = toStringValue(raw.position);
-  const role = toStringValue(raw.type);
-  const order = toInteger(raw.sequence ?? raw.order);
+function toBoolean(value: unknown): boolean | null {
+  if (typeof value === "boolean") {
+    return value;
+  }
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) {
+      return null;
+    }
+    return value !== 0;
+  }
+  if (typeof value === "string") {
+    const normalized = value.trim().toLowerCase();
+    if (normalized === "true" || normalized === "1" || normalized === "yes") {
+      return true;
+    }
+    if (normalized === "false" || normalized === "0" || normalized === "no") {
+      return false;
+    }
+  }
+  return null;
+}
 
-  if (id === null && fullName === null && role === null && jerseyNumber === null) {
+function normalizePlay(raw: RawPlay, fallbackSequence: number): PlayByPlayEvent | null {
+  const order = toInteger(raw.order);
+  const sequence = order ?? fallbackSequence;
+  const description = toStringValue(raw.text);
+  if (!description) {
     return null;
   }
+  const period = toInteger(raw.period);
+  const clock = toStringValue(raw.clock);
+  const homeScore = toInteger(raw.home_score);
+  const awayScore = toInteger(raw.away_score);
+  const team = normalizeTeam(raw.team ?? null);
+  const teamId = team?.id ?? null;
+  const scoringPlay = toBoolean(raw.scoring_play) ?? false;
+  const scoreValue = toNumber(raw.score_value);
+  const rawType = toStringValue(raw.type);
+  const gameId = toInteger(raw.game_id);
+  const identifier = gameId !== null ? `play-${gameId}-${sequence}` : `play-${sequence}`;
 
   return {
-    id,
-    teamId,
-    firstName,
-    lastName,
-    fullName,
-    jerseyNumber,
-    position,
-    role,
-    order,
-  };
-}
-
-const THREE_POINT_PATTERN = /\b3(?:pt|\s?pointer)\b/i;
-const OFFENSIVE_PATTERN = /offen/i;
-const DEFENSIVE_PATTERN = /defen/i;
-const TECHNICAL_PATTERN = /technical/i;
-const FLAGRANT_PATTERN = /flagrant/i;
-const MADE_PATTERN = /made|good|scored|success/i;
-const MISSED_PATTERN = /miss/i;
-const FREE_THROW_PATTERN = /free[_\s-]*throw/i;
-
-function isThreePoint(stat: RawStatistic, qualifier: string | null, shotType: string | null): boolean | null {
-  if (stat.shot_value != null) {
-    const value = toNumber(stat.shot_value);
-    if (value === 3) {
-      return true;
-    }
-    if (value === 2) {
-      return false;
-    }
-  }
-  if (shotType && THREE_POINT_PATTERN.test(shotType)) {
-    return true;
-  }
-  if (qualifier && THREE_POINT_PATTERN.test(qualifier)) {
-    return true;
-  }
-  return null;
-}
-
-function resolvePlayerId(stat: RawStatistic): number | null {
-  const fromPlayer = toInteger(stat.player?.id ?? stat.player_id);
-  if (fromPlayer !== null) {
-    return fromPlayer;
-  }
-  return null;
-}
-
-function resolveTeamId(stat: RawStatistic, fallbackTeamId: number | null): number | null {
-  const fromTeam = toInteger(stat.team?.id ?? stat.team_id);
-  if (fromTeam !== null) {
-    return fromTeam;
-  }
-  return fallbackTeamId;
-}
-
-function normalizeStatistic(
-  raw: RawStatistic,
-  fallbackTeamId: number | null,
-  participants: PlayByPlayParticipant[],
-): PlayByPlayStatistic | null {
-  const rawType = toStringValue(raw.type)?.toLowerCase() ?? "";
-  const qualifier = toStringValue(raw.qualifier);
-  const shotType = toStringValue(raw.shot_type);
-  const result = toStringValue(raw.result);
-  const playerId = resolvePlayerId(raw);
-  const teamId = resolveTeamId(raw, fallbackTeamId);
-
-  const base: PlayByPlayStatistic = {
-    type: "unknown",
-    playerId,
-    teamId,
-    result,
-    qualifier,
-    shotType,
-    shotValue: null,
-    isThreePoint: null,
-    reboundType: null,
-    turnoverType: null,
-    foulType: null,
-    freeThrowNumber: null,
-    freeThrowTotal: null,
-    technical: false,
-    flagrant: false,
-    seconds: null,
-  };
-
-  const detectPlayerByRole = (role: string) => {
-    const participant = participants.find(part =>
-      part.id !== null && part.id !== undefined && typeof part.role === "string" && part.role.toLowerCase().includes(role),
-    );
-    return participant?.id ?? null;
-  };
-
-  if (FREE_THROW_PATTERN.test(rawType) || FREE_THROW_PATTERN.test(qualifier ?? "")) {
-    base.type = "free_throw";
-    base.shotValue = toNumber(raw.shot_value) ?? 1;
-    base.isThreePoint = false;
-    base.freeThrowNumber = toInteger(raw.free_throw?.number);
-    base.freeThrowTotal = toInteger(raw.free_throw?.total);
-    base.playerId = playerId ?? detectPlayerByRole("free");
-    const foulType = toStringValue(raw.foul_type) ?? "";
-    base.technical = TECHNICAL_PATTERN.test(qualifier ?? "") || TECHNICAL_PATTERN.test(foulType);
-    base.flagrant = FLAGRANT_PATTERN.test(qualifier ?? "") || FLAGRANT_PATTERN.test(foulType);
-    return base;
-  }
-
-  if (rawType.includes("field") || rawType.includes("shot")) {
-    base.type = "field_goal";
-    base.shotValue = toNumber(raw.shot_value);
-    base.isThreePoint = isThreePoint(raw, qualifier, shotType);
-    base.playerId = playerId ?? detectPlayerByRole("shoot");
-    return base;
-  }
-
-  if (rawType.includes("assist")) {
-    base.type = "assist";
-    base.playerId = playerId ?? detectPlayerByRole("assist");
-    return base;
-  }
-
-  if (rawType.includes("block")) {
-    base.type = "block";
-    base.playerId = playerId ?? detectPlayerByRole("block");
-    return base;
-  }
-
-  if (rawType.includes("steal")) {
-    base.type = "steal";
-    base.playerId = playerId ?? detectPlayerByRole("steal");
-    return base;
-  }
-
-  if (rawType.includes("turnover") || rawType.includes("lost ball") || rawType.includes("bad pass")) {
-    base.type = "turnover";
-    base.playerId = playerId ?? detectPlayerByRole("turnover");
-    base.turnoverType = toStringValue(raw.turnover_type);
-    return base;
-  }
-
-  if (rawType.includes("rebound")) {
-    const subtype = toStringValue(raw.rebound_type ?? raw.sub_type ?? qualifier);
-    const reboundType = (() => {
-      if (subtype) {
-        if (OFFENSIVE_PATTERN.test(subtype)) {
-          return "offensive";
-        }
-        if (DEFENSIVE_PATTERN.test(subtype)) {
-          return "defensive";
-        }
-      }
-      return null;
-    })();
-    base.type = "rebound";
-    base.playerId = playerId ?? detectPlayerByRole("rebound");
-    if (reboundType === "offensive" && base.playerId === null && teamId !== null) {
-      base.reboundType = "team_offensive";
-    } else if (reboundType === "defensive" && base.playerId === null && teamId !== null) {
-      base.reboundType = "team_defensive";
-    } else {
-      base.reboundType = reboundType;
-    }
-    return base;
-  }
-
-  if (rawType.includes("foul")) {
-    base.type = "foul";
-    base.playerId = playerId ?? detectPlayerByRole("foul");
-    const foulType = toStringValue(raw.foul_type ?? qualifier);
-    base.foulType = foulType;
-    base.technical = TECHNICAL_PATTERN.test(foulType ?? "");
-    base.flagrant = FLAGRANT_PATTERN.test(foulType ?? "");
-    return base;
-  }
-
-  if (rawType.includes("lineup") || rawType.includes("starter")) {
-    base.type = "lineup";
-    base.playerId = playerId ?? detectPlayerByRole("start");
-    return base;
-  }
-
-  if (rawType.includes("jump")) {
-    base.type = "jump_ball";
-    return base;
-  }
-
-  if (rawType.includes("substitution")) {
-    base.type = "substitution";
-    base.playerId = playerId ?? detectPlayerByRole("sub");
-    return base;
-  }
-
-  if (rawType.includes("timeout")) {
-    base.type = "timeout";
-    return base;
-  }
-
-  if (rawType.includes("violation")) {
-    base.type = "violation";
-    return base;
-  }
-
-  if (rawType.includes("second") || rawType.includes("minute") || rawType.includes("duration")) {
-    base.type = "seconds_played";
-    const rawSeconds = toNumber(raw.seconds ?? raw.value ?? raw.duration);
-    if (rawSeconds !== null) {
-      base.seconds = rawSeconds;
-    }
-    base.playerId = playerId ?? detectPlayerByRole("play");
-    return base;
-  }
-
-  if (rawType || qualifier || shotType) {
-    return base;
-  }
-
-  return null;
-}
-
-function hasPositiveResult(stat: PlayByPlayStatistic): boolean {
-  if (stat.type === "field_goal" || stat.type === "free_throw") {
-    if (stat.result && MADE_PATTERN.test(stat.result)) {
-      return true;
-    }
-    if (stat.result && MISSED_PATTERN.test(stat.result)) {
-      return false;
-    }
-  }
-  return false;
-}
-
-function normalizeEvent(event: RawPlayByPlayEvent, fallbackSequence: number): PlayByPlayEvent | null {
-  const sequence = toInteger(event.sequence ?? event.order) ?? fallbackSequence;
-  const id = toStringValue(event.id) ?? `event-${sequence}`;
-  const clock = toStringValue(event.clock);
-  const period = toInteger(event.period);
-  const description = toStringValue(event.text ?? event.description) ?? "";
-  const team = normalizeTeam(event.team);
-  const possessionTeamId = normalizeTeam(event.possession)?.id ?? null;
-  const homeScore = toInteger(event.home_score);
-  const awayScore = toInteger(event.away_score);
-
-  const participants = Array.isArray(event.participants)
-    ? event.participants
-        .map(part => normalizeParticipant(part, team?.id ?? null))
-        .filter((part): part is PlayByPlayParticipant => part !== null)
-    : [];
-
-  const stats: PlayByPlayStatistic[] = Array.isArray(event.statistics)
-    ? event.statistics
-        .map(stat => normalizeStatistic(stat, team?.id ?? null, participants))
-        .filter((stat): stat is PlayByPlayStatistic => stat !== null)
-    : [];
-
-  const isScoringPlay = stats.some(stat => hasPositiveResult(stat));
-
-  return {
-    id,
+    id: identifier,
     sequence,
+    order: sequence,
     period,
     clock,
     description,
     homeScore,
     awayScore,
-    teamId: team?.id ?? null,
+    teamId,
     team,
-    possessionTeamId,
-    participants,
-    statistics: stats,
-    isScoringPlay,
+    possessionTeamId: teamId,
+    isScoringPlay: scoringPlay,
+    scoreValue,
+    rawType,
   };
 }
 
-export function normalizeGamePlayByPlayResponse(raw: RawPlayByPlayResponse | null | undefined): PlayByPlayEvent[] {
+export function normalizeGamePlayByPlayResponse(raw: RawPlaysResponse): PlayByPlayEvent[] {
   if (!raw || !Array.isArray(raw.data)) {
     return [];
   }
   const result: PlayByPlayEvent[] = [];
   let fallbackSequence = 0;
-  for (const event of raw.data) {
+  for (const entry of raw.data) {
     fallbackSequence += 1;
-    const normalized = normalizeEvent(event, fallbackSequence);
+    const normalized = normalizePlay(entry, fallbackSequence);
     if (!normalized) {
       continue;
     }
@@ -528,15 +216,48 @@ export function normalizeGamePlayByPlayResponse(raw: RawPlayByPlayResponse | nul
   return result;
 }
 
+const PLAY_PAGE_SIZE = 50;
+const MAX_PLAY_PAGES = 40;
+
+async function fetchGamePlays(gameId: string): Promise<RawPlay[]> {
+  const collected: RawPlay[] = [];
+  let cursor: string | null = null;
+  let iterations = 0;
+
+  do {
+    iterations += 1;
+    const params = new URLSearchParams();
+    params.set('game_id', gameId);
+    params.set('per_page', String(PLAY_PAGE_SIZE));
+    if (cursor) {
+      params.set('cursor', cursor);
+    }
+
+    const response = await ncaam<RawPlaysResponse>(`/plays?${params.toString()}`);
+    const page = Array.isArray(response.data) ? response.data : [];
+    collected.push(...page);
+
+    const nextCursorRaw: RawPlaysMetaCursor = response.meta?.next_cursor;
+    const nextCursor = nextCursorRaw == null ? null : toStringValue(nextCursorRaw);
+    if (!nextCursor || page.length === 0) {
+      break;
+    }
+    cursor = nextCursor;
+  } while (iterations < MAX_PLAY_PAGES);
+
+  return collected;
+}
+
 export async function getGamePlayByPlay(gameId: number | string | null | undefined): Promise<PlayByPlayEvent[]> {
   if (gameId === null || gameId === undefined) {
     return [];
   }
   const normalizedId = typeof gameId === "string" ? gameId.trim() : gameId;
-  if (normalizedId === "") {
+  if (normalizedId === "" || normalizedId === null || Number.isNaN(normalizedId as number)) {
     return [];
   }
-  const response = await ncaam<RawPlayByPlayResponse>(`/games/${normalizedId}/playbyplay`);
-  return normalizeGamePlayByPlayResponse(response);
-}
 
+  const idString = String(normalizedId);
+  const plays = await fetchGamePlays(idString);
+  return normalizeGamePlayByPlayResponse({ data: plays });
+}
