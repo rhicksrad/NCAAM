@@ -18,6 +18,8 @@ class MetricSpec:
     minimum_games: int
     formatter: Callable[[float], str]
     description: str
+    attempts_fn: Callable[[dict], Optional[float]] | None = None
+    minimum_attempts: int = 0
 
 
 def format_decimal(value: float, digits: int = 1) -> str:
@@ -31,11 +33,40 @@ def format_percent(value: float) -> str:
     return f"{rounded:.1f}%"
 
 
+def _resolve_free_throw_attempts(stats: dict) -> Optional[float]:
+    attempts = stats.get("fta_per_g") or stats.get("fta_g") or stats.get("fta")
+    if attempts is None:
+        ft_made = stats.get("ft_per_g") or stats.get("ft_g") or stats.get("ft")
+        ft_pct = stats.get("ft_pct")
+        if is_finite(ft_made) and is_finite(ft_pct) and ft_pct and ft_pct > 0:
+            attempts = ft_made / ft_pct
+        else:
+            points = stats.get("pts_g")
+            games = stats.get("gp")
+            if is_finite(points) and is_finite(games) and games and games > 0:
+                attempts = points / 5  # heuristic fallback
+            else:
+                return None
+    games = stats.get("gp")
+    if is_finite(attempts) and is_finite(games) and games and games > 0:
+        return float(attempts) * float(games)
+    if is_finite(attempts):
+        return float(attempts)
+    return None
+
+
 LEADERBOARD_SPECS: dict[str, MetricSpec] = {
     "mp": MetricSpec(lambda s: s.get("mp_g"), 12, lambda v: format_decimal(v, 1), "Minutes per game"),
     "fgPct": MetricSpec(lambda s: s.get("fg_pct"), 15, format_percent, "Field goal %"),
     "fg3Pct": MetricSpec(lambda s: s.get("fg3_pct"), 15, format_percent, "3-point %"),
-    "ftPct": MetricSpec(lambda s: s.get("ft_pct"), 15, format_percent, "Free throw %"),
+    "ftPct": MetricSpec(
+        lambda s: s.get("ft_pct"),
+        15,
+        format_percent,
+        "Free throw %",
+        attempts_fn=_resolve_free_throw_attempts,
+        minimum_attempts=100,
+    ),
     "rebounds": MetricSpec(
         lambda s: s.get("trb_g"), 12, lambda v: format_decimal(v, 1), "Total rebounds (TRB + ORB + DRB)"
     ),
@@ -124,6 +155,10 @@ def build_metric_leaders(players: Iterable[PlayerSeason], spec: MetricSpec) -> l
         value = spec.stat_fn(season.stats)
         if not is_finite(value):
             continue
+        if spec.attempts_fn and spec.minimum_attempts > 0:
+            attempts = spec.attempts_fn(season.stats)
+            if not is_finite(attempts) or attempts < spec.minimum_attempts:
+                continue
         leaders.append(
             {
                 "name": season.name,
