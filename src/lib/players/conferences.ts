@@ -359,6 +359,16 @@ function createRosterRow(player: RosterPlayer): HTMLElement {
   const name = document.createElement("span");
   name.className = "team-roster__name";
   name.textContent = player.name;
+  const nameLength = player.name.length;
+  let fontSize = "1.05rem";
+  if (nameLength > 38) {
+    fontSize = "0.85rem";
+  } else if (nameLength > 32) {
+    fontSize = "0.9rem";
+  } else if (nameLength > 26) {
+    fontSize = "0.95rem";
+  }
+  name.style.setProperty("--player-name-font-size", fontSize);
   profile.appendChild(name);
 
   const meta = buildPlayerMeta(player);
