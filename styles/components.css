@@ -881,6 +881,116 @@ details[open] > summary .disclosure-indicator::after {
   box-shadow: var(--shadow-focus);
 }
 
+.standings-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.standings-controls__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.standings-controls__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: min(16rem, 100%);
+  flex: 1 1 min(16rem, 100%);
+}
+
+.standings-controls__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+}
+
+.standings-controls__field select,
+.standings-controls__field input[type="number"] {
+  appearance: none;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-radius: 0.65rem;
+  padding: 0.45rem 0.65rem;
+  color: var(--color-ink);
+  min-height: 2.4rem;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  width: 100%;
+}
+
+.standings-controls__field input[type="number"]::-webkit-outer-spin-button,
+.standings-controls__field input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+}
+
+.standings-controls__field input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.standings-controls__field select:focus-visible,
+.standings-controls__field input[type="number"]:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.standings-controls__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.standings-status {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+.standings-status[data-variant="error"] {
+  color: color-mix(in srgb, #b91c1c 82%, white 18%);
+}
+
+.standings-status[data-variant="loading"] {
+  color: color-mix(in srgb, var(--color-muted) 72%, white 28%);
+}
+
+.standings-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.standings-results__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.standings-results__meta {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--color-muted) 80%, white 20%);
+}
+
+.standings-note {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--color-muted) 86%, white 14%);
+}
+
+@media (min-width: 720px) {
+  .standings-controls {
+    align-items: flex-end;
+  }
+
+  .standings-controls__actions {
+    justify-content: flex-start;
+  }
+}
+
 .games-controls__actions {
   display: flex;
   flex-wrap: wrap;
