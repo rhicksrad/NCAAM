@@ -1,3 +1,4 @@
+import { BASE } from "../lib/config.js";
 import { NCAAM, type Game } from "../lib/sdk/ncaam.js";
 import {
   getTeamAccentColors,
@@ -218,16 +219,19 @@ function renderGameCard(game: Game): string {
   const badge = status.label
     ? `<span class="badge"${status.variant ? ` data-variant="${status.variant}"` : ""}>${status.label}</span>`
     : "";
+  const href = escapeAttr(`${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`);
   return `<li class="card game-card" data-status="${game.status ?? ""}">
-    <div class="game-card__header">
-      <span class="game-card__time">${headerLabel}</span>
-      ${badge}
-    </div>
-    <div class="game-card__body">
-      ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
-      ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
-    </div>
-    ${renderLineScore(game)}
+    <a class="game-card__link" href="${href}">
+      <div class="game-card__header">
+        <span class="game-card__time">${headerLabel}</span>
+        ${badge}
+      </div>
+      <div class="game-card__body">
+        ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
+        ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
+      </div>
+      ${renderLineScore(game)}
+    </a>
   </li>`;
 }
 

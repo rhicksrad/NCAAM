@@ -174,6 +174,15 @@ export const NCAAM = {
         return get("/players/active", params);
     },
     games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
+    game: async (gameId) => {
+        if (gameId === null || gameId === undefined) {
+            return null;
+        }
+        const response = await get("/games", { "game_ids[]": gameId, per_page: 1 });
+        const games = Array.isArray(response.data) ? response.data : [];
+        return games.length > 0 ? games[0] : null;
+    },
+    plays: (gameId) => get("/plays", { game_id: gameId }),
     conferences: () => get("/conferences"),
     rankings: (params = {}) => get("/rankings", params),
 };
