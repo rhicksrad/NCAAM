@@ -53,20 +53,18 @@ beforeEach(() => {
 });
 
 describe("NCAAM SDK", () => {
-  it("returns the first matching game when an id is provided", async () => {
+  it("fetches a single game by id", async () => {
     const fetchMock = vi
       .fn<Parameters<typeof fetch>, ReturnType<typeof fetch>>()
       .mockResolvedValue(
         createMockResponse({
           json: async () => ({
-            data: [
-              {
-                id: 321,
-                status: "Final",
-                home_team: { id: 10, full_name: "Home", name: "Home" },
-                visitor_team: { id: 20, full_name: "Away", name: "Away" },
-              },
-            ],
+            data: {
+              id: 321,
+              status: "Final",
+              home_team: { id: 10, full_name: "Home", name: "Home" },
+              visitor_team: { id: 20, full_name: "Away", name: "Away" },
+            },
           }),
         }),
       );
@@ -76,15 +74,20 @@ describe("NCAAM SDK", () => {
     const game = await NCAAM.game(321);
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [url] = fetchMock.mock.calls[0];
-    expect(url).toContain("/games?");
-    expect(url).toContain("game_ids%5B%5D=321");
+    expect(url).toMatch(/\/games\/321$/);
     expect(game?.id).toBe(321);
   });
 
   it("returns null when the API returns no games", async () => {
     const fetchMock = vi
       .fn<Parameters<typeof fetch>, ReturnType<typeof fetch>>()
-      .mockResolvedValue(createMockResponse({ json: async () => ({ data: [] }) }));
+      .mockResolvedValue(
+        createMockResponse({
+          ok: false,
+          status: 404,
+          statusText: "Not Found",
+        }),
+      );
     // @ts-expect-error mocking fetch for test environment
     globalThis.fetch = fetchMock;
 
