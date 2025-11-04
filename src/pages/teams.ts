@@ -280,6 +280,19 @@ const twoDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDi
 const threeDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 const percentFormatter = new Intl.NumberFormat(undefined, { style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
+const NAME_SCALE_MIN = 0.72;
+const NAME_SCALE_MAX = 1;
+const NAME_SCALE_START = 20;
+const NAME_SCALE_END = 42;
+const MIN_VISIBLE_RATIO = 0.085;
+
+const CARD_TONE_CLASSES = [
+  "stat-card--tone-1",
+  "stat-card--tone-2",
+  "stat-card--tone-3",
+  "stat-card--tone-4",
+] as const;
+
 function formatNumber(value: number | null | undefined, formatter: Intl.NumberFormat) {
   return value == null ? null : formatter.format(value);
 }
@@ -480,7 +493,7 @@ function renderLeaderboard(teams: TeamCardData[]) {
       ariaLabel: "Top 10 Division I programs by average defensive efficiency (lower is better)",
       sort: "asc",
       formatValue: (_team, averages) => formatNumber(averages.adjD, oneDecimalFormatter),
-      getValue: averages => averages.adjD == null ? null : averages.adjD,
+      getValue: averages => (averages.adjD == null ? null : averages.adjD),
     },
     {
       key: "barthag",
@@ -547,66 +560,162 @@ function renderLeaderboard(teams: TeamCardData[]) {
     leaderboardMeta.textContent = `${trackedLabel} Division I programs with Torvik efficiency archives. Separate top 10 lists highlight average record, offense, defense, and BARTHAG across ${seasonRange}.`;
   }
 
-  const cards = metricDefinitions
-    .map(metric => {
-      const ranking = metricRankings.get(metric.key);
-      if (!ranking || ranking.length === 0) {
-        return null;
+  leaderboardRoot.innerHTML = "";
+  const doc = leaderboardRoot.ownerDocument;
+
+  metricDefinitions.forEach((metric, cardIndex) => {
+    const ranking = metricRankings.get(metric.key);
+    if (!ranking || ranking.length === 0) {
+      return;
+    }
+
+    const card = doc.createElement("article");
+    card.className = "stat-card teams-leaderboard__card";
+    const toneClass = CARD_TONE_CLASSES[cardIndex % CARD_TONE_CLASSES.length];
+    card.classList.add(toneClass);
+
+    const leader = ranking[0]?.team;
+    if (leader?.accentPrimary) {
+      card.style.setProperty("--chart-accent", leader.accentPrimary);
+      const secondary = leader.accentSecondary ?? leader.accentPrimary;
+      card.style.setProperty("--chart-accent-muted", `color-mix(in srgb, ${secondary} 55%, white 45%)`);
+      card.style.setProperty("--chart-accent-track", `color-mix(in srgb, ${secondary} 22%, white 78%)`);
+      card.style.setProperty("--chart-accent-stroke", `color-mix(in srgb, ${leader.accentPrimary} 78%, black 22%)`);
+    }
+
+    const header = doc.createElement("header");
+    header.className = "stat-card__head";
+
+    const title = doc.createElement("h3");
+    title.className = "stat-card__title";
+    title.textContent = metric.title;
+    header.appendChild(title);
+
+    const season = doc.createElement("span");
+    season.className = "stat-card__season";
+    season.textContent = metric.seasonLabel;
+    header.appendChild(season);
+
+    card.appendChild(header);
+
+    const body = doc.createElement("div");
+    body.className = "stat-card__body";
+    card.appendChild(body);
+
+    const chart = doc.createElement("div");
+    chart.className = "stat-card__chart leaderboard-chart";
+    chart.setAttribute("role", "group");
+    chart.setAttribute("aria-label", metric.ariaLabel);
+    body.appendChild(chart);
+
+    const rows = doc.createElement("div");
+    rows.className = "leaderboard-chart__rows";
+    chart.appendChild(rows);
+
+    const values = ranking.map(entry => entry.value);
+    const maxValue = Math.max(...values);
+    const minValue = Math.min(...values);
+    const range = maxValue - minValue;
+    const prefersLower = metric.sort === "asc";
+
+    ranking.forEach((entry, index) => {
+      const row = doc.createElement("div");
+      row.className = "leaderboard-chart__row";
+      row.dataset.rank = String(index + 1);
+
+      const label = doc.createElement("div");
+      label.className = "leaderboard-chart__label";
+      row.appendChild(label);
+
+      const rank = doc.createElement("span");
+      rank.className = "leaderboard-chart__rank";
+      rank.textContent = String(index + 1).padStart(2, "0");
+      label.appendChild(rank);
+
+      const identity = doc.createElement("div");
+      identity.className = "leaderboard-chart__identity";
+      label.appendChild(identity);
+
+      const name = doc.createElement("span");
+      name.className = "leaderboard-chart__name";
+      name.textContent = entry.team.full_name;
+      identity.appendChild(name);
+
+      const conferenceLabel = resolveConferenceLabel(entry.team);
+      if (conferenceLabel) {
+        const conference = doc.createElement("span");
+        conference.className = "leaderboard-chart__team";
+        conference.textContent = conferenceLabel;
+        identity.appendChild(conference);
       }
-      const leader = ranking[0]?.team;
-      const cardStyle = leader ? ` style="--chart-accent:${leader.accentPrimary};"` : "";
-      const rows = ranking
-        .map((entry, index) => {
-          const { team, display } = entry;
-          const conferenceLabel = team.conferenceShortName && team.conferenceShortName !== team.conference
-            ? `${team.conferenceShortName} · ${team.conference}`
-            : team.conference;
-          const rowClass = ["teams-leaderboard__row", index === 0 ? "teams-leaderboard__row--leader" : null]
-            .filter(Boolean)
-            .join(" ");
-          return `<tr class="${rowClass}" data-rank="${index + 1}" style="--team-accent:${team.accentPrimary};">
-            <th scope="row" class="teams-leaderboard__rank">${index + 1}</th>
-            <td class="teams-leaderboard__team">
-              <span class="teams-leaderboard__name">${team.full_name}</span>
-              <span class="teams-leaderboard__conference">${conferenceLabel ?? ""}</span>
-            </td>
-            <td class="teams-leaderboard__metric teams-leaderboard__metric--highlight">${display}</td>
-          </tr>`;
-        })
-        .join("");
 
-      return `<article class="stat-card teams-leaderboard__card"${cardStyle}>
-        <header class="stat-card__head">
-          <h3 class="stat-card__title">${metric.title}</h3>
-          <span class="stat-card__season">${metric.seasonLabel}</span>
-        </header>
-        <div class="teams-leaderboard__body">
-          <table class="teams-leaderboard__table teams-leaderboard__table--compact" aria-label="${metric.ariaLabel}">
-            <thead>
-              <tr>
-                <th scope="col" class="teams-leaderboard__rank">#</th>
-                <th scope="col" class="teams-leaderboard__team">Program</th>
-                <th scope="col" class="teams-leaderboard__metric">Metric</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${rows}
-            </tbody>
-          </table>
-        </div>
-      </article>`;
-    })
-    .filter((card): card is string => Boolean(card));
+      const metrics = doc.createElement("div");
+      metrics.className = "leaderboard-chart__metrics";
+      row.appendChild(metrics);
 
-  if (cards.length === 0) {
+      const meter = doc.createElement("div");
+      meter.className = "leaderboard-chart__meter";
+
+      let ratio: number;
+      if (!Number.isFinite(range) || range <= 0) {
+        ratio = 1;
+      } else if (prefersLower) {
+        ratio = (maxValue - entry.value) / range;
+      } else {
+        ratio = (entry.value - minValue) / range;
+      }
+      const safeRatio = ratio > 0 ? Math.max(ratio, MIN_VISIBLE_RATIO) : 0;
+      meter.style.setProperty("--leaderboard-fill", `${Math.min(safeRatio, 1)}`);
+      metrics.appendChild(meter);
+
+      const value = doc.createElement("span");
+      value.className = "leaderboard-chart__value";
+      value.textContent = entry.display;
+      metrics.appendChild(value);
+
+      const scaleLabel = conferenceLabel ? `${entry.team.full_name} ${conferenceLabel}` : entry.team.full_name;
+      const baseScale = computeNameScale(scaleLabel);
+      row.style.setProperty("--name-scale", `${baseScale}`);
+      if (conferenceLabel) {
+        const teamScale = Math.max(NAME_SCALE_MIN, Math.min(NAME_SCALE_MAX, baseScale + 0.08));
+        row.style.setProperty("--team-scale", `${teamScale}`);
+      }
+
+      rows.appendChild(row);
+    });
+
+    leaderboardRoot.appendChild(card);
+  });
+
+  if (!leaderboardRoot.childElementCount) {
     if (leaderboardMeta) {
       leaderboardMeta.textContent = "Efficiency leaderboard unavailable right now.";
     }
     leaderboardRoot.innerHTML = `<p class="stat-card stat-card--empty">Team efficiency data unavailable right now.</p>`;
-    return;
   }
+}
 
-  leaderboardRoot.innerHTML = cards.join("");
+function resolveConferenceLabel(team: TeamCardData): string | null {
+  if (!team.conference) {
+    return null;
+  }
+  if (team.conferenceShortName && team.conferenceShortName !== team.conference) {
+    return `${team.conferenceShortName} · ${team.conference}`;
+  }
+  return team.conference;
+}
+
+function computeNameScale(label: string): number {
+  const length = label.length;
+  if (length <= NAME_SCALE_START) {
+    return NAME_SCALE_MAX;
+  }
+  if (length >= NAME_SCALE_END) {
+    return NAME_SCALE_MIN;
+  }
+  const progress = (length - NAME_SCALE_START) / (NAME_SCALE_END - NAME_SCALE_START);
+  const scale = NAME_SCALE_MAX - progress * (NAME_SCALE_MAX - NAME_SCALE_MIN);
+  return Number(scale.toFixed(3));
 }
 
 const teamsWithLocations = data.filter(team => team.location);
