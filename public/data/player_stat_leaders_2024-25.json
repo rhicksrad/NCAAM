@@ -1,7 +1,7 @@
 {
   "season": "2024-25",
   "seasonYear": 2025,
-  "generatedAt": "2025-11-01T19:52:57Z",
+  "generatedAt": "2025-11-04T18:53:05Z",
   "metrics": {
     "mp": {
       "label": "Minutes per game",
@@ -296,94 +296,94 @@
       "shortLabel": "FT%",
       "leaders": [
         {
-          "name": "AJ Hopkins",
-          "team": "UT Martin",
-          "slug": "aj-hopkins-1",
-          "url": "https://www.sports-reference.com/cbb/players/aj-hopkins-1.html",
-          "games": 24,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Atin Wright",
+          "team": "North Texas",
+          "slug": "atin-wright-1",
+          "url": "https://www.sports-reference.com/cbb/players/atin-wright-1.html",
+          "games": 36,
+          "value": 0.9453125,
+          "valueFormatted": "94.5%"
         },
         {
-          "name": "Alphonzo Billups III",
-          "team": "VCU",
-          "slug": "alphonzo-billups-iii-1",
-          "url": "https://www.sports-reference.com/cbb/players/alphonzo-billups-iii-1.html",
-          "games": 23,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Steven Ashworth",
+          "team": "Creighton",
+          "slug": "steven-ashworth-1",
+          "url": "https://www.sports-reference.com/cbb/players/steven-ashworth-1.html",
+          "games": 35,
+          "value": 0.9296875,
+          "valueFormatted": "93.0%"
         },
         {
-          "name": "Andre Young",
-          "team": "Rider",
-          "slug": "andre-young-3",
-          "url": "https://www.sports-reference.com/cbb/players/andre-young-3.html",
-          "games": 25,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Kon Knueppel",
+          "team": "Duke",
+          "slug": "kon-knueppel-1",
+          "url": "https://www.sports-reference.com/cbb/players/kon-knueppel-1.html",
+          "games": 39,
+          "value": 0.9140625,
+          "valueFormatted": "91.4%"
         },
         {
-          "name": "Andrew Ball",
-          "team": "Monmouth",
-          "slug": "andrew-ball-1",
-          "url": "https://www.sports-reference.com/cbb/players/andrew-ball-1.html",
+          "name": "Corey McKeithan",
+          "team": "La Salle",
+          "slug": "corey-mckeithan-1",
+          "url": "https://www.sports-reference.com/cbb/players/corey-mckeithan-1.html",
           "games": 33,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "value": 0.9125,
+          "valueFormatted": "91.2%"
         },
         {
-          "name": "Cade Pendleton",
-          "team": "UC San Diego",
-          "slug": "cade-pendleton-1",
-          "url": "https://www.sports-reference.com/cbb/players/cade-pendleton-1.html",
-          "games": 20,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Daryl Simmons II",
+          "team": "Gardner-Webb",
+          "slug": "daryl-simmons-ii-1",
+          "url": "https://www.sports-reference.com/cbb/players/daryl-simmons-ii-1.html",
+          "games": 31,
+          "value": 0.9104477612,
+          "valueFormatted": "91.0%"
         },
         {
-          "name": "Charlie Miller",
-          "team": "Northern Iowa",
-          "slug": "charlie-miller-4",
-          "url": "https://www.sports-reference.com/cbb/players/charlie-miller-4.html",
-          "games": 17,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "John Tonje",
+          "team": "Wisconsin",
+          "slug": "john-tonje-1",
+          "url": "https://www.sports-reference.com/cbb/players/john-tonje-1.html",
+          "games": 37,
+          "value": 0.9094488189,
+          "valueFormatted": "90.9%"
         },
         {
-          "name": "Connor Christensen",
-          "team": "Dartmouth",
-          "slug": "connor-christensen-1",
-          "url": "https://www.sports-reference.com/cbb/players/connor-christensen-1.html",
-          "games": 23,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Jamar Brown",
+          "team": "Kansas City",
+          "slug": "jamar-brown-2",
+          "url": "https://www.sports-reference.com/cbb/players/jamar-brown-2.html",
+          "games": 30,
+          "value": 0.8991596639,
+          "valueFormatted": "89.9%"
         },
         {
-          "name": "Damon Strand",
-          "team": "Albany (NY)",
-          "slug": "damon-strand-1",
-          "url": "https://www.sports-reference.com/cbb/players/damon-strand-1.html",
-          "games": 16,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Marcus Johnson",
+          "team": "Bowling Green",
+          "slug": "marcus-johnson-5",
+          "url": "https://www.sports-reference.com/cbb/players/marcus-johnson-5.html",
+          "games": 32,
+          "value": 0.8977272727,
+          "valueFormatted": "89.8%"
         },
         {
-          "name": "Daniel Banister",
-          "team": "Hampton",
-          "slug": "daniel-banister-1",
-          "url": "https://www.sports-reference.com/cbb/players/daniel-banister-1.html",
-          "games": 26,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "Xzayvier Brown",
+          "team": "Saint Joseph's",
+          "slug": "xzayvier-brown-1",
+          "url": "https://www.sports-reference.com/cbb/players/xzayvier-brown-1.html",
+          "games": 32,
+          "value": 0.896969697,
+          "valueFormatted": "89.7%"
         },
         {
-          "name": "Dramane Camara",
-          "team": "Norfolk State",
-          "slug": "dramane-camara-1",
-          "url": "https://www.sports-reference.com/cbb/players/dramane-camara-1.html",
-          "games": 25,
-          "value": 1.0,
-          "valueFormatted": "100.0%"
+          "name": "John Poulakidas",
+          "team": "Yale",
+          "slug": "john-poulakidas-1",
+          "url": "https://www.sports-reference.com/cbb/players/john-poulakidas-1.html",
+          "games": 27,
+          "value": 0.8965517241,
+          "valueFormatted": "89.7%"
         }
       ]
     },

@@ -30,6 +30,8 @@ interface PlayerSeasonStats {
   gp: number | null;
   gs: number | null;
   mp_g: number | null;
+  ft_per_g: number | null;
+  fta_per_g: number | null;
   fg_pct: number | null;
   fg3_pct: number | null;
   ft_pct: number | null;
@@ -147,6 +149,8 @@ function parsePerGame(root: cheerio.CheerioAPI): PlayerSeasonStats[] {
     const gp = parseInteger(getCellValue(row, "games"));
     const gs = parseInteger(getCellValue(row, "games_started"));
     const mp_g = parseNumber(getCellValue(row, "mp_per_g"));
+    const ft_per_g = parseNumber(getCellValue(row, "ft_per_g"));
+    const fta_per_g = parseNumber(getCellValue(row, "fta_per_g"));
     const fg_pct = parseNumber(getCellValue(row, "fg_pct"));
     const fg3_pct = parseNumber(getCellValue(row, "fg3_pct"));
     const ft_pct = parseNumber(getCellValue(row, "ft_pct"));
@@ -170,6 +174,8 @@ function parsePerGame(root: cheerio.CheerioAPI): PlayerSeasonStats[] {
       gp,
       gs,
       mp_g,
+      ft_per_g,
+      fta_per_g,
       fg_pct,
       fg3_pct,
       ft_pct,
@@ -209,6 +215,8 @@ function parseTotals(root: cheerio.CheerioAPI): PlayerSeasonStats[] {
     const gp = parseInteger(getCellValue(row, "games"));
     const gs = parseInteger(getCellValue(row, "games_started"));
     const minutesTotal = parseNumber(getCellValue(row, "mp"));
+    const ft = parseNumber(getCellValue(row, "ft"));
+    const fta = parseNumber(getCellValue(row, "fta"));
     const fg_pct = parseNumber(getCellValue(row, "fg_pct"));
     const fg3_pct = parseNumber(getCellValue(row, "fg3_pct"));
     const ft_pct = parseNumber(getCellValue(row, "ft_pct"));
@@ -238,6 +246,8 @@ function parseTotals(root: cheerio.CheerioAPI): PlayerSeasonStats[] {
       gp,
       gs,
       mp_g,
+      ft_per_g: toPerGame(ft),
+      fta_per_g: toPerGame(fta),
       fg_pct,
       fg3_pct,
       ft_pct,
