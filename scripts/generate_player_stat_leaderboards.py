@@ -55,10 +55,34 @@ def _resolve_free_throw_attempts(stats: dict) -> Optional[float]:
     return None
 
 
+def _resolve_three_point_attempts(stats: dict) -> Optional[float]:
+    attempts = stats.get("fg3a_per_g") or stats.get("fg3a_g") or stats.get("fg3a")
+    if attempts is None:
+        made = stats.get("fg3_per_g") or stats.get("fg3_g") or stats.get("fg3")
+        pct = stats.get("fg3_pct")
+        if is_finite(made) and is_finite(pct) and pct and pct > 0:
+            attempts = made / pct
+        else:
+            return None
+    games = stats.get("gp")
+    if is_finite(attempts) and is_finite(games) and games and games > 0:
+        return float(attempts) * float(games)
+    if is_finite(attempts):
+        return float(attempts)
+    return None
+
+
 LEADERBOARD_SPECS: dict[str, MetricSpec] = {
     "mp": MetricSpec(lambda s: s.get("mp_g"), 12, lambda v: format_decimal(v, 1), "Minutes per game"),
     "fgPct": MetricSpec(lambda s: s.get("fg_pct"), 15, format_percent, "Field goal %"),
-    "fg3Pct": MetricSpec(lambda s: s.get("fg3_pct"), 15, format_percent, "3-point %"),
+    "fg3Pct": MetricSpec(
+        lambda s: s.get("fg3_pct"),
+        15,
+        format_percent,
+        "3-point %",
+        attempts_fn=_resolve_three_point_attempts,
+        minimum_attempts=50,
+    ),
     "ftPct": MetricSpec(
         lambda s: s.get("ft_pct"),
         15,
