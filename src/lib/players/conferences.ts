@@ -13,6 +13,7 @@ import {
   type TeamRoster,
   type RosterPlayer,
   type PlayerStatsSnapshot,
+  type PlayerStatsHistoryEntry,
 } from "./roster-directory.js";
 
 type RosterColumn = {
@@ -305,17 +306,34 @@ function renderRosterTable(team: TeamRoster, players: RosterPlayer[]): HTMLEleme
 
 function createRosterHeader(): HTMLElement {
   const header = document.createElement("div");
-  header.className = "team-roster__row team-roster__row--header";
-  const name = document.createElement("span");
-  name.textContent = "Player";
-  header.appendChild(name);
+  header.className = "team-roster__header";
+
+  const playerColumn = document.createElement("span");
+  playerColumn.className = "team-roster__header-title";
+  playerColumn.textContent = "Player";
+  header.appendChild(playerColumn);
+
+  const seasonHeader = document.createElement("div");
+  seasonHeader.className = "team-roster__season-grid team-roster__season-grid--header";
+
+  const seasonLabel = document.createElement("span");
+  seasonLabel.className = "team-roster__season-label";
+  seasonLabel.textContent = "Season";
+  seasonHeader.appendChild(seasonLabel);
+
+  const schoolLabel = document.createElement("span");
+  schoolLabel.className = "team-roster__season-team";
+  schoolLabel.textContent = "School";
+  seasonHeader.appendChild(schoolLabel);
 
   ROSTER_COLUMNS.forEach((column) => {
     const span = document.createElement("span");
+    span.className = "team-roster__stat";
     span.textContent = column.label;
-    header.appendChild(span);
+    seasonHeader.appendChild(span);
   });
 
+  header.appendChild(seasonHeader);
   return header;
 }
 
@@ -335,25 +353,64 @@ function createRosterRow(player: RosterPlayer): HTMLElement {
   row.className = "team-roster__row";
   row.dataset.player = player.id;
 
-  const nameCell = document.createElement("span");
-  nameCell.className = "team-roster__name";
-  nameCell.textContent = player.name;
+  const profile = document.createElement("div");
+  profile.className = "team-roster__profile";
+
+  const name = document.createElement("span");
+  name.className = "team-roster__name";
+  name.textContent = player.name;
+  profile.appendChild(name);
 
   const meta = buildPlayerMeta(player);
   if (meta) {
     const metaEl = document.createElement("span");
-    metaEl.className = "team-roster__team";
+    metaEl.className = "team-roster__meta";
     metaEl.textContent = meta;
-    nameCell.appendChild(metaEl);
+    profile.appendChild(metaEl);
   }
-  row.appendChild(nameCell);
+
+  row.appendChild(profile);
+
+  const seasons = document.createElement("div");
+  seasons.className = "team-roster__seasons";
+
+  if (!player.history.length) {
+    const empty = document.createElement("div");
+    empty.className = "team-roster__season-empty";
+    empty.textContent = "No college stats available.";
+    seasons.appendChild(empty);
+  } else {
+    player.history.forEach((season) => seasons.appendChild(createSeasonRow(season)));
+  }
+
+  row.appendChild(seasons);
+
+  return row;
+}
+
+function createSeasonRow(season: PlayerStatsHistoryEntry): HTMLElement {
+  const row = document.createElement("div");
+  row.className = "team-roster__season-grid";
+
+  const seasonLabel = document.createElement("span");
+  seasonLabel.className = "team-roster__season-label";
+  seasonLabel.textContent = season.season;
+  row.appendChild(seasonLabel);
+
+  const school = document.createElement("span");
+  school.className = "team-roster__season-team";
+  const teamPieces = [season.team?.trim() || "Unknown school"];
+  if (season.conference) {
+    teamPieces.push(season.conference);
+  }
+  school.textContent = teamPieces.join(" · ");
+  row.appendChild(school);
 
   ROSTER_COLUMNS.forEach((column) => {
     const cell = document.createElement("span");
     cell.className = "team-roster__stat";
     cell.dataset.stat = column.label;
-    const stats = player.stats as Partial<PlayerStatsSnapshot> | null;
-    const value = stats ? stats[column.key] : null;
+    const value = season[column.key];
     cell.textContent = column.formatter(value ?? null);
     row.appendChild(cell);
   });

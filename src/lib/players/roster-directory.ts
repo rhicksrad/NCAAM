@@ -21,6 +21,12 @@ export type PlayerStatsSnapshot = {
   ft_pct: number | null;
 };
 
+export type PlayerStatsHistoryEntry = PlayerStatsSnapshot & {
+  season: string;
+  team: string | null;
+  conference: string | null;
+};
+
 export type RosterPlayer = {
   id: string;
   name: string;
@@ -30,6 +36,7 @@ export type RosterPlayer = {
   height: string | null;
   weight: string | null;
   stats: PlayerStatsSnapshot | null;
+  history: PlayerStatsHistoryEntry[];
 };
 
 export type TeamRoster = {
@@ -112,6 +119,14 @@ function parseSeasonStartYear(label: string): number | null {
   }
   const startYear = Number.parseInt(match[1] ?? "", 10);
   return Number.isFinite(startYear) ? startYear : null;
+}
+
+function deriveSeasonSortKey(label: string): number | null {
+  const endYear = parseSeasonEndYear(label);
+  if (endYear != null) {
+    return endYear;
+  }
+  return parseSeasonStartYear(label);
 }
 
 function buildConferenceNameLookup(conferences: Conference[]): Map<number, string> {
@@ -330,6 +345,21 @@ function pickPlayerIndexEntry(
   return filtered[0] ?? null;
 }
 
+function createEmptyStatsSnapshot(): PlayerStatsSnapshot {
+  return {
+    gp: null,
+    mp_g: null,
+    pts_g: null,
+    trb_g: null,
+    ast_g: null,
+    stl_g: null,
+    blk_g: null,
+    fg_pct: null,
+    fg3_pct: null,
+    ft_pct: null,
+  } satisfies PlayerStatsSnapshot;
+}
+
 function toPlayerStatsSnapshot(season: PlayerStatsSeason | null): PlayerStatsSnapshot | null {
   if (!season) {
     return null;
@@ -348,15 +378,40 @@ function toPlayerStatsSnapshot(season: PlayerStatsSeason | null): PlayerStatsSna
   } satisfies PlayerStatsSnapshot;
 }
 
-async function resolvePlayerStats(
+function toPlayerStatsHistoryEntry(season: PlayerStatsSeason): PlayerStatsHistoryEntry {
+  const snapshot = toPlayerStatsSnapshot(season) ?? createEmptyStatsSnapshot();
+  return {
+    season: season.season,
+    team: season.team?.trim() ?? null,
+    conference: season.conf?.trim() ?? null,
+    gp: snapshot.gp,
+    mp_g: snapshot.mp_g,
+    pts_g: snapshot.pts_g,
+    trb_g: snapshot.trb_g,
+    ast_g: snapshot.ast_g,
+    stl_g: snapshot.stl_g,
+    blk_g: snapshot.blk_g,
+    fg_pct: snapshot.fg_pct,
+    fg3_pct: snapshot.fg3_pct,
+    ft_pct: snapshot.ft_pct,
+  } satisfies PlayerStatsHistoryEntry;
+}
+
+type PlayerStatsHistoryResult = {
+  latest: PlayerStatsSnapshot | null;
+  history: PlayerStatsHistoryEntry[];
+};
+
+async function resolvePlayerStatsHistory(
   player: Player,
   team: TeamRoster,
   seasonLabel: string,
   seasonEndYear: number | null,
-): Promise<PlayerStatsSnapshot | null> {
+): Promise<PlayerStatsHistoryResult> {
+  const emptyResult: PlayerStatsHistoryResult = { latest: null, history: [] };
   const nameKeys = buildKeyVariants(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
   if (!nameKeys.length) {
-    return null;
+    return emptyResult;
   }
 
   try {
@@ -364,18 +419,50 @@ async function resolvePlayerStats(
     const teamKeys = buildTeamKeyCandidates(team, player.team);
     const entry = pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear);
     if (!entry) {
-      return null;
+      return emptyResult;
     }
+
     const document = await loadPlayerStatsDocument(entry.slug);
     const seasonStats = pickSeasonStats(document, seasonLabel);
-    return toPlayerStatsSnapshot(seasonStats);
+    const historyEntries = (document.seasons ?? []).map((season) => ({
+      entry: toPlayerStatsHistoryEntry(season),
+      sortKey: deriveSeasonSortKey(season.season),
+    }));
+
+    historyEntries.sort((a, b) => {
+      const aKey = a.sortKey;
+      const bKey = b.sortKey;
+
+      if (aKey != null && bKey != null && aKey !== bKey) {
+        return bKey - aKey;
+      }
+      if (aKey != null && bKey == null) {
+        return -1;
+      }
+      if (aKey == null && bKey != null) {
+        return 1;
+      }
+      return b.entry.season.localeCompare(a.entry.season, undefined, { sensitivity: "base" });
+    });
+
+    const history = historyEntries.map(({ entry }) => entry);
+
+    return {
+      latest: toPlayerStatsSnapshot(seasonStats),
+      history,
+    } satisfies PlayerStatsHistoryResult;
   } catch (error) {
     console.error(`Unable to load stats for ${player.first_name} ${player.last_name}`, error);
-    return null;
+    return emptyResult;
   }
 }
 
-function buildRosterPlayer(teamName: string, player: Player, stats: PlayerStatsSnapshot | null): RosterPlayer {
+function buildRosterPlayer(
+  teamName: string,
+  player: Player,
+  stats: PlayerStatsSnapshot | null,
+  history: PlayerStatsHistoryEntry[],
+): RosterPlayer {
   const first = player.first_name?.trim() ?? "";
   const last = player.last_name?.trim() ?? "";
   const name = `${first} ${last}`.trim() || first || last || "Unknown";
@@ -388,6 +475,7 @@ function buildRosterPlayer(teamName: string, player: Player, stats: PlayerStatsS
     height: player.height?.trim() ?? null,
     weight: player.weight?.trim() ?? null,
     stats,
+    history,
   } satisfies RosterPlayer;
 }
 
@@ -401,8 +489,13 @@ async function fetchTeamRosterPlayers(team: TeamRoster, seasonLabel: string): Pr
 
   const roster = await Promise.all(
     players.map(async (player) => {
-      const stats = await resolvePlayerStats(player, team, seasonLabel, seasonEndYear);
-      return buildRosterPlayer(team.fullName, player, stats);
+      const { latest, history } = await resolvePlayerStatsHistory(
+        player,
+        team,
+        seasonLabel,
+        seasonEndYear,
+      );
+      return buildRosterPlayer(team.fullName, player, latest, history);
     }),
   );
 

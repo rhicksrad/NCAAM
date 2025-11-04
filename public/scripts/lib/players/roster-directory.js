@@ -37,6 +37,13 @@ function parseSeasonStartYear(label) {
     const startYear = Number.parseInt(match[1] ?? "", 10);
     return Number.isFinite(startYear) ? startYear : null;
 }
+function deriveSeasonSortKey(label) {
+    const endYear = parseSeasonEndYear(label);
+    if (endYear != null) {
+        return endYear;
+    }
+    return parseSeasonStartYear(label);
+}
 function buildConferenceNameLookup(conferences) {
     const map = new Map();
     for (const conference of conferences) {
@@ -226,6 +233,20 @@ function pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear) {
     filtered.sort((a, b) => (extractSeasonYear(b) ?? 0) - (extractSeasonYear(a) ?? 0));
     return filtered[0] ?? null;
 }
+function createEmptyStatsSnapshot() {
+    return {
+        gp: null,
+        mp_g: null,
+        pts_g: null,
+        trb_g: null,
+        ast_g: null,
+        stl_g: null,
+        blk_g: null,
+        fg_pct: null,
+        fg3_pct: null,
+        ft_pct: null,
+    };
+}
 function toPlayerStatsSnapshot(season) {
     if (!season) {
         return null;
@@ -243,28 +264,69 @@ function toPlayerStatsSnapshot(season) {
         ft_pct: season.ft_pct ?? null,
     };
 }
-async function resolvePlayerStats(player, team, seasonLabel, seasonEndYear) {
+function toPlayerStatsHistoryEntry(season) {
+    const snapshot = toPlayerStatsSnapshot(season) ?? createEmptyStatsSnapshot();
+    return {
+        season: season.season,
+        team: season.team?.trim() ?? null,
+        conference: season.conf?.trim() ?? null,
+        gp: snapshot.gp,
+        mp_g: snapshot.mp_g,
+        pts_g: snapshot.pts_g,
+        trb_g: snapshot.trb_g,
+        ast_g: snapshot.ast_g,
+        stl_g: snapshot.stl_g,
+        blk_g: snapshot.blk_g,
+        fg_pct: snapshot.fg_pct,
+        fg3_pct: snapshot.fg3_pct,
+        ft_pct: snapshot.ft_pct,
+    };
+}
+async function resolvePlayerStatsHistory(player, team, seasonLabel, seasonEndYear) {
+    const emptyResult = { latest: null, history: [] };
     const nameKeys = buildKeyVariants(`${player.first_name ?? ""} ${player.last_name ?? ""}`);
     if (!nameKeys.length) {
-        return null;
+        return emptyResult;
     }
     try {
         const lookup = await getPlayerIndexLookup();
         const teamKeys = buildTeamKeyCandidates(team, player.team);
         const entry = pickPlayerIndexEntry(lookup, nameKeys, teamKeys, seasonEndYear);
         if (!entry) {
-            return null;
+            return emptyResult;
         }
         const document = await loadPlayerStatsDocument(entry.slug);
         const seasonStats = pickSeasonStats(document, seasonLabel);
-        return toPlayerStatsSnapshot(seasonStats);
+        const historyEntries = (document.seasons ?? []).map((season) => ({
+            entry: toPlayerStatsHistoryEntry(season),
+            sortKey: deriveSeasonSortKey(season.season),
+        }));
+        historyEntries.sort((a, b) => {
+            const aKey = a.sortKey;
+            const bKey = b.sortKey;
+            if (aKey != null && bKey != null && aKey !== bKey) {
+                return bKey - aKey;
+            }
+            if (aKey != null && bKey == null) {
+                return -1;
+            }
+            if (aKey == null && bKey != null) {
+                return 1;
+            }
+            return b.entry.season.localeCompare(a.entry.season, undefined, { sensitivity: "base" });
+        });
+        const history = historyEntries.map(({ entry }) => entry);
+        return {
+            latest: toPlayerStatsSnapshot(seasonStats),
+            history,
+        };
     }
     catch (error) {
         console.error(`Unable to load stats for ${player.first_name} ${player.last_name}`, error);
-        return null;
+        return emptyResult;
     }
 }
-function buildRosterPlayer(teamName, player, stats) {
+function buildRosterPlayer(teamName, player, stats, history) {
     const first = player.first_name?.trim() ?? "";
     const last = player.last_name?.trim() ?? "";
     const name = `${first} ${last}`.trim() || first || last || "Unknown";
@@ -277,6 +339,7 @@ function buildRosterPlayer(teamName, player, stats) {
         height: player.height?.trim() ?? null,
         weight: player.weight?.trim() ?? null,
         stats,
+        history,
     };
 }
 async function fetchTeamRosterPlayers(team, seasonLabel) {
@@ -286,8 +349,8 @@ async function fetchTeamRosterPlayers(team, seasonLabel) {
     const response = await NCAAM.activePlayersByTeam(team.id, seasonParam);
     const players = Array.isArray(response.data) ? response.data : [];
     const roster = await Promise.all(players.map(async (player) => {
-        const stats = await resolvePlayerStats(player, team, seasonLabel, seasonEndYear);
-        return buildRosterPlayer(team.fullName, player, stats);
+        const { latest, history } = await resolvePlayerStatsHistory(player, team, seasonLabel, seasonEndYear);
+        return buildRosterPlayer(team.fullName, player, latest, history);
     }));
     roster.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
     return roster;
