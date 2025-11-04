@@ -242,6 +242,20 @@ export type Ranking = {
   points?: number | null;
   record?: string | null;
 };
+export type Standing = {
+  team: Team;
+  conference: Conference;
+  season: number;
+  wins: number | null;
+  losses: number | null;
+  win_percentage: number | null;
+  conference_win_percentage: number | null;
+  games_behind: number | null;
+  home_record: string | null;
+  away_record: string | null;
+  conference_record: string | null;
+  playoff_seed: number | null;
+};
 export const NCAAM = {
   teams: async (page = 1, per_page = 200) => {
     if (per_page > SAFE_PAGE_SIZE) {
@@ -302,4 +316,6 @@ export const NCAAM = {
   conferences: () => get<{data:Conference[]}>("/conferences"),
   rankings: (params: { season?: number | string; week?: number | string; poll?: string } = {}) =>
     get<{data:Ranking[]}>("/rankings", params),
+  standings: (params: { season?: number | string; conference_id?: number | string } = {}) =>
+    get<{data:Standing[]}>("/standings", params),
 };

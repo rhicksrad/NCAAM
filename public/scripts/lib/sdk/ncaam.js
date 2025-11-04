@@ -198,4 +198,5 @@ export const NCAAM = {
     plays: (gameId) => get("/plays", { game_id: gameId }),
     conferences: () => get("/conferences"),
     rankings: (params = {}) => get("/rankings", params),
+    standings: (params = {}) => get("/standings", params),
 };
