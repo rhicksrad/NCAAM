@@ -6,15 +6,26 @@ import {
   getTeamMonogram,
 } from "../lib/ui/logos.js";
 
+const DEFAULT_TIME_ZONE = "America/New_York";
+
 const DATE_DISPLAY = new Intl.DateTimeFormat(undefined, {
   weekday: "short",
   month: "short",
   day: "numeric",
+  timeZone: DEFAULT_TIME_ZONE,
 });
 
 const TIME_DISPLAY = new Intl.DateTimeFormat(undefined, {
   hour: "numeric",
   minute: "2-digit",
+  timeZone: DEFAULT_TIME_ZONE,
+});
+
+const ISO_DATE_DISPLAY = new Intl.DateTimeFormat("en-CA", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  timeZone: DEFAULT_TIME_ZONE,
 });
 
 type DateRange = {
@@ -46,12 +57,8 @@ function escapeHtml(value: string): string {
   return value.replace(ESCAPE_HTML, char => ESCAPE_REPLACEMENTS[char] ?? char);
 }
 
-function toLocalISODate(date: Date): string {
-  const normalized = new Date(date.getTime());
-  normalized.setHours(0, 0, 0, 0);
-  const offset = normalized.getTimezoneOffset();
-  const local = new Date(normalized.getTime() - offset * 60_000);
-  return local.toISOString().slice(0, 10);
+function toTimeZoneISODate(date: Date): string {
+  return ISO_DATE_DISPLAY.format(date);
 }
 
 function ensureISODate(value: string): string | null {
@@ -71,7 +78,7 @@ function getDefaultRange(): DateRange {
   const start = new Date(today.getTime());
   const end = new Date(today.getTime());
   end.setDate(end.getDate() + 1);
-  return { start: toLocalISODate(start), end: toLocalISODate(end) };
+  return { start: toTimeZoneISODate(start), end: toTimeZoneISODate(end) };
 }
 
 function formatDateLabel(dateString: string | null | undefined): string {
@@ -245,7 +252,7 @@ if (!app) {
   throw new Error("Missing #app root element");
 }
 
-app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Dial in any two-day window to track Division I matchups in your local time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start</span><input type="date" id="start" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End</span><input type="date" id="end" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in your local time zone.</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
+app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Dial in any two-day window to track Division I matchups in your local time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start</span><input type="date" id="start" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End</span><input type="date" id="end" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
 
 const formEl = app.querySelector<HTMLFormElement>("#games-controls");
 const startInputEl = app.querySelector<HTMLInputElement>("#start");
