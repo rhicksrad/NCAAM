@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Gonzaga Bulldogs logo">
+  <defs>
+    <linearGradient id="grad-gonz" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#041e42" />
+      <stop offset="1" stop-color="#c8102e" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#f4f6fb" />
+  <rect x="12" y="12" width="104" height="104" rx="20" fill="url(#grad-gonz)" />
+  <path d="M40 90V38h24c14 0 24 8 24 23 0 10-4 17-11 21l11 8v0h-18l-9-14h-7v14zm17-25h6c6 0 10-3 10-9s-4-9-10-9h-6z" fill="#ffffff" />
+</svg>
