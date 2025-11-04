@@ -15,15 +15,15 @@
 }
 
 .feature-card__meta {
-  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
   font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 62ch;
 }
 
 .players-leaderboard-grid {
   display: grid;
-  gap: clamp(1.25rem, 2.4vw, 2.25rem);
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   align-items: stretch;
 }
 
@@ -31,31 +31,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 1.8vw, 1.5rem);
+  gap: clamp(0.85rem, 1.6vw, 1.35rem);
   min-height: 100%;
-  padding: clamp(1.5rem, 2.8vw, 2.25rem);
-  border-radius: 1.25rem;
-  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-  box-shadow: var(--shadow-1);
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: 0 16px 36px rgba(17, 25, 54, 0.12);
   overflow: hidden;
   isolation: isolate;
   color: var(--stat-card-ink, var(--color-ink));
-  --stat-card-bg-1: color-mix(in srgb, var(--color-paper) 92%, transparent);
-  --stat-card-bg-2: color-mix(in srgb, var(--color-paper) 88%, transparent);
-  --stat-card-border: color-mix(in srgb, var(--color-ink) 14%, transparent);
-  --stat-card-shadow: var(--shadow-1);
+  --stat-card-bg-1: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  --stat-card-bg-2: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  --stat-card-border: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  --stat-card-shadow: 0 16px 36px rgba(17, 25, 54, 0.12);
   --stat-card-ink: var(--color-ink);
-  --stat-card-muted: color-mix(in srgb, var(--color-muted) 85%, white 15%);
-  --stat-card-on-accent: color-mix(in srgb, black 75%, var(--color-ink) 25%);
-  --chart-bg: color-mix(in srgb, var(--color-paper) 95%, transparent);
+  --stat-card-muted: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+  --stat-card-on-accent: color-mix(in srgb, white 88%, var(--color-ink) 12%);
+  --chart-bg: color-mix(in srgb, var(--color-paper) 96%, transparent);
   --chart-fg: var(--color-ink);
-  --chart-fg-muted: color-mix(in srgb, var(--color-muted) 80%, white 20%);
-  --chart-grid: color-mix(in srgb, var(--color-ink) 18%, transparent);
+  --chart-fg-muted: color-mix(in srgb, var(--color-muted) 75%, white 25%);
+  --chart-grid: color-mix(in srgb, var(--color-ink) 15%, transparent);
   --chart-accent: var(--color-arc);
-  --chart-accent-muted: color-mix(in srgb, var(--color-arc) 28%, transparent);
-  --chart-accent-track: color-mix(in srgb, var(--color-arc) 18%, transparent);
-  --chart-accent-stroke: color-mix(in srgb, var(--color-arc) 65%, white 5%);
+  --chart-accent-muted: color-mix(in srgb, var(--color-arc) 34%, transparent);
+  --chart-accent-track: color-mix(in srgb, var(--color-arc) 26%, transparent);
+  --chart-accent-stroke: color-mix(in srgb, var(--color-arc) 68%, white 10%);
 }
 
 .stat-card::after {
@@ -87,20 +87,21 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.35rem 0.7rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  background: var(--chart-accent-track);
-  color: var(--stat-card-ink);
-  box-shadow: inset 0 0 0 1px var(--chart-accent-stroke);
+  background: color-mix(in srgb, var(--chart-accent) 88%, black 12%);
+  color: var(--stat-card-on-accent);
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--chart-accent) 24%, transparent);
+  text-shadow: 0 1px 0 color-mix(in srgb, black 35%, transparent);
 }
 
 .stat-card__body {
   position: relative;
-  min-height: clamp(320px, 45vw, 420px);
+  min-height: clamp(260px, 38vw, 340px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 0.85rem;
   padding-block: 0.25rem;
   z-index: 1;
 }
@@ -125,7 +126,7 @@
 .stat-card__chart .axis text {
   fill: var(--stat-card-ink);
   font-weight: 700;
-  font-size: clamp(1.05rem, 2.1vw, 1.55rem);
+  font-size: clamp(0.95rem, 1.9vw, 1.45rem);
 }
 
 .stat-card__chart .axis-label {
@@ -146,7 +147,7 @@
 }
 
 .stat-card__chart .leaderboard-bar-track {
-  fill: var(--chart-accent-track);
+  fill: color-mix(in srgb, var(--chart-accent) 32%, white 68%);
   opacity: 1;
 }
 
