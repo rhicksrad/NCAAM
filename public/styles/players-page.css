@@ -23,8 +23,14 @@
 .players-leaderboard-grid {
   display: grid;
   gap: clamp(1.25rem, 2.4vw, 2.25rem);
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .players-leaderboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .stat-card {
