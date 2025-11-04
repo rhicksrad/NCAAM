@@ -2,11 +2,15 @@ import { buildScales, drawAxes } from "../charts/axes.js";
 import { computeInnerSize, createSVG } from "../charts/frame.js";
 import { defaultTheme, formatNumber } from "../charts/theme.js";
 import { DEFAULT_METRIC_ORDER, loadLeaderboardDocument, } from "./data.js";
-const CHART_DIMENSIONS = {
+const BASE_CHART_DIMENSIONS = {
     width: 720,
     height: 420,
     margin: { top: 24, right: 32, bottom: 40, left: 220 },
 };
+const LABEL_PADDING = 32;
+const FALLBACK_CHAR_WIDTH = 8;
+const MAX_MARGIN_LEFT = 400;
+const AXIS_LABEL_FONT = "600 13px 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif";
 const CARD_TONE_CLASSES = [
     "stat-card--tone-1",
     "stat-card--tone-2",
@@ -14,6 +18,44 @@ const CARD_TONE_CLASSES = [
     "stat-card--tone-4",
 ];
 const DEFAULT_SEASON_LABEL = "recent seasons";
+const measurementContexts = new WeakMap();
+function getMeasurementContext(container) {
+    const doc = container.ownerDocument ?? document;
+    if (!doc)
+        return null;
+    if (measurementContexts.has(doc)) {
+        return measurementContexts.get(doc) ?? null;
+    }
+    const canvas = doc.createElement("canvas");
+    const context = canvas.getContext("2d");
+    measurementContexts.set(doc, context);
+    return context;
+}
+function estimateLabelWidth(container, labels) {
+    const context = getMeasurementContext(container);
+    if (!context) {
+        return labels.reduce((width, label) => Math.max(width, label.length * FALLBACK_CHAR_WIDTH), 0);
+    }
+    context.font = AXIS_LABEL_FONT;
+    let maxWidth = 0;
+    for (const label of labels) {
+        const measurement = context.measureText(label);
+        maxWidth = Math.max(maxWidth, measurement.width);
+    }
+    return maxWidth;
+}
+function computeChartDimensions(container, leaders) {
+    const labels = leaders.map((leader) => leader.team ? `${leader.name} (${leader.team})` : leader.name);
+    const estimatedWidth = labels.length ? estimateLabelWidth(container, labels) : 0;
+    const desiredMarginLeft = Math.ceil(estimatedWidth + LABEL_PADDING);
+    const marginLeft = Math.min(MAX_MARGIN_LEFT, Math.max(BASE_CHART_DIMENSIONS.margin.left, desiredMarginLeft));
+    const widthAdjustment = marginLeft - BASE_CHART_DIMENSIONS.margin.left;
+    return {
+        width: BASE_CHART_DIMENSIONS.width + widthAdjustment,
+        height: BASE_CHART_DIMENSIONS.height,
+        margin: { ...BASE_CHART_DIMENSIONS.margin, left: marginLeft },
+    };
+}
 function buildSeasonLabel(season) {
     const trimmed = season.trim();
     if (!trimmed)
@@ -146,7 +188,7 @@ function renderMetricChart(container, metric, seasonLabel) {
         container.innerHTML = `<p class="stat-card__empty">No data available.</p>`;
         return;
     }
-    const { width, height, margin } = CHART_DIMENSIONS;
+    const { width, height, margin } = computeChartDimensions(container, leaders);
     const { iw, ih } = computeInnerSize(width, height, margin);
     const svg = createSVG(container, width, height, {
         title: `${metric.label} leaders`,
