@@ -123,7 +123,14 @@ export function getTeamLogoUrl(team) {
     if (!logo) {
         return undefined;
     }
-    const trimmedPath = logo.path.replace(/^\/+/, "");
+    const rawPath = (logo.path ?? "").trim();
+    if (!rawPath) {
+        return undefined;
+    }
+    if (/^[a-z][a-z0-9+.-]*:/i.test(rawPath) || rawPath.startsWith("//")) {
+        return rawPath;
+    }
+    const trimmedPath = rawPath.replace(/^\/+/, "");
     const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
     return `${base}${trimmedPath}`;
 }
