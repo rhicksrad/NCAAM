@@ -934,10 +934,96 @@ details[open] > summary .disclosure-indicator::after {
   }
 }
 
+.games-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-sm), 1vw + var(--space-sm), var(--space-lg));
+  padding: clamp(var(--space-md), 1vw + var(--space-md), var(--space-xl));
+  background:
+    radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--color-arc) 18%, transparent) 0%, transparent 62%),
+    color-mix(in srgb, var(--color-paper) 95%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: var(--shadow-2);
+}
+
+.games-hero__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: clamp(var(--space-md), 1.4vw + 1rem, var(--space-xl));
+}
+
+.games-hero__intro {
+  flex: 1 1 260px;
+}
+
+.games-hero__intro > h1 {
+  font-size: clamp(1.85rem, 1.2vw + 1.5rem, 2.35rem);
+}
+
+.games-hero__intro .page-summary {
+  max-width: 48ch;
+}
+
+.games-hero__form {
+  flex: 0 1 420px;
+  min-width: min(100%, 18rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: clamp(var(--space-sm), 0.6vw + var(--space-sm), var(--space-md));
+  border-radius: max(0.5rem, calc(var(--radius-card) - 0.5rem));
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
 .games-controls {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+.games-hero__form .games-controls__inputs {
+  justify-content: flex-start;
+}
+
+.games-hero__form .games-controls__actions {
+  justify-content: flex-end;
+}
+
+.games-hero__form .games-controls__actions .button {
+  min-width: 8.5rem;
+}
+
+.games-hero__form .games-controls__hint {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .games-hero__body {
+    flex-direction: column;
+  }
+
+  .games-hero__form {
+    border-radius: max(0.5rem, calc(var(--radius-card) - 0.75rem));
+  }
+
+  .games-hero__form .games-controls__actions {
+    justify-content: flex-start;
+  }
+
+  .games-hero__form .games-controls__actions .button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .games-hero__form {
+    flex: 0 0 420px;
+  }
 }
 
 .games-controls__inputs {
