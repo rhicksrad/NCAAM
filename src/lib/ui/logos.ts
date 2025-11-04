@@ -438,7 +438,16 @@ function resolveLogoUrl(entry: LogoEntry | undefined): string | undefined {
     return undefined;
   }
 
-  const trimmedPath = entry.path.replace(/^\/+/, "");
+  const rawPath = entry.path.trim();
+  if (!rawPath) {
+    return undefined;
+  }
+
+  if (/^[a-z][a-z0-9+.-]*:/i.test(rawPath) || rawPath.startsWith("//")) {
+    return rawPath;
+  }
+
+  const trimmedPath = rawPath.replace(/^\/+/, "");
   const base = BASE && BASE.length > 1 ? BASE.replace(/\/?$/, "/") : "/";
   return `${base}${trimmedPath}`;
 }

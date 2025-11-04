@@ -1515,6 +1515,17 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
     "path": "data/logos/59.png"
   },
   {
+    "name": "Gonzaga Bulldogs",
+    "slug": "gonzaga-bulldogs",
+    "tokens": [
+      "gonzaga",
+      "bulldogs",
+      "gonz",
+      "zags"
+    ],
+    "path": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png"
+  },
+  {
     "name": "Graceland University Jackets",
     "slug": "graceland-jackets",
     "tokens": [
