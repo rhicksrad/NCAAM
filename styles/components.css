@@ -324,6 +324,72 @@ details[open] > summary .disclosure-indicator::after {
   border-top: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
+.box-score {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.box-score__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.box-score__status {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-muted) 82%, white 18%);
+  font-size: 0.95rem;
+}
+
+.box-score__content {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 56rem) {
+  .box-score__content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.box-score__team {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.box-score__team-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.box-score__table tbody tr:nth-child(odd) td {
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+}
+
+.box-score__group th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+  padding-block: 0.45rem;
+  padding-inline: 0.9rem;
+  text-align: left;
+}
+
+.box-score__totals th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.box-score__totals td,
+.box-score__totals th {
+  font-weight: 600;
+}
+
 .rankings-team {
   display: inline-flex;
   align-items: center;

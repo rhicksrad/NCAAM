@@ -1,5 +1,9 @@
 import { BASE } from "../lib/config.js";
-import { NCAAM, type Game, type Play } from "../lib/sdk/ncaam.js";
+import type { PlayByPlayEvent } from "../lib/api/ncaam.js";
+import type { Game } from "../lib/sdk/ncaam.js";
+import type { GameBoxScore } from "../lib/boxscore.js";
+import { renderGameBoxScore } from "./game/GameBoxScore.js";
+import { createGameDetailStore, type GameDetailState } from "./game/store.js";
 import {
   getTeamAccentColors,
   getTeamLogoUrl,
@@ -274,7 +278,7 @@ function renderScoreboard(game: Game): string {
   </section>`;
 }
 
-function renderPlayItem(play: Play, awayLabel: string, homeLabel: string): string {
+function renderPlayItem(play: PlayByPlayEvent, awayLabel: string, homeLabel: string): string {
   const metaSegments: string[] = [];
   const period = formatPeriod(play.period);
   if (period) {
@@ -289,14 +293,14 @@ function renderPlayItem(play: Play, awayLabel: string, homeLabel: string): strin
     metaSegments.push(`<span class="play-feed__team">${escapeHtml(teamAbbr)}</span>`);
   }
   const meta = metaSegments.length ? `<div class="play-feed__meta">${metaSegments.join("")}</div>` : "";
-  const description = play.text ? escapeHtml(play.text) : "Play update unavailable.";
-  const hasScore = isNumber(play.home_score) || isNumber(play.away_score);
+  const description = play.description ? escapeHtml(play.description) : "Play update unavailable.";
+  const hasScore = isNumber(play.homeScore) || isNumber(play.awayScore);
   const score = hasScore
     ? `<div class="play-feed__score" aria-label="Score">${escapeHtml(
-        `${awayLabel} ${formatScore(play.away_score)} – ${formatScore(play.home_score)} ${homeLabel}`,
+        `${awayLabel} ${formatScore(play.awayScore)} – ${formatScore(play.homeScore)} ${homeLabel}`,
       )}</div>`
     : "";
-  const scoringAttr = play.scoring_play ? " data-scoring-play=\"true\"" : "";
+  const scoringAttr = play.isScoringPlay ? " data-scoring-play=\"true\"" : "";
   return `<li class="play-feed__item"${scoringAttr}>
     ${meta}
     <p class="play-feed__text">${description}</p>
@@ -304,7 +308,7 @@ function renderPlayItem(play: Play, awayLabel: string, homeLabel: string): strin
   </li>`;
 }
 
-function renderPlaysSection(game: Game, plays: Play[]): string {
+function renderPlaysSection(game: Game, plays: PlayByPlayEvent[]): string {
   const awayLabel = game.visitor_team.abbreviation ?? game.visitor_team.name ?? "Away";
   const homeLabel = game.home_team.abbreviation ?? game.home_team.name ?? "Home";
   if (plays.length === 0) {
@@ -326,39 +330,66 @@ function renderPlaysSection(game: Game, plays: Play[]): string {
   </section>`;
 }
 
-function renderGame(game: Game, plays: Play[]) {
+function renderGame(
+  game: Game,
+  plays: PlayByPlayEvent[],
+  boxScore: GameBoxScore | null,
+  isBoxScoreLoading: boolean,
+  boxScoreError: string | null,
+): void {
   const backHref = escapeAttr(`${BASE}games.html`);
+  const boxScoreSection = renderGameBoxScore({
+    game,
+    boxScore,
+    isLoading: isBoxScoreLoading,
+    error: boxScoreError,
+  });
   container.innerHTML = `<a class="game-detail__back-link" href="${backHref}">← Back to games</a>
     ${renderScoreboard(game)}
+    ${boxScoreSection}
     ${renderPlaysSection(game, plays)}`;
 }
 
-async function loadGame(gameId: number) {
-  setBusy(true);
-  renderLoading();
-  try {
-    const [game, playsResponse] = await Promise.all([NCAAM.game(gameId), NCAAM.plays(gameId)]);
-    if (!game) {
-      renderNotFound();
-      return;
-    }
-    const plays = Array.isArray(playsResponse?.data) ? [...playsResponse.data] : [];
-    plays.sort((a, b) => a.order - b.order);
-    renderGame(game, plays);
-    updateHero(game);
-    updateDocumentTitle(game);
-  } catch (error) {
-    console.error("Failed to load game detail", error);
-    renderError();
-  } finally {
-    setBusy(false);
+const store = createGameDetailStore();
+
+store.subscribe((state: GameDetailState) => {
+  setBusy(state.isLoading);
+  if (state.status === "idle") {
+    renderLoading();
+    return;
   }
-}
+
+  if (state.status === "error" && !state.game) {
+    if (state.error && /not found/i.test(state.error)) {
+      renderNotFound();
+    } else {
+      renderError();
+    }
+    return;
+  }
+
+  if (!state.game) {
+    renderLoading();
+    return;
+  }
+
+  const boxScoreError = state.status === "error" ? state.error ?? null : null;
+  renderGame(
+    state.game,
+    state.playByPlay,
+    state.boxScore,
+    state.isLoading && !state.boxScore,
+    boxScoreError,
+  );
+  updateHero(state.game);
+  updateDocumentTitle(state.game);
+});
 
 const gameId = parseGameId();
 if (gameId === null) {
   setBusy(false);
   renderInvalidSelection();
 } else {
-  void loadGame(gameId);
+  renderLoading();
+  void store.load(gameId);
 }
