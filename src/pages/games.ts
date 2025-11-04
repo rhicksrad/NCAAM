@@ -6,93 +6,128 @@ import {
   getTeamMonogram,
 } from "../lib/ui/logos.js";
 
-const REFRESH_INTERVAL_MS = 30_000;
-const REFRESH_WINDOW_MS = 6 * 60 * 60 * 1000;
-
-const dateFormatter = new Intl.DateTimeFormat(undefined, {
+const DATE_DISPLAY = new Intl.DateTimeFormat(undefined, {
   weekday: "short",
   month: "short",
   day: "numeric",
 });
-const timeFormatter = new Intl.DateTimeFormat(undefined, {
+
+const TIME_DISPLAY = new Intl.DateTimeFormat(undefined, {
   hour: "numeric",
   minute: "2-digit",
 });
 
-const STATUS_COMPLETE = /^(?:post|final|complete|completed|cancelled|canceled|postponed)$/i;
-const STATUS_SCHEDULED = /^(?:pre|scheduled)$/i;
-const LIVE_STATUS = /(?:live|inprogress|halftime)/i;
+type DateRange = {
+  start: string | null;
+  end: string | null;
+};
 
-type LoadOptions = {
-  showLoader?: boolean;
+type StatusDescriptor = {
+  label: string;
+  variant?: string;
+  detail?: string | null;
+};
+
+const ESCAPE_ATTR = /[&<>"']/g;
+const ESCAPE_HTML = /[&<>]/g;
+const ESCAPE_REPLACEMENTS: Record<string, string> = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
 };
 
 function escapeAttr(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return value.replace(ESCAPE_ATTR, char => ESCAPE_REPLACEMENTS[char] ?? char);
 }
 
-function toLocalISODate(value: Date): string {
-  const date = new Date(value.getTime());
-  date.setHours(0, 0, 0, 0);
-  const offset = date.getTimezoneOffset();
-  const local = new Date(date.getTime() - offset * 60_000);
+function escapeHtml(value: string): string {
+  return value.replace(ESCAPE_HTML, char => ESCAPE_REPLACEMENTS[char] ?? char);
+}
+
+function toLocalISODate(date: Date): string {
+  const normalized = new Date(date.getTime());
+  normalized.setHours(0, 0, 0, 0);
+  const offset = normalized.getTimezoneOffset();
+  const local = new Date(normalized.getTime() - offset * 60_000);
   return local.toISOString().slice(0, 10);
 }
 
-function startOfWeek(date: Date): Date {
-  const result = new Date(date.getTime());
-  result.setHours(0, 0, 0, 0);
-  const day = result.getDay();
-  const diff = day === 0 ? -6 : 1 - day;
-  result.setDate(result.getDate() + diff);
-  return result;
+function ensureISODate(value: string): string | null {
+  const trimmed = value.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    return null;
+  }
+  const parsed = Date.parse(trimmed);
+  if (Number.isNaN(parsed)) {
+    return null;
+  }
+  return trimmed;
 }
 
-function endOfWeek(start: Date): Date {
-  const result = new Date(start.getTime());
-  result.setHours(0, 0, 0, 0);
-  result.setDate(result.getDate() + 6);
-  return result;
+function getDefaultRange(): DateRange {
+  const today = new Date();
+  const start = new Date(today.getTime());
+  const end = new Date(today.getTime());
+  end.setDate(end.getDate() + 1);
+  return { start: toLocalISODate(start), end: toLocalISODate(end) };
 }
 
-function formatDateLabel(dateString: string | null): string {
+function formatDateLabel(dateString: string | null | undefined): string {
   if (!dateString) {
-    return "";
+    return "Tip-off TBD";
   }
   const timestamp = Date.parse(dateString);
   if (Number.isNaN(timestamp)) {
-    return "";
+    return "Tip-off TBD";
   }
   const value = new Date(timestamp);
-  return `${dateFormatter.format(value)} • ${timeFormatter.format(value)}`;
+  return `${DATE_DISPLAY.format(value)} • ${TIME_DISPLAY.format(value)}`;
 }
 
-function isNumber(value: number | null | undefined): value is number {
+function isFiniteScore(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
 }
 
-function formatScore(value: number | null | undefined): string {
-  return isNumber(value) ? String(value) : "—";
+function formatScore(value: unknown): string {
+  return isFiniteScore(value) ? String(value) : "—";
 }
 
-function toDisplayString(value: unknown): string | null {
-  if (typeof value === "string") {
-    const trimmed = value.trim();
-    return trimmed.length > 0 ? trimmed : null;
+function describeStatus(game: Game): StatusDescriptor {
+  const statusText = typeof game.status === "string" ? game.status.trim() : "";
+  const normalized = statusText.toLowerCase();
+  if (!statusText) {
+    return { label: "" };
   }
-  if (typeof value === "number" && Number.isFinite(value)) {
-    const text = String(value);
-    return text.length > 0 ? text : null;
+
+  const compact = normalized.replace(/[^a-z]/g, "");
+
+  if (/^(final|complete|completed|post|postponed|cancelled|canceled)$/.test(compact)) {
+    return { label: "Final" };
   }
-  return null;
+
+  if (compact === "halftime") {
+    return { label: "Halftime", variant: "arc", detail: "Halftime" };
+  }
+
+  if (/^(scheduled|pre)$/.test(compact)) {
+    return { label: "Scheduled" };
+  }
+
+  if (/^(live|inprogress)$/.test(compact) || compact.includes("live")) {
+    const detail = [formatPeriod(game.period), extractClock(game)]
+      .filter(Boolean)
+      .join(" • ");
+    return { label: "Live", variant: "arc", detail: detail || null };
+  }
+
+  const prettified = statusText.replace(/\b\w/g, char => char.toUpperCase());
+  return { label: prettified, detail: prettified };
 }
 
-function formatPeriod(period: number | null | undefined): string | null {
-  if (!isNumber(period) || period <= 0) {
+function formatPeriod(period: Game["period"]): string | null {
+  if (!isFiniteScore(period) || period <= 0) {
     return null;
   }
   if (period === 1) return "1st Half";
@@ -104,422 +139,259 @@ function formatPeriod(period: number | null | undefined): string | null {
   return null;
 }
 
-function extractGameClock(game: Game): string | null {
+function extractClock(game: Game): string | null {
   const dynamic = game as Record<string, unknown>;
-  const candidateKeys = [
+  const candidates = [
     "display_clock",
     "clock",
     "status_clock",
     "time_remaining",
     "time_left",
-    "time",
     "status_time",
   ];
-  for (const key of candidateKeys) {
+  for (const key of candidates) {
     if (!(key in dynamic)) {
       continue;
     }
-    const text = toDisplayString(dynamic[key]);
-    if (text) {
-      return text;
+    const value = dynamic[key];
+    if (typeof value === "string" && value.trim()) {
+      return value.trim();
     }
   }
   return null;
 }
 
-function describeStatus(
-  game: Game,
-): { label: string; variant?: string; detail?: string | null } {
-  const rawStatus = toDisplayString(game.status) ?? "";
-  const status = rawStatus.toLowerCase();
-  const compactStatus = status.replace(/[\s_-]+/g, "");
-  if (STATUS_COMPLETE.test(status)) {
-    return { label: "Final" };
-  }
-  if (status === "halftime" || compactStatus === "halftime") {
-    return { label: "Halftime", variant: "arc", detail: "Halftime" };
-  }
-  if (status === "in" || compactStatus === "inprogress" || LIVE_STATUS.test(compactStatus)) {
-    const period = formatPeriod(game.period);
-    const clock = extractGameClock(game);
-    const segments = [period, clock].filter(Boolean) as string[];
-    return {
-      label: "In Progress",
-      variant: "arc",
-      detail: segments.length > 0 ? segments.join(" • ") : null,
-    };
-  }
-  if (STATUS_SCHEDULED.test(status) || STATUS_SCHEDULED.test(compactStatus)) {
-    return { label: "Scheduled" };
-  }
-  if (!rawStatus) {
-    return { label: "" };
-  }
-  const label = rawStatus.replace(/\b\w/g, char => char.toUpperCase());
-  return { label, detail: label };
-}
-
-function shouldPollGame(game: Game): boolean {
-  const status = (game.status ?? "").toLowerCase();
-  if (STATUS_COMPLETE.test(status)) {
-    return false;
-  }
-  const date = game.date ? Date.parse(game.date) : Number.NaN;
-  if (!Number.isNaN(date)) {
-    const now = Date.now();
-    if (date - now > REFRESH_WINDOW_MS) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function renderTeamLogo(team: Game["home_team"]): string {
-  const label = team.full_name ?? team.name ?? "Team";
+function renderTeamLogo(team: Game["home_team"], label: string): string {
   const logoUrl = getTeamLogoUrl(team);
   if (logoUrl) {
-    const safeUrl = escapeAttr(logoUrl);
-    const alt = escapeAttr(`${label} logo`);
-    return `<span class="game-card__team-logo">
-      <img class="game-card__team-logo-image" src="${safeUrl}" alt="${alt}" loading="lazy" decoding="async">
-    </span>`;
+    const safeSrc = escapeAttr(logoUrl);
+    const safeAlt = escapeAttr(`${label} logo`);
+    return `<span class="game-card__team-logo"><img class="game-card__team-logo-image" src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async"></span>`;
   }
 
-  const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
+  const [primary, secondary] = getTeamAccentColors(team);
   const monogram = getTeamMonogram(team);
   const safeLabel = escapeAttr(`${label} logo`);
   const style = escapeAttr(
-    `--team-accent-primary: ${accentPrimary}; --team-accent-secondary: ${accentSecondary};`,
+    `--team-accent-primary: ${primary}; --team-accent-secondary: ${secondary};`,
   );
-  return `<span class="game-card__team-logo game-card__team-logo--fallback" role="img" aria-label="${safeLabel}" style="${style}">${monogram}</span>`;
+  const safeMonogram = escapeHtml(monogram);
+  return `<span class="game-card__team-logo game-card__team-logo--fallback" role="img" aria-label="${safeLabel}" style="${style}">${safeMonogram}</span>`;
 }
 
 function renderTeamRow(
   team: Game["home_team"],
-  score: number | null | undefined,
+  score: unknown,
+  isHome: boolean,
   isLeading: boolean,
-  side: "home" | "away",
 ): string {
-  const name = team.full_name ?? team.name;
-  const abbr = team.abbreviation ?? (side === "home" ? "HOME" : "AWAY");
-  return `<div class="game-card__team game-card__team--${side}${isLeading ? " is-leading" : ""}">
-    ${renderTeamLogo(team)}
-    <span class="game-card__team-abbr" aria-hidden="true">${abbr}</span>
-    <span class="game-card__team-name">${name}</span>
-    <span class="game-card__team-score">${formatScore(score)}</span>
-  </div>`;
+  const name = escapeHtml(team.full_name ?? team.name ?? "Team");
+  const abbr = escapeHtml(team.abbreviation ?? (isHome ? "HOME" : "AWAY"));
+  const rowLabel = team.full_name ?? team.name ?? (isHome ? "Home" : "Away");
+  const logo = renderTeamLogo(team, rowLabel);
+  return `<div class="game-card__team game-card__team--${isHome ? "home" : "away"}${
+    isLeading ? " is-leading" : ""
+  }">${logo}<span class="game-card__team-abbr" aria-hidden="true">${abbr}</span><span class="game-card__team-name">${name}</span><span class="game-card__team-score">${formatScore(
+    score,
+  )}</span></div>`;
 }
 
 function renderGameCard(game: Game): string {
-  const headerLabel = formatDateLabel(game.date);
+  const href = `${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`;
+  const safeHref = escapeAttr(href);
+  const timeLabel = escapeHtml(formatDateLabel(game.date));
   const status = describeStatus(game);
   const homeScore = game.home_score;
   const awayScore = game.away_score;
-  const hasScores = isNumber(homeScore) && isNumber(awayScore);
-  const homeLeading = hasScores ? (homeScore ?? 0) > (awayScore ?? 0) : false;
-  const awayLeading = hasScores ? (awayScore ?? 0) > (homeScore ?? 0) : false;
+  const hasScores = isFiniteScore(homeScore) && isFiniteScore(awayScore);
+  const homeLeading = hasScores && Number(homeScore) > Number(awayScore);
+  const awayLeading = hasScores && Number(awayScore) > Number(homeScore);
+  const statusDetail = status.detail ? `<span class="game-card__status">${escapeHtml(status.detail)}</span>` : "";
   const badge = status.label
-    ? `<span class="badge"${status.variant ? ` data-variant="${status.variant}"` : ""}>${status.label}</span>`
+    ? `<span class="badge"${status.variant ? ` data-variant="${escapeAttr(status.variant)}"` : ""}>${escapeHtml(status.label)}</span>`
     : "";
-  const href = escapeAttr(`${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`);
-  const statusDetail = status.detail
-    ? `<span class="game-card__status">${status.detail}</span>`
-    : "";
-  return `<li class="card game-card" data-status="${game.status ?? ""}">
-    <a class="game-card__link" href="${href}">
-      <div class="game-card__header">
-        <div class="game-card__meta">
-          <span class="game-card__time">${headerLabel}</span>
-          ${statusDetail}
-        </div>
-        ${badge}
-      </div>
-      <div class="game-card__body">
-        ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
-        ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
-      </div>
-    </a>
-  </li>`;
+
+  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">${timeLabel}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
+    game.visitor_team,
+    awayScore,
+    false,
+    awayLeading,
+  )}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div></a></li>`;
 }
 
-const app = document.getElementById("app")!;
-app.innerHTML = `<div class="page stack" data-gap="lg">
-  <section id="controls" class="card games-hero">
-    <div class="games-hero__body">
-      <div class="games-hero__intro stack" data-gap="xs">
-        <span class="page-label">Scoreboard</span>
-        <h1>Games</h1>
-        <p class="page-summary">Track Division I matchups with live updates direct from the Cloudflare worker proxy.</p>
-      </div>
-      <form id="games-controls" class="games-hero__form games-controls" autocomplete="off">
-        <div class="games-controls__inputs">
-          <label class="games-controls__field">
-            <span class="games-controls__label">Start</span>
-            <input type="date" id="start" name="start">
-          </label>
-          <label class="games-controls__field">
-            <span class="games-controls__label">End</span>
-            <input type="date" id="end" name="end">
-          </label>
-        </div>
-        <div class="games-controls__actions">
-          <button id="load" class="button" data-variant="primary" type="submit">Update</button>
-        </div>
-        <p class="games-controls__hint">Tip-off times shown in your local time zone.</p>
-      </form>
-    </div>
-  </section>
-  <section>
-    <ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul>
-  </section>
-</div>`;
-
-const formRef = app.querySelector<HTMLFormElement>("#games-controls");
-const startInputRef = app.querySelector<HTMLInputElement>("#start");
-const endInputRef = app.querySelector<HTMLInputElement>("#end");
-const loadButtonRef = app.querySelector<HTMLButtonElement>("#load");
-const listRef = app.querySelector<HTMLUListElement>("#games-list");
-
-if (!formRef) {
-  throw new Error("Missing games controls form");
+function renderLoading(list: HTMLUListElement) {
+  list.innerHTML = `<li class="card game-card game-card--loading"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">Loading games</span></div></div><p class="game-card__message">Fetching the latest schedule…</p></li>`;
 }
 
-if (!startInputRef) {
-  throw new Error("Missing start date input");
-}
-if (!endInputRef) {
-  throw new Error("Missing end date input");
-}
-if (!loadButtonRef) {
-  throw new Error("Missing games refresh button");
-}
-if (!listRef) {
-  throw new Error("Missing games list container");
+function renderEmpty(list: HTMLUListElement) {
+  list.innerHTML = `<li class="card game-card game-card--empty"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">No games in this range</span></div></div><p class="game-card__message">Try another set of dates to explore more matchups.</p></li>`;
 }
 
-const startInput = startInputRef;
-const endInput = endInputRef;
-const loadButton = loadButtonRef;
-const list = listRef;
-const form = formRef;
-
-function applyDateValue(input: HTMLInputElement, value: Date): void {
-  const normalized = new Date(value.getTime());
-  normalized.setHours(0, 0, 0, 0);
-  input.valueAsDate = normalized;
-  input.value = toLocalISODate(normalized);
+function renderError(list: HTMLUListElement) {
+  list.innerHTML = `<li class="card game-card game-card--error"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">Unable to load games</span></div></div><p class="game-card__message">Please try again in a moment.</p></li>`;
 }
 
-function parseDateValue(value: string): Date | null {
-  if (!value) {
-    return null;
-  }
-  const timestamp = Date.parse(value);
-  if (Number.isNaN(timestamp)) {
-    return null;
-  }
-  const normalized = new Date(timestamp);
-  normalized.setHours(0, 0, 0, 0);
-  return normalized;
-}
-
-function normalizeInputValue(input: HTMLInputElement): string | null {
-  const parsed = parseDateValue(input.value);
-  if (!parsed) {
-    input.value = "";
-    input.valueAsDate = null;
-    return null;
-  }
-  const iso = toLocalISODate(parsed);
-  input.valueAsDate = parsed;
-  input.value = iso;
-  return iso;
-}
-
-function clampRange(changed: "start" | "end"): void {
-  const startValue = startInput.value;
-  const endValue = endInput.value;
-  if (!startValue || !endValue) {
+function renderGames(list: HTMLUListElement, games: Game[]) {
+  if (games.length === 0) {
+    renderEmpty(list);
     return;
   }
-  if (endValue >= startValue) {
-    return;
+  list.innerHTML = games.map(renderGameCard).join("");
+}
+
+const app = document.getElementById("app");
+
+if (!app) {
+  throw new Error("Missing #app root element");
+}
+
+app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Dial in any two-day window to track Division I matchups in your local time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start</span><input type="date" id="start" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End</span><input type="date" id="end" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in your local time zone.</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
+
+const formEl = app.querySelector<HTMLFormElement>("#games-controls");
+const startInputEl = app.querySelector<HTMLInputElement>("#start");
+const endInputEl = app.querySelector<HTMLInputElement>("#end");
+const loadButtonEl = app.querySelector<HTMLButtonElement>("#load");
+const listEl = app.querySelector<HTMLUListElement>("#games-list");
+
+if (!formEl || !startInputEl || !endInputEl || !loadButtonEl || !listEl) {
+  throw new Error("Failed to initialise games page controls");
+}
+
+const form = formEl;
+const startInput = startInputEl;
+const endInput = endInputEl;
+const loadButton = loadButtonEl;
+const list = listEl;
+
+function applyDateRange(range: DateRange): void {
+  if (range.start) {
+    startInput.value = range.start;
   }
-  if (changed === "start") {
-    endInput.value = startValue;
-    const parsed = parseDateValue(startValue);
-    endInput.valueAsDate = parsed;
-  } else {
-    startInput.value = endValue;
-    const parsed = parseDateValue(endValue);
-    startInput.valueAsDate = parsed;
+  if (range.end) {
+    endInput.value = range.end;
   }
 }
 
-function updateDateConstraints(): void {
-  if (startInput.value) {
-    endInput.min = startInput.value;
+function updateDateConstraints(range: DateRange): void {
+  if (range.start) {
+    endInput.min = range.start;
   } else {
     endInput.removeAttribute("min");
   }
-  if (endInput.value) {
-    startInput.max = endInput.value;
+
+  if (range.end) {
+    startInput.max = range.end;
   } else {
     startInput.removeAttribute("max");
   }
 }
 
-const now = new Date();
-const defaultStart = startOfWeek(now);
-const defaultEnd = endOfWeek(defaultStart);
-applyDateValue(startInput, defaultStart);
-applyDateValue(endInput, defaultEnd);
-updateDateConstraints();
+function clampDateInputs(changed?: "start" | "end"): DateRange {
+  let start = ensureISODate(startInput.value) ?? null;
+  let end = ensureISODate(endInput.value) ?? null;
 
-let liveTimer: number | null = null;
-let isFetching = false;
-let pendingShowLoader: boolean | null = null;
-
-function clearLiveTimer() {
-  if (liveTimer !== null) {
-    window.clearInterval(liveTimer);
-    liveTimer = null;
+  if (start && !end) {
+    end = start;
+    endInput.value = start;
+  } else if (!start && end) {
+    start = end;
+    startInput.value = end;
   }
+
+  if (start && end && end < start) {
+    if (changed === "start") {
+      start = end;
+      startInput.value = end;
+    } else if (changed === "end") {
+      end = start;
+      endInput.value = start;
+    } else {
+      const [first, second] = start < end ? [start, end] : [end, start];
+      start = first;
+      end = second;
+      startInput.value = first;
+      endInput.value = second;
+    }
+  }
+
+  if (!start || !end) {
+    return { start, end };
+  }
+
+  return { start, end };
 }
 
-function scheduleLiveRefresh(games: Game[]) {
-  if (!games.some(shouldPollGame)) {
-    clearLiveTimer();
+let activeRequest = 0;
+
+async function loadGames(showLoader: boolean): Promise<void> {
+  const range = clampDateInputs();
+  updateDateConstraints(range);
+
+  if (!range.start || !range.end) {
+    renderEmpty(list);
     return;
   }
-  if (liveTimer !== null) {
-    return;
+
+  const requestId = ++activeRequest;
+  list.setAttribute("aria-busy", "true");
+  loadButton.disabled = true;
+
+  if (showLoader) {
+    renderLoading(list);
   }
-  liveTimer = window.setInterval(() => {
-    if (isFetching) {
+
+  try {
+    const { data } = await NCAAM.games(1, 200, range.start, range.end);
+    if (requestId !== activeRequest) {
       return;
     }
-    void loadGames({ showLoader: false });
-  }, REFRESH_INTERVAL_MS);
-}
-
-function renderLoading() {
-  list.innerHTML = `<li class="card game-card game-card--loading">
-    <div class="game-card__header">
-      <div class="game-card__meta">
-        <span class="game-card__time">Loading games</span>
-      </div>
-    </div>
-    <p class="game-card__message">Fetching the latest schedule…</p>
-  </li>`;
-}
-
-function renderEmpty() {
-  list.innerHTML = `<li class="card game-card game-card--empty">
-    <div class="game-card__header">
-      <div class="game-card__meta">
-        <span class="game-card__time">No games in this range</span>
-      </div>
-    </div>
-    <p class="game-card__message">Try adjusting the dates to explore more matchups.</p>
-  </li>`;
-}
-
-function renderErrorMessage() {
-  list.innerHTML = `<li class="card game-card game-card--error">
-    <div class="game-card__header">
-      <div class="game-card__meta">
-        <span class="game-card__time">Unable to load games</span>
-      </div>
-    </div>
-    <p class="game-card__message">Please try again in a moment.</p>
-  </li>`;
-}
-
-function renderGames(games: Game[]) {
-  if (games.length === 0) {
-    renderEmpty();
-    return;
-  }
-  const markup = games.map(renderGameCard).join("");
-  list.innerHTML = markup;
-}
-
-const loadGames = async ({ showLoader = true }: LoadOptions = {}) => {
-  if (isFetching) {
-    const shouldShowLoader = showLoader || (pendingShowLoader ?? false);
-    pendingShowLoader = shouldShowLoader;
-    return;
-  }
-  const startDate = startInput.value;
-  const endDate = endInput.value;
-  if (!startDate || !endDate) {
-    renderEmpty();
-    return;
-  }
-  const startMs = Date.parse(startDate);
-  const endMs = Date.parse(endDate);
-  if (!Number.isNaN(startMs) && !Number.isNaN(endMs) && endMs < startMs) {
-    renderErrorMessage();
-    return;
-  }
-  isFetching = true;
-  pendingShowLoader = null;
-  loadButton.disabled = true;
-  clearLiveTimer();
-  list.setAttribute("aria-busy", "true");
-  if (showLoader) {
-    renderLoading();
-  }
-  try {
-    const { data } = await NCAAM.games(1, 200, startDate, endDate);
     const games = Array.isArray(data) ? [...data] : [];
     games.sort((a, b) => {
-      const aDate = a.date ? Date.parse(a.date) : Number.NaN;
-      const bDate = b.date ? Date.parse(b.date) : Number.NaN;
-      if (Number.isNaN(aDate) && Number.isNaN(bDate)) return 0;
-      if (Number.isNaN(aDate)) return 1;
-      if (Number.isNaN(bDate)) return -1;
-      return aDate - bDate;
+      const aTime = a.date ? Date.parse(a.date) : Number.NaN;
+      const bTime = b.date ? Date.parse(b.date) : Number.NaN;
+      if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
+      if (Number.isNaN(aTime)) return 1;
+      if (Number.isNaN(bTime)) return -1;
+      return aTime - bTime;
     });
-    renderGames(games);
-    scheduleLiveRefresh(games);
+    renderGames(list, games);
   } catch (error) {
+    if (requestId !== activeRequest) {
+      return;
+    }
     console.error("Failed to load games", error);
-    renderErrorMessage();
+    renderError(list);
   } finally {
-    list.setAttribute("aria-busy", "false");
-    isFetching = false;
-    loadButton.disabled = false;
-    const nextShowLoader = pendingShowLoader;
-    pendingShowLoader = null;
-    if (nextShowLoader !== null) {
-      void loadGames({ showLoader: nextShowLoader });
+    if (requestId === activeRequest) {
+      list.setAttribute("aria-busy", "false");
+      loadButton.disabled = false;
     }
   }
-};
-
-function handleDateChange(changed: "start" | "end") {
-  normalizeInputValue(changed === "start" ? startInput : endInput);
-  clampRange(changed);
-  updateDateConstraints();
-  void loadGames({ showLoader: true });
 }
+
+const initialRange = getDefaultRange();
+applyDateRange(initialRange);
+updateDateConstraints(initialRange);
+
+void loadGames(true);
 
 form.addEventListener("submit", event => {
   event.preventDefault();
-  normalizeInputValue(startInput);
-  normalizeInputValue(endInput);
-  updateDateConstraints();
-  void loadGames({ showLoader: true });
+  clampDateInputs();
+  updateDateConstraints({ start: startInput.value || null, end: endInput.value || null });
+  void loadGames(true);
 });
 
 startInput.addEventListener("change", () => {
-  handleDateChange("start");
+  const range = clampDateInputs("start");
+  updateDateConstraints(range);
+  void loadGames(true);
 });
 
 endInput.addEventListener("change", () => {
-  handleDateChange("end");
+  const range = clampDateInputs("end");
+  updateDateConstraints(range);
+  void loadGames(true);
 });
 
 [startInput, endInput].forEach(input => {
@@ -530,5 +402,3 @@ endInput.addEventListener("change", () => {
     }
   });
 });
-
-await loadGames({ showLoader: true });
