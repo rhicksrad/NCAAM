@@ -1,4 +1,5 @@
 import { BASE } from "../lib/config.js";
+import { getGamePlayByPlay, type PlayByPlayEvent } from "../lib/api/ncaam.js";
 import { NCAAM, type Game } from "../lib/sdk/ncaam.js";
 import {
   getTeamAccentColors,
@@ -36,6 +37,12 @@ type StatusDescriptor = {
   label: string;
   variant?: string;
   detail?: string | null;
+};
+
+type PlaySummary = {
+  description: string;
+  scoreboard: string | null;
+  clockLabel: string | null;
 };
 
 const ESCAPE_ATTR = /[&<>"']/g;
@@ -155,6 +162,89 @@ function describeStatus(game: Game): StatusDescriptor {
   return { label: prettified, detail: prettified };
 }
 
+function getTeamShortLabel(team: Game["home_team"], fallback: string): string {
+  if (!team) {
+    return fallback;
+  }
+  const abbr = typeof team.abbreviation === "string" ? team.abbreviation.trim() : "";
+  if (abbr) {
+    return abbr;
+  }
+  const name = typeof team.name === "string" ? team.name.trim() : "";
+  if (name) {
+    return name;
+  }
+  const fullName = typeof team.full_name === "string" ? team.full_name.trim() : "";
+  return fullName || fallback;
+}
+
+function formatPlayClock(play: PlayByPlayEvent | null): string | null {
+  if (!play) {
+    return null;
+  }
+  const segments: string[] = [];
+  const period = formatPeriod(play.period);
+  if (period) {
+    segments.push(period);
+  }
+  const rawClock = typeof play.clock === "string" ? play.clock.trim() : "";
+  if (rawClock) {
+    segments.push(rawClock);
+  }
+  return segments.length ? segments.join(" • ") : null;
+}
+
+function buildPlaySummary(game: Game, plays: PlayByPlayEvent[]): PlaySummary | null {
+  if (!Array.isArray(plays) || plays.length === 0) {
+    return null;
+  }
+  let last: PlayByPlayEvent | null = null;
+  for (let index = plays.length - 1; index >= 0; index -= 1) {
+    const candidate = plays[index];
+    if (candidate && typeof candidate.description === "string" && candidate.description.trim()) {
+      last = candidate;
+      break;
+    }
+  }
+  if (!last) {
+    return null;
+  }
+  const homeLabel = getTeamShortLabel(game.home_team, "HOME");
+  const awayLabel = getTeamShortLabel(game.visitor_team, "AWAY");
+  const hasScore = isFiniteScore(last.homeScore) || isFiniteScore(last.awayScore);
+  const scoreboard = hasScore
+    ? `${awayLabel} ${formatScore(last.awayScore)} – ${formatScore(last.homeScore)} ${homeLabel}`
+    : null;
+  return {
+    description: last.description.trim(),
+    scoreboard,
+    clockLabel: formatPlayClock(last),
+  };
+}
+
+function getNumericGameId(game: Game): number | null {
+  if (!game || game.id == null) {
+    return null;
+  }
+  const numeric = Number.parseInt(String(game.id), 10);
+  return Number.isNaN(numeric) ? null : numeric;
+}
+
+function shouldFetchPlaySummary(game: Game): boolean {
+  const statusText = typeof game.status === "string" ? game.status.trim().toLowerCase() : "";
+  const compact = statusText.replace(/[^a-z]/g, "");
+  if (!compact) {
+    return true;
+  }
+  if (/^(scheduled|pregame|upcoming|tbd|tba)$/.test(compact)) {
+    return false;
+  }
+  if (/^(cancelled|canceled|postponed)$/.test(compact)) {
+    return false;
+  }
+  return true;
+}
+
 function formatPeriod(period: Game["period"]): string | null {
   if (!isFiniteScore(period) || period <= 0) {
     return null;
@@ -240,12 +330,16 @@ function renderGameCard(game: Game): string {
     ? `<span class="badge"${status.variant ? ` data-variant="${escapeAttr(status.variant)}"` : ""}>${escapeHtml(status.label)}</span>`
     : "";
 
-  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">${timeLabel}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
+  const lastPlayPlaceholder = "Loading last play…";
+  const initialClock = status.detail ?? status.label ?? "—";
+  const safeInitialClock = escapeHtml(initialClock || "—");
+  const safeGameId = escapeAttr(String(game.id));
+  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">${timeLabel}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
     game.visitor_team,
     awayScore,
     false,
     awayLeading,
-  )}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div></a></li>`;
+  )}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div><div class="game-card__footer"><span class="game-card__clock" data-role="game-clock" aria-live="polite">${safeInitialClock}</span><p class="game-card__last-play" aria-live="polite"><span class="game-card__last-play-label">Last play</span><span class="game-card__last-play-text" data-role="game-last-play">${escapeHtml(lastPlayPlaceholder)}</span></p></div></a></li>`;
 }
 
 function renderLoading(list: HTMLUListElement) {
@@ -308,6 +402,119 @@ function getSelectedDay(): string | null {
 }
 
 let activeRequest = 0;
+let activeSummaryToken = 0;
+
+function updateGameCardSummary(
+  list: HTMLUListElement,
+  game: Game,
+  status: StatusDescriptor,
+  summaryToken: number,
+  requestId: number,
+  summary: PlaySummary | null,
+  fallbackMessage?: string,
+): void {
+  if (requestId !== activeRequest || summaryToken !== activeSummaryToken) {
+    return;
+  }
+  const id = getNumericGameId(game);
+  if (id === null) {
+    return;
+  }
+  const card = list.querySelector<HTMLElement>(`.game-card[data-game-id="${id}"]`);
+  if (!card) {
+    return;
+  }
+  const clockEl = card.querySelector<HTMLElement>('[data-role="game-clock"]');
+  const playEl = card.querySelector<HTMLElement>('[data-role="game-last-play"]');
+  if (clockEl) {
+    const clockText = summary?.clockLabel ?? status.detail ?? status.label ?? "—";
+    clockEl.textContent = clockText || "—";
+  }
+  if (playEl) {
+    if (summary) {
+      const segments = [summary.description];
+      if (summary.scoreboard) {
+        segments.push(summary.scoreboard);
+      }
+      playEl.textContent = segments.join(" • ");
+    } else if (fallbackMessage) {
+      playEl.textContent = fallbackMessage;
+    } else {
+      playEl.textContent = "Play-by-play data unavailable.";
+    }
+  }
+}
+
+async function hydrateGameSummaries(
+  list: HTMLUListElement,
+  games: Game[],
+  requestId: number,
+): Promise<void> {
+  const summaryToken = ++activeSummaryToken;
+  if (requestId !== activeRequest) {
+    return;
+  }
+
+  const queue: { game: Game; status: StatusDescriptor }[] = [];
+  for (const game of games) {
+    const status = describeStatus(game);
+    if (!shouldFetchPlaySummary(game)) {
+      updateGameCardSummary(
+        list,
+        game,
+        status,
+        summaryToken,
+        requestId,
+        null,
+        "Play-by-play updates will appear once the game tips off.",
+      );
+      continue;
+    }
+    queue.push({ game, status });
+  }
+
+  if (queue.length === 0) {
+    return;
+  }
+
+  let index = 0;
+  const concurrency = Math.min(4, queue.length);
+
+  async function worker(): Promise<void> {
+    while (index < queue.length) {
+      const current = index;
+      index += 1;
+      const entry = queue[current];
+      if (!entry) {
+        continue;
+      }
+      const { game, status } = entry;
+      try {
+        const plays = await getGamePlayByPlay(game.id);
+        if (requestId !== activeRequest || summaryToken !== activeSummaryToken) {
+          return;
+        }
+        const summary = buildPlaySummary(game, plays);
+        updateGameCardSummary(list, game, status, summaryToken, requestId, summary, summary
+          ? undefined
+          : "Play-by-play updates are not available yet.");
+      } catch (error) {
+        console.error(`Failed to load play-by-play for game ${game.id}`, error);
+        updateGameCardSummary(
+          list,
+          game,
+          status,
+          summaryToken,
+          requestId,
+          null,
+          "Unable to load play-by-play right now.",
+        );
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: concurrency }, () => worker()));
+}
 
 async function loadGames(showLoader: boolean): Promise<void> {
   const selectedDay = getSelectedDay();
@@ -346,6 +553,7 @@ async function loadGames(showLoader: boolean): Promise<void> {
       return aTime - bTime;
     });
     renderGames(list, filtered);
+    void hydrateGameSummaries(list, filtered, requestId);
   } catch (error) {
     if (requestId !== activeRequest) {
       return;

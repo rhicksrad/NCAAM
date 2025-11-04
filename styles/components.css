@@ -1440,6 +1440,39 @@ details[open] > summary .disclosure-indicator::after {
   gap: 0.55rem;
 }
 
+.game-card__footer {
+  display: grid;
+  gap: 0.3rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+.game-card__clock {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-muted) 70%, white 30%);
+}
+
+.game-card__last-play {
+  display: grid;
+  gap: 0.15rem;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+  line-height: 1.35;
+}
+
+.game-card__last-play-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+}
+
+.game-card__last-play-text {
+  font-weight: 500;
+  color: color-mix(in srgb, white 82%, var(--color-muted) 18%);
+}
+
 .game-card__team {
   display: grid;
   grid-template-columns: auto auto minmax(0, 1fr) auto;
