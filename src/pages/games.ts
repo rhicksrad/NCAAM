@@ -300,11 +300,11 @@ function clampDateInputs(changed?: "start" | "end"): DateRange {
 
   if (start && end && end < start) {
     if (changed === "start") {
-      start = end;
-      startInput.value = end;
-    } else if (changed === "end") {
       end = start;
       endInput.value = start;
+    } else if (changed === "end") {
+      start = end;
+      startInput.value = end;
     } else {
       const [first, second] = start < end ? [start, end] : [end, start];
       start = first;
