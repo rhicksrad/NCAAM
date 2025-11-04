@@ -179,6 +179,12 @@
   line-height: 1.5;
 }
 
+.section-footnote {
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--color-muted) 90%, white 10%);
+  line-height: 1.4;
+}
+
 .conference-card {
   padding: 0;
   overflow: hidden;
@@ -305,7 +311,9 @@ details[open] > summary.conference-card__summary {
 }
 
 .conference-card__group {
-  gap: var(--space-md);
+  display: grid;
+  gap: clamp(var(--space-sm), 0.6rem + 0.2vw, var(--space-md));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .disclosure-indicator {
@@ -690,6 +698,87 @@ details[open] > summary .disclosure-indicator::after {
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.04em;
+}
+
+.team-card {
+  display: grid;
+  gap: clamp(0.65rem, 0.5rem + 0.4vw, 0.9rem);
+  padding: clamp(0.75rem, 0.65rem + 0.3vw, 1rem);
+}
+
+.team-card--active {
+  box-shadow: var(--shadow-3);
+  border-color: color-mix(in srgb, var(--color-arc) 55%, white 45%);
+}
+
+.team-card__identity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(0.6rem, 0.45rem + 0.3vw, 0.8rem);
+  align-items: center;
+}
+
+.team-card__body {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.team-card__name {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.team-card__meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+}
+
+.team-card__info {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--color-muted) 82%, white 18%);
+}
+
+.team-card__details {
+  grid-column: 1 / -1;
+}
+
+.team-card__stats {
+  margin: 0;
+  display: grid;
+  gap: clamp(0.4rem, 0.35rem + 0.25vw, 0.65rem);
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+
+.team-card__stat {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.team-card__stat dt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 85%, white 15%);
+}
+
+.team-card__stat dd {
+  margin: 0;
+  margin-inline-start: 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--color-ink) 86%, white 14%);
+}
+
+.team-card__stats--empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--color-muted) 82%, white 18%);
 }
 
 .poll-card__logo-fallback {

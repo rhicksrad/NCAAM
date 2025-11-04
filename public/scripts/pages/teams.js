@@ -2,7 +2,7 @@ import { buildProgramLabelKeys, buildTeamKeys } from "../lib/data/program-keys.j
 import { getDivisionOneProgramIndex, isDivisionOneProgram, } from "../lib/data/division-one.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
-import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
+import { getConferenceLogoUrl, getConferenceMonogram, getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
 app.innerHTML = `<div class="stack" data-gap="lg">
   <section class="teams-map card stack" data-gap="md">
@@ -19,6 +19,7 @@ app.innerHTML = `<div class="stack" data-gap="lg">
     <header class="stack" data-gap="xs">
       <h2 class="section-title">Conference &amp; team directory</h2>
       <p class="section-summary">Filter by name or conference to jump between program cards.</p>
+      <p class="section-footnote"><strong>BARTHAG</strong> is Bart Torvik's predictive power rating — higher values indicate stronger all-around teams.</p>
     </header>
     <input id="team-search" class="search" type="search" placeholder="Filter name or conference" aria-label="Filter teams by name or conference" autocomplete="off">
     <div id="list" class="conference-groups stack" data-gap="sm"></div>
@@ -74,11 +75,55 @@ for (const [label, summary] of Object.entries(teamSummaries)) {
     }
 }
 const summaryKeys = Array.from(summaryIndex.keys());
+const conferenceIdentities = new Map();
+function normalizeConferenceKey(value) {
+    return value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]+/g, "")
+        .replace(/[^0-9A-Za-z\s]+/g, " ")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "-");
+}
+function ensureConferenceIdentity(team) {
+    const conferenceRecord = team.conference_id != null ? conferenceMap.get(team.conference_id) : undefined;
+    const rawConference = team.conference && team.conference !== "N/A" ? team.conference : null;
+    const name = conferenceRecord?.name ?? rawConference ?? "Independent";
+    const shortName = conferenceRecord?.short_name ?? (rawConference && rawConference !== name ? rawConference : null);
+    const key = conferenceRecord ? `id-${conferenceRecord.id}` : `name-${normalizeConferenceKey(name || "conference")}`;
+    const existing = conferenceIdentities.get(key);
+    if (existing) {
+        if (!existing.logoUrl) {
+            const aliasSet = new Set([existing.name, existing.shortName ?? "", rawConference ?? ""]);
+            const logoUrl = getConferenceLogoUrl(existing.name, {
+                shortName: existing.shortName,
+                aliases: Array.from(aliasSet).filter(Boolean),
+            });
+            if (logoUrl) {
+                const updated = { ...existing, logoUrl };
+                conferenceIdentities.set(key, updated);
+                return updated;
+            }
+        }
+        return existing;
+    }
+    const aliasSet = new Set([name, shortName ?? "", rawConference ?? ""]);
+    const logoUrl = getConferenceLogoUrl(name, {
+        shortName,
+        aliases: Array.from(aliasSet).filter(Boolean),
+    });
+    const identity = {
+        key,
+        name,
+        shortName,
+        logoUrl,
+        monogram: getConferenceMonogram(name),
+    };
+    conferenceIdentities.set(key, identity);
+    return identity;
+}
 const data = divisionOneTeams.map(team => {
-    const conference = team.conference ?? (() => {
-        const lookup = team.conference_id ? conferenceMap.get(team.conference_id) : undefined;
-        return lookup?.short_name ?? lookup?.name;
-    })();
+    const identity = ensureConferenceIdentity(team);
     const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
     const keys = buildTeamKeys(team);
     let location;
@@ -117,7 +162,9 @@ const data = divisionOneTeams.map(team => {
     }
     return {
         ...team,
-        conference: conference ?? "N/A",
+        conference: identity.name,
+        conferenceKey: identity.key,
+        conferenceShortName: identity.shortName,
         logoUrl: getTeamLogoUrl(team),
         accentPrimary,
         accentSecondary,
@@ -287,35 +334,54 @@ async function loadScript(src, globalName) {
 function render(q = "") {
     const ql = q.trim().toLowerCase();
     const openSet = new Set(Array.from(list.querySelectorAll("details[open]"))
-        .map(details => details.dataset.conference || "")
+        .map(details => details.dataset.conferenceKey || details.dataset.conference || "")
         .filter(Boolean));
     const groups = new Map();
     for (const team of data) {
-        const haystack = `${team.full_name} ${team.name} ${team.conference ?? ""}`.toLowerCase();
+        const haystack = `${team.full_name} ${team.name} ${team.conference ?? ""} ${team.conferenceShortName ?? ""}`.toLowerCase();
         if (ql && !haystack.includes(ql)) {
             continue;
         }
-        const conference = team.conference ?? "N/A";
-        if (!groups.has(conference)) {
-            groups.set(conference, []);
+        const conferenceKey = team.conferenceKey;
+        if (!groups.has(conferenceKey)) {
+            groups.set(conferenceKey, []);
         }
-        groups.get(conference).push(team);
+        groups.get(conferenceKey).push(team);
     }
     if (groups.size === 0) {
         list.innerHTML = `<p class="empty-state">No teams match your search.</p>`;
         return;
     }
     const sections = Array.from(groups.entries())
-        .sort(([a], [b]) => a.localeCompare(b))
-        .map(([conference, teams]) => {
+        .sort(([a], [b]) => {
+        const aIdentity = conferenceIdentities.get(a);
+        const bIdentity = conferenceIdentities.get(b);
+        const aName = aIdentity?.name ?? a;
+        const bName = bIdentity?.name ?? b;
+        return aName.localeCompare(bName);
+    })
+        .map(([conferenceKey, teams]) => {
         teams.sort((a, b) => a.full_name.localeCompare(b.full_name));
-        const isOpen = openSet.has(conference) || ql.length > 0;
-        return `<details class="conference-card card" data-conference="${conference}"${isOpen ? " open" : ""}>
+        const identity = conferenceIdentities.get(conferenceKey);
+        const conferenceName = identity?.name ?? teams[0]?.conference ?? "Conference";
+        const shortName = identity?.shortName && identity.shortName !== conferenceName ? identity.shortName : null;
+        const logoMarkup = identity?.logoUrl
+            ? `<img class="conference-identity__logo-image" src="${identity.logoUrl}" alt="${conferenceName} logo" loading="lazy" decoding="async">`
+            : `<span class="conference-identity__logo-fallback">${identity?.monogram ?? getConferenceMonogram(conferenceName)}</span>`;
+        const teamCountLabel = `${teams.length} team${teams.length === 1 ? "" : "s"}`;
+        const isOpen = openSet.has(conferenceKey) || ql.length > 0;
+        return `<details class="conference-card card" data-conference-key="${conferenceKey}" data-conference="${conferenceName}"${isOpen ? " open" : ""}>
   <summary class="conference-card__summary">
-    <span class="conference-card__label">${conference}</span>
+    <span class="conference-identity">
+      <span class="conference-identity__logo">${logoMarkup}</span>
+      <span class="conference-identity__text">
+        <span class="conference-identity__name">${conferenceName}</span>
+        ${shortName ? `<span class="conference-identity__subtext">${shortName}</span>` : ""}
+      </span>
+    </span>
     <span class="conference-card__meta">
-      <span class="conference-card__count" aria-label="${teams.length} teams">${teams.length}</span>
-      <span class="conference-card__chevron" aria-hidden="true"></span>
+      <span class="conference-card__count" aria-label="${teamCountLabel}">${teamCountLabel}</span>
+      <span class="disclosure-indicator" aria-hidden="true"></span>
     </span>
   </summary>
   <div class="conference-card__body">
@@ -325,15 +391,26 @@ function render(q = "") {
             const logo = team.logoUrl
                 ? `<img class="team-card__logo-image" src="${team.logoUrl}" alt="${team.full_name} logo" loading="lazy" decoding="async">`
                 : `<span class="team-card__logo-placeholder" aria-hidden="true" style="--team-accent:${team.accentPrimary}; --team-accent-secondary:${team.accentSecondary};">${team.monogram}</span>`;
-            const meta = team.abbreviation ? `${team.conference} · ${team.abbreviation}` : team.conference;
+            const conferenceLabel = team.conferenceShortName && team.conferenceShortName !== team.conference
+                ? `${team.conferenceShortName} · ${team.conference}`
+                : team.conference;
+            const meta = team.abbreviation ? `${conferenceLabel} · ${team.abbreviation}` : conferenceLabel;
+            const infoParts = [];
+            if (team.location?.arena) {
+                infoParts.push(team.location.arena);
+            }
+            const infoLine = infoParts.join(" · ");
             const stats = renderTeamStats(team);
             return `<article class="card team-card" tabindex="-1" data-team-id="${team.id}" id="team-${team.id}">
-  <div class="team-card__logo">${logo}</div>
-  <div class="team-card__body">
-    <strong class="team-card__name">${team.full_name}</strong>
-    <span class="team-card__meta">${meta}</span>
-    ${stats}
+  <div class="team-card__identity">
+    <div class="team-card__logo">${logo}</div>
+    <div class="team-card__body">
+      <strong class="team-card__name">${team.full_name}</strong>
+      <span class="team-card__meta">${meta}</span>
+      ${infoLine ? `<span class="team-card__info">${infoLine}</span>` : ""}
+    </div>
   </div>
+  <div class="team-card__details">${stats}</div>
 </article>`;
         })
             .join("")}
