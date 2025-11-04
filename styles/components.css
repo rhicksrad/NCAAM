@@ -957,6 +957,20 @@ details[open] > summary .disclosure-indicator::after {
   color: color-mix(in srgb, var(--color-muted) 72%, white 28%);
 }
 
+.standings-directory__placeholder {
+  margin: 0;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+  font-size: 0.95rem;
+}
+
+.standings-directory__placeholder--error {
+  color: color-mix(in srgb, var(--color-error) 65%, white 35%);
+  background: color-mix(in srgb, var(--color-error) 14%, transparent);
+}
+
 .standings-results {
   display: flex;
   flex-direction: column;
@@ -979,6 +993,32 @@ details[open] > summary .disclosure-indicator::after {
 .standings-note {
   font-size: 0.8rem;
   color: color-mix(in srgb, var(--color-muted) 86%, white 14%);
+}
+
+.standings-card__body {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.standings-card__meta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-muted) 72%, white 28%);
+}
+
+.standings-card__placeholder {
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  color: color-mix(in srgb, var(--color-muted) 78%, white 22%);
+}
+
+.standings-card__placeholder--error {
+  color: color-mix(in srgb, var(--color-error) 65%, white 35%);
+  background: color-mix(in srgb, var(--color-error) 12%, transparent);
 }
 
 @media (min-width: 720px) {
