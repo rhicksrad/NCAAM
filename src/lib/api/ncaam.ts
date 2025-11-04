@@ -338,8 +338,9 @@ function normalizeStatistic(
     base.freeThrowNumber = toInteger(raw.free_throw?.number);
     base.freeThrowTotal = toInteger(raw.free_throw?.total);
     base.playerId = playerId ?? detectPlayerByRole("free");
-    base.technical = TECHNICAL_PATTERN.test(qualifier ?? "") || TECHNICAL_PATTERN.test(raw.foul_type ?? "");
-    base.flagrant = FLAGRANT_PATTERN.test(qualifier ?? "") || FLAGRANT_PATTERN.test(raw.foul_type ?? "");
+    const foulType = toStringValue(raw.foul_type) ?? "";
+    base.technical = TECHNICAL_PATTERN.test(qualifier ?? "") || TECHNICAL_PATTERN.test(foulType);
+    base.flagrant = FLAGRANT_PATTERN.test(qualifier ?? "") || FLAGRANT_PATTERN.test(foulType);
     return base;
   }
 
