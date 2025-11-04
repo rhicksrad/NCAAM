@@ -771,117 +771,40 @@ details[open] > summary .disclosure-indicator::after {
 
 .teams-leaderboard__grid {
   display: grid;
-  gap: var(--space-lg);
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: clamp(1rem, 2vw, 2.2rem);
+  grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+  align-items: stretch;
 }
 
 .teams-leaderboard__card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
-.teams-leaderboard__body {
-  border-radius: 0.85rem;
-  background: color-mix(in srgb, var(--stat-card-bg-2, rgba(255, 255, 255, 0.04)) 78%, transparent);
-  padding: clamp(1rem, 1rem + 0.6vw, 1.6rem);
-  overflow-x: auto;
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 8%, transparent);
-  flex: 1;
+.teams-leaderboard__card .stat-card__body {
+  min-height: clamp(280px, 38vw, 360px);
 }
 
-.teams-leaderboard__table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 520px;
+.teams-leaderboard__card .leaderboard-chart {
+  padding: clamp(0.45rem, 1.2vw, 1rem) clamp(0.5rem, 1.4vw, 1.2rem) clamp(0.8rem, 1.6vw, 1.35rem);
 }
 
-.teams-leaderboard__table--compact {
-  min-width: 0;
+.teams-leaderboard__card .leaderboard-chart__team {
+  letter-spacing: 0.1em;
 }
 
-.teams-leaderboard__table th,
-.teams-leaderboard__table td {
-  padding: var(--space-sm) var(--space-md);
-  border-bottom: 1px solid color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 12%, transparent);
+@media (max-width: 1260px) {
+  .teams-leaderboard__grid {
+    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  }
 }
 
-.teams-leaderboard__table thead th {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 65%, white 35%);
-}
-
-.teams-leaderboard__table tbody tr:last-of-type td {
-  border-bottom: none;
-}
-
-.teams-leaderboard__row {
-  --team-accent: var(--team-accent, var(--chart-accent, var(--color-arc)));
-  transition: background var(--transition-base), color var(--transition-base);
-}
-
-.teams-leaderboard__row:nth-child(even) td {
-  background: color-mix(in srgb, var(--stat-card-bg-2, rgba(255, 255, 255, 0.04)) 65%, transparent);
-}
-
-.teams-leaderboard__row:hover td {
-  background: color-mix(in srgb, var(--stat-card-bg-2, rgba(255, 255, 255, 0.05)) 92%, transparent);
-}
-
-.teams-leaderboard__rank {
-  width: 3rem;
-  text-align: right;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  color: color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 78%, white 22%);
-}
-
-.teams-leaderboard__table th.teams-leaderboard__team {
-  text-align: left;
-}
-
-.teams-leaderboard__table th.teams-leaderboard__metric {
-  text-align: right;
-}
-
-.teams-leaderboard__team {
-  min-width: 0;
-}
-
-.teams-leaderboard__name {
-  display: block;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--stat-card-ink, var(--color-ink));
-}
-
-.teams-leaderboard__conference {
-  display: block;
-  font-size: 0.8rem;
-  color: color-mix(in srgb, var(--stat-card-ink, var(--color-ink)) 58%, white 42%);
-}
-
-
-.teams-leaderboard__table td.teams-leaderboard__metric {
-  text-align: right;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--stat-card-ink, var(--color-ink));
-}
-
-.teams-leaderboard__table td.teams-leaderboard__metric--highlight {
-  color: color-mix(in srgb, var(--team-accent, var(--chart-accent, var(--color-arc))) 80%, white 20%);
-}
-
-.teams-leaderboard__row--leader .teams-leaderboard__rank {
-  color: color-mix(in srgb, var(--team-accent, var(--chart-accent, var(--color-arc))) 82%, white 18%);
-}
-
-.teams-leaderboard__row--leader .teams-leaderboard__name {
-  color: color-mix(in srgb, var(--team-accent, var(--chart-accent, var(--color-arc))) 88%, white 12%);
+@media (max-width: 980px) {
+  .teams-leaderboard__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .team-card__stat dt {
