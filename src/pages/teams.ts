@@ -99,6 +99,7 @@ app.innerHTML = `<div class="stack" data-gap="lg">
     <header class="stack" data-gap="xs">
       <h2 class="section-title">Conference &amp; team directory</h2>
       <p class="section-summary">Filter by name or conference to jump between program cards.</p>
+      <p class="section-footnote"><strong>BARTHAG</strong> is Bart Torvik's predictive power rating — higher values indicate stronger all-around teams.</p>
     </header>
     <input id="team-search" class="search" type="search" placeholder="Filter name or conference" aria-label="Filter teams by name or conference" autocomplete="off">
     <div id="list" class="conference-groups stack" data-gap="sm"></div>
@@ -501,14 +502,22 @@ function render(q = "") {
           ? `${team.conferenceShortName} · ${team.conference}`
           : team.conference;
         const meta = team.abbreviation ? `${conferenceLabel} · ${team.abbreviation}` : conferenceLabel;
+        const infoParts: string[] = [];
+        if (team.location?.arena) {
+          infoParts.push(team.location.arena);
+        }
+        const infoLine = infoParts.join(" · ");
         const stats = renderTeamStats(team);
         return `<article class="card team-card" tabindex="-1" data-team-id="${team.id}" id="team-${team.id}">
-  <div class="team-card__logo">${logo}</div>
-  <div class="team-card__body">
-    <strong class="team-card__name">${team.full_name}</strong>
-    <span class="team-card__meta">${meta}</span>
-    ${stats}
+  <div class="team-card__identity">
+    <div class="team-card__logo">${logo}</div>
+    <div class="team-card__body">
+      <strong class="team-card__name">${team.full_name}</strong>
+      <span class="team-card__meta">${meta}</span>
+      ${infoLine ? `<span class="team-card__info">${infoLine}</span>` : ""}
+    </div>
   </div>
+  <div class="team-card__details">${stats}</div>
 </article>`;
       })
       .join("")}
