@@ -1,6 +1,6 @@
 {
   "source": "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams",
-  "updated": "2025-11-04T19:01:54.471Z",
+  "updated": "2025-11-04T20:48:22.981Z",
   "logos": {
     "2": {
       "name": "Auburn Tigers",
@@ -1930,6 +1930,14 @@
         "Charleston So",
         "Charleston Southern",
         "CHSO"
+      ]
+    },
+    "2130": {
+      "name": "Chicago State Cougars",
+      "aliases": [
+        "Chicago St",
+        "Chicago State",
+        "CHIST"
       ]
     },
     "2132": {
