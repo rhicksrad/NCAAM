@@ -244,25 +244,29 @@ function renderGameCard(game: Game): string {
 
 const app = document.getElementById("app")!;
 app.innerHTML = `<div class="page stack" data-gap="lg">
-  <header class="page-intro stack" data-gap="xs">
-    <span class="page-label">Scoreboard</span>
-    <h1>Games</h1>
-    <p class="page-summary">Track Division I matchups with live updates direct from the Cloudflare worker proxy.</p>
-  </header>
-  <section id="controls" class="card games-controls">
-    <div class="games-controls__inputs">
-      <label class="games-controls__field">
-        <span class="games-controls__label">Start</span>
-        <input type="date" id="start" name="start">
-      </label>
-      <label class="games-controls__field">
-        <span class="games-controls__label">End</span>
-        <input type="date" id="end" name="end">
-      </label>
-    </div>
-    <div class="games-controls__actions">
-      <button id="load" class="button" data-variant="primary" type="button">Update</button>
-      <span class="games-controls__hint">Tip-off times shown in your local time zone.</span>
+  <section id="controls" class="card games-hero">
+    <div class="games-hero__body">
+      <div class="games-hero__intro stack" data-gap="xs">
+        <span class="page-label">Scoreboard</span>
+        <h1>Games</h1>
+        <p class="page-summary">Track Division I matchups with live updates direct from the Cloudflare worker proxy.</p>
+      </div>
+      <div class="games-hero__form">
+        <div class="games-controls__inputs">
+          <label class="games-controls__field">
+            <span class="games-controls__label">Start</span>
+            <input type="date" id="start" name="start">
+          </label>
+          <label class="games-controls__field">
+            <span class="games-controls__label">End</span>
+            <input type="date" id="end" name="end">
+          </label>
+        </div>
+        <div class="games-controls__actions">
+          <button id="load" class="button" data-variant="primary" type="button">Update</button>
+        </div>
+        <p class="games-controls__hint">Tip-off times shown in your local time zone.</p>
+      </div>
     </div>
   </section>
   <section>
