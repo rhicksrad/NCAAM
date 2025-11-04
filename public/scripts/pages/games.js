@@ -1,4 +1,6 @@
+import { BASE } from "../lib/config.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
+import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 const REFRESH_INTERVAL_MS = 30_000;
 const REFRESH_WINDOW_MS = 6 * 60 * 60 * 1000;
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
@@ -13,6 +15,13 @@ const timeFormatter = new Intl.DateTimeFormat(undefined, {
 const STATUS_COMPLETE = /^(?:post|final|complete|completed|cancelled|canceled|postponed)$/i;
 const STATUS_SCHEDULED = /^(?:pre|scheduled)$/i;
 const LIVE_STATUS = /(?:live|inprogress|halftime)/i;
+function escapeAttr(value) {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
 function toLocalISODate(value) {
     const date = new Date(value.getTime());
     date.setHours(0, 0, 0, 0);
@@ -114,10 +123,27 @@ function shouldPollGame(game) {
     }
     return true;
 }
+function renderTeamLogo(team) {
+    const label = team.full_name ?? team.name ?? "Team";
+    const logoUrl = getTeamLogoUrl(team);
+    if (logoUrl) {
+        const safeUrl = escapeAttr(logoUrl);
+        const alt = escapeAttr(`${label} logo`);
+        return `<span class="game-card__team-logo">
+      <img class="game-card__team-logo-image" src="${safeUrl}" alt="${alt}" loading="lazy" decoding="async">
+    </span>`;
+    }
+    const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
+    const monogram = getTeamMonogram(team);
+    const safeLabel = escapeAttr(`${label} logo`);
+    const style = escapeAttr(`--team-accent-primary: ${accentPrimary}; --team-accent-secondary: ${accentSecondary};`);
+    return `<span class="game-card__team-logo game-card__team-logo--fallback" role="img" aria-label="${safeLabel}" style="${style}">${monogram}</span>`;
+}
 function renderTeamRow(team, score, isLeading, side) {
     const name = team.full_name ?? team.name;
     const abbr = team.abbreviation ?? (side === "home" ? "HOME" : "AWAY");
     return `<div class="game-card__team game-card__team--${side}${isLeading ? " is-leading" : ""}">
+    ${renderTeamLogo(team)}
     <span class="game-card__team-abbr" aria-hidden="true">${abbr}</span>
     <span class="game-card__team-name">${name}</span>
     <span class="game-card__team-score">${formatScore(score)}</span>
@@ -157,16 +183,19 @@ function renderGameCard(game) {
     const badge = status.label
         ? `<span class="badge"${status.variant ? ` data-variant="${status.variant}"` : ""}>${status.label}</span>`
         : "";
+    const href = escapeAttr(`${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`);
     return `<li class="card game-card" data-status="${game.status ?? ""}">
-    <div class="game-card__header">
-      <span class="game-card__time">${headerLabel}</span>
-      ${badge}
-    </div>
-    <div class="game-card__body">
-      ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
-      ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
-    </div>
-    ${renderLineScore(game)}
+    <a class="game-card__link" href="${href}">
+      <div class="game-card__header">
+        <span class="game-card__time">${headerLabel}</span>
+        ${badge}
+      </div>
+      <div class="game-card__body">
+        ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
+        ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
+      </div>
+      ${renderLineScore(game)}
+    </a>
   </li>`;
 }
 const app = document.getElementById("app");

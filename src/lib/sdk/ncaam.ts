@@ -217,6 +217,19 @@ export type Game = {
   home_score_ot?: number | null;
   away_score_ot?: number | null;
 };
+export type Play = {
+  game_id: number;
+  order: number;
+  type?: string | null;
+  text?: string | null;
+  home_score?: number | null;
+  away_score?: number | null;
+  period?: number | null;
+  clock?: string | null;
+  scoring_play?: boolean | null;
+  score_value?: number | null;
+  team?: Team;
+};
 export type Conference = { id:number; name:string; short_name?:string };
 export type Ranking = {
   poll: string;
@@ -262,6 +275,15 @@ export const NCAAM = {
     return get<{data:Player[]}>("/players/active", params);
   },
   games: (page=1, per_page=200, start_date="", end_date="") => get<{data:Game[]}>("/games", { page, per_page, start_date, end_date }),
+  game: async (gameId: number | string): Promise<Game | null> => {
+    if (gameId === null || gameId === undefined) {
+      return null;
+    }
+    const response = await get<{ data: Game[] }>("/games", { "game_ids[]": gameId, per_page: 1 });
+    const games = Array.isArray(response.data) ? response.data : [];
+    return games.length > 0 ? games[0] : null;
+  },
+  plays: (gameId: number | string) => get<{data:Play[]}>("/plays", { game_id: gameId }),
   conferences: () => get<{data:Conference[]}>("/conferences"),
   rankings: (params: { season?: number | string; week?: number | string; poll?: string } = {}) =>
     get<{data:Ranking[]}>("/rankings", params),

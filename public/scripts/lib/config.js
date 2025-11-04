@@ -5,6 +5,7 @@ const KNOWN_PAGE_SUFFIXES = [
     "teams.html",
     "players.html",
     "games.html",
+    "game.html",
     "rankings.html",
     "standings.html",
     "about.html",
