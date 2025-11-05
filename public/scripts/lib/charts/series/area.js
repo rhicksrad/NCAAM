@@ -52,9 +52,15 @@ export function renderArea(g, data, scales, options = {}) {
         .y0(() => baseline)
         .curve(options.smoothing ? curveMonotoneX : curveLinear);
     const dAttribute = areaGenerator(data);
+    const strokeColor = options.stroke ?? theme.accent;
+    const strokeWidth = options.strokeWidth ?? Math.max(1, theme.lineWidth);
     merged
         .attr("fill", options.fill ?? theme.accentMuted)
         .attr("fill-opacity", options.opacity ?? 0.6)
+        .attr("stroke", strokeColor)
+        .attr("stroke-width", strokeWidth)
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
         .attr("d", dAttribute ?? "");
     path.exit().remove();
     return merged.node();
