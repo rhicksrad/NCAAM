@@ -112,7 +112,12 @@ const PAGES = [
       "A playground for whimsical NCAA experiments. Explore our first mascot taxonomy visualization and download the source data.",
       true,
       [{ href: "./data/fun-lab/mascot-index.json", label: "Download mascot JSON", variant: "ghost" }]
-    )
+    ),
+    importMap: `{
+  "imports": {
+    "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm"
+  }
+}`
   }
 ];
 
@@ -136,7 +141,7 @@ const shell = (page) => `<!doctype html>
 ${HEADER}
 ${page.hero}
 <main id="app" class="container"></main>
-<script type="module" src="./scripts/nav.js"></script>
+${page.importMap ? `<script type="importmap">\n${page.importMap}\n</script>\n` : ""}<script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/${page.script}"></script>
 </body>
 </html>\n`;

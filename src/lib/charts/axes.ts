@@ -11,13 +11,15 @@ import {
   scaleLinear,
   scalePoint,
   scaleTime,
-  select,
-  type AxisDomain,
-  type ScaleBand,
-  type ScaleLinear,
-  type ScalePoint,
-  type ScaleTime,
-  type Selection
+  select
+} from "../vendor/d3-bundle.js";
+import type {
+  AxisDomain,
+  ScaleBand,
+  ScaleLinear,
+  ScalePoint,
+  ScaleTime,
+  Selection
 } from "d3";
 import { pixelAlign } from "./frame.js";
 import { ChartTheme, defaultTheme, formatDate, formatNumber } from "./theme.js";

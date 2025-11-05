@@ -3,7 +3,7 @@
  * @module charts/theme
  */
 
-import { format as d3Format } from "d3";
+import { format as d3Format } from "../vendor/d3-bundle.js";
 
 /** Array of categorical color tokens. */
 const DEFAULT_CATEGORICAL = [

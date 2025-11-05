@@ -2,7 +2,7 @@
  * Axes and scale helpers.
  * @module charts/axes
  */
-import { axisBottom, axisLeft, extent, scaleBand, scaleLinear, scalePoint, scaleTime, select } from "../../vendor/d3-bundle.js";
+import { axisBottom, axisLeft, extent, scaleBand, scaleLinear, scalePoint, scaleTime, select } from "../vendor/d3-bundle.js";
 import { pixelAlign } from "./frame.js";
 import { defaultTheme, formatDate, formatNumber } from "./theme.js";
 /**
