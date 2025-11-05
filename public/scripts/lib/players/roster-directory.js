@@ -1,6 +1,6 @@
 import { NCAAM } from "../sdk/ncaam.js";
 import { loadPlayerIndexDocument, loadPlayerStatsDocument, pickSeasonStats, } from "./data.js";
-const DEFAULT_ACTIVE_ROSTER_SEASON = "2024-25";
+const DEFAULT_ACTIVE_ROSTER_SEASON = "2025-26";
 let activeRosterSeasonPromise = null;
 const teamRosterCache = new Map();
 let playerIndexLookupPromise = null;
@@ -43,6 +43,20 @@ function deriveSeasonSortKey(label) {
         return endYear;
     }
     return parseSeasonStartYear(label);
+}
+function ensureMinimumSeason(label, minimum) {
+    if (!label) {
+        return minimum;
+    }
+    const labelKey = deriveSeasonSortKey(label);
+    const minimumKey = deriveSeasonSortKey(minimum);
+    if (minimumKey == null) {
+        return label;
+    }
+    if (labelKey == null || labelKey < minimumKey) {
+        return minimum;
+    }
+    return label;
 }
 function buildConferenceNameLookup(conferences) {
     const map = new Map();
@@ -140,7 +154,7 @@ async function getActiveRosterSeason() {
                 if (seasons.length > 0) {
                     const latest = seasons[0] ?? seasons[seasons.length - 1];
                     if (latest) {
-                        return latest;
+                        return ensureMinimumSeason(latest, DEFAULT_ACTIVE_ROSTER_SEASON);
                     }
                 }
             }
