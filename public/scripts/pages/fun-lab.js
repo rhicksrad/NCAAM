@@ -1,8 +1,4 @@
-import { axisBottom } from "d3-axis";
-import { format as d3Format } from "d3-format";
-import { scaleBand, scaleLinear } from "d3-scale";
-import { select } from "d3-selection";
-import * as d3Shape from "d3-shape";
+import { axisBottom, d3Format, scaleBand, scaleLinear, select, d3Shape } from "../vendor/d3-bundle.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
 const DATA_URL = "data/fun-lab/mascot-index.json";
