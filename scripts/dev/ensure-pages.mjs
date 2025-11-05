@@ -118,6 +118,25 @@ const PAGES = [
       "Track conference races, streaks, and seed lines with sortable, zebra-striped tables.",
       true
     )
+  },
+  {
+    file: "fun-lab.html",
+    script: "fun-lab.js",
+    title: "Fun Lab · NCAAM Hub",
+    description: "Prototype visual experiments for NCAA data, starting with a full mascot taxonomy.",
+    ogTitle: "Fun Lab · NCAAM Hub",
+    ogDescription: "Prototype visual experiments for NCAA data, starting with a full mascot taxonomy.",
+    hero: HERO_STACK(
+      "Fun Lab",
+      "A playground for whimsical NCAA experiments. Explore our first mascot taxonomy visualization and download the source data.",
+      true,
+      [{ href: "./data/fun-lab/mascot-index.json", label: "Download mascot JSON", variant: "ghost" }]
+    ),
+    importMap: {
+      "d3-format": "https://esm.sh/d3-format@3?pin=v135",
+      "d3-selection": "https://esm.sh/d3-selection@3?pin=v135",
+      "d3-shape": "https://esm.sh/d3-shape@3?pin=v135"
+    }
   }
 ];
 

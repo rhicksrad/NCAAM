@@ -1,4 +1,5 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
+import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
 app.innerHTML = `
   <h1 id="ranking-title">Final 2024 Rankings</h1>
@@ -136,8 +137,73 @@ function renderPoll(rowsEl, headingEl, pollData, label) {
             ? String(entry.first_place_votes)
             : "—";
         const record = entry.record && typeof entry.record === "string" && entry.record.trim() ? entry.record : "—";
+        const recordCell = escapeHtml(record);
         const points = formatNumber(entry.points);
-        return `<tr><td>${entry.rank ?? "—"}</td><td>${toTeamName(entry)}</td><td>${record}</td><td>${points}</td><td>${firstPlace}</td></tr>`;
+        const pointsCell = escapeHtml(points);
+        const teamCell = renderTeamCell(entry.team, toTeamName(entry));
+        const rankCell = escapeHtml(String(entry.rank ?? "—"));
+        const firstPlaceCell = escapeHtml(firstPlace);
+        return `<tr><td>${rankCell}</td><td>${teamCell}</td><td>${recordCell}</td><td>${pointsCell}</td><td>${firstPlaceCell}</td></tr>`;
     })
         .join("");
+}
+function renderTeamCell(team, fallbackLabel) {
+    const normalizedTeam = team && typeof team === "object" ? normalizeTeam(team) : null;
+    const displayLabel = normalizedTeam?.full_name || normalizedTeam?.name || fallbackLabel;
+    const teamName = escapeHtml(displayLabel);
+    if (!normalizedTeam) {
+        return `<span class="rankings-team"><span class="rankings-team__name">${teamName}</span></span>`;
+    }
+    const altLabel = normalizedTeam.full_name && normalizedTeam.full_name !== "—" ? normalizedTeam.full_name : displayLabel || "Team";
+    const alt = escapeHtml(`${altLabel} logo`);
+    const logoUrl = getTeamLogoUrl(normalizedTeam);
+    if (logoUrl) {
+        return `
+      <span class="rankings-team">
+        <span class="rankings-team__logo">
+          <img class="rankings-team__logo-image" src="${logoUrl}" alt="${alt}" loading="lazy" decoding="async">
+        </span>
+        <span class="rankings-team__name">${teamName}</span>
+      </span>
+    `.trim();
+    }
+    const monogram = escapeHtml(getTeamMonogram(normalizedTeam));
+    return `
+    <span class="rankings-team">
+      <span class="rankings-team__logo rankings-team__logo--fallback" role="img" aria-label="${alt}">${monogram}</span>
+      <span class="rankings-team__name">${teamName}</span>
+    </span>
+  `.trim();
+}
+function normalizeTeam(team) {
+    const id = typeof team.id === "number" && Number.isFinite(team.id) ? team.id : null;
+    const fullName = typeof team.full_name === "string" && team.full_name.trim() ? team.full_name.trim() : null;
+    const name = typeof team.name === "string" && team.name.trim() ? team.name.trim() : null;
+    if (id === null && !fullName && !name) {
+        return null;
+    }
+    return {
+        id: id ?? hashTeamLabel(fullName ?? name ?? "Team"),
+        full_name: fullName ?? name ?? "—",
+        name: name ?? fullName ?? "—",
+        abbreviation: typeof team.abbreviation === "string" ? team.abbreviation : undefined,
+        conference: typeof team.conference === "string" ? team.conference : undefined,
+        conference_id: typeof team.conference_id === "number" ? team.conference_id : undefined,
+        college: typeof team.college === "string" && team.college.trim() ? team.college.trim() : fullName ?? name ?? undefined,
+    };
+}
+function hashTeamLabel(label) {
+    let hash = 0;
+    for (let i = 0; i < label.length; i += 1) {
+        hash = (hash * 31 + label.charCodeAt(i)) | 0;
+    }
+    return Math.abs(hash) + 1;
+}
+function escapeHtml(value) {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }

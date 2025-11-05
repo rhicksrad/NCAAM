@@ -97,6 +97,62 @@ function shouldRetryWithPagination(error) {
     }
     return /^API 4\d\d/.test(error.message);
 }
+function normalizeGamesFilters(start_date, end_date) {
+    const filters = {};
+    const normalizedStart = typeof start_date === "string" ? start_date.trim() : "";
+    if (normalizedStart) {
+        filters.start_date = normalizedStart;
+    }
+    const normalizedEnd = typeof end_date === "string" ? end_date.trim() : "";
+    if (normalizedEnd) {
+        filters.end_date = normalizedEnd;
+    }
+    return filters;
+}
+async function getGamesPaginated(page, perPage, filters) {
+    const desiredTotal = perPage > 0 ? perPage : SAFE_PAGE_SIZE;
+    const cacheKey = key("/games", { ...filters, page, per_page: desiredTotal });
+    const now = Date.now();
+    const cached = readCache(cacheKey, now);
+    if (cached !== null) {
+        return cached;
+    }
+    const aggregated = [];
+    let currentPage = page;
+    let remaining = desiredTotal;
+    let lastMeta;
+    let iterations = 0;
+    while (iterations < MAX_PAGINATION_REQUESTS) {
+        iterations += 1;
+        const pageSize = Math.min(SAFE_PAGE_SIZE, Math.max(remaining, 1));
+        const response = await get("/games", {
+            ...filters,
+            page: currentPage,
+            per_page: pageSize,
+        });
+        const pageData = Array.isArray(response.data) ? response.data : [];
+        aggregated.push(...pageData);
+        lastMeta = response.meta;
+        if (aggregated.length >= desiredTotal) {
+            break;
+        }
+        if (pageData.length === 0) {
+            break;
+        }
+        const nextPage = resolveNextPage(lastMeta, currentPage);
+        if (!nextPage || nextPage === currentPage) {
+            break;
+        }
+        currentPage = nextPage;
+        remaining = desiredTotal - aggregated.length;
+    }
+    const result = {
+        data: aggregated.slice(0, desiredTotal),
+        meta: lastMeta,
+    };
+    writeCache(cacheKey, now, result);
+    return result;
+}
 async function getTeamsPaginated(page, perPage) {
     const desiredTotal = perPage > 0 ? perPage : SAFE_PAGE_SIZE;
     const cacheKey = key("/teams", { page, per_page: desiredTotal });
@@ -173,7 +229,21 @@ export const NCAAM = {
         }
         return get("/players/active", params);
     },
-    games: (page = 1, per_page = 200, start_date = "", end_date = "") => get("/games", { page, per_page, start_date, end_date }),
+    games: async (page = 1, per_page = 200, start_date = "", end_date = "") => {
+        const filters = normalizeGamesFilters(start_date, end_date);
+        if (per_page > SAFE_PAGE_SIZE) {
+            return getGamesPaginated(page, per_page, filters);
+        }
+        try {
+            return await get("/games", { page, per_page, ...filters });
+        }
+        catch (error) {
+            if (shouldRetryWithPagination(error)) {
+                return getGamesPaginated(page, per_page, filters);
+            }
+            throw error;
+        }
+    },
     game: async (gameId) => {
         if (gameId === null || gameId === undefined) {
             return null;

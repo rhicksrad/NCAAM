@@ -12,40 +12,30 @@
 <meta name="theme-color" content="#0B1024" />
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="./styles/charts.css">
 <script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
+
 </head>
 <body>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-brand site-brand--stacked" href="./index.html">
+    <a class="site-brand" href="./index.html">
       <span class="site-brand__title">NCAAM Hub</span>
       <span class="site-brand__sub">Men's College Basketball</span>
     </a>
-    <button class="site-nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Site"></nav>
+  </div>
+  <div class="container site-header__nav">
+    <div id="site-nav"></div>
   </div>
 </header>
-<main>
-  <div class="container page">
-    <div class="page-intro card">
-      <p class="page-label">Teams</p>
-      <p class="page-summary">Every Division I program, organized for quick comparisons.</p>
+<section class="hero hero--compact">
+  <div class="container hero__inner">
+    <div class="stack" data-gap="sm">
+      <h1>Teams</h1>
+      <p class="hero__lede">Browse the D-I landscape by conference, colors, and rosters to find your next bracket pick.</p>
     </div>
-    <div id="app" class="page-content"></div>
   </div>
-</main>
-<div id="boot-errors" style="display:none;background:#fee2e2;color:#7f1d1d;padding:8px 12px;font:14px ui-sans-serif,system-ui"></div>
-<script type="module">
-  const errBox = document.getElementById('boot-errors');
-  const showErr = (e) => {
-    errBox.style.display = 'block';
-    errBox.textContent = e?.message || e;
-    console.error(e);
-  };
-  window.addEventListener('error', (ev) => showErr(ev.error || ev.message));
-  window.addEventListener('unhandledrejection', (ev) => showErr(ev.reason || ev));
-</script>
+</section>
+<main id="app" class="container"></main>
 <script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/teams.js"></script>
 </body>

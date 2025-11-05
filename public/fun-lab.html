@@ -4,16 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <base href="./">
-<title>Standings · NCAAM Hub</title>
-<meta name="description" content="Conference-by-conference standings with splits, streaks, and qualifier tags.">
-<meta property="og:title" content="Standings · NCAAM Hub" />
-<meta property="og:description" content="Conference-by-conference standings with splits, streaks, and qualifier tags." />
+<title>Fun Lab · NCAAM Hub</title>
+<meta name="description" content="Prototype visual experiments for NCAA data, starting with a full mascot taxonomy.">
+<meta property="og:title" content="Fun Lab · NCAAM Hub" />
+<meta property="og:description" content="Prototype visual experiments for NCAA data, starting with a full mascot taxonomy." />
 <meta property="og:image" content="./og-base.svg" />
 <meta name="theme-color" content="#0B1024" />
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="stylesheet" href="./styles/index.css">
 <script>window.NCAAM_WORKER_URL="https://ncaam.hicksrch.workers.dev/v1";</script>
-
+<script type="importmap">
+{
+  "imports": {
+    "d3-format": "https://esm.sh/d3-format@3?pin=v135",
+    "d3-selection": "https://esm.sh/d3-selection@3?pin=v135",
+    "d3-shape": "https://esm.sh/d3-shape@3?pin=v135"
+  }
+}
+</script>
 </head>
 <body>
 <header class="site-header">
@@ -30,13 +38,16 @@
 <section class="hero hero--compact">
   <div class="container hero__inner">
     <div class="stack" data-gap="sm">
-      <h1>Standings</h1>
-      <p class="hero__lede">Track conference races, streaks, and seed lines with sortable, zebra-striped tables.</p>
+      <h1>Fun Lab</h1>
+      <p class="hero__lede">A playground for whimsical NCAA experiments. Explore our first mascot taxonomy visualization and download the source data.</p>
+      <div class="stack" data-gap="sm">
+        <a class="button" data-variant="ghost" href="./data/fun-lab/mascot-index.json">Download mascot JSON</a>
+      </div>
     </div>
   </div>
 </section>
 <main id="app" class="container"></main>
 <script type="module" src="./scripts/nav.js"></script>
-<script type="module" src="./scripts/standings.js"></script>
+<script type="module" src="./scripts/fun-lab.js"></script>
 </body>
 </html>
