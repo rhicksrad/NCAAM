@@ -5,7 +5,8 @@
   grid-template-areas:
     "intro"
     "archetype"
-    "showdown";
+    "showdown"
+    "arena";
 }
 
 .fun-lab__intro {
@@ -18,6 +19,11 @@
 
 .fun-lab__showdown {
   grid-area: showdown;
+  grid-column: 1 / -1;
+}
+
+.fun-lab__arena {
+  grid-area: arena;
   grid-column: 1 / -1;
 }
 
@@ -508,7 +514,8 @@ svg.chart text.fun-lab__chart-total--caption {
     grid-template-areas:
       "intro intro"
       "archetype archetype"
-      "showdown showdown";
+      "showdown showdown"
+      "arena arena";
     align-items: start;
   }
 }
