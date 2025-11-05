@@ -61,7 +61,8 @@
 
 
 .fun-lab__chart-total {
-  fill: var(--chart-fg, currentColor);
+  fill: #fff;
+  color: white;
   font-weight: 700;
   font-size: clamp(1.75rem, 1.4rem + 0.8vw, 2.4rem);
   letter-spacing: -0.02em;
@@ -70,6 +71,14 @@
 .fun-lab__chart-total--caption {
   font-size: 0.85rem;
   font-weight: 500;
+  fill: var(--chart-fg-muted, var(--color-muted));
+}
+
+svg.chart text.fun-lab__chart-total {
+  fill: #fff;
+}
+
+svg.chart text.fun-lab__chart-total--caption {
   fill: var(--chart-fg-muted, var(--color-muted));
 }
 

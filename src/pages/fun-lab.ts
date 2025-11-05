@@ -168,8 +168,6 @@ app.innerHTML = `
               <tr>
                 <th scope="col">Program</th>
                 <th scope="col">Mascot</th>
-                <th scope="col">Category</th>
-                <th scope="col">Family</th>
                 <th scope="col">Conference</th>
               </tr>
             </thead>
@@ -573,7 +571,7 @@ function renderGroupedTable(
   }
 
   const doc = table.ownerDocument ?? document;
-  const colCount = table.tHead?.rows[0]?.cells.length ?? 5;
+  const colCount = table.tHead?.rows[0]?.cells.length ?? 3;
 
   if (records.length === 0) {
     const body = doc.createElement("tbody");
@@ -685,21 +683,6 @@ function renderGroupedTable(
       const mascotCell = row.insertCell();
       mascotCell.className = "fun-lab__cell fun-lab__cell--mascot";
       mascotCell.textContent = record.mascot;
-
-      const categoryCell = row.insertCell();
-      categoryCell.className = "fun-lab__cell fun-lab__cell--category";
-      const chip = doc.createElement("span");
-      chip.className = "fun-lab__chip";
-      chip.textContent = record.category_label;
-      const chipColor = colorByCategory.get(record.category);
-      if (chipColor) {
-        chip.style.setProperty("--chip-color", chipColor);
-      }
-      categoryCell.appendChild(chip);
-
-      const familyCell = row.insertCell();
-      familyCell.className = "fun-lab__cell fun-lab__cell--family";
-      familyCell.textContent = record.family_label;
 
       const conferenceCell = row.insertCell();
       conferenceCell.className = "fun-lab__cell fun-lab__cell--conference";
