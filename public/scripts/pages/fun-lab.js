@@ -1,14 +1,15 @@
 import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
-const DATA_URL = "data/fun-lab/mascot-index.json";
-const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
+const DATA_URL = "/data/fun-lab/mascot-index.json";
+const CATS_DOGS_DATA_URL = "/data/fun-lab/cats-vs-dogs.json";
 const numberFormatter = new Intl.NumberFormat("en-US");
 const percentFormatter = d3Format(".1%");
 const app = document.getElementById("app");
 if (!app) {
     throw new Error("Fun Lab requires an #app container");
 }
+setChartDefaults();
 app.innerHTML = `
   <div class="fun-lab stack" data-gap="lg">
     <section class="card stack" data-gap="sm">
@@ -27,7 +28,9 @@ app.innerHTML = `
         <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype shares…</p>
       </header>
       <div class="fun-lab__chart-grid">
-        <div id="fun-lab-chart" class="fun-lab__chart-surface" role="presentation"></div>
+        <article class="viz-card fun-lab__chart-card">
+          <div id="fun-lab-chart" class="fun-lab__chart-surface viz-canvas" role="presentation"></div>
+        </article>
         <div id="fun-lab-legend" class="fun-lab__legend" aria-live="polite"></div>
       </div>
     </section>
@@ -37,11 +40,13 @@ app.innerHTML = `
         <p id="cats-dogs-summary" class="section-summary">Sizing up rivalry bragging rights…</p>
       </header>
       <div class="fun-lab__showdown-grid">
-        <div
-          id="cats-dogs-chart"
-          class="fun-lab__chart-surface fun-lab__showdown-chart"
-          role="presentation"
-        ></div>
+        <article class="viz-card fun-lab__showdown-shell">
+          <div
+            id="cats-dogs-chart"
+            class="fun-lab__chart-surface fun-lab__showdown-chart viz-canvas"
+            role="presentation"
+          ></div>
+        </article>
         <div class="fun-lab__showdown-sidebar stack" data-gap="sm">
           <div id="cats-dogs-crown" class="fun-lab__crown" aria-live="polite">
             Tracking the current crown holder…
@@ -85,11 +90,37 @@ const catsDogsChartEl = document.getElementById("cats-dogs-chart");
 const catsDogsLeaderboardEl = document.getElementById("cats-dogs-leaderboard");
 const catsDogsCrownEl = document.getElementById("cats-dogs-crown");
 const catsDogsFootnoteEl = document.getElementById("cats-dogs-footnote");
+const chartHandle = chartRoot ? createChartContainer(chartRoot, { ratio: 1 }) : null;
+const catsDogsHandle = catsDogsChartEl
+    ? createChartContainer(catsDogsChartEl, { ratio: 0.68 })
+    : null;
 function formatPercent(value) {
     if (!Number.isFinite(value) || value <= 0) {
         return "0.0%";
     }
     return percentFormatter(Math.max(0, value));
+}
+function measureContainerSize(element) {
+    const doc = element.ownerDocument ?? document;
+    const view = doc.defaultView;
+    const rect = element.getBoundingClientRect();
+    const width = Math.max(1, Math.round(rect.width || element.clientWidth || element.offsetWidth));
+    const height = Math.max(1, Math.round(rect.height || element.clientHeight || element.offsetHeight));
+    if (width > 0 && height > 0) {
+        return { width, height };
+    }
+    const fallbackWidth = view ? Math.round(view.innerWidth * 0.9) : 600;
+    const fallbackHeight = Math.round(fallbackWidth * 0.6);
+    return { width: Math.max(1, fallbackWidth), height: Math.max(1, fallbackHeight) };
+}
+function readBarRadius(element) {
+    const doc = element.ownerDocument ?? document;
+    const view = doc.defaultView;
+    if (!view) {
+        return 8;
+    }
+    const value = Number.parseFloat(view.getComputedStyle(element).getPropertyValue("--chart-bar-radius"));
+    return Number.isFinite(value) ? value : 8;
 }
 async function fetchMascotIndex() {
     const response = await fetch(DATA_URL, { headers: { Accept: "application/json" } });
@@ -290,86 +321,106 @@ function buildLegend(root, categories, colorByCategory, total, onToggle, activeC
     });
     root.appendChild(list);
 }
-function renderChart(categories, total, chartContainer) {
-    chartContainer.innerHTML = "";
-    const width = 520;
-    const height = 520;
-    const radius = Math.min(width, height) / 2;
-    const svg = createSVG(chartContainer, width, height, {
-        title: "Mascot archetype share",
-        description: "Donut chart showing the share of each mascot archetype across Division I programs.",
-        id: "fun-lab-mascot-share",
-    });
-    const group = select(svg)
-        .append("g")
-        .attr("transform", `translate(${width / 2}, ${height / 2})`);
-    const pie = d3Pie().value((d) => d.count).sort(null);
-    const arc = d3Arc()
-        .innerRadius(radius * 0.55)
-        .outerRadius(radius - 12)
-        .padAngle(0.012)
-        .cornerRadius(6);
+function renderChart(categories, total, chartContainer, handle) {
     const colorByCategory = new Map();
+    categories.forEach((category, index) => {
+        colorByCategory.set(category.slug, resolveColor(index));
+    });
+    let activeSlug = null;
     let arcToggleHandler = null;
-    const arcs = group
-        .selectAll("path")
-        .data(pie(categories))
-        .join("path")
-        .attr("class", "fun-lab__arc")
-        .attr("fill", (d, i) => {
-        const color = resolveColor(i);
-        colorByCategory.set(d.data.slug, color);
-        return color;
-    })
-        .attr("stroke", "var(--chart-bg)")
-        .attr("stroke-width", 1.5)
-        .attr("d", (d) => arc(d) ?? "")
-        .attr("role", "button")
-        .attr("tabindex", 0)
-        .attr("focusable", "true")
-        .attr("aria-pressed", "false")
-        .attr("aria-label", (d) => `Toggle ${d.data.label} programs`);
-    arcs.append("title").text((d) => {
-        const share = formatPercent(d.data.count / total);
-        return `${d.data.label}: ${numberFormatter.format(d.data.count)} programs (${share}). Click to isolate this archetype.`;
-    });
-    const invokeToggle = (slug) => {
-        if (arcToggleHandler) {
-            arcToggleHandler(slug);
+    let arcs = null;
+    const applyActiveState = () => {
+        if (!arcs) {
+            return;
         }
+        arcs.each(function (d) {
+            const element = this;
+            const isActive = activeSlug !== null && d.data.slug === activeSlug;
+            const isDimmed = activeSlug !== null && d.data.slug !== activeSlug;
+            element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
+            element.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
     };
-    arcs.on("click", (event, d) => {
-        event.preventDefault();
-        invokeToggle(d.data.slug);
-    });
-    arcs.on("keydown", (event, d) => {
-        if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+    handle.mount(() => {
+        chartContainer.innerHTML = "";
+        const { width, height } = measureContainerSize(chartContainer);
+        const radius = Math.min(width, height) / 2;
+        const svg = createSVG(chartContainer, width, height, {
+            title: "Mascot archetype share",
+            description: "Donut chart showing the share of each mascot archetype across Division I programs.",
+            id: "fun-lab-mascot-share",
+        });
+        const group = select(svg)
+            .append("g")
+            .attr("transform", `translate(${width / 2}, ${height / 2})`);
+        const barRadius = readBarRadius(chartContainer);
+        const pie = d3Pie().value((d) => d.count).sort(null);
+        const arc = d3Arc()
+            .innerRadius(radius * 0.55)
+            .outerRadius(Math.max(0, radius - 12))
+            .padAngle(0.012)
+            .cornerRadius(barRadius);
+        const invokeToggle = (slug) => {
+            if (arcToggleHandler) {
+                arcToggleHandler(slug);
+            }
+        };
+        arcs = group
+            .selectAll("path.fun-lab__arc")
+            .data(pie(categories))
+            .join("path");
+        arcs
+            .attr("class", "fun-lab__arc")
+            .attr("fill", (d, index) => {
+            const color = colorByCategory.get(d.data.slug);
+            if (color) {
+                return color;
+            }
+            const fallback = resolveColor(index);
+            colorByCategory.set(d.data.slug, fallback);
+            return fallback;
+        })
+            .attr("stroke", "var(--chart-bg)")
+            .attr("stroke-width", "calc(var(--chart-line-width) * 1px)")
+            .attr("d", (d) => arc(d) ?? "")
+            .attr("role", "button")
+            .attr("tabindex", 0)
+            .attr("focusable", "true")
+            .attr("aria-pressed", "false")
+            .attr("aria-label", (d) => `Toggle ${d.data.label} programs`)
+            .on("click", (event, d) => {
             event.preventDefault();
             invokeToggle(d.data.slug);
-        }
+        })
+            .on("keydown", (event, d) => {
+            if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+                event.preventDefault();
+                invokeToggle(d.data.slug);
+            }
+        });
+        arcs.append("title").text((d) => {
+            const share = formatPercent(d.data.count / total);
+            return `${d.data.label}: ${numberFormatter.format(d.data.count)} programs (${share}). Click to isolate this archetype.`;
+        });
+        group
+            .append("text")
+            .attr("class", "fun-lab__chart-total")
+            .attr("text-anchor", "middle")
+            .attr("dy", "-0.2em")
+            .text(numberFormatter.format(total));
+        group
+            .append("text")
+            .attr("class", "fun-lab__chart-total fun-lab__chart-total--caption")
+            .attr("text-anchor", "middle")
+            .attr("dy", "1.1em")
+            .text("programs");
+        applyActiveState();
     });
-    group
-        .append("text")
-        .attr("class", "fun-lab__chart-total")
-        .attr("text-anchor", "middle")
-        .attr("dy", "-0.2em")
-        .text(numberFormatter.format(total));
-    group
-        .append("text")
-        .attr("class", "fun-lab__chart-total fun-lab__chart-total--caption")
-        .attr("text-anchor", "middle")
-        .attr("dy", "1.1em")
-        .text("programs");
     return {
         colorByCategory,
         setActiveCategory: (slug) => {
-            arcs.each(function (d) {
-                const element = this;
-                const isActive = slug !== null && d.data.slug === slug;
-                const isDimmed = slug !== null && d.data.slug !== slug;
-                element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
-                element.setAttribute("aria-pressed", isActive ? "true" : "false");
-            });
+            activeSlug = slug;
+            applyActiveState();
         },
         onArcToggle: (callback) => {
             arcToggleHandler = callback;
@@ -422,107 +473,127 @@ function renderTable(table, records, colorByCategory) {
         }
     });
 }
-function renderCatsDogsChart(matchups, chartContainer, options) {
+function renderCatsDogsChart(matchups, chartContainer, options, handle) {
     chartContainer.innerHTML = "";
     if (matchups.length === 0) {
         chartContainer.textContent = "No rivalry data available yet.";
         return;
     }
-    const width = 920;
-    const margin = { top: 36, right: 200, bottom: 64, left: 300 };
-    const innerHeight = Math.max(matchups.length * 52, 260);
-    const height = innerHeight + margin.top + margin.bottom;
-    const svg = createSVG(chartContainer, width, height, {
-        title: "Cats vs dogs rivalry scoreboard",
-        description: "Stacked bars compare cat and dog mascot wins in major Division I rivalries.",
-        id: "fun-lab-cats-dogs",
+    handle.mount(() => {
+        chartContainer.innerHTML = "";
+        const { width, height } = measureContainerSize(chartContainer);
+        const margin = {
+            top: 36,
+            right: Math.max(160, Math.round(width * 0.18)),
+            bottom: 64,
+            left: Math.max(220, Math.round(width * 0.28)),
+        };
+        const svg = createSVG(chartContainer, width, height, {
+            title: "Cats vs dogs rivalry scoreboard",
+            description: "Stacked bars compare cat and dog mascot wins in major Division I rivalries.",
+            id: "fun-lab-cats-dogs",
+        });
+        const { iw, ih } = computeInnerSize(width, height, margin);
+        const chart = select(svg)
+            .append("g")
+            .attr("transform", `translate(${margin.left}, ${margin.top})`);
+        const maxTotal = Math.max(1, ...matchups.map(matchup => matchup.cat.wins + matchup.dog.wins));
+        const x = scaleLinear().domain([0, maxTotal]).nice().range([0, iw]);
+        const y = scaleBand()
+            .domain(matchups.map(matchup => matchup.slug))
+            .range([0, ih])
+            .paddingInner(0.35)
+            .paddingOuter(0.25);
+        const band = y.bandwidth();
+        const barRadius = readBarRadius(chartContainer);
+        const barHeight = Math.min(48, Math.max(24, band));
+        const offset = Math.max(0, (band - barHeight) / 2);
+        const rows = chart
+            .selectAll("g.fun-lab__showdown-row")
+            .data(matchups, (matchup) => matchup.slug)
+            .join("g");
+        rows
+            .attr("class", "fun-lab__showdown-row")
+            .attr("transform", (matchup) => {
+            const yPosition = y(matchup.slug) ?? 0;
+            return `translate(0, ${yPosition + offset})`;
+        });
+        const catBars = rows
+            .append("rect")
+            .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--cats")
+            .attr("fill", options.catColor)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", (matchup) => x(matchup.cat.wins))
+            .attr("height", barHeight)
+            .attr("rx", barRadius)
+            .attr("ry", barRadius)
+            .attr("stroke", "var(--chart-bg)")
+            .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)");
+        catBars
+            .append("title")
+            .text((matchup) => `${formatProgramLabel(matchup.cat)}: ${numberFormatter.format(matchup.cat.wins)} wins`);
+        const dogBars = rows
+            .append("rect")
+            .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--dogs")
+            .attr("fill", options.dogColor)
+            .attr("x", (matchup) => x(matchup.cat.wins))
+            .attr("y", 0)
+            .attr("width", (matchup) => x(matchup.dog.wins))
+            .attr("height", barHeight)
+            .attr("rx", barRadius)
+            .attr("ry", barRadius)
+            .attr("stroke", "var(--chart-bg)")
+            .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)");
+        dogBars
+            .append("title")
+            .text((matchup) => `${formatProgramLabel(matchup.dog)}: ${numberFormatter.format(matchup.dog.wins)} wins`);
+        rows
+            .append("text")
+            .attr("class", "fun-lab__showdown-matchup")
+            .attr("x", -16)
+            .attr("y", barHeight / 2)
+            .attr("dy", "0.35em")
+            .attr("text-anchor", "end")
+            .text((matchup) => matchup.series);
+        rows
+            .append("text")
+            .attr("class", "fun-lab__showdown-diff")
+            .attr("x", (matchup) => x(matchup.cat.wins + matchup.dog.wins) + 16)
+            .attr("y", barHeight / 2)
+            .attr("dy", "0.35em")
+            .text((matchup) => {
+            if (matchup.cat.wins === matchup.dog.wins) {
+                return "All square";
+            }
+            const leader = matchup.cat.wins > matchup.dog.wins ? "Cats" : "Dogs";
+            const margin = Math.abs(matchup.cat.wins - matchup.dog.wins);
+            return `${leader} +${numberFormatter.format(margin)}`;
+        });
+        const axis = axisBottom(x)
+            .ticks(Math.min(7, Math.max(3, Math.floor(iw / 140))))
+            .tickSize(-ih)
+            .tickSizeOuter(0)
+            .tickPadding(10)
+            .tickFormat((value) => numberFormatter.format(Number(value)));
+        const axisGroup = chart
+            .append("g")
+            .attr("class", "fun-lab__showdown-axis")
+            .attr("transform", `translate(0, ${pixelAlign(ih)})`)
+            .call(axis);
+        axisGroup.select(".domain")
+            .attr("stroke", "var(--chart-grid)")
+            .attr("stroke-opacity", "var(--chart-grid-alpha)")
+            .attr("stroke-width", "calc(var(--chart-grid-width) * 1px)");
+        axisGroup
+            .selectAll("line")
+            .attr("stroke", "var(--chart-grid)")
+            .attr("stroke-opacity", "var(--chart-grid-alpha)")
+            .attr("stroke-width", "calc(var(--chart-grid-width) * 1px)")
+            .attr("stroke-dasharray", "2 4")
+            .attr("vector-effect", "non-scaling-stroke");
+        axisGroup.selectAll("text").attr("class", "fun-lab__axis-label");
     });
-    const { iw, ih } = computeInnerSize(width, height, margin);
-    const chart = select(svg)
-        .append("g")
-        .attr("transform", `translate(${margin.left}, ${margin.top})`);
-    const maxTotal = Math.max(1, ...matchups.map(matchup => matchup.cat.wins + matchup.dog.wins));
-    const x = scaleLinear().domain([0, maxTotal]).nice().range([0, iw]);
-    const y = scaleBand()
-        .domain(matchups.map(matchup => matchup.slug))
-        .range([0, ih])
-        .paddingInner(0.35)
-        .paddingOuter(0.25);
-    const band = y.bandwidth();
-    const barHeight = Math.min(48, Math.max(28, band));
-    const offset = Math.max(0, (band - barHeight) / 2);
-    const rows = chart
-        .selectAll("g.fun-lab__showdown-row")
-        .data(matchups, (matchup) => matchup.slug)
-        .join("g");
-    rows
-        .attr("class", "fun-lab__showdown-row")
-        .attr("transform", (matchup) => {
-        const yPosition = y(matchup.slug) ?? 0;
-        return `translate(0, ${yPosition + offset})`;
-    });
-    const catBars = rows
-        .append("rect")
-        .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--cats")
-        .attr("fill", options.catColor)
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", (matchup) => x(matchup.cat.wins))
-        .attr("height", barHeight)
-        .attr("rx", 8)
-        .attr("ry", 8);
-    catBars
-        .append("title")
-        .text((matchup) => `${formatProgramLabel(matchup.cat)}: ${numberFormatter.format(matchup.cat.wins)} wins`);
-    const dogBars = rows
-        .append("rect")
-        .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--dogs")
-        .attr("fill", options.dogColor)
-        .attr("x", (matchup) => x(matchup.cat.wins))
-        .attr("y", 0)
-        .attr("width", (matchup) => x(matchup.dog.wins))
-        .attr("height", barHeight)
-        .attr("rx", 8)
-        .attr("ry", 8);
-    dogBars
-        .append("title")
-        .text((matchup) => `${formatProgramLabel(matchup.dog)}: ${numberFormatter.format(matchup.dog.wins)} wins`);
-    rows
-        .append("text")
-        .attr("class", "fun-lab__showdown-matchup")
-        .attr("x", -16)
-        .attr("y", barHeight / 2)
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "end")
-        .text((matchup) => matchup.series);
-    rows
-        .append("text")
-        .attr("class", "fun-lab__showdown-diff")
-        .attr("x", (matchup) => x(matchup.cat.wins + matchup.dog.wins) + 16)
-        .attr("y", barHeight / 2)
-        .attr("dy", "0.35em")
-        .text((matchup) => {
-        if (matchup.cat.wins === matchup.dog.wins) {
-            return "All square";
-        }
-        const leader = matchup.cat.wins > matchup.dog.wins ? "Cats" : "Dogs";
-        const margin = Math.abs(matchup.cat.wins - matchup.dog.wins);
-        return `${leader} +${numberFormatter.format(margin)}`;
-    });
-    const axis = axisBottom(x)
-        .ticks(Math.min(7, Math.max(3, Math.floor(iw / 140))))
-        .tickSize(-ih)
-        .tickSizeOuter(0)
-        .tickPadding(10)
-        .tickFormat((value) => numberFormatter.format(Number(value)));
-    const axisGroup = chart
-        .append("g")
-        .attr("class", "fun-lab__showdown-axis")
-        .attr("transform", `translate(0, ${pixelAlign(ih)})`)
-        .call(axis);
-    axisGroup.select(".domain").remove();
-    axisGroup.selectAll("line").attr("stroke", "var(--chart-grid)").attr("stroke-dasharray", "2 4");
-    axisGroup.selectAll("text").attr("class", "fun-lab__axis-label");
 }
 function renderCatsDogsLeaderboard(list, matchups) {
     list.innerHTML = "";
@@ -648,7 +719,7 @@ async function loadCatsDogsFeature(context) {
         section.style.setProperty("--fun-lab-cat", catColor);
         section.style.setProperty("--fun-lab-dog", dogColor);
         summary.textContent = describeCatsDogsSummary(sortedMatchups);
-        renderCatsDogsChart(sortedMatchups, chart, { catColor, dogColor });
+        renderCatsDogsChart(sortedMatchups, chart, { catColor, dogColor }, catsDogsHandle);
         renderCatsDogsLeaderboard(leaderboard, sortedMatchups);
         renderCatsDogsCrown(crown, sortedMatchups);
         renderCatsDogsFootnote(footnote, payload);
@@ -682,6 +753,10 @@ async function boot() {
         !catsDogsFootnoteEl) {
         throw new Error("Fun Lab layout failed to mount");
     }
+    if (!chartHandle || !catsDogsHandle) {
+        throw new Error("Fun Lab chart containers failed to initialize");
+    }
+    const chartContainerHandle = chartHandle;
     const summaryNode = summaryEl;
     const chartSummaryNode = chartSummaryEl;
     const chartHost = chartRoot;
@@ -699,7 +774,7 @@ async function boot() {
         summaryNode.textContent = describeSummary(data);
         generatedNode.textContent = formatGeneratedAt(data.generated_at);
         const categories = [...data.categories].sort((a, b) => b.count - a.count);
-        const chartControls = renderChart(categories, data.total_programs, chartHost);
+        const chartControls = renderChart(categories, data.total_programs, chartHost, chartContainerHandle);
         const sortedRecords = [...data.records].sort((a, b) => {
             if (a.category === b.category) {
                 return a.full_name.localeCompare(b.full_name, "en-US");

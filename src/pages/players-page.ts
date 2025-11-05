@@ -1,3 +1,4 @@
+import { setChartDefaults } from "../lib/charts/defaults.js";
 import { renderConferenceDirectory } from "../lib/players/conferences.js";
 import { renderLeaderboardFeature } from "../lib/players/leaderboards.js";
 
@@ -5,6 +6,8 @@ const app = document.getElementById("app");
 if (!app) {
   throw new Error("Players page requires an #app container");
 }
+
+setChartDefaults();
 
 app.classList.add("players-page-container");
 

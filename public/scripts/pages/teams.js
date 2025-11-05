@@ -1,9 +1,11 @@
+import { setChartDefaults } from "../lib/charts/defaults.js";
 import { buildProgramLabelKeys, buildTeamKeys } from "../lib/data/program-keys.js";
 import { getDivisionOneProgramIndex, isDivisionOneProgram, } from "../lib/data/division-one.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import { getConferenceLogoUrl, getConferenceMonogram, getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
 const app = document.getElementById("app");
+setChartDefaults();
 app.innerHTML = `<div class="stack" data-gap="lg">
   <section class="teams-map card stack" data-gap="md">
     <div class="teams-map__header">

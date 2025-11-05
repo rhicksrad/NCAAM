@@ -23,6 +23,14 @@ export function createTooltip(root) {
     tooltip.style.position = "absolute";
     tooltip.style.pointerEvents = "none";
     tooltip.style.opacity = "0";
+    tooltip.style.background = "var(--chart-tooltip-bg, rgba(11, 37, 69, 0.88))";
+    tooltip.style.color = "var(--chart-tooltip-fg, #f8fafc)";
+    tooltip.style.padding = "12px";
+    tooltip.style.borderRadius = "calc(var(--chart-bar-radius, 8) * 1px)";
+    tooltip.style.border = "1px solid rgba(16, 42, 67, 0.35)";
+    tooltip.style.boxShadow = "0 18px 36px rgba(8, 15, 28, 0.35)";
+    tooltip.style.fontFamily = "var(--chart-font-family)";
+    tooltip.style.fontSize = "calc(var(--chart-font-size) * 1px)";
     tooltip.style.transition = prefersReducedMotion() ? "none" : "opacity 120ms ease";
     const liveRegion = doc.createElement("div");
     liveRegion.className = "tooltip-live";

@@ -25,6 +25,8 @@ export interface AreaOptions {
   opacity?: number;
   baseline?: number;
   defined?: (datum: AreaDatum) => boolean;
+  stroke?: string;
+  strokeWidth?: number;
 }
 
 function position(scale: any, value: number | Date): number {
@@ -83,9 +85,16 @@ export function renderArea(
     .curve(options.smoothing ? curveMonotoneX : curveLinear);
 
   const dAttribute = areaGenerator(data);
+  const strokeColor = options.stroke ?? theme.accent;
+  const strokeWidth = options.strokeWidth ?? Math.max(1, theme.lineWidth);
+
   merged
     .attr("fill", options.fill ?? theme.accentMuted)
     .attr("fill-opacity", options.opacity ?? 0.6)
+    .attr("stroke", strokeColor)
+    .attr("stroke-width", strokeWidth)
+    .attr("stroke-linejoin", "round")
+    .attr("stroke-linecap", "round")
     .attr("d", dAttribute ?? "");
 
   path.exit().remove();

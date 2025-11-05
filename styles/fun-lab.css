@@ -30,6 +30,7 @@
 .fun-lab__chart-grid {
   display: grid;
   gap: var(--space-lg);
+  align-items: stretch;
 }
 
 .fun-lab__showdown {
@@ -40,6 +41,11 @@
 .fun-lab__showdown-grid {
   display: grid;
   gap: var(--space-lg);
+}
+
+.fun-lab__chart-card,
+.fun-lab__showdown-shell {
+  height: 100%;
 }
 
 .fun-lab__showdown-chart {
@@ -227,9 +233,7 @@
 
 .fun-lab__chart-surface {
   min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
 .fun-lab__legend {

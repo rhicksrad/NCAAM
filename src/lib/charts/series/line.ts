@@ -67,6 +67,7 @@ export function renderLine(
   options: LineOptions = {}
 ): SVGPathElement {
   const theme = options.theme ?? defaultTheme;
+  const strokeWidth = options.strokeWidth ?? theme.lineWidth;
   const selection = select(g);
   const path = selection
     .selectAll<SVGPathElement>("path.series--line")
@@ -91,7 +92,7 @@ export function renderLine(
   const dAttribute = lineGenerator(data);
   merged
     .attr("stroke", options.stroke ?? theme.accent)
-    .attr("stroke-width", options.strokeWidth ?? theme.lineWidth * 1.5)
+    .attr("stroke-width", strokeWidth)
     .attr("aria-label", options.ariaLabel ?? "Line series")
     .attr("d", dAttribute ?? "");
 
