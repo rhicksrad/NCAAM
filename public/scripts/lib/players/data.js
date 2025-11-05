@@ -1,5 +1,6 @@
 import { requireOk } from "../health.js";
 import { PLAYER_LEADERBOARD_METRICS, PLAYER_LEADERBOARD_METRIC_KEYS, transformMetricValue, } from "./leaderboard-metrics.js";
+export const PLAYER_LEADERBOARD_LIMIT = 50;
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 const DATA_BASE_URL = (() => {
     if (typeof window !== "undefined" && typeof window.location !== "undefined") {
@@ -55,7 +56,7 @@ function buildLeaderboardRows(document) {
         if (!metric)
             return;
         (metric.leaders ?? [])
-            .slice(0, 50)
+            .slice(0, PLAYER_LEADERBOARD_LIMIT)
             .forEach((leader, index) => {
             const key = leader.slug || `${leader.name}|${leader.team}`;
             let row = rows.get(key);

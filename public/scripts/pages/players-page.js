@@ -15,9 +15,25 @@ const METRIC_OPTIONS_HTML = METRIC_KEYS
     .join("");
 const isMetric = (value) => Object.prototype.hasOwnProperty.call(PLAYER_LEADERBOARD_METRICS, value);
 const DEFAULT_METRIC = (isMetric("ppg") ? "ppg" : METRIC_KEYS[0]) ?? "ppg";
-const COLOR_MODE_LABELS = {
-    value: "Color shows average using a sequential ramp.",
-    rank: "Color shows rank tiers across the top 50.",
+const describeColorMode = (colorMode, limit, hasRanks) => {
+    if (colorMode === "rank") {
+        if (hasRanks && limit > 0) {
+            return `Color shows rank tiers across the top ${limit}.`;
+        }
+        return "Color shows rank tiers for ranked players.";
+    }
+    return "Color shows average using a sequential ramp.";
+};
+const getMetricRankStats = (rows, metric) => {
+    const rankKey = `rank_${metric}`;
+    const ranks = rows
+        .map((row) => row[rankKey])
+        .filter((rank) => Number.isFinite(rank));
+    const limit = ranks.length ? Math.max(...ranks) : 0;
+    return {
+        limit,
+        hasRanks: ranks.length > 0,
+    };
 };
 const app = document.getElementById("app");
 if (!app) {
@@ -29,7 +45,7 @@ app.innerHTML = `
   <div class="players-page stack" data-gap="xl">
     <section class="players-feature stack" data-gap="md">
       <header class="feature-card card stack" data-gap="xs">
-        <h2 id="players-leaderboard-title" class="feature-card__title">Top 50 stat leaders</h2>
+        <h2 id="players-leaderboard-title" class="feature-card__title">Top stat leaders</h2>
         <p id="players-leaderboard-meta" class="feature-card__meta">Loading the latest player stat leaders…</p>
       </header>
       <div class="leaderboard-panel card">
@@ -67,9 +83,10 @@ const conferenceDirectory = document.getElementById("players-conference-director
 const conferenceMeta = document.getElementById("players-conference-meta");
 function updateMeta(state) {
     const config = PLAYER_LEADERBOARD_METRICS[state.metric];
+    const { limit, hasRanks } = getMetricRankStats(state.data, state.metric);
     if (leaderboardTitle) {
         const label = config?.label ?? state.metric.toUpperCase();
-        leaderboardTitle.textContent = `Top 50 ${label} leaders`;
+        leaderboardTitle.textContent = hasRanks && limit > 0 ? `Top ${limit} ${label} leaders` : `${label} leaders`;
     }
     if (leaderboardMeta) {
         const domain = METRIC_DOMAINS[state.metric] ?? config?.defaultDomain ?? [0, 1];
@@ -84,8 +101,9 @@ function updateMeta(state) {
             return "--";
         };
         const shortLabel = config?.shortLabel ?? state.metric.toUpperCase();
+        const colorDescription = describeColorMode(state.colorMode, limit, hasRanks);
         leaderboardMeta.textContent =
-            `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${COLOR_MODE_LABELS[state.colorMode]}`;
+            `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${colorDescription}`;
     }
 }
 function refreshMetricDomains(rows) {

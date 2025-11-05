@@ -6,6 +6,8 @@ import {
   type PlayerLeaderboardMetricKey,
 } from "./leaderboard-metrics.js";
 
+export const PLAYER_LEADERBOARD_LIMIT = 50;
+
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 
 const DATA_BASE_URL = (() => {
@@ -166,7 +168,7 @@ function buildLeaderboardRows(document: PlayerLeaderboardDocument): PlayerLeader
     if (!metric) return;
 
     (metric.leaders ?? [])
-      .slice(0, 50)
+      .slice(0, PLAYER_LEADERBOARD_LIMIT)
       .forEach((leader, index) => {
         const key = leader.slug || `${leader.name}|${leader.team}`;
         let row = rows.get(key);

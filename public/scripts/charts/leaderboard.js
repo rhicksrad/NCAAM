@@ -1,6 +1,7 @@
 import { axisBottom, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { PLAYER_LEADERBOARD_LIMIT } from "../lib/players/data.js";
 import { PLAYER_LEADERBOARD_METRICS, formatMetricValue, } from "../lib/players/leaderboard-metrics.js";
-import { DEFAULT_WIDTH, MARGIN, METRIC_DOMAINS, RANK_TIER_COLORS, tierLabel, ROW_HEIGHT, VALUE_RAMP, } from "./theme.js";
+import { DEFAULT_WIDTH, MARGIN, METRIC_DOMAINS, RANK_TIER_COLORS, RANK_TIERS, tierLabel, ROW_HEIGHT, VALUE_RAMP, } from "./theme.js";
 export function renderLeaderboard(opts) {
     const { el, data, metric = "ppg", colorMode = "value", width = DEFAULT_WIDTH, rowH = ROW_HEIGHT, margin = MARGIN, } = opts;
     const root = typeof el === "string" ? document.querySelector(el) : el;
@@ -14,7 +15,11 @@ export function renderLeaderboard(opts) {
     const rows = [...data]
         .filter((row) => Number.isFinite(row[valueKey]) && Number.isFinite(row[rankKey]))
         .sort((a, b) => a[rankKey] - b[rankKey])
-        .slice(0, 50);
+        .slice(0, PLAYER_LEADERBOARD_LIMIT);
+    const maxRank = rows.reduce((acc, row) => {
+        const rank = row[rankKey];
+        return Number.isFinite(rank) ? Math.max(acc, rank) : acc;
+    }, 0);
     const marginBox = { ...margin };
     const originalMarginLeft = marginBox.l;
     const labelPad = 16;
@@ -60,7 +65,10 @@ export function renderLeaderboard(opts) {
         const t = Math.max(0, Math.min(1, (value - d0) / span));
         return interpolate(t);
     };
-    const rankDomain = ["Top 5", "6–10", "11–25", "26–50", "51+"];
+    const rankDomain = RANK_TIERS.filter(({ range }) => maxRank >= range[0]).map(({ label }) => label);
+    if (maxRank > (RANK_TIERS[RANK_TIERS.length - 1]?.range[1] ?? PLAYER_LEADERBOARD_LIMIT)) {
+        rankDomain.push("51+");
+    }
     const colorRank = (label) => RANK_TIER_COLORS[label] ?? RANK_TIER_COLORS["51+"];
     const barHeight = rowH - 8;
     const formatValue = (value) => formatMetricValue(metric, value);

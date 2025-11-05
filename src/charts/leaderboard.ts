@@ -1,5 +1,5 @@
 import { axisBottom, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
-import type { PlayerLeaderboardRow } from "../lib/players/data.js";
+import { PLAYER_LEADERBOARD_LIMIT, type PlayerLeaderboardRow } from "../lib/players/data.js";
 import {
   PLAYER_LEADERBOARD_METRICS,
   formatMetricValue,
@@ -9,6 +9,7 @@ import {
   MARGIN,
   METRIC_DOMAINS,
   RANK_TIER_COLORS,
+  RANK_TIERS,
   tierLabel,
   ROW_HEIGHT,
   VALUE_RAMP,
@@ -49,7 +50,12 @@ export function renderLeaderboard(opts: {
   const rows = [...data]
     .filter((row) => Number.isFinite(row[valueKey] as number) && Number.isFinite(row[rankKey] as number))
     .sort((a, b) => (a[rankKey] as number) - (b[rankKey] as number))
-    .slice(0, 50);
+    .slice(0, PLAYER_LEADERBOARD_LIMIT);
+
+  const maxRank = rows.reduce((acc, row) => {
+    const rank = row[rankKey] as number;
+    return Number.isFinite(rank) ? Math.max(acc, rank) : acc;
+  }, 0);
 
   const marginBox = { ...margin };
   const originalMarginLeft = marginBox.l;
@@ -108,7 +114,10 @@ export function renderLeaderboard(opts: {
     return interpolate(t);
   };
 
-  const rankDomain = ["Top 5", "6–10", "11–25", "26–50", "51+"];
+  const rankDomain: string[] = RANK_TIERS.filter(({ range }) => maxRank >= range[0]).map(({ label }) => label);
+  if (maxRank > (RANK_TIERS[RANK_TIERS.length - 1]?.range[1] ?? PLAYER_LEADERBOARD_LIMIT)) {
+    rankDomain.push("51+");
+  }
   const colorRank = (label: string) => RANK_TIER_COLORS[label] ?? RANK_TIER_COLORS["51+"];
 
   const barHeight = rowH - 8;

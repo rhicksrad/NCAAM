@@ -126,6 +126,8 @@ METRIC_SHORT_LABELS: dict[str, str] = {
     "points": "PTS",
 }
 
+LEADERBOARD_SIZE = 50
+
 
 @dataclass
 class PlayerSeason:
@@ -195,7 +197,7 @@ def build_metric_leaders(players: Iterable[PlayerSeason], spec: MetricSpec) -> l
             }
         )
     leaders.sort(key=lambda item: (-item["value"], item["name"]))
-    return leaders[:10]
+    return leaders[:LEADERBOARD_SIZE]
 
 
 def build_leaderboards(players_dir: Path, season_label: str) -> dict:

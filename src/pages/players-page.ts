@@ -32,9 +32,29 @@ const isMetric = (value: string): value is Metric =>
 
 const DEFAULT_METRIC: Metric = (isMetric("ppg") ? "ppg" : METRIC_KEYS[0]) ?? "ppg";
 
-const COLOR_MODE_LABELS: Record<ColorMode, string> = {
-  value: "Color shows average using a sequential ramp.",
-  rank: "Color shows rank tiers across the top 50.",
+const describeColorMode = (colorMode: ColorMode, limit: number, hasRanks: boolean): string => {
+  if (colorMode === "rank") {
+    if (hasRanks && limit > 0) {
+      return `Color shows rank tiers across the top ${limit}.`;
+    }
+    return "Color shows rank tiers for ranked players.";
+  }
+
+  return "Color shows average using a sequential ramp.";
+};
+
+const getMetricRankStats = (rows: PlayerLeaderboardRow[], metric: Metric) => {
+  const rankKey = `rank_${metric}` as keyof PlayerLeaderboardRow;
+  const ranks = rows
+    .map((row) => row[rankKey] as number)
+    .filter((rank): rank is number => Number.isFinite(rank));
+
+  const limit = ranks.length ? Math.max(...ranks) : 0;
+
+  return {
+    limit,
+    hasRanks: ranks.length > 0,
+  };
 };
 
 const app = document.getElementById("app");
@@ -50,7 +70,7 @@ app.innerHTML = `
   <div class="players-page stack" data-gap="xl">
     <section class="players-feature stack" data-gap="md">
       <header class="feature-card card stack" data-gap="xs">
-        <h2 id="players-leaderboard-title" class="feature-card__title">Top 50 stat leaders</h2>
+        <h2 id="players-leaderboard-title" class="feature-card__title">Top stat leaders</h2>
         <p id="players-leaderboard-meta" class="feature-card__meta">Loading the latest player stat leaders…</p>
       </header>
       <div class="leaderboard-panel card">
@@ -90,9 +110,10 @@ const conferenceMeta = document.getElementById("players-conference-meta");
 
 function updateMeta(state: LeaderboardState): void {
   const config = PLAYER_LEADERBOARD_METRICS[state.metric];
+  const { limit, hasRanks } = getMetricRankStats(state.data, state.metric);
   if (leaderboardTitle) {
     const label = config?.label ?? state.metric.toUpperCase();
-    leaderboardTitle.textContent = `Top 50 ${label} leaders`;
+    leaderboardTitle.textContent = hasRanks && limit > 0 ? `Top ${limit} ${label} leaders` : `${label} leaders`;
   }
 
   if (leaderboardMeta) {
@@ -107,8 +128,9 @@ function updateMeta(state: LeaderboardState): void {
       return "--";
     };
     const shortLabel = config?.shortLabel ?? state.metric.toUpperCase();
+    const colorDescription = describeColorMode(state.colorMode, limit, hasRanks);
     leaderboardMeta.textContent =
-      `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${COLOR_MODE_LABELS[state.colorMode]}`;
+      `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${colorDescription}`;
   }
 }
 
