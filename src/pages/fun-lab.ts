@@ -9,8 +9,8 @@ import type { PieArcDatum } from "d3-shape";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
 
-const DATA_URL = "data/fun-lab/mascot-index.json";
-const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
+const DATA_URL = "/data/fun-lab/mascot-index.json";
+const CATS_DOGS_DATA_URL = "/data/fun-lab/cats-vs-dogs.json";
 
 interface MascotIndexRecord {
   id: number;
