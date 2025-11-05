@@ -2,8 +2,13 @@ import { setChartDefaults } from "../lib/charts/defaults.js";
 import { renderConferenceDirectory } from "../lib/players/conferences.js";
 import { getPlayersLeaderboard, loadPlayersLeaderboard, type PlayerLeaderboardRow } from "../lib/players/data.js";
 import { renderLeaderboard } from "../charts/leaderboard.js";
-import { METRIC_DOMAINS, type Metric } from "../charts/theme.js";
+import { METRIC_DOMAINS, setMetricDomain, type Metric } from "../charts/theme.js";
 import { requireOk } from "../lib/health.js";
+import {
+  PLAYER_LEADERBOARD_METRICS,
+  PLAYER_LEADERBOARD_METRIC_KEYS,
+  formatMetricValue,
+} from "../lib/players/leaderboard-metrics.js";
 
 type ColorMode = "value" | "rank";
 
@@ -13,11 +18,19 @@ type LeaderboardState = {
   data: PlayerLeaderboardRow[];
 };
 
-const METRIC_LABELS: Record<Metric, string> = {
-  ppg: "Points per game",
-  rpg: "Rebounds per game",
-  apg: "Assists per game",
-};
+const METRIC_KEYS = PLAYER_LEADERBOARD_METRIC_KEYS as readonly Metric[];
+const METRIC_OPTIONS_HTML = METRIC_KEYS
+  .map((metricKey) => {
+    const config = PLAYER_LEADERBOARD_METRICS[metricKey];
+    const label = config?.shortLabel ?? metricKey.toUpperCase();
+    return `<option value="${metricKey}">${label}</option>`;
+  })
+  .join("");
+
+const isMetric = (value: string): value is Metric =>
+  Object.prototype.hasOwnProperty.call(PLAYER_LEADERBOARD_METRICS, value);
+
+const DEFAULT_METRIC: Metric = (isMetric("ppg") ? "ppg" : METRIC_KEYS[0]) ?? "ppg";
 
 const COLOR_MODE_LABELS: Record<ColorMode, string> = {
   value: "Color shows average using a sequential ramp.",
@@ -44,11 +57,7 @@ app.innerHTML = `
         <div class="leaderboard-panel__controls">
           <label class="leaderboard-panel__control">
             <span>Metric</span>
-            <select id="metricSel">
-              <option value="ppg">PPG</option>
-              <option value="rpg">RPG</option>
-              <option value="apg">APG</option>
-            </select>
+            <select id="metricSel">${METRIC_OPTIONS_HTML}</select>
           </label>
           <label class="leaderboard-panel__control">
             <span>Color</span>
@@ -80,14 +89,49 @@ const conferenceDirectory = document.getElementById("players-conference-director
 const conferenceMeta = document.getElementById("players-conference-meta");
 
 function updateMeta(state: LeaderboardState): void {
+  const config = PLAYER_LEADERBOARD_METRICS[state.metric];
   if (leaderboardTitle) {
-    leaderboardTitle.textContent = `Top 50 ${METRIC_LABELS[state.metric]} leaders`;
+    const label = config?.label ?? state.metric.toUpperCase();
+    leaderboardTitle.textContent = `Top 50 ${label} leaders`;
   }
 
   if (leaderboardMeta) {
-    const domain = METRIC_DOMAINS[state.metric];
-    leaderboardMeta.textContent = `Sorted by rank · Range ${domain[0]}–${domain[1]} ${state.metric.toUpperCase()} · ${COLOR_MODE_LABELS[state.colorMode]}`;
+    const domain = METRIC_DOMAINS[state.metric] ?? config?.defaultDomain ?? [0, 1];
+    const [domainMin, domainMax] = domain;
+    const formatRange = (value: number) => {
+      const formatted = formatMetricValue(state.metric, value);
+      if (formatted) return formatted;
+      if (Number.isFinite(value)) {
+        return Number(value).toFixed(1);
+      }
+      return "--";
+    };
+    const shortLabel = config?.shortLabel ?? state.metric.toUpperCase();
+    leaderboardMeta.textContent =
+      `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${COLOR_MODE_LABELS[state.colorMode]}`;
   }
+}
+
+function refreshMetricDomains(rows: PlayerLeaderboardRow[]): void {
+  METRIC_KEYS.forEach((metric) => {
+    const config = PLAYER_LEADERBOARD_METRICS[metric];
+    const defaultDomain = config?.defaultDomain ?? [0, 1];
+    const values = rows
+      .map((row) => row[metric])
+      .filter((value): value is number => Number.isFinite(value));
+
+    if (!values.length) {
+      return;
+    }
+
+    const maxValue = Math.max(...values);
+    const minValue = Math.min(...values);
+    const start = Math.min(0, minValue);
+    const candidateEnd = Math.max(start, maxValue);
+    const end = candidateEnd > start ? candidateEnd : defaultDomain[1];
+
+    setMetricDomain(metric, [start, end]);
+  });
 }
 
 function mountLeaderboard(state: LeaderboardState): void {
@@ -107,9 +151,9 @@ function wireControls(state: LeaderboardState): void {
   if (metricSelect) {
     metricSelect.value = state.metric;
     metricSelect.addEventListener("change", () => {
-      const next = metricSelect.value as Metric;
-      if (!METRIC_DOMAINS[next]) return;
-      state.metric = next;
+      const nextValue = metricSelect.value;
+      if (!isMetric(nextValue)) return;
+      state.metric = nextValue;
       mountLeaderboard(state);
     });
   } else {
@@ -139,11 +183,12 @@ async function boot(): Promise<void> {
     ]);
 
     const state: LeaderboardState = {
-      metric: "ppg",
+      metric: DEFAULT_METRIC,
       colorMode: "value",
       data: getPlayersLeaderboard(),
     };
 
+    refreshMetricDomains(state.data);
     wireControls(state);
     mountLeaderboard(state);
   } catch (error) {

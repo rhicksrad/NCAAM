@@ -1,4 +1,10 @@
 import { requireOk } from "../health.js";
+import {
+  PLAYER_LEADERBOARD_METRICS,
+  PLAYER_LEADERBOARD_METRIC_KEYS,
+  transformMetricValue,
+  type PlayerLeaderboardMetricKey,
+} from "./leaderboard-metrics.js";
 
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 
@@ -42,29 +48,6 @@ export const PLAYER_DATA_PATHS = {
   index: "data/players_index.json",
   playerStats: (slug: string) => `data/players/${slug}.json`,
 } as const;
-
-export type LeaderboardMetricId =
-  | "points"
-  | "rebounds"
-  | "assists"
-  | "stocks"
-  | "fgPct"
-  | "fg3Pct"
-  | "ftPct"
-  | "mp"
-  | "turnovers";
-
-export const DEFAULT_METRIC_ORDER: LeaderboardMetricId[] = [
-  "points",
-  "rebounds",
-  "assists",
-  "stocks",
-  "fgPct",
-  "fg3Pct",
-  "ftPct",
-  "mp",
-  "turnovers",
-];
 
 export type PlayerLeaderboardEntry = {
   name: string;
@@ -147,31 +130,39 @@ export async function loadLeaderboardDocument(): Promise<PlayerLeaderboardDocume
 export type PlayerLeaderboardRow = {
   name: string;
   team: string;
-  ppg: number;
-  rpg: number;
-  apg: number;
-  rank_ppg: number;
-  rank_rpg: number;
-  rank_apg: number;
+} & {
+  [K in PlayerLeaderboardMetricKey]: number;
+} & {
+  [K in PlayerLeaderboardMetricKey as `rank_${K}`]: number;
 };
-
-const PLAYER_METRIC_FIELDS = {
-  ppg: { metricId: "points", valueKey: "ppg" as const, rankKey: "rank_ppg" as const },
-  rpg: { metricId: "rebounds", valueKey: "rpg" as const, rankKey: "rank_rpg" as const },
-  apg: { metricId: "assists", valueKey: "apg" as const, rankKey: "rank_apg" as const },
-} as const;
-
-type PlayerMetricField = keyof typeof PLAYER_METRIC_FIELDS;
 
 let leaderboardRows: PlayerLeaderboardRow[] | null = null;
 let leaderboardLoad: Promise<PlayerLeaderboardRow[]> | null = null;
 
+const METRIC_KEYS: readonly PlayerLeaderboardMetricKey[] =
+  PLAYER_LEADERBOARD_METRIC_KEYS;
+
+function createEmptyLeaderboardRow(
+  name: string,
+  team: string,
+): PlayerLeaderboardRow {
+  const row = { name, team } as PlayerLeaderboardRow;
+  const record = row as unknown as Record<string, number>;
+
+  METRIC_KEYS.forEach((metric) => {
+    record[metric] = Number.NaN;
+    record[`rank_${metric}`] = Number.POSITIVE_INFINITY;
+  });
+
+  return row;
+}
+
 function buildLeaderboardRows(document: PlayerLeaderboardDocument): PlayerLeaderboardRow[] {
   const rows = new Map<string, PlayerLeaderboardRow>();
 
-  (Object.keys(PLAYER_METRIC_FIELDS) as PlayerMetricField[]).forEach((field) => {
-    const { metricId, valueKey, rankKey } = PLAYER_METRIC_FIELDS[field];
-    const metric = document.metrics?.[metricId];
+  METRIC_KEYS.forEach((field) => {
+    const config = PLAYER_LEADERBOARD_METRICS[field];
+    const metric = document.metrics?.[config.metricId];
     if (!metric) return;
 
     (metric.leaders ?? [])
@@ -180,21 +171,13 @@ function buildLeaderboardRows(document: PlayerLeaderboardDocument): PlayerLeader
         const key = leader.slug || `${leader.name}|${leader.team}`;
         let row = rows.get(key);
         if (!row) {
-          row = {
-            name: leader.name,
-            team: leader.team,
-            ppg: Number.NaN,
-            rpg: Number.NaN,
-            apg: Number.NaN,
-            rank_ppg: Number.POSITIVE_INFINITY,
-            rank_rpg: Number.POSITIVE_INFINITY,
-            rank_apg: Number.POSITIVE_INFINITY,
-          } satisfies PlayerLeaderboardRow;
+          row = createEmptyLeaderboardRow(leader.name, leader.team);
           rows.set(key, row);
         }
 
-        row[valueKey] = leader.value;
-        row[rankKey] = index + 1;
+        const record = row as unknown as Record<string, number>;
+        record[field] = transformMetricValue(field, leader.value);
+        record[`rank_${field}`] = index + 1;
       });
   });
 

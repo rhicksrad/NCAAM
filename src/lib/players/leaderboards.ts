@@ -1,11 +1,6 @@
+import { formatNumber } from "../charts/theme.js";
+import { DEFAULT_METRIC_ORDER, type LeaderboardMetricId } from "./leaderboard-metrics.js";
 import {
-  createSkeletonCard,
-  renderLeaderboardCards,
-  type LeaderboardCardDefinition,
-} from "../leaderboards/render.js";
-import {
-  DEFAULT_METRIC_ORDER,
-  type LeaderboardMetricId,
   type PlayerLeaderboardDocument,
   loadLeaderboardDocument,
 } from "./data.js";
