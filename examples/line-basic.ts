@@ -2,8 +2,7 @@
  * Basic line and area chart example with keyboard-focusable points.
  */
 
-import { extent } from "d3-array";
-import { select } from "d3-selection";
+import { extent, select } from "d3";
 import { buildScales, drawAxes, drawGrid, drawLegend } from "../src/lib/charts/axes";
 import { computeInnerSize, createSVG } from "../src/lib/charts/frame";
 import { renderArea } from "../src/lib/charts/series/area";

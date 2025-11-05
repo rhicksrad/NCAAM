@@ -3,12 +3,22 @@
  * @module charts/axes
  */
 
-import { axisBottom, axisLeft } from "d3-axis";
-import type { AxisDomain } from "d3-axis";
-import { extent } from "d3-array";
-import { scaleBand, scaleLinear, scalePoint, scaleTime, ScaleBand, ScaleLinear, ScalePoint, ScaleTime } from "d3-scale";
-import { select } from "d3-selection";
-import type { Selection } from "d3-selection";
+import {
+  axisBottom,
+  axisLeft,
+  extent,
+  scaleBand,
+  scaleLinear,
+  scalePoint,
+  scaleTime,
+  select,
+  type AxisDomain,
+  type ScaleBand,
+  type ScaleLinear,
+  type ScalePoint,
+  type ScaleTime,
+  type Selection
+} from "d3";
 import { pixelAlign } from "./frame.js";
 import { ChartTheme, defaultTheme, formatDate, formatNumber } from "./theme.js";
 

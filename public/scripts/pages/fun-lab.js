@@ -1,18 +1,10 @@
-import { axisBottom } from "d3-axis";
-import { format as d3Format } from "d3-format";
-import { scaleBand, scaleLinear } from "d3-scale";
-import { select } from "d3-selection";
-import * as d3Shape from "d3-shape";
-import { createChartContainer } from "../lib/charts/container.js";
-import { setChartDefaults } from "../lib/charts/defaults.js";
+import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../vendor/d3-bundle.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
 const DATA_URL = "/data/fun-lab/mascot-index.json";
 const CATS_DOGS_DATA_URL = "/data/fun-lab/cats-vs-dogs.json";
 const numberFormatter = new Intl.NumberFormat("en-US");
 const percentFormatter = d3Format(".1%");
-const d3Arc = d3Shape.arc;
-const d3Pie = d3Shape.pie;
 const app = document.getElementById("app");
 if (!app) {
     throw new Error("Fun Lab requires an #app container");
