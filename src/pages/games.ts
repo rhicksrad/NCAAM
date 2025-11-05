@@ -159,7 +159,11 @@ function describeStatus(game: Game): StatusDescriptor {
     return { label: "Scheduled" };
   }
 
-  if (/^(live|inprogress)$/.test(compact) || compact.includes("live")) {
+  if (
+    /^(live|inprogress)$/.test(compact) ||
+    compact.includes("live") ||
+    normalized === "in"
+  ) {
     const detail = [formatPeriod(game.period), extractClock(game)]
       .filter(Boolean)
       .join(" • ");
@@ -230,10 +234,14 @@ function buildPlaySummary(game: Game, plays: PlayByPlayEvent[]): PlaySummary | n
   };
 }
 
-function buildLastPlayText(summary: PlaySummary | null, fallbackMessage?: string): string {
+function buildLastPlayText(
+  summary: PlaySummary | null,
+  fallbackMessage?: string,
+  includeScoreboard: boolean = true,
+): string {
   if (summary) {
     const segments = [summary.description];
-    if (summary.scoreboard) {
+    if (includeScoreboard && summary.scoreboard) {
       segments.push(summary.scoreboard);
     }
     return segments.join(" • ");
@@ -302,6 +310,25 @@ function extractClock(game: Game): string | null {
   return null;
 }
 
+function parseProgressLabel(
+  label: string | null | undefined,
+): { period: string | null; clock: string | null } {
+  if (!label) {
+    return { period: null, clock: null };
+  }
+  const segments = label
+    .split("•")
+    .map(segment => segment.trim())
+    .filter(Boolean);
+  if (segments.length === 0) {
+    return { period: null, clock: null };
+  }
+  if (segments.length === 1) {
+    return { period: segments[0], clock: null };
+  }
+  return { period: segments[0], clock: segments.slice(1).join(" • ") };
+}
+
 function renderTeamLogo(team: Game["home_team"], label: string): string {
   const logoUrl = getTeamLogoUrl(team);
   if (logoUrl) {
@@ -350,15 +377,27 @@ function renderGameCard(game: Game): string {
   const hasScores = isFiniteScore(homeScore) && isFiniteScore(awayScore);
   const homeLeading = hasScores && Number(homeScore) > Number(awayScore);
   const awayLeading = hasScores && Number(awayScore) > Number(homeScore);
-  const statusDetail = status.detail ? `<span class="game-card__status">${escapeHtml(status.detail)}</span>` : "";
+  const statusDetail = !isLive && status.detail
+    ? `<span class="game-card__status" data-role="game-status-detail">${escapeHtml(status.detail)}</span>`
+    : "";
   const badge = status.label
     ? `<span class="badge"${status.variant ? ` data-variant="${escapeAttr(status.variant)}"` : ""}>${escapeHtml(status.label)}</span>`
     : "";
 
   const initialClock = status.detail ?? status.label ?? "—";
   const safeInitialClock = escapeHtml(initialClock || "—");
+  const progressDetail = parseProgressLabel(status.detail ?? null);
+  const initialPeriod = formatPeriod(game.period) ?? progressDetail.period ?? "";
+  const initialClockRemaining = extractClock(game) ?? progressDetail.clock ?? "";
+  const safeInitialPeriod = escapeHtml(initialPeriod || (isLive ? status.label ?? "Live" : ""));
+  const safeInitialClockRemaining = escapeHtml(initialClockRemaining || (isLive ? "—" : ""));
+  const safeGameState = escapeAttr(isLive ? "live" : "default");
   const safeGameId = escapeAttr(String(game.id));
-  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time" data-role="game-meta" data-default-meta="${defaultMeta}" data-live-placeholder="${escapeAttr(LAST_PLAY_PLACEHOLDER)}">${initialMeta}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
+  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-state="${safeGameState}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><div class="game-card__progress" data-role="game-progress"${
+    isLive ? "" : " hidden"
+  }><span class="game-card__progress-period" data-role="game-progress-period">${safeInitialPeriod}</span><span class="game-card__progress-clock" data-role="game-progress-clock">${safeInitialClockRemaining}</span></div><span class="game-card__time" data-role="game-meta" data-default-meta="${defaultMeta}" data-live-placeholder="${escapeAttr(
+    LAST_PLAY_PLACEHOLDER,
+  )}">${initialMeta}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
     game.visitor_team,
     awayScore,
     false,
@@ -471,12 +510,38 @@ function updateGameCardSummary(
   if (!card) {
     return;
   }
+  const progressEl = card.querySelector<HTMLElement>('[data-role="game-progress"]');
+  const periodEl = card.querySelector<HTMLElement>('[data-role="game-progress-period"]');
+  const clockProgressEl = card.querySelector<HTMLElement>('[data-role="game-progress-clock"]');
   const metaEl = card.querySelector<HTMLElement>('[data-role="game-meta"]');
   const clockEl = card.querySelector<HTMLElement>('[data-role="game-clock"]');
   const playEl = card.querySelector<HTMLElement>('[data-role="game-last-play"]');
   const playContainer = card.querySelector<HTMLElement>('[data-role="game-last-play-container"]');
   const isLive = isLiveStatus(status);
+  card.setAttribute("data-game-state", isLive ? "live" : "default");
   const metaDefault = metaEl?.getAttribute("data-default-meta") ?? null;
+  if (progressEl) {
+    if (isLive) {
+      progressEl.removeAttribute("hidden");
+      const progress = parseProgressLabel(summary?.clockLabel ?? status.detail ?? null);
+      const periodText = progress.period ?? formatPeriod(game.period) ?? status.label ?? "Live";
+      const clockText = progress.clock ?? extractClock(game) ?? "";
+      if (periodEl) {
+        periodEl.textContent = periodText || "Live";
+      }
+      if (clockProgressEl) {
+        clockProgressEl.textContent = clockText || "—";
+      }
+    } else {
+      progressEl.setAttribute("hidden", "");
+      if (periodEl) {
+        periodEl.textContent = "";
+      }
+      if (clockProgressEl) {
+        clockProgressEl.textContent = "";
+      }
+    }
+  }
   if (clockEl) {
     const clockText = summary?.clockLabel ?? status.detail ?? status.label ?? "—";
     clockEl.textContent = clockText || "—";
@@ -484,7 +549,7 @@ function updateGameCardSummary(
   if (metaEl) {
     if (isLive) {
       const fallback = summary ? undefined : fallbackMessage ?? metaEl.getAttribute("data-live-placeholder") ?? undefined;
-      metaEl.textContent = buildLastPlayText(summary, fallback);
+      metaEl.textContent = buildLastPlayText(summary, fallback, false);
     } else if (metaDefault) {
       metaEl.textContent = metaDefault;
     }
@@ -493,7 +558,7 @@ function updateGameCardSummary(
     playEl.textContent = buildLastPlayText(summary, fallbackMessage);
   }
   if (playContainer) {
-    if (isLive && summary) {
+    if (isLive) {
       playContainer.setAttribute("hidden", "");
     } else {
       playContainer.removeAttribute("hidden");
