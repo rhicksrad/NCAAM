@@ -69,14 +69,17 @@ export async function renderLeaderboardFeature(grid, meta, title) {
         const orderedIds = buildMetricOrder(metrics);
         const displaySeasonLabel = resolveLeaderboardSeasonLabel(document);
         if (title) {
-            title.textContent = `Top 10 stat leaders (${displaySeasonLabel})`;
+            title.textContent = `Top 50 stat leaders (${displaySeasonLabel})`;
         }
         if (meta) {
             const updated = new Date(document.generatedAt);
             const updatedText = Number.isNaN(updated.valueOf())
                 ? "Recently updated"
                 : `Updated ${updated.toLocaleDateString()}`;
-            meta.textContent = `${updatedText} · Stats aggregated from ${displaySeasonLabel}.`;
+            const seasonYearDetail = document.seasonYear
+                ? `${displaySeasonLabel} (season year ${document.seasonYear})`
+                : displaySeasonLabel;
+            meta.textContent = `${updatedText} · Stats aggregated from ${seasonYearDetail}.`;
         }
         grid.innerHTML = "";
         if (!orderedIds.length) {
@@ -116,7 +119,7 @@ function createLeaderboardCard(metricId, metric, orderIndex, seasonLabel) {
     const toneClass = CARD_TONE_CLASSES[orderIndex % CARD_TONE_CLASSES.length];
     card.classList.add(toneClass);
     const chartId = `metric-chart-${metricId}`;
-    const description = `${metric.label} leaders for ${seasonLabel}`;
+    const description = `Top 50 ${metric.label} leaders for ${seasonLabel}`;
     card.innerHTML = `
     <header class="stat-card__head">
       <h3 class="stat-card__title">${metric.label}</h3>
@@ -138,7 +141,7 @@ function createLeaderboardCard(metricId, metric, orderIndex, seasonLabel) {
     return card;
 }
 function renderMetricChart(container, metric) {
-    const leaders = (metric.leaders ?? []).slice(0, 10);
+    const leaders = (metric.leaders ?? []).slice(0, 50);
     if (!leaders.length) {
         container.innerHTML = `<p class="stat-card__empty">No data available.</p>`;
         return;

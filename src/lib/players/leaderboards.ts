@@ -67,7 +67,7 @@ export async function renderLeaderboardFeature(
     const displaySeasonLabel = resolveLeaderboardSeasonLabel(document);
 
     if (title) {
-      title.textContent = `Top 10 stat leaders (${displaySeasonLabel})`;
+      title.textContent = `Top 50 stat leaders (${displaySeasonLabel})`;
     }
 
     if (meta) {
@@ -75,7 +75,10 @@ export async function renderLeaderboardFeature(
       const updatedText = Number.isNaN(updated.valueOf())
         ? "Recently updated"
         : `Updated ${updated.toLocaleDateString()}`;
-      meta.textContent = `${updatedText} · Stats aggregated from ${displaySeasonLabel}.`;
+      const seasonYearDetail = document.seasonYear
+        ? `${displaySeasonLabel} (season year ${document.seasonYear})`
+        : displaySeasonLabel;
+      meta.textContent = `${updatedText} · Stats aggregated from ${seasonYearDetail}.`;
     }
 
     grid.innerHTML = "";
@@ -100,7 +103,7 @@ export async function renderLeaderboardFeature(
         id: String(id),
         title: metric.label,
         seasonLabel: displaySeasonLabel,
-        ariaLabel: `${metric.label} leaders for ${displaySeasonLabel}`,
+        ariaLabel: `Top 50 ${metric.label} leaders for ${displaySeasonLabel}`,
         axisLabel: metric.label,
         leaders,
       });
@@ -114,7 +117,7 @@ export async function renderLeaderboardFeature(
     renderLeaderboardCards(grid, cards, {
       defaultSeasonLabel: displaySeasonLabel,
       axisTickCount: 6,
-      limit: 10,
+      limit: 50,
     });
   } catch (error) {
     console.error(error);
