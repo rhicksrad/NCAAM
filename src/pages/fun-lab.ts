@@ -5,18 +5,17 @@ import {
   pie as d3Pie,
   scaleBand,
   scaleLinear,
-  select,
-  type PieArcDatum,
-  type Selection
-} from "d3";
+  select
+} from "../lib/vendor/d3-bundle.js";
+import type { PieArcDatum, Selection } from "d3";
 
 import { createChartContainer, type ChartContainerHandle } from "../lib/charts/container.js";
 import { setChartDefaults } from "../lib/charts/defaults.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
 
-const DATA_URL = "/data/fun-lab/mascot-index.json";
-const CATS_DOGS_DATA_URL = "/data/fun-lab/cats-vs-dogs.json";
+const DATA_URL = "data/fun-lab/mascot-index.json";
+const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
 
 interface MascotIndexRecord {
   id: number;
@@ -609,8 +608,13 @@ function renderChart(
   return {
     colorByCategory,
     setActiveCategory: (slug: string | null) => {
-      activeSlug = slug;
-      applyActiveState();
+      arcs.each(function (this: SVGPathElement, d: PieArcDatum<MascotCategorySummary>) {
+        const element = this;
+        const isActive = slug !== null && d.data.slug === slug;
+        const isDimmed = slug !== null && d.data.slug !== slug;
+        element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
+        element.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
     },
     onArcToggle: (callback: (slug: string) => void) => {
       arcToggleHandler = callback;

@@ -1,4 +1,4 @@
-import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../vendor/d3-bundle.js";
+import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
 const DATA_URL = "/data/fun-lab/mascot-index.json";

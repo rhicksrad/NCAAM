@@ -3,7 +3,8 @@
  * @module charts/series/bar
  */
 
-import { select, type Selection } from "d3";
+import { select } from "../../vendor/d3-bundle.js";
+import type { Selection } from "d3";
 import type { BuiltScales } from "../axes.js";
 import { ChartTheme, defaultTheme } from "../theme.js";
 
