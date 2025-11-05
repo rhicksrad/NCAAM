@@ -90,6 +90,13 @@ type TeamCardData = Team & {
   stats?: TeamSummary;
 };
 
+type MapFocusOptions = {
+  focusCircle?: boolean;
+  scrollIntoView?: boolean;
+};
+
+let focusTeamOnMap: ((teamId: number, options?: MapFocusOptions) => void) | null = null;
+
 const app = document.getElementById("app")!;
 
 setChartDefaults();
@@ -761,6 +768,46 @@ function render(q = "") {
 render();
 input.addEventListener("input", () => render(input.value));
 
+function resolveTeamIdFromEventTarget(target: EventTarget | null): number | null {
+  if (!(target instanceof Element)) {
+    return null;
+  }
+  const card = target.closest<HTMLElement>(".team-card[data-team-id]");
+  if (!card) {
+    return null;
+  }
+  const rawTeamId = card.dataset.teamId;
+  if (!rawTeamId) {
+    return null;
+  }
+  const teamId = Number.parseInt(rawTeamId, 10);
+  return Number.isFinite(teamId) ? teamId : null;
+}
+
+const focusMapFromInteraction = (teamId: number) => {
+  focusTeamOnMap?.(teamId, { focusCircle: true, scrollIntoView: true });
+};
+
+list.addEventListener("click", event => {
+  const teamId = resolveTeamIdFromEventTarget(event.target);
+  if (teamId == null) {
+    return;
+  }
+  focusMapFromInteraction(teamId);
+});
+
+list.addEventListener("keydown", event => {
+  if (event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+  const teamId = resolveTeamIdFromEventTarget(event.target);
+  if (teamId == null) {
+    return;
+  }
+  event.preventDefault();
+  focusMapFromInteraction(teamId);
+});
+
 function ensureCard(teamId: number) {
   let card = list.querySelector<HTMLElement>(`.team-card[data-team-id="${teamId}"]`);
   if (card || !input.value) {
@@ -797,6 +844,8 @@ function openTeamCard(teamId: number, { focus }: { focus?: boolean } = {}) {
 }
 
 async function renderMap(teams: TeamCardData[]) {
+  focusTeamOnMap = null;
+
   if (!mapRoot || teams.length === 0) {
     return;
   }
@@ -911,9 +960,26 @@ async function renderMap(teams: TeamCardData[]) {
 
   const points = svg.append("g");
 
-  const hideTooltip = () => {
+  const teamLookup = new Map<number, TeamCardData>(teams.map(team => [team.id, team]));
+  const circleIndex = new Map<number, SVGCircleElement>();
+  let activeCircle: SVGCircleElement | null = null;
+
+  const resetActiveCircle = () => {
+    if (activeCircle) {
+      activeCircle.classList.remove("is-hovered");
+      activeCircle = null;
+    }
     tooltip.hidden = true;
     activeTooltipTeamId = null;
+  };
+
+  const activateCircle = (circle: SVGCircleElement, team: TeamCardData) => {
+    if (activeCircle && activeCircle !== circle) {
+      activeCircle.classList.remove("is-hovered");
+    }
+    activeCircle = circle;
+    circle.classList.add("is-hovered");
+    showTooltip(circle, team);
   };
 
   points.selectAll("circle")
@@ -933,6 +999,7 @@ async function renderMap(teams: TeamCardData[]) {
         (this as SVGCircleElement).style.display = "none";
         return;
       }
+      circleIndex.set(team.id, this as SVGCircleElement);
       select(this)
         .attr("cx", coords[0])
         .attr("cy", coords[1])
@@ -944,29 +1011,33 @@ async function renderMap(teams: TeamCardData[]) {
       if (!team.location) {
         return;
       }
-      (this as SVGCircleElement).classList.add("is-hovered");
-      showTooltip(this as SVGCircleElement, team);
+      activateCircle(this as SVGCircleElement, team);
     })
     .on("pointermove", function (this: SVGCircleElement, event: PointerEvent, team: TeamCardData) {
-      if (!team.location || tooltip.hidden) {
+      if (!team.location || tooltip.hidden || activeCircle !== this) {
         return;
       }
       positionTooltip(this as SVGCircleElement);
     })
     .on("pointerleave", function (this: SVGCircleElement) {
-      (this as SVGCircleElement).classList.remove("is-hovered");
-      hideTooltip();
+      if (activeCircle === this) {
+        resetActiveCircle();
+      } else {
+        (this as SVGCircleElement).classList.remove("is-hovered");
+      }
     })
     .on("focus", function (this: SVGCircleElement, event: FocusEvent, team: TeamCardData) {
       if (!team.location) {
         return;
       }
-      (this as SVGCircleElement).classList.add("is-hovered");
-      showTooltip(this as SVGCircleElement, team);
+      activateCircle(this as SVGCircleElement, team);
     })
     .on("blur", function (this: SVGCircleElement) {
-      (this as SVGCircleElement).classList.remove("is-hovered");
-      hideTooltip();
+      if (activeCircle === this) {
+        resetActiveCircle();
+      } else {
+        (this as SVGCircleElement).classList.remove("is-hovered");
+      }
     })
     .on("click", function (this: SVGCircleElement, event: MouseEvent, team: TeamCardData) {
       event.preventDefault();
@@ -978,9 +1049,30 @@ async function renderMap(teams: TeamCardData[]) {
         openTeamCard(team.id, { focus: true });
       }
     });
+
+  focusTeamOnMap = (teamId: number, { focusCircle = false, scrollIntoView = true }: MapFocusOptions = {}) => {
+    const circle = circleIndex.get(teamId);
+    const team = teamLookup.get(teamId);
+    if (!circle || !team?.location) {
+      return;
+    }
+    activateCircle(circle, team);
+    if (scrollIntoView) {
+      mapRoot.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    if (focusCircle) {
+      circle.focus({ preventScroll: true });
+    }
+    window.requestAnimationFrame(() => {
+      if (activeCircle === circle) {
+        positionTooltip(circle);
+      }
+    });
+  };
 }
 
 renderMap(teamsWithLocations).catch(() => {
+  focusTeamOnMap = null;
   if (mapRoot) {
     mapRoot.innerHTML = `<p class="teams-map__fallback">Interactive map unavailable right now.</p>`;
   }

@@ -856,6 +856,18 @@ export const NCAA_LOGOS: readonly LogoEntry[] = [
     "path": "data/logos/80.png"
   },
   {
+    "name": "Chicago State Cougars",
+    "slug": "chicago-state-cougars",
+    "tokens": [
+      "chicago",
+      "state",
+      "cougars",
+      "chst",
+      "chist"
+    ],
+    "path": "data/logos/2130.png"
+  },
+  {
     "name": "Chowan Hawks",
     "slug": "chowan-hawks",
     "tokens": [
