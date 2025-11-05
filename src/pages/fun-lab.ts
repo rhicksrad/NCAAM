@@ -17,6 +17,7 @@ import { requireOk } from "../lib/health.js";
 
 const DATA_URL = new URL("../../data/fun-lab/mascot-index.json", import.meta.url).toString();
 const CATS_DOGS_DATA_URL = new URL("../../data/fun-lab/cats-vs-dogs.json", import.meta.url).toString();
+const ARENA_DATA_URL = new URL("../../venue_grouping_report.csv", import.meta.url).toString();
 
 interface MascotIndexRecord {
   id: number;
@@ -35,12 +36,15 @@ interface MascotIndexRecord {
   family_label: string;
 }
 
-interface MascotCategorySummary {
+interface ChartCategorySummary {
   slug: string;
   label: string;
+  count: number;
+}
+
+interface MascotCategorySummary extends ChartCategorySummary {
   family: string;
   family_label: string;
-  count: number;
 }
 
 interface MascotFamilySummary {
@@ -104,6 +108,32 @@ interface CatsDogsChartBar {
   label: string;
   total: number;
   segments: CatsDogsChartSegment[];
+}
+
+interface ArenaGroupSummary {
+  slug: string;
+  label: string;
+  count: number;
+}
+
+interface ArenaRecord {
+  team: string;
+  venue: string;
+  groupSlug: string;
+  groupLabel: string;
+}
+
+interface ArenaIndexPayload {
+  totalPrograms: number;
+  groups: ArenaGroupSummary[];
+  records: ArenaRecord[];
+}
+
+interface ArenaFeatureContext {
+  summary: HTMLElement;
+  chart: HTMLElement;
+  table: HTMLTableElement;
+  handle: ChartContainerHandle;
 }
 
 interface ChartControls {
@@ -198,6 +228,29 @@ app.innerHTML = `
       </div>
       <p id="cats-dogs-footnote" class="fun-lab__showdown-footnote"></p>
     </section>
+    <section class="card stack fun-lab__arena" data-gap="lg">
+      <header class="stack" data-gap="xs">
+        <h2 class="section-title">Arena name type index</h2>
+        <p id="arena-type-summary" class="section-summary">Parsing home-court name trends…</p>
+      </header>
+      <div class="fun-lab__feature-grid">
+        <article class="viz-card fun-lab__chart-card">
+          <div id="arena-type-chart" class="fun-lab__chart-surface viz-canvas" role="presentation"></div>
+        </article>
+        <div class="table-shell fun-lab__table-shell">
+          <table id="arena-type-table" aria-label="Division I arena name type index">
+            <thead>
+              <tr>
+                <th scope="col">Program</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </div>
 `;
 
@@ -212,9 +265,13 @@ const catsDogsChartEl = document.getElementById("cats-dogs-chart") as HTMLElemen
 const catsDogsLeaderboardEl = document.getElementById("cats-dogs-leaderboard") as HTMLOListElement | null;
 const catsDogsCrownEl = document.getElementById("cats-dogs-crown") as HTMLElement | null;
 const catsDogsFootnoteEl = document.getElementById("cats-dogs-footnote") as HTMLElement | null;
+const arenaSummaryEl = document.getElementById("arena-type-summary") as HTMLElement | null;
+const arenaChartEl = document.getElementById("arena-type-chart") as HTMLElement | null;
+const arenaTableEl = document.getElementById("arena-type-table") as HTMLTableElement | null;
 
 const chartHandle = chartRoot ? createChartContainer(chartRoot, { ratio: 0.82 }) : null;
 const catsDogsHandle = catsDogsChartEl ? createChartContainer(catsDogsChartEl, { ratio: 0.68 }) : null;
+const arenaHandle = arenaChartEl ? createChartContainer(arenaChartEl, { ratio: 0.82 }) : null;
 const expandedGroups = new Set<string>();
 
 function formatPercent(value: number): string {
@@ -248,6 +305,60 @@ function readBarRadius(element: HTMLElement): number {
   return Number.isFinite(value) ? value : 8;
 }
 
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let cell = "";
+  let isQuoted = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    if (char === "\"") {
+      const next = text[index + 1];
+      if (isQuoted && next === "\"") {
+        cell += "\"";
+        index += 1;
+      } else {
+        isQuoted = !isQuoted;
+      }
+    } else if (char === "," && !isQuoted) {
+      row.push(cell);
+      cell = "";
+    } else if ((char === "\n" || char === "\r") && !isQuoted) {
+      row.push(cell);
+      rows.push(row);
+      row = [];
+      cell = "";
+      while (index + 1 < text.length && (text[index + 1] === "\n" || text[index + 1] === "\r")) {
+        index += 1;
+      }
+    } else {
+      cell += char;
+    }
+  }
+
+  if (cell.length > 0 || row.length > 0) {
+    row.push(cell);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+function slugify(value: string, fallback = "other"): string {
+  const normalized = value.trim().toLowerCase();
+  const slug = normalized.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return slug || fallback;
+}
+
+function formatArenaLabel(value: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return "Other/Unknown";
+  }
+  return trimmed.replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
 async function fetchMascotIndex(): Promise<MascotIndexPayload> {
   const response = await requireOk(DATA_URL, "Fun Lab", {
     headers: { Accept: "application/json" },
@@ -268,6 +379,65 @@ async function fetchCatsDogsShowdowns(): Promise<CatsDogsPayload> {
     throw new Error("Cats vs dogs payload is malformed");
   }
   return payload;
+}
+
+async function fetchArenaGroupingReport(): Promise<ArenaIndexPayload> {
+  const response = await requireOk(ARENA_DATA_URL, "Fun Lab", {
+    headers: { Accept: "text/csv, text/plain" },
+  });
+  const text = await response.text();
+  const rows = parseCsv(text).filter(row => row.some(cell => cell.trim().length > 0));
+  if (rows.length === 0) {
+    return { totalPrograms: 0, groups: [], records: [] };
+  }
+
+  const [, ...dataRows] = rows;
+  const records: ArenaRecord[] = [];
+  dataRows.forEach(columns => {
+    const [teamRaw = "", venueRaw = "", groupRaw = ""] = columns;
+    const team = teamRaw.trim();
+    if (!team) {
+      return;
+    }
+    const venue = venueRaw.trim() || "Unknown venue";
+    const groupValue = groupRaw.trim() || "Other/Unknown";
+    const slug = slugify(groupValue);
+    const label = formatArenaLabel(groupValue);
+    records.push({
+      team,
+      venue,
+      groupSlug: slug,
+      groupLabel: label,
+    });
+  });
+
+  const totals = new Map<string, { label: string; count: number }>();
+  records.forEach(record => {
+    const entry = totals.get(record.groupSlug);
+    if (entry) {
+      entry.count += 1;
+      if (entry.label.length < record.groupLabel.length) {
+        entry.label = record.groupLabel;
+      }
+    } else {
+      totals.set(record.groupSlug, { label: record.groupLabel, count: 1 });
+    }
+  });
+
+  const groups = [...totals.entries()]
+    .map(([slug, value]) => ({ slug, label: value.label, count: value.count }))
+    .sort((a, b) => {
+      if (b.count === a.count) {
+        return a.label.localeCompare(b.label, "en-US");
+      }
+      return b.count - a.count;
+    });
+
+  return {
+    totalPrograms: records.length,
+    groups,
+    records,
+  };
 }
 
 function describeSummary(data: MascotIndexPayload): string {
@@ -382,6 +552,66 @@ function describeCatsDogsSummary(matchups: CatsDogsMatchup[]): string {
   return fragments.join(" ");
 }
 
+function describeArenaOverview(groups: ArenaGroupSummary[], totalPrograms: number): string {
+  if (!totalPrograms || totalPrograms <= 0 || groups.length === 0) {
+    return "No arena naming data available yet.";
+  }
+
+  const overview: string[] = [
+    `We mapped ${numberFormatter.format(totalPrograms)} Division I programs across ${groups.length} arena name types.`,
+  ];
+
+  const leader = groups[0];
+  const runnerUp = groups[1];
+  const rare = groups[groups.length - 1];
+
+  if (leader) {
+    overview.push(
+      `${leader.label} leads the board with ${numberFormatter.format(leader.count)} programs ` +
+        `(${formatPercent(leader.count / totalPrograms)}).`,
+    );
+  }
+
+  if (rare && rare !== leader) {
+    overview.push(
+      `${rare.label} is the rarest, appearing for ${numberFormatter.format(rare.count)} programs ` +
+        `(${formatPercent(rare.count / totalPrograms)}).`,
+    );
+  } else if (runnerUp) {
+    overview.push(
+      `${runnerUp.label} follows at ${numberFormatter.format(runnerUp.count)} programs ` +
+        `(${formatPercent(runnerUp.count / totalPrograms)}).`,
+    );
+  }
+
+  return overview.join(" ");
+}
+
+function describeArenaChartSummary(
+  groups: ArenaGroupSummary[],
+  totalPrograms: number,
+  activeGroup: string | null,
+): string {
+  if (!totalPrograms || totalPrograms <= 0 || groups.length === 0) {
+    return "No arena naming data available yet.";
+  }
+
+  if (activeGroup) {
+    const selected = groups.find(group => group.slug === activeGroup);
+    if (selected) {
+      const share = formatPercent(selected.count / totalPrograms);
+      return `${selected.label} programs only — ${numberFormatter.format(selected.count)} schools (${share}). Click again to reset.`;
+    }
+  }
+
+  if (groups.length >= 2) {
+    const [top, next] = groups;
+    return `${top.label} names ${formatPercent(top.count / totalPrograms)} of Division I home courts, with ${next.label} close behind at ${formatPercent(next.count / totalPrograms)}.`;
+  }
+
+  return describeArenaOverview(groups, totalPrograms);
+}
+
 function formatGeneratedAt(timestamp?: string): string {
   if (!timestamp) {
     return "Generated from the latest worker snapshot.";
@@ -429,12 +659,27 @@ function describeChartSummary(
   return "No mascot taxonomy available yet.";
 }
 
-function renderChart(
-  categories: MascotCategorySummary[],
+function renderChart<T extends ChartCategorySummary>(
+  categories: T[],
   total: number,
   chartContainer: HTMLElement,
   handle: ChartContainerHandle,
+  options: {
+    chartId?: string;
+    title?: string;
+    description?: string;
+    unitLabel?: string;
+    segmentLabel?: string;
+  } = {},
 ): ChartControls {
+  const {
+    chartId = "fun-lab-mascot-share",
+    title = "Mascot archetype share",
+    description = "Donut chart showing the share of each mascot archetype across Division I programs.",
+    unitLabel = "programs",
+    segmentLabel = "archetype",
+  } = options;
+
   const colorByCategory = new Map<string, string>();
   categories.forEach((category, index) => {
     colorByCategory.set(category.slug, resolveColor(index));
@@ -442,13 +687,13 @@ function renderChart(
 
   let activeSlug: string | null = null;
   let arcToggleHandler: ((slug: string) => void) | null = null;
-  let arcs: Selection<SVGPathElement, PieArcDatum<MascotCategorySummary>, SVGGElement, unknown> | null = null;
+  let arcs: Selection<SVGPathElement, PieArcDatum<T>, SVGGElement, unknown> | null = null;
 
   const applyActiveState = () => {
     if (!arcs) {
       return;
     }
-    arcs.each(function (d: PieArcDatum<MascotCategorySummary>) {
+    arcs.each(function (d: PieArcDatum<T>) {
       const element = this as SVGPathElement;
       const isActive = activeSlug !== null && d.data.slug === activeSlug;
       const isDimmed = activeSlug !== null && d.data.slug !== activeSlug;
@@ -464,9 +709,9 @@ function renderChart(
     const radius = Math.min(width, height) / 2;
 
     const svg = createSVG(chartContainer, width, height, {
-      title: "Mascot archetype share",
-      description: "Donut chart showing the share of each mascot archetype across Division I programs.",
-      id: "fun-lab-mascot-share",
+      title,
+      description,
+      id: chartId,
     });
 
     const group = select(svg)
@@ -475,8 +720,8 @@ function renderChart(
 
     const barRadius = readBarRadius(chartContainer);
 
-    const pie = d3Pie<MascotCategorySummary>().value((d: MascotCategorySummary) => d.count).sort(null);
-    const arc = d3Arc<MascotCategorySummary>()
+    const pie = d3Pie<T>().value((d: T) => d.count).sort(null);
+    const arc = d3Arc<T>()
       .innerRadius(radius * 0.55)
       .outerRadius(Math.max(0, radius - 12))
       .padAngle(0.012)
@@ -491,11 +736,11 @@ function renderChart(
     arcs = group
       .selectAll<SVGPathElement>("path.fun-lab__arc")
       .data(pie(categories))
-      .join("path") as Selection<SVGPathElement, PieArcDatum<MascotCategorySummary>, SVGGElement, unknown>;
+      .join("path") as Selection<SVGPathElement, PieArcDatum<T>, SVGGElement, unknown>;
 
     arcs
       .attr("class", "fun-lab__arc")
-      .attr("fill", (d: PieArcDatum<MascotCategorySummary>, index: number) => {
+      .attr("fill", (d: PieArcDatum<T>, index: number) => {
         const color = colorByCategory.get(d.data.slug);
         if (color) {
           return color;
@@ -506,26 +751,26 @@ function renderChart(
       })
       .attr("stroke", "var(--chart-bg)")
       .attr("stroke-width", "calc(var(--chart-line-width) * 1px)")
-      .attr("d", (d: PieArcDatum<MascotCategorySummary>) => arc(d) ?? "")
+      .attr("d", (d: PieArcDatum<T>) => arc(d) ?? "")
       .attr("role", "button")
       .attr("tabindex", 0)
       .attr("focusable", "true")
       .attr("aria-pressed", "false")
-      .attr("aria-label", (d: PieArcDatum<MascotCategorySummary>) => `Toggle ${d.data.label} programs`)
-      .on("click", (event: PointerEvent, d: PieArcDatum<MascotCategorySummary>) => {
+      .attr("aria-label", (d: PieArcDatum<T>) => `Toggle ${d.data.label} ${unitLabel}`)
+      .on("click", (event: PointerEvent, d: PieArcDatum<T>) => {
         event.preventDefault();
         invokeToggle(d.data.slug);
       })
-      .on("keydown", (event: KeyboardEvent, d: PieArcDatum<MascotCategorySummary>) => {
+      .on("keydown", (event: KeyboardEvent, d: PieArcDatum<T>) => {
         if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
           event.preventDefault();
           invokeToggle(d.data.slug);
         }
       });
 
-    arcs.append("title").text((d: PieArcDatum<MascotCategorySummary>) => {
+    arcs.append("title").text((d: PieArcDatum<T>) => {
       const share = formatPercent(d.data.count / total);
-      return `${d.data.label}: ${numberFormatter.format(d.data.count)} programs (${share}). Click to isolate this archetype.`;
+      return `${d.data.label}: ${numberFormatter.format(d.data.count)} ${unitLabel} (${share}). Click to isolate this ${segmentLabel}.`;
     });
 
     group
@@ -540,7 +785,7 @@ function renderChart(
       .attr("class", "fun-lab__chart-total fun-lab__chart-total--caption")
       .attr("text-anchor", "middle")
       .attr("dy", "1.1em")
-      .text("programs");
+      .text(unitLabel);
 
     applyActiveState();
   });
@@ -699,6 +944,145 @@ function renderGroupedTable(
 
     if (activeCategory === category.slug) {
       expanded.add(category.slug);
+    }
+
+    table.appendChild(body);
+  });
+}
+
+function renderArenaTable(
+  table: HTMLTableElement,
+  records: ArenaRecord[],
+  groups: ArenaGroupSummary[],
+  colorByCategory: Map<string, string>,
+  totalPrograms: number,
+  expanded: Set<string>,
+  activeGroup: string | null,
+): void {
+  while (table.tBodies.length > 0) {
+    table.removeChild(table.tBodies[0]);
+  }
+
+  const doc = table.ownerDocument ?? document;
+  const colCount = table.tHead?.rows[0]?.cells.length ?? 3;
+
+  if (records.length === 0) {
+    const body = doc.createElement("tbody");
+    body.className = "fun-lab__group fun-lab__group--empty";
+    const row = body.insertRow();
+    const cell = row.insertCell();
+    cell.colSpan = colCount;
+    cell.className = "fun-lab__cell fun-lab__cell--empty";
+    cell.textContent = "No arena naming data available yet.";
+    table.appendChild(body);
+    return;
+  }
+
+  const grouped = new Map<string, ArenaRecord[]>();
+  records.forEach(record => {
+    const bucket = grouped.get(record.groupSlug);
+    if (bucket) {
+      bucket.push(record);
+    } else {
+      grouped.set(record.groupSlug, [record]);
+    }
+  });
+
+  const order = groups.filter(group => grouped.has(group.slug));
+  if (order.length === 0) {
+    const body = doc.createElement("tbody");
+    body.className = "fun-lab__group fun-lab__group--empty";
+    const row = body.insertRow();
+    const cell = row.insertCell();
+    cell.colSpan = colCount;
+    cell.className = "fun-lab__cell fun-lab__cell--empty";
+    cell.textContent = "No arena naming data available yet.";
+    table.appendChild(body);
+    return;
+  }
+
+  order.forEach((group, index) => {
+    const recordsInGroup = grouped.get(group.slug);
+    if (!recordsInGroup || recordsInGroup.length === 0) {
+      return;
+    }
+
+    const body = doc.createElement("tbody");
+    body.className = "fun-lab__group";
+    body.dataset.category = group.slug;
+
+    const color = colorByCategory.get(group.slug) ?? resolveColor(index);
+    body.style.setProperty("--group-color", color);
+
+    const shouldExpand = activeGroup ? group.slug === activeGroup : expanded.has(group.slug);
+    body.dataset.expanded = shouldExpand ? "true" : "false";
+
+    const headerRow = body.insertRow();
+    headerRow.className = "fun-lab__group-row";
+    const headerCell = headerRow.insertCell();
+    headerCell.colSpan = colCount;
+    headerCell.className = "fun-lab__group-cell";
+
+    const toggle = doc.createElement("button");
+    toggle.type = "button";
+    toggle.className = "fun-lab__group-toggle";
+    toggle.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+
+    const icon = doc.createElement("span");
+    icon.className = "fun-lab__group-icon";
+    icon.setAttribute("aria-hidden", "true");
+    toggle.appendChild(icon);
+
+    const label = doc.createElement("span");
+    label.className = "fun-lab__group-label";
+    label.textContent = group.label;
+    toggle.appendChild(label);
+
+    const meta = doc.createElement("span");
+    meta.className = "fun-lab__group-meta";
+    const share = totalPrograms > 0 ? formatPercent(group.count / totalPrograms) : "0.0%";
+    const programWord = group.count === 1 ? "program" : "programs";
+    meta.innerHTML = `<strong>${numberFormatter.format(group.count)}</strong> ${programWord} • ${share}`;
+    toggle.appendChild(meta);
+
+    const applyExpandedState = (next: boolean) => {
+      body.dataset.expanded = next ? "true" : "false";
+      toggle.setAttribute("aria-expanded", next ? "true" : "false");
+      if (next) {
+        expanded.add(group.slug);
+      } else {
+        expanded.delete(group.slug);
+      }
+    };
+
+    toggle.addEventListener("click", event => {
+      event.preventDefault();
+      const isOpen = body.dataset.expanded === "true";
+      applyExpandedState(!isOpen);
+    });
+
+    headerCell.appendChild(toggle);
+
+    recordsInGroup.forEach(record => {
+      const row = body.insertRow();
+      row.className = "fun-lab__group-data";
+      row.dataset.category = group.slug;
+
+      const programCell = row.insertCell();
+      programCell.className = "fun-lab__cell fun-lab__cell--program";
+      programCell.textContent = record.team;
+
+      const venueCell = row.insertCell();
+      venueCell.className = "fun-lab__cell fun-lab__cell--mascot";
+      venueCell.textContent = record.venue;
+
+      const typeCell = row.insertCell();
+      typeCell.className = "fun-lab__cell fun-lab__cell--conference";
+      typeCell.textContent = record.groupLabel;
+    });
+
+    if (activeGroup === group.slug) {
+      expanded.add(group.slug);
     }
 
     table.appendChild(body);
@@ -1136,6 +1520,67 @@ function renderCatsDogsFootnote(footnote: HTMLElement, payload: CatsDogsPayload)
   footnote.textContent = lines.join(" • ");
 }
 
+async function loadArenaFeature(context: ArenaFeatureContext): Promise<void> {
+  const { summary, chart, table, handle } = context;
+  summary.textContent = "Parsing home-court name trends…";
+  chart.textContent = "Crunching arena taxonomy…";
+
+  const expanded = new Set<string>();
+  let activeGroup: string | null = null;
+
+  try {
+    const payload = await fetchArenaGroupingReport();
+    if (payload.totalPrograms <= 0 || payload.groups.length === 0 || payload.records.length === 0) {
+      summary.textContent = "No arena naming data available yet.";
+      chart.textContent = "No arena naming data available yet.";
+      renderArenaTable(table, [], [], new Map(), 0, expanded, null);
+      return;
+    }
+
+    const groups = [...payload.groups];
+    const records = [...payload.records].sort((a, b) => {
+      if (a.groupSlug === b.groupSlug) {
+        return a.team.localeCompare(b.team, "en-US");
+      }
+      return a.groupLabel.localeCompare(b.groupLabel, "en-US");
+    });
+
+    const chartControls = renderChart(groups, payload.totalPrograms, chart, handle, {
+      chartId: "fun-lab-arena-share",
+      title: "Arena name type share",
+      description: "Donut chart showing the share of arena name types across Division I programs.",
+      segmentLabel: "name type",
+    });
+
+    const applyGroupFilter = (next: string | null) => {
+      const previous = activeGroup;
+      activeGroup = next;
+      if (next) {
+        expanded.clear();
+        expanded.add(next);
+      } else if (previous) {
+        expanded.clear();
+      }
+      const filtered = next ? records.filter(record => record.groupSlug === next) : records;
+      renderArenaTable(table, filtered, groups, chartControls.colorByCategory, payload.totalPrograms, expanded, next);
+      chartControls.setActiveCategory(next);
+      summary.textContent = describeArenaChartSummary(groups, payload.totalPrograms, next);
+    };
+
+    chartControls.onArcToggle(slug => {
+      const next = activeGroup === slug ? null : slug;
+      applyGroupFilter(next);
+    });
+
+    applyGroupFilter(null);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    summary.textContent = "We couldn’t load the arena name type index.";
+    chart.textContent = `Load error: ${message}`;
+    renderArenaTable(table, [], [], new Map(), 0, expanded, null);
+  }
+}
+
 async function loadCatsDogsFeature(context: CatsDogsFeatureContext): Promise<void> {
   const { section, summary, chart, leaderboard, crown, footnote, handle } = context;
   summary.textContent = "Sizing up rivalry bragging rights…";
@@ -1202,12 +1647,15 @@ async function boot(): Promise<void> {
     !catsDogsChartEl ||
     !catsDogsLeaderboardEl ||
     !catsDogsCrownEl ||
-    !catsDogsFootnoteEl
+    !catsDogsFootnoteEl ||
+    !arenaSummaryEl ||
+    !arenaChartEl ||
+    !arenaTableEl
   ) {
     throw new Error("Fun Lab layout failed to mount");
   }
 
-  if (!chartHandle || !catsDogsHandle) {
+  if (!chartHandle || !catsDogsHandle || !arenaHandle) {
     throw new Error("Fun Lab chart containers failed to initialize");
   }
 
@@ -1223,6 +1671,10 @@ async function boot(): Promise<void> {
   const catsDogsLeaderboardNode = catsDogsLeaderboardEl;
   const catsDogsCrownNode = catsDogsCrownEl;
   const catsDogsFootnoteNode = catsDogsFootnoteEl;
+  const arenaSummaryNode = arenaSummaryEl;
+  const arenaChartNode = arenaChartEl;
+  const arenaTableNode = arenaTableEl;
+  const arenaChartHandle = arenaHandle;
 
   let activeCategory: string | null = null;
 
@@ -1285,15 +1737,23 @@ async function boot(): Promise<void> {
     cell.textContent = "No programs match this filter yet.";
   }
 
-  await loadCatsDogsFeature({
-    section: catsDogsSectionNode,
-    summary: catsDogsSummaryNode,
-    chart: catsDogsChartNode,
-    leaderboard: catsDogsLeaderboardNode,
-    crown: catsDogsCrownNode,
-    footnote: catsDogsFootnoteNode,
-    handle: catsDogsHandle,
-  });
+  await Promise.all([
+    loadCatsDogsFeature({
+      section: catsDogsSectionNode,
+      summary: catsDogsSummaryNode,
+      chart: catsDogsChartNode,
+      leaderboard: catsDogsLeaderboardNode,
+      crown: catsDogsCrownNode,
+      footnote: catsDogsFootnoteNode,
+      handle: catsDogsHandle,
+    }),
+    loadArenaFeature({
+      summary: arenaSummaryNode,
+      chart: arenaChartNode,
+      table: arenaTableNode,
+      handle: arenaChartHandle,
+    }),
+  ]);
 }
 
 void boot();
