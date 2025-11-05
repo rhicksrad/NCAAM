@@ -5,7 +5,6 @@
   grid-template-areas:
     "intro"
     "archetype"
-    "index"
     "showdown";
 }
 
@@ -17,13 +16,14 @@
   grid-area: archetype;
 }
 
-.fun-lab__index {
-  grid-area: index;
-}
-
 .fun-lab__showdown {
   grid-area: showdown;
   grid-column: 1 / -1;
+}
+
+.fun-lab__feature-grid {
+  display: grid;
+  gap: var(--space-lg);
 }
 
 .fun-lab__meta {
@@ -50,14 +50,8 @@
 }
 
 .fun-lab__chart-card {
-  inline-size: min(100%, 720px);
-  margin-inline: auto;
-}
-
-.fun-lab__chart-grid {
-  display: grid;
-  gap: var(--space-lg);
-  align-items: start;
+  inline-size: 100%;
+  margin-inline: 0;
 }
 
 .fun-lab__chart-surface {
@@ -65,91 +59,6 @@
   display: block;
 }
 
-.fun-lab__legend {
-  display: block;
-  width: 100%;
-}
-
-.fun-lab__legend-empty {
-  margin: 0;
-  padding: var(--space-md) 0;
-  text-align: center;
-  color: var(--color-muted);
-  font-size: 0.95rem;
-}
-
-.fun-lab__legend-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: var(--space-md);
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.fun-lab__legend-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-  border-radius: var(--radius-card);
-  border: 1px solid color-mix(in srgb, var(--swatch-color, var(--color-arc)) 40%, transparent);
-  background: color-mix(in srgb, var(--swatch-color, var(--color-arc)) 14%, transparent);
-  box-shadow: 0 12px 24px color-mix(in srgb, var(--swatch-color, var(--color-arc)) 10%, transparent),
-    inset 0 1px 0 color-mix(in srgb, white 45%, transparent);
-  color: color-mix(in srgb, var(--color-ink) 94%, white 6%);
-  cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base),
-    opacity var(--transition-base);
-}
-
-.fun-lab__legend-item:hover,
-.fun-lab__legend-item:focus-visible {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--swatch-color, var(--color-arc)) 65%, transparent);
-  box-shadow: 0 18px 36px color-mix(in srgb, var(--swatch-color, var(--color-arc)) 14%, transparent),
-    inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
-}
-
-.fun-lab__legend-item--active {
-  border-color: color-mix(in srgb, var(--swatch-color, var(--color-arc)) 80%, transparent);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--swatch-color, var(--color-arc)) 50%, transparent),
-    0 18px 36px color-mix(in srgb, var(--swatch-color, var(--color-arc)) 14%, transparent);
-}
-
-.fun-lab__legend-item--dimmed {
-  opacity: 0.55;
-}
-
-.fun-lab__legend-swatch {
-  inline-size: 0.9rem;
-  block-size: 0.9rem;
-  border-radius: 999px;
-  background: var(--swatch-color, var(--color-arc));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-paper) 55%, transparent);
-}
-
-.fun-lab__legend-info {
-  display: grid;
-  gap: 0.25rem;
-}
-
-.fun-lab__legend-label {
-  font-weight: 700;
-  font-size: 0.98rem;
-  letter-spacing: -0.01em;
-}
-
-.fun-lab__legend-meta {
-  font-size: 0.82rem;
-  color: var(--color-muted);
-}
-
-.fun-lab__legend-meta strong {
-  font-weight: 700;
-  color: color-mix(in srgb, var(--color-ink) 92%, white 8%);
-}
 
 .fun-lab__chart-total {
   fill: var(--chart-fg, currentColor);
@@ -545,13 +454,9 @@
 }
 
 @media (min-width: 62rem) {
-  .fun-lab__chart-card {
-    inline-size: 100%;
-    margin-inline: 0;
-  }
-
-  .fun-lab__chart-grid {
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  .fun-lab__feature-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    align-items: start;
   }
 
   .fun-lab__showdown-grid {
@@ -564,7 +469,7 @@
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     grid-template-areas:
       "intro intro"
-      "archetype index"
+      "archetype archetype"
       "showdown showdown";
     align-items: start;
   }

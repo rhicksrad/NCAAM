@@ -155,36 +155,27 @@ app.innerHTML = `
     </section>
     <section class="card stack fun-lab__archetype" data-gap="lg">
       <header class="stack" data-gap="xs">
-        <h2 class="section-title">Mascot archetype share</h2>
-        <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype shares…</p>
+        <h2 class="section-title">Mascot archetype index</h2>
+        <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype insights…</p>
       </header>
-      <div class="fun-lab__chart-grid">
+      <div class="fun-lab__feature-grid">
         <article class="viz-card fun-lab__chart-card">
           <div id="fun-lab-chart" class="fun-lab__chart-surface viz-canvas" role="presentation"></div>
         </article>
-        <div id="fun-lab-legend" class="fun-lab__legend" aria-live="polite">
-          <p class="fun-lab__legend-empty">Crunching archetype tiles…</p>
+        <div class="table-shell fun-lab__table-shell">
+          <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
+            <thead>
+              <tr>
+                <th scope="col">Program</th>
+                <th scope="col">Mascot</th>
+                <th scope="col">Category</th>
+                <th scope="col">Family</th>
+                <th scope="col">Conference</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-      </div>
-    </section>
-    <section class="card stack fun-lab__index" data-gap="md">
-      <header class="stack" data-gap="xs">
-        <h2 class="section-title">Division I mascot index</h2>
-        <p class="section-summary">Sort, regroup, and remix each program’s mascot archetype for future Fun Lab experiments.</p>
-      </header>
-      <div class="table-shell fun-lab__table-shell">
-        <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
-          <thead>
-            <tr>
-              <th scope="col">Program</th>
-              <th scope="col">Mascot</th>
-              <th scope="col">Category</th>
-              <th scope="col">Family</th>
-              <th scope="col">Conference</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
       </div>
     </section>
     <section id="cats-dogs-section" class="card stack fun-lab__showdown" data-gap="md">
@@ -216,7 +207,6 @@ const summaryEl = document.getElementById("fun-lab-summary");
 const generatedEl = document.getElementById("fun-lab-generated");
 const chartSummaryEl = document.getElementById("fun-lab-chart-summary");
 const chartRoot = document.getElementById("fun-lab-chart") as HTMLElement | null;
-const legendRoot = document.getElementById("fun-lab-legend") as HTMLElement | null;
 const tableEl = document.getElementById("fun-lab-table") as HTMLTableElement | null;
 const catsDogsSection = document.getElementById("cats-dogs-section") as HTMLElement | null;
 const catsDogsSummaryEl = document.getElementById("cats-dogs-summary") as HTMLElement | null;
@@ -439,86 +429,6 @@ function describeChartSummary(
   }
 
   return "No mascot taxonomy available yet.";
-}
-
-function buildLegend(
-  root: HTMLElement,
-  categories: MascotCategorySummary[],
-  colorByCategory: Map<string, string>,
-  total: number,
-  onToggle: (slug: string) => void,
-  activeCategory: string | null,
-): void {
-  root.innerHTML = "";
-  if (categories.length === 0) {
-    const empty = root.ownerDocument?.createElement("p") ?? document.createElement("p");
-    empty.className = "fun-lab__legend-empty";
-    empty.textContent = "No mascot taxonomy available yet.";
-    root.appendChild(empty);
-    return;
-  }
-  const list = root.ownerDocument?.createElement("ul") ?? document.createElement("ul");
-  list.className = "fun-lab__legend-list";
-  list.setAttribute("role", "list");
-
-  categories.forEach((category, index) => {
-    const color = colorByCategory.get(category.slug) ?? resolveColor(index);
-    const item = root.ownerDocument?.createElement("li") ?? document.createElement("li");
-    item.className = "fun-lab__legend-item";
-    item.dataset.category = category.slug;
-    item.style.setProperty("--swatch-color", color);
-    item.setAttribute("role", "button");
-    item.tabIndex = 0;
-
-    const isActive = activeCategory === category.slug;
-    const isDimmed = activeCategory !== null && !isActive;
-    if (isActive) {
-      item.classList.add("fun-lab__legend-item--active");
-    }
-    if (isDimmed) {
-      item.classList.add("fun-lab__legend-item--dimmed");
-    }
-    item.setAttribute("aria-pressed", isActive ? "true" : "false");
-
-    const swatch = item.ownerDocument.createElement("span");
-    swatch.className = "fun-lab__legend-swatch";
-    swatch.setAttribute("aria-hidden", "true");
-    item.appendChild(swatch);
-
-    const info = item.ownerDocument.createElement("div");
-    info.className = "fun-lab__legend-info";
-
-    const label = item.ownerDocument.createElement("span");
-    label.className = "fun-lab__legend-label";
-    label.textContent = category.label;
-    info.appendChild(label);
-
-    const meta = item.ownerDocument.createElement("span");
-    meta.className = "fun-lab__legend-meta";
-    const percent = formatPercent(category.count / total);
-    meta.innerHTML = `<strong>${percent}</strong> • ${numberFormatter.format(category.count)} programs`;
-    info.appendChild(meta);
-
-    item.appendChild(info);
-
-    const handleToggle = () => {
-      onToggle(category.slug);
-    };
-    item.addEventListener("click", event => {
-      event.preventDefault();
-      handleToggle();
-    });
-    item.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
-        event.preventDefault();
-        handleToggle();
-      }
-    });
-
-    list.appendChild(item);
-  });
-
-  root.appendChild(list);
 }
 
 function renderChart(
@@ -1299,7 +1209,6 @@ async function boot(): Promise<void> {
     !summaryEl ||
     !chartSummaryEl ||
     !chartRoot ||
-    !legendRoot ||
     !tableEl ||
     !generatedEl ||
     !catsDogsSection ||
@@ -1320,7 +1229,6 @@ async function boot(): Promise<void> {
   const summaryNode = summaryEl;
   const chartSummaryNode = chartSummaryEl;
   const chartHost = chartRoot;
-  const legendHost = legendRoot;
   const tableNode = tableEl;
   const generatedNode = generatedEl;
   const catsDogsSectionNode = catsDogsSection;
@@ -1362,9 +1270,16 @@ async function boot(): Promise<void> {
         expandedGroups.clear();
       }
       const filteredRecords = next ? sortedRecords.filter(record => record.category === next) : sortedRecords;
-      renderGroupedTable(tableNode, filteredRecords, categories, chartControls.colorByCategory, data.total_programs, expandedGroups, next);
+      renderGroupedTable(
+        tableNode,
+        filteredRecords,
+        categories,
+        chartControls.colorByCategory,
+        data.total_programs,
+        expandedGroups,
+        next,
+      );
       chartControls.setActiveCategory(next);
-      buildLegend(legendHost, categories, chartControls.colorByCategory, data.total_programs, handleCategoryToggle, next);
       chartSummaryNode.textContent = describeChartSummary(categories, data.total_programs, next);
     }
 
@@ -1375,8 +1290,6 @@ async function boot(): Promise<void> {
     summaryNode.textContent = "We couldn’t load the mascot index. Try refreshing to replay the experiment.";
     chartSummaryNode.textContent = `Load error: ${message}`;
     chartHost.textContent = "No chart data";
-    legendHost.textContent = "";
-
     const body = tableNode.tBodies[0] ?? tableNode.createTBody();
     body.innerHTML = "";
     const row = body.insertRow();
