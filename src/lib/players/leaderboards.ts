@@ -193,13 +193,15 @@ function renderMetricChart(container: HTMLElement, metric: PlayerLeaderboardMetr
 
   const maxValue = Math.max(...leaders.map((leader) => leader.value));
   const safeMax = Number.isFinite(maxValue) && maxValue > 0 ? maxValue : 1;
+  const axisTickCount = 6;
+  const displayMax = computeDisplayMax(safeMax, axisTickCount - 1);
 
   leaders.forEach((leader, index) => {
-    const row = createLeaderboardRow(doc, leader, index, safeMax);
+    const row = createLeaderboardRow(doc, leader, index, displayMax);
     list.appendChild(row);
   });
 
-  const axis = createLeaderboardAxis(doc, metric, safeMax);
+  const axis = createLeaderboardAxis(doc, metric, displayMax, axisTickCount);
   if (axis) {
     container.appendChild(axis);
   }
@@ -273,12 +275,13 @@ function createLeaderboardAxis(
   doc: Document,
   metric: PlayerLeaderboardMetric,
   maxValue: number,
+  tickCount = 6,
 ): HTMLElement | null {
   if (!(Number.isFinite(maxValue) && maxValue > 0)) {
     return null;
   }
 
-  const ticks = buildAxisTicks(maxValue);
+  const ticks = buildAxisTicks(maxValue, tickCount);
   if (ticks.length <= 1) {
     return null;
   }
@@ -308,7 +311,7 @@ function createLeaderboardAxis(
   return axis;
 }
 
-function buildAxisTicks(maxValue: number, count = 4): number[] {
+function buildAxisTicks(maxValue: number, count = 6): number[] {
   if (!(Number.isFinite(maxValue) && maxValue > 0)) {
     return [0, 1];
   }
@@ -353,6 +356,20 @@ function computeTickStep(maxValue: number, segments: number): number {
   }
 
   return niceNormalized * magnitude;
+}
+
+function computeDisplayMax(maxValue: number, segments = 4): number {
+  if (!(Number.isFinite(maxValue) && maxValue > 0)) {
+    return 1;
+  }
+
+  const step = computeTickStep(maxValue, segments);
+  if (!(Number.isFinite(step) && step > 0)) {
+    return maxValue;
+  }
+
+  const steps = Math.max(1, Math.ceil(maxValue / step));
+  return Number.parseFloat((steps * step).toPrecision(6));
 }
 
 function computeNameScale(leader: PlayerLeaderboardEntry): number {
