@@ -1,7 +1,7 @@
 {
   "season": "2024-25",
   "seasonYear": 2025,
-  "generatedAt": "2025-11-04T21:38:50Z",
+  "generatedAt": "2025-11-05T21:33:23Z",
   "metrics": {
     "mp": {
       "label": "Minutes per game",
@@ -96,6 +96,366 @@
           "games": 32,
           "value": 37.0,
           "valueFormatted": "37.0"
+        },
+        {
+          "name": "Brooks Barnhizer",
+          "team": "Northwestern",
+          "slug": "brooks-barnhizer-1",
+          "url": "https://www.sports-reference.com/cbb/players/brooks-barnhizer-1.html",
+          "games": 17,
+          "value": 36.9411764706,
+          "valueFormatted": "36.9"
+        },
+        {
+          "name": "Adam Clark",
+          "team": "Merrimack",
+          "slug": "adam-clark-1",
+          "url": "https://www.sports-reference.com/cbb/players/adam-clark-1.html",
+          "games": 33,
+          "value": 36.9090909091,
+          "valueFormatted": "36.9"
+        },
+        {
+          "name": "JaCobi Wood",
+          "team": "Murray State",
+          "slug": "jacobi-wood-1",
+          "url": "https://www.sports-reference.com/cbb/players/jacobi-wood-1.html",
+          "games": 32,
+          "value": 36.90625,
+          "valueFormatted": "36.9"
+        },
+        {
+          "name": "Isaiah Swope",
+          "team": "Saint Louis",
+          "slug": "isaiah-swope-1",
+          "url": "https://www.sports-reference.com/cbb/players/isaiah-swope-1.html",
+          "games": 33,
+          "value": 36.6666666667,
+          "valueFormatted": "36.7"
+        },
+        {
+          "name": "Primo Spears",
+          "team": "UTSA",
+          "slug": "amir-spears-1",
+          "url": "https://www.sports-reference.com/cbb/players/amir-spears-1.html",
+          "games": 30,
+          "value": 36.6666666667,
+          "valueFormatted": "36.7"
+        },
+        {
+          "name": "Trent McLaughlin",
+          "team": "Northern Arizona",
+          "slug": "trenton-mclaughlin-1",
+          "url": "https://www.sports-reference.com/cbb/players/trenton-mclaughlin-1.html",
+          "games": 34,
+          "value": 36.6470588235,
+          "valueFormatted": "36.6"
+        },
+        {
+          "name": "PJ Haggerty",
+          "team": "Memphis",
+          "slug": "pj-haggerty-1",
+          "url": "https://www.sports-reference.com/cbb/players/pj-haggerty-1.html",
+          "games": 35,
+          "value": 36.6285714286,
+          "valueFormatted": "36.6"
+        },
+        {
+          "name": "Rashad King",
+          "team": "Northeastern",
+          "slug": "rashad-king-1",
+          "url": "https://www.sports-reference.com/cbb/players/rashad-king-1.html",
+          "games": 32,
+          "value": 36.5625,
+          "valueFormatted": "36.6"
+        },
+        {
+          "name": "Taje' Kelly",
+          "team": "Charleston Southern",
+          "slug": "taje-kelly-1",
+          "url": "https://www.sports-reference.com/cbb/players/taje-kelly-1.html",
+          "games": 31,
+          "value": 36.5161290323,
+          "valueFormatted": "36.5"
+        },
+        {
+          "name": "Ethan Taylor",
+          "team": "Air Force",
+          "slug": "ethan-taylor-1",
+          "url": "https://www.sports-reference.com/cbb/players/ethan-taylor-1.html",
+          "games": 32,
+          "value": 36.5,
+          "valueFormatted": "36.5"
+        },
+        {
+          "name": "Alston Mason",
+          "team": "Arizona State",
+          "slug": "alston-mason-1",
+          "url": "https://www.sports-reference.com/cbb/players/alston-mason-1.html",
+          "games": 32,
+          "value": 36.46875,
+          "valueFormatted": "36.5"
+        },
+        {
+          "name": "Kino Lilly Jr.",
+          "team": "Brown",
+          "slug": "kino-lillyjr-1",
+          "url": "https://www.sports-reference.com/cbb/players/kino-lillyjr-1.html",
+          "games": 27,
+          "value": 36.3703703704,
+          "valueFormatted": "36.4"
+        },
+        {
+          "name": "Justice Shoats",
+          "team": "Siena",
+          "slug": "justice-shoats-1",
+          "url": "https://www.sports-reference.com/cbb/players/justice-shoats-1.html",
+          "games": 32,
+          "value": 36.3125,
+          "valueFormatted": "36.3"
+        },
+        {
+          "name": "Jahnathan Lamothe",
+          "team": "North Carolina A&T",
+          "slug": "jahnathan-lamothe-1",
+          "url": "https://www.sports-reference.com/cbb/players/jahnathan-lamothe-1.html",
+          "games": 32,
+          "value": 36.21875,
+          "valueFormatted": "36.2"
+        },
+        {
+          "name": "Bruce Thornton",
+          "team": "Ohio State",
+          "slug": "bruce-thornton-1",
+          "url": "https://www.sports-reference.com/cbb/players/bruce-thornton-1.html",
+          "games": 32,
+          "value": 36.15625,
+          "valueFormatted": "36.2"
+        },
+        {
+          "name": "Xzayvier Brown",
+          "team": "Saint Joseph's",
+          "slug": "xzayvier-brown-1",
+          "url": "https://www.sports-reference.com/cbb/players/xzayvier-brown-1.html",
+          "games": 32,
+          "value": 36.15625,
+          "valueFormatted": "36.2"
+        },
+        {
+          "name": "Javon Small",
+          "team": "West Virginia",
+          "slug": "javon-small-1",
+          "url": "https://www.sports-reference.com/cbb/players/javon-small-1.html",
+          "games": 32,
+          "value": 36.125,
+          "valueFormatted": "36.1"
+        },
+        {
+          "name": "Paul McMillan IV",
+          "team": "Canisius",
+          "slug": "paul-mcmillan-iv-1",
+          "url": "https://www.sports-reference.com/cbb/players/paul-mcmillan-iv-1.html",
+          "games": 29,
+          "value": 36.0689655172,
+          "valueFormatted": "36.1"
+        },
+        {
+          "name": "Kam Woods",
+          "team": "Robert Morris",
+          "slug": "kam-woods-1",
+          "url": "https://www.sports-reference.com/cbb/players/kam-woods-1.html",
+          "games": 30,
+          "value": 36.0666666667,
+          "valueFormatted": "36.1"
+        },
+        {
+          "name": "Jack Collins",
+          "team": "Monmouth",
+          "slug": "jack-collins-2",
+          "url": "https://www.sports-reference.com/cbb/players/jack-collins-2.html",
+          "games": 33,
+          "value": 36.0606060606,
+          "valueFormatted": "36.1"
+        },
+        {
+          "name": "Steven Ashworth",
+          "team": "Creighton",
+          "slug": "steven-ashworth-1",
+          "url": "https://www.sports-reference.com/cbb/players/steven-ashworth-1.html",
+          "games": 35,
+          "value": 36.0285714286,
+          "valueFormatted": "36.0"
+        },
+        {
+          "name": "Devin Askew",
+          "team": "Long Beach State",
+          "slug": "devin-askew-1",
+          "url": "https://www.sports-reference.com/cbb/players/devin-askew-1.html",
+          "games": 32,
+          "value": 36.0,
+          "valueFormatted": "36.0"
+        },
+        {
+          "name": "Tayshawn Comer",
+          "team": "Evansville",
+          "slug": "tayshawn-comer-1",
+          "url": "https://www.sports-reference.com/cbb/players/tayshawn-comer-1.html",
+          "games": 32,
+          "value": 35.96875,
+          "valueFormatted": "36.0"
+        },
+        {
+          "name": "Jakobi Heady",
+          "team": "Central Michigan",
+          "slug": "jakobi-heady-1",
+          "url": "https://www.sports-reference.com/cbb/players/jakobi-heady-1.html",
+          "games": 31,
+          "value": 35.9677419355,
+          "valueFormatted": "36.0"
+        },
+        {
+          "name": "Jamal Mashburn Jr.",
+          "team": "Temple",
+          "slug": "jamal-mashburnjr-1",
+          "url": "https://www.sports-reference.com/cbb/players/jamal-mashburnjr-1.html",
+          "games": 23,
+          "value": 35.9565217391,
+          "valueFormatted": "36.0"
+        },
+        {
+          "name": "Hunter Sallis",
+          "team": "Wake Forest",
+          "slug": "hunter-sallis-1",
+          "url": "https://www.sports-reference.com/cbb/players/hunter-sallis-1.html",
+          "games": 32,
+          "value": 35.9375,
+          "valueFormatted": "35.9"
+        },
+        {
+          "name": "Earl Timberlake",
+          "team": "Bryant",
+          "slug": "earl-timberlake-1",
+          "url": "https://www.sports-reference.com/cbb/players/earl-timberlake-1.html",
+          "games": 33,
+          "value": 35.9090909091,
+          "valueFormatted": "35.9"
+        },
+        {
+          "name": "Quinton Mincey",
+          "team": "UMass Lowell",
+          "slug": "quinton-mincey-1",
+          "url": "https://www.sports-reference.com/cbb/players/quinton-mincey-1.html",
+          "games": 32,
+          "value": 35.90625,
+          "valueFormatted": "35.9"
+        },
+        {
+          "name": "Alex Karaban",
+          "team": "Connecticut",
+          "slug": "alex-karaban-1",
+          "url": "https://www.sports-reference.com/cbb/players/alex-karaban-1.html",
+          "games": 33,
+          "value": 35.8787878788,
+          "valueFormatted": "35.9"
+        },
+        {
+          "name": "Marcus Randolph",
+          "team": "Saint Peter's",
+          "slug": "marcus-randolph-1",
+          "url": "https://www.sports-reference.com/cbb/players/marcus-randolph-1.html",
+          "games": 28,
+          "value": 35.8571428571,
+          "valueFormatted": "35.9"
+        },
+        {
+          "name": "Daylen Berry",
+          "team": "Charleston Southern",
+          "slug": "daylen-berry-1",
+          "url": "https://www.sports-reference.com/cbb/players/daylen-berry-1.html",
+          "games": 32,
+          "value": 35.84375,
+          "valueFormatted": "35.8"
+        },
+        {
+          "name": "Landon Glasper",
+          "team": "North Carolina A&T",
+          "slug": "landon-glasper-1",
+          "url": "https://www.sports-reference.com/cbb/players/landon-glasper-1.html",
+          "games": 21,
+          "value": 35.8095238095,
+          "valueFormatted": "35.8"
+        },
+        {
+          "name": "Dedan Thomas Jr.",
+          "team": "UNLV",
+          "slug": "dedan-thomas-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/dedan-thomas-jr-1.html",
+          "games": 26,
+          "value": 35.8076923077,
+          "valueFormatted": "35.8"
+        },
+        {
+          "name": "Sebastian Thomas",
+          "team": "Rhode Island",
+          "slug": "sebastian-thomas-1",
+          "url": "https://www.sports-reference.com/cbb/players/sebastian-thomas-1.html",
+          "games": 29,
+          "value": 35.6551724138,
+          "valueFormatted": "35.7"
+        },
+        {
+          "name": "Robert Davis Jr.",
+          "team": "Old Dominion",
+          "slug": "robert-davis-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/robert-davis-jr-1.html",
+          "games": 34,
+          "value": 35.6176470588,
+          "valueFormatted": "35.6"
+        },
+        {
+          "name": "Tymu Chenery",
+          "team": "Binghamton",
+          "slug": "tymu-chenery-1",
+          "url": "https://www.sports-reference.com/cbb/players/tymu-chenery-1.html",
+          "games": 32,
+          "value": 35.59375,
+          "valueFormatted": "35.6"
+        },
+        {
+          "name": "Naithan George",
+          "team": "Georgia Tech",
+          "slug": "naithan-george-1",
+          "url": "https://www.sports-reference.com/cbb/players/naithan-george-1.html",
+          "games": 34,
+          "value": 35.5882352941,
+          "valueFormatted": "35.6"
+        },
+        {
+          "name": "Jaeden Zackery",
+          "team": "Clemson",
+          "slug": "jaeden-zackery-1",
+          "url": "https://www.sports-reference.com/cbb/players/jaeden-zackery-1.html",
+          "games": 34,
+          "value": 35.4705882353,
+          "valueFormatted": "35.5"
+        },
+        {
+          "name": "Layne Taylor",
+          "team": "Central Arkansas",
+          "slug": "layne-taylor-1",
+          "url": "https://www.sports-reference.com/cbb/players/layne-taylor-1.html",
+          "games": 20,
+          "value": 35.45,
+          "valueFormatted": "35.5"
+        },
+        {
+          "name": "Ishmael Leggett",
+          "team": "Pittsburgh",
+          "slug": "ishmael-leggett-1",
+          "url": "https://www.sports-reference.com/cbb/players/ishmael-leggett-1.html",
+          "games": 31,
+          "value": 35.4193548387,
+          "valueFormatted": "35.4"
         }
       ]
     },
@@ -192,104 +552,373 @@
           "games": 24,
           "value": 0.7631578947,
           "valueFormatted": "76.3%"
+        },
+        {
+          "name": "Will Allen",
+          "team": "Louisiana Tech",
+          "slug": "will-allen-2",
+          "url": "https://www.sports-reference.com/cbb/players/will-allen-2.html",
+          "games": 28,
+          "value": 0.76,
+          "valueFormatted": "76.0%"
+        },
+        {
+          "name": "James Scott",
+          "team": "Louisville",
+          "slug": "james-scott-8",
+          "url": "https://www.sports-reference.com/cbb/players/james-scott-8.html",
+          "games": 35,
+          "value": 0.7552447552,
+          "valueFormatted": "75.5%"
+        },
+        {
+          "name": "Quincy Ballard",
+          "team": "Wichita State",
+          "slug": "quincy-ballard-1",
+          "url": "https://www.sports-reference.com/cbb/players/quincy-ballard-1.html",
+          "games": 33,
+          "value": 0.7512953368,
+          "valueFormatted": "75.1%"
+        },
+        {
+          "name": "Anton Bonke",
+          "team": "Providence",
+          "slug": "anton-bonke-1",
+          "url": "https://www.sports-reference.com/cbb/players/anton-bonke-1.html",
+          "games": 16,
+          "value": 0.75,
+          "valueFormatted": "75.0%"
+        },
+        {
+          "name": "Mohamed Keita",
+          "team": "Temple",
+          "slug": "mohamed-keita-1",
+          "url": "https://www.sports-reference.com/cbb/players/mohamed-keita-1.html",
+          "games": 18,
+          "value": 0.75,
+          "valueFormatted": "75.0%"
+        },
+        {
+          "name": "Youssouf Singare",
+          "team": "Connecticut",
+          "slug": "youssouf-singare-1",
+          "url": "https://www.sports-reference.com/cbb/players/youssouf-singare-1.html",
+          "games": 16,
+          "value": 0.75,
+          "valueFormatted": "75.0%"
+        },
+        {
+          "name": "Aubin Gateretse",
+          "team": "Utah State",
+          "slug": "aubin-gateretse-1",
+          "url": "https://www.sports-reference.com/cbb/players/aubin-gateretse-1.html",
+          "games": 33,
+          "value": 0.7435897436,
+          "valueFormatted": "74.4%"
+        },
+        {
+          "name": "Federiko Federiko",
+          "team": "Texas Tech",
+          "slug": "federiko-federiko-1",
+          "url": "https://www.sports-reference.com/cbb/players/federiko-federiko-1.html",
+          "games": 35,
+          "value": 0.7425742574,
+          "valueFormatted": "74.3%"
+        },
+        {
+          "name": "Miles Heide",
+          "team": "San Diego State",
+          "slug": "miles-heide-1",
+          "url": "https://www.sports-reference.com/cbb/players/miles-heide-1.html",
+          "games": 30,
+          "value": 0.7368421053,
+          "valueFormatted": "73.7%"
+        },
+        {
+          "name": "Clifford Omoruyi",
+          "team": "Alabama",
+          "slug": "clifford-omoruyi-1",
+          "url": "https://www.sports-reference.com/cbb/players/clifford-omoruyi-1.html",
+          "games": 37,
+          "value": 0.7337662338,
+          "valueFormatted": "73.4%"
+        },
+        {
+          "name": "Deangelo Elisee",
+          "team": "Purdue Fort Wayne",
+          "slug": "deangelo-elisee-1",
+          "url": "https://www.sports-reference.com/cbb/players/deangelo-elisee-1.html",
+          "games": 31,
+          "value": 0.7272727273,
+          "valueFormatted": "72.7%"
+        },
+        {
+          "name": "Demarshay Johnson Jr.",
+          "team": "San Diego State",
+          "slug": "demarshay-johnsonjr-1",
+          "url": "https://www.sports-reference.com/cbb/players/demarshay-johnsonjr-1.html",
+          "games": 15,
+          "value": 0.7272727273,
+          "valueFormatted": "72.7%"
+        },
+        {
+          "name": "Halil Barre",
+          "team": "Duquesne",
+          "slug": "halil-barre-1",
+          "url": "https://www.sports-reference.com/cbb/players/halil-barre-1.html",
+          "games": 18,
+          "value": 0.725,
+          "valueFormatted": "72.5%"
+        },
+        {
+          "name": "Abou Magassa",
+          "team": "Wyoming",
+          "slug": "abou-magassa-1",
+          "url": "https://www.sports-reference.com/cbb/players/abou-magassa-1.html",
+          "games": 31,
+          "value": 0.724137931,
+          "valueFormatted": "72.4%"
+        },
+        {
+          "name": "Mohamed Wague",
+          "team": "Oklahoma",
+          "slug": "mohamed-wague-1",
+          "url": "https://www.sports-reference.com/cbb/players/mohamed-wague-1.html",
+          "games": 33,
+          "value": 0.7230769231,
+          "valueFormatted": "72.3%"
+        },
+        {
+          "name": "Oswin Erhunmwunse",
+          "team": "Providence",
+          "slug": "oswin-erhunmwunse-1",
+          "url": "https://www.sports-reference.com/cbb/players/oswin-erhunmwunse-1.html",
+          "games": 32,
+          "value": 0.7230769231,
+          "valueFormatted": "72.3%"
+        },
+        {
+          "name": "Nikita Konstantynovskyi",
+          "team": "Notre Dame",
+          "slug": "nikita-konstantynovskyi-1",
+          "url": "https://www.sports-reference.com/cbb/players/nikita-konstantynovskyi-1.html",
+          "games": 29,
+          "value": 0.7222222222,
+          "valueFormatted": "72.2%"
+        },
+        {
+          "name": "Anthony Robinson",
+          "team": "Virginia",
+          "slug": "anthony-robinson-6",
+          "url": "https://www.sports-reference.com/cbb/players/anthony-robinson-6.html",
+          "games": 26,
+          "value": 0.7209302326,
+          "valueFormatted": "72.1%"
+        },
+        {
+          "name": "Yvens Paul",
+          "team": "Eastern Kentucky",
+          "slug": "yvens-paul-1",
+          "url": "https://www.sports-reference.com/cbb/players/yvens-paul-1.html",
+          "games": 29,
+          "value": 0.7209302326,
+          "valueFormatted": "72.1%"
+        },
+        {
+          "name": "Matthew Van Komen",
+          "team": "Elon",
+          "slug": "matthew-van-komen-1",
+          "url": "https://www.sports-reference.com/cbb/players/matthew-van-komen-1.html",
+          "games": 32,
+          "value": 0.7203389831,
+          "valueFormatted": "72.0%"
+        },
+        {
+          "name": "Patrick Ngongba",
+          "team": "Duke",
+          "slug": "patrick-ngongba-2",
+          "url": "https://www.sports-reference.com/cbb/players/patrick-ngongba-2.html",
+          "games": 30,
+          "value": 0.71875,
+          "valueFormatted": "71.9%"
+        },
+        {
+          "name": "David Idada",
+          "team": "Southeast Missouri State",
+          "slug": "david-idada-1",
+          "url": "https://www.sports-reference.com/cbb/players/david-idada-1.html",
+          "games": 33,
+          "value": 0.7179487179,
+          "valueFormatted": "71.8%"
+        },
+        {
+          "name": "Noah Barnett",
+          "team": "Vermont",
+          "slug": "noah-barnett-1",
+          "url": "https://www.sports-reference.com/cbb/players/noah-barnett-1.html",
+          "games": 30,
+          "value": 0.7169811321,
+          "valueFormatted": "71.7%"
+        },
+        {
+          "name": "James Brown",
+          "team": "North Carolina",
+          "slug": "james-brown-12",
+          "url": "https://www.sports-reference.com/cbb/players/james-brown-12.html",
+          "games": 18,
+          "value": 0.7142857143,
+          "valueFormatted": "71.4%"
+        },
+        {
+          "name": "Miles Rubin",
+          "team": "Loyola Chicago",
+          "slug": "miles-rubin-1",
+          "url": "https://www.sports-reference.com/cbb/players/miles-rubin-1.html",
+          "games": 37,
+          "value": 0.7136363636,
+          "valueFormatted": "71.4%"
+        },
+        {
+          "name": "Dwayne Koroma",
+          "team": "Le Moyne",
+          "slug": "dwayne-koroma-1",
+          "url": "https://www.sports-reference.com/cbb/players/dwayne-koroma-1.html",
+          "games": 31,
+          "value": 0.7136150235,
+          "valueFormatted": "71.4%"
+        },
+        {
+          "name": "Khaman Maluach",
+          "team": "Duke",
+          "slug": "khaman-maluach-1",
+          "url": "https://www.sports-reference.com/cbb/players/khaman-maluach-1.html",
+          "games": 39,
+          "value": 0.7120418848,
+          "valueFormatted": "71.2%"
+        },
+        {
+          "name": "Isaac Davis",
+          "team": "Utah State",
+          "slug": "isaac-davis-1",
+          "url": "https://www.sports-reference.com/cbb/players/isaac-davis-1.html",
+          "games": 19,
+          "value": 0.7058823529,
+          "valueFormatted": "70.6%"
+        },
+        {
+          "name": "Max Brooks",
+          "team": "UMass Lowell",
+          "slug": "max-brooks-1",
+          "url": "https://www.sports-reference.com/cbb/players/max-brooks-1.html",
+          "games": 32,
+          "value": 0.7045454545,
+          "valueFormatted": "70.5%"
+        },
+        {
+          "name": "William Kyle III",
+          "team": "UCLA",
+          "slug": "william-kyle-iii-1",
+          "url": "https://www.sports-reference.com/cbb/players/william-kyle-iii-1.html",
+          "games": 32,
+          "value": 0.7037037037,
+          "valueFormatted": "70.4%"
+        },
+        {
+          "name": "Mason Ritter",
+          "team": "Columbia",
+          "slug": "mason-ritter-1",
+          "url": "https://www.sports-reference.com/cbb/players/mason-ritter-1.html",
+          "games": 26,
+          "value": 0.703125,
+          "valueFormatted": "70.3%"
+        },
+        {
+          "name": "Dylan Cardwell",
+          "team": "Auburn",
+          "slug": "dylan-cardwell-1",
+          "url": "https://www.sports-reference.com/cbb/players/dylan-cardwell-1.html",
+          "games": 38,
+          "value": 0.7,
+          "valueFormatted": "70.0%"
+        },
+        {
+          "name": "Luke Anderson",
+          "team": "Bellarmine",
+          "slug": "luke-anderson-2",
+          "url": "https://www.sports-reference.com/cbb/players/luke-anderson-2.html",
+          "games": 15,
+          "value": 0.7,
+          "valueFormatted": "70.0%"
+        },
+        {
+          "name": "Nic Codie",
+          "team": "Texas",
+          "slug": "nic-codie-1",
+          "url": "https://www.sports-reference.com/cbb/players/nic-codie-1.html",
+          "games": 19,
+          "value": 0.7,
+          "valueFormatted": "70.0%"
+        },
+        {
+          "name": "Nikola Djapa",
+          "team": "Colorado State",
+          "slug": "nikola-djapa-1",
+          "url": "https://www.sports-reference.com/cbb/players/nikola-djapa-1.html",
+          "games": 22,
+          "value": 0.7,
+          "valueFormatted": "70.0%"
+        },
+        {
+          "name": "Ugonna Onyenso",
+          "team": "Kansas State",
+          "slug": "ugonna-onyenso-1",
+          "url": "https://www.sports-reference.com/cbb/players/ugonna-onyenso-1.html",
+          "games": 24,
+          "value": 0.7,
+          "valueFormatted": "70.0%"
+        },
+        {
+          "name": "Gabe Dynes",
+          "team": "Youngstown State",
+          "slug": "gabe-dynes-1",
+          "url": "https://www.sports-reference.com/cbb/players/gabe-dynes-1.html",
+          "games": 34,
+          "value": 0.6993006993,
+          "valueFormatted": "69.9%"
+        },
+        {
+          "name": "Flory Bidunga",
+          "team": "Kansas",
+          "slug": "flory-bidunga-1",
+          "url": "https://www.sports-reference.com/cbb/players/flory-bidunga-1.html",
+          "games": 34,
+          "value": 0.6984126984,
+          "valueFormatted": "69.8%"
+        },
+        {
+          "name": "Eduardo Andre",
+          "team": "West Virginia",
+          "slug": "eduardo-andre-1",
+          "url": "https://www.sports-reference.com/cbb/players/eduardo-andre-1.html",
+          "games": 31,
+          "value": 0.6979166667,
+          "valueFormatted": "69.8%"
+        },
+        {
+          "name": "Ebenezer Dowuona",
+          "team": "James Madison",
+          "slug": "ebenezer-dowuona-1",
+          "url": "https://www.sports-reference.com/cbb/players/ebenezer-dowuona-1.html",
+          "games": 28,
+          "value": 0.6944444444,
+          "valueFormatted": "69.4%"
         }
       ]
     },
     "fg3Pct": {
       "label": "3-point %",
       "shortLabel": "3P%",
-      "leaders": [
-        {
-          "name": "Louie Jordan",
-          "team": "UMBC",
-          "slug": "louie-jordan-1",
-          "url": "https://www.sports-reference.com/cbb/players/louie-jordan-1.html",
-          "games": 31,
-          "value": 0.4876033058,
-          "valueFormatted": "48.8%"
-        },
-        {
-          "name": "Kenyon Goodin",
-          "team": "Bellarmine",
-          "slug": "kenyon-goodin-1",
-          "url": "https://www.sports-reference.com/cbb/players/kenyon-goodin-1.html",
-          "games": 27,
-          "value": 0.4833333333,
-          "valueFormatted": "48.3%"
-        },
-        {
-          "name": "Marko Maletic",
-          "team": "Western Illinois",
-          "slug": "marko-maletic-1",
-          "url": "https://www.sports-reference.com/cbb/players/marko-maletic-1.html",
-          "games": 30,
-          "value": 0.4742268041,
-          "valueFormatted": "47.4%"
-        },
-        {
-          "name": "Marvin McGhee IV",
-          "team": "Cal State Bakersfield",
-          "slug": "marvin-mcghee-iv-1",
-          "url": "https://www.sports-reference.com/cbb/players/marvin-mcghee-iv-1.html",
-          "games": 32,
-          "value": 0.4705882353,
-          "valueFormatted": "47.1%"
-        },
-        {
-          "name": "Matt Allocco",
-          "team": "Notre Dame",
-          "slug": "matt-allocco-1",
-          "url": "https://www.sports-reference.com/cbb/players/matt-allocco-1.html",
-          "games": 26,
-          "value": 0.4646464646,
-          "valueFormatted": "46.5%"
-        },
-        {
-          "name": "Masen Miller",
-          "team": "North Dakota State",
-          "slug": "masen-miller-1",
-          "url": "https://www.sports-reference.com/cbb/players/masen-miller-1.html",
-          "games": 32,
-          "value": 0.4615384615,
-          "valueFormatted": "46.2%"
-        },
-        {
-          "name": "Logan Woods",
-          "team": "Wright State",
-          "slug": "logan-woods-1",
-          "url": "https://www.sports-reference.com/cbb/players/logan-woods-1.html",
-          "games": 32,
-          "value": 0.4606741573,
-          "valueFormatted": "46.1%"
-        },
-        {
-          "name": "Kamari McGee",
-          "team": "Wisconsin",
-          "slug": "kamari-mcgee-1",
-          "url": "https://www.sports-reference.com/cbb/players/kamari-mcgee-1.html",
-          "games": 37,
-          "value": 0.4588235294,
-          "valueFormatted": "45.9%"
-        },
-        {
-          "name": "Jovan Milicevic",
-          "team": "New Mexico",
-          "slug": "jovan-milicevic-1",
-          "url": "https://www.sports-reference.com/cbb/players/jovan-milicevic-1.html",
-          "games": 34,
-          "value": 0.4576271186,
-          "valueFormatted": "45.8%"
-        },
-        {
-          "name": "Marques Warrick",
-          "team": "Missouri",
-          "slug": "marques-warrick-1",
-          "url": "https://www.sports-reference.com/cbb/players/marques-warrick-1.html",
-          "games": 33,
-          "value": 0.4556962025,
-          "valueFormatted": "45.6%"
-        }
-      ]
+      "leaders": []
     },
     "ftPct": {
       "label": "Free throw %",
@@ -384,6 +1013,366 @@
           "games": 27,
           "value": 0.8965517241,
           "valueFormatted": "89.7%"
+        },
+        {
+          "name": "Johnny Kinziger",
+          "team": "Illinois State",
+          "slug": "johnny-kinziger-1",
+          "url": "https://www.sports-reference.com/cbb/players/johnny-kinziger-1.html",
+          "games": 35,
+          "value": 0.896,
+          "valueFormatted": "89.6%"
+        },
+        {
+          "name": "LJ Cryer",
+          "team": "Houston",
+          "slug": "lj-cryer-1",
+          "url": "https://www.sports-reference.com/cbb/players/lj-cryer-1.html",
+          "games": 40,
+          "value": 0.8952380952,
+          "valueFormatted": "89.5%"
+        },
+        {
+          "name": "Paul Zilinskas",
+          "team": "IU Indy",
+          "slug": "paul-zilinskas-1",
+          "url": "https://www.sports-reference.com/cbb/players/paul-zilinskas-1.html",
+          "games": 31,
+          "value": 0.8938053097,
+          "valueFormatted": "89.4%"
+        },
+        {
+          "name": "Donovan Newby",
+          "team": "UNC Wilmington",
+          "slug": "donovan-newby-1",
+          "url": "https://www.sports-reference.com/cbb/players/donovan-newby-1.html",
+          "games": 35,
+          "value": 0.8924050633,
+          "valueFormatted": "89.2%"
+        },
+        {
+          "name": "Payton Sandfort",
+          "team": "Iowa",
+          "slug": "payton-sandfort-1",
+          "url": "https://www.sports-reference.com/cbb/players/payton-sandfort-1.html",
+          "games": 33,
+          "value": 0.8909090909,
+          "valueFormatted": "89.1%"
+        },
+        {
+          "name": "Caleb Love",
+          "team": "Arizona",
+          "slug": "caleb-love-1",
+          "url": "https://www.sports-reference.com/cbb/players/caleb-love-1.html",
+          "games": 37,
+          "value": 0.8888888889,
+          "valueFormatted": "88.9%"
+        },
+        {
+          "name": "Xavier Bell",
+          "team": "Wichita State",
+          "slug": "xavier-bell-1",
+          "url": "https://www.sports-reference.com/cbb/players/xavier-bell-1.html",
+          "games": 34,
+          "value": 0.8882352941,
+          "valueFormatted": "88.8%"
+        },
+        {
+          "name": "Devin Askew",
+          "team": "Long Beach State",
+          "slug": "devin-askew-1",
+          "url": "https://www.sports-reference.com/cbb/players/devin-askew-1.html",
+          "games": 32,
+          "value": 0.8862275449,
+          "valueFormatted": "88.6%"
+        },
+        {
+          "name": "Jaland Lowe",
+          "team": "Pittsburgh",
+          "slug": "jaland-lowe-2",
+          "url": "https://www.sports-reference.com/cbb/players/jaland-lowe-2.html",
+          "games": 31,
+          "value": 0.8855421687,
+          "valueFormatted": "88.6%"
+        },
+        {
+          "name": "Brice Williams",
+          "team": "Nebraska",
+          "slug": "brice-williams-1",
+          "url": "https://www.sports-reference.com/cbb/players/brice-williams-1.html",
+          "games": 35,
+          "value": 0.8831775701,
+          "valueFormatted": "88.3%"
+        },
+        {
+          "name": "Owen Koonce",
+          "team": "Cal Poly",
+          "slug": "owen-koonce-1",
+          "url": "https://www.sports-reference.com/cbb/players/owen-koonce-1.html",
+          "games": 35,
+          "value": 0.880733945,
+          "valueFormatted": "88.1%"
+        },
+        {
+          "name": "Javon Small",
+          "team": "West Virginia",
+          "slug": "javon-small-1",
+          "url": "https://www.sports-reference.com/cbb/players/javon-small-1.html",
+          "games": 32,
+          "value": 0.8795180723,
+          "valueFormatted": "88.0%"
+        },
+        {
+          "name": "Jalen Sullinger",
+          "team": "Kent State",
+          "slug": "jalen-sullinger-1",
+          "url": "https://www.sports-reference.com/cbb/players/jalen-sullinger-1.html",
+          "games": 36,
+          "value": 0.8785046729,
+          "valueFormatted": "87.9%"
+        },
+        {
+          "name": "Josh Hubbard",
+          "team": "Mississippi State",
+          "slug": "josh-hubbard-1",
+          "url": "https://www.sports-reference.com/cbb/players/josh-hubbard-1.html",
+          "games": 34,
+          "value": 0.8783783784,
+          "valueFormatted": "87.8%"
+        },
+        {
+          "name": "A.J. Lopez",
+          "team": "Maine",
+          "slug": "aj-lopez-1",
+          "url": "https://www.sports-reference.com/cbb/players/aj-lopez-1.html",
+          "games": 34,
+          "value": 0.8782608696,
+          "valueFormatted": "87.8%"
+        },
+        {
+          "name": "Ian Martinez",
+          "team": "Utah State",
+          "slug": "ian-martinez-2",
+          "url": "https://www.sports-reference.com/cbb/players/ian-martinez-2.html",
+          "games": 34,
+          "value": 0.8764705882,
+          "valueFormatted": "87.6%"
+        },
+        {
+          "name": "Simeon Cottle",
+          "team": "Kennesaw State",
+          "slug": "simeon-cottle-1",
+          "url": "https://www.sports-reference.com/cbb/players/simeon-cottle-1.html",
+          "games": 33,
+          "value": 0.875739645,
+          "valueFormatted": "87.6%"
+        },
+        {
+          "name": "Jalen Terry",
+          "team": "Eastern Michigan",
+          "slug": "jalen-terry-1",
+          "url": "https://www.sports-reference.com/cbb/players/jalen-terry-1.html",
+          "games": 31,
+          "value": 0.875,
+          "valueFormatted": "87.5%"
+        },
+        {
+          "name": "Walter Clayton Jr.",
+          "team": "Florida",
+          "slug": "walter-claytonjr-1",
+          "url": "https://www.sports-reference.com/cbb/players/walter-claytonjr-1.html",
+          "games": 39,
+          "value": 0.875,
+          "valueFormatted": "87.5%"
+        },
+        {
+          "name": "RJ Davis",
+          "team": "North Carolina",
+          "slug": "rj-davis-1",
+          "url": "https://www.sports-reference.com/cbb/players/rj-davis-1.html",
+          "games": 37,
+          "value": 0.8727272727,
+          "valueFormatted": "87.3%"
+        },
+        {
+          "name": "Tre Johnson",
+          "team": "Texas",
+          "slug": "tre-johnson-2",
+          "url": "https://www.sports-reference.com/cbb/players/tre-johnson-2.html",
+          "games": 33,
+          "value": 0.8705035971,
+          "valueFormatted": "87.1%"
+        },
+        {
+          "name": "Rasheed Bello",
+          "team": "Purdue Fort Wayne",
+          "slug": "rasheed-bello-1",
+          "url": "https://www.sports-reference.com/cbb/players/rasheed-bello-1.html",
+          "games": 32,
+          "value": 0.8681318681,
+          "valueFormatted": "86.8%"
+        },
+        {
+          "name": "Abdi Bashir Jr.",
+          "team": "Monmouth",
+          "slug": "abdi-bashir-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/abdi-bashir-jr-1.html",
+          "games": 33,
+          "value": 0.8679245283,
+          "valueFormatted": "86.8%"
+        },
+        {
+          "name": "Chase Hunter",
+          "team": "Clemson",
+          "slug": "chase-hunter-1",
+          "url": "https://www.sports-reference.com/cbb/players/chase-hunter-1.html",
+          "games": 34,
+          "value": 0.8661417323,
+          "valueFormatted": "86.6%"
+        },
+        {
+          "name": "Miles Barnstable",
+          "team": "St. Thomas",
+          "slug": "miles-barnstable-1",
+          "url": "https://www.sports-reference.com/cbb/players/miles-barnstable-1.html",
+          "games": 34,
+          "value": 0.865248227,
+          "valueFormatted": "86.5%"
+        },
+        {
+          "name": "CJ Luster",
+          "team": "Stony Brook",
+          "slug": "cj-luster-1",
+          "url": "https://www.sports-reference.com/cbb/players/cj-luster-1.html",
+          "games": 32,
+          "value": 0.8650793651,
+          "valueFormatted": "86.5%"
+        },
+        {
+          "name": "Rafael Pinzon",
+          "team": "Bryant",
+          "slug": "rafael-pinzon-1",
+          "url": "https://www.sports-reference.com/cbb/players/rafael-pinzon-1.html",
+          "games": 31,
+          "value": 0.8641975309,
+          "valueFormatted": "86.4%"
+        },
+        {
+          "name": "Tyler McGhie",
+          "team": "UC San Diego",
+          "slug": "tyler-mcghie-1",
+          "url": "https://www.sports-reference.com/cbb/players/tyler-mcghie-1.html",
+          "games": 35,
+          "value": 0.8625,
+          "valueFormatted": "86.2%"
+        },
+        {
+          "name": "Ja'Kobi Gillespie",
+          "team": "Maryland",
+          "slug": "jakobi-gillespie-1",
+          "url": "https://www.sports-reference.com/cbb/players/jakobi-gillespie-1.html",
+          "games": 36,
+          "value": 0.8617021277,
+          "valueFormatted": "86.2%"
+        },
+        {
+          "name": "Erik Reynolds II",
+          "team": "Saint Joseph's",
+          "slug": "erik-reynoldsii-1",
+          "url": "https://www.sports-reference.com/cbb/players/erik-reynoldsii-1.html",
+          "games": 35,
+          "value": 0.8571428571,
+          "valueFormatted": "85.7%"
+        },
+        {
+          "name": "Jemel Jones",
+          "team": "Cal State Bakersfield",
+          "slug": "jemel-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/jemel-jones-1.html",
+          "games": 33,
+          "value": 0.8571428571,
+          "valueFormatted": "85.7%"
+        },
+        {
+          "name": "Wooga Poplar",
+          "team": "Villanova",
+          "slug": "wooga-poplar-1",
+          "url": "https://www.sports-reference.com/cbb/players/wooga-poplar-1.html",
+          "games": 36,
+          "value": 0.8558558559,
+          "valueFormatted": "85.6%"
+        },
+        {
+          "name": "Gabe Madsen",
+          "team": "Utah",
+          "slug": "gabe-madsen-1",
+          "url": "https://www.sports-reference.com/cbb/players/gabe-madsen-1.html",
+          "games": 33,
+          "value": 0.8541666667,
+          "valueFormatted": "85.4%"
+        },
+        {
+          "name": "Bruce Thornton",
+          "team": "Ohio State",
+          "slug": "bruce-thornton-1",
+          "url": "https://www.sports-reference.com/cbb/players/bruce-thornton-1.html",
+          "games": 32,
+          "value": 0.8525641026,
+          "valueFormatted": "85.3%"
+        },
+        {
+          "name": "Rashad King",
+          "team": "Northeastern",
+          "slug": "rashad-king-1",
+          "url": "https://www.sports-reference.com/cbb/players/rashad-king-1.html",
+          "games": 32,
+          "value": 0.8525641026,
+          "valueFormatted": "85.3%"
+        },
+        {
+          "name": "Jacari White",
+          "team": "North Dakota State",
+          "slug": "jacari-white-1",
+          "url": "https://www.sports-reference.com/cbb/players/jacari-white-1.html",
+          "games": 31,
+          "value": 0.8524590164,
+          "valueFormatted": "85.2%"
+        },
+        {
+          "name": "Jeremiah Fears",
+          "team": "Oklahoma",
+          "slug": "jeremiah-fears-1",
+          "url": "https://www.sports-reference.com/cbb/players/jeremiah-fears-1.html",
+          "games": 34,
+          "value": 0.8511627907,
+          "valueFormatted": "85.1%"
+        },
+        {
+          "name": "Cooper Schwieger",
+          "team": "Valparaiso",
+          "slug": "cooper-schwieger-1",
+          "url": "https://www.sports-reference.com/cbb/players/cooper-schwieger-1.html",
+          "games": 34,
+          "value": 0.85,
+          "valueFormatted": "85.0%"
+        },
+        {
+          "name": "Kameron Hobbs",
+          "team": "Morgan State",
+          "slug": "kameron-hobbs-1",
+          "url": "https://www.sports-reference.com/cbb/players/kameron-hobbs-1.html",
+          "games": 32,
+          "value": 0.8487394958,
+          "valueFormatted": "84.9%"
+        },
+        {
+          "name": "Markus Burton",
+          "team": "Notre Dame",
+          "slug": "markus-burton-1",
+          "url": "https://www.sports-reference.com/cbb/players/markus-burton-1.html",
+          "games": 26,
+          "value": 0.847826087,
+          "valueFormatted": "84.8%"
         }
       ]
     },
@@ -480,6 +1469,366 @@
           "games": 32,
           "value": 10.5625,
           "valueFormatted": "10.6"
+        },
+        {
+          "name": "Hunter Dickinson",
+          "team": "Kansas",
+          "slug": "hunter-dickinson-1",
+          "url": "https://www.sports-reference.com/cbb/players/hunter-dickinson-1.html",
+          "games": 34,
+          "value": 10.0,
+          "valueFormatted": "10.0"
+        },
+        {
+          "name": "Danny Wolf",
+          "team": "Michigan",
+          "slug": "danny-wolf-1",
+          "url": "https://www.sports-reference.com/cbb/players/danny-wolf-1.html",
+          "games": 37,
+          "value": 9.7297297297,
+          "valueFormatted": "9.7"
+        },
+        {
+          "name": "Nique Clifford",
+          "team": "Colorado State",
+          "slug": "nique-clifford-1",
+          "url": "https://www.sports-reference.com/cbb/players/nique-clifford-1.html",
+          "games": 36,
+          "value": 9.6111111111,
+          "valueFormatted": "9.6"
+        },
+        {
+          "name": "Eddie Lampkin Jr.",
+          "team": "Syracuse",
+          "slug": "eddie-lampkinjr-1",
+          "url": "https://www.sports-reference.com/cbb/players/eddie-lampkinjr-1.html",
+          "games": 33,
+          "value": 9.6060606061,
+          "valueFormatted": "9.6"
+        },
+        {
+          "name": "Nick McMullen",
+          "team": "Georgia State",
+          "slug": "nicholas-mcmullen-1",
+          "url": "https://www.sports-reference.com/cbb/players/nicholas-mcmullen-1.html",
+          "games": 33,
+          "value": 9.5454545455,
+          "valueFormatted": "9.5"
+        },
+        {
+          "name": "Doctor Bradley",
+          "team": "Arkansas\u2013Pine Bluff",
+          "slug": "doctor-bradley-1",
+          "url": "https://www.sports-reference.com/cbb/players/doctor-bradley-1.html",
+          "games": 18,
+          "value": 9.5,
+          "valueFormatted": "9.5"
+        },
+        {
+          "name": "JT Toppin",
+          "team": "Texas Tech",
+          "slug": "jt-toppin-1",
+          "url": "https://www.sports-reference.com/cbb/players/jt-toppin-1.html",
+          "games": 33,
+          "value": 9.3939393939,
+          "valueFormatted": "9.4"
+        },
+        {
+          "name": "Ian Schieffelin",
+          "team": "Clemson",
+          "slug": "ian-schieffelin-1",
+          "url": "https://www.sports-reference.com/cbb/players/ian-schieffelin-1.html",
+          "games": 34,
+          "value": 9.3823529412,
+          "valueFormatted": "9.4"
+        },
+        {
+          "name": "Nikolaos Chitikoudis",
+          "team": "North Carolina A&T",
+          "slug": "nikolaos-chitikoudis-1",
+          "url": "https://www.sports-reference.com/cbb/players/nikolaos-chitikoudis-1.html",
+          "games": 28,
+          "value": 9.2857142857,
+          "valueFormatted": "9.3"
+        },
+        {
+          "name": "Jake O'Neil",
+          "team": "Idaho State",
+          "slug": "jake-oneil-1",
+          "url": "https://www.sports-reference.com/cbb/players/jake-oneil-1.html",
+          "games": 30,
+          "value": 9.2666666667,
+          "valueFormatted": "9.3"
+        },
+        {
+          "name": "Essam Mostafa",
+          "team": "Middle Tennessee",
+          "slug": "essam-mostafa-1",
+          "url": "https://www.sports-reference.com/cbb/players/essam-mostafa-1.html",
+          "games": 33,
+          "value": 9.1818181818,
+          "valueFormatted": "9.2"
+        },
+        {
+          "name": "Quincy Ballard",
+          "team": "Wichita State",
+          "slug": "quincy-ballard-1",
+          "url": "https://www.sports-reference.com/cbb/players/quincy-ballard-1.html",
+          "games": 33,
+          "value": 9.1515151515,
+          "valueFormatted": "9.2"
+        },
+        {
+          "name": "Oumar Ballo",
+          "team": "Indiana",
+          "slug": "oumar-ballo-1",
+          "url": "https://www.sports-reference.com/cbb/players/oumar-ballo-1.html",
+          "games": 31,
+          "value": 9.0967741935,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Alvaro Folgueiras",
+          "team": "Robert Morris",
+          "slug": "alvaro-folgueiras-1",
+          "url": "https://www.sports-reference.com/cbb/players/alvaro-folgueiras-1.html",
+          "games": 35,
+          "value": 9.0857142857,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Sean Durugordon",
+          "team": "Old Dominion",
+          "slug": "sean-durugordon-1",
+          "url": "https://www.sports-reference.com/cbb/players/sean-durugordon-1.html",
+          "games": 35,
+          "value": 9.0857142857,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Bent Leuchten",
+          "team": "UC Irvine",
+          "slug": "bent-leuchten-1",
+          "url": "https://www.sports-reference.com/cbb/players/bent-leuchten-1.html",
+          "games": 39,
+          "value": 9.0769230769,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Amarri Monroe",
+          "team": "Quinnipiac",
+          "slug": "amarri-monroe-1",
+          "url": "https://www.sports-reference.com/cbb/players/amarri-monroe-1.html",
+          "games": 32,
+          "value": 9.0625,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Corneilous Williams",
+          "team": "North Alabama",
+          "slug": "corneilous-williams-1",
+          "url": "https://www.sports-reference.com/cbb/players/corneilous-williams-1.html",
+          "games": 35,
+          "value": 9.0571428571,
+          "valueFormatted": "9.1"
+        },
+        {
+          "name": "Keonte Jones",
+          "team": "Cal State Northridge",
+          "slug": "keonte-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/keonte-jones-1.html",
+          "games": 33,
+          "value": 9.0303030303,
+          "valueFormatted": "9.0"
+        },
+        {
+          "name": "Julian Reese",
+          "team": "Maryland",
+          "slug": "julian-reese-1",
+          "url": "https://www.sports-reference.com/cbb/players/julian-reese-1.html",
+          "games": 36,
+          "value": 9.0277777778,
+          "valueFormatted": "9.0"
+        },
+        {
+          "name": "Derik Queen",
+          "team": "Maryland",
+          "slug": "derik-queen-1",
+          "url": "https://www.sports-reference.com/cbb/players/derik-queen-1.html",
+          "games": 36,
+          "value": 8.9722222222,
+          "valueFormatted": "9.0"
+        },
+        {
+          "name": "Baye Ndongo",
+          "team": "Georgia Tech",
+          "slug": "baye-ndongo-1",
+          "url": "https://www.sports-reference.com/cbb/players/baye-ndongo-1.html",
+          "games": 34,
+          "value": 8.9411764706,
+          "valueFormatted": "8.9"
+        },
+        {
+          "name": "Rafael Castro",
+          "team": "George Washington",
+          "slug": "rafael-castro-1",
+          "url": "https://www.sports-reference.com/cbb/players/rafael-castro-1.html",
+          "games": 34,
+          "value": 8.9411764706,
+          "valueFormatted": "8.9"
+        },
+        {
+          "name": "Kooper Jacobi",
+          "team": "Eastern Illinois",
+          "slug": "kooper-jacobi-1",
+          "url": "https://www.sports-reference.com/cbb/players/kooper-jacobi-1.html",
+          "games": 31,
+          "value": 8.935483871,
+          "valueFormatted": "8.9"
+        },
+        {
+          "name": "Taje' Kelly",
+          "team": "Charleston Southern",
+          "slug": "taje-kelly-1",
+          "url": "https://www.sports-reference.com/cbb/players/taje-kelly-1.html",
+          "games": 31,
+          "value": 8.9032258065,
+          "valueFormatted": "8.9"
+        },
+        {
+          "name": "Izaiyah Nelson",
+          "team": "Arkansas State",
+          "slug": "izaiyah-nelson-1",
+          "url": "https://www.sports-reference.com/cbb/players/izaiyah-nelson-1.html",
+          "games": 31,
+          "value": 8.8709677419,
+          "valueFormatted": "8.9"
+        },
+        {
+          "name": "Brooks Barnhizer",
+          "team": "Northwestern",
+          "slug": "brooks-barnhizer-1",
+          "url": "https://www.sports-reference.com/cbb/players/brooks-barnhizer-1.html",
+          "games": 17,
+          "value": 8.8235294118,
+          "valueFormatted": "8.8"
+        },
+        {
+          "name": "Ryan Kalkbrenner",
+          "team": "Creighton",
+          "slug": "ryan-kalkbrenner-1",
+          "url": "https://www.sports-reference.com/cbb/players/ryan-kalkbrenner-1.html",
+          "games": 35,
+          "value": 8.6571428571,
+          "valueFormatted": "8.7"
+        },
+        {
+          "name": "Paul Otieno",
+          "team": "Quinnipiac",
+          "slug": "paul-otieno-1",
+          "url": "https://www.sports-reference.com/cbb/players/paul-otieno-1.html",
+          "games": 32,
+          "value": 8.625,
+          "valueFormatted": "8.6"
+        },
+        {
+          "name": "Taye Fields",
+          "team": "North Alabama",
+          "slug": "taye-fields-1",
+          "url": "https://www.sports-reference.com/cbb/players/taye-fields-1.html",
+          "games": 35,
+          "value": 8.5714285714,
+          "valueFormatted": "8.6"
+        },
+        {
+          "name": "Rasheer Fleming",
+          "team": "Saint Joseph's",
+          "slug": "rasheer-fleming-1",
+          "url": "https://www.sports-reference.com/cbb/players/rasheer-fleming-1.html",
+          "games": 35,
+          "value": 8.5428571429,
+          "valueFormatted": "8.5"
+        },
+        {
+          "name": "Amari Williams",
+          "team": "Kentucky",
+          "slug": "amari-williams-2",
+          "url": "https://www.sports-reference.com/cbb/players/amari-williams-2.html",
+          "games": 36,
+          "value": 8.5,
+          "valueFormatted": "8.5"
+        },
+        {
+          "name": "Thomas Sorber",
+          "team": "Georgetown",
+          "slug": "thomas-sorber-1",
+          "url": "https://www.sports-reference.com/cbb/players/thomas-sorber-1.html",
+          "games": 24,
+          "value": 8.4583333333,
+          "valueFormatted": "8.5"
+        },
+        {
+          "name": "Juslin Bodo Bodo",
+          "team": "High Point",
+          "slug": "juslin-bodo-bodo-1",
+          "url": "https://www.sports-reference.com/cbb/players/juslin-bodo-bodo-1.html",
+          "games": 35,
+          "value": 8.3714285714,
+          "valueFormatted": "8.4"
+        },
+        {
+          "name": "Nate Martin",
+          "team": "Marshall",
+          "slug": "nate-martin-1",
+          "url": "https://www.sports-reference.com/cbb/players/nate-martin-1.html",
+          "games": 33,
+          "value": 8.2727272727,
+          "valueFormatted": "8.3"
+        },
+        {
+          "name": "Collin Murray-Boyles",
+          "team": "South Carolina",
+          "slug": "collin-murray-boyles-1",
+          "url": "https://www.sports-reference.com/cbb/players/collin-murray-boyles-1.html",
+          "games": 32,
+          "value": 8.25,
+          "valueFormatted": "8.2"
+        },
+        {
+          "name": "Elijah Price",
+          "team": "Fresno State",
+          "slug": "elijah-price-1",
+          "url": "https://www.sports-reference.com/cbb/players/elijah-price-1.html",
+          "games": 32,
+          "value": 8.25,
+          "valueFormatted": "8.2"
+        },
+        {
+          "name": "Peter Filipovity",
+          "team": "New Mexico State",
+          "slug": "peter-filipovity-1",
+          "url": "https://www.sports-reference.com/cbb/players/peter-filipovity-1.html",
+          "games": 29,
+          "value": 8.2413793103,
+          "valueFormatted": "8.2"
+        },
+        {
+          "name": "Michael Graham",
+          "team": "Hofstra",
+          "slug": "michael-graham-2",
+          "url": "https://www.sports-reference.com/cbb/players/michael-graham-2.html",
+          "games": 33,
+          "value": 8.1818181818,
+          "valueFormatted": "8.2"
+        },
+        {
+          "name": "Mady Sissoko",
+          "team": "California",
+          "slug": "mady-sissoko-1",
+          "url": "https://www.sports-reference.com/cbb/players/mady-sissoko-1.html",
+          "games": 32,
+          "value": 8.15625,
+          "valueFormatted": "8.2"
         }
       ]
     },
@@ -576,6 +1925,366 @@
           "games": 35,
           "value": 6.4571428571,
           "valueFormatted": "6.5"
+        },
+        {
+          "name": "Donovan Dent",
+          "team": "New Mexico",
+          "slug": "donovan-dent-1",
+          "url": "https://www.sports-reference.com/cbb/players/donovan-dent-1.html",
+          "games": 35,
+          "value": 6.4,
+          "valueFormatted": "6.4"
+        },
+        {
+          "name": "Savion Lewis",
+          "team": "Quinnipiac",
+          "slug": "savion-lewis-1",
+          "url": "https://www.sports-reference.com/cbb/players/savion-lewis-1.html",
+          "games": 26,
+          "value": 6.2692307692,
+          "valueFormatted": "6.3"
+        },
+        {
+          "name": "Elliot Cadeau",
+          "team": "North Carolina",
+          "slug": "elliot-cadeau-1",
+          "url": "https://www.sports-reference.com/cbb/players/elliot-cadeau-1.html",
+          "games": 37,
+          "value": 6.2432432432,
+          "valueFormatted": "6.2"
+        },
+        {
+          "name": "Conor Enright",
+          "team": "DePaul",
+          "slug": "conor-enright-1",
+          "url": "https://www.sports-reference.com/cbb/players/conor-enright-1.html",
+          "games": 23,
+          "value": 6.2173913043,
+          "valueFormatted": "6.2"
+        },
+        {
+          "name": "Qiant Myers",
+          "team": "Portland State",
+          "slug": "qiant-myers-1",
+          "url": "https://www.sports-reference.com/cbb/players/qiant-myers-1.html",
+          "games": 32,
+          "value": 6.125,
+          "valueFormatted": "6.1"
+        },
+        {
+          "name": "Adam Clark",
+          "team": "Merrimack",
+          "slug": "adam-clark-1",
+          "url": "https://www.sports-reference.com/cbb/players/adam-clark-1.html",
+          "games": 33,
+          "value": 6.0,
+          "valueFormatted": "6.0"
+        },
+        {
+          "name": "Carter Whitt",
+          "team": "Belmont",
+          "slug": "carter-whitt-1",
+          "url": "https://www.sports-reference.com/cbb/players/carter-whitt-1.html",
+          "games": 32,
+          "value": 6.0,
+          "valueFormatted": "6.0"
+        },
+        {
+          "name": "Sebastian Thomas",
+          "team": "Rhode Island",
+          "slug": "sebastian-thomas-1",
+          "url": "https://www.sports-reference.com/cbb/players/sebastian-thomas-1.html",
+          "games": 29,
+          "value": 6.0,
+          "valueFormatted": "6.0"
+        },
+        {
+          "name": "Kameron Jones",
+          "team": "Marquette",
+          "slug": "kam-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/kam-jones-1.html",
+          "games": 34,
+          "value": 5.8823529412,
+          "valueFormatted": "5.9"
+        },
+        {
+          "name": "Themus Fulks",
+          "team": "Milwaukee",
+          "slug": "themus-fulks-1",
+          "url": "https://www.sports-reference.com/cbb/players/themus-fulks-1.html",
+          "games": 32,
+          "value": 5.875,
+          "valueFormatted": "5.9"
+        },
+        {
+          "name": "Chansey Willis Jr.",
+          "team": "Western Michigan",
+          "slug": "chansey-willis-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/chansey-willis-jr-1.html",
+          "games": 24,
+          "value": 5.8333333333,
+          "valueFormatted": "5.8"
+        },
+        {
+          "name": "Chucky Hepburn",
+          "team": "Louisville",
+          "slug": "chucky-hepburn-1",
+          "url": "https://www.sports-reference.com/cbb/players/chucky-hepburn-1.html",
+          "games": 34,
+          "value": 5.8235294118,
+          "valueFormatted": "5.8"
+        },
+        {
+          "name": "Bez Mbeng",
+          "team": "Yale",
+          "slug": "bez-mbeng-1",
+          "url": "https://www.sports-reference.com/cbb/players/bez-mbeng-1.html",
+          "games": 29,
+          "value": 5.7586206897,
+          "valueFormatted": "5.8"
+        },
+        {
+          "name": "Dajuan Harris Jr.",
+          "team": "Kansas",
+          "slug": "dajuan-harris-1",
+          "url": "https://www.sports-reference.com/cbb/players/dajuan-harris-1.html",
+          "games": 33,
+          "value": 5.7272727273,
+          "valueFormatted": "5.7"
+        },
+        {
+          "name": "Bennett Stirtz",
+          "team": "Drake",
+          "slug": "bennett-stirtz-1",
+          "url": "https://www.sports-reference.com/cbb/players/bennett-stirtz-1.html",
+          "games": 35,
+          "value": 5.7142857143,
+          "valueFormatted": "5.7"
+        },
+        {
+          "name": "Dylan Darling",
+          "team": "Idaho State",
+          "slug": "dylan-darling-1",
+          "url": "https://www.sports-reference.com/cbb/players/dylan-darling-1.html",
+          "games": 28,
+          "value": 5.7142857143,
+          "valueFormatted": "5.7"
+        },
+        {
+          "name": "Hassan Diarra",
+          "team": "Connecticut",
+          "slug": "hassan-diarra-1",
+          "url": "https://www.sports-reference.com/cbb/players/hassan-diarra-1.html",
+          "games": 35,
+          "value": 5.7142857143,
+          "valueFormatted": "5.7"
+        },
+        {
+          "name": "Jaylen Smith",
+          "team": "North Florida",
+          "slug": "jaylen-smith-1",
+          "url": "https://www.sports-reference.com/cbb/players/jaylen-smith-1.html",
+          "games": 32,
+          "value": 5.65625,
+          "valueFormatted": "5.7"
+        },
+        {
+          "name": "Javon Small",
+          "team": "West Virginia",
+          "slug": "javon-small-1",
+          "url": "https://www.sports-reference.com/cbb/players/javon-small-1.html",
+          "games": 32,
+          "value": 5.625,
+          "valueFormatted": "5.6"
+        },
+        {
+          "name": "Kevin Miller",
+          "team": "SMU",
+          "slug": "kevin-miller-3",
+          "url": "https://www.sports-reference.com/cbb/players/kevin-miller-3.html",
+          "games": 28,
+          "value": 5.5357142857,
+          "valueFormatted": "5.5"
+        },
+        {
+          "name": "Xaivian Lee",
+          "team": "Princeton",
+          "slug": "xaivian-lee-1",
+          "url": "https://www.sports-reference.com/cbb/players/xaivian-lee-1.html",
+          "games": 30,
+          "value": 5.5,
+          "valueFormatted": "5.5"
+        },
+        {
+          "name": "Egor Demin",
+          "team": "Brigham Young",
+          "slug": "egor-demin-1",
+          "url": "https://www.sports-reference.com/cbb/players/egor-demin-1.html",
+          "games": 33,
+          "value": 5.4545454545,
+          "valueFormatted": "5.5"
+        },
+        {
+          "name": "Anthony Pritchard",
+          "team": "Central Michigan",
+          "slug": "anthony-pritchard-1",
+          "url": "https://www.sports-reference.com/cbb/players/anthony-pritchard-1.html",
+          "games": 31,
+          "value": 5.4516129032,
+          "valueFormatted": "5.5"
+        },
+        {
+          "name": "Jaland Lowe",
+          "team": "Pittsburgh",
+          "slug": "jaland-lowe-2",
+          "url": "https://www.sports-reference.com/cbb/players/jaland-lowe-2.html",
+          "games": 31,
+          "value": 5.4516129032,
+          "valueFormatted": "5.5"
+        },
+        {
+          "name": "Jeremy Fears Jr.",
+          "team": "Michigan State",
+          "slug": "jeremy-fears-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/jeremy-fears-jr-1.html",
+          "games": 36,
+          "value": 5.4444444444,
+          "valueFormatted": "5.4"
+        },
+        {
+          "name": "Dwon Odom",
+          "team": "Tulsa",
+          "slug": "dwon-odom-1",
+          "url": "https://www.sports-reference.com/cbb/players/dwon-odom-1.html",
+          "games": 33,
+          "value": 5.3636363636,
+          "valueFormatted": "5.4"
+        },
+        {
+          "name": "Tyson Dunn",
+          "team": "Buffalo",
+          "slug": "tyson-dunn-1",
+          "url": "https://www.sports-reference.com/cbb/players/tyson-dunn-1.html",
+          "games": 31,
+          "value": 5.3225806452,
+          "valueFormatted": "5.3"
+        },
+        {
+          "name": "Kadary Richmond",
+          "team": "St. John's (NY)",
+          "slug": "kadary-richmond-1",
+          "url": "https://www.sports-reference.com/cbb/players/kadary-richmond-1.html",
+          "games": 36,
+          "value": 5.3055555556,
+          "valueFormatted": "5.3"
+        },
+        {
+          "name": "Brock Harding",
+          "team": "Iowa",
+          "slug": "brock-harding-1",
+          "url": "https://www.sports-reference.com/cbb/players/brock-harding-1.html",
+          "games": 33,
+          "value": 5.2727272727,
+          "valueFormatted": "5.3"
+        },
+        {
+          "name": "Malachi Smith",
+          "team": "Dayton",
+          "slug": "malachi-smith-2",
+          "url": "https://www.sports-reference.com/cbb/players/malachi-smith-2.html",
+          "games": 33,
+          "value": 5.2727272727,
+          "valueFormatted": "5.3"
+        },
+        {
+          "name": "Dezayne Mingo",
+          "team": "Marshall",
+          "slug": "dezayne-mingo-1",
+          "url": "https://www.sports-reference.com/cbb/players/dezayne-mingo-1.html",
+          "games": 31,
+          "value": 5.2258064516,
+          "valueFormatted": "5.2"
+        },
+        {
+          "name": "Myles Tate",
+          "team": "Appalachian State",
+          "slug": "myles-tate-2",
+          "url": "https://www.sports-reference.com/cbb/players/myles-tate-2.html",
+          "games": 31,
+          "value": 5.2258064516,
+          "valueFormatted": "5.2"
+        },
+        {
+          "name": "Samage Teel",
+          "team": "Indiana State",
+          "slug": "samage-teel-1",
+          "url": "https://www.sports-reference.com/cbb/players/samage-teel-1.html",
+          "games": 32,
+          "value": 5.21875,
+          "valueFormatted": "5.2"
+        },
+        {
+          "name": "Kam Woods",
+          "team": "Robert Morris",
+          "slug": "kam-woods-1",
+          "url": "https://www.sports-reference.com/cbb/players/kam-woods-1.html",
+          "games": 30,
+          "value": 5.2,
+          "valueFormatted": "5.2"
+        },
+        {
+          "name": "Boogie Fland",
+          "team": "Arkansas",
+          "slug": "boogie-fland-1",
+          "url": "https://www.sports-reference.com/cbb/players/boogie-fland-1.html",
+          "games": 21,
+          "value": 5.1428571429,
+          "valueFormatted": "5.1"
+        },
+        {
+          "name": "Mark Sears",
+          "team": "Alabama",
+          "slug": "mark-sears-1",
+          "url": "https://www.sports-reference.com/cbb/players/mark-sears-1.html",
+          "games": 37,
+          "value": 5.1351351351,
+          "valueFormatted": "5.1"
+        },
+        {
+          "name": "Zach Cleveland",
+          "team": "Liberty",
+          "slug": "zach-cleveland-1",
+          "url": "https://www.sports-reference.com/cbb/players/zach-cleveland-1.html",
+          "games": 32,
+          "value": 5.125,
+          "valueFormatted": "5.1"
+        },
+        {
+          "name": "Damarco Minor",
+          "team": "Oregon State",
+          "slug": "damarco-minor-1",
+          "url": "https://www.sports-reference.com/cbb/players/damarco-minor-1.html",
+          "games": 33,
+          "value": 5.0606060606,
+          "valueFormatted": "5.1"
+        },
+        {
+          "name": "JaCobi Wood",
+          "team": "Murray State",
+          "slug": "jacobi-wood-1",
+          "url": "https://www.sports-reference.com/cbb/players/jacobi-wood-1.html",
+          "games": 32,
+          "value": 5.03125,
+          "valueFormatted": "5.0"
+        },
+        {
+          "name": "Dug McDaniel",
+          "team": "Kansas State",
+          "slug": "dug-mcdaniel-1",
+          "url": "https://www.sports-reference.com/cbb/players/dug-mcdaniel-1.html",
+          "games": 32,
+          "value": 4.9375,
+          "valueFormatted": "4.9"
         }
       ]
     },
@@ -672,6 +2381,366 @@
           "games": 35,
           "value": 3.3714285715,
           "valueFormatted": "3.4"
+        },
+        {
+          "name": "Hayden Gray",
+          "team": "UC San Diego",
+          "slug": "hayden-gray-1",
+          "url": "https://www.sports-reference.com/cbb/players/hayden-gray-1.html",
+          "games": 35,
+          "value": 3.3714285715,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Gabe Dynes",
+          "team": "Youngstown State",
+          "slug": "gabe-dynes-1",
+          "url": "https://www.sports-reference.com/cbb/players/gabe-dynes-1.html",
+          "games": 34,
+          "value": 3.3235294118,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Tayton Conerway",
+          "team": "Troy",
+          "slug": "tayton-conerway-1",
+          "url": "https://www.sports-reference.com/cbb/players/tayton-conerway-1.html",
+          "games": 34,
+          "value": 3.3235294118,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Bryan Etumnu",
+          "team": "Merrimack",
+          "slug": "bryan-etumnu-1",
+          "url": "https://www.sports-reference.com/cbb/players/bryan-etumnu-1.html",
+          "games": 32,
+          "value": 3.25,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Miles Byrd",
+          "team": "San Diego State",
+          "slug": "miles-byrd-1",
+          "url": "https://www.sports-reference.com/cbb/players/miles-byrd-1.html",
+          "games": 30,
+          "value": 3.2,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Ryan Kalkbrenner",
+          "team": "Creighton",
+          "slug": "ryan-kalkbrenner-1",
+          "url": "https://www.sports-reference.com/cbb/players/ryan-kalkbrenner-1.html",
+          "games": 35,
+          "value": 3.2,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Tuongthach Gatkek",
+          "team": "Little Rock",
+          "slug": "tuongthach-gatkek-1",
+          "url": "https://www.sports-reference.com/cbb/players/tuongthach-gatkek-1.html",
+          "games": 30,
+          "value": 3.1666666667000003,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Javontae Campbell",
+          "team": "Bowling Green",
+          "slug": "javontae-campbell-1",
+          "url": "https://www.sports-reference.com/cbb/players/javontae-campbell-1.html",
+          "games": 32,
+          "value": 3.125,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Mwani Wilkinson",
+          "team": "Little Rock",
+          "slug": "mwani-wilkinson-1",
+          "url": "https://www.sports-reference.com/cbb/players/mwani-wilkinson-1.html",
+          "games": 33,
+          "value": 3.1212121212,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Coleman Hawkins",
+          "team": "Kansas State",
+          "slug": "coleman-hawkins-1",
+          "url": "https://www.sports-reference.com/cbb/players/coleman-hawkins-1.html",
+          "games": 30,
+          "value": 3.1,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Keonte Jones",
+          "team": "Cal State Northridge",
+          "slug": "keonte-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/keonte-jones-1.html",
+          "games": 33,
+          "value": 3.0909090909000003,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Cameron Matthews",
+          "team": "Mississippi State",
+          "slug": "cameron-matthews-1",
+          "url": "https://www.sports-reference.com/cbb/players/cameron-matthews-1.html",
+          "games": 34,
+          "value": 3.0882352941,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Connor Withers",
+          "team": "Bryant",
+          "slug": "connor-withers-1",
+          "url": "https://www.sports-reference.com/cbb/players/connor-withers-1.html",
+          "games": 35,
+          "value": 3.0857142857,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Collin Metcalf",
+          "team": "Northeastern",
+          "slug": "collin-metcalf-1",
+          "url": "https://www.sports-reference.com/cbb/players/collin-metcalf-1.html",
+          "games": 32,
+          "value": 3.0625,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Moustapha Thiam",
+          "team": "UCF",
+          "slug": "moustapha-thiam-1",
+          "url": "https://www.sports-reference.com/cbb/players/moustapha-thiam-1.html",
+          "games": 34,
+          "value": 3.0588235294,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Johni Broome",
+          "team": "Auburn",
+          "slug": "johni-broome-1",
+          "url": "https://www.sports-reference.com/cbb/players/johni-broome-1.html",
+          "games": 36,
+          "value": 3.0555555555,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Magoon Gwath",
+          "team": "San Diego State",
+          "slug": "magoon-gwath-1",
+          "url": "https://www.sports-reference.com/cbb/players/magoon-gwath-1.html",
+          "games": 26,
+          "value": 3.0384615385,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Amarri Monroe",
+          "team": "Quinnipiac",
+          "slug": "amarri-monroe-1",
+          "url": "https://www.sports-reference.com/cbb/players/amarri-monroe-1.html",
+          "games": 32,
+          "value": 3.03125,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Yanic Konan Niederhauser",
+          "team": "Penn State",
+          "slug": "yanic-konan-niederhauser-1",
+          "url": "https://www.sports-reference.com/cbb/players/yanic-konan-niederhauser-1.html",
+          "games": 29,
+          "value": 2.9655172413999997,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "George Kimble III",
+          "team": "Eastern Kentucky",
+          "slug": "george-kimble-iii-1",
+          "url": "https://www.sports-reference.com/cbb/players/george-kimble-iii-1.html",
+          "games": 25,
+          "value": 2.96,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Rasheer Fleming",
+          "team": "Saint Joseph's",
+          "slug": "rasheer-fleming-1",
+          "url": "https://www.sports-reference.com/cbb/players/rasheer-fleming-1.html",
+          "games": 35,
+          "value": 2.9428571429,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Otis Frazier III",
+          "team": "UTEP",
+          "slug": "otis-frazieriii-1",
+          "url": "https://www.sports-reference.com/cbb/players/otis-frazieriii-1.html",
+          "games": 33,
+          "value": 2.9393939394,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Nathan Bittle",
+          "team": "Oregon",
+          "slug": "nate-bittle-1",
+          "url": "https://www.sports-reference.com/cbb/players/nate-bittle-1.html",
+          "games": 35,
+          "value": 2.9142857143,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Jesus Carralero",
+          "team": "Bethune-Cookman",
+          "slug": "jesus-carralero-1",
+          "url": "https://www.sports-reference.com/cbb/players/jesus-carralero-1.html",
+          "games": 33,
+          "value": 2.9090909090999997,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Joseph Tugler",
+          "team": "Houston",
+          "slug": "joseph-tugler-2",
+          "url": "https://www.sports-reference.com/cbb/players/joseph-tugler-2.html",
+          "games": 40,
+          "value": 2.875,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Kadary Richmond",
+          "team": "St. John's (NY)",
+          "slug": "kadary-richmond-1",
+          "url": "https://www.sports-reference.com/cbb/players/kadary-richmond-1.html",
+          "games": 36,
+          "value": 2.8611111111,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Joshua Jefferson",
+          "team": "Iowa State",
+          "slug": "joshua-jefferson-1",
+          "url": "https://www.sports-reference.com/cbb/players/joshua-jefferson-1.html",
+          "games": 35,
+          "value": 2.8571428572,
+          "valueFormatted": "2.9"
+        },
+        {
+          "name": "Mister Dean",
+          "team": "USC Upstate",
+          "slug": "mister-dean-1",
+          "url": "https://www.sports-reference.com/cbb/players/mister-dean-1.html",
+          "games": 31,
+          "value": 2.8387096774000002,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Justice Ajogbor",
+          "team": "Saint Joseph's",
+          "slug": "justice-ajogbor-1",
+          "url": "https://www.sports-reference.com/cbb/players/justice-ajogbor-1.html",
+          "games": 35,
+          "value": 2.8285714285,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Earl Timberlake",
+          "team": "Bryant",
+          "slug": "earl-timberlake-1",
+          "url": "https://www.sports-reference.com/cbb/players/earl-timberlake-1.html",
+          "games": 33,
+          "value": 2.8181818182000002,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Collin Murray-Boyles",
+          "team": "South Carolina",
+          "slug": "collin-murray-boyles-1",
+          "url": "https://www.sports-reference.com/cbb/players/collin-murray-boyles-1.html",
+          "games": 32,
+          "value": 2.8125,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Micah Peavy",
+          "team": "Georgetown",
+          "slug": "micah-peavy-1",
+          "url": "https://www.sports-reference.com/cbb/players/micah-peavy-1.html",
+          "games": 32,
+          "value": 2.8125,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Evan Otten",
+          "team": "Idaho State",
+          "slug": "evan-otten-1",
+          "url": "https://www.sports-reference.com/cbb/players/evan-otten-1.html",
+          "games": 30,
+          "value": 2.8000000000000003,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Paul Otieno",
+          "team": "Quinnipiac",
+          "slug": "paul-otieno-1",
+          "url": "https://www.sports-reference.com/cbb/players/paul-otieno-1.html",
+          "games": 32,
+          "value": 2.78125,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Toby Nnadozie",
+          "team": "Coppin State",
+          "slug": "toby-nnadozie-1",
+          "url": "https://www.sports-reference.com/cbb/players/toby-nnadozie-1.html",
+          "games": 30,
+          "value": 2.7666666666,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "Duke",
+          "slug": "cooper-flagg-1",
+          "url": "https://www.sports-reference.com/cbb/players/cooper-flagg-1.html",
+          "games": 37,
+          "value": 2.7567567567999998,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Brent Davis",
+          "team": "LIU",
+          "slug": "brent-davis-1",
+          "url": "https://www.sports-reference.com/cbb/players/brent-davis-1.html",
+          "games": 24,
+          "value": 2.75,
+          "valueFormatted": "2.8"
+        },
+        {
+          "name": "Nelly Junior Joseph",
+          "team": "New Mexico",
+          "slug": "nellyjunior-joseph-1",
+          "url": "https://www.sports-reference.com/cbb/players/nellyjunior-joseph-1.html",
+          "games": 35,
+          "value": 2.7428571428,
+          "valueFormatted": "2.7"
+        },
+        {
+          "name": "Adam Clark",
+          "team": "Merrimack",
+          "slug": "adam-clark-1",
+          "url": "https://www.sports-reference.com/cbb/players/adam-clark-1.html",
+          "games": 33,
+          "value": 2.7272727273,
+          "valueFormatted": "2.7"
+        },
+        {
+          "name": "Zack Austin",
+          "team": "Pittsburgh",
+          "slug": "zach-austin-1",
+          "url": "https://www.sports-reference.com/cbb/players/zach-austin-1.html",
+          "games": 32,
+          "value": 2.71875,
+          "valueFormatted": "2.7"
         }
       ]
     },
@@ -768,6 +2837,366 @@
           "games": 30,
           "value": 3.5,
           "valueFormatted": "3.5"
+        },
+        {
+          "name": "Desmond Claude",
+          "team": "Southern California",
+          "slug": "desmond-claude-1",
+          "url": "https://www.sports-reference.com/cbb/players/desmond-claude-1.html",
+          "games": 33,
+          "value": 3.4848484848,
+          "valueFormatted": "3.5"
+        },
+        {
+          "name": "Steven Ashworth",
+          "team": "Creighton",
+          "slug": "steven-ashworth-1",
+          "url": "https://www.sports-reference.com/cbb/players/steven-ashworth-1.html",
+          "games": 35,
+          "value": 3.4285714286,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Jeremiah Fears",
+          "team": "Oklahoma",
+          "slug": "jeremiah-fears-1",
+          "url": "https://www.sports-reference.com/cbb/players/jeremiah-fears-1.html",
+          "games": 34,
+          "value": 3.4117647059,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Robert McCray V",
+          "team": "Jacksonville",
+          "slug": "robert-mccray-1",
+          "url": "https://www.sports-reference.com/cbb/players/robert-mccray-1.html",
+          "games": 32,
+          "value": 3.40625,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Themus Fulks",
+          "team": "Milwaukee",
+          "slug": "themus-fulks-1",
+          "url": "https://www.sports-reference.com/cbb/players/themus-fulks-1.html",
+          "games": 32,
+          "value": 3.40625,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Doctor Bradley",
+          "team": "Arkansas\u2013Pine Bluff",
+          "slug": "doctor-bradley-1",
+          "url": "https://www.sports-reference.com/cbb/players/doctor-bradley-1.html",
+          "games": 18,
+          "value": 3.3888888889,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "Andre Curbelo",
+          "team": "Southern Mississippi",
+          "slug": "andre-curbelo-1",
+          "url": "https://www.sports-reference.com/cbb/players/andre-curbelo-1.html",
+          "games": 20,
+          "value": 3.35,
+          "valueFormatted": "3.4"
+        },
+        {
+          "name": "PJ Haggerty",
+          "team": "Memphis",
+          "slug": "pj-haggerty-1",
+          "url": "https://www.sports-reference.com/cbb/players/pj-haggerty-1.html",
+          "games": 35,
+          "value": 3.3142857143,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Daylen Berry",
+          "team": "Charleston Southern",
+          "slug": "daylen-berry-1",
+          "url": "https://www.sports-reference.com/cbb/players/daylen-berry-1.html",
+          "games": 32,
+          "value": 3.3125,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Adrian Wooley",
+          "team": "Kennesaw State",
+          "slug": "adrian-wooley-1",
+          "url": "https://www.sports-reference.com/cbb/players/adrian-wooley-1.html",
+          "games": 33,
+          "value": 3.303030303,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Nic McClain",
+          "team": "Eastern Washington",
+          "slug": "nic-mcclain-1",
+          "url": "https://www.sports-reference.com/cbb/players/nic-mcclain-1.html",
+          "games": 30,
+          "value": 3.3,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Great Osobor",
+          "team": "Washington",
+          "slug": "great-osobor-1",
+          "url": "https://www.sports-reference.com/cbb/players/great-osobor-1.html",
+          "games": 31,
+          "value": 3.2903225806,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Tayshawn Comer",
+          "team": "Evansville",
+          "slug": "tayshawn-comer-1",
+          "url": "https://www.sports-reference.com/cbb/players/tayshawn-comer-1.html",
+          "games": 32,
+          "value": 3.28125,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Terrence Brown",
+          "team": "FDU",
+          "slug": "terrence-brown-1",
+          "url": "https://www.sports-reference.com/cbb/players/terrence-brown-1.html",
+          "games": 32,
+          "value": 3.28125,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "LeJuan Watts",
+          "team": "Washington State",
+          "slug": "lejuan-watts-1",
+          "url": "https://www.sports-reference.com/cbb/players/lejuan-watts-1.html",
+          "games": 34,
+          "value": 3.2647058824,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Robbie Avila",
+          "team": "Saint Louis",
+          "slug": "robbie-avila-1",
+          "url": "https://www.sports-reference.com/cbb/players/robbie-avila-1.html",
+          "games": 31,
+          "value": 3.2580645161,
+          "valueFormatted": "3.3"
+        },
+        {
+          "name": "Chansey Willis Jr.",
+          "team": "Western Michigan",
+          "slug": "chansey-willis-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/chansey-willis-jr-1.html",
+          "games": 24,
+          "value": 3.25,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Danny Wolf",
+          "team": "Michigan",
+          "slug": "danny-wolf-1",
+          "url": "https://www.sports-reference.com/cbb/players/danny-wolf-1.html",
+          "games": 37,
+          "value": 3.2432432432,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Keshon Gilbert",
+          "team": "Iowa State",
+          "slug": "keshon-gilbert-1",
+          "url": "https://www.sports-reference.com/cbb/players/keshon-gilbert-1.html",
+          "games": 29,
+          "value": 3.2413793103,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Carter Whitt",
+          "team": "Belmont",
+          "slug": "carter-whitt-1",
+          "url": "https://www.sports-reference.com/cbb/players/carter-whitt-1.html",
+          "games": 32,
+          "value": 3.21875,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Adam Clark",
+          "team": "Merrimack",
+          "slug": "adam-clark-1",
+          "url": "https://www.sports-reference.com/cbb/players/adam-clark-1.html",
+          "games": 33,
+          "value": 3.2121212121,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Taje' Kelly",
+          "team": "Charleston Southern",
+          "slug": "taje-kelly-1",
+          "url": "https://www.sports-reference.com/cbb/players/taje-kelly-1.html",
+          "games": 31,
+          "value": 3.1935483871,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Samage Teel",
+          "team": "Indiana State",
+          "slug": "samage-teel-1",
+          "url": "https://www.sports-reference.com/cbb/players/samage-teel-1.html",
+          "games": 32,
+          "value": 3.1875,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Ketron Shaw",
+          "team": "Maryland Eastern Shore",
+          "slug": "ketron-shaw-1",
+          "url": "https://www.sports-reference.com/cbb/players/ketron-shaw-1.html",
+          "games": 29,
+          "value": 3.1724137931,
+          "valueFormatted": "3.2"
+        },
+        {
+          "name": "Conor Enright",
+          "team": "DePaul",
+          "slug": "conor-enright-1",
+          "url": "https://www.sports-reference.com/cbb/players/conor-enright-1.html",
+          "games": 23,
+          "value": 3.1304347826,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Isaiah Swope",
+          "team": "Saint Louis",
+          "slug": "isaiah-swope-1",
+          "url": "https://www.sports-reference.com/cbb/players/isaiah-swope-1.html",
+          "games": 33,
+          "value": 3.0909090909,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Donovan Dent",
+          "team": "New Mexico",
+          "slug": "donovan-dent-1",
+          "url": "https://www.sports-reference.com/cbb/players/donovan-dent-1.html",
+          "games": 35,
+          "value": 3.0857142857,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Tariq Francis",
+          "team": "NJIT",
+          "slug": "tariq-francis-1",
+          "url": "https://www.sports-reference.com/cbb/players/tariq-francis-1.html",
+          "games": 27,
+          "value": 3.0740740741,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Mekhi Conner",
+          "team": "Sacred Heart",
+          "slug": "mekhi-conner-1",
+          "url": "https://www.sports-reference.com/cbb/players/mekhi-conner-1.html",
+          "games": 33,
+          "value": 3.0606060606,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Elliot Cadeau",
+          "team": "North Carolina",
+          "slug": "elliot-cadeau-1",
+          "url": "https://www.sports-reference.com/cbb/players/elliot-cadeau-1.html",
+          "games": 37,
+          "value": 3.0540540541,
+          "valueFormatted": "3.1"
+        },
+        {
+          "name": "Donovan Sanders",
+          "team": "Mississippi Valley State",
+          "slug": "donovan-sanders-1",
+          "url": "https://www.sports-reference.com/cbb/players/donovan-sanders-1.html",
+          "games": 29,
+          "value": 3.0344827586,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Anthony Pritchard",
+          "team": "Central Michigan",
+          "slug": "anthony-pritchard-1",
+          "url": "https://www.sports-reference.com/cbb/players/anthony-pritchard-1.html",
+          "games": 31,
+          "value": 3.0322580645,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Kavion McClain",
+          "team": "Texas Southern",
+          "slug": "kavion-mcclain-1",
+          "url": "https://www.sports-reference.com/cbb/players/kavion-mcclain-1.html",
+          "games": 31,
+          "value": 3.0322580645,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Michael Osei-Bonsu",
+          "team": "Missouri State",
+          "slug": "michael-osei-bonsu-1",
+          "url": "https://www.sports-reference.com/cbb/players/michael-osei-bonsu-1.html",
+          "games": 32,
+          "value": 3.03125,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Chucky Hepburn",
+          "team": "Louisville",
+          "slug": "chucky-hepburn-1",
+          "url": "https://www.sports-reference.com/cbb/players/chucky-hepburn-1.html",
+          "games": 34,
+          "value": 3.0294117647,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Naithan George",
+          "team": "Georgia Tech",
+          "slug": "naithan-george-1",
+          "url": "https://www.sports-reference.com/cbb/players/naithan-george-1.html",
+          "games": 34,
+          "value": 3.0294117647,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Braden Smith",
+          "team": "Purdue",
+          "slug": "braden-smith-1",
+          "url": "https://www.sports-reference.com/cbb/players/braden-smith-1.html",
+          "games": 36,
+          "value": 3.0277777778,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Anwar Gill",
+          "team": "Howard",
+          "slug": "anwar-gill-1",
+          "url": "https://www.sports-reference.com/cbb/players/anwar-gill-1.html",
+          "games": 30,
+          "value": 3.0,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Keyshawn Hall",
+          "team": "UCF",
+          "slug": "keyshawn-hall-1",
+          "url": "https://www.sports-reference.com/cbb/players/keyshawn-hall-1.html",
+          "games": 33,
+          "value": 3.0,
+          "valueFormatted": "3.0"
+        },
+        {
+          "name": "Nate Calmese",
+          "team": "Washington State",
+          "slug": "nate-calmese-1",
+          "url": "https://www.sports-reference.com/cbb/players/nate-calmese-1.html",
+          "games": 33,
+          "value": 3.0,
+          "valueFormatted": "3.0"
         }
       ]
     },
@@ -864,6 +3293,366 @@
           "games": 31,
           "value": 20.5161290323,
           "valueFormatted": "20.5"
+        },
+        {
+          "name": "Nick Martinelli",
+          "team": "Northwestern",
+          "slug": "nick-martinelli-1",
+          "url": "https://www.sports-reference.com/cbb/players/nick-martinelli-1.html",
+          "games": 33,
+          "value": 20.4848484848,
+          "valueFormatted": "20.5"
+        },
+        {
+          "name": "Lamar Wilkerson",
+          "team": "Sam Houston State",
+          "slug": "lamar-wilkerson-1",
+          "url": "https://www.sports-reference.com/cbb/players/lamar-wilkerson-1.html",
+          "games": 32,
+          "value": 20.46875,
+          "valueFormatted": "20.5"
+        },
+        {
+          "name": "Donovan Dent",
+          "team": "New Mexico",
+          "slug": "donovan-dent-1",
+          "url": "https://www.sports-reference.com/cbb/players/donovan-dent-1.html",
+          "games": 35,
+          "value": 20.4285714286,
+          "valueFormatted": "20.4"
+        },
+        {
+          "name": "Brice Williams",
+          "team": "Nebraska",
+          "slug": "brice-williams-1",
+          "url": "https://www.sports-reference.com/cbb/players/brice-williams-1.html",
+          "games": 35,
+          "value": 20.3714285714,
+          "valueFormatted": "20.4"
+        },
+        {
+          "name": "Maxime Raynaud",
+          "team": "Stanford",
+          "slug": "maxime-raynaud-1",
+          "url": "https://www.sports-reference.com/cbb/players/maxime-raynaud-1.html",
+          "games": 35,
+          "value": 20.2,
+          "valueFormatted": "20.2"
+        },
+        {
+          "name": "Barrington Hargress",
+          "team": "UC Riverside",
+          "slug": "barrington-hargress-1",
+          "url": "https://www.sports-reference.com/cbb/players/barrington-hargress-1.html",
+          "games": 34,
+          "value": 20.1764705882,
+          "valueFormatted": "20.2"
+        },
+        {
+          "name": "Abdi Bashir Jr.",
+          "team": "Monmouth",
+          "slug": "abdi-bashir-jr-1",
+          "url": "https://www.sports-reference.com/cbb/players/abdi-bashir-jr-1.html",
+          "games": 33,
+          "value": 20.0909090909,
+          "valueFormatted": "20.1"
+        },
+        {
+          "name": "Trey Kaufman-Renn",
+          "team": "Purdue",
+          "slug": "trey-kaufman-renn-1",
+          "url": "https://www.sports-reference.com/cbb/players/trey-kaufman-renn-1.html",
+          "games": 36,
+          "value": 20.0833333333,
+          "valueFormatted": "20.1"
+        },
+        {
+          "name": "Blaise Threatt",
+          "team": "Weber State",
+          "slug": "blaise-threatt-1",
+          "url": "https://www.sports-reference.com/cbb/players/blaise-threatt-1.html",
+          "games": 32,
+          "value": 20.03125,
+          "valueFormatted": "20.0"
+        },
+        {
+          "name": "Jacob Ognacevic",
+          "team": "Lipscomb",
+          "slug": "jacob-ognacevic-1",
+          "url": "https://www.sports-reference.com/cbb/players/jacob-ognacevic-1.html",
+          "games": 35,
+          "value": 20.0285714286,
+          "valueFormatted": "20.0"
+        },
+        {
+          "name": "Paul McMillan IV",
+          "team": "Canisius",
+          "slug": "paul-mcmillan-iv-1",
+          "url": "https://www.sports-reference.com/cbb/players/paul-mcmillan-iv-1.html",
+          "games": 29,
+          "value": 19.9655172414,
+          "valueFormatted": "20.0"
+        },
+        {
+          "name": "Tre Johnson",
+          "team": "Texas",
+          "slug": "tre-johnson-2",
+          "url": "https://www.sports-reference.com/cbb/players/tre-johnson-2.html",
+          "games": 33,
+          "value": 19.9393939394,
+          "valueFormatted": "19.9"
+        },
+        {
+          "name": "Adam Clark",
+          "team": "Merrimack",
+          "slug": "adam-clark-1",
+          "url": "https://www.sports-reference.com/cbb/players/adam-clark-1.html",
+          "games": 33,
+          "value": 19.7878787879,
+          "valueFormatted": "19.8"
+        },
+        {
+          "name": "Dylan Darling",
+          "team": "Idaho State",
+          "slug": "dylan-darling-1",
+          "url": "https://www.sports-reference.com/cbb/players/dylan-darling-1.html",
+          "games": 28,
+          "value": 19.7857142857,
+          "valueFormatted": "19.8"
+        },
+        {
+          "name": "Primo Spears",
+          "team": "UTSA",
+          "slug": "amir-spears-1",
+          "url": "https://www.sports-reference.com/cbb/players/amir-spears-1.html",
+          "games": 30,
+          "value": 19.7666666667,
+          "valueFormatted": "19.8"
+        },
+        {
+          "name": "Doctor Bradley",
+          "team": "Arkansas\u2013Pine Bluff",
+          "slug": "doctor-bradley-1",
+          "url": "https://www.sports-reference.com/cbb/players/doctor-bradley-1.html",
+          "games": 18,
+          "value": 19.6111111111,
+          "valueFormatted": "19.6"
+        },
+        {
+          "name": "John Tonje",
+          "team": "Wisconsin",
+          "slug": "john-tonje-1",
+          "url": "https://www.sports-reference.com/cbb/players/john-tonje-1.html",
+          "games": 37,
+          "value": 19.5675675676,
+          "valueFormatted": "19.6"
+        },
+        {
+          "name": "Blake Harper",
+          "team": "Howard",
+          "slug": "blake-harper-1",
+          "url": "https://www.sports-reference.com/cbb/players/blake-harper-1.html",
+          "games": 32,
+          "value": 19.53125,
+          "valueFormatted": "19.5"
+        },
+        {
+          "name": "Jackie Johnson III",
+          "team": "Fordham",
+          "slug": "jackie-johnsoniii-1",
+          "url": "https://www.sports-reference.com/cbb/players/jackie-johnsoniii-1.html",
+          "games": 33,
+          "value": 19.4545454545,
+          "valueFormatted": "19.5"
+        },
+        {
+          "name": "Dylan Harper",
+          "team": "Rutgers",
+          "slug": "dylan-harper-1",
+          "url": "https://www.sports-reference.com/cbb/players/dylan-harper-1.html",
+          "games": 29,
+          "value": 19.4482758621,
+          "valueFormatted": "19.4"
+        },
+        {
+          "name": "John Poulakidas",
+          "team": "Yale",
+          "slug": "john-poulakidas-1",
+          "url": "https://www.sports-reference.com/cbb/players/john-poulakidas-1.html",
+          "games": 27,
+          "value": 19.3703703704,
+          "valueFormatted": "19.4"
+        },
+        {
+          "name": "Bennett Stirtz",
+          "team": "Drake",
+          "slug": "bennett-stirtz-1",
+          "url": "https://www.sports-reference.com/cbb/players/bennett-stirtz-1.html",
+          "games": 35,
+          "value": 19.2285714286,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Jalen Jackson",
+          "team": "Purdue Fort Wayne",
+          "slug": "jalen-jackson-4",
+          "url": "https://www.sports-reference.com/cbb/players/jalen-jackson-4.html",
+          "games": 31,
+          "value": 19.2258064516,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Tariq Francis",
+          "team": "NJIT",
+          "slug": "tariq-francis-1",
+          "url": "https://www.sports-reference.com/cbb/players/tariq-francis-1.html",
+          "games": 27,
+          "value": 19.2222222222,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Kameron Jones",
+          "team": "Marquette",
+          "slug": "kam-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/kam-jones-1.html",
+          "games": 34,
+          "value": 19.2058823529,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Ryan Kalkbrenner",
+          "team": "Creighton",
+          "slug": "ryan-kalkbrenner-1",
+          "url": "https://www.sports-reference.com/cbb/players/ryan-kalkbrenner-1.html",
+          "games": 35,
+          "value": 19.2,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Dawson Garcia",
+          "team": "Minnesota",
+          "slug": "dawson-garcia-1",
+          "url": "https://www.sports-reference.com/cbb/players/dawson-garcia-1.html",
+          "games": 32,
+          "value": 19.1875,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "Duke",
+          "slug": "cooper-flagg-1",
+          "url": "https://www.sports-reference.com/cbb/players/cooper-flagg-1.html",
+          "games": 37,
+          "value": 19.1621621622,
+          "valueFormatted": "19.2"
+        },
+        {
+          "name": "Aniwaniwa Tait-Jones",
+          "team": "UC San Diego",
+          "slug": "aniwaniwa-tait-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/aniwaniwa-tait-jones-1.html",
+          "games": 35,
+          "value": 19.1428571429,
+          "valueFormatted": "19.1"
+        },
+        {
+          "name": "Ryan Forrest",
+          "team": "North Carolina A&T",
+          "slug": "ryan-forrest-1",
+          "url": "https://www.sports-reference.com/cbb/players/ryan-forrest-1.html",
+          "games": 21,
+          "value": 19.1428571429,
+          "valueFormatted": "19.1"
+        },
+        {
+          "name": "Ray'Sean Taylor",
+          "team": "SIU Edwardsville",
+          "slug": "raysean-taylor-1",
+          "url": "https://www.sports-reference.com/cbb/players/raysean-taylor-1.html",
+          "games": 34,
+          "value": 19.0588235294,
+          "valueFormatted": "19.1"
+        },
+        {
+          "name": "Brandon Noel",
+          "team": "Wright State",
+          "slug": "brandon-noel-1",
+          "url": "https://www.sports-reference.com/cbb/players/brandon-noel-1.html",
+          "games": 33,
+          "value": 19.0,
+          "valueFormatted": "19.0"
+        },
+        {
+          "name": "Issac McBride",
+          "team": "Oral Roberts",
+          "slug": "issac-mcbride-1",
+          "url": "https://www.sports-reference.com/cbb/players/issac-mcbride-1.html",
+          "games": 30,
+          "value": 18.9666666667,
+          "valueFormatted": "19.0"
+        },
+        {
+          "name": "Jemel Jones",
+          "team": "Cal State Bakersfield",
+          "slug": "jemel-jones-1",
+          "url": "https://www.sports-reference.com/cbb/players/jemel-jones-1.html",
+          "games": 33,
+          "value": 18.9393939394,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Nick Anderson",
+          "team": "Prairie View A&M",
+          "slug": "nick-anderson-4",
+          "url": "https://www.sports-reference.com/cbb/players/nick-anderson-4.html",
+          "games": 12,
+          "value": 18.9166666667,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Nique Clifford",
+          "team": "Colorado State",
+          "slug": "nique-clifford-1",
+          "url": "https://www.sports-reference.com/cbb/players/nique-clifford-1.html",
+          "games": 36,
+          "value": 18.9166666667,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Marquel Sutton",
+          "team": "Omaha",
+          "slug": "marquel-sutton-1",
+          "url": "https://www.sports-reference.com/cbb/players/marquel-sutton-1.html",
+          "games": 35,
+          "value": 18.9142857143,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Josh Hubbard",
+          "team": "Mississippi State",
+          "slug": "josh-hubbard-1",
+          "url": "https://www.sports-reference.com/cbb/players/josh-hubbard-1.html",
+          "games": 34,
+          "value": 18.8823529412,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Treysen Eaglestaff",
+          "team": "North Dakota",
+          "slug": "treysen-eaglestaff-1",
+          "url": "https://www.sports-reference.com/cbb/players/treysen-eaglestaff-1.html",
+          "games": 33,
+          "value": 18.8787878788,
+          "valueFormatted": "18.9"
+        },
+        {
+          "name": "Devin Askew",
+          "team": "Long Beach State",
+          "slug": "devin-askew-1",
+          "url": "https://www.sports-reference.com/cbb/players/devin-askew-1.html",
+          "games": 32,
+          "value": 18.875,
+          "valueFormatted": "18.9"
         }
       ]
     }
