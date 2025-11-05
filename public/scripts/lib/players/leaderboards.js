@@ -150,11 +150,13 @@ function renderMetricChart(container, metric) {
     container.appendChild(list);
     const maxValue = Math.max(...leaders.map((leader) => leader.value));
     const safeMax = Number.isFinite(maxValue) && maxValue > 0 ? maxValue : 1;
+    const axisTickCount = 6;
+    const displayMax = computeDisplayMax(safeMax, axisTickCount - 1);
     leaders.forEach((leader, index) => {
-        const row = createLeaderboardRow(doc, leader, index, safeMax);
+        const row = createLeaderboardRow(doc, leader, index, displayMax);
         list.appendChild(row);
     });
-    const axis = createLeaderboardAxis(doc, metric, safeMax);
+    const axis = createLeaderboardAxis(doc, metric, displayMax, axisTickCount);
     if (axis) {
         container.appendChild(axis);
     }
@@ -204,11 +206,11 @@ function createLeaderboardRow(doc, leader, index, maxValue) {
     row.style.setProperty("--leaderboard-fill", `${Math.min(fillRatio, 1)}`);
     return row;
 }
-function createLeaderboardAxis(doc, metric, maxValue) {
+function createLeaderboardAxis(doc, metric, maxValue, tickCount = 6) {
     if (!(Number.isFinite(maxValue) && maxValue > 0)) {
         return null;
     }
-    const ticks = buildAxisTicks(maxValue);
+    const ticks = buildAxisTicks(maxValue, tickCount);
     if (ticks.length <= 1) {
         return null;
     }
@@ -231,7 +233,7 @@ function createLeaderboardAxis(doc, metric, maxValue) {
     axis.appendChild(label);
     return axis;
 }
-function buildAxisTicks(maxValue, count = 4) {
+function buildAxisTicks(maxValue, count = 6) {
     if (!(Number.isFinite(maxValue) && maxValue > 0)) {
         return [0, 1];
     }
@@ -273,6 +275,17 @@ function computeTickStep(maxValue, segments) {
         niceNormalized = 10;
     }
     return niceNormalized * magnitude;
+}
+function computeDisplayMax(maxValue, segments = 4) {
+    if (!(Number.isFinite(maxValue) && maxValue > 0)) {
+        return 1;
+    }
+    const step = computeTickStep(maxValue, segments);
+    if (!(Number.isFinite(step) && step > 0)) {
+        return maxValue;
+    }
+    const steps = Math.max(1, Math.ceil(maxValue / step));
+    return Number.parseFloat((steps * step).toPrecision(6));
 }
 function computeNameScale(leader) {
     const label = leader.team ? `${leader.name} (${leader.team})` : leader.name;
