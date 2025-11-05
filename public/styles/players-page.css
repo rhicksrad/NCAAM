@@ -32,6 +32,81 @@
   grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
   align-items: stretch;
 }
+.leaderboard-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: clamp(1.5rem, 2vw, 2.25rem);
+  border-radius: var(--radius-card, 12px);
+  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  box-shadow: var(--shadow-1);
+}
+.leaderboard-panel__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+.leaderboard-panel__control {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .35rem;
+  font-size: .85rem;
+  color: color-mix(in srgb, var(--color-muted) 70%, white 30%);
+}
+.leaderboard-panel__control select {
+  appearance: none;
+  min-width: 6rem;
+  padding: .45rem .75rem;
+  border-radius: .6rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  color: var(--color-ink);
+  font: inherit;
+}
+.leaderboard-panel__canvas {
+  overflow-x: auto;
+  padding-block: .5rem;
+}
+.leaderboard-panel__error {
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: .75rem;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  font-weight: 600;
+  text-align: center;
+}
+.players-leaderboard__svg {
+  width: min(100%,980px);
+  font-family: var(--font-sans);
+}
+.players-leaderboard__row text,
+.players-leaderboard__legend-label {
+  fill: color-mix(in srgb, var(--color-ink) 92%, white 8%);
+  font-size: .85rem;
+}
+.players-leaderboard__label {
+  fill: color-mix(in srgb, var(--color-ink) 85%, white 15%);
+  font-weight: 600;
+}
+.players-leaderboard__value {
+  font-weight: 700;
+  fill: color-mix(in srgb, var(--color-ink-2, var(--color-ink)) 85%, white 15%);
+}
+.players-leaderboard__outlier {
+  font-size: .75rem;
+  font-weight: 600;
+  fill: var(--color-accent-teal);
+}
+.players-leaderboard__legend {
+  font-size: .78rem;
+  color: color-mix(in srgb, var(--color-muted) 75%, white 25%);
+}
+.players-leaderboard__legend text {
+  fill: currentColor;
+}
 
 .stat-card {
   position: relative;

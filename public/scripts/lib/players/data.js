@@ -45,6 +45,65 @@ export const DEFAULT_METRIC_ORDER = [
 export async function loadLeaderboardDocument() {
     return await loadJson(PLAYER_DATA_PATHS.leaderboard, "Players leaderboard");
 }
+const PLAYER_METRIC_FIELDS = {
+    ppg: { metricId: "points", valueKey: "ppg", rankKey: "rank_ppg" },
+    rpg: { metricId: "rebounds", valueKey: "rpg", rankKey: "rank_rpg" },
+    apg: { metricId: "assists", valueKey: "apg", rankKey: "rank_apg" },
+};
+let leaderboardRows = null;
+let leaderboardLoad = null;
+function buildLeaderboardRows(document) {
+    const rows = new Map();
+    Object.keys(PLAYER_METRIC_FIELDS).forEach((field) => {
+        const { metricId, valueKey, rankKey } = PLAYER_METRIC_FIELDS[field];
+        const metric = document.metrics?.[metricId];
+        if (!metric)
+            return;
+        (metric.leaders ?? [])
+            .slice(0, 50)
+            .forEach((leader, index) => {
+            const key = leader.slug || `${leader.name}|${leader.team}`;
+            let row = rows.get(key);
+            if (!row) {
+                row = {
+                    name: leader.name,
+                    team: leader.team,
+                    ppg: Number.NaN,
+                    rpg: Number.NaN,
+                    apg: Number.NaN,
+                    rank_ppg: Number.POSITIVE_INFINITY,
+                    rank_rpg: Number.POSITIVE_INFINITY,
+                    rank_apg: Number.POSITIVE_INFINITY,
+                };
+                rows.set(key, row);
+            }
+            row[valueKey] = leader.value;
+            row[rankKey] = index + 1;
+        });
+    });
+    return Array.from(rows.values());
+}
+export async function loadPlayersLeaderboard() {
+    if (!leaderboardLoad) {
+        leaderboardLoad = loadLeaderboardDocument()
+            .then((document) => buildLeaderboardRows(document))
+            .then((rows) => {
+            leaderboardRows = rows;
+            return rows;
+        })
+            .catch((error) => {
+            leaderboardLoad = null;
+            throw error;
+        });
+    }
+    return await leaderboardLoad;
+}
+export function getPlayersLeaderboard() {
+    if (!leaderboardRows) {
+        throw new Error("Players leaderboard data has not been loaded yet.");
+    }
+    return leaderboardRows;
+}
 export async function loadPlayerIndexDocument() {
     return await loadJson(PLAYER_DATA_PATHS.index, "Players index");
 }
