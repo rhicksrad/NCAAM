@@ -8,6 +8,7 @@ import {
 } from "../lib/ui/logos.js";
 
 const DEFAULT_TIME_ZONE = "America/New_York";
+const LAST_PLAY_PLACEHOLDER = "Loading last play…";
 
 const DATE_DISPLAY = new Intl.DateTimeFormat(undefined, {
   weekday: "short",
@@ -45,6 +46,11 @@ type PlaySummary = {
   scoreboard: string | null;
   clockLabel: string | null;
 };
+
+function isLiveStatus(status: StatusDescriptor): boolean {
+  const label = typeof status.label === "string" ? status.label.trim().toLowerCase() : "";
+  return label === "live";
+}
 
 const ESCAPE_ATTR = /[&<>"']/g;
 const ESCAPE_HTML = /[&<>]/g;
@@ -224,6 +230,20 @@ function buildPlaySummary(game: Game, plays: PlayByPlayEvent[]): PlaySummary | n
   };
 }
 
+function buildLastPlayText(summary: PlaySummary | null, fallbackMessage?: string): string {
+  if (summary) {
+    const segments = [summary.description];
+    if (summary.scoreboard) {
+      segments.push(summary.scoreboard);
+    }
+    return segments.join(" • ");
+  }
+  if (fallbackMessage) {
+    return fallbackMessage;
+  }
+  return "Play-by-play data unavailable.";
+}
+
 function getNumericGameId(game: Game): number | null {
   if (!game || game.id == null) {
     return null;
@@ -320,8 +340,11 @@ function renderTeamRow(
 function renderGameCard(game: Game): string {
   const href = `${BASE}game.html?game_id=${encodeURIComponent(String(game.id))}`;
   const safeHref = escapeAttr(href);
-  const timeLabel = escapeHtml(formatDateLabel(game.date));
   const status = describeStatus(game);
+  const timeLabel = formatDateLabel(game.date);
+  const isLive = isLiveStatus(status);
+  const defaultMeta = escapeAttr(timeLabel);
+  const initialMeta = escapeHtml(isLive ? LAST_PLAY_PLACEHOLDER : timeLabel);
   const homeScore = game.home_score;
   const awayScore = game.away_score;
   const hasScores = isFiniteScore(homeScore) && isFiniteScore(awayScore);
@@ -332,16 +355,15 @@ function renderGameCard(game: Game): string {
     ? `<span class="badge"${status.variant ? ` data-variant="${escapeAttr(status.variant)}"` : ""}>${escapeHtml(status.label)}</span>`
     : "";
 
-  const lastPlayPlaceholder = "Loading last play…";
   const initialClock = status.detail ?? status.label ?? "—";
   const safeInitialClock = escapeHtml(initialClock || "—");
   const safeGameId = escapeAttr(String(game.id));
-  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">${timeLabel}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
+  return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time" data-role="game-meta" data-default-meta="${defaultMeta}" data-live-placeholder="${escapeAttr(LAST_PLAY_PLACEHOLDER)}">${initialMeta}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(
     game.visitor_team,
     awayScore,
     false,
     awayLeading,
-  )}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div><div class="game-card__footer"><span class="game-card__clock" data-role="game-clock" aria-live="polite">${safeInitialClock}</span><p class="game-card__last-play" aria-live="polite"><span class="game-card__last-play-label">Last play</span><span class="game-card__last-play-text" data-role="game-last-play">${escapeHtml(lastPlayPlaceholder)}</span></p></div></a></li>`;
+  )}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div><div class="game-card__footer"><span class="game-card__clock" data-role="game-clock" aria-live="polite">${safeInitialClock}</span><p class="game-card__last-play" data-role="game-last-play-container" aria-live="polite"><span class="game-card__last-play-label">Last play</span><span class="game-card__last-play-text" data-role="game-last-play">${escapeHtml(LAST_PLAY_PLACEHOLDER)}</span></p></div></a></li>`;
 }
 
 function renderLoading(list: HTMLUListElement) {
@@ -449,23 +471,32 @@ function updateGameCardSummary(
   if (!card) {
     return;
   }
+  const metaEl = card.querySelector<HTMLElement>('[data-role="game-meta"]');
   const clockEl = card.querySelector<HTMLElement>('[data-role="game-clock"]');
   const playEl = card.querySelector<HTMLElement>('[data-role="game-last-play"]');
+  const playContainer = card.querySelector<HTMLElement>('[data-role="game-last-play-container"]');
+  const isLive = isLiveStatus(status);
+  const metaDefault = metaEl?.getAttribute("data-default-meta") ?? null;
   if (clockEl) {
     const clockText = summary?.clockLabel ?? status.detail ?? status.label ?? "—";
     clockEl.textContent = clockText || "—";
   }
+  if (metaEl) {
+    if (isLive) {
+      const fallback = summary ? undefined : fallbackMessage ?? metaEl.getAttribute("data-live-placeholder") ?? undefined;
+      metaEl.textContent = buildLastPlayText(summary, fallback);
+    } else if (metaDefault) {
+      metaEl.textContent = metaDefault;
+    }
+  }
   if (playEl) {
-    if (summary) {
-      const segments = [summary.description];
-      if (summary.scoreboard) {
-        segments.push(summary.scoreboard);
-      }
-      playEl.textContent = segments.join(" • ");
-    } else if (fallbackMessage) {
-      playEl.textContent = fallbackMessage;
+    playEl.textContent = buildLastPlayText(summary, fallbackMessage);
+  }
+  if (playContainer) {
+    if (isLive && summary) {
+      playContainer.setAttribute("hidden", "");
     } else {
-      playEl.textContent = "Play-by-play data unavailable.";
+      playContainer.removeAttribute("hidden");
     }
   }
 }
