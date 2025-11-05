@@ -98,10 +98,27 @@ interface CatsDogsFeatureContext {
   footnote: HTMLElement;
 }
 
-interface CatsDogsChartOptions {
-  catColor: string;
-  dogColor: string;
+type CatsDogsBarKey = "cats" | "dogs";
+
+interface CatsDogsStackedSegment {
+  slug: string;
+  label: string;
+  wins: number;
+  color: string;
+  program: string;
+  bar: CatsDogsBarKey;
 }
+
+interface CatsDogsChartControls {
+  setActiveMatchup(slug: string | null): void;
+  onMatchupToggle(handler: (slug: string | null) => void): void;
+}
+
+interface CatsDogsLeaderboardControls {
+  setActiveMatchup(slug: string | null): void;
+}
+
+type PreparedCatsDogsSegment = CatsDogsStackedSegment & { start: number };
 
 const numberFormatter = new Intl.NumberFormat("en-US");
 const percentFormatter = d3Format(".1%");
@@ -137,6 +154,26 @@ app.innerHTML = `
         <div id="fun-lab-legend" class="fun-lab__legend" aria-live="polite"></div>
       </div>
     </section>
+    <section class="card stack fun-lab__index" data-gap="md">
+      <header class="stack" data-gap="xs">
+        <h2 class="section-title">Division I mascot index</h2>
+        <p class="section-summary">Sort, regroup, and remix each program’s mascot archetype for future Fun Lab experiments.</p>
+      </header>
+      <div class="table-shell fun-lab__table-shell">
+        <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
+          <thead>
+            <tr>
+              <th scope="col">Program</th>
+              <th scope="col">Mascot</th>
+              <th scope="col">Category</th>
+              <th scope="col">Family</th>
+              <th scope="col">Conference</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
     <section id="cats-dogs-section" class="card stack fun-lab__showdown" data-gap="md">
       <header class="stack" data-gap="xs">
         <h2 class="section-title">Fighting Like Dogs and Cats</h2>
@@ -158,26 +195,6 @@ app.innerHTML = `
         </div>
       </div>
       <p id="cats-dogs-footnote" class="fun-lab__showdown-footnote"></p>
-    </section>
-    <section class="card stack fun-lab__index" data-gap="md">
-      <header class="stack" data-gap="xs">
-        <h2 class="section-title">Division I mascot index</h2>
-        <p class="section-summary">Sort, regroup, and remix each program’s mascot archetype for future Fun Lab experiments.</p>
-      </header>
-      <div class="table-shell fun-lab__table-shell">
-        <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
-          <thead>
-            <tr>
-              <th scope="col">Program</th>
-              <th scope="col">Mascot</th>
-              <th scope="col">Category</th>
-              <th scope="col">Family</th>
-              <th scope="col">Conference</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
     </section>
   </div>
 `;
@@ -684,29 +701,74 @@ function renderTable(
 function renderCatsDogsChart(
   matchups: CatsDogsMatchupRecord[],
   chartContainer: HTMLElement,
-  options: CatsDogsChartOptions,
+  colorByMatchup: Map<string, string>,
   handle: ChartContainerHandle,
-): void {
+): CatsDogsChartControls {
   chartContainer.innerHTML = "";
   if (matchups.length === 0) {
     chartContainer.textContent = "No rivalry data available yet.";
-    return;
+    return {
+      setActiveMatchup: () => {
+        /* noop */
+      },
+      onMatchupToggle: () => {
+        /* noop */
+      },
+    };
   }
+
+  let segmentsSelection: Selection<SVGRectElement, PreparedCatsDogsSegment, SVGGElement, unknown> | null = null;
+  let activeSlug: string | null = null;
+  let toggleHandler: ((slug: string | null) => void) | null = null;
+
+  const notifyToggle = (next: string | null) => {
+    if (toggleHandler) {
+      toggleHandler(next);
+    }
+  };
+
+  const applyActiveState = (slug: string | null) => {
+    activeSlug = slug;
+    if (!segmentsSelection) {
+      return;
+    }
+    segmentsSelection.each(function (segment) {
+      const element = this as SVGRectElement;
+      const isActive = slug !== null && segment.slug === slug;
+      const isDimmed = slug !== null && segment.slug !== slug;
+      element.classList.toggle("fun-lab__showdown-segment--active", isActive);
+      element.classList.toggle("fun-lab__showdown-segment--dimmed", isDimmed);
+      element.setAttribute("aria-pressed", isActive ? "true" : "false");
+      if (isActive) {
+        element.style.stroke = `color-mix(in srgb, ${segment.color} 70%, black 8%)`;
+        element.style.strokeWidth = "calc(var(--chart-line-width) * 1.6px)";
+      } else {
+        element.style.stroke = "";
+        element.style.strokeWidth = "";
+      }
+    });
+  };
+
+  const toggleMatchup = (slug: string) => {
+    const next = activeSlug === slug ? null : slug;
+    applyActiveState(next);
+    notifyToggle(next);
+  };
 
   handle.mount(() => {
     chartContainer.innerHTML = "";
 
     const { width, height } = measureContainerSize(chartContainer);
     const margin = {
-      top: 36,
-      right: Math.max(160, Math.round(width * 0.18)),
-      bottom: 64,
-      left: Math.max(220, Math.round(width * 0.28)),
+      top: 32,
+      right: Math.max(140, Math.round(width * 0.18)),
+      bottom: 60,
+      left: Math.max(180, Math.round(width * 0.26)),
     };
 
     const svg = createSVG(chartContainer, width, height, {
       title: "Cats vs dogs rivalry scoreboard",
-      description: "Stacked bars compare cat and dog mascot wins in major Division I rivalries.",
+      description: "Two stacked bars summarize cat and dog mascot wins across tracked rivalries.",
       id: "fun-lab-cats-dogs",
     });
 
@@ -715,64 +777,160 @@ function renderCatsDogsChart(
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    const maxTotal = Math.max(1, ...matchups.map(matchup => matchup.cat.wins + matchup.dog.wins));
+    const prepared = matchups.map((matchup, index) => {
+      const color = colorByMatchup.get(matchup.slug) ?? resolveColor(index);
+      return {
+        slug: matchup.slug,
+        label: matchup.series,
+        color,
+        catWins: Math.max(0, matchup.cat.wins),
+        dogWins: Math.max(0, matchup.dog.wins),
+        catProgram: formatProgramLabel(matchup.cat),
+        dogProgram: formatProgramLabel(matchup.dog),
+      };
+    });
+
+    const catTotal = prepared.reduce((acc, entry) => acc + entry.catWins, 0);
+    const dogTotal = prepared.reduce((acc, entry) => acc + entry.dogWins, 0);
+
+    const buildSegments = (
+      accessor: (entry: (typeof prepared)[number]) => number,
+      programAccessor: (entry: (typeof prepared)[number]) => string,
+      barKey: CatsDogsBarKey,
+    ): PreparedCatsDogsSegment[] => {
+      let start = 0;
+      const segments: PreparedCatsDogsSegment[] = [];
+      prepared.forEach(entry => {
+        const wins = accessor(entry);
+        if (wins <= 0) {
+          return;
+        }
+        segments.push({
+          slug: entry.slug,
+          label: entry.label,
+          wins,
+          color: entry.color,
+          program: programAccessor(entry),
+          bar: barKey,
+          start,
+        });
+        start += wins;
+      });
+      return segments;
+    };
+
+    const bars: Array<{
+      key: CatsDogsBarKey;
+      label: string;
+      total: number;
+      segments: PreparedCatsDogsSegment[];
+    }> = [
+      {
+        key: "cats",
+        label: "Cat mascots",
+        total: catTotal,
+        segments: buildSegments(entry => entry.catWins, entry => entry.catProgram, "cats"),
+      },
+      {
+        key: "dogs",
+        label: "Dog mascots",
+        total: dogTotal,
+        segments: buildSegments(entry => entry.dogWins, entry => entry.dogProgram, "dogs"),
+      },
+    ];
+
+    const maxTotal = Math.max(1, catTotal, dogTotal);
     const x = scaleLinear().domain([0, maxTotal]).nice().range([0, iw]);
-    const y = scaleBand<string>()
-      .domain(matchups.map(matchup => matchup.slug))
+    const y = scaleBand<CatsDogsBarKey>()
+      .domain(bars.map(bar => bar.key))
       .range([0, ih])
-      .paddingInner(0.35)
+      .paddingInner(0.45)
       .paddingOuter(0.25);
 
     const band = y.bandwidth();
-    const barRadius = readBarRadius(chartContainer);
-    const barHeight = Math.min(48, Math.max(24, band));
+    const barHeight = Math.min(56, Math.max(28, band));
     const offset = Math.max(0, (band - barHeight) / 2);
+    const barRadius = readBarRadius(chartContainer);
 
     const rows = chart
-      .selectAll("g.fun-lab__showdown-row")
-      .data(matchups, (matchup: CatsDogsMatchupRecord) => matchup.slug)
-      .join("g") as Selection<SVGGElement, CatsDogsMatchupRecord, SVGGElement, unknown>;
+      .selectAll<SVGGElement>("g.fun-lab__showdown-row")
+      .data(bars)
+      .join("g") as Selection<SVGGElement, (typeof bars)[number], SVGGElement, unknown>;
 
     rows
       .attr("class", "fun-lab__showdown-row")
-      .attr("transform", (matchup: CatsDogsMatchupRecord) => {
-        const yPosition = y(matchup.slug) ?? 0;
-        return `translate(0, ${yPosition + offset})`;
+      .attr("data-type", (bar: (typeof bars)[number]) => bar.key)
+      .attr("transform", (bar: (typeof bars)[number]) => {
+        const yPosition = y(bar.key) ?? 0;
+        return `translate(0, ${pixelAlign(yPosition + offset)})`;
       });
 
-    const catBars = rows
+    rows
       .append("rect")
-      .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--cats")
-      .attr("fill", options.catColor)
+      .attr("class", "fun-lab__showdown-track")
       .attr("x", 0)
       .attr("y", 0)
-      .attr("width", (matchup: CatsDogsMatchupRecord) => x(matchup.cat.wins))
+      .attr("width", x(maxTotal))
       .attr("height", barHeight)
       .attr("rx", barRadius)
-      .attr("ry", barRadius)
-      .attr("stroke", "var(--chart-bg)")
-      .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)");
+      .attr("ry", barRadius);
 
-    catBars
-      .append("title")
-      .text((matchup: CatsDogsMatchupRecord) => `${formatProgramLabel(matchup.cat)}: ${numberFormatter.format(matchup.cat.wins)} wins`);
+    const segmentGroups = rows.append("g").attr("class", "fun-lab__showdown-segments");
 
-    const dogBars = rows
-      .append("rect")
-      .attr("class", "fun-lab__showdown-bar fun-lab__showdown-bar--dogs")
-      .attr("fill", options.dogColor)
-      .attr("x", (matchup: CatsDogsMatchupRecord) => x(matchup.cat.wins))
-      .attr("y", 0)
-      .attr("width", (matchup: CatsDogsMatchupRecord) => x(matchup.dog.wins))
-      .attr("height", barHeight)
-      .attr("rx", barRadius)
-      .attr("ry", barRadius)
-      .attr("stroke", "var(--chart-bg)")
-      .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)");
+    segmentGroups.each(function (bar: (typeof bars)[number]) {
+      const group = select(this as SVGGElement);
+      const rects = group
+        .selectAll<SVGRectElement>("rect.fun-lab__showdown-segment")
+        .data(bar.segments as PreparedCatsDogsSegment[])
+        .join("rect") as Selection<SVGRectElement, PreparedCatsDogsSegment, SVGGElement, unknown>;
 
-    dogBars
-      .append("title")
-      .text((matchup: CatsDogsMatchupRecord) => `${formatProgramLabel(matchup.dog)}: ${numberFormatter.format(matchup.dog.wins)} wins`);
+      rects
+        .attr("class", "fun-lab__showdown-segment")
+        .attr("fill", (segment: PreparedCatsDogsSegment) => segment.color)
+        .attr("data-matchup", (segment: PreparedCatsDogsSegment) => segment.slug)
+        .attr("role", "button")
+        .attr("tabindex", 0)
+        .attr("aria-pressed", "false")
+        .attr("x", (segment: PreparedCatsDogsSegment) => x(segment.start))
+        .attr("y", 0)
+        .attr("width", (segment: PreparedCatsDogsSegment) =>
+          Math.max(0, x(segment.start + segment.wins) - x(segment.start)),
+        )
+        .attr("height", barHeight)
+        .attr("stroke", "var(--chart-bg)")
+        .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)")
+        .attr("vector-effect", "non-scaling-stroke");
+
+      rects.select("title").remove();
+
+      rects
+        .append("title")
+        .text((segment: PreparedCatsDogsSegment) => {
+          const winsLabel = numberFormatter.format(segment.wins);
+          const winWord = segment.wins === 1 ? "win" : "wins";
+          return `${segment.label}: ${segment.program} ${winsLabel} ${winWord}`;
+        });
+    });
+
+    segmentsSelection = chart.selectAll<SVGRectElement>("rect.fun-lab__showdown-segment") as Selection<
+      SVGRectElement,
+      PreparedCatsDogsSegment,
+      SVGGElement,
+      unknown
+    >;
+
+    segmentsSelection.on("click", (event: MouseEvent, segment: PreparedCatsDogsSegment) => {
+      event.preventDefault();
+      toggleMatchup(segment.slug);
+    });
+
+    segmentsSelection.on("keydown", (event: KeyboardEvent, segment: PreparedCatsDogsSegment) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleMatchup(segment.slug);
+      }
+    });
+    applyActiveState(activeSlug);
 
     rows
       .append("text")
@@ -781,25 +939,18 @@ function renderCatsDogsChart(
       .attr("y", barHeight / 2)
       .attr("dy", "0.35em")
       .attr("text-anchor", "end")
-      .text((matchup: CatsDogsMatchupRecord) => matchup.series);
+      .text((bar: (typeof bars)[number]) => bar.label);
 
     rows
       .append("text")
-      .attr("class", "fun-lab__showdown-diff")
-      .attr("x", (matchup: CatsDogsMatchupRecord) => x(matchup.cat.wins + matchup.dog.wins) + 16)
+      .attr("class", "fun-lab__showdown-total")
+      .attr("x", (bar: (typeof bars)[number]) => x(bar.total) + 16)
       .attr("y", barHeight / 2)
       .attr("dy", "0.35em")
-      .text((matchup: CatsDogsMatchupRecord) => {
-        if (matchup.cat.wins === matchup.dog.wins) {
-          return "All square";
-        }
-        const leader = matchup.cat.wins > matchup.dog.wins ? "Cats" : "Dogs";
-        const margin = Math.abs(matchup.cat.wins - matchup.dog.wins);
-        return `${leader} +${numberFormatter.format(margin)}`;
-      });
+      .text((bar: (typeof bars)[number]) => `${numberFormatter.format(bar.total)} wins`);
 
     const axis = axisBottom(x)
-      .ticks(Math.min(7, Math.max(3, Math.floor(iw / 140))))
+      .ticks(Math.min(6, Math.max(3, Math.floor(iw / 160))))
       .tickSize(-ih)
       .tickSizeOuter(0)
       .tickPadding(10)
@@ -824,25 +975,48 @@ function renderCatsDogsChart(
       .attr("vector-effect", "non-scaling-stroke");
     axisGroup.selectAll("text").attr("class", "fun-lab__axis-label");
   });
+
+  return {
+    setActiveMatchup: applyActiveState,
+    onMatchupToggle(handler: (slug: string | null) => void) {
+      toggleHandler = handler;
+    },
+  };
 }
 
-function renderCatsDogsLeaderboard(list: HTMLOListElement, matchups: CatsDogsMatchupRecord[]): void {
+function renderCatsDogsLeaderboard(
+  list: HTMLOListElement,
+  matchups: CatsDogsMatchupRecord[],
+  colorByMatchup: Map<string, string>,
+): CatsDogsLeaderboardControls {
   list.innerHTML = "";
   if (matchups.length === 0) {
     const empty = list.ownerDocument?.createElement("li") ?? document.createElement("li");
     empty.className = "fun-lab__leaderboard-empty";
     empty.textContent = "No rivalry records available yet.";
     list.appendChild(empty);
-    return;
+    return {
+      setActiveMatchup: () => {
+        /* noop */
+      },
+    };
   }
+
+  const items: HTMLElement[] = [];
 
   matchups.forEach((matchup, index) => {
     const item = list.ownerDocument?.createElement("li") ?? document.createElement("li");
     item.className = "fun-lab__leaderboard-item";
     item.dataset.leader = matchup.cat.wins >= matchup.dog.wins ? "cats" : "dogs";
     item.dataset.rank = String(matchup.rank ?? index + 1);
+    item.dataset.matchup = matchup.slug;
     if (matchup.note) {
       item.title = matchup.note;
+    }
+
+    const color = colorByMatchup.get(matchup.slug);
+    if (color) {
+      item.style.setProperty("--matchup-color", color);
     }
 
     const rank = item.ownerDocument.createElement("span");
@@ -895,7 +1069,19 @@ function renderCatsDogsLeaderboard(list: HTMLOListElement, matchups: CatsDogsMat
     detail.append(series, record, meta);
     item.append(rank, detail);
     list.appendChild(item);
+    items.push(item);
   });
+
+  return {
+    setActiveMatchup(slug: string | null) {
+      items.forEach(element => {
+        const isActive = slug !== null && element.dataset.matchup === slug;
+        const isDimmed = slug !== null && element.dataset.matchup !== slug;
+        element.classList.toggle("fun-lab__leaderboard-item--active", isActive);
+        element.classList.toggle("fun-lab__leaderboard-item--dimmed", isDimmed);
+      });
+    },
+  };
 }
 
 function renderCatsDogsCrown(crown: HTMLElement, matchups: CatsDogsMatchupRecord[]): void {
@@ -967,12 +1153,21 @@ async function loadCatsDogsFeature(context: CatsDogsFeatureContext): Promise<voi
     const sortedMatchups = [...payload.matchups].sort((a, b) => a.rank - b.rank || b.total_games - a.total_games);
     const catColor = resolveColor(3, { palette: "warm" });
     const dogColor = resolveColor(2, { palette: "cool" });
+    const matchupColors = new Map<string, string>();
+    sortedMatchups.forEach((matchup, index) => {
+      matchupColors.set(matchup.slug, resolveColor(index, { palette: "categorical" }));
+    });
     section.style.setProperty("--fun-lab-cat", catColor);
     section.style.setProperty("--fun-lab-dog", dogColor);
 
     summary.textContent = describeCatsDogsSummary(sortedMatchups);
-    renderCatsDogsChart(sortedMatchups, chart, { catColor, dogColor }, catsDogsHandle!);
-    renderCatsDogsLeaderboard(leaderboard, sortedMatchups);
+    const chartControls = renderCatsDogsChart(sortedMatchups, chart, matchupColors, catsDogsHandle!);
+    const leaderboardControls = renderCatsDogsLeaderboard(leaderboard, sortedMatchups, matchupColors);
+    chartControls.onMatchupToggle(slug => {
+      leaderboardControls.setActiveMatchup(slug);
+    });
+    chartControls.setActiveMatchup(null);
+    leaderboardControls.setActiveMatchup(null);
     renderCatsDogsCrown(crown, sortedMatchups);
     renderCatsDogsFootnote(footnote, payload);
   } catch (error) {
