@@ -62,9 +62,24 @@
   color: color-mix(in srgb, var(--color-ink) 94%, white 6%);
 }
 
+.fun-lab__legend-item[role="button"] {
+  cursor: pointer;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
 .fun-lab__legend-item:hover,
 .fun-lab__legend-item:focus-visible {
   border-color: color-mix(in srgb, var(--swatch-color, var(--color-arc)) 65%, transparent);
+}
+
+.fun-lab__legend-item--active {
+  border-color: color-mix(in srgb, var(--swatch-color, var(--color-arc)) 80%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--swatch-color, var(--color-arc)) 45%, transparent);
+  transform: translateX(2px);
+}
+
+.fun-lab__legend-item--dimmed {
+  opacity: 0.55;
 }
 
 .fun-lab__legend-swatch {
@@ -95,6 +110,20 @@
   font-weight: 700;
   font-size: clamp(1.75rem, 1.4rem + 0.8vw, 2.4rem);
   letter-spacing: -0.02em;
+}
+
+.fun-lab__arc {
+  cursor: pointer;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.fun-lab__arc--dimmed {
+  opacity: 0.3;
+}
+
+.fun-lab__arc:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-arc) 65%, transparent);
+  outline-offset: 2px;
 }
 
 .fun-lab__chart-total--caption {
@@ -144,6 +173,13 @@
 
 .fun-lab__cell--conference {
   white-space: nowrap;
+}
+
+.fun-lab__cell--empty {
+  text-align: center;
+  padding-block: var(--space-lg);
+  color: var(--color-muted);
+  font-style: italic;
 }
 
 @media (min-width: 62rem) {
