@@ -65,7 +65,7 @@ export type RosterDirectory = {
   };
 };
 
-const DEFAULT_ACTIVE_ROSTER_SEASON = "2024-25";
+const DEFAULT_ACTIVE_ROSTER_SEASON = "2025-26";
 
 let activeRosterSeasonPromise: Promise<string> | null = null;
 
@@ -127,6 +127,25 @@ function deriveSeasonSortKey(label: string): number | null {
     return endYear;
   }
   return parseSeasonStartYear(label);
+}
+
+function ensureMinimumSeason(label: string | null | undefined, minimum: string): string {
+  if (!label) {
+    return minimum;
+  }
+
+  const labelKey = deriveSeasonSortKey(label);
+  const minimumKey = deriveSeasonSortKey(minimum);
+
+  if (minimumKey == null) {
+    return label;
+  }
+
+  if (labelKey == null || labelKey < minimumKey) {
+    return minimum;
+  }
+
+  return label;
 }
 
 function buildConferenceNameLookup(conferences: Conference[]): Map<number, string> {
@@ -237,7 +256,7 @@ async function getActiveRosterSeason(): Promise<string> {
         if (seasons.length > 0) {
           const latest = seasons[0] ?? seasons[seasons.length - 1];
           if (latest) {
-            return latest;
+            return ensureMinimumSeason(latest, DEFAULT_ACTIVE_ROSTER_SEASON);
           }
         }
       } catch (error) {
