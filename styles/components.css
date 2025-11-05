@@ -1424,6 +1424,23 @@ details[open] > summary .disclosure-indicator::after {
   gap: 0.2rem;
 }
 
+.game-card__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--color-muted) 70%, white 30%);
+}
+
+.game-card__progress-period {
+  font-weight: 600;
+  color: color-mix(in srgb, white 82%, var(--color-muted) 18%);
+}
+
+.game-card__progress-clock {
+  font-variant-numeric: tabular-nums;
+}
+
 .game-card__time {
   font-size: 0.82rem;
   color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
@@ -1438,6 +1455,23 @@ details[open] > summary .disclosure-indicator::after {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+}
+
+.game-card[data-game-state="live"] .game-card__meta {
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.game-card[data-game-state="live"] .game-card__meta > .game-card__time {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: color-mix(in srgb, white 82%, var(--color-muted) 18%);
+}
+
+.game-card[data-game-state="live"] .game-card__footer {
+  display: none;
 }
 
 .game-card__footer {
