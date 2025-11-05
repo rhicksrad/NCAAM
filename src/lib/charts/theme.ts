@@ -47,6 +47,11 @@ export interface ChartTheme {
   fontSize: number;
   lineWidth: number;
   gridWidth: number;
+  gridAlpha: number;
+  barRadius: number;
+  legendDotSize: number;
+  tooltipBg: string;
+  tooltipFg: string;
   fg: string;
   fgMuted: string;
   bg: string;
@@ -67,6 +72,11 @@ export const defaultTheme: ChartTheme = {
   fontSize: 13,
   lineWidth: 1.5,
   gridWidth: 1,
+  gridAlpha: 0.28,
+  barRadius: 8,
+  legendDotSize: 10,
+  tooltipBg: "rgba(11, 37, 69, 0.88)",
+  tooltipFg: "#f8fafc",
   fg: "var(--chart-fg, #102a43)",
   fgMuted: "var(--chart-fg-muted, #486581)",
   bg: "var(--chart-bg, #ffffff)",
@@ -86,6 +96,11 @@ export const darkTheme: ChartTheme = {
   fontSize: 13,
   lineWidth: 1.5,
   gridWidth: 1,
+  gridAlpha: 0.24,
+  barRadius: 8,
+  legendDotSize: 10,
+  tooltipBg: "rgba(9, 20, 36, 0.92)",
+  tooltipFg: "#f1f5f9",
   fg: "var(--chart-fg-dark, #f0f4f8)",
   fgMuted: "var(--chart-fg-muted-dark, #9fb3c8)",
   bg: "var(--chart-bg-dark, #0b1f2a)",
@@ -136,6 +151,11 @@ const THEME_VARIABLES: Record<string, (theme: ChartTheme) => string> = {
   "--chart-font-size": (theme) => String(theme.fontSize),
   "--chart-line-width": (theme) => String(theme.lineWidth),
   "--chart-grid-width": (theme) => String(theme.gridWidth),
+  "--chart-grid-alpha": (theme) => String(theme.gridAlpha),
+  "--chart-bar-radius": (theme) => String(theme.barRadius),
+  "--chart-legend-dot-size": (theme) => String(theme.legendDotSize),
+  "--chart-tooltip-bg": (theme) => theme.tooltipBg,
+  "--chart-tooltip-fg": (theme) => theme.tooltipFg,
   "--chart-fg": (theme) => theme.fg,
   "--chart-fg-muted": (theme) => theme.fgMuted,
   "--chart-bg": (theme) => theme.bg,

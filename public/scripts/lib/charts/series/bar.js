@@ -50,6 +50,8 @@ export function renderBars(g, data, scales, options) {
     const theme = options.theme ?? defaultTheme;
     const gap = options.gap ?? 4;
     const minWidth = options.minWidth ?? 4;
+    const cornerRadius = options.cornerRadius ?? theme.barRadius;
+    const strokeWidth = Math.max(0.75, theme.lineWidth);
     const selection = select(g);
     const join = selection
         .selectAll("rect.series--bar")
@@ -58,8 +60,8 @@ export function renderBars(g, data, scales, options) {
         .enter()
         .append("rect")
         .attr("class", "series series--bar")
-        .attr("rx", options.cornerRadius ?? 2)
-        .attr("ry", options.cornerRadius ?? 2)
+        .attr("rx", cornerRadius)
+        .attr("ry", cornerRadius)
         .attr("vector-effect", "non-scaling-stroke");
     const merged = enter.merge(join);
     const positions = data.map((d) => getXPosition(scales.x, d.x));
@@ -67,9 +69,11 @@ export function renderBars(g, data, scales, options) {
     const baseline = getBaseY(scales.y, options.baseline ?? 0);
     merged
         .attr("fill", theme.accent)
-        .attr("stroke", theme.fgMuted)
-        .attr("stroke-width", theme.lineWidth / 2)
+        .attr("stroke", theme.bg)
+        .attr("stroke-width", strokeWidth)
         .attr("width", Math.max(1, width))
+        .attr("rx", cornerRadius)
+        .attr("ry", cornerRadius)
         .attr("role", "presentation")
         .attr("aria-hidden", "true");
     merged.each(function (datum, index) {

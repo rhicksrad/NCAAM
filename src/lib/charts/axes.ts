@@ -191,7 +191,7 @@ export function drawAxes(
   const selection = select(g);
   const xScale = scales.x;
   const yScale = scales.y;
-  const tickSize = options.tickSize ?? theme.lineWidth;
+  const tickSize = options.tickSize ?? theme.gridWidth;
   const tickPadding = options.tickPadding ?? 8;
   const xTickCount = Math.max(2, getTickCount(Math.round(options.innerWidth / 80), options.tickCount, "x"));
   const yTickCount = Math.max(2, getTickCount(Math.round(options.innerHeight / 60), options.tickCount, "y"));
@@ -246,13 +246,19 @@ function applyAxisStyles(selection: Selection<SVGGElement, unknown, null, undefi
     .attr("shape-rendering", "crispEdges")
     .style("font-family", theme.fontFamily)
     .style("font-size", `${theme.fontSize}px`)
-    .style("color", theme.fg)
+    .style("color", theme.fgMuted);
+
+  selection
     .selectAll("path, line")
-    .attr("stroke-width", theme.lineWidth)
-    .attr("stroke", theme.fgMuted)
+    .attr("stroke-width", theme.gridWidth)
+    .attr("stroke", theme.grid)
+    .attr("stroke-opacity", theme.gridAlpha)
     .attr("vector-effect", "non-scaling-stroke");
 
-  selection.selectAll("text").attr("fill", theme.fg).style("font-weight", 500);
+  selection
+    .selectAll("text")
+    .attr("fill", theme.fgMuted)
+    .style("font-weight", 500);
 }
 
 function updateAxisLabel(
@@ -324,9 +330,10 @@ export function drawGrid(
     .selectAll("line")
     .attr("stroke", theme.grid)
     .attr("stroke-width", theme.gridWidth)
+    .attr("stroke-opacity", theme.gridAlpha)
     .attr("vector-effect", "non-scaling-stroke")
     .attr("shape-rendering", "crispEdges")
-    .attr("opacity", 0.7);
+    .attr("opacity", theme.gridAlpha);
 
   gridGroup.selectAll("path").remove();
 }
@@ -352,7 +359,7 @@ export function drawLegend(
   options: LegendOptions
 ): void {
   const theme = options.theme ?? defaultTheme;
-  const swatchSize = options.swatchSize ?? 12;
+  const swatchSize = options.swatchSize ?? theme.legendDotSize;
   const gap = options.gap ?? 12;
   const width = Math.max(0, options.width);
   const selection = select(g);
@@ -374,8 +381,8 @@ export function drawLegend(
     .attr("class", "legend-swatch")
     .attr("width", swatchSize)
     .attr("height", swatchSize)
-    .attr("rx", Math.min(4, swatchSize / 2))
-    .attr("ry", Math.min(4, swatchSize / 2));
+    .attr("rx", Math.min(theme.barRadius, swatchSize / 2))
+    .attr("ry", Math.min(theme.barRadius, swatchSize / 2));
 
   enter
     .append("text")
@@ -407,7 +414,7 @@ export function drawLegend(
       .select<SVGRectElement>("rect.legend-swatch")
       .attr("fill", d.color ?? theme.accent)
       .attr("stroke", theme.fgMuted)
-      .attr("stroke-width", theme.lineWidth / 2)
+      .attr("stroke-width", Math.max(0.5, theme.lineWidth / 2))
       .attr("vector-effect", "non-scaling-stroke");
     cursorX += approxWidth + gap;
   });
