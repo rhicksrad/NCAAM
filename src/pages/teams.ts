@@ -6,7 +6,7 @@ import {
 } from "../lib/data/division-one.js";
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
-import { geoAlbersUsa, geoPath, select } from "../lib/vendor/d3-bundle.js";
+import { geoAlbersUsa, geoPath, select, zoom, zoomIdentity } from "../lib/vendor/d3-bundle.js";
 import {
   getConferenceLogoUrl,
   getConferenceMonogram,
@@ -951,18 +951,43 @@ async function renderMap(teams: TeamCardData[]) {
     .attr("role", "img")
     .attr("aria-label", "Map of Division I men's basketball home arenas");
 
-  svg.append("g")
+  const mapLayer = svg.append("g").attr("class", "teams-map__layer");
+
+  mapLayer
+    .append("g")
+    .attr("class", "teams-map__states")
     .selectAll("path")
     .data((states.features ?? []) as unknown[])
     .join("path")
     .attr("class", "teams-map__state")
     .attr("d", path as unknown as (d: unknown) => string);
 
-  const points = svg.append("g");
+  const points = mapLayer.append("g").attr("class", "teams-map__points");
 
   const teamLookup = new Map<number, TeamCardData>(teams.map(team => [team.id, team]));
   const circleIndex = new Map<number, SVGCircleElement>();
   let activeCircle: SVGCircleElement | null = null;
+
+  type ZoomTransformState = typeof zoomIdentity;
+
+  let currentTransform: ZoomTransformState = zoomIdentity;
+
+  const applyTransform = (transform: ZoomTransformState) => {
+    mapLayer.attr("transform", transform.toString());
+    if (activeCircle) {
+      positionTooltip(activeCircle);
+    }
+  };
+
+  const zoomBehavior = zoom<SVGSVGElement, unknown>()
+    .scaleExtent([1, 8])
+    .translateExtent([[0, 0], [width, height]])
+    .on("zoom", (event: { transform: ZoomTransformState }) => {
+      currentTransform = event.transform;
+      applyTransform(currentTransform);
+    });
+
+  svg.call(zoomBehavior as any);
 
   const resetActiveCircle = () => {
     if (activeCircle) {
@@ -1056,6 +1081,15 @@ async function renderMap(teams: TeamCardData[]) {
     if (!circle || !team?.location) {
       return;
     }
+
+    const coords = projection([team.location.longitude, team.location.latitude]);
+    if (coords) {
+      svg
+        .transition()
+        .duration(450)
+        .call(zoomBehavior.translateTo, coords[0], coords[1]);
+    }
+
     activateCircle(circle, team);
     if (scrollIntoView) {
       mapRoot.scrollIntoView({ behavior: "smooth", block: "nearest" });

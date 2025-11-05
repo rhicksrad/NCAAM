@@ -1724,12 +1724,19 @@ details[open] > summary .disclosure-indicator::after {
 .teams-map__viewport {
   position: relative;
   min-height: 20rem;
+  overflow: hidden;
+  touch-action: none;
 }
 
 .teams-map__svg {
   width: 100%;
   height: 100%;
   display: block;
+  cursor: grab;
+}
+
+.teams-map__svg:active {
+  cursor: grabbing;
 }
 
 .teams-map__tooltip {
