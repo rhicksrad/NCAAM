@@ -115,7 +115,7 @@ setChartDefaults();
 
 app.innerHTML = `
   <div class="fun-lab stack" data-gap="lg">
-    <section class="card stack" data-gap="sm">
+    <section class="card stack fun-lab__intro" data-gap="sm">
       <header class="stack" data-gap="xs">
         <h2 class="section-title">Mascot Fun Lab kickoff</h2>
         <p id="fun-lab-summary" class="section-summary">Loading mascot taxonomy…</p>
@@ -125,7 +125,7 @@ app.innerHTML = `
         <a id="fun-lab-download" href="${DATA_URL}" download>Download mascot JSON</a>
       </div>
     </section>
-    <section class="card stack" data-gap="md">
+    <section class="card stack fun-lab__archetype" data-gap="md">
       <header class="stack" data-gap="xs">
         <h2 class="section-title">Mascot archetype share</h2>
         <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype shares…</p>
@@ -159,7 +159,7 @@ app.innerHTML = `
       </div>
       <p id="cats-dogs-footnote" class="fun-lab__showdown-footnote"></p>
     </section>
-    <section class="card stack" data-gap="md">
+    <section class="card stack fun-lab__index" data-gap="md">
       <header class="stack" data-gap="xs">
         <h2 class="section-title">Division I mascot index</h2>
         <p class="section-summary">Sort, regroup, and remix each program’s mascot archetype for future Fun Lab experiments.</p>
@@ -195,7 +195,7 @@ const catsDogsLeaderboardEl = document.getElementById("cats-dogs-leaderboard") a
 const catsDogsCrownEl = document.getElementById("cats-dogs-crown");
 const catsDogsFootnoteEl = document.getElementById("cats-dogs-footnote");
 
-const chartHandle = chartRoot ? createChartContainer(chartRoot, { ratio: 1 }) : null;
+const chartHandle = chartRoot ? createChartContainer(chartRoot, { ratio: 0.82 }) : null;
 const catsDogsHandle = catsDogsChartEl
   ? createChartContainer(catsDogsChartEl, { ratio: 0.68 })
   : null;
