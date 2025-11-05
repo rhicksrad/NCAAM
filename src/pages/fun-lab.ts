@@ -1,6 +1,6 @@
 import {
   arc as d3Arc,
-  axisBottom,
+  axisLeft,
   format as d3Format,
   pie as d3Pie,
   scaleBand,
@@ -776,15 +776,15 @@ function renderCatsDogsChart(
 
     const { width, height } = measureContainerSize(chartContainer);
     const margin = {
-      top: 32,
-      right: Math.max(140, Math.round(width * 0.18)),
-      bottom: 60,
-      left: Math.max(180, Math.round(width * 0.26)),
+      top: Math.max(32, Math.round(height * 0.08)),
+      right: Math.max(48, Math.round(width * 0.1)),
+      bottom: Math.max(80, Math.round(height * 0.22)),
+      left: Math.max(88, Math.round(width * 0.18)),
     };
 
     const svg = createSVG(chartContainer, width, height, {
       title: "Cats vs dogs rivalry scoreboard",
-      description: "Two stacked bars summarize cat and dog mascot wins across tracked rivalries.",
+      description: "Two stacked vertical bars summarize cat and dog mascot wins across tracked rivalries.",
       id: "fun-lab-cats-dogs",
     });
 
@@ -851,42 +851,42 @@ function renderCatsDogsChart(
     ];
 
     const maxTotal = Math.max(1, catTotal, dogTotal);
-    const x = scaleLinear().domain([0, maxTotal]).nice().range([0, iw]);
-    const y = scaleBand<string>()
+    const x = scaleBand<string>()
       .domain(bars.map(bar => bar.key))
-      .range([0, ih])
-      .paddingInner(0.45)
-      .paddingOuter(0.25);
+      .range([0, iw])
+      .paddingInner(0.35)
+      .paddingOuter(0.3);
+    const y = scaleLinear().domain([0, maxTotal]).nice().range([ih, 0]);
 
-    const band = y.bandwidth();
-    const barHeight = Math.min(56, Math.max(28, band));
-    const offset = Math.max(0, (band - barHeight) / 2);
+    const band = x.bandwidth();
+    const barWidth = Math.min(140, Math.max(56, band));
+    const offset = Math.max(0, (band - barWidth) / 2);
     const barRadius = readBarRadius(chartContainer);
 
-    const rows = chart
+    const columns = chart
       .selectAll<SVGGElement>("g.fun-lab__showdown-row")
       .data(bars)
       .join("g") as Selection<SVGGElement, CatsDogsChartBar, SVGGElement, unknown>;
 
-    rows
+    columns
       .attr("class", "fun-lab__showdown-row")
       .attr("data-type", (bar: CatsDogsChartBar) => bar.key)
       .attr("transform", (bar: CatsDogsChartBar) => {
-        const yPosition = y(bar.key) ?? 0;
-        return `translate(0, ${pixelAlign(yPosition + offset)})`;
+        const xPosition = x(bar.key) ?? 0;
+        return `translate(${pixelAlign(xPosition + offset)}, 0)`;
       });
 
-    rows
+    columns
       .append("rect")
       .attr("class", "fun-lab__showdown-track")
       .attr("x", 0)
-      .attr("y", 0)
-      .attr("width", x(maxTotal))
-      .attr("height", barHeight)
+      .attr("y", pixelAlign(y(maxTotal)))
+      .attr("width", barWidth)
+      .attr("height", Math.max(0, y(0) - y(maxTotal)))
       .attr("rx", barRadius)
       .attr("ry", barRadius);
 
-    const segmentGroups = rows.append("g").attr("class", "fun-lab__showdown-segments");
+    const segmentGroups = columns.append("g").attr("class", "fun-lab__showdown-segments");
     segmentGroups.each(function (bar: CatsDogsChartBar) {
       const group = select(this as SVGGElement);
       const rects = group
@@ -900,13 +900,13 @@ function renderCatsDogsChart(
         .attr("role", "button")
         .attr("tabindex", 0)
         .attr("aria-pressed", "false")
-        .attr("x", (segment: CatsDogsChartSegment) => x(segment.start))
-        .attr("y", 0)
+        .attr("x", 0)
+        .attr("y", (segment: CatsDogsChartSegment) => pixelAlign(y(segment.start + segment.wins)))
+        .attr("width", barWidth)
         .attr(
-          "width",
-          (segment: CatsDogsChartSegment) => Math.max(0, x(segment.start + segment.wins) - x(segment.start)),
+          "height",
+          (segment: CatsDogsChartSegment) => Math.max(0, y(segment.start) - y(segment.start + segment.wins)),
         )
-        .attr("height", barHeight)
         .attr("stroke", "var(--chart-bg)")
         .attr("stroke-width", "calc(var(--chart-line-width) * 0.75px)")
         .attr("vector-effect", "non-scaling-stroke");
@@ -940,26 +940,30 @@ function renderCatsDogsChart(
 
     applyActiveState(activeSlug);
 
-    rows
-      .append("text")
-      .attr("class", "fun-lab__showdown-matchup")
-      .attr("x", -16)
-      .attr("y", barHeight / 2)
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "end")
-      .text((bar: CatsDogsChartBar) => bar.label);
-
-    rows
+    columns
       .append("text")
       .attr("class", "fun-lab__showdown-total")
-      .attr("x", (bar: CatsDogsChartBar) => x(bar.total) + 16)
-      .attr("y", barHeight / 2)
-      .attr("dy", "0.35em")
+      .attr("x", barWidth / 2)
+      .attr("y", (bar: CatsDogsChartBar) => {
+        const top = y(bar.total);
+        const clamped = Math.min(y(0) - 12, Math.max(12, top - 12));
+        return pixelAlign(clamped);
+      })
+      .attr("text-anchor", "middle")
       .text((bar: CatsDogsChartBar) => `${numberFormatter.format(bar.total)} wins`);
 
-    const axis = axisBottom(x)
-      .ticks(Math.min(6, Math.max(3, Math.floor(iw / 160))))
-      .tickSize(-ih)
+    columns
+      .append("text")
+      .attr("class", "fun-lab__showdown-matchup")
+      .attr("x", barWidth / 2)
+      .attr("y", pixelAlign(ih + 24))
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "middle")
+      .text((bar: CatsDogsChartBar) => bar.label);
+
+    const axis = axisLeft(y)
+      .ticks(Math.min(6, Math.max(3, Math.floor(ih / 120))))
+      .tickSize(-iw)
       .tickSizeOuter(0)
       .tickPadding(10)
       .tickFormat((value: number) => numberFormatter.format(Number(value)));
@@ -967,7 +971,6 @@ function renderCatsDogsChart(
     const axisGroup = chart
       .append("g")
       .attr("class", "fun-lab__showdown-axis")
-      .attr("transform", `translate(0, ${pixelAlign(ih)})`)
       .call(axis);
 
     axisGroup
