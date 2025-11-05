@@ -3,9 +3,13 @@
  * @module charts/series/line
  */
 
-import { line as d3Line, curveLinear, curveMonotoneX } from "d3-shape";
-import { select } from "d3-selection";
-import type { Selection } from "d3-selection";
+import {
+  line as d3Line,
+  curveLinear,
+  curveMonotoneX,
+  select,
+  type Selection
+} from "d3";
 import type { BuiltScales } from "../axes.js";
 import { ChartTheme, defaultTheme } from "../theme.js";
 
