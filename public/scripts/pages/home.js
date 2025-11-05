@@ -2,8 +2,10 @@ import { buildTeamKeys } from "../lib/data/program-keys.js";
 import { getDivisionOneProgramIndex } from "../lib/data/division-one.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
-const app = document.getElementById("app");
+import { requireOk } from "../lib/health.js";
 const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
+const app = document.getElementById("app");
+const heightSnapshotPromise = requireOk(HEIGHT_SNAPSHOT_PATH, "Home").then(res => res.json());
 function escapeHtml(value) {
     return value
         .replace(/&/g, "&amp;")
@@ -819,17 +821,12 @@ function renderHeightSnapshot(contentEl, footerEl, snapshot) {
     meta.append(" · Source: ", sourceLink);
     footerEl.append(meta);
 }
-async function loadHeightSnapshot(contentEl, footerEl) {
+async function loadHeightSnapshot(contentEl, footerEl, snapshotPromise) {
     try {
         const [divisionOneIndex, teamsResponse, payload] = await Promise.all([
             getDivisionOneProgramIndex(),
             NCAAM.teams(1, 600),
-            fetch(HEIGHT_SNAPSHOT_PATH, { headers: { Accept: "application/json" } }).then(res => {
-                if (!res.ok) {
-                    throw new Error(`Failed to load roster height snapshot: ${res.status} ${res.statusText}`);
-                }
-                return res.json();
-            }),
+            snapshotPromise,
         ]);
         if (!payload || !Array.isArray(payload.teams)) {
             throw new Error("Roster height snapshot is missing team data.");
@@ -854,6 +851,7 @@ async function loadHeightSnapshot(contentEl, footerEl) {
         console.error(error);
         contentEl.innerHTML = '<p class="height-card__error">Unable to load roster height leaders right now.</p>';
         footerEl.textContent = "";
+        return;
     }
 }
 app.innerHTML = `
@@ -881,5 +879,5 @@ app.innerHTML = `
 const heightCardContent = document.getElementById("height-card-content");
 const heightCardFooter = document.getElementById("height-card-footer");
 if (heightCardContent instanceof HTMLElement && heightCardFooter instanceof HTMLElement) {
-    void loadHeightSnapshot(heightCardContent, heightCardFooter);
+    void loadHeightSnapshot(heightCardContent, heightCardFooter, heightSnapshotPromise);
 }

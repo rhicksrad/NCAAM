@@ -6,6 +6,7 @@ import {
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 
 const app = document.getElementById("app");
 if (!app) {
@@ -50,6 +51,8 @@ app.innerHTML = `
     </div>
   </section>
 `;
+
+await requireOk("data/division-one-programs.json", "Standings");
 
 const form = document.getElementById("standings-form") as HTMLFormElement | null;
 const seasonInput = document.getElementById("standings-season") as HTMLInputElement | null;

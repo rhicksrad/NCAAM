@@ -352,6 +352,16 @@ a:hover {
   font-weight: 600;
 }
 
+.error-card__title {
+  margin: 0 0 0.35rem 0;
+  font-weight: 700;
+}
+
+.error-card__message {
+  margin: 0;
+  font-weight: 500;
+}
+
 .error {
   color: #b91c1c;
   white-space: pre-wrap;

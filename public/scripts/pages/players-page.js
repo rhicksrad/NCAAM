@@ -1,6 +1,7 @@
 import { setChartDefaults } from "../lib/charts/defaults.js";
 import { renderConferenceDirectory } from "../lib/players/conferences.js";
 import { renderLeaderboardFeature } from "../lib/players/leaderboards.js";
+import { requireOk } from "../lib/health.js";
 const app = document.getElementById("app");
 if (!app) {
     throw new Error("Players page requires an #app container");
@@ -31,6 +32,10 @@ const leaderboardTitle = document.getElementById("players-leaderboard-title");
 const conferenceDirectory = document.getElementById("players-conference-directory");
 const conferenceMeta = document.getElementById("players-conference-meta");
 async function boot() {
+    await Promise.all([
+        requireOk("data/player_stat_leaders_2024-25.json", "Players"),
+        requireOk("data/players_index.json", "Players"),
+    ]);
     if (leaderboardGrid) {
         await renderLeaderboardFeature(leaderboardGrid, leaderboardMeta, leaderboardTitle);
     }

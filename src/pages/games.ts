@@ -6,6 +6,7 @@ import {
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 
 const DEFAULT_TIME_ZONE = "America/New_York";
 const LAST_PLAY_PLACEHOLDER = "Loading last play…";
@@ -430,6 +431,8 @@ const app = document.getElementById("app");
 if (!app) {
   throw new Error("Missing #app root element");
 }
+
+await requireOk("data/division-one-programs.json", "Games");
 
 app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date range to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start date</span><input type="date" id="start-date" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End date</span><input type="date" id="end-date" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
 

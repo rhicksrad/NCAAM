@@ -19,7 +19,7 @@
     "build:data": "(python3 scripts/build_site.py || true)",
     "build:data:mascots": "tsx scripts/data/build_mascot_index.ts",
     "build:sitemap": "node scripts/build_sitemap.mjs || true",
-    "build": "pnpm run clean && pnpm run prepare:logos && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:data:mascots && pnpm run build:sitemap",
+    "build": "pnpm run clean && pnpm run prepare:logos && pnpm run build:ts && pnpm run build:pages && pnpm run build:data && pnpm run build:data:mascots && pnpm run build:sitemap && node scripts/check-build-imports.mjs",
     "dev": "node scripts/dev/serve-public.js"
   },
   "dependencies": {

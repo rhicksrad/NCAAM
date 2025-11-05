@@ -1,9 +1,9 @@
 /**
  * Line series renderer.
- * @module charts/series/line
+ * @module charts/line
  */
-import { line as d3Line, curveLinear, curveMonotoneX, select } from "../../vendor/d3-bundle.js";
-import { defaultTheme } from "../theme.js";
+import { line as d3Line, curveLinear, curveMonotoneX, select } from "../vendor/d3-bundle.js";
+import { defaultTheme } from "./theme.js";
 const prefersReducedMotion = () => {
     if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
         return false;

@@ -1,9 +1,9 @@
 /**
  * Bar series renderer.
- * @module charts/series/bar
+ * @module charts/bar
  */
-import { select } from "../../vendor/d3-bundle.js";
-import { defaultTheme } from "../theme.js";
+import { select } from "../vendor/d3-bundle.js";
+import { defaultTheme } from "./theme.js";
 function isBandScale(scale) {
     return typeof scale.bandwidth === "function";
 }

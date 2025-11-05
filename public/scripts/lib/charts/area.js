@@ -1,9 +1,9 @@
 /**
  * Area series renderer.
- * @module charts/series/area
+ * @module charts/area
  */
-import { area as d3Area, curveLinear, curveMonotoneX, select } from "../../vendor/d3-bundle.js";
-import { defaultTheme } from "../theme.js";
+import { area as d3Area, curveLinear, curveMonotoneX, select } from "../vendor/d3-bundle.js";
+import { defaultTheme } from "./theme.js";
 function position(scale, value) {
     const scaled = scale(value instanceof Date ? value : value);
     if (typeof scaled === "number")

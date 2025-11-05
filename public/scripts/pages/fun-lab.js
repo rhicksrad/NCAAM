@@ -1,8 +1,11 @@
 import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { createChartContainer } from "../lib/charts/container.js";
+import { setChartDefaults } from "../lib/charts/defaults.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
-const DATA_URL = "/data/fun-lab/mascot-index.json";
-const CATS_DOGS_DATA_URL = "/data/fun-lab/cats-vs-dogs.json";
+import { requireOk } from "../lib/health.js";
+const DATA_URL = "data/fun-lab/mascot-index.json";
+const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
 const numberFormatter = new Intl.NumberFormat("en-US");
 const percentFormatter = d3Format(".1%");
 const app = document.getElementById("app");
@@ -123,10 +126,9 @@ function readBarRadius(element) {
     return Number.isFinite(value) ? value : 8;
 }
 async function fetchMascotIndex() {
-    const response = await fetch(DATA_URL, { headers: { Accept: "application/json" } });
-    if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-    }
+    const response = await requireOk(DATA_URL, "Fun Lab", {
+        headers: { Accept: "application/json" },
+    });
     const payload = (await response.json());
     if (!payload || !Array.isArray(payload.records)) {
         throw new Error("Mascot index payload is malformed");
@@ -134,10 +136,9 @@ async function fetchMascotIndex() {
     return payload;
 }
 async function fetchCatsDogsShowdowns() {
-    const response = await fetch(CATS_DOGS_DATA_URL, { headers: { Accept: "application/json" } });
-    if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-    }
+    const response = await requireOk(CATS_DOGS_DATA_URL, "Fun Lab", {
+        headers: { Accept: "application/json" },
+    });
     const payload = (await response.json());
     if (!payload || !Array.isArray(payload.matchups)) {
         throw new Error("Cats vs dogs payload is malformed");
@@ -419,8 +420,16 @@ function renderChart(categories, total, chartContainer, handle) {
     return {
         colorByCategory,
         setActiveCategory: (slug) => {
-            activeSlug = slug;
-            applyActiveState();
+            if (!arcs) {
+                return;
+            }
+            arcs.each(function (d) {
+                const element = this;
+                const isActive = slug !== null && d.data.slug === slug;
+                const isDimmed = slug !== null && d.data.slug !== slug;
+                element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
+                element.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
         },
         onArcToggle: (callback) => {
             arcToggleHandler = callback;

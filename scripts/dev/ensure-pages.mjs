@@ -112,16 +112,12 @@ const PAGES = [
       "A playground for whimsical NCAA experiments. Explore our first mascot taxonomy visualization and download the source data.",
       true,
       [{ href: "./data/fun-lab/mascot-index.json", label: "Download mascot JSON", variant: "ghost" }]
-    ),
-    importMap: `{
-  "imports": {
-    "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm"
-  }
-}`
+    )
   }
 ];
 
-const shell = (page) => `<!doctype html>
+const shell = (page) => {
+  const markup = `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
@@ -141,10 +137,19 @@ const shell = (page) => `<!doctype html>
 ${HEADER}
 ${page.hero}
 <main id="app" class="container"></main>
-${page.importMap ? `<script type="importmap">\n${page.importMap}\n</script>\n` : ""}<script type="module" src="./scripts/nav.js"></script>
+<script type="module" src="./scripts/nav.js"></script>
 <script type="module" src="./scripts/${page.script}"></script>
 </body>
-</html>\n`;
+</html>
+`;
+
+  const forbidden = /\s(?:src|href)="\//i;
+  if (forbidden.test(markup)) {
+    throw new Error(`Page ${page.file} contains an absolute asset reference.`);
+  }
+
+  return markup;
+};
 
 for (const page of PAGES) {
   writeFileSync(`public/${page.file}`, shell(page));

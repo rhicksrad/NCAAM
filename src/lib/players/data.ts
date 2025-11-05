@@ -1,3 +1,5 @@
+import { requireOk } from "../health.js";
+
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 
 const DATA_BASE_URL = (() => {
@@ -27,21 +29,18 @@ const resolveDataUrl = (path: string): string => {
     return new URL(normalized, DATA_BASE_URL).href;
   }
 
-  return `/${normalized}`;
+  return normalized;
 };
 
-export async function loadJson<T>(path: string): Promise<T> {
-  const response = await fetch(resolveDataUrl(path));
-  if (!response.ok) {
-    throw new Error(`Failed to load ${path} (${response.status})`);
-  }
+export async function loadJson<T>(path: string, where: string): Promise<T> {
+  const response = await requireOk(resolveDataUrl(path), where);
   return (await response.json()) as T;
 }
 
 export const PLAYER_DATA_PATHS = {
-  leaderboard: "/data/player_stat_leaders_2024-25.json",
-  index: "/data/players_index.json",
-  playerStats: (slug: string) => `/data/players/${slug}.json`,
+  leaderboard: "data/player_stat_leaders_2024-25.json",
+  index: "data/players_index.json",
+  playerStats: (slug: string) => `data/players/${slug}.json`,
 } as const;
 
 export type LeaderboardMetricId =
@@ -142,18 +141,18 @@ export type RosterPlayer = {
 };
 
 export async function loadLeaderboardDocument(): Promise<PlayerLeaderboardDocument> {
-  return await loadJson<PlayerLeaderboardDocument>(PLAYER_DATA_PATHS.leaderboard);
+  return await loadJson<PlayerLeaderboardDocument>(PLAYER_DATA_PATHS.leaderboard, "Players leaderboard");
 }
 
 export async function loadPlayerIndexDocument(): Promise<PlayerIndexDocument> {
-  return await loadJson<PlayerIndexDocument>(PLAYER_DATA_PATHS.index);
+  return await loadJson<PlayerIndexDocument>(PLAYER_DATA_PATHS.index, "Players index");
 }
 
 const playerDocumentCache = new Map<string, Promise<PlayerStatsDocument>>();
 
 export async function loadPlayerStatsDocument(slug: string): Promise<PlayerStatsDocument> {
   if (!playerDocumentCache.has(slug)) {
-    const load = loadJson<PlayerStatsDocument>(PLAYER_DATA_PATHS.playerStats(slug)).catch((error) => {
+    const load = loadJson<PlayerStatsDocument>(PLAYER_DATA_PATHS.playerStats(slug), `Player stats ${slug}`).catch((error) => {
       playerDocumentCache.delete(slug);
       throw error;
     });

@@ -1,9 +1,9 @@
 /**
  * Scatter series renderer.
- * @module charts/series/scatter
+ * @module charts/scatter
  */
-import { select } from "d3-selection";
-import { defaultTheme } from "../theme.js";
+import { select } from "../vendor/d3-bundle.js";
+import { defaultTheme } from "./theme.js";
 function position(scale, value) {
     if (typeof scale.bandwidth === "function") {
         const band = scale(value);

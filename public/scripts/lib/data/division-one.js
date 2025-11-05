@@ -1,13 +1,11 @@
 import { buildProgramLabelKeys } from "./program-keys.js";
+import { requireOk } from "../health.js";
 const DIVISION_ONE_PROGRAMS_URL = new URL("../../../data/division-one-programs.json", import.meta.url).toString();
 let divisionOnePromise = null;
 async function fetchDivisionOnePrograms() {
-    const response = await fetch(DIVISION_ONE_PROGRAMS_URL, {
+    const response = await requireOk(DIVISION_ONE_PROGRAMS_URL, "Division I directory", {
         headers: { Accept: "application/json" },
     });
-    if (!response.ok) {
-        throw new Error(`Failed to load Division I directory (${response.status})`);
-    }
     const payload = (await response.json());
     if (!Array.isArray(payload)) {
         throw new Error("Division I directory is malformed");
