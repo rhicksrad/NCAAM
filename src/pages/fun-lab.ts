@@ -188,11 +188,45 @@ function formatGeneratedAt(timestamp?: string): string {
   })}`;
 }
 
+function describeChartSummary(
+  categories: MascotCategorySummary[],
+  totalPrograms: number,
+  activeCategory: string | null,
+): string {
+  if (!totalPrograms || totalPrograms <= 0 || categories.length === 0) {
+    return "No mascot taxonomy available yet.";
+  }
+
+  if (activeCategory) {
+    const selected = categories.find(category => category.slug === activeCategory);
+    if (selected) {
+      const share = formatPercent(selected.count / totalPrograms);
+      return `${selected.label} programs only — ${numberFormatter.format(selected.count)} schools (${share}) in the index. Click again to reset.`;
+    }
+  }
+
+  if (categories.length >= 2) {
+    const [top, runnerUp] = categories;
+    return `${top.label} owns ${formatPercent(top.count / totalPrograms)} of Division I mascots, with ${runnerUp.label} next at ${formatPercent(
+      runnerUp.count / totalPrograms,
+    )}.`;
+  }
+
+  if (categories.length === 1) {
+    const top = categories[0];
+    return `${top.label} accounts for ${formatPercent(top.count / totalPrograms)} of Division I mascots.`;
+  }
+
+  return "No mascot taxonomy available yet.";
+}
+
 function buildLegend(
   root: HTMLElement,
   categories: MascotCategorySummary[],
   colorByCategory: Map<string, string>,
   total: number,
+  onToggle: (slug: string) => void,
+  activeCategory: string | null,
 ): void {
   root.innerHTML = "";
   const list = root.ownerDocument?.createElement("ul") ?? document.createElement("ul");
@@ -204,6 +238,18 @@ function buildLegend(
     const item = root.ownerDocument?.createElement("li") ?? document.createElement("li");
     item.className = "fun-lab__legend-item";
     item.style.setProperty("--swatch-color", color);
+    item.setAttribute("role", "button");
+    item.tabIndex = 0;
+
+    const isActive = activeCategory === category.slug;
+    const isDimmed = activeCategory !== null && !isActive;
+    if (isActive) {
+      item.classList.add("fun-lab__legend-item--active");
+    }
+    if (isDimmed) {
+      item.classList.add("fun-lab__legend-item--dimmed");
+    }
+    item.setAttribute("aria-pressed", isActive ? "true" : "false");
 
     const swatch = item.ownerDocument.createElement("span");
     swatch.className = "fun-lab__legend-swatch";
@@ -225,21 +271,40 @@ function buildLegend(
     info.appendChild(meta);
 
     item.appendChild(info);
+
+    const handleToggle = () => {
+      onToggle(category.slug);
+    };
+    item.addEventListener("click", event => {
+      event.preventDefault();
+      handleToggle();
+    });
+    item.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+        event.preventDefault();
+        handleToggle();
+      }
+    });
+
     list.appendChild(item);
   });
 
   root.appendChild(list);
 }
 
+interface ChartControls {
+  colorByCategory: Map<string, string>;
+  setActiveCategory: (slug: string | null) => void;
+  onArcToggle: (callback: (slug: string) => void) => void;
+}
+
 function renderChart(
-  data: MascotIndexPayload,
+  categories: MascotCategorySummary[],
+  total: number,
   chartContainer: HTMLElement,
-  legendContainer: HTMLElement,
-): Map<string, string> {
+): ChartControls {
   chartContainer.innerHTML = "";
 
-  const categories = [...data.categories].sort((a, b) => b.count - a.count);
-  const total = data.total_programs;
   const width = 520;
   const height = 520;
   const radius = Math.min(width, height) / 2;
@@ -262,9 +327,10 @@ function renderChart(
     .cornerRadius(6);
 
   const colorByCategory = new Map<string, string>();
+  let arcToggleHandler: ((slug: string) => void) | null = null;
 
   const arcs = group
-    .selectAll("path")
+    .selectAll<SVGPathElement>("path")
     .data(pie(categories))
     .join("path")
     .attr("class", "fun-lab__arc")
@@ -275,11 +341,34 @@ function renderChart(
     })
     .attr("stroke", "var(--chart-bg)")
     .attr("stroke-width", 1.5)
-    .attr("d", (d: PieArcDatum<MascotCategorySummary>) => arc(d) ?? "");
+    .attr("d", (d: PieArcDatum<MascotCategorySummary>) => arc(d) ?? "")
+    .attr("role", "button")
+    .attr("tabindex", 0)
+    .attr("focusable", "true")
+    .attr("aria-pressed", "false")
+    .attr("aria-label", (d: PieArcDatum<MascotCategorySummary>) => `Toggle ${d.data.label} programs`);
 
   arcs.append("title").text((d: PieArcDatum<MascotCategorySummary>) => {
     const share = formatPercent(d.data.count / total);
-    return `${d.data.label}: ${numberFormatter.format(d.data.count)} programs (${share})`;
+    return `${d.data.label}: ${numberFormatter.format(d.data.count)} programs (${share}). Click to isolate this archetype.`;
+  });
+
+  const invokeToggle = (slug: string) => {
+    if (arcToggleHandler) {
+      arcToggleHandler(slug);
+    }
+  };
+
+  arcs.on("click", (event: PointerEvent, d: PieArcDatum<MascotCategorySummary>) => {
+    event.preventDefault();
+    invokeToggle(d.data.slug);
+  });
+
+  arcs.on("keydown", (event: KeyboardEvent, d: PieArcDatum<MascotCategorySummary>) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      invokeToggle(d.data.slug);
+    }
   });
 
   group
@@ -296,8 +385,21 @@ function renderChart(
     .attr("dy", "1.1em")
     .text("programs");
 
-  buildLegend(legendContainer, categories, colorByCategory, total);
-  return colorByCategory;
+  return {
+    colorByCategory,
+    setActiveCategory: (slug: string | null) => {
+      arcs.each(function (d: PieArcDatum<MascotCategorySummary>) {
+        const element = this as SVGPathElement;
+        const isActive = slug !== null && d.data.slug === slug;
+        const isDimmed = slug !== null && d.data.slug !== slug;
+        element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
+        element.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    },
+    onArcToggle: (callback: (slug: string) => void) => {
+      arcToggleHandler = callback;
+    },
+  };
 }
 
 function renderTable(
@@ -307,6 +409,15 @@ function renderTable(
 ): void {
   const tbody = table.tBodies[0] ?? table.createTBody();
   tbody.innerHTML = "";
+
+  if (records.length === 0) {
+    const row = tbody.insertRow();
+    const cell = row.insertCell();
+    cell.colSpan = table.tHead?.rows[0]?.cells.length ?? 5;
+    cell.className = "fun-lab__cell fun-lab__cell--empty";
+    cell.textContent = "No programs match this filter yet.";
+    return;
+  }
 
   records.forEach(record => {
     const row = tbody.insertRow();
@@ -353,12 +464,20 @@ async function boot(): Promise<void> {
     throw new Error("Fun Lab layout failed to mount");
   }
 
+  const summaryNode = summaryEl;
+  const chartSummaryNode = chartSummaryEl;
+  const chartHost = chartRoot;
+  const legendHost = legendRoot;
+  const tableNode = tableEl;
+  const generatedNode = generatedEl;
+
   try {
     const data = await fetchMascotIndex();
-    summaryEl.textContent = describeSummary(data);
-    generatedEl.textContent = formatGeneratedAt(data.generated_at);
+    summaryNode.textContent = describeSummary(data);
+    generatedNode.textContent = formatGeneratedAt(data.generated_at);
 
-    const colorByCategory = renderChart(data, chartRoot, legendRoot);
+    const categories = [...data.categories].sort((a, b) => b.count - a.count);
+    const chartControls = renderChart(categories, data.total_programs, chartHost);
 
     const sortedRecords = [...data.records].sort((a, b) => {
       if (a.category === b.category) {
@@ -366,26 +485,30 @@ async function boot(): Promise<void> {
       }
       return a.category_label.localeCompare(b.category_label, "en-US");
     });
-    renderTable(tableEl, sortedRecords, colorByCategory);
+    let activeCategory: string | null = null;
 
-    const leaders = [...data.categories].sort((a, b) => b.count - a.count);
-    if (leaders.length >= 2) {
-      const top = leaders[0];
-      const runnerUp = leaders[1];
-      chartSummaryEl.textContent = `${top.label} owns ${formatPercent(top.count / data.total_programs)} of Division I mascots, ` +
-        `with ${runnerUp.label} next at ${formatPercent(runnerUp.count / data.total_programs)}.`;
-    } else if (leaders.length === 1) {
-      const top = leaders[0];
-      chartSummaryEl.textContent = `${top.label} accounts for ${formatPercent(top.count / data.total_programs)} of Division I mascots.`;
-    } else {
-      chartSummaryEl.textContent = "No mascot taxonomy available yet.";
+    const handleCategoryToggle = (slug: string) => {
+      const next = activeCategory === slug ? null : slug;
+      applyCategoryFilter(next);
+    };
+
+    function applyCategoryFilter(next: string | null) {
+      activeCategory = next;
+      const filteredRecords = next ? sortedRecords.filter(record => record.category === next) : sortedRecords;
+      renderTable(tableNode, filteredRecords, chartControls.colorByCategory);
+      chartControls.setActiveCategory(next);
+      buildLegend(legendHost, categories, chartControls.colorByCategory, data.total_programs, handleCategoryToggle, next);
+      chartSummaryNode.textContent = describeChartSummary(categories, data.total_programs, next);
     }
+
+    chartControls.onArcToggle(handleCategoryToggle);
+    applyCategoryFilter(null);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    summaryEl.textContent = "We couldn’t load the mascot index. Try refreshing to replay the experiment.";
-    chartSummaryEl.textContent = `Load error: ${message}`;
-    chartRoot.textContent = "No chart data";
-    legendRoot.textContent = "";
+    summaryNode.textContent = "We couldn’t load the mascot index. Try refreshing to replay the experiment.";
+    chartSummaryNode.textContent = `Load error: ${message}`;
+    chartHost.textContent = "No chart data";
+    legendHost.textContent = "";
   }
 }
 
