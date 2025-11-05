@@ -15,8 +15,8 @@ import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js"
 import { resolveColor } from "../lib/charts/theme.js";
 import { requireOk } from "../lib/health.js";
 
-const DATA_URL = "data/fun-lab/mascot-index.json";
-const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
+const DATA_URL = new URL("../../data/fun-lab/mascot-index.json", import.meta.url).toString();
+const CATS_DOGS_DATA_URL = new URL("../../data/fun-lab/cats-vs-dogs.json", import.meta.url).toString();
 
 interface MascotIndexRecord {
   id: number;

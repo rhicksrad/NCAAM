@@ -62,15 +62,7 @@
 .fun-lab__chart-card,
 .fun-lab__showdown-shell {
   height: 100%;
-}
-
-.fun-lab__chart-card {
-  max-inline-size: clamp(320px, 45vw, 520px);
-  margin-inline: auto;
-}
-
-.fun-lab__showdown-shell {
-  max-inline-size: clamp(320px, 42vw, 520px);
+  inline-size: min(100%, 760px);
   margin-inline: auto;
 }
 
@@ -412,6 +404,12 @@
   .fun-lab__chart-grid {
     grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
     align-items: start;
+  }
+
+  .fun-lab__chart-card,
+  .fun-lab__showdown-shell {
+    inline-size: 100%;
+    margin-inline: 0;
   }
 
   .fun-lab__legend {
