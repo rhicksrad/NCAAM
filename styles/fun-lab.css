@@ -142,7 +142,7 @@ svg.chart text.fun-lab__chart-total--caption {
   border-radius: calc(var(--radius-card) * 0.85);
   background: color-mix(in srgb, var(--group-color) 16%, transparent);
   box-shadow: inset 0 1px 0 color-mix(in srgb, white 35%, transparent);
-  color: color-mix(in srgb, var(--color-ink) 94%, white 6%);
+  color: #0f1a2b;
   font-weight: 600;
   font-size: 0.97rem;
   cursor: pointer;
@@ -171,7 +171,7 @@ svg.chart text.fun-lab__chart-total--caption {
   place-items: center;
   border-radius: 999px;
   background: color-mix(in srgb, var(--group-color) 25%, transparent);
-  color: color-mix(in srgb, var(--group-color) 92%, white 8%);
+  color: color-mix(in srgb, var(--group-color) 82%, white 18%);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--group-color) 45%, transparent);
 }
 
@@ -188,6 +188,7 @@ svg.chart text.fun-lab__chart-total--caption {
 .fun-lab__group-label {
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: #0a1322;
 }
 
 .fun-lab__group-meta {
@@ -196,11 +197,11 @@ svg.chart text.fun-lab__chart-total--caption {
   gap: 0.1rem;
   text-align: right;
   font-size: 0.78rem;
-  color: var(--color-muted);
+  color: color-mix(in srgb, #0a1322 72%, #4b5563 28%);
 }
 
 .fun-lab__group-meta strong {
-  color: color-mix(in srgb, var(--color-ink) 92%, white 8%);
+  color: color-mix(in srgb, var(--color-ink) 98%, white 2%);
 }
 
 .fun-lab__group-data {
@@ -232,6 +233,11 @@ svg.chart text.fun-lab__chart-total--caption {
 
 .fun-lab__showdown-chart {
   min-height: 360px;
+  padding-inline: clamp(1rem, 2vw, 2.5rem);
+  padding-block: clamp(1rem, 2vw, 2.5rem);
+  background: radial-gradient(circle at top left, color-mix(in srgb, var(--chart-bg) 65%, transparent) 0%, transparent 55%),
+    color-mix(in srgb, var(--chart-bg) 86%, transparent);
+  border-radius: calc(var(--radius-card) * 0.9);
 }
 
 .fun-lab__showdown-sidebar {
@@ -390,25 +396,37 @@ svg.chart text.fun-lab__chart-total--caption {
   text-align: center;
 }
 
+
 .fun-lab__showdown-row text {
-  fill: color-mix(in srgb, var(--color-ink) 90%, white 10%);
-  font-size: 0.85rem;
+  fill: #fff;
+  font-size: 0.92rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.fun-lab__showdown-matchup {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.76rem;
-  fill: var(--color-muted);
+.fun-lab__showdown-label {
+  fill: color-mix(in srgb, white 90%, transparent);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
 }
 
 .fun-lab__showdown-total {
-  fill: color-mix(in srgb, var(--color-ink) 85%, white 15%);
+  font-size: clamp(1.1rem, 0.95rem + 0.8vw, 1.5rem);
+  letter-spacing: 0.08em;
+  fill: white;
+  filter: drop-shadow(0 4px 10px color-mix(in srgb, black 45%, transparent));
+}
+
+.fun-lab__showdown-total tspan {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
 }
 
 .fun-lab__showdown-track {
-  fill: color-mix(in srgb, var(--chart-grid) 18%, transparent);
+  fill: color-mix(in srgb, white 4%, var(--chart-grid) 24%);
+  stroke: color-mix(in srgb, white 35%, transparent);
+  stroke-width: 1px;
 }
 
 .fun-lab__showdown-segment {
@@ -426,13 +444,17 @@ svg.chart text.fun-lab__chart-total--caption {
 }
 
 .fun-lab__showdown-axis text {
-  fill: var(--color-muted);
-  font-size: 0.78rem;
+  fill: color-mix(in srgb, white 82%, transparent);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .fun-lab__axis-label {
-  fill: var(--color-muted);
-  font-size: 0.78rem;
+  fill: color-mix(in srgb, white 82%, transparent);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .fun-lab__showdown-footnote {
