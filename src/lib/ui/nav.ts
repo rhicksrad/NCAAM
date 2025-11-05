@@ -7,6 +7,7 @@ const LINKS: readonly [string, string][] = [
   ["games.html", "Games"],
   ["rankings.html", "Rankings"],
   ["standings.html", "Standings"],
+  ["fun-lab.html", "Fun Lab"],
   ["about.html", "About"],
 ] as const;
 

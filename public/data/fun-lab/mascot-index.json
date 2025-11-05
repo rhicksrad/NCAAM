@@ -1,0 +1,6095 @@
+{
+  "generated_at": "2025-11-05T00:16:33.996Z",
+  "source": {
+    "teams": "https://ncaam.hicksrch.workers.dev/v1/teams",
+    "conferences": "https://ncaam.hicksrch.workers.dev/v1/conferences"
+  },
+  "total_programs": 372,
+  "total_conferences": 32,
+  "families": [
+    {
+      "slug": "animals",
+      "label": "Animals",
+      "count": 218
+    },
+    {
+      "slug": "humans",
+      "label": "Humans & Occupations",
+      "count": 112
+    },
+    {
+      "slug": "mythical",
+      "label": "Mythical & Supernatural",
+      "count": 15
+    },
+    {
+      "slug": "forces",
+      "label": "Forces & Weather",
+      "count": 11
+    },
+    {
+      "slug": "objects",
+      "label": "Objects & Concepts",
+      "count": 12
+    },
+    {
+      "slug": "vehicles",
+      "label": "Vehicles & Flight",
+      "count": 4
+    }
+  ],
+  "categories": [
+    {
+      "slug": "animals_birds",
+      "label": "Birds",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 58
+    },
+    {
+      "slug": "animals_cats",
+      "label": "Cats",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 61
+    },
+    {
+      "slug": "animals_canids",
+      "label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 35
+    },
+    {
+      "slug": "animals_bears",
+      "label": "Bears",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 13
+    },
+    {
+      "slug": "animals_hoofed",
+      "label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 28
+    },
+    {
+      "slug": "animals_other",
+      "label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 11
+    },
+    {
+      "slug": "animals_reptiles",
+      "label": "Reptiles & Amphibians",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 4
+    },
+    {
+      "slug": "animals_marine",
+      "label": "Sea Life",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 3
+    },
+    {
+      "slug": "animals_insects",
+      "label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals",
+      "count": 5
+    },
+    {
+      "slug": "humans_general",
+      "label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations",
+      "count": 112
+    },
+    {
+      "slug": "mythical_spirits",
+      "label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural",
+      "count": 15
+    },
+    {
+      "slug": "forces_elements",
+      "label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather",
+      "count": 11
+    },
+    {
+      "slug": "objects_concepts",
+      "label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts",
+      "count": 12
+    },
+    {
+      "slug": "vehicles_machines",
+      "label": "Vehicles & Flight",
+      "family": "vehicles",
+      "family_label": "Vehicles & Flight",
+      "count": 4
+    }
+  ],
+  "records": [
+    {
+      "id": 231,
+      "full_name": "Air Force Falcons",
+      "college": "Air Force",
+      "mascot": "Falcons",
+      "abbreviation": "AF",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 264,
+      "full_name": "American University Eagles",
+      "college": "American University",
+      "mascot": "Eagles",
+      "abbreviation": "AMER",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 208,
+      "full_name": "Ball State Cardinals",
+      "college": "Ball State",
+      "mascot": "Cardinals",
+      "abbreviation": "BALL",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 1,
+      "full_name": "Boston College Eagles",
+      "college": "Boston College",
+      "mascot": "Eagles",
+      "abbreviation": "BC",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 209,
+      "full_name": "Bowling Green Falcons",
+      "college": "Bowling Green",
+      "mascot": "Falcons",
+      "abbreviation": "BGSU",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 132,
+      "full_name": "Cal State Bakersfield Roadrunners",
+      "college": "Cal State Bakersfield",
+      "mascot": "Roadrunners",
+      "abbreviation": "CSUB",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 302,
+      "full_name": "Chattanooga Mocs",
+      "college": "Chattanooga",
+      "mascot": "Mocs",
+      "abbreviation": "UTC",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 335,
+      "full_name": "Coastal Carolina Chanticleers",
+      "college": "Coastal Carolina",
+      "mascot": "Chanticleers",
+      "abbreviation": "CCU",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 199,
+      "full_name": "Coppin State Eagles",
+      "college": "Coppin State",
+      "mascot": "Eagles",
+      "abbreviation": "COPP",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 84,
+      "full_name": "Creighton Bluejays",
+      "college": "Creighton",
+      "mascot": "Bluejays",
+      "abbreviation": "CREI",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 155,
+      "full_name": "Delaware Blue Hens",
+      "college": "Delaware",
+      "mascot": "Blue Hens",
+      "abbreviation": "DEL",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 212,
+      "full_name": "Eastern Michigan Eagles",
+      "college": "Eastern Michigan",
+      "mascot": "Eagles",
+      "abbreviation": "EMU",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 94,
+      "full_name": "Eastern Washington Eagles",
+      "college": "Eastern Washington",
+      "mascot": "Eagles",
+      "abbreviation": "EWU",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 42,
+      "full_name": "Florida Atlantic Owls",
+      "college": "Florida Atlantic",
+      "mascot": "Owls",
+      "abbreviation": "FAU",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 23,
+      "full_name": "Florida Gulf Coast Eagles",
+      "college": "Florida Gulf Coast",
+      "mascot": "Eagles",
+      "abbreviation": "FGCU",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 336,
+      "full_name": "Georgia Southern Eagles",
+      "college": "Georgia Southern",
+      "mascot": "Eagles",
+      "abbreviation": "GASO",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 366,
+      "full_name": "Hartford Hawks",
+      "college": "Hartford",
+      "mascot": "Hawks",
+      "abbreviation": "HART",
+      "conference": {
+        "id": 32,
+        "name": "Division I Independents",
+        "short_name": "Indep."
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 224,
+      "full_name": "Illinois State Redbirds",
+      "college": "Illinois State",
+      "mascot": "Redbirds",
+      "abbreviation": "ILST",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 314,
+      "full_name": "Incarnate Word Cardinals",
+      "college": "Incarnate Word",
+      "mascot": "Cardinals",
+      "abbreviation": "UIW",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 115,
+      "full_name": "Iowa Hawkeyes",
+      "college": "Iowa",
+      "mascot": "Hawkeyes",
+      "abbreviation": "IOWA",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 157,
+      "full_name": "Jacksonville State Gamecocks",
+      "college": "Jacksonville State",
+      "mascot": "Gamecocks",
+      "abbreviation": "JXST",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 75,
+      "full_name": "Kansas Jayhawks",
+      "college": "Kansas",
+      "mascot": "Jayhawks",
+      "abbreviation": "KU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 158,
+      "full_name": "Kennesaw State Owls",
+      "college": "Kennesaw State",
+      "mascot": "Owls",
+      "abbreviation": "KENN",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 315,
+      "full_name": "Lamar Cardinals",
+      "college": "Lamar",
+      "mascot": "Cardinals",
+      "abbreviation": "LAM",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 271,
+      "full_name": "Lehigh Mountain Hawks",
+      "college": "Lehigh",
+      "mascot": "Mountain Hawks",
+      "abbreviation": "LEH",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 7,
+      "full_name": "Louisville Cardinals",
+      "college": "Louisville",
+      "mascot": "Cardinals",
+      "abbreviation": "LOU",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 87,
+      "full_name": "Marquette Golden Eagles",
+      "college": "Marquette",
+      "mascot": "Golden Eagles",
+      "abbreviation": "MARQ",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 202,
+      "full_name": "Maryland Eastern Shore Hawks",
+      "college": "Maryland Eastern Shore",
+      "mascot": "Hawks",
+      "abbreviation": "UMES",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 215,
+      "full_name": "Miami (OH) RedHawks",
+      "college": "Miami (OH)",
+      "mascot": "RedHawks",
+      "abbreviation": "M-OH",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 148,
+      "full_name": "Monmouth Hawks",
+      "college": "Monmouth",
+      "mascot": "Hawks",
+      "abbreviation": "MONM",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 256,
+      "full_name": "Morehead State Eagles",
+      "college": "Morehead State",
+      "mascot": "Eagles",
+      "abbreviation": "MORE",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 193,
+      "full_name": "Niagara Purple Eagles",
+      "college": "Niagara",
+      "mascot": "Purple Eagles",
+      "abbreviation": "NIA",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 205,
+      "full_name": "North Carolina Central Eagles",
+      "college": "North Carolina Central",
+      "mascot": "Eagles",
+      "abbreviation": "NCCU",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 326,
+      "full_name": "North Dakota Fighting Hawks",
+      "college": "North Dakota",
+      "mascot": "Fighting Hawks",
+      "abbreviation": "UND",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 27,
+      "full_name": "North Florida Ospreys",
+      "college": "North Florida",
+      "mascot": "Ospreys",
+      "abbreviation": "UNF",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 329,
+      "full_name": "Oral Roberts Golden Eagles",
+      "college": "Oral Roberts",
+      "mascot": "Golden Eagles",
+      "abbreviation": "ORU",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 123,
+      "full_name": "Oregon Ducks",
+      "college": "Oregon",
+      "mascot": "Ducks",
+      "abbreviation": "ORE",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 45,
+      "full_name": "Rice Owls",
+      "college": "Rice",
+      "mascot": "Owls",
+      "abbreviation": "RICE",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 63,
+      "full_name": "Saint Joseph's Hawks",
+      "college": "Saint Joseph's",
+      "mascot": "Hawks",
+      "abbreviation": "JOES",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 197,
+      "full_name": "Saint Peter's Peacocks",
+      "college": "Saint Peter's",
+      "mascot": "Peacocks",
+      "abbreviation": "SPU",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 364,
+      "full_name": "Seattle U Redhawks",
+      "college": "Seattle U",
+      "mascot": "Redhawks",
+      "abbreviation": "SEA",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 285,
+      "full_name": "South Carolina Gamecocks",
+      "college": "South Carolina",
+      "mascot": "Gamecocks",
+      "abbreviation": "SC",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 258,
+      "full_name": "Southeast Missouri State Redhawks",
+      "college": "Southeast Missouri State",
+      "mascot": "Redhawks",
+      "abbreviation": "SEMO",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 259,
+      "full_name": "Southern Indiana Screaming Eagles",
+      "college": "Southern Indiana",
+      "mascot": "Screaming Eagles",
+      "abbreviation": "USI",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 343,
+      "full_name": "Southern Miss Golden Eagles",
+      "college": "Southern Miss",
+      "mascot": "Golden Eagles",
+      "abbreviation": "USM",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 349,
+      "full_name": "Southern Utah Thunderbirds",
+      "college": "Southern Utah",
+      "mascot": "Thunderbirds",
+      "abbreviation": "SUU",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 251,
+      "full_name": "Stonehill Skyhawks",
+      "college": "Stonehill",
+      "mascot": "Skyhawks",
+      "abbreviation": "STO",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 47,
+      "full_name": "Temple Owls",
+      "college": "Temple",
+      "mascot": "Owls",
+      "abbreviation": "TEM",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 261,
+      "full_name": "Tennessee Tech Golden Eagles",
+      "college": "Tennessee Tech",
+      "mascot": "Golden Eagles",
+      "abbreviation": "TNTC",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 346,
+      "full_name": "UL Monroe Warhawks",
+      "college": "UL Monroe",
+      "mascot": "Warhawks",
+      "abbreviation": "ULM",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 38,
+      "full_name": "UMass Lowell River Hawks",
+      "college": "UMass Lowell",
+      "mascot": "River Hawks",
+      "abbreviation": "UML",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 153,
+      "full_name": "UNC Wilmington Seahawks",
+      "college": "UNC Wilmington",
+      "mascot": "Seahawks",
+      "abbreviation": "UNCW",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 262,
+      "full_name": "UT Martin Skyhawks",
+      "college": "UT Martin",
+      "mascot": "Skyhawks",
+      "abbreviation": "UTM",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 51,
+      "full_name": "UTSA Roadrunners",
+      "college": "UTSA",
+      "mascot": "Roadrunners",
+      "abbreviation": "UTSA",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 17,
+      "full_name": "Virginia Tech Hokies",
+      "college": "Virginia Tech",
+      "mascot": "Hokies",
+      "abbreviation": "VT",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 252,
+      "full_name": "Wagner Seahawks",
+      "college": "Wagner",
+      "mascot": "Seahawks",
+      "abbreviation": "WAG",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 112,
+      "full_name": "Winthrop Eagles",
+      "college": "Winthrop",
+      "mascot": "Eagles",
+      "abbreviation": "WIN",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 177,
+      "full_name": "Youngstown State Penguins",
+      "college": "Youngstown State",
+      "mascot": "Penguins",
+      "abbreviation": "YSU",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "animals_birds",
+      "category_label": "Birds",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 347,
+      "full_name": "Abilene Christian Wildcats",
+      "college": "Abilene Christian",
+      "mascot": "Wildcats",
+      "abbreviation": "ACU",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 68,
+      "full_name": "Arizona Wildcats",
+      "college": "Arizona",
+      "mascot": "Wildcats",
+      "abbreviation": "ARIZ",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 293,
+      "full_name": "Arkansas-Pine Bluff Golden Lions",
+      "college": "Arkansas-Pine Bluff",
+      "mascot": "Golden Lions",
+      "abbreviation": "UAPB",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 276,
+      "full_name": "Auburn Tigers",
+      "college": "Auburn",
+      "mascot": "Tigers",
+      "abbreviation": "AUB",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 294,
+      "full_name": "Bethune-Cookman Wildcats",
+      "college": "Bethune-Cookman",
+      "mascot": "Wildcats",
+      "abbreviation": "BCU",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 31,
+      "full_name": "Binghamton Bearcats",
+      "college": "Binghamton",
+      "mascot": "Bearcats",
+      "abbreviation": "BING",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 372,
+      "full_name": "Birmingham-Southern Panthers",
+      "college": "Birmingham-Southern",
+      "mascot": "Panthers",
+      "abbreviation": "BIRMI",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 69,
+      "full_name": "BYU Cougars",
+      "college": "BYU",
+      "mascot": "Cougars",
+      "abbreviation": "BYU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 143,
+      "full_name": "Charleston Cougars",
+      "college": "Charleston",
+      "mascot": "Cougars",
+      "abbreviation": "COFC",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 244,
+      "full_name": "Chicago State Cougars",
+      "college": "Chicago State",
+      "mascot": "Cougars",
+      "abbreviation": "CHST",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 71,
+      "full_name": "Cincinnati Bearcats",
+      "college": "Cincinnati",
+      "mascot": "Bearcats",
+      "abbreviation": "CIN",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 3,
+      "full_name": "Clemson Tigers",
+      "college": "Clemson",
+      "mascot": "Tigers",
+      "abbreviation": "CLEM",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 179,
+      "full_name": "Columbia Lions",
+      "college": "Columbia",
+      "mascot": "Lions",
+      "abbreviation": "COLU",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 53,
+      "full_name": "Davidson Wildcats",
+      "college": "Davidson",
+      "mascot": "Wildcats",
+      "abbreviation": "DAV",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 312,
+      "full_name": "East Texas A&M Lions",
+      "college": "East Texas A&M",
+      "mascot": "Lions",
+      "abbreviation": "ETAM",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 253,
+      "full_name": "Eastern Illinois Panthers",
+      "college": "Eastern Illinois",
+      "mascot": "Panthers",
+      "abbreviation": "EIU",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 156,
+      "full_name": "Florida International Panthers",
+      "college": "Florida International",
+      "mascot": "Panthers",
+      "abbreviation": "FIU",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 337,
+      "full_name": "Georgia State Panthers",
+      "college": "Georgia State",
+      "mascot": "Panthers",
+      "abbreviation": "GAST",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 296,
+      "full_name": "Grambling Tigers",
+      "college": "Grambling",
+      "mascot": "Tigers",
+      "abbreviation": "GRAM",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 106,
+      "full_name": "High Point Panthers",
+      "college": "High Point",
+      "mascot": "Panthers",
+      "abbreviation": "HPU",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 147,
+      "full_name": "Hofstra Pride",
+      "college": "Hofstra",
+      "mascot": "Pride",
+      "abbreviation": "HOF",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 73,
+      "full_name": "Houston Cougars",
+      "college": "Houston",
+      "mascot": "Cougars",
+      "abbreviation": "HOU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 95,
+      "full_name": "Idaho State Bengals",
+      "college": "Idaho State",
+      "mascot": "Bengals",
+      "abbreviation": "IDST",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 170,
+      "full_name": "IU Indianapolis Jaguars",
+      "college": "IU Indianapolis",
+      "mascot": "Jaguars",
+      "abbreviation": "IUIN",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 297,
+      "full_name": "Jackson State Tigers",
+      "college": "Jackson State",
+      "mascot": "Tigers",
+      "abbreviation": "JKST",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 76,
+      "full_name": "Kansas State Wildcats",
+      "college": "Kansas State",
+      "mascot": "Wildcats",
+      "abbreviation": "KSU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 279,
+      "full_name": "Kentucky Wildcats",
+      "college": "Kentucky",
+      "mascot": "Wildcats",
+      "abbreviation": "UK",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 270,
+      "full_name": "Lafayette Leopards",
+      "college": "Lafayette",
+      "mascot": "Leopards",
+      "abbreviation": "LAF",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 254,
+      "full_name": "Lindenwood Lions",
+      "college": "Lindenwood",
+      "mascot": "Lions",
+      "abbreviation": "LIN",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 355,
+      "full_name": "Loyola Marymount Lions",
+      "college": "Loyola Marymount",
+      "mascot": "Lions",
+      "abbreviation": "LMU",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 280,
+      "full_name": "LSU Tigers",
+      "college": "LSU",
+      "mascot": "Tigers",
+      "abbreviation": "LSU",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 43,
+      "full_name": "Memphis Tigers",
+      "college": "Memphis",
+      "mascot": "Tigers",
+      "abbreviation": "MEM",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 171,
+      "full_name": "Milwaukee Panthers",
+      "college": "Milwaukee",
+      "mascot": "Panthers",
+      "abbreviation": "MILW",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 282,
+      "full_name": "Missouri Tigers",
+      "college": "Missouri",
+      "mascot": "Tigers",
+      "abbreviation": "MIZ",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 98,
+      "full_name": "Montana State Bobcats",
+      "college": "Montana State",
+      "mascot": "Bobcats",
+      "abbreviation": "MTST",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 35,
+      "full_name": "New Hampshire Wildcats",
+      "college": "New Hampshire",
+      "mascot": "Wildcats",
+      "abbreviation": "UNH",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 26,
+      "full_name": "North Alabama Lions",
+      "college": "North Alabama",
+      "mascot": "Lions",
+      "abbreviation": "UNA",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 227,
+      "full_name": "Northern Iowa Panthers",
+      "college": "Northern Iowa",
+      "mascot": "Panthers",
+      "abbreviation": "UNI",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 121,
+      "full_name": "Northwestern Wildcats",
+      "college": "Northwestern",
+      "mascot": "Wildcats",
+      "abbreviation": "NU",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 217,
+      "full_name": "Ohio Bobcats",
+      "college": "Ohio",
+      "mascot": "Bobcats",
+      "abbreviation": "OHIO",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 357,
+      "full_name": "Pacific Tigers",
+      "college": "Pacific",
+      "mascot": "Tigers",
+      "abbreviation": "PAC",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 124,
+      "full_name": "Penn State Nittany Lions",
+      "college": "Penn State",
+      "mascot": "Nittany Lions",
+      "abbreviation": "PSU",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 12,
+      "full_name": "Pittsburgh Panthers",
+      "college": "Pittsburgh",
+      "mascot": "Panthers",
+      "abbreviation": "PITT",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 299,
+      "full_name": "Prairie View A&M Panthers",
+      "college": "Prairie View A&M",
+      "mascot": "Panthers",
+      "abbreviation": "PV",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 184,
+      "full_name": "Princeton Tigers",
+      "college": "Princeton",
+      "mascot": "Tigers",
+      "abbreviation": "PRIN",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 194,
+      "full_name": "Quinnipiac Bobcats",
+      "college": "Quinnipiac",
+      "mascot": "Bobcats",
+      "abbreviation": "QUIN",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 164,
+      "full_name": "Sam Houston Bearkats",
+      "college": "Sam Houston",
+      "mascot": "Bearkats",
+      "abbreviation": "SHSU",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 368,
+      "full_name": "Savannah State Tigers",
+      "college": "Savannah State",
+      "mascot": "Tigers",
+      "abbreviation": "SAV",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 320,
+      "full_name": "SE Louisiana Lions",
+      "college": "SE Louisiana",
+      "mascot": "Lions",
+      "abbreviation": "SELA",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 257,
+      "full_name": "SIU Edwardsville Cougars",
+      "college": "SIU Edwardsville",
+      "mascot": "Cougars",
+      "abbreviation": "SIUE",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 342,
+      "full_name": "South Alabama Jaguars",
+      "college": "South Alabama",
+      "mascot": "Jaguars",
+      "abbreviation": "USA",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 300,
+      "full_name": "Southern Jaguars",
+      "college": "Southern",
+      "mascot": "Jaguars",
+      "abbreviation": "SOU",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 260,
+      "full_name": "Tennessee State Tigers",
+      "college": "Tennessee State",
+      "mascot": "Tigers",
+      "abbreviation": "TNST",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 301,
+      "full_name": "Texas Southern Tigers",
+      "college": "Texas Southern",
+      "mascot": "Tigers",
+      "abbreviation": "TXSO",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 344,
+      "full_name": "Texas State Bobcats",
+      "college": "Texas State",
+      "mascot": "Bobcats",
+      "abbreviation": "TXST",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 152,
+      "full_name": "Towson Tigers",
+      "college": "Towson",
+      "mascot": "Tigers",
+      "abbreviation": "TOW",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 39,
+      "full_name": "Vermont Catamounts",
+      "college": "Vermont",
+      "mascot": "Catamounts",
+      "abbreviation": "UVM",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 92,
+      "full_name": "Villanova Wildcats",
+      "college": "Villanova",
+      "mascot": "Wildcats",
+      "abbreviation": "VILL",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 365,
+      "full_name": "Washington State Cougars",
+      "college": "Washington State",
+      "mascot": "Cougars",
+      "abbreviation": "WSU",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 103,
+      "full_name": "Weber State Wildcats",
+      "college": "Weber State",
+      "mascot": "Wildcats",
+      "abbreviation": "WEB",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 310,
+      "full_name": "Western Carolina Catamounts",
+      "college": "Western Carolina",
+      "mascot": "Catamounts",
+      "abbreviation": "WCU",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_cats",
+      "category_label": "Cats",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 290,
+      "full_name": "Alabama A&M Bulldogs",
+      "college": "Alabama A&M",
+      "mascot": "Bulldogs",
+      "abbreviation": "AAMU",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 334,
+      "full_name": "Arkansas State Red Wolves",
+      "college": "Arkansas State",
+      "mascot": "Red Wolves",
+      "abbreviation": "ARST",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 266,
+      "full_name": "Boston University Terriers",
+      "college": "Boston University",
+      "mascot": "Terriers",
+      "abbreviation": "BU",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 32,
+      "full_name": "Bryant Bulldogs",
+      "college": "Bryant",
+      "mascot": "Bulldogs",
+      "abbreviation": "BRY",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 83,
+      "full_name": "Butler Bulldogs",
+      "college": "Butler",
+      "mascot": "Bulldogs",
+      "abbreviation": "BUT",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 222,
+      "full_name": "Drake Bulldogs",
+      "college": "Drake",
+      "mascot": "Bulldogs",
+      "abbreviation": "DRKE",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 234,
+      "full_name": "Fresno State Bulldogs",
+      "college": "Fresno State",
+      "mascot": "Bulldogs",
+      "abbreviation": "FRES",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 105,
+      "full_name": "Gardner-Webb Runnin' Bulldogs",
+      "college": "Gardner-Webb",
+      "mascot": "Runnin' Bulldogs",
+      "abbreviation": "GWEB",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 278,
+      "full_name": "Georgia Bulldogs",
+      "college": "Georgia",
+      "mascot": "Bulldogs",
+      "abbreviation": "UGA",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 354,
+      "full_name": "Gonzaga Bulldogs",
+      "college": "Gonzaga",
+      "mascot": "Bulldogs",
+      "abbreviation": "GONZ",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 313,
+      "full_name": "Houston Christian Huskies",
+      "college": "Houston Christian",
+      "mascot": "Huskies",
+      "abbreviation": "HCU",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 160,
+      "full_name": "Louisiana Tech Bulldogs",
+      "college": "Louisiana Tech",
+      "mascot": "Bulldogs",
+      "abbreviation": "LT",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 272,
+      "full_name": "Loyola Maryland Greyhounds",
+      "college": "Loyola Maryland",
+      "mascot": "Greyhounds",
+      "abbreviation": "L-MD",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 190,
+      "full_name": "Marist Red Foxes",
+      "college": "Marist",
+      "mascot": "Red Foxes",
+      "abbreviation": "MRST",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 281,
+      "full_name": "Mississippi State Bulldogs",
+      "college": "Mississippi State",
+      "mascot": "Bulldogs",
+      "abbreviation": "MSST",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 9,
+      "full_name": "NC State Wolfpack",
+      "college": "NC State",
+      "mascot": "Wolfpack",
+      "abbreviation": "NCSU",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 236,
+      "full_name": "Nevada Wolf Pack",
+      "college": "Nevada",
+      "mascot": "Wolf Pack",
+      "abbreviation": "NEV",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 237,
+      "full_name": "New Mexico Lobos",
+      "college": "New Mexico",
+      "mascot": "Lobos",
+      "abbreviation": "UNM",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 150,
+      "full_name": "Northeastern Huskies",
+      "college": "Northeastern",
+      "mascot": "Huskies",
+      "abbreviation": "NE",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 216,
+      "full_name": "Northern Illinois Huskies",
+      "college": "Northern Illinois",
+      "mascot": "Huskies",
+      "abbreviation": "NIU",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 306,
+      "full_name": "Samford Bulldogs",
+      "college": "Samford",
+      "mascot": "Bulldogs",
+      "abbreviation": "SAM",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 206,
+      "full_name": "South Carolina State Bulldogs",
+      "college": "South Carolina State",
+      "mascot": "Bulldogs",
+      "abbreviation": "SCST",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 330,
+      "full_name": "South Dakota Coyotes",
+      "college": "South Dakota",
+      "mascot": "Coyotes",
+      "abbreviation": "SDAK",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 228,
+      "full_name": "Southern Illinois Salukis",
+      "college": "Southern Illinois",
+      "mascot": "Salukis",
+      "abbreviation": "SIU",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 367,
+      "full_name": "St. Francis Brooklyn Terriers",
+      "college": "St. Francis Brooklyn",
+      "mascot": "Terriers",
+      "abbreviation": "SFBK",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 151,
+      "full_name": "Stony Brook Seawolves",
+      "college": "Stony Brook",
+      "mascot": "Seawolves",
+      "abbreviation": "STBK",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 307,
+      "full_name": "The Citadel Bulldogs",
+      "college": "The Citadel",
+      "mascot": "Bulldogs",
+      "abbreviation": "CIT",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 36,
+      "full_name": "UAlbany Great Danes",
+      "college": "UAlbany",
+      "mascot": "Great Danes",
+      "abbreviation": "UALB",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 91,
+      "full_name": "UConn Huskies",
+      "college": "UConn",
+      "mascot": "Huskies",
+      "abbreviation": "CONN",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 37,
+      "full_name": "UMBC Retrievers",
+      "college": "UMBC",
+      "mascot": "Retrievers",
+      "abbreviation": "UMBC",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 111,
+      "full_name": "UNC Asheville Bulldogs",
+      "college": "UNC Asheville",
+      "mascot": "Bulldogs",
+      "abbreviation": "UNCA",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 129,
+      "full_name": "Washington Huskies",
+      "college": "Washington",
+      "mascot": "Huskies",
+      "abbreviation": "WASH",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 30,
+      "full_name": "West Georgia Wolves",
+      "college": "West Georgia",
+      "mascot": "Wolves",
+      "abbreviation": "WGA",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 311,
+      "full_name": "Wofford Terriers",
+      "college": "Wofford",
+      "mascot": "Terriers",
+      "abbreviation": "WOF",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 185,
+      "full_name": "Yale Bulldogs",
+      "college": "Yale",
+      "mascot": "Bulldogs",
+      "abbreviation": "YALE",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "animals_canids",
+      "category_label": "Dogs & Wolves",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 70,
+      "full_name": "Baylor Bears",
+      "college": "Baylor",
+      "mascot": "Bears",
+      "abbreviation": "BAY",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 220,
+      "full_name": "Belmont Bruins",
+      "college": "Belmont",
+      "mascot": "Bruins",
+      "abbreviation": "BEL",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 178,
+      "full_name": "Brown Bears",
+      "college": "Brown",
+      "mascot": "Bears",
+      "abbreviation": "BRWN",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 2,
+      "full_name": "California Golden Bears",
+      "college": "California",
+      "mascot": "Golden Bears",
+      "abbreviation": "CAL",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 21,
+      "full_name": "Central Arkansas Bears",
+      "college": "Central Arkansas",
+      "mascot": "Bears",
+      "abbreviation": "CARK",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 33,
+      "full_name": "Maine Black Bears",
+      "college": "Maine",
+      "mascot": "Black Bears",
+      "abbreviation": "ME",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 305,
+      "full_name": "Mercer Bears",
+      "college": "Mercer",
+      "mascot": "Bears",
+      "abbreviation": "MER",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 162,
+      "full_name": "Missouri State Bears",
+      "college": "Missouri State",
+      "mascot": "Bears",
+      "abbreviation": "MOST",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 97,
+      "full_name": "Montana Grizzlies",
+      "college": "Montana",
+      "mascot": "Grizzlies",
+      "abbreviation": "MONT",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 203,
+      "full_name": "Morgan State Bears",
+      "college": "Morgan State",
+      "mascot": "Bears",
+      "abbreviation": "MORG",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 100,
+      "full_name": "Northern Colorado Bears",
+      "college": "Northern Colorado",
+      "mascot": "Bears",
+      "abbreviation": "UNCO",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 173,
+      "full_name": "Oakland Golden Grizzlies",
+      "college": "Oakland",
+      "mascot": "Golden Grizzlies",
+      "abbreviation": "OAK",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 127,
+      "full_name": "UCLA Bruins",
+      "college": "UCLA",
+      "mascot": "Bruins",
+      "abbreviation": "UCLA",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_bears",
+      "category_label": "Bears",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 275,
+      "full_name": "Arkansas Razorbacks",
+      "college": "Arkansas",
+      "mascot": "Razorbacks",
+      "abbreviation": "ARK",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 232,
+      "full_name": "Boise State Broncos",
+      "college": "Boise State",
+      "mascot": "Broncos",
+      "abbreviation": "BOIS",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 267,
+      "full_name": "Bucknell Bison",
+      "college": "Bucknell",
+      "mascot": "Bison",
+      "abbreviation": "BUCK",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 210,
+      "full_name": "Buffalo Bulls",
+      "college": "Buffalo",
+      "mascot": "Bulls",
+      "abbreviation": "BUF",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 131,
+      "full_name": "Cal Poly Mustangs",
+      "college": "Cal Poly",
+      "mascot": "Mustangs",
+      "abbreviation": "CP",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 142,
+      "full_name": "Campbell Fighting Camels",
+      "college": "Campbell",
+      "mascot": "Fighting Camels",
+      "abbreviation": "CAM",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 72,
+      "full_name": "Colorado Buffaloes",
+      "college": "Colorado",
+      "mascot": "Buffaloes",
+      "abbreviation": "COLO",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 233,
+      "full_name": "Colorado State Rams",
+      "college": "Colorado State",
+      "mascot": "Rams",
+      "abbreviation": "CSU",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 187,
+      "full_name": "Fairfield Stags",
+      "college": "Fairfield",
+      "mascot": "Stags",
+      "abbreviation": "FAIR",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 56,
+      "full_name": "Fordham Rams",
+      "college": "Fordham",
+      "mascot": "Rams",
+      "abbreviation": "FOR",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 235,
+      "full_name": "Grand Canyon Lopes",
+      "college": "Grand Canyon",
+      "mascot": "Lopes",
+      "abbreviation": "GCU",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 201,
+      "full_name": "Howard Bison",
+      "college": "Howard",
+      "mascot": "Bison",
+      "abbreviation": "HOW",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 25,
+      "full_name": "Lipscomb Bisons",
+      "college": "Lipscomb",
+      "mascot": "Bisons",
+      "abbreviation": "LIP",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 340,
+      "full_name": "Marshall Thundering Herd",
+      "college": "Marshall",
+      "mascot": "Thundering Herd",
+      "abbreviation": "MRSH",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 226,
+      "full_name": "Murray State Racers",
+      "college": "Murray State",
+      "mascot": "Racers",
+      "abbreviation": "MUR",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 249,
+      "full_name": "New Haven Chargers",
+      "college": "New Haven",
+      "mascot": "Chargers",
+      "abbreviation": "NHVN",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 327,
+      "full_name": "North Dakota State Bison",
+      "college": "North Dakota State",
+      "mascot": "Bison",
+      "abbreviation": "NDSU",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 328,
+      "full_name": "Omaha Mavericks",
+      "college": "Omaha",
+      "mascot": "Mavericks",
+      "abbreviation": "OMA",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 61,
+      "full_name": "Rhode Island Rams",
+      "college": "Rhode Island",
+      "mascot": "Rams",
+      "abbreviation": "URI",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 195,
+      "full_name": "Rider Broncs",
+      "college": "Rider",
+      "mascot": "Broncs",
+      "abbreviation": "RID",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 363,
+      "full_name": "Santa Clara Broncos",
+      "college": "Santa Clara",
+      "mascot": "Broncos",
+      "abbreviation": "SCU",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 13,
+      "full_name": "SMU Mustangs",
+      "college": "SMU",
+      "mascot": "Mustangs",
+      "abbreviation": "SMU",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 46,
+      "full_name": "South Florida Bulls",
+      "college": "South Florida",
+      "mascot": "Bulls",
+      "abbreviation": "USF",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 288,
+      "full_name": "Texas Longhorns",
+      "college": "Texas",
+      "mascot": "Longhorns",
+      "abbreviation": "TEX",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 351,
+      "full_name": "UT Arlington Mavericks",
+      "college": "UT Arlington",
+      "mascot": "Mavericks",
+      "abbreviation": "UTA",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 66,
+      "full_name": "VCU Rams",
+      "college": "VCU",
+      "mascot": "Rams",
+      "abbreviation": "VCU",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 219,
+      "full_name": "Western Michigan Broncos",
+      "college": "Western Michigan",
+      "mascot": "Broncos",
+      "abbreviation": "WMU",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 370,
+      "full_name": "Winston-Salem Rams",
+      "college": "Winston-Salem",
+      "mascot": "Rams",
+      "abbreviation": "WSSTU",
+      "conference": {
+        "id": 32,
+        "name": "Division I Independents",
+        "short_name": "Indep."
+      },
+      "category": "animals_hoofed",
+      "category_label": "Hoofed Mammals",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 207,
+      "full_name": "Akron Zips",
+      "college": "Akron",
+      "mascot": "Zips",
+      "abbreviation": "AKR",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 325,
+      "full_name": "Kansas City Roos",
+      "college": "Kansas City",
+      "mascot": "Roos",
+      "abbreviation": "KC",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 118,
+      "full_name": "Michigan Wolverines",
+      "college": "Michigan",
+      "mascot": "Wolverines",
+      "abbreviation": "MICH",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 119,
+      "full_name": "Minnesota Golden Gophers",
+      "college": "Minnesota",
+      "mascot": "Golden Gophers",
+      "abbreviation": "MINN",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 371,
+      "full_name": "Morris Brown Wolverines",
+      "college": "Morris Brown",
+      "mascot": "Wolverines",
+      "abbreviation": "MB",
+      "conference": {
+        "id": 32,
+        "name": "Division I Independents",
+        "short_name": "Indep."
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 356,
+      "full_name": "Oregon State Beavers",
+      "college": "Oregon State",
+      "mascot": "Beavers",
+      "abbreviation": "ORST",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 174,
+      "full_name": "Purdue Fort Wayne Mastodons",
+      "college": "Purdue Fort Wayne",
+      "mascot": "Mastodons",
+      "abbreviation": "PFW",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 331,
+      "full_name": "South Dakota State Jackrabbits",
+      "college": "South Dakota State",
+      "mascot": "Jackrabbits",
+      "abbreviation": "SDST",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 138,
+      "full_name": "UC Irvine Anteaters",
+      "college": "UC Irvine",
+      "mascot": "Anteaters",
+      "abbreviation": "UCI",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 353,
+      "full_name": "Utah Valley Wolverines",
+      "college": "Utah Valley",
+      "mascot": "Wolverines",
+      "abbreviation": "UVU",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 130,
+      "full_name": "Wisconsin Badgers",
+      "college": "Wisconsin",
+      "mascot": "Badgers",
+      "abbreviation": "WIS",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_other",
+      "category_label": "Other Wildlife",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 295,
+      "full_name": "Florida A&M Rattlers",
+      "college": "Florida A&M",
+      "mascot": "Rattlers",
+      "abbreviation": "FAMU",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_reptiles",
+      "category_label": "Reptiles & Amphibians",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 277,
+      "full_name": "Florida Gators",
+      "college": "Florida",
+      "mascot": "Gators",
+      "abbreviation": "FLA",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "animals_reptiles",
+      "category_label": "Reptiles & Amphibians",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 116,
+      "full_name": "Maryland Terrapins",
+      "college": "Maryland",
+      "mascot": "Terrapins",
+      "abbreviation": "MD",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "animals_reptiles",
+      "category_label": "Reptiles & Amphibians",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 78,
+      "full_name": "TCU Horned Frogs",
+      "college": "TCU",
+      "mascot": "Horned Frogs",
+      "abbreviation": "TCU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "animals_reptiles",
+      "category_label": "Reptiles & Amphibians",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 24,
+      "full_name": "Jacksonville Dolphins",
+      "college": "Jacksonville",
+      "mascot": "Dolphins",
+      "abbreviation": "JAX",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "animals_marine",
+      "category_label": "Sea Life",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 246,
+      "full_name": "Le Moyne Dolphins",
+      "college": "Le Moyne",
+      "mascot": "Dolphins",
+      "abbreviation": "LEM",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_marine",
+      "category_label": "Sea Life",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 247,
+      "full_name": "Long Island University Sharks",
+      "college": "Long Island University",
+      "mascot": "Sharks",
+      "abbreviation": "LIU",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "animals_marine",
+      "category_label": "Sea Life",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 291,
+      "full_name": "Alabama State Hornets",
+      "college": "Alabama State",
+      "mascot": "Hornets",
+      "abbreviation": "ALST",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "animals_insects",
+      "category_label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 200,
+      "full_name": "Delaware State Hornets",
+      "college": "Delaware State",
+      "mascot": "Hornets",
+      "abbreviation": "DSU",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "animals_insects",
+      "category_label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 6,
+      "full_name": "Georgia Tech Yellow Jackets",
+      "college": "Georgia Tech",
+      "mascot": "Yellow Jackets",
+      "abbreviation": "GT",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "animals_insects",
+      "category_label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 62,
+      "full_name": "Richmond Spiders",
+      "college": "Richmond",
+      "mascot": "Spiders",
+      "abbreviation": "RICH",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "animals_insects",
+      "category_label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 102,
+      "full_name": "Sacramento State Hornets",
+      "college": "Sacramento State",
+      "mascot": "Hornets",
+      "abbreviation": "SAC",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "animals_insects",
+      "category_label": "Insects & Arachnids",
+      "family": "animals",
+      "family_label": "Animals"
+    },
+    {
+      "id": 292,
+      "full_name": "Alcorn State Braves",
+      "college": "Alcorn State",
+      "mascot": "Braves",
+      "abbreviation": "ALCN",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 333,
+      "full_name": "App State Mountaineers",
+      "college": "App State",
+      "mascot": "Mountaineers",
+      "abbreviation": "APP",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 265,
+      "full_name": "Army Black Knights",
+      "college": "Army",
+      "mascot": "Black Knights",
+      "abbreviation": "ARMY",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 19,
+      "full_name": "Austin Peay Governors",
+      "college": "Austin Peay",
+      "mascot": "Governors",
+      "abbreviation": "APSU",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 20,
+      "full_name": "Bellarmine Knights",
+      "college": "Bellarmine",
+      "mascot": "Knights",
+      "abbreviation": "BELL",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 221,
+      "full_name": "Bradley Braves",
+      "college": "Bradley",
+      "mascot": "Braves",
+      "abbreviation": "BRAD",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 134,
+      "full_name": "Cal State Northridge Matadors",
+      "college": "Cal State Northridge",
+      "mascot": "Matadors",
+      "abbreviation": "CSUN",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 348,
+      "full_name": "California Baptist Lancers",
+      "college": "California Baptist",
+      "mascot": "Lancers",
+      "abbreviation": "CBU",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 369,
+      "full_name": "Centenary (LA) Gentlemen",
+      "college": "Centenary (LA)",
+      "mascot": "Gentlemen",
+      "abbreviation": "CENTELA",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 211,
+      "full_name": "Central Michigan Chippewas",
+      "college": "Central Michigan",
+      "mascot": "Chippewas",
+      "abbreviation": "CMU",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 104,
+      "full_name": "Charleston Southern Buccaneers",
+      "college": "Charleston Southern",
+      "mascot": "Buccaneers",
+      "abbreviation": "CHSO",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 40,
+      "full_name": "Charlotte 49ers",
+      "college": "Charlotte",
+      "mascot": "49ers",
+      "abbreviation": "CLT",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 167,
+      "full_name": "Cleveland State Vikings",
+      "college": "Cleveland State",
+      "mascot": "Vikings",
+      "abbreviation": "CLE",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 268,
+      "full_name": "Colgate Raiders",
+      "college": "Colgate",
+      "mascot": "Raiders",
+      "abbreviation": "COLG",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 324,
+      "full_name": "Denver Pioneers",
+      "college": "Denver",
+      "mascot": "Pioneers",
+      "abbreviation": "DEN",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 55,
+      "full_name": "Duquesne Dukes",
+      "college": "Duquesne",
+      "mascot": "Dukes",
+      "abbreviation": "DUQ",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 41,
+      "full_name": "East Carolina Pirates",
+      "college": "East Carolina",
+      "mascot": "Pirates",
+      "abbreviation": "ECU",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 303,
+      "full_name": "East Tennessee State Buccaneers",
+      "college": "East Tennessee State",
+      "mascot": "Buccaneers",
+      "abbreviation": "ETSU",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 22,
+      "full_name": "Eastern Kentucky Colonels",
+      "college": "Eastern Kentucky",
+      "mascot": "Colonels",
+      "abbreviation": "EKU",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 245,
+      "full_name": "Fairleigh Dickinson Knights",
+      "college": "Fairleigh Dickinson",
+      "mascot": "Knights",
+      "abbreviation": "FDU",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 5,
+      "full_name": "Florida State Seminoles",
+      "college": "Florida State",
+      "mascot": "Seminoles",
+      "abbreviation": "FSU",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 304,
+      "full_name": "Furman Paladins",
+      "college": "Furman",
+      "mascot": "Paladins",
+      "abbreviation": "FUR",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 57,
+      "full_name": "George Mason Patriots",
+      "college": "George Mason",
+      "mascot": "Patriots",
+      "abbreviation": "GMU",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 58,
+      "full_name": "George Washington Revolutionaries",
+      "college": "George Washington",
+      "mascot": "Revolutionaries",
+      "abbreviation": "GW",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 146,
+      "full_name": "Hampton Pirates",
+      "college": "Hampton",
+      "mascot": "Pirates",
+      "abbreviation": "HAMP",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 135,
+      "full_name": "Hawai'i Rainbow Warriors",
+      "college": "Hawai'i",
+      "mascot": "Rainbow Warriors",
+      "abbreviation": "HAW",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 269,
+      "full_name": "Holy Cross Crusaders",
+      "college": "Holy Cross",
+      "mascot": "Crusaders",
+      "abbreviation": "HC",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 96,
+      "full_name": "Idaho Vandals",
+      "college": "Idaho",
+      "mascot": "Vandals",
+      "abbreviation": "IDHO",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 113,
+      "full_name": "Illinois Fighting Illini",
+      "college": "Illinois",
+      "mascot": "Fighting Illini",
+      "abbreviation": "ILL",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 114,
+      "full_name": "Indiana Hoosiers",
+      "college": "Indiana",
+      "mascot": "Hoosiers",
+      "abbreviation": "IU",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 188,
+      "full_name": "Iona Gaels",
+      "college": "Iona",
+      "mascot": "Gaels",
+      "abbreviation": "IONA",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 338,
+      "full_name": "James Madison Dukes",
+      "college": "James Madison",
+      "mascot": "Dukes",
+      "abbreviation": "JMU",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 59,
+      "full_name": "La Salle Explorers",
+      "college": "La Salle",
+      "mascot": "Explorers",
+      "abbreviation": "LAS",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 255,
+      "full_name": "Little Rock Trojans",
+      "college": "Little Rock",
+      "mascot": "Trojans",
+      "abbreviation": "LR",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 107,
+      "full_name": "Longwood Lancers",
+      "college": "Longwood",
+      "mascot": "Lancers",
+      "abbreviation": "LONG",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 339,
+      "full_name": "Louisiana Ragin' Cajuns",
+      "college": "Louisiana",
+      "mascot": "Ragin' Cajuns",
+      "abbreviation": "UL",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 60,
+      "full_name": "Loyola Chicago Ramblers",
+      "college": "Loyola Chicago",
+      "mascot": "Ramblers",
+      "abbreviation": "LUC",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 189,
+      "full_name": "Manhattan Jaspers",
+      "college": "Manhattan",
+      "mascot": "Jaspers",
+      "abbreviation": "MAN",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 214,
+      "full_name": "Massachusetts Minutemen",
+      "college": "Massachusetts",
+      "mascot": "Minutemen",
+      "abbreviation": "MASS",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 316,
+      "full_name": "McNeese Cowboys",
+      "college": "McNeese",
+      "mascot": "Cowboys",
+      "abbreviation": "MCN",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 248,
+      "full_name": "Mercyhurst Lakers",
+      "college": "Mercyhurst",
+      "mascot": "Lakers",
+      "abbreviation": "MERC",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 191,
+      "full_name": "Merrimack Warriors",
+      "college": "Merrimack",
+      "mascot": "Warriors",
+      "abbreviation": "MRMK",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 117,
+      "full_name": "Michigan State Spartans",
+      "college": "Michigan State",
+      "mascot": "Spartans",
+      "abbreviation": "MSU",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 161,
+      "full_name": "Middle Tennessee Blue Raiders",
+      "college": "Middle Tennessee",
+      "mascot": "Blue Raiders",
+      "abbreviation": "MTSU",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 192,
+      "full_name": "Mount St. Mary's Mountaineers",
+      "college": "Mount St. Mary's",
+      "mascot": "Mountaineers",
+      "abbreviation": "MSM",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 273,
+      "full_name": "Navy Midshipmen",
+      "college": "Navy",
+      "mascot": "Midshipmen",
+      "abbreviation": "NAVY",
+      "conference": {
+        "id": 23,
+        "name": "Patriot League",
+        "short_name": "Patriot League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 120,
+      "full_name": "Nebraska Cornhuskers",
+      "college": "Nebraska",
+      "mascot": "Cornhuskers",
+      "abbreviation": "NEB",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 163,
+      "full_name": "New Mexico State Aggies",
+      "college": "New Mexico State",
+      "mascot": "Aggies",
+      "abbreviation": "NMSU",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 317,
+      "full_name": "New Orleans Privateers",
+      "college": "New Orleans",
+      "mascot": "Privateers",
+      "abbreviation": "UNO",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 318,
+      "full_name": "Nicholls Colonels",
+      "college": "Nicholls",
+      "mascot": "Colonels",
+      "abbreviation": "NICH",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 34,
+      "full_name": "NJIT Highlanders",
+      "college": "NJIT",
+      "mascot": "Highlanders",
+      "abbreviation": "NJIT",
+      "conference": {
+        "id": 3,
+        "name": "America East Conference",
+        "short_name": "America East"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 204,
+      "full_name": "Norfolk State Spartans",
+      "college": "Norfolk State",
+      "mascot": "Spartans",
+      "abbreviation": "NORF",
+      "conference": {
+        "id": 17,
+        "name": "Mid-Eastern Athletic Conference",
+        "short_name": "MEAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 149,
+      "full_name": "North Carolina A&T Aggies",
+      "college": "North Carolina A&T",
+      "mascot": "Aggies",
+      "abbreviation": "NCAT",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 10,
+      "full_name": "North Carolina Tar Heels",
+      "college": "North Carolina",
+      "mascot": "Tar Heels",
+      "abbreviation": "UNC",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 99,
+      "full_name": "Northern Arizona Lumberjacks",
+      "college": "Northern Arizona",
+      "mascot": "Lumberjacks",
+      "abbreviation": "NAU",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 172,
+      "full_name": "Northern Kentucky Norse",
+      "college": "Northern Kentucky",
+      "mascot": "Norse",
+      "abbreviation": "NKU",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 11,
+      "full_name": "Notre Dame Fighting Irish",
+      "college": "Notre Dame",
+      "mascot": "Fighting Irish",
+      "abbreviation": "ND",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 283,
+      "full_name": "Oklahoma Sooners",
+      "college": "Oklahoma",
+      "mascot": "Sooners",
+      "abbreviation": "OU",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 77,
+      "full_name": "Oklahoma State Cowboys",
+      "college": "Oklahoma State",
+      "mascot": "Cowboys",
+      "abbreviation": "OKST",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 341,
+      "full_name": "Old Dominion Monarchs",
+      "college": "Old Dominion",
+      "mascot": "Monarchs",
+      "abbreviation": "ODU",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 284,
+      "full_name": "Ole Miss Rebels",
+      "college": "Ole Miss",
+      "mascot": "Rebels",
+      "abbreviation": "MISS",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 183,
+      "full_name": "Pennsylvania Quakers",
+      "college": "Pennsylvania",
+      "mascot": "Quakers",
+      "abbreviation": "PENN",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 101,
+      "full_name": "Portland State Vikings",
+      "college": "Portland State",
+      "mascot": "Vikings",
+      "abbreviation": "PRST",
+      "conference": {
+        "id": 8,
+        "name": "Big Sky Conference",
+        "short_name": "Big Sky"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 88,
+      "full_name": "Providence Friars",
+      "college": "Providence",
+      "mascot": "Friars",
+      "abbreviation": "PROV",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 125,
+      "full_name": "Purdue Boilermakers",
+      "college": "Purdue",
+      "mascot": "Boilermakers",
+      "abbreviation": "PUR",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 28,
+      "full_name": "Queens University Royals",
+      "college": "Queens University",
+      "mascot": "Royals",
+      "abbreviation": "QUC",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 109,
+      "full_name": "Radford Highlanders",
+      "college": "Radford",
+      "mascot": "Highlanders",
+      "abbreviation": "RAD",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 175,
+      "full_name": "Robert Morris Colonials",
+      "college": "Robert Morris",
+      "mascot": "Colonials",
+      "abbreviation": "RMU",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 126,
+      "full_name": "Rutgers Scarlet Knights",
+      "college": "Rutgers",
+      "mascot": "Scarlet Knights",
+      "abbreviation": "RUTG",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 196,
+      "full_name": "Sacred Heart Pioneers",
+      "college": "Sacred Heart",
+      "mascot": "Pioneers",
+      "abbreviation": "SHU",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 360,
+      "full_name": "Saint Mary's Gaels",
+      "college": "Saint Mary's",
+      "mascot": "Gaels",
+      "abbreviation": "SMC",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 238,
+      "full_name": "San Diego State Aztecs",
+      "college": "San Diego State",
+      "mascot": "Aztecs",
+      "abbreviation": "SDSU",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 361,
+      "full_name": "San Diego Toreros",
+      "college": "San Diego",
+      "mascot": "Toreros",
+      "abbreviation": "USD",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 362,
+      "full_name": "San Francisco Dons",
+      "college": "San Francisco",
+      "mascot": "Dons",
+      "abbreviation": "SF",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 239,
+      "full_name": "San José State Spartans",
+      "college": "San José State",
+      "mascot": "Spartans",
+      "abbreviation": "SJSU",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 89,
+      "full_name": "Seton Hall Pirates",
+      "college": "Seton Hall",
+      "mascot": "Pirates",
+      "abbreviation": "HALL",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 198,
+      "full_name": "Siena Saints",
+      "college": "Siena",
+      "mascot": "Saints",
+      "abbreviation": "SIE",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 110,
+      "full_name": "South Carolina Upstate Spartans",
+      "college": "South Carolina Upstate",
+      "mascot": "Spartans",
+      "abbreviation": "UPST",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 65,
+      "full_name": "St. Bonaventure Bonnies",
+      "college": "St. Bonaventure",
+      "mascot": "Bonnies",
+      "abbreviation": "SBU",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 332,
+      "full_name": "St. Thomas-Minnesota Tommies",
+      "college": "St. Thomas-Minnesota",
+      "mascot": "Tommies",
+      "abbreviation": "STMN",
+      "conference": {
+        "id": 28,
+        "name": "Summit League",
+        "short_name": "Summit League"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 321,
+      "full_name": "Stephen F. Austin Lumberjacks",
+      "college": "Stephen F. Austin",
+      "mascot": "Lumberjacks",
+      "abbreviation": "SFA",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 29,
+      "full_name": "Stetson Hatters",
+      "college": "Stetson",
+      "mascot": "Hatters",
+      "abbreviation": "STET",
+      "conference": {
+        "id": 2,
+        "name": "ASUN Conference",
+        "short_name": "ASUN"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 350,
+      "full_name": "Tarleton State Texans",
+      "college": "Tarleton State",
+      "mascot": "Texans",
+      "abbreviation": "TAR",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 286,
+      "full_name": "Tennessee Volunteers",
+      "college": "Tennessee",
+      "mascot": "Volunteers",
+      "abbreviation": "TENN",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 287,
+      "full_name": "Texas A&M Aggies",
+      "college": "Texas A&M",
+      "mascot": "Aggies",
+      "abbreviation": "TA&M",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 322,
+      "full_name": "Texas A&M-Corpus Christi Islanders",
+      "college": "Texas A&M-Corpus Christi",
+      "mascot": "Islanders",
+      "abbreviation": "AMCC",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 79,
+      "full_name": "Texas Tech Red Raiders",
+      "college": "Texas Tech",
+      "mascot": "Red Raiders",
+      "abbreviation": "TTU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 345,
+      "full_name": "Troy Trojans",
+      "college": "Troy",
+      "mascot": "Trojans",
+      "abbreviation": "TROY",
+      "conference": {
+        "id": 29,
+        "name": "Sun Belt Conference",
+        "short_name": "Sun Belt"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 50,
+      "full_name": "UAB Blazers",
+      "college": "UAB",
+      "mascot": "Blazers",
+      "abbreviation": "UAB",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 137,
+      "full_name": "UC Davis Aggies",
+      "college": "UC Davis",
+      "mascot": "Aggies",
+      "abbreviation": "UCD",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 139,
+      "full_name": "UC Riverside Highlanders",
+      "college": "UC Riverside",
+      "mascot": "Highlanders",
+      "abbreviation": "UCR",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 141,
+      "full_name": "UC Santa Barbara Gauchos",
+      "college": "UC Santa Barbara",
+      "mascot": "Gauchos",
+      "abbreviation": "UCSB",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 80,
+      "full_name": "UCF Knights",
+      "college": "UCF",
+      "mascot": "Knights",
+      "abbreviation": "UCF",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 308,
+      "full_name": "UNC Greensboro Spartans",
+      "college": "UNC Greensboro",
+      "mascot": "Spartans",
+      "abbreviation": "UNCG",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 240,
+      "full_name": "UNLV Rebels",
+      "college": "UNLV",
+      "mascot": "Rebels",
+      "abbreviation": "UNLV",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 128,
+      "full_name": "USC Trojans",
+      "college": "USC",
+      "mascot": "Trojans",
+      "abbreviation": "USC",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 323,
+      "full_name": "UT Rio Grande Valley Vaqueros",
+      "college": "UT Rio Grande Valley",
+      "mascot": "Vaqueros",
+      "abbreviation": "RGV",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 241,
+      "full_name": "Utah State Aggies",
+      "college": "Utah State",
+      "mascot": "Aggies",
+      "abbreviation": "USU",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 352,
+      "full_name": "Utah Tech Trailblazers",
+      "college": "Utah Tech",
+      "mascot": "Trailblazers",
+      "abbreviation": "UTU",
+      "conference": {
+        "id": 30,
+        "name": "Western Athletic Conference",
+        "short_name": "WAC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 81,
+      "full_name": "Utah Utes",
+      "college": "Utah",
+      "mascot": "Utes",
+      "abbreviation": "UTAH",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 165,
+      "full_name": "UTEP Miners",
+      "college": "UTEP",
+      "mascot": "Miners",
+      "abbreviation": "UTEP",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 289,
+      "full_name": "Vanderbilt Commodores",
+      "college": "Vanderbilt",
+      "mascot": "Commodores",
+      "abbreviation": "VAN",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 16,
+      "full_name": "Virginia Cavaliers",
+      "college": "Virginia",
+      "mascot": "Cavaliers",
+      "abbreviation": "UVA",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 309,
+      "full_name": "VMI Keydets",
+      "college": "VMI",
+      "mascot": "Keydets",
+      "abbreviation": "VMI",
+      "conference": {
+        "id": 26,
+        "name": "Southern Conference",
+        "short_name": "Southern"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 82,
+      "full_name": "West Virginia Mountaineers",
+      "college": "West Virginia",
+      "mascot": "Mountaineers",
+      "abbreviation": "WVU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 263,
+      "full_name": "Western Illinois Leathernecks",
+      "college": "Western Illinois",
+      "mascot": "Leathernecks",
+      "abbreviation": "WIU",
+      "conference": {
+        "id": 22,
+        "name": "Ohio Valley Conference",
+        "short_name": "Ohio Valley"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 166,
+      "full_name": "Western Kentucky Hilltoppers",
+      "college": "Western Kentucky",
+      "mascot": "Hilltoppers",
+      "abbreviation": "WKU",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 52,
+      "full_name": "Wichita State Shockers",
+      "college": "Wichita State",
+      "mascot": "Shockers",
+      "abbreviation": "WICH",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 154,
+      "full_name": "William & Mary Tribe",
+      "college": "William & Mary",
+      "mascot": "Tribe",
+      "abbreviation": "W&M",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 176,
+      "full_name": "Wright State Raiders",
+      "college": "Wright State",
+      "mascot": "Raiders",
+      "abbreviation": "WRST",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 242,
+      "full_name": "Wyoming Cowboys",
+      "college": "Wyoming",
+      "mascot": "Cowboys",
+      "abbreviation": "WYO",
+      "conference": {
+        "id": 20,
+        "name": "Mountain West Conference",
+        "short_name": "Mountain West"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 93,
+      "full_name": "Xavier Musketeers",
+      "college": "Xavier",
+      "mascot": "Musketeers",
+      "abbreviation": "XAV",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "humans_general",
+      "category_label": "Humans & Occupations",
+      "family": "humans",
+      "family_label": "Humans & Occupations"
+    },
+    {
+      "id": 67,
+      "full_name": "Arizona State Sun Devils",
+      "college": "Arizona State",
+      "mascot": "Sun Devils",
+      "abbreviation": "ASU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 133,
+      "full_name": "Cal State Fullerton Titans",
+      "college": "Cal State Fullerton",
+      "mascot": "Titans",
+      "abbreviation": "CSUF",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 186,
+      "full_name": "Canisius Golden Griffins",
+      "college": "Canisius",
+      "mascot": "Golden Griffins",
+      "abbreviation": "CAN",
+      "conference": {
+        "id": 16,
+        "name": "Metro Atlantic Athletic Conference",
+        "short_name": "MAAC"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 243,
+      "full_name": "Central Connecticut Blue Devils",
+      "college": "Central Connecticut",
+      "mascot": "Blue Devils",
+      "abbreviation": "CCSU",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 85,
+      "full_name": "DePaul Blue Demons",
+      "college": "DePaul",
+      "mascot": "Blue Demons",
+      "abbreviation": "DEP",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 168,
+      "full_name": "Detroit Mercy Titans",
+      "college": "Detroit Mercy",
+      "mascot": "Titans",
+      "abbreviation": "DETM",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 144,
+      "full_name": "Drexel Dragons",
+      "college": "Drexel",
+      "mascot": "Dragons",
+      "abbreviation": "DREX",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 4,
+      "full_name": "Duke Blue Devils",
+      "college": "Duke",
+      "mascot": "Blue Devils",
+      "abbreviation": "DUKE",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 145,
+      "full_name": "Elon Phoenix",
+      "college": "Elon",
+      "mascot": "Phoenix",
+      "abbreviation": "ELON",
+      "conference": {
+        "id": 12,
+        "name": "Coastal Athletic Association",
+        "short_name": "Coastal"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 169,
+      "full_name": "Green Bay Phoenix",
+      "college": "Green Bay",
+      "mascot": "Phoenix",
+      "abbreviation": "GB",
+      "conference": {
+        "id": 14,
+        "name": "Horizon League",
+        "short_name": "Horizon"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 298,
+      "full_name": "Mississippi Valley State Delta Devils",
+      "college": "Mississippi Valley State",
+      "mascot": "Delta Devils",
+      "abbreviation": "MVSU",
+      "conference": {
+        "id": 25,
+        "name": "Southwestern Athletic Conference",
+        "short_name": "SWAC"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 319,
+      "full_name": "Northwestern State Demons",
+      "college": "Northwestern State",
+      "mascot": "Demons",
+      "abbreviation": "NWST",
+      "conference": {
+        "id": 27,
+        "name": "Southland Conference",
+        "short_name": "Southland"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 64,
+      "full_name": "Saint Louis Billikens",
+      "college": "Saint Louis",
+      "mascot": "Billikens",
+      "abbreviation": "SLU",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 140,
+      "full_name": "UC San Diego Tritons",
+      "college": "UC San Diego",
+      "mascot": "Tritons",
+      "abbreviation": "UCSD",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 18,
+      "full_name": "Wake Forest Demon Deacons",
+      "college": "Wake Forest",
+      "mascot": "Demon Deacons",
+      "abbreviation": "WAKE",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "mythical_spirits",
+      "category_label": "Mythical & Legends",
+      "family": "mythical",
+      "family_label": "Mythical & Supernatural"
+    },
+    {
+      "id": 274,
+      "full_name": "Alabama Crimson Tide",
+      "college": "Alabama",
+      "mascot": "Crimson Tide",
+      "abbreviation": "ALA",
+      "conference": {
+        "id": 24,
+        "name": "Southeastern Conference",
+        "short_name": "SEC"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 74,
+      "full_name": "Iowa State Cyclones",
+      "college": "Iowa State",
+      "mascot": "Cyclones",
+      "abbreviation": "ISU",
+      "conference": {
+        "id": 6,
+        "name": "Big 12 Conference",
+        "short_name": "Big 12"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 213,
+      "full_name": "Kent State Golden Flashes",
+      "college": "Kent State",
+      "mascot": "Golden Flashes",
+      "abbreviation": "KENT",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 159,
+      "full_name": "Liberty Flames",
+      "college": "Liberty",
+      "mascot": "Flames",
+      "abbreviation": "LIB",
+      "conference": {
+        "id": 13,
+        "name": "Conference USA",
+        "short_name": "Conference USA"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 8,
+      "full_name": "Miami Hurricanes",
+      "college": "Miami",
+      "mascot": "Hurricanes",
+      "abbreviation": "MIA",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 358,
+      "full_name": "Pepperdine Waves",
+      "college": "Pepperdine",
+      "mascot": "Waves",
+      "abbreviation": "PEPP",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 250,
+      "full_name": "Saint Francis Red Flash",
+      "college": "Saint Francis",
+      "mascot": "Red Flash",
+      "abbreviation": "SFPA",
+      "conference": {
+        "id": 21,
+        "name": "Northeast Conference",
+        "short_name": "Northeast"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 90,
+      "full_name": "St. John's Red Storm",
+      "college": "St. John's",
+      "mascot": "Red Storm",
+      "abbreviation": "SJU",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 48,
+      "full_name": "Tulane Green Wave",
+      "college": "Tulane",
+      "mascot": "Green Wave",
+      "abbreviation": "TULN",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 49,
+      "full_name": "Tulsa Golden Hurricane",
+      "college": "Tulsa",
+      "mascot": "Golden Hurricane",
+      "abbreviation": "TLSA",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 229,
+      "full_name": "UIC Flames",
+      "college": "UIC",
+      "mascot": "Flames",
+      "abbreviation": "UIC",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "forces_elements",
+      "category_label": "Forces & Weather",
+      "family": "forces",
+      "family_label": "Forces & Weather"
+    },
+    {
+      "id": 180,
+      "full_name": "Cornell Big Red",
+      "college": "Cornell",
+      "mascot": "Big Red",
+      "abbreviation": "COR",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 181,
+      "full_name": "Dartmouth Big Green",
+      "college": "Dartmouth",
+      "mascot": "Big Green",
+      "abbreviation": "DART",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 86,
+      "full_name": "Georgetown Hoyas",
+      "college": "Georgetown",
+      "mascot": "Hoyas",
+      "abbreviation": "GTWN",
+      "conference": {
+        "id": 7,
+        "name": "Big East Conference",
+        "short_name": "Big East"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 182,
+      "full_name": "Harvard Crimson",
+      "college": "Harvard",
+      "mascot": "Crimson",
+      "abbreviation": "HARV",
+      "conference": {
+        "id": 15,
+        "name": "Ivy League",
+        "short_name": "Ivy"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 225,
+      "full_name": "Indiana State Sycamores",
+      "college": "Indiana State",
+      "mascot": "Sycamores",
+      "abbreviation": "INST",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 136,
+      "full_name": "Long Beach State Beach",
+      "college": "Long Beach State",
+      "mascot": "Beach",
+      "abbreviation": "LBSU",
+      "conference": {
+        "id": 11,
+        "name": "Big West Conference",
+        "short_name": "Big West"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 44,
+      "full_name": "North Texas Mean Green",
+      "college": "North Texas",
+      "mascot": "Mean Green",
+      "abbreviation": "UNT",
+      "conference": {
+        "id": 4,
+        "name": "American Conference",
+        "short_name": "American"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 122,
+      "full_name": "Ohio State Buckeyes",
+      "college": "Ohio State",
+      "mascot": "Buckeyes",
+      "abbreviation": "OSU",
+      "conference": {
+        "id": 10,
+        "name": "Big Ten Conference",
+        "short_name": "Big Ten"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 108,
+      "full_name": "Presbyterian Blue Hose",
+      "college": "Presbyterian",
+      "mascot": "Blue Hose",
+      "abbreviation": "PRES",
+      "conference": {
+        "id": 9,
+        "name": "Big South Conference",
+        "short_name": "Big South"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 14,
+      "full_name": "Stanford Cardinal",
+      "college": "Stanford",
+      "mascot": "Cardinal",
+      "abbreviation": "STAN",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 15,
+      "full_name": "Syracuse Orange",
+      "college": "Syracuse",
+      "mascot": "Orange",
+      "abbreviation": "SYR",
+      "conference": {
+        "id": 1,
+        "name": "Atlantic Coast Conference",
+        "short_name": "ACC"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 230,
+      "full_name": "Valparaiso Beacons",
+      "college": "Valparaiso",
+      "mascot": "Beacons",
+      "abbreviation": "VAL",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "objects_concepts",
+      "category_label": "Objects & Concepts",
+      "family": "objects",
+      "family_label": "Objects & Concepts"
+    },
+    {
+      "id": 54,
+      "full_name": "Dayton Flyers",
+      "college": "Dayton",
+      "mascot": "Flyers",
+      "abbreviation": "DAY",
+      "conference": {
+        "id": 5,
+        "name": "Atlantic 10 Conference",
+        "short_name": "Atlantic 10"
+      },
+      "category": "vehicles_machines",
+      "category_label": "Vehicles & Flight",
+      "family": "vehicles",
+      "family_label": "Vehicles & Flight"
+    },
+    {
+      "id": 223,
+      "full_name": "Evansville Purple Aces",
+      "college": "Evansville",
+      "mascot": "Purple Aces",
+      "abbreviation": "EVAN",
+      "conference": {
+        "id": 19,
+        "name": "Missouri Valley Conference",
+        "short_name": "Missouri Valley"
+      },
+      "category": "vehicles_machines",
+      "category_label": "Vehicles & Flight",
+      "family": "vehicles",
+      "family_label": "Vehicles & Flight"
+    },
+    {
+      "id": 359,
+      "full_name": "Portland Pilots",
+      "college": "Portland",
+      "mascot": "Pilots",
+      "abbreviation": "PORT",
+      "conference": {
+        "id": 31,
+        "name": "West Coast Conference",
+        "short_name": "West Coast"
+      },
+      "category": "vehicles_machines",
+      "category_label": "Vehicles & Flight",
+      "family": "vehicles",
+      "family_label": "Vehicles & Flight"
+    },
+    {
+      "id": 218,
+      "full_name": "Toledo Rockets",
+      "college": "Toledo",
+      "mascot": "Rockets",
+      "abbreviation": "TOL",
+      "conference": {
+        "id": 18,
+        "name": "Mid-American Conference",
+        "short_name": "Mid-American"
+      },
+      "category": "vehicles_machines",
+      "category_label": "Vehicles & Flight",
+      "family": "vehicles",
+      "family_label": "Vehicles & Flight"
+    }
+  ]
+}
