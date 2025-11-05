@@ -1,5 +1,6 @@
 import { formatNumber } from "../charts/theme.js";
-import { DEFAULT_METRIC_ORDER, loadLeaderboardDocument, } from "./data.js";
+import { DEFAULT_METRIC_ORDER } from "./leaderboard-metrics.js";
+import { loadLeaderboardDocument, } from "./data.js";
 const NAME_SCALE_MIN = 0.72;
 const NAME_SCALE_MAX = 1;
 const NAME_SCALE_START = 20;

@@ -1,11 +1,49 @@
 // src/charts/theme.ts
-export const METRIC_DOMAINS = {
-  ppg: [0, 30],
-  rpg: [0, 15],
-  apg: [0, 10],
-} as const;
+import {
+  PLAYER_LEADERBOARD_METRIC_KEYS,
+  PLAYER_LEADERBOARD_METRICS,
+  type PlayerLeaderboardMetricKey,
+} from "../lib/players/leaderboard-metrics.js";
 
-export type Metric = keyof typeof METRIC_DOMAINS;
+type Domain = [number, number];
+type MetricDomains = Record<PlayerLeaderboardMetricKey, Domain>;
+
+const DEFAULT_METRIC_DOMAINS: MetricDomains = PLAYER_LEADERBOARD_METRIC_KEYS.reduce(
+  (acc, metric) => {
+    const [min, max] = PLAYER_LEADERBOARD_METRICS[metric].defaultDomain;
+    acc[metric] = [min, max];
+    return acc;
+  },
+  {} as MetricDomains,
+);
+
+export const METRIC_DOMAINS: MetricDomains = PLAYER_LEADERBOARD_METRIC_KEYS.reduce(
+  (acc, metric) => {
+    const [min, max] = DEFAULT_METRIC_DOMAINS[metric];
+    acc[metric] = [min, max];
+    return acc;
+  },
+  {} as MetricDomains,
+);
+
+export type Metric = PlayerLeaderboardMetricKey;
+
+export function setMetricDomain(metric: Metric, domain: Domain): void {
+  const [rawMin, rawMax] = domain;
+  const min = Number.isFinite(rawMin) ? rawMin : DEFAULT_METRIC_DOMAINS[metric][0];
+  const maxCandidate = Number.isFinite(rawMax)
+    ? rawMax
+    : DEFAULT_METRIC_DOMAINS[metric][1];
+  const max = maxCandidate === min ? min || DEFAULT_METRIC_DOMAINS[metric][1] : maxCandidate;
+  METRIC_DOMAINS[metric] = [min, max];
+}
+
+export function resetMetricDomains(): void {
+  PLAYER_LEADERBOARD_METRIC_KEYS.forEach((metric) => {
+    const [min, max] = DEFAULT_METRIC_DOMAINS[metric];
+    METRIC_DOMAINS[metric] = [min, max];
+  });
+}
 
 export const RANK_TIERS = [
   { label: "Top 5", range: [1, 5] },

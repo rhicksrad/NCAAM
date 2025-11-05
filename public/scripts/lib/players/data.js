@@ -1,4 +1,5 @@
 import { requireOk } from "../health.js";
+import { PLAYER_LEADERBOARD_METRICS, PLAYER_LEADERBOARD_METRIC_KEYS, transformMetricValue, } from "./leaderboard-metrics.js";
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 const DATA_BASE_URL = (() => {
     if (typeof window !== "undefined" && typeof window.location !== "undefined") {
@@ -31,32 +32,26 @@ export const PLAYER_DATA_PATHS = {
     index: "data/players_index.json",
     playerStats: (slug) => `data/players/${slug}.json`,
 };
-export const DEFAULT_METRIC_ORDER = [
-    "points",
-    "rebounds",
-    "assists",
-    "stocks",
-    "fgPct",
-    "fg3Pct",
-    "ftPct",
-    "mp",
-    "turnovers",
-];
 export async function loadLeaderboardDocument() {
     return await loadJson(PLAYER_DATA_PATHS.leaderboard, "Players leaderboard");
 }
-const PLAYER_METRIC_FIELDS = {
-    ppg: { metricId: "points", valueKey: "ppg", rankKey: "rank_ppg" },
-    rpg: { metricId: "rebounds", valueKey: "rpg", rankKey: "rank_rpg" },
-    apg: { metricId: "assists", valueKey: "apg", rankKey: "rank_apg" },
-};
 let leaderboardRows = null;
 let leaderboardLoad = null;
+const METRIC_KEYS = PLAYER_LEADERBOARD_METRIC_KEYS;
+function createEmptyLeaderboardRow(name, team) {
+    const row = { name, team };
+    const record = row;
+    METRIC_KEYS.forEach((metric) => {
+        record[metric] = Number.NaN;
+        record[`rank_${metric}`] = Number.POSITIVE_INFINITY;
+    });
+    return row;
+}
 function buildLeaderboardRows(document) {
     const rows = new Map();
-    Object.keys(PLAYER_METRIC_FIELDS).forEach((field) => {
-        const { metricId, valueKey, rankKey } = PLAYER_METRIC_FIELDS[field];
-        const metric = document.metrics?.[metricId];
+    METRIC_KEYS.forEach((field) => {
+        const config = PLAYER_LEADERBOARD_METRICS[field];
+        const metric = document.metrics?.[config.metricId];
         if (!metric)
             return;
         (metric.leaders ?? [])
@@ -65,20 +60,12 @@ function buildLeaderboardRows(document) {
             const key = leader.slug || `${leader.name}|${leader.team}`;
             let row = rows.get(key);
             if (!row) {
-                row = {
-                    name: leader.name,
-                    team: leader.team,
-                    ppg: Number.NaN,
-                    rpg: Number.NaN,
-                    apg: Number.NaN,
-                    rank_ppg: Number.POSITIVE_INFINITY,
-                    rank_rpg: Number.POSITIVE_INFINITY,
-                    rank_apg: Number.POSITIVE_INFINITY,
-                };
+                row = createEmptyLeaderboardRow(leader.name, leader.team);
                 rows.set(key, row);
             }
-            row[valueKey] = leader.value;
-            row[rankKey] = index + 1;
+            const record = row;
+            record[field] = transformMetricValue(field, leader.value);
+            record[`rank_${field}`] = index + 1;
         });
     });
     return Array.from(rows.values());

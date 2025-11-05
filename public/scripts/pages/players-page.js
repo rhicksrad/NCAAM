@@ -2,13 +2,19 @@ import { setChartDefaults } from "../lib/charts/defaults.js";
 import { renderConferenceDirectory } from "../lib/players/conferences.js";
 import { getPlayersLeaderboard, loadPlayersLeaderboard } from "../lib/players/data.js";
 import { renderLeaderboard } from "../charts/leaderboard.js";
-import { METRIC_DOMAINS } from "../charts/theme.js";
+import { METRIC_DOMAINS, setMetricDomain } from "../charts/theme.js";
 import { requireOk } from "../lib/health.js";
-const METRIC_LABELS = {
-    ppg: "Points per game",
-    rpg: "Rebounds per game",
-    apg: "Assists per game",
-};
+import { PLAYER_LEADERBOARD_METRICS, PLAYER_LEADERBOARD_METRIC_KEYS, formatMetricValue, } from "../lib/players/leaderboard-metrics.js";
+const METRIC_KEYS = PLAYER_LEADERBOARD_METRIC_KEYS;
+const METRIC_OPTIONS_HTML = METRIC_KEYS
+    .map((metricKey) => {
+    const config = PLAYER_LEADERBOARD_METRICS[metricKey];
+    const label = config?.shortLabel ?? metricKey.toUpperCase();
+    return `<option value="${metricKey}">${label}</option>`;
+})
+    .join("");
+const isMetric = (value) => Object.prototype.hasOwnProperty.call(PLAYER_LEADERBOARD_METRICS, value);
+const DEFAULT_METRIC = (isMetric("ppg") ? "ppg" : METRIC_KEYS[0]) ?? "ppg";
 const COLOR_MODE_LABELS = {
     value: "Color shows average using a sequential ramp.",
     rank: "Color shows rank tiers across the top 50.",
@@ -30,11 +36,7 @@ app.innerHTML = `
         <div class="leaderboard-panel__controls">
           <label class="leaderboard-panel__control">
             <span>Metric</span>
-            <select id="metricSel">
-              <option value="ppg">PPG</option>
-              <option value="rpg">RPG</option>
-              <option value="apg">APG</option>
-            </select>
+            <select id="metricSel">${METRIC_OPTIONS_HTML}</select>
           </label>
           <label class="leaderboard-panel__control">
             <span>Color</span>
@@ -64,13 +66,45 @@ const leaderboardTitle = document.getElementById("players-leaderboard-title");
 const conferenceDirectory = document.getElementById("players-conference-directory");
 const conferenceMeta = document.getElementById("players-conference-meta");
 function updateMeta(state) {
+    const config = PLAYER_LEADERBOARD_METRICS[state.metric];
     if (leaderboardTitle) {
-        leaderboardTitle.textContent = `Top 50 ${METRIC_LABELS[state.metric]} leaders`;
+        const label = config?.label ?? state.metric.toUpperCase();
+        leaderboardTitle.textContent = `Top 50 ${label} leaders`;
     }
     if (leaderboardMeta) {
-        const domain = METRIC_DOMAINS[state.metric];
-        leaderboardMeta.textContent = `Sorted by rank · Range ${domain[0]}–${domain[1]} ${state.metric.toUpperCase()} · ${COLOR_MODE_LABELS[state.colorMode]}`;
+        const domain = METRIC_DOMAINS[state.metric] ?? config?.defaultDomain ?? [0, 1];
+        const [domainMin, domainMax] = domain;
+        const formatRange = (value) => {
+            const formatted = formatMetricValue(state.metric, value);
+            if (formatted)
+                return formatted;
+            if (Number.isFinite(value)) {
+                return Number(value).toFixed(1);
+            }
+            return "--";
+        };
+        const shortLabel = config?.shortLabel ?? state.metric.toUpperCase();
+        leaderboardMeta.textContent =
+            `Sorted by rank · Range ${formatRange(domainMin)}–${formatRange(domainMax)} ${shortLabel} · ${COLOR_MODE_LABELS[state.colorMode]}`;
     }
+}
+function refreshMetricDomains(rows) {
+    METRIC_KEYS.forEach((metric) => {
+        const config = PLAYER_LEADERBOARD_METRICS[metric];
+        const defaultDomain = config?.defaultDomain ?? [0, 1];
+        const values = rows
+            .map((row) => row[metric])
+            .filter((value) => Number.isFinite(value));
+        if (!values.length) {
+            return;
+        }
+        const maxValue = Math.max(...values);
+        const minValue = Math.min(...values);
+        const start = Math.min(0, minValue);
+        const candidateEnd = Math.max(start, maxValue);
+        const end = candidateEnd > start ? candidateEnd : defaultDomain[1];
+        setMetricDomain(metric, [start, end]);
+    });
 }
 function mountLeaderboard(state) {
     if (!leaderboardRoot)
@@ -87,10 +121,10 @@ function wireControls(state) {
     if (metricSelect) {
         metricSelect.value = state.metric;
         metricSelect.addEventListener("change", () => {
-            const next = metricSelect.value;
-            if (!METRIC_DOMAINS[next])
+            const nextValue = metricSelect.value;
+            if (!isMetric(nextValue))
                 return;
-            state.metric = next;
+            state.metric = nextValue;
             mountLeaderboard(state);
         });
     }
@@ -118,10 +152,11 @@ async function boot() {
             requireOk("data/players_index.json", "Players"),
         ]);
         const state = {
-            metric: "ppg",
+            metric: DEFAULT_METRIC,
             colorMode: "value",
             data: getPlayersLeaderboard(),
         };
+        refreshMetricDomains(state.data);
         wireControls(state);
         mountLeaderboard(state);
     }

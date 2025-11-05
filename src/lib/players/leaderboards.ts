@@ -1,7 +1,6 @@
 import { formatNumber } from "../charts/theme.js";
+import { DEFAULT_METRIC_ORDER, type LeaderboardMetricId } from "./leaderboard-metrics.js";
 import {
-  DEFAULT_METRIC_ORDER,
-  type LeaderboardMetricId,
   type PlayerLeaderboardDocument,
   type PlayerLeaderboardMetric,
   type PlayerLeaderboardEntry,

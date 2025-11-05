@@ -1,4 +1,5 @@
-import { axisBottom, format, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { axisBottom, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { PLAYER_LEADERBOARD_METRICS, formatMetricValue, } from "../lib/players/leaderboard-metrics.js";
 import { DEFAULT_WIDTH, MARGIN, METRIC_DOMAINS, RANK_TIER_COLORS, tierLabel, ROW_HEIGHT, VALUE_RAMP, } from "./theme.js";
 export function renderLeaderboard(opts) {
     const { el, data, metric = "ppg", colorMode = "value", width = DEFAULT_WIDTH, rowH = ROW_HEIGHT, margin = MARGIN, } = opts;
@@ -8,7 +9,8 @@ export function renderLeaderboard(opts) {
     }
     const valueKey = metric;
     const rankKey = `rank_${metric}`;
-    const domain = METRIC_DOMAINS[metric];
+    const domain = METRIC_DOMAINS[metric] ?? [0, 1];
+    const config = PLAYER_LEADERBOARD_METRICS[metric];
     const rows = [...data]
         .filter((row) => Number.isFinite(row[valueKey]) && Number.isFinite(row[rankKey]))
         .sort((a, b) => a[rankKey] - b[rankKey])
@@ -61,7 +63,7 @@ export function renderLeaderboard(opts) {
     const rankDomain = ["Top 5", "6–10", "11–25", "26–50", "51+"];
     const colorRank = (label) => RANK_TIER_COLORS[label] ?? RANK_TIER_COLORS["51+"];
     const barHeight = rowH - 8;
-    const valueFormatter = format(".1f");
+    const formatValue = (value) => formatMetricValue(metric, value);
     rows.forEach((datum, index) => {
         const group = g
             .append("g")
@@ -93,19 +95,22 @@ export function renderLeaderboard(opts) {
             .attr("class", "players-leaderboard__value")
             .attr("x", x(clamped) + 8)
             .attr("y", rowH / 2 + 4)
-            .text(valueFormatter(value));
+            .text(formatValue(value));
         if (value > domain[1]) {
             group
                 .append("text")
                 .attr("class", "players-leaderboard__outlier")
                 .attr("x", x(domain[1]) + 12)
                 .attr("y", rowH / 2 + 4)
-                .text(`+${valueFormatter(value - domain[1])}`)
+                .text(`+${formatValue(value - domain[1])}`)
                 .append("title")
-                .text(`${valueFormatter(value)} (${metric.toUpperCase()})`);
+                .text(`${formatValue(value)} (${metric.toUpperCase()})`);
         }
     });
-    const axis = axisBottom(x).ticks(6).tickFormat(format(".0f")).tickSizeOuter(0);
+    const axis = axisBottom(x)
+        .ticks(6)
+        .tickFormat((tick) => formatValue(Number(tick)))
+        .tickSizeOuter(0);
     const axisGroup = g
         .append("g")
         .attr("class", "players-leaderboard__axis")
@@ -151,7 +156,7 @@ export function renderLeaderboard(opts) {
             .attr("x", 168)
             .attr("y", 9)
             .attr("class", "players-leaderboard__legend-label")
-            .text(`${metric.toUpperCase()} (avg per game)`);
+            .text(`${config?.shortLabel ?? metric.toUpperCase()} (${config?.legendLabel ?? "Average per game"})`);
     }
     else {
         rankDomain.forEach((tier, index) => {

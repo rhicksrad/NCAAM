@@ -1,4 +1,9 @@
-import { axisBottom, format, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { axisBottom, interpolateRgbBasis, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import type { PlayerLeaderboardRow } from "../lib/players/data.js";
+import {
+  PLAYER_LEADERBOARD_METRICS,
+  formatMetricValue,
+} from "../lib/players/leaderboard-metrics.js";
 import {
   DEFAULT_WIDTH,
   MARGIN,
@@ -10,22 +15,11 @@ import {
   type Metric,
 } from "./theme.js";
 
-type PlayerRow = {
-  name: string;
-  team: string;
-  ppg: number;
-  rpg: number;
-  apg: number;
-  rank_ppg: number;
-  rank_rpg: number;
-  rank_apg: number;
-};
-
 type ColorMode = "value" | "rank";
 
 export function renderLeaderboard(opts: {
   el: HTMLElement | string;
-  data: PlayerRow[];
+  data: PlayerLeaderboardRow[];
   metric?: Metric;
   colorMode?: ColorMode;
   width?: number;
@@ -47,9 +41,10 @@ export function renderLeaderboard(opts: {
     throw new Error("renderLeaderboard target not found");
   }
 
-  const valueKey = metric as keyof PlayerRow;
-  const rankKey = `rank_${metric}` as keyof PlayerRow;
-  const domain = METRIC_DOMAINS[metric];
+  const valueKey = metric as keyof PlayerLeaderboardRow;
+  const rankKey = `rank_${metric}` as keyof PlayerLeaderboardRow;
+  const domain = METRIC_DOMAINS[metric] ?? [0, 1];
+  const config = PLAYER_LEADERBOARD_METRICS[metric];
 
   const rows = [...data]
     .filter((row) => Number.isFinite(row[valueKey] as number) && Number.isFinite(row[rankKey] as number))
@@ -117,7 +112,7 @@ export function renderLeaderboard(opts: {
   const colorRank = (label: string) => RANK_TIER_COLORS[label] ?? RANK_TIER_COLORS["51+"];
 
   const barHeight = rowH - 8;
-  const valueFormatter = format(".1f");
+  const formatValue = (value: number) => formatMetricValue(metric, value);
 
   rows.forEach((datum, index) => {
     const group = g
@@ -154,7 +149,7 @@ export function renderLeaderboard(opts: {
       .attr("class", "players-leaderboard__value")
       .attr("x", x(clamped) + 8)
       .attr("y", rowH / 2 + 4)
-      .text(valueFormatter(value));
+      .text(formatValue(value));
 
     if (value > domain[1]) {
       group
@@ -162,13 +157,16 @@ export function renderLeaderboard(opts: {
         .attr("class", "players-leaderboard__outlier")
         .attr("x", x(domain[1]) + 12)
         .attr("y", rowH / 2 + 4)
-        .text(`+${valueFormatter(value - domain[1])}`)
+        .text(`+${formatValue(value - domain[1])}`)
         .append("title")
-        .text(`${valueFormatter(value)} (${metric.toUpperCase()})`);
+        .text(`${formatValue(value)} (${metric.toUpperCase()})`);
     }
   });
 
-  const axis = axisBottom(x).ticks(6).tickFormat(format(".0f")).tickSizeOuter(0);
+  const axis = axisBottom(x)
+    .ticks(6)
+    .tickFormat((tick: number | { valueOf(): number }) => formatValue(Number(tick)))
+    .tickSizeOuter(0);
 
   const axisGroup = g
     .append("g")
@@ -222,7 +220,9 @@ export function renderLeaderboard(opts: {
       .attr("x", 168)
       .attr("y", 9)
       .attr("class", "players-leaderboard__legend-label")
-      .text(`${metric.toUpperCase()} (avg per game)`);
+      .text(
+        `${config?.shortLabel ?? metric.toUpperCase()} (${config?.legendLabel ?? "Average per game"})`,
+      );
   } else {
     rankDomain.forEach((tier, index) => {
       const item = legend
