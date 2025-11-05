@@ -81,10 +81,40 @@
   font-weight: 600;
 }
 
+.fun-lab__showdown-row[data-type="cats"] .fun-lab__showdown-matchup {
+  fill: color-mix(in srgb, var(--fun-lab-cat) 76%, var(--color-ink) 24%);
+}
+
+.fun-lab__showdown-row[data-type="dogs"] .fun-lab__showdown-matchup {
+  fill: color-mix(in srgb, var(--fun-lab-dog) 76%, var(--color-ink) 24%);
+}
+
 .fun-lab__showdown-diff {
   fill: var(--chart-fg-muted, var(--color-muted));
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.fun-lab__showdown-total {
+  fill: var(--chart-fg-muted, var(--color-muted));
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fun-lab__showdown-track {
+  fill: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  stroke: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  stroke-width: 1;
+}
+
+.fun-lab__showdown-row[data-type="cats"] .fun-lab__showdown-track {
+  fill: color-mix(in srgb, var(--fun-lab-cat) 20%, transparent);
+  stroke: color-mix(in srgb, var(--fun-lab-cat) 32%, transparent);
+}
+
+.fun-lab__showdown-row[data-type="dogs"] .fun-lab__showdown-track {
+  fill: color-mix(in srgb, var(--fun-lab-dog) 20%, transparent);
+  stroke: color-mix(in srgb, var(--fun-lab-dog) 32%, transparent);
 }
 
 .fun-lab__showdown-axis line {
@@ -96,13 +126,23 @@
   font-size: 0.78rem;
 }
 
-.fun-lab__showdown-bar {
-  transition: opacity var(--transition-base), filter var(--transition-base);
+.fun-lab__showdown-segment {
+  cursor: pointer;
+  transition: opacity var(--transition-base), filter var(--transition-base), stroke var(--transition-base),
+    stroke-width var(--transition-base);
 }
 
-.fun-lab__showdown-bar:hover,
-.fun-lab__showdown-bar:focus-visible {
+.fun-lab__showdown-segment:hover,
+.fun-lab__showdown-segment:focus-visible {
   filter: brightness(1.05);
+}
+
+.fun-lab__showdown-segment--dimmed {
+  opacity: 0.3;
+}
+
+.fun-lab__showdown-segment--active {
+  filter: brightness(1.12);
 }
 
 .fun-lab__crown {
@@ -170,6 +210,7 @@
   border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
   background: color-mix(in srgb, var(--color-paper) 96%, transparent);
   box-shadow: inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base), opacity var(--transition-base);
 }
 
 .fun-lab__leaderboard-item[data-leader="cats"] {
@@ -180,6 +221,16 @@
 .fun-lab__leaderboard-item[data-leader="dogs"] {
   border-color: color-mix(in srgb, var(--fun-lab-dog) 55%, transparent);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--fun-lab-dog) 22%, transparent);
+}
+
+.fun-lab__leaderboard-item--active {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--matchup-color, var(--color-arc)) 55%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
+  border-color: color-mix(in srgb, var(--matchup-color, var(--color-arc)) 60%, transparent);
+}
+
+.fun-lab__leaderboard-item--dimmed {
+  opacity: 0.45;
 }
 
 .fun-lab__leaderboard-rank {
