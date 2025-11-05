@@ -14,6 +14,19 @@ const NAME_SCALE_START = 20;
 const NAME_SCALE_END = 42;
 const MIN_VISIBLE_RATIO = 0.085;
 
+const ROW_ACCENTS: ReadonlyArray<readonly [string, string]> = [
+  ["#4c7fff", "#335eea"],
+  ["#ff6aa8", "#ff4280"],
+  ["#ffb561", "#ff8e3c"],
+  ["#8a7aff", "#6d5cff"],
+  ["#42c5a5", "#2e9f86"],
+  ["#ff7fcd", "#ff55a8"],
+  ["#5aa7ff", "#3f86ff"],
+  ["#ffd15a", "#ffa53d"],
+  ["#4ed9a6", "#2cbf88"],
+  ["#7aa8ff", "#5e8cff"]
+] as const;
+
 const CARD_TONE_CLASSES = [
   "stat-card--tone-1",
   "stat-card--tone-2",
@@ -185,6 +198,11 @@ function renderMetricChart(container: HTMLElement, metric: PlayerLeaderboardMetr
     const row = createLeaderboardRow(doc, leader, index, safeMax);
     list.appendChild(row);
   });
+
+  const axis = createLeaderboardAxis(doc, metric, safeMax);
+  if (axis) {
+    container.appendChild(axis);
+  }
 }
 
 function createLeaderboardRow(
@@ -196,6 +214,10 @@ function createLeaderboardRow(
   const row = doc.createElement("div");
   row.className = "leaderboard-chart__row";
   row.dataset.rank = `${index + 1}`;
+
+  const [accentStart, accentEnd] = ROW_ACCENTS[index % ROW_ACCENTS.length] ?? ROW_ACCENTS[0];
+  row.style.setProperty("--leaderboard-accent-start", accentStart);
+  row.style.setProperty("--leaderboard-accent-end", accentEnd);
 
   const label = doc.createElement("div");
   label.className = "leaderboard-chart__label";
@@ -226,13 +248,6 @@ function createLeaderboardRow(
   const metrics = doc.createElement("div");
   metrics.className = "leaderboard-chart__metrics";
 
-  const meter = doc.createElement("div");
-  meter.className = "leaderboard-chart__meter";
-  const ratio = maxValue > 0 ? Math.max(leader.value / maxValue, 0) : 0;
-  const fillRatio = ratio > 0 ? Math.max(ratio, MIN_VISIBLE_RATIO) : 0;
-  meter.style.setProperty("--leaderboard-fill", `${Math.min(fillRatio, 1)}`);
-  metrics.appendChild(meter);
-
   const value = doc.createElement("span");
   value.className = "leaderboard-chart__value";
   value.textContent = leader.valueFormatted ?? formatNumber(leader.value);
@@ -247,7 +262,97 @@ function createLeaderboardRow(
     row.style.setProperty("--team-scale", `${teamScale}`);
   }
 
+  const ratio = maxValue > 0 ? Math.max(leader.value / maxValue, 0) : 0;
+  const fillRatio = ratio > 0 ? Math.max(ratio, MIN_VISIBLE_RATIO) : 0;
+  row.style.setProperty("--leaderboard-fill", `${Math.min(fillRatio, 1)}`);
+
   return row;
+}
+
+function createLeaderboardAxis(
+  doc: Document,
+  metric: PlayerLeaderboardMetric,
+  maxValue: number,
+): HTMLElement | null {
+  if (!(Number.isFinite(maxValue) && maxValue > 0)) {
+    return null;
+  }
+
+  const ticks = buildAxisTicks(maxValue);
+  if (ticks.length <= 1) {
+    return null;
+  }
+
+  const axis = doc.createElement("footer");
+  axis.className = "leaderboard-chart__axis";
+
+  const ticksContainer = doc.createElement("div");
+  ticksContainer.className = "leaderboard-chart__axis-track";
+
+  ticks.forEach((tick) => {
+    const tickEl = doc.createElement("span");
+    tickEl.className = "leaderboard-chart__axis-tick";
+    tickEl.textContent = formatNumber(tick);
+    const ratio = maxValue > 0 ? Math.min(Math.max(tick / maxValue, 0), 1) : 0;
+    tickEl.style.setProperty("--tick-position", `${ratio}`);
+    ticksContainer.appendChild(tickEl);
+  });
+
+  axis.appendChild(ticksContainer);
+
+  const label = doc.createElement("span");
+  label.className = "leaderboard-chart__axis-label";
+  label.textContent = metric.label;
+  axis.appendChild(label);
+
+  return axis;
+}
+
+function buildAxisTicks(maxValue: number, count = 4): number[] {
+  if (!(Number.isFinite(maxValue) && maxValue > 0)) {
+    return [0, 1];
+  }
+
+  const desired = Math.max(2, count);
+  const step = computeTickStep(maxValue, desired - 1);
+  if (!(Number.isFinite(step) && step > 0)) {
+    return [0, maxValue];
+  }
+
+  const ticks: number[] = [0];
+  for (let value = step; value < maxValue; value += step) {
+    ticks.push(Number.parseFloat(value.toFixed(6)));
+    if (ticks.length >= desired - 1) {
+      break;
+    }
+  }
+  if (ticks[ticks.length - 1] !== maxValue) {
+    ticks.push(maxValue);
+  }
+  return ticks;
+}
+
+function computeTickStep(maxValue: number, segments: number): number {
+  const rawStep = maxValue / Math.max(1, segments);
+  if (!(Number.isFinite(rawStep) && rawStep > 0)) {
+    return 0;
+  }
+
+  const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+  const normalized = rawStep / magnitude;
+
+  let niceNormalized: number;
+  if (normalized < 1.5) {
+    niceNormalized = 1;
+  } else if (normalized < 3) {
+    niceNormalized = 2;
+  } else if (normalized < 7) {
+    niceNormalized = 5;
+  } else {
+    niceNormalized = 10;
+  }
+
+  return niceNormalized * magnitude;
 }
 
 function computeNameScale(leader: PlayerLeaderboardEntry): number {
