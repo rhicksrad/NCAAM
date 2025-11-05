@@ -6,6 +6,7 @@ import {
 } from "../lib/data/division-one.js";
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
+import { geoAlbersUsa, geoPath, select } from "../lib/vendor/d3-bundle.js";
 import {
   getConferenceLogoUrl,
   getConferenceMonogram,
@@ -13,6 +14,7 @@ import {
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 
 type TeamLocation = {
   team: string;
@@ -124,23 +126,21 @@ const mapCount = app.querySelector(".teams-map__count") as HTMLElement | null;
 const leaderboardRoot = app.querySelector("#teams-leaderboard") as HTMLElement | null;
 const leaderboardMeta = app.querySelector("#teams-leaderboard-meta") as HTMLElement | null;
 
-const dataUrl = (path: string) => new URL(path, import.meta.url).toString();
-
 const [teamsResponse, conferenceMap, locationRecordsRaw, teamSummariesRaw, divisionOneIndex] = await Promise.all([
   NCAAM.teams(1, 600),
   getConferenceMap(),
-  fetch(dataUrl("../../data/team_home_locations.json"))
-    .then(res => {
-      if (!res.ok) throw new Error(`Failed to load team home locations (${res.status})`);
-      return res.json() as Promise<TeamLocation[]>;
-    })
-    .catch(() => []),
-  fetch(dataUrl("../../data/cbb/cbb-summary.json"))
-    .then(res => {
-      if (!res.ok) throw new Error(`Failed to load team stat summaries (${res.status})`);
-      return res.json() as Promise<Record<string, TeamSummary>>;
-    })
-    .catch(() => ({} as Record<string, TeamSummary>)),
+  requireOk("data/team_home_locations.json", "Teams")
+    .then(res => res.json() as Promise<TeamLocation[]>)
+    .catch(error => {
+      console.error(error);
+      return [] as TeamLocation[];
+    }),
+  requireOk("data/cbb/cbb-summary.json", "Teams")
+    .then(res => res.json() as Promise<Record<string, TeamSummary>>)
+    .catch(error => {
+      console.error(error);
+      return {} as Record<string, TeamSummary>;
+    }),
   getDivisionOneProgramIndex(),
 ]);
 
@@ -981,13 +981,9 @@ async function renderMap(teams: TeamCardData[]) {
     tooltip.hidden = false;
   };
 
-  const [d3, topojson, topo] = await Promise.all([
-    loadScript(new URL("../../vendor/d3.v7.min.js", import.meta.url).toString(), "d3") as Promise<typeof import("d3")>,
+  const [topojson, topo] = await Promise.all([
     loadScript(new URL("../../vendor/topojson-client.v3.min.js", import.meta.url).toString(), "topojson"),
-    fetch(dataUrl("../../data/us-states-10m.json")).then(res => {
-      if (!res.ok) throw new Error(`Failed to load US map (${res.status})`);
-      return res.json();
-    }),
+    requireOk("data/us-states-10m.json", "Teams map").then(res => res.json()),
   ]);
 
   const topoData = topo as { objects: Record<string, unknown> };
@@ -996,10 +992,10 @@ async function renderMap(teams: TeamCardData[]) {
 
   const width = 960;
   const height = 600;
-  const projection = (d3 as typeof import("d3")).geoAlbersUsa().fitExtent([[24, 24], [width - 24, height - 40]], states as unknown as any);
-  const path = (d3 as typeof import("d3")).geoPath(projection);
+  const projection = geoAlbersUsa().fitExtent([[24, 24], [width - 24, height - 40]], states as unknown as any);
+  const path = geoPath(projection);
 
-  const svg = (d3 as typeof import("d3")).select(mapRoot)
+  const svg = select(mapRoot)
     .append("svg")
     .attr("class", "teams-map__svg")
     .attr("viewBox", `0 0 ${width} ${height}`)
@@ -1037,7 +1033,7 @@ async function renderMap(teams: TeamCardData[]) {
         (this as SVGCircleElement).style.display = "none";
         return;
       }
-      (d3 as typeof import("d3")).select(this)
+      select(this)
         .attr("cx", coords[0])
         .attr("cy", coords[1])
         .attr("fill", team.accentPrimary)

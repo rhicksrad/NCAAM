@@ -1,6 +1,6 @@
 /**
  * Area series renderer.
- * @module charts/series/area
+ * @module charts/area
  */
 
 import {
@@ -8,10 +8,10 @@ import {
   curveLinear,
   curveMonotoneX,
   select
-} from "../../vendor/d3-bundle.js";
+} from "../vendor/d3-bundle.js";
 import type { Selection } from "d3";
-import type { BuiltScales } from "../axes.js";
-import { ChartTheme, defaultTheme } from "../theme.js";
+import type { BuiltScales } from "./axes.js";
+import { ChartTheme, defaultTheme } from "./theme.js";
 
 export interface AreaDatum {
   x: number | Date;

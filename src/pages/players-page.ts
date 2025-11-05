@@ -1,6 +1,7 @@
 import { setChartDefaults } from "../lib/charts/defaults.js";
 import { renderConferenceDirectory } from "../lib/players/conferences.js";
 import { renderLeaderboardFeature } from "../lib/players/leaderboards.js";
+import { requireOk } from "../lib/health.js";
 
 const app = document.getElementById("app");
 if (!app) {
@@ -37,6 +38,11 @@ const conferenceDirectory = document.getElementById("players-conference-director
 const conferenceMeta = document.getElementById("players-conference-meta") as HTMLElement | null;
 
 async function boot(): Promise<void> {
+  await Promise.all([
+    requireOk("data/player_stat_leaders_2024-25.json", "Players"),
+    requireOk("data/players_index.json", "Players"),
+  ]);
+
   if (leaderboardGrid) {
     await renderLeaderboardFeature(leaderboardGrid, leaderboardMeta, leaderboardTitle);
   }

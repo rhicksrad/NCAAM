@@ -1,5 +1,6 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 const app = document.getElementById("app");
 app.innerHTML = `
   <h1 id="ranking-title">Final 2024 Rankings</h1>
@@ -29,6 +30,7 @@ app.innerHTML = `
     </section>
   </div>
 `;
+await requireOk("data/division-one-programs.json", "Rankings");
 const apRows = document.getElementById("ap-rows");
 const coachesRows = document.getElementById("coaches-rows");
 const title = document.getElementById("ranking-title");

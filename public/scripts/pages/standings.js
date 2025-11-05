@@ -1,6 +1,7 @@
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getConferenceMap } from "../lib/sdk/directory.js";
 import { getConferenceLogoUrl, getConferenceMonogram, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 const app = document.getElementById("app");
 if (!app) {
     throw new Error("Standings root element not found");
@@ -43,6 +44,7 @@ app.innerHTML = `
     </div>
   </section>
 `;
+await requireOk("data/division-one-programs.json", "Standings");
 const form = document.getElementById("standings-form");
 const seasonInput = document.getElementById("standings-season");
 const statusEl = document.getElementById("standings-status");

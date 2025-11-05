@@ -2,10 +2,10 @@
  * Basic categorical bar chart example.
  */
 
-import { select } from "d3";
+import { select } from "../src/lib/vendor/d3-bundle.js";
 import { buildScales, drawAxes, drawGrid } from "../src/lib/charts/axes";
 import { computeInnerSize, createSVG } from "../src/lib/charts/frame";
-import { renderBars } from "../src/lib/charts/series/bar";
+import { renderBars } from "../src/lib/charts/bar";
 import { createTooltip } from "../src/lib/charts/tooltip";
 import { applyTheme, defaultTheme, formatNumber, resolveColor } from "../src/lib/charts/theme";
 

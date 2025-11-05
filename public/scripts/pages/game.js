@@ -2,6 +2,7 @@ import { BASE } from "../lib/config.js";
 import { renderGameBoxScore } from "./game/GameBoxScore.js";
 import { createGameDetailStore } from "./game/store.js";
 import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
     weekday: "short",
     month: "short",
@@ -188,6 +189,7 @@ const app = document.getElementById("app");
 if (!app) {
     throw new Error("Missing game app container");
 }
+await requireOk("data/division-one-programs.json", "Game");
 app.innerHTML = `<div class="game-detail stack" data-gap="lg" aria-live="polite" aria-busy="true"></div>`;
 const containerNode = app.querySelector(".game-detail");
 if (!(containerNode instanceof HTMLDivElement)) {

@@ -13,6 +13,7 @@ import { createChartContainer, type ChartContainerHandle } from "../lib/charts/c
 import { setChartDefaults } from "../lib/charts/defaults.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
 import { resolveColor } from "../lib/charts/theme.js";
+import { requireOk } from "../lib/health.js";
 
 const DATA_URL = "data/fun-lab/mascot-index.json";
 const CATS_DOGS_DATA_URL = "data/fun-lab/cats-vs-dogs.json";
@@ -231,10 +232,9 @@ function readBarRadius(element: HTMLElement): number {
 }
 
 async function fetchMascotIndex(): Promise<MascotIndexPayload> {
-  const response = await fetch(DATA_URL, { headers: { Accept: "application/json" } });
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
+  const response = await requireOk(DATA_URL, "Fun Lab", {
+    headers: { Accept: "application/json" },
+  });
   const payload = (await response.json()) as MascotIndexPayload;
   if (!payload || !Array.isArray(payload.records)) {
     throw new Error("Mascot index payload is malformed");
@@ -243,10 +243,9 @@ async function fetchMascotIndex(): Promise<MascotIndexPayload> {
 }
 
 async function fetchCatsDogsShowdowns(): Promise<CatsDogsPayload> {
-  const response = await fetch(CATS_DOGS_DATA_URL, { headers: { Accept: "application/json" } });
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
+  const response = await requireOk(CATS_DOGS_DATA_URL, "Fun Lab", {
+    headers: { Accept: "application/json" },
+  });
   const payload = (await response.json()) as CatsDogsPayload;
   if (!payload || !Array.isArray(payload.matchups)) {
     throw new Error("Cats vs dogs payload is malformed");
@@ -608,6 +607,9 @@ function renderChart(
   return {
     colorByCategory,
     setActiveCategory: (slug: string | null) => {
+      if (!arcs) {
+        return;
+      }
       arcs.each(function (this: SVGPathElement, d: PieArcDatum<MascotCategorySummary>) {
         const element = this;
         const isActive = slug !== null && d.data.slug === slug;

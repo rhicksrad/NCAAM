@@ -1,12 +1,12 @@
 /**
  * Scatter series renderer.
- * @module charts/series/scatter
+ * @module charts/scatter
  */
 
-import { select } from "d3-selection";
-import type { Selection } from "d3-selection";
-import type { BuiltScales } from "../axes.js";
-import { ChartTheme, defaultTheme } from "../theme.js";
+import { select } from "../vendor/d3-bundle.js";
+import type { Selection } from "d3";
+import type { BuiltScales } from "./axes.js";
+import { ChartTheme, defaultTheme } from "./theme.js";
 
 export interface ScatterDatum {
   x: number | Date | string;

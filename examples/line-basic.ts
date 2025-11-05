@@ -2,11 +2,11 @@
  * Basic line and area chart example with keyboard-focusable points.
  */
 
-import { extent, select } from "d3";
+import { extent, select } from "../src/lib/vendor/d3-bundle.js";
 import { buildScales, drawAxes, drawGrid, drawLegend } from "../src/lib/charts/axes";
 import { computeInnerSize, createSVG } from "../src/lib/charts/frame";
-import { renderArea } from "../src/lib/charts/series/area";
-import { renderLine } from "../src/lib/charts/series/line";
+import { renderArea } from "../src/lib/charts/area";
+import { renderLine } from "../src/lib/charts/line";
 import { createTooltip } from "../src/lib/charts/tooltip";
 import { applyTheme, defaultTheme, formatDate, formatNumber, resolveColor } from "../src/lib/charts/theme";
 

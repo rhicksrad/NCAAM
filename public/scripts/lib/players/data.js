@@ -1,3 +1,4 @@
+import { requireOk } from "../health.js";
 const ABSOLUTE_URL_PATTERN = /^(?:https?:)?\/\//i;
 const DATA_BASE_URL = (() => {
     if (typeof window !== "undefined" && typeof window.location !== "undefined") {
@@ -19,19 +20,16 @@ const resolveDataUrl = (path) => {
     if (DATA_BASE_URL) {
         return new URL(normalized, DATA_BASE_URL).href;
     }
-    return `/${normalized}`;
+    return normalized;
 };
-export async function loadJson(path) {
-    const response = await fetch(resolveDataUrl(path));
-    if (!response.ok) {
-        throw new Error(`Failed to load ${path} (${response.status})`);
-    }
+export async function loadJson(path, where) {
+    const response = await requireOk(resolveDataUrl(path), where);
     return (await response.json());
 }
 export const PLAYER_DATA_PATHS = {
-    leaderboard: "/data/player_stat_leaders_2024-25.json",
-    index: "/data/players_index.json",
-    playerStats: (slug) => `/data/players/${slug}.json`,
+    leaderboard: "data/player_stat_leaders_2024-25.json",
+    index: "data/players_index.json",
+    playerStats: (slug) => `data/players/${slug}.json`,
 };
 export const DEFAULT_METRIC_ORDER = [
     "points",
@@ -45,15 +43,15 @@ export const DEFAULT_METRIC_ORDER = [
     "turnovers",
 ];
 export async function loadLeaderboardDocument() {
-    return await loadJson(PLAYER_DATA_PATHS.leaderboard);
+    return await loadJson(PLAYER_DATA_PATHS.leaderboard, "Players leaderboard");
 }
 export async function loadPlayerIndexDocument() {
-    return await loadJson(PLAYER_DATA_PATHS.index);
+    return await loadJson(PLAYER_DATA_PATHS.index, "Players index");
 }
 const playerDocumentCache = new Map();
 export async function loadPlayerStatsDocument(slug) {
     if (!playerDocumentCache.has(slug)) {
-        const load = loadJson(PLAYER_DATA_PATHS.playerStats(slug)).catch((error) => {
+        const load = loadJson(PLAYER_DATA_PATHS.playerStats(slug), `Player stats ${slug}`).catch((error) => {
             playerDocumentCache.delete(slug);
             throw error;
         });

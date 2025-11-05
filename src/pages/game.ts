@@ -9,6 +9,7 @@ import {
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
   weekday: "short",
@@ -218,6 +219,8 @@ const app = document.getElementById("app");
 if (!app) {
   throw new Error("Missing game app container");
 }
+
+await requireOk("data/division-one-programs.json", "Game");
 
 app.innerHTML = `<div class="game-detail stack" data-gap="lg" aria-live="polite" aria-busy="true"></div>`;
 

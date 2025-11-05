@@ -2,8 +2,15 @@ import { buildTeamKeys } from "../lib/data/program-keys.js";
 import { getDivisionOneProgramIndex } from "../lib/data/division-one.js";
 import { NCAAM, type Team } from "../lib/sdk/ncaam.js";
 import { getTeamLogoUrl, getTeamMonogram } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
+
+const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
 
 const app = document.getElementById("app")!;
+
+const heightSnapshotPromise = requireOk(HEIGHT_SNAPSHOT_PATH, "Home").then(
+  res => res.json() as Promise<HeightSnapshot>,
+);
 
 type PollNote = {
   label: string;
@@ -43,8 +50,6 @@ type HeightSnapshot = {
   measured_team_count?: number;
   teams: HeightSnapshotTeam[];
 };
-
-const HEIGHT_SNAPSHOT_PATH = "data/team-height-snapshot.json";
 
 function escapeHtml(value: string): string {
   return value
@@ -885,17 +890,16 @@ function renderHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement, sna
   footerEl.append(meta);
 }
 
-async function loadHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement): Promise<void> {
+async function loadHeightSnapshot(
+  contentEl: HTMLElement,
+  footerEl: HTMLElement,
+  snapshotPromise: Promise<HeightSnapshot>,
+): Promise<void> {
   try {
     const [divisionOneIndex, teamsResponse, payload] = await Promise.all([
       getDivisionOneProgramIndex(),
       NCAAM.teams(1, 600),
-      fetch(HEIGHT_SNAPSHOT_PATH, { headers: { Accept: "application/json" } }).then(res => {
-        if (!res.ok) {
-          throw new Error(`Failed to load roster height snapshot: ${res.status} ${res.statusText}`);
-        }
-        return res.json() as Promise<HeightSnapshot>;
-      }),
+      snapshotPromise,
     ]);
 
     if (!payload || !Array.isArray(payload.teams)) {
@@ -926,6 +930,7 @@ async function loadHeightSnapshot(contentEl: HTMLElement, footerEl: HTMLElement)
     console.error(error);
     contentEl.innerHTML = '<p class="height-card__error">Unable to load roster height leaders right now.</p>';
     footerEl.textContent = "";
+    return;
   }
 }
 
@@ -956,5 +961,5 @@ const heightCardContent = document.getElementById("height-card-content");
 const heightCardFooter = document.getElementById("height-card-footer");
 
 if (heightCardContent instanceof HTMLElement && heightCardFooter instanceof HTMLElement) {
-  void loadHeightSnapshot(heightCardContent, heightCardFooter);
+  void loadHeightSnapshot(heightCardContent, heightCardFooter, heightSnapshotPromise);
 }

@@ -2,6 +2,7 @@ import { BASE } from "../lib/config.js";
 import { getGamePlayByPlay } from "../lib/api/ncaam.js";
 import { NCAAM } from "../lib/sdk/ncaam.js";
 import { getTeamAccentColors, getTeamLogoUrl, getTeamMonogram, } from "../lib/ui/logos.js";
+import { requireOk } from "../lib/health.js";
 const DEFAULT_TIME_ZONE = "America/New_York";
 const LAST_PLAY_PLACEHOLDER = "Loading last play…";
 const DATE_DISPLAY = new Intl.DateTimeFormat(undefined, {
@@ -116,7 +117,9 @@ function describeStatus(game) {
     if (/^(scheduled|pre)$/.test(compact)) {
         return { label: "Scheduled" };
     }
-    if (/^(live|inprogress)$/.test(compact) || compact.includes("live")) {
+    if (/^(live|inprogress)$/.test(compact) ||
+        compact.includes("live") ||
+        normalized === "in") {
         const detail = [formatPeriod(game.period), extractClock(game)]
             .filter(Boolean)
             .join(" • ");
@@ -182,10 +185,10 @@ function buildPlaySummary(game, plays) {
         clockLabel: formatPlayClock(last),
     };
 }
-function buildLastPlayText(summary, fallbackMessage) {
+function buildLastPlayText(summary, fallbackMessage, includeScoreboard = true) {
     if (summary) {
         const segments = [summary.description];
-        if (summary.scoreboard) {
+        if (includeScoreboard && summary.scoreboard) {
             segments.push(summary.scoreboard);
         }
         return segments.join(" • ");
@@ -251,6 +254,22 @@ function extractClock(game) {
     }
     return null;
 }
+function parseProgressLabel(label) {
+    if (!label) {
+        return { period: null, clock: null };
+    }
+    const segments = label
+        .split("•")
+        .map(segment => segment.trim())
+        .filter(Boolean);
+    if (segments.length === 0) {
+        return { period: null, clock: null };
+    }
+    if (segments.length === 1) {
+        return { period: segments[0], clock: null };
+    }
+    return { period: segments[0], clock: segments.slice(1).join(" • ") };
+}
 function renderTeamLogo(team, label) {
     const logoUrl = getTeamLogoUrl(team);
     if (logoUrl) {
@@ -285,14 +304,22 @@ function renderGameCard(game) {
     const hasScores = isFiniteScore(homeScore) && isFiniteScore(awayScore);
     const homeLeading = hasScores && Number(homeScore) > Number(awayScore);
     const awayLeading = hasScores && Number(awayScore) > Number(homeScore);
-    const statusDetail = status.detail ? `<span class="game-card__status">${escapeHtml(status.detail)}</span>` : "";
+    const statusDetail = !isLive && status.detail
+        ? `<span class="game-card__status" data-role="game-status-detail">${escapeHtml(status.detail)}</span>`
+        : "";
     const badge = status.label
         ? `<span class="badge"${status.variant ? ` data-variant="${escapeAttr(status.variant)}"` : ""}>${escapeHtml(status.label)}</span>`
         : "";
     const initialClock = status.detail ?? status.label ?? "—";
     const safeInitialClock = escapeHtml(initialClock || "—");
+    const progressDetail = parseProgressLabel(status.detail ?? null);
+    const initialPeriod = formatPeriod(game.period) ?? progressDetail.period ?? "";
+    const initialClockRemaining = extractClock(game) ?? progressDetail.clock ?? "";
+    const safeInitialPeriod = escapeHtml(initialPeriod || (isLive ? status.label ?? "Live" : ""));
+    const safeInitialClockRemaining = escapeHtml(initialClockRemaining || (isLive ? "—" : ""));
+    const safeGameState = escapeAttr(isLive ? "live" : "default");
     const safeGameId = escapeAttr(String(game.id));
-    return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time" data-role="game-meta" data-default-meta="${defaultMeta}" data-live-placeholder="${escapeAttr(LAST_PLAY_PLACEHOLDER)}">${initialMeta}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(game.visitor_team, awayScore, false, awayLeading)}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div><div class="game-card__footer"><span class="game-card__clock" data-role="game-clock" aria-live="polite">${safeInitialClock}</span><p class="game-card__last-play" data-role="game-last-play-container" aria-live="polite"><span class="game-card__last-play-label">Last play</span><span class="game-card__last-play-text" data-role="game-last-play">${escapeHtml(LAST_PLAY_PLACEHOLDER)}</span></p></div></a></li>`;
+    return `<li class="card game-card" data-status="${escapeAttr(game.status ?? "")}" data-game-state="${safeGameState}" data-game-id="${safeGameId}"><a class="game-card__link" href="${safeHref}"><div class="game-card__header"><div class="game-card__meta"><div class="game-card__progress" data-role="game-progress"${isLive ? "" : " hidden"}><span class="game-card__progress-period" data-role="game-progress-period">${safeInitialPeriod}</span><span class="game-card__progress-clock" data-role="game-progress-clock">${safeInitialClockRemaining}</span></div><span class="game-card__time" data-role="game-meta" data-default-meta="${defaultMeta}" data-live-placeholder="${escapeAttr(LAST_PLAY_PLACEHOLDER)}">${initialMeta}</span>${statusDetail}</div>${badge}</div><div class="game-card__body">${renderTeamRow(game.visitor_team, awayScore, false, awayLeading)}${renderTeamRow(game.home_team, homeScore, true, homeLeading)}</div><div class="game-card__footer"><span class="game-card__clock" data-role="game-clock" aria-live="polite">${safeInitialClock}</span><p class="game-card__last-play" data-role="game-last-play-container" aria-live="polite"><span class="game-card__last-play-label">Last play</span><span class="game-card__last-play-text" data-role="game-last-play">${escapeHtml(LAST_PLAY_PLACEHOLDER)}</span></p></div></a></li>`;
 }
 function renderLoading(list) {
     list.innerHTML = `<li class="card game-card game-card--loading"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">Loading games</span></div></div><p class="game-card__message">Fetching the latest schedule…</p></li>`;
@@ -314,6 +341,7 @@ const app = document.getElementById("app");
 if (!app) {
     throw new Error("Missing #app root element");
 }
+await requireOk("data/division-one-programs.json", "Games");
 app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date range to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start date</span><input type="date" id="start-date" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End date</span><input type="date" id="end-date" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
 const formEl = app.querySelector("#games-controls");
 const startInputEl = app.querySelector("#start-date");
@@ -371,12 +399,39 @@ function updateGameCardSummary(list, game, status, summaryToken, requestId, summ
     if (!card) {
         return;
     }
+    const progressEl = card.querySelector('[data-role="game-progress"]');
+    const periodEl = card.querySelector('[data-role="game-progress-period"]');
+    const clockProgressEl = card.querySelector('[data-role="game-progress-clock"]');
     const metaEl = card.querySelector('[data-role="game-meta"]');
     const clockEl = card.querySelector('[data-role="game-clock"]');
     const playEl = card.querySelector('[data-role="game-last-play"]');
     const playContainer = card.querySelector('[data-role="game-last-play-container"]');
     const isLive = isLiveStatus(status);
+    card.setAttribute("data-game-state", isLive ? "live" : "default");
     const metaDefault = metaEl?.getAttribute("data-default-meta") ?? null;
+    if (progressEl) {
+        if (isLive) {
+            progressEl.removeAttribute("hidden");
+            const progress = parseProgressLabel(summary?.clockLabel ?? status.detail ?? null);
+            const periodText = progress.period ?? formatPeriod(game.period) ?? status.label ?? "Live";
+            const clockText = progress.clock ?? extractClock(game) ?? "";
+            if (periodEl) {
+                periodEl.textContent = periodText || "Live";
+            }
+            if (clockProgressEl) {
+                clockProgressEl.textContent = clockText || "—";
+            }
+        }
+        else {
+            progressEl.setAttribute("hidden", "");
+            if (periodEl) {
+                periodEl.textContent = "";
+            }
+            if (clockProgressEl) {
+                clockProgressEl.textContent = "";
+            }
+        }
+    }
     if (clockEl) {
         const clockText = summary?.clockLabel ?? status.detail ?? status.label ?? "—";
         clockEl.textContent = clockText || "—";
@@ -384,7 +439,7 @@ function updateGameCardSummary(list, game, status, summaryToken, requestId, summ
     if (metaEl) {
         if (isLive) {
             const fallback = summary ? undefined : fallbackMessage ?? metaEl.getAttribute("data-live-placeholder") ?? undefined;
-            metaEl.textContent = buildLastPlayText(summary, fallback);
+            metaEl.textContent = buildLastPlayText(summary, fallback, false);
         }
         else if (metaDefault) {
             metaEl.textContent = metaDefault;
@@ -394,7 +449,7 @@ function updateGameCardSummary(list, game, status, summaryToken, requestId, summ
         playEl.textContent = buildLastPlayText(summary, fallbackMessage);
     }
     if (playContainer) {
-        if (isLive && summary) {
+        if (isLive) {
             playContainer.setAttribute("hidden", "");
         }
         else {
