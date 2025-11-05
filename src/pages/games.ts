@@ -30,7 +30,8 @@ const ISO_DATE_DISPLAY = new Intl.DateTimeFormat("en-CA", {
 });
 
 type DateSelection = {
-  day: string | null;
+  start: string | null;
+  end: string | null;
 };
 
 type StatusDescriptor = {
@@ -107,7 +108,8 @@ function toEasternISODateString(value: string | null | undefined): string | null
 function getDefaultSelection(): DateSelection {
   const today = new Date();
   const formatted = toTimeZoneISODate(today);
-  return { day: ensureISODate(formatted) ?? formatted };
+  const normalized = ensureISODate(formatted) ?? formatted;
+  return { start: normalized, end: normalized };
 }
 
 function formatDateLabel(dateString: string | null | undefined): string {
@@ -347,7 +349,7 @@ function renderLoading(list: HTMLUListElement) {
 }
 
 function renderEmpty(list: HTMLUListElement) {
-  list.innerHTML = `<li class="card game-card game-card--empty"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">No games on this date</span></div></div><p class="game-card__message">Try another day to explore more matchups.</p></li>`;
+  list.innerHTML = `<li class="card game-card game-card--empty"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">No games in this range</span></div></div><p class="game-card__message">Try another range to explore more matchups.</p></li>`;
 }
 
 function renderError(list: HTMLUListElement) {
@@ -368,37 +370,60 @@ if (!app) {
   throw new Error("Missing #app root element");
 }
 
-app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Date</span><input type="date" id="date" name="date" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
+app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date range to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start date</span><input type="date" id="start-date" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End date</span><input type="date" id="end-date" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
 
 const formEl = app.querySelector<HTMLFormElement>("#games-controls");
-const dateInputEl = app.querySelector<HTMLInputElement>("#date");
+const startInputEl = app.querySelector<HTMLInputElement>("#start-date");
+const endInputEl = app.querySelector<HTMLInputElement>("#end-date");
 const loadButtonEl = app.querySelector<HTMLButtonElement>("#load");
 const listEl = app.querySelector<HTMLUListElement>("#games-list");
 
-if (!formEl || !dateInputEl || !loadButtonEl || !listEl) {
+if (!formEl || !startInputEl || !endInputEl || !loadButtonEl || !listEl) {
   throw new Error("Failed to initialise games page controls");
 }
 
 const form = formEl;
-const dateInput = dateInputEl;
+const startInput = startInputEl;
+const endInput = endInputEl;
 const loadButton = loadButtonEl;
 const list = listEl;
 
 function applyDateSelection(selection: DateSelection): void {
-  if (selection.day) {
-    const normalized = ensureISODate(selection.day);
-    dateInput.value = normalized ?? selection.day;
-  }
+  const normalizedStart = selection.start ? ensureISODate(selection.start) : null;
+  startInput.value = normalizedStart ?? selection.start ?? "";
+
+  const normalizedEnd = selection.end ? ensureISODate(selection.end) : null;
+  endInput.value = normalizedEnd ?? selection.end ?? "";
 }
 
-function getSelectedDay(): string | null {
-  const normalized = ensureISODate(dateInput.value);
-  if (normalized) {
-    dateInput.value = normalized;
-    return normalized;
+function getSelectedRange(): DateSelection | null {
+  const normalizedStart = ensureISODate(startInput.value);
+  const normalizedEnd = ensureISODate(endInput.value);
+
+  startInput.value = normalizedStart ?? "";
+  endInput.value = normalizedEnd ?? "";
+
+  if (!normalizedStart && !normalizedEnd) {
+    return null;
   }
-  dateInput.value = "";
-  return null;
+
+  if (normalizedStart && normalizedEnd && normalizedStart > normalizedEnd) {
+    startInput.value = normalizedEnd;
+    endInput.value = normalizedStart;
+    return { start: normalizedEnd, end: normalizedStart };
+  }
+
+  if (normalizedStart && !normalizedEnd) {
+    endInput.value = normalizedStart;
+    return { start: normalizedStart, end: normalizedStart };
+  }
+
+  if (!normalizedStart && normalizedEnd) {
+    startInput.value = normalizedEnd;
+    return { start: normalizedEnd, end: normalizedEnd };
+  }
+
+  return { start: normalizedStart ?? null, end: normalizedEnd ?? null };
 }
 
 let activeRequest = 0;
@@ -517,12 +542,14 @@ async function hydrateGameSummaries(
 }
 
 async function loadGames(showLoader: boolean): Promise<void> {
-  const selectedDay = getSelectedDay();
+  const selection = getSelectedRange();
 
-  if (!selectedDay) {
+  if (!selection || !selection.start || !selection.end) {
     renderEmpty(list);
     return;
   }
+
+  const { start, end } = selection;
 
   const requestId = ++activeRequest;
   list.setAttribute("aria-busy", "true");
@@ -533,8 +560,8 @@ async function loadGames(showLoader: boolean): Promise<void> {
   }
 
   try {
-    const fetchStart = selectedDay;
-    const fetchEnd = addDaysToISODate(selectedDay, 1) ?? selectedDay;
+    const fetchStart = start;
+    const fetchEnd = addDaysToISODate(end, 1) ?? end;
     const { data } = await NCAAM.games(1, 200, fetchStart, fetchEnd);
     if (requestId !== activeRequest) {
       return;
@@ -542,7 +569,10 @@ async function loadGames(showLoader: boolean): Promise<void> {
     const games = Array.isArray(data) ? [...data] : [];
     const filtered = games.filter(game => {
       const gameDay = toEasternISODateString(game.date);
-      return gameDay === selectedDay;
+      if (!gameDay) {
+        return false;
+      }
+      return gameDay >= start && gameDay <= end;
     });
     filtered.sort((a, b) => {
       const aTime = a.date ? Date.parse(a.date) : Number.NaN;
@@ -578,13 +608,19 @@ form.addEventListener("submit", event => {
   void loadGames(true);
 });
 
-dateInput.addEventListener("change", () => {
+function handleInputChange() {
   void loadGames(true);
-});
+}
 
-dateInput.addEventListener("keydown", event => {
+startInput.addEventListener("change", handleInputChange);
+endInput.addEventListener("change", handleInputChange);
+
+function handleInputKeydown(event: Event) {
   if ((event as KeyboardEvent).key === "Enter") {
     event.preventDefault();
     form.requestSubmit();
   }
-});
+}
+
+startInput.addEventListener("keydown", handleInputKeydown);
+endInput.addEventListener("keydown", handleInputKeydown);
