@@ -26,9 +26,203 @@
   border-color: currentColor;
 }
 
+
 .fun-lab__chart-grid {
   display: grid;
   gap: var(--space-lg);
+}
+
+.fun-lab__showdown {
+  --fun-lab-cat: color-mix(in srgb, var(--color-arc) 75%, white 25%);
+  --fun-lab-dog: color-mix(in srgb, var(--color-accent, #1b998b) 70%, white 30%);
+}
+
+.fun-lab__showdown-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.fun-lab__showdown-chart {
+  min-height: 420px;
+}
+
+.fun-lab__showdown-sidebar {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.fun-lab__showdown-matchup {
+  fill: var(--chart-fg, currentColor);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.fun-lab__showdown-diff {
+  fill: var(--chart-fg-muted, var(--color-muted));
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.fun-lab__showdown-axis line {
+  stroke-width: 1;
+}
+
+.fun-lab__axis-label {
+  fill: var(--chart-fg-muted, var(--color-muted));
+  font-size: 0.78rem;
+}
+
+.fun-lab__showdown-bar {
+  transition: opacity var(--transition-base), filter var(--transition-base);
+}
+
+.fun-lab__showdown-bar:hover,
+.fun-lab__showdown-bar:focus-visible {
+  filter: brightness(1.05);
+}
+
+.fun-lab__crown {
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  border: 1px solid color-mix(in srgb, var(--fun-lab-cat) 45%, transparent);
+  background: color-mix(in srgb, var(--fun-lab-cat) 18%, transparent);
+  display: grid;
+  gap: var(--space-xs);
+  color: color-mix(in srgb, var(--color-ink) 96%, white 4%);
+}
+
+.fun-lab__crown[data-leader="dogs"] {
+  border-color: color-mix(in srgb, var(--fun-lab-dog) 45%, transparent);
+  background: color-mix(in srgb, var(--fun-lab-dog) 18%, transparent);
+}
+
+.fun-lab__crown-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.fun-lab__crown-record,
+.fun-lab__crown-detail {
+  margin: 0;
+}
+
+.fun-lab__crown-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-weight: 600;
+}
+
+.fun-lab__crown-cats {
+  color: color-mix(in srgb, var(--fun-lab-cat) 78%, var(--color-ink) 22%);
+}
+
+.fun-lab__crown-dogs {
+  color: color-mix(in srgb, var(--fun-lab-dog) 78%, var(--color-ink) 22%);
+}
+
+.fun-lab__crown-detail {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.fun-lab__leaderboard {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.fun-lab__leaderboard-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  padding: var(--space-sm);
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
+}
+
+.fun-lab__leaderboard-item[data-leader="cats"] {
+  border-color: color-mix(in srgb, var(--fun-lab-cat) 55%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--fun-lab-cat) 22%, transparent);
+}
+
+.fun-lab__leaderboard-item[data-leader="dogs"] {
+  border-color: color-mix(in srgb, var(--fun-lab-dog) 55%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--fun-lab-dog) 22%, transparent);
+}
+
+.fun-lab__leaderboard-rank {
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  color: var(--color-muted);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.fun-lab__leaderboard-detail {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.fun-lab__leaderboard-series {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-ink) 96%, white 4%);
+}
+
+.fun-lab__leaderboard-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
+  font-size: 0.92rem;
+}
+
+.fun-lab__leaderboard-team {
+  font-weight: 600;
+}
+
+.fun-lab__leaderboard-team--cats {
+  color: color-mix(in srgb, var(--fun-lab-cat) 75%, var(--color-ink) 25%);
+}
+
+.fun-lab__leaderboard-team--dogs {
+  color: color-mix(in srgb, var(--fun-lab-dog) 75%, var(--color-ink) 25%);
+}
+
+.fun-lab__leaderboard-score {
+  font-variant-numeric: tabular-nums;
+}
+
+.fun-lab__leaderboard-meta {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.fun-lab__leaderboard-empty {
+  padding: var(--space-md);
+  text-align: center;
+  border-radius: var(--radius-card);
+  border: 1px dashed color-mix(in srgb, var(--color-ink) 18%, transparent);
+  color: var(--color-muted);
+  background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+}
+
+.fun-lab__showdown-footnote {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-muted);
 }
 
 .fun-lab__chart-surface {
@@ -186,11 +380,23 @@
   .fun-lab__chart-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
   }
+  .fun-lab__showdown-grid {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 48rem) {
   .fun-lab__meta {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .fun-lab__showdown-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fun-lab__leaderboard-rank {
+    inline-size: 1.9rem;
+    block-size: 1.9rem;
+    font-size: 0.85rem;
   }
 }

@@ -1,0 +1,178 @@
+{
+  "generated_at": "2025-01-08T00:00:00Z",
+  "notes": [
+    "Totals marked with \"+\" reflect the counts cited in the linked releases. Later games have nudged those series a little higher.",
+    "Kentucky–Georgia figures follow Georgia's game notes for the Jan. 7, 2025 meeting, billed as the 161st clash (132-27 Wildcats)."
+  ],
+  "matchups": [
+    {
+      "slug": "washington-washington-state",
+      "rank": 1,
+      "series": "Washington Huskies vs Washington State Cougars",
+      "total_games": 297,
+      "cat": {
+        "program": "Washington State",
+        "mascot": "Cougars",
+        "wins": 111
+      },
+      "dog": {
+        "program": "Washington",
+        "mascot": "Huskies",
+        "wins": 186
+      }
+    },
+    {
+      "slug": "princeton-yale",
+      "rank": 2,
+      "series": "Princeton Tigers vs Yale Bulldogs",
+      "total_games": 247,
+      "total_games_display": "247+",
+      "updated_through": "2023-02-15",
+      "note": "Series record cited through Feb. 15, 2023; later meetings push the total slightly higher.",
+      "cat": {
+        "program": "Princeton",
+        "mascot": "Tigers",
+        "wins": 151
+      },
+      "dog": {
+        "program": "Yale",
+        "mascot": "Bulldogs",
+        "wins": 96
+      }
+    },
+    {
+      "slug": "columbia-yale",
+      "rank": 3,
+      "series": "Columbia Lions vs Yale Bulldogs",
+      "total_games": 234,
+      "total_games_display": "234+",
+      "updated_through": "2018-02-09",
+      "note": "Record reported through Feb. 9, 2018; subsequent games extend the tally.",
+      "cat": {
+        "program": "Columbia",
+        "mascot": "Lions",
+        "wins": 109
+      },
+      "dog": {
+        "program": "Yale",
+        "mascot": "Bulldogs",
+        "wins": 125
+      }
+    },
+    {
+      "slug": "lsu-mississippi-state",
+      "rank": 4,
+      "series": "LSU Tigers vs Mississippi State Bulldogs",
+      "total_games": 221,
+      "cat": {
+        "program": "LSU",
+        "mascot": "Tigers",
+        "wins": 114
+      },
+      "dog": {
+        "program": "Mississippi State",
+        "mascot": "Bulldogs",
+        "wins": 107
+      }
+    },
+    {
+      "slug": "auburn-georgia",
+      "rank": 5,
+      "series": "Auburn Tigers vs Georgia Bulldogs",
+      "total_games": 200,
+      "cat": {
+        "program": "Auburn",
+        "mascot": "Tigers",
+        "wins": 104
+      },
+      "dog": {
+        "program": "Georgia",
+        "mascot": "Bulldogs",
+        "wins": 96
+      }
+    },
+    {
+      "slug": "kentucky-georgia",
+      "rank": 6,
+      "series": "Kentucky Wildcats vs Georgia Bulldogs",
+      "total_games": 161,
+      "total_games_display": "161 (est.)",
+      "updated_through": "2025-01-07",
+      "note": "Georgia lists the Jan. 7, 2025 contest as the 161st meeting with Kentucky leading 132-27.",
+      "cat": {
+        "program": "Kentucky",
+        "mascot": "Wildcats",
+        "wins": 132
+      },
+      "dog": {
+        "program": "Georgia",
+        "mascot": "Bulldogs",
+        "wins": 27
+      }
+    },
+    {
+      "slug": "auburn-mississippi-state",
+      "rank": 7,
+      "series": "Auburn Tigers vs Mississippi State Bulldogs",
+      "total_games": 155,
+      "cat": {
+        "program": "Auburn",
+        "mascot": "Tigers",
+        "wins": 84
+      },
+      "dog": {
+        "program": "Mississippi State",
+        "mascot": "Bulldogs",
+        "wins": 71
+      }
+    },
+    {
+      "slug": "clemson-nc-state",
+      "rank": 8,
+      "series": "Clemson Tigers vs NC State Wolfpack",
+      "total_games": 141,
+      "cat": {
+        "program": "Clemson",
+        "mascot": "Tigers",
+        "wins": 57
+      },
+      "dog": {
+        "program": "NC State",
+        "mascot": "Wolfpack",
+        "wins": 84
+      }
+    },
+    {
+      "slug": "kentucky-mississippi-state",
+      "rank": 9,
+      "series": "Kentucky Wildcats vs Mississippi State Bulldogs",
+      "total_games": 125,
+      "cat": {
+        "program": "Kentucky",
+        "mascot": "Wildcats",
+        "wins": 104
+      },
+      "dog": {
+        "program": "Mississippi State",
+        "mascot": "Bulldogs",
+        "wins": 21
+      }
+    },
+    {
+      "slug": "arizona-washington",
+      "rank": 10,
+      "series": "Arizona Wildcats vs Washington Huskies",
+      "total_games": 92,
+      "cat": {
+        "program": "Arizona",
+        "mascot": "Wildcats",
+        "wins": 61
+      },
+      "dog": {
+        "program": "Washington",
+        "mascot": "Huskies",
+        "wins": 31
+      }
+    }
+  ]
+}
