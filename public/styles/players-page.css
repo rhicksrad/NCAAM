@@ -118,67 +118,77 @@
 }
 
 .leaderboard-chart {
-  --leaderboard-gap: clamp(0.85rem, 1.8vw, 1.35rem);
-  --leaderboard-name-size: clamp(1.05rem, 2vw, 1.45rem);
-  --leaderboard-team-size: clamp(0.78rem, 1.4vw, 0.98rem);
-  --leaderboard-rank-size: clamp(1rem, 1.9vw, 1.4rem);
-  --leaderboard-value-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  --leaderboard-gap: clamp(0.75rem, 1.8vw, 1.2rem);
+  --leaderboard-name-size: clamp(1.05rem, 2.1vw, 1.5rem);
+  --leaderboard-team-size: clamp(0.78rem, 1.5vw, 0.98rem);
+  --leaderboard-rank-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  --leaderboard-value-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  --leaderboard-axis-size: clamp(0.78rem, 1.35vw, 0.95rem);
   display: flex;
   flex-direction: column;
-  gap: var(--leaderboard-gap);
-  padding: clamp(0.5rem, 1.2vw, 1rem) clamp(0.45rem, 1.4vw, 1.2rem)
-    clamp(0.75rem, 1.6vw, 1.4rem);
+  gap: calc(var(--leaderboard-gap) * 0.85);
+  padding: clamp(1.1rem, 2.3vw, 1.75rem);
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--chart-bg) 94%, transparent) 0%,
+    color-mix(in srgb, var(--chart-bg) 84%, transparent) 100%
+  );
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-grid) 38%, transparent),
+    0 18px 40px color-mix(in srgb, var(--chart-accent-muted) 24%, transparent);
+  backdrop-filter: blur(6px);
 }
 
 .leaderboard-chart__rows {
   display: flex;
   flex-direction: column;
-  gap: var(--leaderboard-gap);
+  gap: calc(var(--leaderboard-gap) * 0.9);
 }
 
 .leaderboard-chart__row {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.55fr);
   align-items: center;
-  gap: clamp(0.85rem, 2vw, 2.1rem);
-  padding: clamp(0.7rem, 1.6vw, 1.15rem) clamp(0.75rem, 1.9vw, 1.4rem);
-  border-radius: 1rem;
-  background: color-mix(in srgb, var(--chart-bg) 88%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-grid) 48%, transparent);
-  backdrop-filter: blur(2px);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  padding: clamp(0.85rem, 1.9vw, 1.2rem) clamp(1rem, 2.2vw, 1.6rem);
+  border-radius: 1.35rem;
+  background: color-mix(in srgb, var(--chart-accent-track) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 30%, transparent);
+  color: var(--stat-card-on-accent);
+  text-shadow: 0 1px 0 rgba(9, 16, 28, 0.28);
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
 }
 
-.leaderboard-chart__row[data-rank="1"],
-.leaderboard-chart__row[data-rank="2"],
-.leaderboard-chart__row[data-rank="3"] {
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 32%, transparent),
-    0 18px 36px color-mix(in srgb, var(--chart-accent) 18%, transparent);
-}
-
-.leaderboard-chart__row[data-rank="1"] {
-  background: color-mix(in srgb, var(--chart-accent) 24%, var(--chart-bg) 76%);
-}
-
-.leaderboard-chart__row[data-rank="2"] {
-  background: color-mix(in srgb, var(--chart-accent) 18%, var(--chart-bg) 82%);
-}
-
-.leaderboard-chart__row[data-rank="3"] {
-  background: color-mix(in srgb, var(--chart-accent) 14%, var(--chart-bg) 86%);
+.leaderboard-chart__row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--leaderboard-accent-start, var(--chart-accent)) 94%, transparent) 0%,
+    color-mix(in srgb, var(--leaderboard-accent-end, var(--chart-accent)) 94%, transparent) 100%
+  );
+  transform-origin: left center;
+  transform: scaleX(var(--leaderboard-fill, 0));
+  transition: transform 240ms ease;
+  z-index: -1;
 }
 
 .leaderboard-chart__row:hover,
 .leaderboard-chart__row:focus-within {
   transform: translateY(-2px);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 38%, transparent),
-    0 22px 44px color-mix(in srgb, var(--chart-accent) 22%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--leaderboard-accent-end, var(--chart-accent)) 40%, transparent),
+    0 22px 46px color-mix(in srgb, var(--leaderboard-accent-start, var(--chart-accent)) 28%, transparent);
+  filter: brightness(1.02);
 }
 
 .leaderboard-chart__label {
   display: flex;
   align-items: center;
-  gap: clamp(0.85rem, 1.9vw, 1.5rem);
+  gap: clamp(0.75rem, 1.7vw, 1.4rem);
   min-width: 0;
 }
 
@@ -187,48 +197,42 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: clamp(2.4rem, 3.2vw, 2.95rem);
+  width: clamp(2.1rem, 3vw, 2.6rem);
   aspect-ratio: 1 / 1;
-  border-radius: 0.9rem;
+  border-radius: 0.85rem;
   font-size: var(--leaderboard-rank-size);
   font-weight: 800;
-  color: var(--stat-card-on-accent);
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--chart-accent) 88%, black 12%),
-    color-mix(in srgb, var(--chart-accent) 68%, black 32%)
-  );
-  box-shadow: 0 12px 24px color-mix(in srgb, var(--chart-accent) 32%, transparent);
+  background: color-mix(in srgb, white 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, white 32%, transparent);
 }
 
 .leaderboard-chart__identity {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.2rem, 0.6vw, 0.35rem);
+  gap: clamp(0.15rem, 0.5vw, 0.35rem);
   min-width: 0;
 }
 
 .leaderboard-chart__name {
   font-size: calc(var(--leaderboard-name-size) * var(--name-scale, 1));
   font-weight: 750;
-  line-height: 1.12;
-  color: var(--stat-card-ink);
+  line-height: 1.15;
   overflow-wrap: anywhere;
 }
 
 .leaderboard-chart__team {
   font-size: calc(var(--leaderboard-team-size) * var(--team-scale, 1));
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   font-weight: 650;
-  color: var(--stat-card-muted);
-  opacity: 0.9;
+  color: color-mix(in srgb, white 82%, rgba(12, 22, 45, 0.18) 18%);
 }
 
 .leaderboard-chart__metrics {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: clamp(0.75rem, 1.8vw, 1.35rem);
+  gap: clamp(0.5rem, 1.4vw, 0.9rem);
   min-width: 0;
 }
 
@@ -236,11 +240,11 @@
   --fill: var(--leaderboard-fill, 0);
   position: relative;
   flex: 1;
-  height: clamp(0.85rem, 1.9vw, 1.25rem);
+  height: clamp(0.65rem, 1.6vw, 1rem);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--chart-accent-track) 60%, transparent);
+  background: color-mix(in srgb, var(--chart-accent-track) 55%, rgba(255, 255, 255, 0.15));
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 22%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chart-accent) 30%, transparent);
 }
 
 .leaderboard-chart__meter::after {
@@ -249,20 +253,84 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--chart-accent-muted) 58%, white 12%),
-    color-mix(in srgb, var(--chart-accent) 92%, white 4%)
+    color-mix(in srgb, var(--chart-accent-muted) 45%, white 15%) 0%,
+    color-mix(in srgb, var(--chart-accent) 85%, white 8%) 100%
   );
   transform: scaleX(var(--fill));
   transform-origin: left center;
-  transition: transform 280ms ease-out;
-  box-shadow: 0 14px 28px color-mix(in srgb, var(--chart-accent) 32%, transparent);
+  transition: transform 260ms ease;
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--chart-accent) 28%, transparent);
 }
 
 .leaderboard-chart__value {
   font-size: var(--leaderboard-value-size);
   font-weight: 800;
-  color: var(--stat-card-ink);
+  color: color-mix(in srgb, white 92%, rgba(12, 22, 45, 0.14) 8%);
   min-width: max-content;
+}
+
+.leaderboard-chart__axis {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.55rem, 1.3vw, 0.85rem);
+  margin-top: calc(var(--leaderboard-gap) * 0.6);
+}
+
+.leaderboard-chart__axis-track {
+  position: relative;
+  height: 1px;
+  background: color-mix(in srgb, var(--chart-grid) 52%, transparent);
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.leaderboard-chart__axis-track::after {
+  content: "";
+  position: absolute;
+  inset: -0.3rem 0 auto;
+  height: 0.3rem;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--chart-accent-muted) 35%, transparent) 0%,
+    color-mix(in srgb, var(--chart-accent-muted) 55%, transparent) 100%
+  );
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.leaderboard-chart__axis-tick {
+  position: absolute;
+  inset-inline-start: clamp(0rem, var(--tick-position, 0) * 100%, 100%);
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.3rem, 0.8vw, 0.5rem);
+  font-size: var(--leaderboard-axis-size);
+  font-weight: 650;
+  color: color-mix(in srgb, var(--stat-card-muted) 82%, white 18%);
+  text-shadow: none;
+  z-index: 1;
+}
+
+.leaderboard-chart__axis-tick::before {
+  content: "";
+  width: 1px;
+  height: clamp(0.5rem, 1vw, 0.75rem);
+  background: color-mix(in srgb, var(--chart-grid) 68%, transparent);
+  border-radius: 999px;
+}
+
+.leaderboard-chart__axis-label {
+  align-self: flex-end;
+  font-size: var(--leaderboard-axis-size);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--stat-card-muted) 85%, white 15%);
 }
 
 @media (max-width: 1260px) {
