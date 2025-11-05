@@ -2,7 +2,7 @@
  * Basic categorical bar chart example.
  */
 
-import { select } from "d3-selection";
+import { select } from "d3";
 import { buildScales, drawAxes, drawGrid } from "../src/lib/charts/axes";
 import { computeInnerSize, createSVG } from "../src/lib/charts/frame";
 import { renderBars } from "../src/lib/charts/series/bar";

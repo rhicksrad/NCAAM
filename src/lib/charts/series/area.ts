@@ -3,9 +3,13 @@
  * @module charts/series/area
  */
 
-import { area as d3Area, curveLinear, curveMonotoneX } from "d3-shape";
-import { select } from "d3-selection";
-import type { Selection } from "d3-selection";
+import {
+  area as d3Area,
+  curveLinear,
+  curveMonotoneX,
+  select,
+  type Selection
+} from "d3";
 import type { BuiltScales } from "../axes.js";
 import { ChartTheme, defaultTheme } from "../theme.js";
 
