@@ -1,4 +1,4 @@
-import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select } from "../lib/vendor/d3-bundle.js";
+import { arc as d3Arc, axisBottom, format as d3Format, pie as d3Pie, scaleBand, scaleLinear, select, } from "../lib/vendor/d3-bundle.js";
 import { createChartContainer } from "../lib/charts/container.js";
 import { setChartDefaults } from "../lib/charts/defaults.js";
 import { computeInnerSize, createSVG, pixelAlign } from "../lib/charts/frame.js";
@@ -25,36 +25,29 @@ app.innerHTML = `
         <a id="fun-lab-download" href="${DATA_URL}" download>Download mascot JSON</a>
       </div>
     </section>
-    <section class="card stack fun-lab__archetype" data-gap="md">
+    <section class="card stack fun-lab__archetype" data-gap="lg">
       <header class="stack" data-gap="xs">
-        <h2 class="section-title">Mascot archetype share</h2>
-        <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype shares…</p>
+        <h2 class="section-title">Mascot archetype index</h2>
+        <p id="fun-lab-chart-summary" class="section-summary">Crunching archetype insights…</p>
       </header>
-      <div class="fun-lab__chart-grid">
+      <div class="fun-lab__feature-grid">
         <article class="viz-card fun-lab__chart-card">
           <div id="fun-lab-chart" class="fun-lab__chart-surface viz-canvas" role="presentation"></div>
         </article>
-        <div id="fun-lab-legend" class="fun-lab__legend" aria-live="polite"></div>
-      </div>
-    </section>
-    <section class="card stack fun-lab__index" data-gap="md">
-      <header class="stack" data-gap="xs">
-        <h2 class="section-title">Division I mascot index</h2>
-        <p class="section-summary">Sort, regroup, and remix each program’s mascot archetype for future Fun Lab experiments.</p>
-      </header>
-      <div class="table-shell fun-lab__table-shell">
-        <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
-          <thead>
-            <tr>
-              <th scope="col">Program</th>
-              <th scope="col">Mascot</th>
-              <th scope="col">Category</th>
-              <th scope="col">Family</th>
-              <th scope="col">Conference</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <div class="table-shell fun-lab__table-shell">
+          <table id="fun-lab-table" aria-label="Division I mascot taxonomy index">
+            <thead>
+              <tr>
+                <th scope="col">Program</th>
+                <th scope="col">Mascot</th>
+                <th scope="col">Category</th>
+                <th scope="col">Family</th>
+                <th scope="col">Conference</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </section>
     <section id="cats-dogs-section" class="card stack fun-lab__showdown" data-gap="md">
@@ -85,7 +78,6 @@ const summaryEl = document.getElementById("fun-lab-summary");
 const generatedEl = document.getElementById("fun-lab-generated");
 const chartSummaryEl = document.getElementById("fun-lab-chart-summary");
 const chartRoot = document.getElementById("fun-lab-chart");
-const legendRoot = document.getElementById("fun-lab-legend");
 const tableEl = document.getElementById("fun-lab-table");
 const catsDogsSection = document.getElementById("cats-dogs-section");
 const catsDogsSummaryEl = document.getElementById("cats-dogs-summary");
@@ -94,9 +86,8 @@ const catsDogsLeaderboardEl = document.getElementById("cats-dogs-leaderboard");
 const catsDogsCrownEl = document.getElementById("cats-dogs-crown");
 const catsDogsFootnoteEl = document.getElementById("cats-dogs-footnote");
 const chartHandle = chartRoot ? createChartContainer(chartRoot, { ratio: 0.82 }) : null;
-const catsDogsHandle = catsDogsChartEl
-    ? createChartContainer(catsDogsChartEl, { ratio: 0.68 })
-    : null;
+const catsDogsHandle = catsDogsChartEl ? createChartContainer(catsDogsChartEl, { ratio: 0.68 }) : null;
+const expandedGroups = new Set();
 function formatPercent(value) {
     if (!Number.isFinite(value) || value <= 0) {
         return "0.0%";
@@ -213,7 +204,11 @@ function describeCatsDogsSummary(matchups) {
     const tightest = matchups.reduce((closest, matchup) => {
         const margin = Math.abs(matchup.cat.wins - matchup.dog.wins);
         if (closest === null || margin < closest.margin) {
-            const leader = matchup.cat.wins === matchup.dog.wins ? "Cats and dogs" : matchup.cat.wins > matchup.dog.wins ? "Cats" : "Dogs";
+            const leader = matchup.cat.wins === matchup.dog.wins
+                ? "Cats and dogs"
+                : matchup.cat.wins > matchup.dog.wins
+                    ? "Cats"
+                    : "Dogs";
             return { margin, label: matchup.series, leader };
         }
         return closest;
@@ -267,60 +262,6 @@ function describeChartSummary(categories, totalPrograms, activeCategory) {
         return `${top.label} accounts for ${formatPercent(top.count / totalPrograms)} of Division I mascots.`;
     }
     return "No mascot taxonomy available yet.";
-}
-function buildLegend(root, categories, colorByCategory, total, onToggle, activeCategory) {
-    root.innerHTML = "";
-    const list = root.ownerDocument?.createElement("ul") ?? document.createElement("ul");
-    list.className = "fun-lab__legend-list";
-    list.setAttribute("role", "list");
-    categories.forEach((category, index) => {
-        const color = colorByCategory.get(category.slug) ?? resolveColor(index);
-        const item = root.ownerDocument?.createElement("li") ?? document.createElement("li");
-        item.className = "fun-lab__legend-item";
-        item.style.setProperty("--swatch-color", color);
-        item.setAttribute("role", "button");
-        item.tabIndex = 0;
-        const isActive = activeCategory === category.slug;
-        const isDimmed = activeCategory !== null && !isActive;
-        if (isActive) {
-            item.classList.add("fun-lab__legend-item--active");
-        }
-        if (isDimmed) {
-            item.classList.add("fun-lab__legend-item--dimmed");
-        }
-        item.setAttribute("aria-pressed", isActive ? "true" : "false");
-        const swatch = item.ownerDocument.createElement("span");
-        swatch.className = "fun-lab__legend-swatch";
-        swatch.setAttribute("aria-hidden", "true");
-        item.appendChild(swatch);
-        const info = item.ownerDocument.createElement("div");
-        info.className = "fun-lab__legend-info";
-        const label = item.ownerDocument.createElement("span");
-        label.className = "fun-lab__legend-label";
-        label.textContent = category.label;
-        info.appendChild(label);
-        const meta = item.ownerDocument.createElement("span");
-        meta.className = "fun-lab__legend-meta";
-        const percent = formatPercent(category.count / total);
-        meta.innerHTML = `<strong>${percent}</strong> • ${numberFormatter.format(category.count)} programs`;
-        info.appendChild(meta);
-        item.appendChild(info);
-        const handleToggle = () => {
-            onToggle(category.slug);
-        };
-        item.addEventListener("click", event => {
-            event.preventDefault();
-            handleToggle();
-        });
-        item.addEventListener("keydown", event => {
-            if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
-                event.preventDefault();
-                handleToggle();
-            }
-        });
-        list.appendChild(item);
-    });
-    root.appendChild(list);
 }
 function renderChart(categories, total, chartContainer, handle) {
     const colorByCategory = new Map();
@@ -420,87 +361,154 @@ function renderChart(categories, total, chartContainer, handle) {
     return {
         colorByCategory,
         setActiveCategory: (slug) => {
-            if (!arcs) {
-                return;
-            }
-            arcs.each(function (d) {
-                const element = this;
-                const isActive = slug !== null && d.data.slug === slug;
-                const isDimmed = slug !== null && d.data.slug !== slug;
-                element.classList.toggle("fun-lab__arc--dimmed", isDimmed);
-                element.setAttribute("aria-pressed", isActive ? "true" : "false");
-            });
+            activeSlug = slug;
+            applyActiveState();
         },
         onArcToggle: (callback) => {
             arcToggleHandler = callback;
         },
     };
 }
-function renderTable(table, records, colorByCategory) {
-    const tbody = table.tBodies[0] ?? table.createTBody();
-    tbody.innerHTML = "";
+function renderGroupedTable(table, records, categories, colorByCategory, totalPrograms, expanded, activeCategory) {
+    while (table.tBodies.length > 0) {
+        table.removeChild(table.tBodies[0]);
+    }
+    const doc = table.ownerDocument ?? document;
+    const colCount = table.tHead?.rows[0]?.cells.length ?? 5;
     if (records.length === 0) {
-        const row = tbody.insertRow();
+        const body = doc.createElement("tbody");
+        body.className = "fun-lab__group fun-lab__group--empty";
+        const row = body.insertRow();
         const cell = row.insertCell();
-        cell.colSpan = table.tHead?.rows[0]?.cells.length ?? 5;
+        cell.colSpan = colCount;
         cell.className = "fun-lab__cell fun-lab__cell--empty";
         cell.textContent = "No programs match this filter yet.";
+        table.appendChild(body);
         return;
     }
+    const grouped = new Map();
     records.forEach(record => {
-        const row = tbody.insertRow();
-        const programCell = row.insertCell();
-        programCell.className = "fun-lab__cell fun-lab__cell--program";
-        programCell.textContent = record.full_name;
-        const mascotCell = row.insertCell();
-        mascotCell.className = "fun-lab__cell fun-lab__cell--mascot";
-        mascotCell.textContent = record.mascot;
-        const categoryCell = row.insertCell();
-        categoryCell.className = "fun-lab__cell fun-lab__cell--category";
-        const chip = table.ownerDocument?.createElement("span") ?? document.createElement("span");
-        chip.className = "fun-lab__chip";
-        chip.textContent = record.category_label;
-        const color = colorByCategory.get(record.category);
-        if (color) {
-            chip.style.setProperty("--chip-color", color);
-        }
-        categoryCell.appendChild(chip);
-        const familyCell = row.insertCell();
-        familyCell.className = "fun-lab__cell fun-lab__cell--family";
-        familyCell.textContent = record.family_label;
-        const conferenceCell = row.insertCell();
-        conferenceCell.className = "fun-lab__cell fun-lab__cell--conference";
-        if (record.conference) {
-            const label = record.conference.short_name ?? record.conference.name;
-            conferenceCell.textContent = label;
-            if (record.conference.name && record.conference.name !== label) {
-                conferenceCell.title = record.conference.name;
-            }
+        const list = grouped.get(record.category);
+        if (list) {
+            list.push(record);
         }
         else {
-            conferenceCell.textContent = "—";
+            grouped.set(record.category, [record]);
         }
+    });
+    const order = categories.filter(category => grouped.has(category.slug));
+    if (order.length === 0) {
+        const body = doc.createElement("tbody");
+        body.className = "fun-lab__group fun-lab__group--empty";
+        const row = body.insertRow();
+        const cell = row.insertCell();
+        cell.colSpan = colCount;
+        cell.className = "fun-lab__cell fun-lab__cell--empty";
+        cell.textContent = "No programs match this filter yet.";
+        table.appendChild(body);
+        return;
+    }
+    order.forEach((category, index) => {
+        const recordsInGroup = grouped.get(category.slug);
+        if (!recordsInGroup || recordsInGroup.length === 0) {
+            return;
+        }
+        const body = doc.createElement("tbody");
+        body.className = "fun-lab__group";
+        body.dataset.category = category.slug;
+        const color = colorByCategory.get(category.slug) ?? resolveColor(index);
+        body.style.setProperty("--group-color", color);
+        const shouldExpand = activeCategory ? category.slug === activeCategory : expanded.has(category.slug);
+        body.dataset.expanded = shouldExpand ? "true" : "false";
+        const headerRow = body.insertRow();
+        headerRow.className = "fun-lab__group-row";
+        const headerCell = headerRow.insertCell();
+        headerCell.colSpan = colCount;
+        headerCell.className = "fun-lab__group-cell";
+        const toggle = doc.createElement("button");
+        toggle.type = "button";
+        toggle.className = "fun-lab__group-toggle";
+        toggle.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+        const icon = doc.createElement("span");
+        icon.className = "fun-lab__group-icon";
+        icon.setAttribute("aria-hidden", "true");
+        toggle.appendChild(icon);
+        const label = doc.createElement("span");
+        label.className = "fun-lab__group-label";
+        label.textContent = category.label;
+        toggle.appendChild(label);
+        const meta = doc.createElement("span");
+        meta.className = "fun-lab__group-meta";
+        const recordCount = recordsInGroup.length;
+        const share = totalPrograms > 0 ? formatPercent(category.count / totalPrograms) : "0.0%";
+        const programWord = recordCount === 1 ? "program" : "programs";
+        meta.innerHTML = `<strong>${numberFormatter.format(recordCount)}</strong> ${programWord} • ${share}`;
+        toggle.appendChild(meta);
+        const applyExpandedState = (next) => {
+            body.dataset.expanded = next ? "true" : "false";
+            toggle.setAttribute("aria-expanded", next ? "true" : "false");
+            if (next) {
+                expanded.add(category.slug);
+            }
+            else {
+                expanded.delete(category.slug);
+            }
+        };
+        toggle.addEventListener("click", event => {
+            event.preventDefault();
+            const isOpen = body.dataset.expanded === "true";
+            applyExpandedState(!isOpen);
+        });
+        headerCell.appendChild(toggle);
+        recordsInGroup.forEach(record => {
+            const row = body.insertRow();
+            row.className = "fun-lab__group-data";
+            row.dataset.category = category.slug;
+            const programCell = row.insertCell();
+            programCell.className = "fun-lab__cell fun-lab__cell--program";
+            programCell.textContent = record.full_name;
+            const mascotCell = row.insertCell();
+            mascotCell.className = "fun-lab__cell fun-lab__cell--mascot";
+            mascotCell.textContent = record.mascot;
+            const categoryCell = row.insertCell();
+            categoryCell.className = "fun-lab__cell fun-lab__cell--category";
+            const chip = doc.createElement("span");
+            chip.className = "fun-lab__chip";
+            chip.textContent = record.category_label;
+            const chipColor = colorByCategory.get(record.category);
+            if (chipColor) {
+                chip.style.setProperty("--chip-color", chipColor);
+            }
+            categoryCell.appendChild(chip);
+            const familyCell = row.insertCell();
+            familyCell.className = "fun-lab__cell fun-lab__cell--family";
+            familyCell.textContent = record.family_label;
+            const conferenceCell = row.insertCell();
+            conferenceCell.className = "fun-lab__cell fun-lab__cell--conference";
+            if (record.conference) {
+                const labelText = record.conference.short_name ?? record.conference.name;
+                conferenceCell.textContent = labelText;
+                if (record.conference.name && record.conference.name !== labelText) {
+                    conferenceCell.title = record.conference.name;
+                }
+            }
+            else {
+                conferenceCell.textContent = "—";
+            }
+        });
+        if (activeCategory === category.slug) {
+            expanded.add(category.slug);
+        }
+        table.appendChild(body);
     });
 }
 function renderCatsDogsChart(matchups, chartContainer, colorByMatchup, handle) {
-    chartContainer.innerHTML = "";
-    if (matchups.length === 0) {
-        chartContainer.textContent = "No rivalry data available yet.";
-        return {
-            setActiveMatchup: () => {
-                /* noop */
-            },
-            onMatchupToggle: () => {
-                /* noop */
-            },
-        };
-    }
     let segmentsSelection = null;
     let activeSlug = null;
     let toggleHandler = null;
-    const notifyToggle = (next) => {
+    const notifyToggle = (slug) => {
         if (toggleHandler) {
-            toggleHandler(next);
+            toggleHandler(slug);
         }
     };
     const applyActiveState = (slug) => {
@@ -520,8 +528,8 @@ function renderCatsDogsChart(matchups, chartContainer, colorByMatchup, handle) {
                 element.style.strokeWidth = "calc(var(--chart-line-width) * 1.6px)";
             }
             else {
-                element.style.stroke = "";
-                element.style.strokeWidth = "";
+                element.style.stroke = "var(--chart-bg)";
+                element.style.strokeWidth = "calc(var(--chart-line-width) * 0.75px)";
             }
         });
     };
@@ -532,6 +540,10 @@ function renderCatsDogsChart(matchups, chartContainer, colorByMatchup, handle) {
     };
     handle.mount(() => {
         chartContainer.innerHTML = "";
+        if (matchups.length === 0) {
+            chartContainer.textContent = "No rivalry data available yet.";
+            return;
+        }
         const { width, height } = measureContainerSize(chartContainer);
         const margin = {
             top: 32,
@@ -658,7 +670,8 @@ function renderCatsDogsChart(matchups, chartContainer, colorByMatchup, handle) {
                 return `${segment.label}: ${segment.program} ${winsLabel} ${winWord}`;
             });
         });
-        segmentsSelection = chart.selectAll("rect.fun-lab__showdown-segment");
+        segmentsSelection = chart
+            .selectAll("rect.fun-lab__showdown-segment");
         segmentsSelection.on("click", (event, segment) => {
             event.preventDefault();
             toggleMatchup(segment.slug);
@@ -696,7 +709,8 @@ function renderCatsDogsChart(matchups, chartContainer, colorByMatchup, handle) {
             .attr("class", "fun-lab__showdown-axis")
             .attr("transform", `translate(0, ${pixelAlign(ih)})`)
             .call(axis);
-        axisGroup.select(".domain")
+        axisGroup
+            .select(".domain")
             .attr("stroke", "var(--chart-grid)")
             .attr("stroke-opacity", "var(--chart-grid-alpha)")
             .attr("stroke-width", "calc(var(--chart-grid-width) * 1px)");
@@ -845,7 +859,7 @@ function renderCatsDogsFootnote(footnote, payload) {
     footnote.textContent = lines.join(" • ");
 }
 async function loadCatsDogsFeature(context) {
-    const { section, summary, chart, leaderboard, crown, footnote } = context;
+    const { section, summary, chart, leaderboard, crown, footnote, handle } = context;
     summary.textContent = "Sizing up rivalry bragging rights…";
     chart.textContent = "Crunching rivalry scoreboard…";
     leaderboard.innerHTML = "";
@@ -855,7 +869,7 @@ async function loadCatsDogsFeature(context) {
     leaderboard.appendChild(placeholder);
     try {
         const payload = await fetchCatsDogsShowdowns();
-        const sortedMatchups = [...payload.matchups].sort((a, b) => a.rank - b.rank || b.total_games - a.total_games);
+        const sortedMatchups = [...payload.matchups].sort((a, b) => (a.rank - b.rank) || b.total_games - a.total_games);
         const catColor = resolveColor(3, { palette: "warm" });
         const dogColor = resolveColor(2, { palette: "cool" });
         const matchupColors = new Map();
@@ -865,7 +879,7 @@ async function loadCatsDogsFeature(context) {
         section.style.setProperty("--fun-lab-cat", catColor);
         section.style.setProperty("--fun-lab-dog", dogColor);
         summary.textContent = describeCatsDogsSummary(sortedMatchups);
-        const chartControls = renderCatsDogsChart(sortedMatchups, chart, matchupColors, catsDogsHandle);
+        const chartControls = renderCatsDogsChart(sortedMatchups, chart, matchupColors, handle);
         const leaderboardControls = renderCatsDogsLeaderboard(leaderboard, sortedMatchups, matchupColors);
         chartControls.onMatchupToggle(slug => {
             leaderboardControls.setActiveMatchup(slug);
@@ -893,7 +907,6 @@ async function boot() {
     if (!summaryEl ||
         !chartSummaryEl ||
         !chartRoot ||
-        !legendRoot ||
         !tableEl ||
         !generatedEl ||
         !catsDogsSection ||
@@ -911,7 +924,6 @@ async function boot() {
     const summaryNode = summaryEl;
     const chartSummaryNode = chartSummaryEl;
     const chartHost = chartRoot;
-    const legendHost = legendRoot;
     const tableNode = tableEl;
     const generatedNode = generatedEl;
     const catsDogsSectionNode = catsDogsSection;
@@ -920,6 +932,7 @@ async function boot() {
     const catsDogsLeaderboardNode = catsDogsLeaderboardEl;
     const catsDogsCrownNode = catsDogsCrownEl;
     const catsDogsFootnoteNode = catsDogsFootnoteEl;
+    let activeCategory = null;
     try {
         const data = await fetchMascotIndex();
         summaryNode.textContent = describeSummary(data);
@@ -932,17 +945,23 @@ async function boot() {
             }
             return a.category_label.localeCompare(b.category_label, "en-US");
         });
-        let activeCategory = null;
         const handleCategoryToggle = (slug) => {
             const next = activeCategory === slug ? null : slug;
             applyCategoryFilter(next);
         };
         function applyCategoryFilter(next) {
+            const previous = activeCategory;
             activeCategory = next;
+            if (next) {
+                expandedGroups.clear();
+                expandedGroups.add(next);
+            }
+            else if (previous) {
+                expandedGroups.clear();
+            }
             const filteredRecords = next ? sortedRecords.filter(record => record.category === next) : sortedRecords;
-            renderTable(tableNode, filteredRecords, chartControls.colorByCategory);
+            renderGroupedTable(tableNode, filteredRecords, categories, chartControls.colorByCategory, data.total_programs, expandedGroups, next);
             chartControls.setActiveCategory(next);
-            buildLegend(legendHost, categories, chartControls.colorByCategory, data.total_programs, handleCategoryToggle, next);
             chartSummaryNode.textContent = describeChartSummary(categories, data.total_programs, next);
         }
         chartControls.onArcToggle(handleCategoryToggle);
@@ -953,7 +972,13 @@ async function boot() {
         summaryNode.textContent = "We couldn’t load the mascot index. Try refreshing to replay the experiment.";
         chartSummaryNode.textContent = `Load error: ${message}`;
         chartHost.textContent = "No chart data";
-        legendHost.textContent = "";
+        const body = tableNode.tBodies[0] ?? tableNode.createTBody();
+        body.innerHTML = "";
+        const row = body.insertRow();
+        const cell = row.insertCell();
+        cell.colSpan = tableNode.tHead?.rows[0]?.cells.length ?? 5;
+        cell.className = "fun-lab__cell fun-lab__cell--empty";
+        cell.textContent = "No programs match this filter yet.";
     }
     await loadCatsDogsFeature({
         section: catsDogsSectionNode,
@@ -962,6 +987,7 @@ async function boot() {
         leaderboard: catsDogsLeaderboardNode,
         crown: catsDogsCrownNode,
         footnote: catsDogsFootnoteNode,
+        handle: catsDogsHandle,
     });
 }
 void boot();
