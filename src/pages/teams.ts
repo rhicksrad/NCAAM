@@ -14,6 +14,10 @@ import {
   getTeamLogoUrl,
   getTeamMonogram,
 } from "../lib/ui/logos.js";
+import {
+  renderLeaderboardCards,
+  type LeaderboardCardDefinition,
+} from "../lib/leaderboards/render.js";
 import { requireOk } from "../lib/health.js";
 
 type TeamLocation = {
@@ -284,19 +288,6 @@ const twoDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDi
 const threeDecimalFormatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 const percentFormatter = new Intl.NumberFormat(undefined, { style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
-const NAME_SCALE_MIN = 0.72;
-const NAME_SCALE_MAX = 1;
-const NAME_SCALE_START = 20;
-const NAME_SCALE_END = 42;
-const MIN_VISIBLE_RATIO = 0.085;
-
-const CARD_TONE_CLASSES = [
-  "stat-card--tone-1",
-  "stat-card--tone-2",
-  "stat-card--tone-3",
-  "stat-card--tone-4",
-] as const;
-
 function formatNumber(value: number | null | undefined, formatter: Intl.NumberFormat) {
   return value == null ? null : formatter.format(value);
 }
@@ -454,6 +445,7 @@ function renderLeaderboard(teams: TeamCardData[]) {
     title: string;
     seasonLabel: string;
     ariaLabel: string;
+    axisLabel?: string;
     sort?: "asc" | "desc";
     formatValue: (team: TeamCardData, averages: TeamAverages) => string | null;
     getValue: (averages: TeamAverages) => number | null;
@@ -464,6 +456,7 @@ function renderLeaderboard(teams: TeamCardData[]) {
       key: "record",
       title: "Best average record",
       seasonLabel: "Avg win %",
+      axisLabel: "Win %",
       ariaLabel: "Top 10 Division I programs by average win percentage",
       formatValue: (_team, averages) => {
         const averageRecord = formatRecord(averages.wins, averages.losses, { decimals: 1 });
@@ -477,7 +470,7 @@ function renderLeaderboard(teams: TeamCardData[]) {
         const percentage = percentFormatter.format(winPct);
         return averageRecord ? `${averageRecord} (${percentage})` : percentage;
       },
-      getValue: averages => {
+      getValue: (averages) => {
         const winPct = computeWinPercentage(averages.wins, averages.losses);
         return winPct == null ? null : winPct;
       },
@@ -487,25 +480,28 @@ function renderLeaderboard(teams: TeamCardData[]) {
       title: "Top offensive efficiency",
       seasonLabel: "Avg AdjO",
       ariaLabel: "Top 10 Division I programs by average offensive efficiency",
+      axisLabel: "Avg AdjO",
       formatValue: (_team, averages) => formatNumber(averages.adjO, oneDecimalFormatter),
-      getValue: averages => averages.adjO ?? null,
+      getValue: (averages) => averages.adjO ?? null,
     },
     {
       key: "adjD",
       title: "Top defensive efficiency",
       seasonLabel: "Avg AdjD ↓",
       ariaLabel: "Top 10 Division I programs by average defensive efficiency (lower is better)",
+      axisLabel: "Avg AdjD",
       sort: "asc",
       formatValue: (_team, averages) => formatNumber(averages.adjD, oneDecimalFormatter),
-      getValue: averages => (averages.adjD == null ? null : averages.adjD),
+      getValue: (averages) => (averages.adjD == null ? null : averages.adjD),
     },
     {
       key: "barthag",
       title: "Program BARTHAG leaders",
       seasonLabel: "Avg BARTHAG",
       ariaLabel: "Top 10 Division I programs by average BARTHAG",
+      axisLabel: "Avg BARTHAG",
       formatValue: (_team, averages) => formatNumber(averages.barthag, threeDecimalFormatter),
-      getValue: averages => averages.barthag ?? null,
+      getValue: (averages) => averages.barthag ?? null,
     },
   ];
 
@@ -513,7 +509,7 @@ function renderLeaderboard(teams: TeamCardData[]) {
 
   for (const metric of metricDefinitions) {
     const ranked = teamsWithSummaries
-      .map(team => {
+      .map((team) => {
         const averages = team.stats?.averages;
         if (!averages) {
           return null;
@@ -565,138 +561,55 @@ function renderLeaderboard(teams: TeamCardData[]) {
   }
 
   leaderboardRoot.innerHTML = "";
-  const doc = leaderboardRoot.ownerDocument;
 
-  metricDefinitions.forEach((metric, cardIndex) => {
+  const cards: LeaderboardCardDefinition[] = [];
+  metricDefinitions.forEach((metric) => {
     const ranking = metricRankings.get(metric.key);
     if (!ranking || ranking.length === 0) {
       return;
     }
 
-    const card = doc.createElement("article");
-    card.className = "stat-card teams-leaderboard__card";
-    const toneClass = CARD_TONE_CLASSES[cardIndex % CARD_TONE_CLASSES.length];
-    card.classList.add(toneClass);
+    const topTeam = ranking[0]?.team;
+    const leaders = ranking.map((entry) => ({
+      name: entry.team.full_name,
+      team: resolveConferenceLabel(entry.team),
+      value: entry.value,
+      valueFormatted: entry.display,
+    }));
 
-    const leader = ranking[0]?.team;
-    if (leader?.accentPrimary) {
-      card.style.setProperty("--chart-accent", leader.accentPrimary);
-      const secondary = leader.accentSecondary ?? leader.accentPrimary;
-      card.style.setProperty("--chart-accent-muted", `color-mix(in srgb, ${secondary} 55%, white 45%)`);
-      card.style.setProperty("--chart-accent-track", `color-mix(in srgb, ${secondary} 22%, white 78%)`);
-      card.style.setProperty("--chart-accent-stroke", `color-mix(in srgb, ${leader.accentPrimary} 78%, black 22%)`);
+    const card: LeaderboardCardDefinition = {
+      id: metric.key,
+      title: metric.title,
+      seasonLabel: metric.seasonLabel,
+      ariaLabel: metric.ariaLabel,
+      axisLabel: metric.axisLabel ?? metric.title,
+      direction: metric.sort === "asc" ? "asc" : "desc",
+      leaders,
+      className: "teams-leaderboard__card",
+    };
+
+    if (topTeam?.accentPrimary) {
+      card.accent = {
+        primary: topTeam.accentPrimary,
+        secondary: topTeam.accentSecondary ?? topTeam.accentPrimary,
+      };
     }
 
-    const header = doc.createElement("header");
-    header.className = "stat-card__head";
-
-    const title = doc.createElement("h3");
-    title.className = "stat-card__title";
-    title.textContent = metric.title;
-    header.appendChild(title);
-
-    const season = doc.createElement("span");
-    season.className = "stat-card__season";
-    season.textContent = metric.seasonLabel;
-    header.appendChild(season);
-
-    card.appendChild(header);
-
-    const body = doc.createElement("div");
-    body.className = "stat-card__body";
-    card.appendChild(body);
-
-    const chart = doc.createElement("div");
-    chart.className = "stat-card__chart leaderboard-chart";
-    chart.setAttribute("role", "group");
-    chart.setAttribute("aria-label", metric.ariaLabel);
-    body.appendChild(chart);
-
-    const rows = doc.createElement("div");
-    rows.className = "leaderboard-chart__rows";
-    chart.appendChild(rows);
-
-    const values = ranking.map(entry => entry.value);
-    const maxValue = Math.max(...values);
-    const minValue = Math.min(...values);
-    const range = maxValue - minValue;
-    const prefersLower = metric.sort === "asc";
-
-    ranking.forEach((entry, index) => {
-      const row = doc.createElement("div");
-      row.className = "leaderboard-chart__row";
-      row.dataset.rank = String(index + 1);
-
-      const label = doc.createElement("div");
-      label.className = "leaderboard-chart__label";
-      row.appendChild(label);
-
-      const rank = doc.createElement("span");
-      rank.className = "leaderboard-chart__rank";
-      rank.textContent = String(index + 1).padStart(2, "0");
-      label.appendChild(rank);
-
-      const identity = doc.createElement("div");
-      identity.className = "leaderboard-chart__identity";
-      label.appendChild(identity);
-
-      const name = doc.createElement("span");
-      name.className = "leaderboard-chart__name";
-      name.textContent = entry.team.full_name;
-      identity.appendChild(name);
-
-      const conferenceLabel = resolveConferenceLabel(entry.team);
-      if (conferenceLabel) {
-        const conference = doc.createElement("span");
-        conference.className = "leaderboard-chart__team";
-        conference.textContent = conferenceLabel;
-        identity.appendChild(conference);
-      }
-
-      const metrics = doc.createElement("div");
-      metrics.className = "leaderboard-chart__metrics";
-      row.appendChild(metrics);
-
-      const meter = doc.createElement("div");
-      meter.className = "leaderboard-chart__meter";
-
-      let ratio: number;
-      if (!Number.isFinite(range) || range <= 0) {
-        ratio = 1;
-      } else if (prefersLower) {
-        ratio = (maxValue - entry.value) / range;
-      } else {
-        ratio = (entry.value - minValue) / range;
-      }
-      const safeRatio = ratio > 0 ? Math.max(ratio, MIN_VISIBLE_RATIO) : 0;
-      meter.style.setProperty("--leaderboard-fill", `${Math.min(safeRatio, 1)}`);
-      metrics.appendChild(meter);
-
-      const value = doc.createElement("span");
-      value.className = "leaderboard-chart__value";
-      value.textContent = entry.display;
-      metrics.appendChild(value);
-
-      const scaleLabel = conferenceLabel ? `${entry.team.full_name} ${conferenceLabel}` : entry.team.full_name;
-      const baseScale = computeNameScale(scaleLabel);
-      row.style.setProperty("--name-scale", `${baseScale}`);
-      if (conferenceLabel) {
-        const teamScale = Math.max(NAME_SCALE_MIN, Math.min(NAME_SCALE_MAX, baseScale + 0.08));
-        row.style.setProperty("--team-scale", `${teamScale}`);
-      }
-
-      rows.appendChild(row);
-    });
-
-    leaderboardRoot.appendChild(card);
+    cards.push(card);
   });
 
-  if (!leaderboardRoot.childElementCount) {
+  if (!cards.length) {
     if (leaderboardMeta) {
       leaderboardMeta.textContent = "Efficiency leaderboard unavailable right now.";
     }
     leaderboardRoot.innerHTML = `<p class="stat-card stat-card--empty">Team efficiency data unavailable right now.</p>`;
+    return;
   }
+
+  renderLeaderboardCards(leaderboardRoot, cards, {
+    axisTickCount: 6,
+    limit: 10,
+  });
 }
 
 function resolveConferenceLabel(team: TeamCardData): string | null {
@@ -707,19 +620,6 @@ function resolveConferenceLabel(team: TeamCardData): string | null {
     return `${team.conferenceShortName} · ${team.conference}`;
   }
   return team.conference;
-}
-
-function computeNameScale(label: string): number {
-  const length = label.length;
-  if (length <= NAME_SCALE_START) {
-    return NAME_SCALE_MAX;
-  }
-  if (length >= NAME_SCALE_END) {
-    return NAME_SCALE_MIN;
-  }
-  const progress = (length - NAME_SCALE_START) / (NAME_SCALE_END - NAME_SCALE_START);
-  const scale = NAME_SCALE_MAX - progress * (NAME_SCALE_MAX - NAME_SCALE_MIN);
-  return Number(scale.toFixed(3));
 }
 
 const teamsWithLocations = data.filter(team => team.location);
