@@ -7,6 +7,7 @@
     "archetype"
     "showdown"
     "arena";
+  color: #fff;
 }
 
 .fun-lab__intro {
@@ -37,7 +38,7 @@
   flex-wrap: wrap;
   gap: var(--space-sm);
   align-items: center;
-  color: var(--color-muted);
+  color: #fff;
   font-size: 0.95rem;
 }
 
@@ -51,8 +52,8 @@
 
 .fun-lab__meta a:hover,
 .fun-lab__meta a:focus-visible {
-  color: color-mix(in srgb, var(--color-arc) 70%, white 30%);
-  border-color: currentColor;
+  color: #fff;
+  border-color: #fff;
 }
 
 .fun-lab__chart-card {
@@ -77,7 +78,7 @@
 .fun-lab__chart-total--caption {
   font-size: 0.85rem;
   font-weight: 500;
-  fill: var(--chart-fg-muted, var(--color-muted));
+  fill: #fff;
 }
 
 svg.chart text.fun-lab__chart-total {
@@ -85,7 +86,7 @@ svg.chart text.fun-lab__chart-total {
 }
 
 svg.chart text.fun-lab__chart-total--caption {
-  fill: var(--chart-fg-muted, var(--color-muted));
+  fill: #fff;
 }
 
 .fun-lab__arc {
@@ -111,7 +112,7 @@ svg.chart text.fun-lab__chart-total--caption {
   font-size: 0.85rem;
   font-weight: 600;
   background: color-mix(in srgb, var(--chip-color, var(--color-arc)) 20%, transparent);
-  color: color-mix(in srgb, var(--chip-color, var(--color-arc)) 90%, white 10%);
+  color: #fff;
   border: 1px solid color-mix(in srgb, var(--chip-color, var(--color-arc)) 55%, transparent);
 }
 
@@ -148,7 +149,7 @@ svg.chart text.fun-lab__chart-total--caption {
   border-radius: calc(var(--radius-card) * 0.85);
   background: color-mix(in srgb, var(--group-color) 16%, transparent);
   box-shadow: inset 0 1px 0 color-mix(in srgb, white 35%, transparent);
-  color: #0f1a2b;
+  color: #fff;
   font-weight: 600;
   font-size: 0.97rem;
   cursor: pointer;
@@ -177,7 +178,7 @@ svg.chart text.fun-lab__chart-total--caption {
   place-items: center;
   border-radius: 999px;
   background: color-mix(in srgb, var(--group-color) 25%, transparent);
-  color: color-mix(in srgb, var(--group-color) 82%, white 18%);
+  color: #fff;
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--group-color) 45%, transparent);
 }
 
@@ -194,7 +195,7 @@ svg.chart text.fun-lab__chart-total--caption {
 .fun-lab__group-label {
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #0a1322;
+  color: #fff;
 }
 
 .fun-lab__group-meta {
@@ -203,11 +204,11 @@ svg.chart text.fun-lab__chart-total--caption {
   gap: 0.1rem;
   text-align: right;
   font-size: 0.78rem;
-  color: color-mix(in srgb, #0a1322 72%, #4b5563 28%);
+  color: #fff;
 }
 
 .fun-lab__group-meta strong {
-  color: color-mix(in srgb, var(--color-ink) 98%, white 2%);
+  color: #fff;
 }
 
 .fun-lab__group-data {
@@ -293,13 +294,13 @@ svg.chart text.fun-lab__chart-total--caption {
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: color-mix(in srgb, var(--color-ink) 94%, white 6%);
+  color: #fff;
 }
 
 .fun-lab__showdown-legend-item dd {
   margin: 0;
   font-size: 0.82rem;
-  color: color-mix(in srgb, var(--color-ink) 82%, white 18%);
+  color: #fff;
 }
 
 .fun-lab__showdown-swatch {
@@ -324,7 +325,7 @@ svg.chart text.fun-lab__chart-total--caption {
 }
 
 .fun-lab__showdown-value {
-  fill: color-mix(in srgb, white 90%, transparent);
+  fill: #fff;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -332,7 +333,7 @@ svg.chart text.fun-lab__chart-total--caption {
 }
 
 .fun-lab__showdown-axis text {
-  fill: color-mix(in srgb, white 86%, transparent);
+  fill: #fff;
   font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -343,7 +344,7 @@ svg.chart text.fun-lab__chart-total--caption {
 }
 
 .fun-lab__axis-label {
-  fill: color-mix(in srgb, white 80%, transparent);
+  fill: #fff;
   font-size: 0.74rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -352,7 +353,7 @@ svg.chart text.fun-lab__chart-total--caption {
 .fun-lab__showdown-footnote {
   margin: 0;
   font-size: 0.82rem;
-  color: var(--color-muted);
+  color: #fff;
 }
 
 .fun-lab__table-shell tbody td {
@@ -361,15 +362,15 @@ svg.chart text.fun-lab__chart-total--caption {
 
 .fun-lab__cell--program {
   font-weight: 600;
-  color: color-mix(in srgb, var(--color-ink) 95%, white 5%);
+  color: #fff;
 }
 
 .fun-lab__cell--mascot {
-  color: color-mix(in srgb, var(--color-ink) 90%, white 10%);
+  color: #fff;
 }
 
 .fun-lab__cell--family {
-  color: var(--color-muted);
+  color: #fff;
 }
 
 .fun-lab__cell--conference {
@@ -379,7 +380,7 @@ svg.chart text.fun-lab__chart-total--caption {
 .fun-lab__cell--empty {
   text-align: center;
   padding-block: var(--space-lg);
-  color: var(--color-muted);
+  color: #fff;
   font-style: italic;
 }
 
