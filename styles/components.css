@@ -1202,6 +1202,29 @@ details[open] > summary .disclosure-indicator::after {
   box-shadow: var(--shadow-focus);
 }
 
+.games-controls__field select {
+  appearance: none;
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-radius: 0.65rem;
+  padding: 0.45rem 2.25rem 0.45rem 0.65rem;
+  color: var(--color-ink);
+  min-height: 2.4rem;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  width: 100%;
+  background-image: linear-gradient(45deg, transparent 50%, color-mix(in srgb, var(--color-ink) 25%, transparent) 50%),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-ink) 25%, transparent) 50%, transparent 50%),
+    linear-gradient(to right, color-mix(in srgb, var(--color-ink) 12%, transparent), color-mix(in srgb, var(--color-ink) 12%, transparent));
+  background-position: calc(100% - 1.15rem) 1.05rem, calc(100% - 0.6rem) 1.05rem, calc(100% - 2.25rem) 0.1rem;
+  background-size: 0.6rem 0.6rem, 0.6rem 0.6rem, 1px 80%;
+  background-repeat: no-repeat;
+}
+
+.games-controls__field select:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
 .standings-controls {
   display: flex;
   flex-direction: column;
