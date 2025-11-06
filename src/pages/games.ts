@@ -1,6 +1,6 @@
 import { BASE } from "../lib/config.js";
 import { getGamePlayByPlay, type PlayByPlayEvent } from "../lib/api/ncaam.js";
-import { NCAAM, type Game } from "../lib/sdk/ncaam.js";
+import { NCAAM, type Game, type Conference } from "../lib/sdk/ncaam.js";
 import {
   getTeamAccentColors,
   getTeamLogoUrl,
@@ -48,6 +48,19 @@ type PlaySummary = {
   clockLabel: string | null;
 };
 
+type ConferenceOption = {
+  id: number;
+  name: string;
+  shortName: string | null;
+};
+
+type ConferenceFilter =
+  | { type: "all" }
+  | { type: "conference"; id: number }
+  | { type: "independent" };
+
+const INDEPENDENT_FILTER_VALUE = "independent";
+
 function isLiveStatus(status: StatusDescriptor): boolean {
   const label = typeof status.label === "string" ? status.label.trim().toLowerCase() : "";
   return label === "live";
@@ -69,6 +82,105 @@ function escapeAttr(value: string): string {
 
 function escapeHtml(value: string): string {
   return value.replace(ESCAPE_HTML, char => ESCAPE_REPLACEMENTS[char] ?? char);
+}
+
+function buildConferenceOptions(conferences: Conference[]): ConferenceOption[] {
+  const map = new Map<number, ConferenceOption>();
+  for (const entry of conferences) {
+    if (!entry) {
+      continue;
+    }
+    const id = typeof entry.id === "number" && Number.isFinite(entry.id) ? entry.id : null;
+    if (id === null) {
+      continue;
+    }
+    const name = typeof entry.name === "string" ? entry.name.trim() : "";
+    if (!name) {
+      continue;
+    }
+    if (!map.has(id)) {
+      const short =
+        typeof entry.short_name === "string" && entry.short_name.trim() && entry.short_name.trim() !== name
+          ? entry.short_name.trim()
+          : null;
+      map.set(id, {
+        id,
+        name,
+        shortName: short,
+      });
+    }
+  }
+
+  return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+}
+
+function renderConferenceOptions(options: ConferenceOption[]): { markup: string; disabled: boolean } {
+  if (options.length === 0) {
+    return {
+      disabled: true,
+      markup: '<option value="">Conferences unavailable</option>',
+    };
+  }
+
+  const rendered = options
+    .map(option => {
+      const label = option.shortName ?? option.name;
+      const safeLabel = escapeHtml(label);
+      const safeValue = escapeAttr(String(option.id));
+      const title = option.shortName && option.shortName !== option.name ? ` title="${escapeAttr(option.name)}"` : "";
+      return `<option value="${safeValue}"${title}>${safeLabel}</option>`;
+    })
+    .join("");
+
+  const independentValue = escapeAttr(INDEPENDENT_FILTER_VALUE);
+  return {
+    disabled: false,
+    markup: `<option value="">All conferences</option>${rendered}<option value="${independentValue}">Independents</option>`,
+  };
+}
+
+function getTeamConferenceId(team: Game["home_team"]): number | null {
+  if (!team) {
+    return null;
+  }
+  const candidate = (team as { conference_id?: unknown }).conference_id;
+  if (typeof candidate === "number" && Number.isFinite(candidate)) {
+    return candidate;
+  }
+  if (typeof candidate === "string") {
+    const trimmed = candidate.trim();
+    if (!trimmed) {
+      return null;
+    }
+    const parsed = Number.parseInt(trimmed, 10);
+    return Number.isNaN(parsed) ? null : parsed;
+  }
+  return null;
+}
+
+function isIndependentTeam(team: Game["home_team"]): boolean {
+  const conferenceId = getTeamConferenceId(team);
+  if (conferenceId !== null) {
+    return false;
+  }
+  const rawLabel = typeof team?.conference === "string" ? team.conference.trim().toLowerCase() : "";
+  if (!rawLabel) {
+    return true;
+  }
+  const compact = rawLabel.replace(/[^a-z]/g, "");
+  return compact === "independent" || compact === "independents" || compact === "na" || compact === "none" || compact === "";
+}
+
+function matchesConferenceFilter(game: Game, filter: ConferenceFilter): boolean {
+  if (filter.type === "all") {
+    return true;
+  }
+  if (filter.type === "conference") {
+    return (
+      getTeamConferenceId(game.home_team) === filter.id || getTeamConferenceId(game.visitor_team) === filter.id
+    );
+  }
+  return isIndependentTeam(game.home_team) || isIndependentTeam(game.visitor_team);
 }
 
 function toTimeZoneISODate(date: Date): string {
@@ -411,7 +523,7 @@ function renderLoading(list: HTMLUListElement) {
 }
 
 function renderEmpty(list: HTMLUListElement) {
-  list.innerHTML = `<li class="card game-card game-card--empty"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">No games in this range</span></div></div><p class="game-card__message">Try another range to explore more matchups.</p></li>`;
+  list.innerHTML = `<li class="card game-card game-card--empty"><div class="game-card__header"><div class="game-card__meta"><span class="game-card__time">No games in this range</span></div></div><p class="game-card__message">Try another range or conference to explore more matchups.</p></li>`;
 }
 
 function renderError(list: HTMLUListElement) {
@@ -432,23 +544,41 @@ if (!app) {
   throw new Error("Missing #app root element");
 }
 
+const conferenceOptionsPromise: Promise<ConferenceOption[]> = (async () => {
+  try {
+    const response = await NCAAM.conferences();
+    const data = Array.isArray(response?.data) ? (response.data as Conference[]) : [];
+    return buildConferenceOptions(data);
+  } catch (error) {
+    console.error("Failed to load conferences for games filter", error);
+    return [];
+  }
+})();
+
 await requireOk("data/division-one-programs.json", "Games");
 
-app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date range to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start date</span><input type="date" id="start-date" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End date</span><input type="date" id="end-date" name="end" required></label></div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
+const conferenceOptions = await conferenceOptionsPromise;
+const { markup: conferenceOptionsMarkup, disabled: conferenceSelectDisabled } = renderConferenceOptions(conferenceOptions);
+const conferenceSelectDisabledAttr = conferenceSelectDisabled ? " disabled" : "";
+const conferenceSelectMarkup = `<label class="games-controls__field"><span class="games-controls__label">Conference</span><select id="conference-filter" name="conference"${conferenceSelectDisabledAttr}>${conferenceOptionsMarkup}</select></label>`;
+
+app.innerHTML = `<div class="page stack" data-gap="lg"><section class="card games-hero"><div class="games-hero__body"><div class="games-hero__intro stack" data-gap="xs"><span class="page-label">Scoreboard</span><h1>Games</h1><p class="page-summary">Pick any date range to track Division I matchups in Eastern Time.</p></div><form id="games-controls" class="games-hero__form games-controls" autocomplete="off"><div class="games-controls__inputs"><label class="games-controls__field"><span class="games-controls__label">Start date</span><input type="date" id="start-date" name="start" required></label><label class="games-controls__field"><span class="games-controls__label">End date</span><input type="date" id="end-date" name="end" required></label>${conferenceSelectMarkup}</div><div class="games-controls__actions"><button id="load" class="button" data-variant="primary" type="submit">Update</button></div><p class="games-controls__hint">Tip-off times shown in Eastern Time (ET).</p></form></div></section><section><ul id="games-list" class="games-grid" aria-live="polite" aria-busy="false"></ul></section></div>`;
 
 const formEl = app.querySelector<HTMLFormElement>("#games-controls");
 const startInputEl = app.querySelector<HTMLInputElement>("#start-date");
 const endInputEl = app.querySelector<HTMLInputElement>("#end-date");
+const conferenceSelectEl = app.querySelector<HTMLSelectElement>("#conference-filter");
 const loadButtonEl = app.querySelector<HTMLButtonElement>("#load");
 const listEl = app.querySelector<HTMLUListElement>("#games-list");
 
-if (!formEl || !startInputEl || !endInputEl || !loadButtonEl || !listEl) {
+if (!formEl || !startInputEl || !endInputEl || !conferenceSelectEl || !loadButtonEl || !listEl) {
   throw new Error("Failed to initialise games page controls");
 }
 
 const form = formEl;
 const startInput = startInputEl;
 const endInput = endInputEl;
+const conferenceSelect = conferenceSelectEl;
 const loadButton = loadButtonEl;
 const list = listEl;
 
@@ -488,6 +618,28 @@ function getSelectedRange(): DateSelection | null {
   }
 
   return { start: normalizedStart ?? null, end: normalizedEnd ?? null };
+}
+
+function getSelectedConferenceFilter(): ConferenceFilter {
+  if (conferenceSelect.disabled) {
+    return { type: "all" };
+  }
+
+  const rawValue = conferenceSelect.value.trim();
+  if (!rawValue) {
+    return { type: "all" };
+  }
+
+  if (rawValue === INDEPENDENT_FILTER_VALUE) {
+    return { type: "independent" };
+  }
+
+  const parsed = Number.parseInt(rawValue, 10);
+  if (Number.isNaN(parsed)) {
+    return { type: "all" };
+  }
+
+  return { type: "conference", id: parsed };
 }
 
 let activeRequest = 0;
@@ -649,6 +801,7 @@ async function loadGames(showLoader: boolean): Promise<void> {
   }
 
   const { start, end } = selection;
+  const conferenceFilter = getSelectedConferenceFilter();
 
   const requestId = ++activeRequest;
   list.setAttribute("aria-busy", "true");
@@ -681,8 +834,9 @@ async function loadGames(showLoader: boolean): Promise<void> {
       if (Number.isNaN(bTime)) return -1;
       return aTime - bTime;
     });
-    renderGames(list, filtered);
-    void hydrateGameSummaries(list, filtered, requestId);
+    const conferenceFiltered = filtered.filter(game => matchesConferenceFilter(game, conferenceFilter));
+    renderGames(list, conferenceFiltered);
+    void hydrateGameSummaries(list, conferenceFiltered, requestId);
   } catch (error) {
     if (requestId !== activeRequest) {
       return;
@@ -713,6 +867,7 @@ function handleInputChange() {
 
 startInput.addEventListener("change", handleInputChange);
 endInput.addEventListener("change", handleInputChange);
+conferenceSelect.addEventListener("change", handleInputChange);
 
 function handleInputKeydown(event: Event) {
   if ((event as KeyboardEvent).key === "Enter") {
