@@ -446,14 +446,9 @@ details[open] > summary .disclosure-indicator::after {
 }
 
 .box-score__content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-md);
-}
-
-@media (min-width: 56rem) {
-  .box-score__content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .box-score__team {
