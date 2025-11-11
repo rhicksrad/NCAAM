@@ -62,7 +62,8 @@ const updateButton = document.getElementById("ranking-update") as HTMLButtonElem
 
 type WeekSelection = "latest" | number;
 
-const DEFAULT_SEASON = 2024;
+const CURRENT_YEAR = new Date().getFullYear();
+const DEFAULT_SEASON = Math.max(2025, CURRENT_YEAR);
 const DEFAULT_WEEK: WeekSelection = "latest";
 const EARLIEST_SEASON = 2013;
 const updateButtonLabel = updateButton?.textContent ?? "Update Rankings";
