@@ -62,13 +62,18 @@ const updateButton = document.getElementById("ranking-update") as HTMLButtonElem
 
 type WeekSelection = "latest" | number;
 
-const CURRENT_YEAR = new Date().getFullYear();
-const DEFAULT_SEASON = Math.max(2025, CURRENT_YEAR);
+const DEFAULT_SEASON = 2025;
 const DEFAULT_WEEK: WeekSelection = "latest";
 const EARLIEST_SEASON = 2013;
 const updateButtonLabel = updateButton?.textContent ?? "Update Rankings";
 
-const seasonCache = new Map<number, RankingEntry[]>();
+type CachedRanking = {
+  entries: RankingEntry[];
+  resolvedWeek: number | null;
+};
+
+const rankingCache = new Map<string, CachedRanking>();
+const weekCache = new Map<number, number[]>();
 let pendingSeason = DEFAULT_SEASON;
 let pendingWeek: WeekSelection = DEFAULT_WEEK;
 let renderRequestId = 0;
@@ -136,6 +141,7 @@ type RankingEntry = {
   first_place_votes?: number | null;
   record?: string | null;
   team?: Team | null;
+  season?: number | null;
 };
 
 function setLoadingState(isLoading: boolean): void {
@@ -173,7 +179,7 @@ function getKnownSeasons(extra: number[] = []): number[] {
     seasons.add(year);
   }
   seasons.add(DEFAULT_SEASON);
-  for (const cachedSeason of seasonCache.keys()) {
+  for (const cachedSeason of weekCache.keys()) {
     seasons.add(cachedSeason);
   }
   for (const season of extra) {
@@ -214,11 +220,10 @@ async function refreshWeekOptionsForPendingSeason(): Promise<void> {
   const requestId = ++weekOptionsRequestId;
   weekSelect.disabled = true;
   try {
-    const entries = await ensureSeasonData(season);
+    const weeks = await ensureWeeks(season);
     if (requestId !== weekOptionsRequestId) {
       return;
     }
-    const weeks = getAvailableWeeks(entries);
     renderWeekOptions(weekSelect, weeks, pendingWeek);
     pendingWeek = parseWeekSelection(weekSelect.value);
   } catch (error) {
@@ -250,43 +255,111 @@ function renderWeekOptions(selectEl: HTMLSelectElement, weeks: number[], selecti
   }
 }
 
-async function ensureSeasonData(season: number): Promise<RankingEntry[]> {
-  const normalizedSeason = Number.isFinite(season) ? Math.trunc(season) : DEFAULT_SEASON;
-  if (seasonCache.has(normalizedSeason)) {
-    return seasonCache.get(normalizedSeason)!;
+function updateWeekCacheFromResolved(season: number, resolvedWeek: number | null): void {
+  if (!Number.isFinite(resolvedWeek ?? NaN)) {
+    return;
   }
-  const response = await NCAAM.rankings({ season: normalizedSeason });
-  const entries = Array.isArray(response?.data) ? response.data : [];
-  seasonCache.set(normalizedSeason, entries);
+  const normalizedSeason = Number.isFinite(season) ? Math.trunc(season) : DEFAULT_SEASON;
+  const highestResolvedWeek = Math.max(0, Math.trunc(resolvedWeek as number));
+  if (highestResolvedWeek <= 0) {
+    return;
+  }
+  const existingWeeks = weekCache.get(normalizedSeason) ?? [];
+  if (existingWeeks.length >= highestResolvedWeek) {
+    return;
+  }
+  const weeks = Array.from({ length: highestResolvedWeek }, (_, index) => index + 1);
+  weekCache.set(normalizedSeason, weeks);
   populateSeasonOptions();
-  return entries;
 }
 
-function getAvailableWeeks(entries: RankingEntry[]): number[] {
-  const weeks = new Set<number>();
+async function ensureWeeks(season: number): Promise<number[]> {
+  const normalizedSeason = Number.isFinite(season) ? Math.trunc(season) : DEFAULT_SEASON;
+  if (weekCache.has(normalizedSeason)) {
+    return weekCache.get(normalizedSeason)!;
+  }
+
+  const { resolvedWeek } = await fetchRankings(normalizedSeason, "latest");
+  if (!weekCache.has(normalizedSeason)) {
+    const weeks = typeof resolvedWeek === "number" && Number.isFinite(resolvedWeek)
+      ? Array.from({ length: resolvedWeek }, (_, index) => index + 1)
+      : [];
+    weekCache.set(normalizedSeason, weeks);
+    populateSeasonOptions();
+  }
+  return weekCache.get(normalizedSeason) ?? [];
+}
+
+async function fetchRankings(
+  season: number,
+  selection: WeekSelection,
+  poll?: string | null
+): Promise<CachedRanking> {
+  const normalizedSeason = Number.isFinite(season) ? Math.trunc(season) : DEFAULT_SEASON;
+  const normalizedPoll = typeof poll === "string" && poll.trim() ? poll.trim().toLowerCase() : "";
+  const cacheKey = normalizedPoll ? `${normalizedSeason}:${normalizedPoll}:${selection}` : `${normalizedSeason}:${selection}`;
+  if (rankingCache.has(cacheKey)) {
+    return rankingCache.get(cacheKey)!;
+  }
+
+  const params: { season: number; week?: number; poll?: string } = { season: normalizedSeason };
+  if (selection !== "latest") {
+    params.week = selection;
+  }
+  if (normalizedPoll) {
+    params.poll = normalizedPoll;
+  }
+
+  const response = await NCAAM.rankings(params);
+  const entries = Array.isArray(response?.data) ? response.data : [];
+
+  const resolvedWeek = resolveWeekFromEntries(entries, selection, normalizedSeason);
+  const cached: CachedRanking = { entries, resolvedWeek };
+  rankingCache.set(cacheKey, cached);
+  if (!normalizedPoll && selection === "latest" && typeof resolvedWeek === "number" && Number.isFinite(resolvedWeek)) {
+    rankingCache.set(`${normalizedSeason}:${resolvedWeek}`, cached);
+  }
+
+  updateWeekCacheFromResolved(normalizedSeason, resolvedWeek);
+
+  return cached;
+}
+
+function resolveWeekFromEntries(
+  entries: RankingEntry[],
+  selection: WeekSelection,
+  season: number | null
+): number | null {
+  let resolved: number | null = null;
   for (const entry of entries) {
     if (!entry || typeof entry !== "object") {
       continue;
     }
+    const entrySeason =
+      typeof entry.season === "number" && Number.isFinite(entry.season) ? Math.trunc(entry.season) : null;
+    if (season !== null && entrySeason !== null && entrySeason !== season) {
+      continue;
+    }
     const week = typeof entry.week === "number" && Number.isFinite(entry.week) ? entry.week : null;
-    if (week !== null) {
-      weeks.add(week);
+    if (week !== null && (resolved === null || week > resolved)) {
+      resolved = week;
     }
   }
-  return Array.from(weeks).sort((a, b) => a - b);
-}
-
-function resolveWeekSelection(weeks: number[], selection: WeekSelection): number | null {
-  if (weeks.length === 0) {
-    return null;
+  if (resolved !== null) {
+    return resolved;
   }
-  if (selection !== "latest" && weeks.includes(selection)) {
+  if (typeof selection === "number" && Number.isFinite(selection)) {
     return selection;
   }
-  return weeks[weeks.length - 1];
+  return null;
 }
 
-function extractPollEntries(entries: unknown[], pollKey: string | string[], week: number | null): RankingEntry[] {
+function extractPollEntries(
+  entries: unknown[],
+  pollKey: string | string[],
+  week: number | null,
+  season: number | null
+): RankingEntry[] {
   if (!Number.isFinite(week)) {
     return [];
   }
@@ -303,6 +376,14 @@ function extractPollEntries(entries: unknown[], pollKey: string | string[], week
       normalizedKeys.add("coaches");
       normalizedKeys.add("coaches poll");
       normalizedKeys.add("usa today coaches");
+      normalizedKeys.add("usa today coaches poll");
+    }
+    if (key === "ap" || key === "associated press") {
+      normalizedKeys.add("ap");
+      normalizedKeys.add("associated press");
+      normalizedKeys.add("ap poll");
+      normalizedKeys.add("ap top 25");
+      normalizedKeys.add("associated press top 25");
     }
   }
 
@@ -312,15 +393,78 @@ function extractPollEntries(entries: unknown[], pollKey: string | string[], week
 
   return entries
     .filter(
-      (entry): entry is RankingEntry =>
-        !!entry &&
-        typeof entry === "object" &&
-        typeof (entry as RankingEntry).poll === "string" &&
-        normalizedKeys.has((entry as RankingEntry).poll!.trim().toLowerCase()) &&
-        (entry as RankingEntry).week === week
+      (entry): entry is RankingEntry => {
+        if (!entry || typeof entry !== "object") {
+          return false;
+        }
+        const poll = (entry as RankingEntry).poll;
+        if (typeof poll !== "string") {
+          return false;
+        }
+        if (!normalizedKeys.has(poll.trim().toLowerCase())) {
+          return false;
+        }
+        if ((entry as RankingEntry).week !== week) {
+          return false;
+        }
+        if (season === null) {
+          return true;
+        }
+        const entrySeason =
+          typeof (entry as RankingEntry).season === "number" &&
+          Number.isFinite((entry as RankingEntry).season)
+            ? Math.trunc((entry as RankingEntry).season as number)
+            : null;
+        if (entrySeason === null) {
+          return true;
+        }
+        return entrySeason === season;
+      }
     )
     .slice()
     .sort((a, b) => (a.rank ?? Number.POSITIVE_INFINITY) - (b.rank ?? Number.POSITIVE_INFINITY));
+}
+
+type PollKey = string | string[];
+
+async function fetchPollEntries(
+  season: number,
+  selection: WeekSelection,
+  base: CachedRanking,
+  pollKey: PollKey,
+  requestedPoll: string | null
+): Promise<{ entries: RankingEntry[]; resolvedWeek: number | null }> {
+  const baseWeek = base.resolvedWeek;
+  let entries = extractPollEntries(base.entries, pollKey, baseWeek, season);
+  let resolvedWeek = baseWeek;
+
+  const normalizedRequestedPoll = typeof requestedPoll === "string" && requestedPoll.trim()
+    ? requestedPoll.trim().toLowerCase()
+    : "";
+
+  if (entries.length > 0 || !normalizedRequestedPoll) {
+    return { entries, resolvedWeek };
+  }
+
+  const pollResponse = await fetchRankings(season, selection, normalizedRequestedPoll);
+  const pollWeek = pollResponse.resolvedWeek;
+  const effectiveWeek = pollWeek
+    ?? resolvedWeek
+    ?? (typeof selection === "number" && Number.isFinite(selection) ? selection : null);
+
+  if (effectiveWeek !== null) {
+    entries = extractPollEntries(pollResponse.entries, pollKey, effectiveWeek, season);
+  } else {
+    entries = extractPollEntries(pollResponse.entries, pollKey, pollWeek, season);
+  }
+
+  if (pollWeek !== null && pollWeek !== resolvedWeek) {
+    resolvedWeek = pollWeek;
+  } else if (resolvedWeek === null) {
+    resolvedWeek = effectiveWeek;
+  }
+
+  return { entries, resolvedWeek };
 }
 
 async function applySelections(): Promise<void> {
@@ -328,27 +472,53 @@ async function applySelections(): Promise<void> {
   setLoadingState(true);
   try {
     const season = pendingSeason;
-    const entries = await ensureSeasonData(season);
-    if (requestId !== renderRequestId) {
-      return;
-    }
-
-    const weeks = getAvailableWeeks(entries);
+    const weeks = await ensureWeeks(season);
     if (weekSelect) {
       renderWeekOptions(weekSelect, weeks, pendingWeek);
       pendingWeek = parseWeekSelection(weekSelect.value);
     }
+    const baseResult = await fetchRankings(season, pendingWeek);
+    if (requestId !== renderRequestId) {
+      return;
+    }
 
-    const resolvedWeek = resolveWeekSelection(weeks, pendingWeek);
-    const apEntries = extractPollEntries(entries, "ap", resolvedWeek);
-    const coachesEntries = extractPollEntries(entries, ["coaches", "coach"], resolvedWeek);
+    const apResult = await fetchPollEntries(season, pendingWeek, baseResult, "ap", "ap");
+    if (requestId !== renderRequestId) {
+      return;
+    }
 
-    renderPoll(apRows, apHeading, apEntries, "AP Top 25", season, resolvedWeek);
-    renderPoll(coachesRows, coachesHeading, coachesEntries, "Coaches Poll", season, resolvedWeek);
+    const coachesResult = await fetchPollEntries(season, pendingWeek, baseResult, ["coaches", "coach"], "coach");
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
+    const candidateWeeks: number[] = [];
+    for (const maybeWeek of [
+      baseResult.resolvedWeek,
+      apResult.resolvedWeek,
+      coachesResult.resolvedWeek,
+      typeof pendingWeek === "number" && Number.isFinite(pendingWeek) ? pendingWeek : null,
+    ]) {
+      if (typeof maybeWeek === "number" && Number.isFinite(maybeWeek)) {
+        candidateWeeks.push(Math.trunc(maybeWeek));
+      }
+    }
+    const resolvedWeek = candidateWeeks.length > 0 ? Math.max(...candidateWeeks) : baseResult.resolvedWeek;
+
+    if (weekSelect) {
+      const updatedWeeks = weekCache.get(season) ?? weeks;
+      if (updatedWeeks.length !== weeks.length) {
+        renderWeekOptions(weekSelect, updatedWeeks, pendingWeek);
+        pendingWeek = parseWeekSelection(weekSelect.value);
+      }
+    }
+
+    renderPoll(apRows, apHeading, apResult.entries, "AP Top 25", season, resolvedWeek);
+    renderPoll(coachesRows, coachesHeading, coachesResult.entries, "Coaches Poll", season, resolvedWeek);
 
     updateSummary(season, resolvedWeek, [
-      { label: "AP Top 25", hasData: apEntries.length > 0 },
-      { label: "Coaches Poll", hasData: coachesEntries.length > 0 },
+      { label: "AP Top 25", hasData: apResult.entries.length > 0 },
+      { label: "Coaches Poll", hasData: coachesResult.entries.length > 0 },
     ]);
   } catch (error) {
     console.error(error);
