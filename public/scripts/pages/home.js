@@ -63,31 +63,6 @@ function renderHeightLogo(entry) {
 const poll = [
     {
         rank: 1,
-        team: "Purdue",
-        program: {
-            id: 125,
-            full_name: "Purdue Boilermakers",
-            name: "Boilermakers",
-            abbreviation: "PUR",
-            college: "Purdue",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "continuity, elite half-court execution, high assist rate, deliberate pace.",
-            },
-            {
-                label: "Path to 1-seed",
-                value: "own the glass, limit live-ball turnovers, schedule has few landmines before league play.",
-            },
-            {
-                label: "Watch metric",
-                value: "top-5 offensive efficiency with FT rate edge.",
-            },
-        ],
-    },
-    {
-        rank: 2,
         team: "Houston",
         program: {
             id: 73,
@@ -99,45 +74,45 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "top-3 defense again, turnover creation, guards who pressure and finish.",
+                value: "elite TO creation, glass control, guard pressure.",
             },
             {
-                label: "Path to 1-seed",
-                value: "transition points off steals, late-clock offense improvement.",
+                label: "This week",
+                value: "businesslike 2–0 and vaulted to AP No.1.",
             },
             {
-                label: "Watch metric",
-                value: "opponent eFG% and TO% both top-10.",
+                label: "Watch",
+                value: "opponent eFG% + TO% both top-10.",
+            },
+        ],
+    },
+    {
+        rank: 2,
+        team: "Purdue",
+        program: {
+            id: 125,
+            full_name: "Purdue Boilermakers",
+            name: "Boilermakers",
+            abbreviation: "PUR",
+            college: "Purdue",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "surgical half-court, assist rate, pace control.",
+            },
+            {
+                label: "This week",
+                value: "survived a real test vs Oakland 87–77. Braden Smith was the closer.",
+            },
+            {
+                label: "Watch",
+                value: "live-ball TOs vs pressure guards.",
             },
         ],
     },
     {
         rank: 3,
-        team: "Florida",
-        program: {
-            id: 277,
-            full_name: "Florida Gators",
-            name: "Gators",
-            abbreviation: "FLA",
-            college: "Florida",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "champion’s shot profile carries over: rim + corner 3s, deep rotation.",
-            },
-            {
-                label: "Path to repeat",
-                value: "defensive rebounding vs power bigs, foul avoidance.",
-            },
-            {
-                label: "Watch metric",
-                value: "ORtg stays top-10 without slippage in D-glass.",
-            },
-        ],
-    },
-    {
-        rank: 4,
         team: "UConn",
         program: {
             id: 91,
@@ -152,42 +127,17 @@ const poll = [
                 value: "disciplined defense, set-piece mastery, NBA-size wings.",
             },
             {
-                label: "Path to April",
-                value: "early chemistry, bench scoring.",
+                label: "This week",
+                value: "110–47 over UMass Lowell with seven in double figures.",
             },
             {
-                label: "Watch metric",
-                value: "half-court PPP vs ranked teams.",
+                label: "Watch",
+                value: "half-court PPP vs ranked opponents.",
             },
         ],
     },
     {
-        rank: 5,
-        team: "St. John's",
-        program: {
-            id: 90,
-            full_name: "St. John's Red Storm",
-            name: "Red Storm",
-            abbreviation: "SJU",
-            college: "St. John's",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "physicality, switchable 2-4, garden-variety chaos into easy buckets.",
-            },
-            {
-                label: "Path to top line",
-                value: "shot selection vs zones, late-game composure.",
-            },
-            {
-                label: "Watch metric",
-                value: "FT attempt rate vs Big East heavies.",
-            },
-        ],
-    },
-    {
-        rank: 6,
+        rank: 4,
         team: "Duke",
         program: {
             id: 4,
@@ -199,20 +149,45 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "shot-creation at 1/3, rim protection enough to stay aggressive on the perimeter.",
+                value: "shot creation at 1/3, enough rim protection to extend.",
             },
             {
-                label: "Path to 1-seed",
-                value: "defensive rebounding, reduce midrange drift.",
+                label: "This week",
+                value: "95–54 over Western Carolina, Boozer efficient.",
             },
             {
-                label: "Watch metric",
+                label: "Watch",
                 value: "3PA rate without losing paint touches.",
             },
         ],
     },
     {
-        rank: 7,
+        rank: 5,
+        team: "Arizona",
+        program: {
+            id: 68,
+            full_name: "Arizona Wildcats",
+            name: "Wildcats",
+            abbreviation: "ARIZ",
+            college: "Arizona",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "tempo + early offense, stretch bigs trailing.",
+            },
+            {
+                label: "This week",
+                value: "beat defending champ Florida 93–87 in Vegas. Koa Peat 30 in debut.",
+            },
+            {
+                label: "Watch",
+                value: "D-glass vs power frontcourts.",
+            },
+        ],
+    },
+    {
+        rank: 6,
         team: "Michigan",
         program: {
             id: 118,
@@ -224,20 +199,20 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "balanced, inside-out offense, sturdy defensive shell.",
+                value: "balanced inside-out, sturdy rebounding shell.",
             },
             {
-                label: "Path to second weekend floor",
-                value: "turnover margin vs pressure teams.",
+                label: "This week",
+                value: "121–78 on Oakland with record first-half output.",
             },
             {
-                label: "Watch metric",
-                value: "post-touch efficiency and kick-out 3s.",
+                label: "Watch",
+                value: "turnover margin vs elite pressure.",
             },
         ],
     },
     {
-        rank: 8,
+        rank: 7,
         team: "BYU",
         program: {
             id: 69,
@@ -249,15 +224,40 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "spacing, shooting depth, motion into flare actions.",
+                value: "spacing, motion, flare actions, low mistakes.",
             },
             {
-                label: "Path to top-10",
-                value: "defensive rebounding travel-proof.",
+                label: "This week",
+                value: "71–66 vs Villanova, then 98–53 over Holy Cross. Dybantsa immediate impact.",
             },
             {
-                label: "Watch metric",
-                value: "3P rate versus top-25 defenses.",
+                label: "Watch",
+                value: "3P volume vs top-25 defenses.",
+            },
+        ],
+    },
+    {
+        rank: 8,
+        team: "Alabama",
+        program: {
+            id: 274,
+            full_name: "Alabama Crimson Tide",
+            name: "Crimson Tide",
+            abbreviation: "ALA",
+            college: "Alabama",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "math-problem pace, rim + 3s.",
+            },
+            {
+                label: "This week",
+                value: "103–96 over No.5 St. John’s at MSG. Guards carried.",
+            },
+            {
+                label: "Watch",
+                value: "defensive volatility in late clock.",
             },
         ],
     },
@@ -274,20 +274,45 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "pace, athletes everywhere, rim pressure.",
+                value: "tempo, secondary break, vertical pressure.",
             },
             {
-                label: "Path to March",
-                value: "experience curve on defense; keep TOs sub-17%.",
+                label: "This week",
+                value: "107–59 over Valpo; depth flashed.",
             },
             {
-                label: "Watch metric",
-                value: "early pick-and-roll coverage consistency.",
+                label: "Watch",
+                value: "foul rate while pressing.",
             },
         ],
     },
     {
         rank: 10,
+        team: "Florida",
+        program: {
+            id: 277,
+            full_name: "Florida Gators",
+            name: "Gators",
+            abbreviation: "FLA",
+            college: "Florida",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "champion’s shot profile, deep rotation.",
+            },
+            {
+                label: "This week",
+                value: "took the L vs Arizona; free-throw diff stung.",
+            },
+            {
+                label: "Watch",
+                value: "D-reb% against top-20 O-glass teams.",
+            },
+        ],
+    },
+    {
+        rank: 11,
         team: "Texas Tech",
         program: {
             id: 79,
@@ -302,17 +327,17 @@ const poll = [
                 value: "connected defense, low-mistake offense.",
             },
             {
-                label: "Path to top-8 seed",
-                value: "free throws created by wings.",
+                label: "This week",
+                value: "JT Toppin’s 31/14 vs Sam Houston on return.",
             },
             {
-                label: "Watch metric",
+                label: "Watch",
                 value: "opponent 3P volume suppression.",
             },
         ],
     },
     {
-        rank: 11,
+        rank: 12,
         team: "Louisville",
         program: {
             id: 7,
@@ -324,20 +349,70 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "size, mid-post scoring options, slotted roles.",
+                value: "size, mid-post options, slotted roles.",
             },
             {
-                label: "Path to rise",
-                value: "perimeter defense vs spread attacks.",
+                label: "This week",
+                value: "104–45 opener, then cruised again; bench minutes held serve.",
             },
             {
-                label: "Watch metric",
-                value: "foul rate of primary bigs.",
+                label: "Watch",
+                value: "arc defense vs spread attacks.",
             },
         ],
     },
     {
-        rank: 12,
+        rank: 13,
+        team: "North Carolina",
+        program: {
+            id: 10,
+            full_name: "North Carolina Tar Heels",
+            name: "Tar Heels",
+            abbreviation: "UNC",
+            college: "North Carolina",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "tempo toggling, glass, secondary break.",
+            },
+            {
+                label: "This week",
+                value: "87–74 over No.19 Kansas; Caleb Wilson named ACC Co-POW.",
+            },
+            {
+                label: "Watch",
+                value: "turnover rate amid usage spike.",
+            },
+        ],
+    },
+    {
+        rank: 14,
+        team: "St. John's",
+        program: {
+            id: 90,
+            full_name: "St. John's Red Storm",
+            name: "Red Storm",
+            abbreviation: "SJU",
+            college: "St. John's",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "physical 2–4, chaos→easy buckets.",
+            },
+            {
+                label: "This week",
+                value: "108–74 over Quinnipiac, then fell to Alabama at MSG.",
+            },
+            {
+                label: "Watch",
+                value: "FT% and point-of-attack containment.",
+            },
+        ],
+    },
+    {
+        rank: 15,
         team: "UCLA",
         program: {
             id: 127,
@@ -352,92 +427,67 @@ const poll = [
                 value: "compact defense, controlled pace, surgical sets.",
             },
             {
-                label: "Path to top-16",
-                value: "find reliable secondary creator.",
+                label: "This week",
+                value: "rugged but better vs Pepperdine after a shaky opener.",
             },
             {
-                label: "Watch metric",
-                value: "assist rate in late-clock possessions.",
-            },
-        ],
-    },
-    {
-        rank: 13,
-        team: "Arizona",
-        program: {
-            id: 68,
-            full_name: "Arizona Wildcats",
-            name: "Wildcats",
-            abbreviation: "ARIZ",
-            college: "Arizona",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "tempo and early offense, stretch-bigs trailing for threes.",
-            },
-            {
-                label: "Path to top-10",
-                value: "half-court stops; avoid whistle-heavy games.",
-            },
-            {
-                label: "Watch metric",
-                value: "transition PPP vs top-50.",
-            },
-        ],
-    },
-    {
-        rank: 14,
-        team: "Arkansas",
-        program: {
-            id: 275,
-            full_name: "Arkansas Razorbacks",
-            name: "Razorbacks",
-            abbreviation: "ARK",
-            college: "Arkansas",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "downhill guards, offensive boards, free throws.",
-            },
-            {
-                label: "Path to second weekend",
-                value: "spacing around slashing.",
-            },
-            {
-                label: "Watch metric",
-                value: "lineup 3-point gravity.",
-            },
-        ],
-    },
-    {
-        rank: 15,
-        team: "Alabama",
-        program: {
-            id: 274,
-            full_name: "Alabama Crimson Tide",
-            name: "Crimson Tide",
-            abbreviation: "ALA",
-            college: "Alabama",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "math problem team: rim/3s, massive pace.",
-            },
-            {
-                label: "Path to elite",
-                value: "defensive volatility control.",
-            },
-            {
-                label: "Watch metric",
-                value: "opponent rim attempts allowed.",
+                label: "Watch",
+                value: "defensive rebounding consistency.",
             },
         ],
     },
     {
         rank: 16,
+        team: "Illinois",
+        program: {
+            id: 113,
+            full_name: "Illinois Fighting Illini",
+            name: "Fighting Illini",
+            abbreviation: "ILL",
+            college: "Illinois",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "veteran shot-making, strong D-glass.",
+            },
+            {
+                label: "This week",
+                value: "two blowouts, 113–70 over FGCU with Boswell’s 31.",
+            },
+            {
+                label: "Watch",
+                value: "opponent 3P% regression and contest rate.",
+            },
+        ],
+    },
+    {
+        rank: 17,
+        team: "Tennessee",
+        program: {
+            id: 286,
+            full_name: "Tennessee Volunteers",
+            name: "Volunteers",
+            abbreviation: "TENN",
+            college: "Tennessee",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "switch, contest, rebound.",
+            },
+            {
+                label: "This week",
+                value: "handled Mercer and NKU, Ament popped.",
+            },
+            {
+                label: "Watch",
+                value: "FT rate generated by guards.",
+            },
+        ],
+    },
+    {
+        rank: 18,
         team: "Iowa State",
         program: {
             id: 74,
@@ -452,62 +502,12 @@ const poll = [
                 value: "turnover factory, disciplined close-outs.",
             },
             {
-                label: "Path to top-12",
-                value: "half-court creation in tight games.",
+                label: "This week",
+                value: "2–0 with blowouts of FDU and Grambling; Jefferson/Momcilovic rolling.",
             },
             {
-                label: "Watch metric",
-                value: "live-ball TO rate vs ranked guards.",
-            },
-        ],
-    },
-    {
-        rank: 17,
-        team: "Illinois",
-        program: {
-            id: 113,
-            full_name: "Illinois Fighting Illini",
-            name: "Fighting Illini",
-            abbreviation: "ILL",
-            college: "Illinois",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "veteran shot makers, strong defensive rebounding.",
-            },
-            {
-                label: "Path to protected seed",
-                value: "guard the arc better.",
-            },
-            {
-                label: "Watch metric",
-                value: "opp 3P% regression and contest rate.",
-            },
-        ],
-    },
-    {
-        rank: 18,
-        team: "Tennessee",
-        program: {
-            id: 286,
-            full_name: "Tennessee Volunteers",
-            name: "Volunteers",
-            abbreviation: "TENN",
-            college: "Tennessee",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "defense travels; switch, contest, rebound.",
-            },
-            {
-                label: "Path to jump",
-                value: "free-throw economy for the offense.",
-            },
-            {
-                label: "Watch metric",
-                value: "FT rate generated by guards.",
+                label: "Watch",
+                value: "live-ball TO% vs ranked guards.",
             },
         ],
     },
@@ -527,42 +527,17 @@ const poll = [
                 value: "structure, two-way wings, high-IQ sets.",
             },
             {
-                label: "Path to rebound year",
-                value: "reliable spacing from 2-3 bench pieces.",
+                label: "This week",
+                value: "second-half fade at UNC, 87–74.",
             },
             {
-                label: "Watch metric",
-                value: "corner-3 frequency.",
+                label: "Watch",
+                value: "defensive glass vs top-50 athletes.",
             },
         ],
     },
     {
         rank: 20,
-        team: "Auburn",
-        program: {
-            id: 276,
-            full_name: "Auburn Tigers",
-            name: "Tigers",
-            abbreviation: "AUB",
-            college: "Auburn",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "rim protection and vertical spacing.",
-            },
-            {
-                label: "Path to top-10",
-                value: "turnover avoidance at pace.",
-            },
-            {
-                label: "Watch metric",
-                value: "block rate without foul spikes.",
-            },
-        ],
-    },
-    {
-        rank: 21,
         team: "Gonzaga",
         program: {
             id: 354,
@@ -577,12 +552,37 @@ const poll = [
                 value: "continuity offense, inside-out reads.",
             },
             {
-                label: "Path to climb",
-                value: "athleticism at the point of attack on D.",
+                label: "This week",
+                value: "98–43 TSU, then 83–68 over Oklahoma.",
             },
             {
-                label: "Watch metric",
-                value: "opponent rim FG%.",
+                label: "Watch",
+                value: "rim FG% allowed.",
+            },
+        ],
+    },
+    {
+        rank: 21,
+        team: "Auburn",
+        program: {
+            id: 276,
+            full_name: "Auburn Tigers",
+            name: "Tigers",
+            abbreviation: "AUB",
+            college: "Auburn",
+        },
+        notes: [
+            {
+                label: "Identity",
+                value: "rim protection and vertical spacing.",
+            },
+            {
+                label: "This week",
+                value: "needed OT to escape Bethune-Cookman. Process needs polish.",
+            },
+            {
+                label: "Watch",
+                value: "whistle control while protecting the rim.",
             },
         ],
     },
@@ -602,12 +602,12 @@ const poll = [
                 value: "defensive spine, rebounding culture, veteran backcourt.",
             },
             {
-                label: "Path to second weekend",
-                value: "dependable late-clock creator.",
+                label: "This week",
+                value: "69–66 over No.14 Arkansas. Boards and paint touches won it.",
             },
             {
-                label: "Watch metric",
-                value: "mid-range efficiency in clutch time.",
+                label: "Watch",
+                value: "late-clock creator clarity.",
             },
         ],
     },
@@ -627,12 +627,12 @@ const poll = [
                 value: "spacing, ball security, five-man skill.",
             },
             {
-                label: "Path to rise",
-                value: "bench minutes that hold serve.",
+                label: "This week",
+                value: "92–76 over South Dakota; McDermott’s 500th D-I win.",
             },
             {
-                label: "Watch metric",
-                value: "non-starter net rating.",
+                label: "Watch",
+                value: "non-starter net rating when tempo slows.",
             },
         ],
     },
@@ -649,40 +649,40 @@ const poll = [
         notes: [
             {
                 label: "Identity",
-                value: "slowdown, shot quality, defensive positioning.",
+                value: "slowdown, shot quality, positioning.",
             },
             {
-                label: "Path to upset line",
-                value: "maintain low foul rate vs drivers.",
+                label: "This week",
+                value: "handled business; real tests ahead.",
             },
             {
-                label: "Watch metric",
-                value: "opponent FT rate in Big Ten play.",
+                label: "Watch",
+                value: "opponent FT rate once step-up games land.",
             },
         ],
     },
     {
         rank: 25,
-        team: "North Carolina",
+        team: "Arkansas",
         program: {
-            id: 10,
-            full_name: "North Carolina Tar Heels",
-            name: "Tar Heels",
-            abbreviation: "UNC",
-            college: "North Carolina",
+            id: 275,
+            full_name: "Arkansas Razorbacks",
+            name: "Razorbacks",
+            abbreviation: "ARK",
+            college: "Arkansas",
         },
         notes: [
             {
                 label: "Identity",
-                value: "tempo toggling, secondary break, defensive glass.",
+                value: "downhill guards, O-boards, free throws.",
             },
             {
-                label: "Path to top-15",
-                value: "three-point volume without shot selection tax.",
+                label: "This week",
+                value: "69–66 loss at Michigan State; spacing and shot selection wobble.",
             },
             {
-                label: "Watch metric",
-                value: "3PA share and turnover rate trend.",
+                label: "Watch",
+                value: "lineup 3-point gravity.",
             },
         ],
     },
