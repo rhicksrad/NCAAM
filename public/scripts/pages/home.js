@@ -60,632 +60,533 @@ function renderHeightLogo(entry) {
     const monogram = escapeHtml(getTeamMonogram(team));
     return `<span class="height-card__logo-fallback" role="img" aria-label="${alt}">${monogram}</span>`;
 }
+
 const poll = [
-    {
-        rank: 1,
-        team: "Houston",
-        program: {
-            id: 73,
-            full_name: "Houston Cougars",
-            name: "Cougars",
-            abbreviation: "HOU",
-            college: "Houston",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "elite TO creation, glass control, guard pressure.",
-            },
-            {
-                label: "This week",
-                value: "businesslike 2–0 and vaulted to AP No.1.",
-            },
-            {
-                label: "Watch",
-                value: "opponent eFG% + TO% both top-10.",
-            },
-        ],
+  {
+    rank: 1,
+    team: "Purdue",
+    program: {
+      id: 125,
+      full_name: "Purdue Boilermakers",
+      name: "Boilermakers",
+      abbreviation: "PUR",
+      college: "Purdue",
     },
-    {
-        rank: 2,
-        team: "Purdue",
-        program: {
-            id: 125,
-            full_name: "Purdue Boilermakers",
-            name: "Boilermakers",
-            abbreviation: "PUR",
-            college: "Purdue",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "surgical half-court, assist rate, pace control.",
-            },
-            {
-                label: "This week",
-                value: "survived a real test vs Oakland 87–77. Braden Smith was the closer.",
-            },
-            {
-                label: "Watch",
-                value: "live-ball TOs vs pressure guards.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "still the most complete half-court outfit.",
+      },
+      {
+        label: "Read",
+        value: "Bahamas title included a 30-point handling of No. 15 Texas Tech.",
+      },
+    ],
+  },
+  {
+    rank: 2,
+    team: "Arizona",
+    program: {
+      id: 68,
+      full_name: "Arizona Wildcats",
+      name: "Wildcats",
+      abbreviation: "ARIZ",
+      college: "Arizona",
     },
-    {
-        rank: 3,
-        team: "UConn",
-        program: {
-            id: 91,
-            full_name: "UConn Huskies",
-            name: "Huskies",
-            abbreviation: "CONN",
-            college: "UConn",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "disciplined defense, set-piece mastery, NBA-size wings.",
-            },
-            {
-                label: "This week",
-                value: "110–47 over UMass Lowell with seven in double figures.",
-            },
-            {
-                label: "Watch",
-                value: "half-court PPP vs ranked opponents.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "portfolio already has W’s over Florida, UCLA and at UConn.",
+      },
+      {
+        label: "Read",
+        value: "top-line wins travel.",
+      },
+    ],
+  },
+  {
+    rank: 3,
+    team: "Michigan",
+    program: {
+      id: 118,
+      full_name: "Michigan Wolverines",
+      name: "Wolverines",
+      abbreviation: "MICH",
+      college: "Michigan",
     },
-    {
-        rank: 4,
-        team: "Duke",
-        program: {
-            id: 4,
-            full_name: "Duke Blue Devils",
-            name: "Blue Devils",
-            abbreviation: "DUKE",
-            college: "Duke",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "shot creation at 1/3, enough rim protection to extend.",
-            },
-            {
-                label: "This week",
-                value: "95–54 over Western Carolina, Boozer efficient.",
-            },
-            {
-                label: "Watch",
-                value: "3PA rate without losing paint touches.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "Players Era champ by a combined +70 over Auburn and Gonzaga.",
+      },
+      {
+        label: "Read",
+        value: "looked like the grown-ups in Vegas.",
+      },
+    ],
+  },
+  {
+    rank: 4,
+    team: "Duke",
+    program: {
+      id: 4,
+      full_name: "Duke Blue Devils",
+      name: "Blue Devils",
+      abbreviation: "DUKE",
+      college: "Duke",
     },
-    {
-        rank: 5,
-        team: "Arizona",
-        program: {
-            id: 68,
-            full_name: "Arizona Wildcats",
-            name: "Wildcats",
-            abbreviation: "ARIZ",
-            college: "Arizona",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "tempo + early offense, stretch bigs trailing.",
-            },
-            {
-                label: "This week",
-                value: "beat defending champ Florida 93–87 in Vegas. Koa Peat 30 in debut.",
-            },
-            {
-                label: "Watch",
-                value: "D-glass vs power frontcourts.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "undefeated with neutral/brand wins (Kansas, Texas, Arkansas).",
+      },
+      {
+        label: "Read",
+        value: "top-10 efficiency vibes.",
+      },
+    ],
+  },
+  {
+    rank: 5,
+    team: "UConn",
+    program: {
+      id: 91,
+      full_name: "UConn Huskies",
+      name: "Huskies",
+      abbreviation: "CONN",
+      college: "UConn",
     },
-    {
-        rank: 6,
-        team: "Michigan",
-        program: {
-            id: 118,
-            full_name: "Michigan Wolverines",
-            name: "Wolverines",
-            abbreviation: "MICH",
-            college: "Michigan",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "balanced inside-out, sturdy rebounding shell.",
-            },
-            {
-                label: "This week",
-                value: "121–78 on Oakland with record first-half output.",
-            },
-            {
-                label: "Watch",
-                value: "turnover margin vs elite pressure.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "lost to Arizona but beat BYU in Boston and then handled Illinois.",
+      },
+      {
+        label: "Read",
+        value: "getting healthier.",
+      },
+    ],
+  },
+  {
+    rank: 6,
+    team: "Houston",
+    program: {
+      id: 73,
+      full_name: "Houston Cougars",
+      name: "Cougars",
+      abbreviation: "HOU",
+      college: "Houston",
     },
-    {
-        rank: 7,
-        team: "BYU",
-        program: {
-            id: 69,
-            full_name: "BYU Cougars",
-            name: "Cougars",
-            abbreviation: "BYU",
-            college: "BYU",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "spacing, motion, flare actions, low mistakes.",
-            },
-            {
-                label: "This week",
-                value: "71–66 vs Villanova, then 98–53 over Holy Cross. Dybantsa immediate impact.",
-            },
-            {
-                label: "Watch",
-                value: "3P volume vs top-25 defenses.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "took a high-level L to Tennessee, otherwise looks like Houston.",
+      },
+      {
+        label: "Read",
+        value: "guard play legit.",
+      },
+    ],
+  },
+  {
+    rank: 7,
+    team: "BYU",
+    program: {
+      id: 69,
+      full_name: "BYU Cougars",
+      name: "Cougars",
+      abbreviation: "BYU",
+      college: "BYU",
     },
-    {
-        rank: 8,
-        team: "Alabama",
-        program: {
-            id: 274,
-            full_name: "Alabama Crimson Tide",
-            name: "Crimson Tide",
-            abbreviation: "ALA",
-            college: "Alabama",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "math-problem pace, rim + 3s.",
-            },
-            {
-                label: "This week",
-                value: "103–96 over No.5 St. John’s at MSG. Guards carried.",
-            },
-            {
-                label: "Watch",
-                value: "defensive volatility in late clock.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "toe-to-toe with UConn in a top-10 thriller.",
+      },
+      {
+        label: "Read",
+        value: "spacing and shot-making scale.",
+      },
+    ],
+  },
+  {
+    rank: 8,
+    team: "Iowa State",
+    program: {
+      id: 74,
+      full_name: "Iowa State Cyclones",
+      name: "Cyclones",
+      abbreviation: "ISU",
+      college: "Iowa State",
     },
-    {
-        rank: 9,
-        team: "Kentucky",
-        program: {
-            id: 279,
-            full_name: "Kentucky Wildcats",
-            name: "Wildcats",
-            abbreviation: "UK",
-            college: "Kentucky",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "tempo, secondary break, vertical pressure.",
-            },
-            {
-                label: "This week",
-                value: "107–59 over Valpo; depth flashed.",
-            },
-            {
-                label: "Watch",
-                value: "foul rate while pressing.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "3-0 Players Era week (St. John’s, Creighton, Syracuse) with defense and boards.",
+      },
+      {
+        label: "Read",
+        value: "defense and boards travel.",
+      },
+    ],
+  },
+  {
+    rank: 9,
+    team: "Kansas",
+    program: {
+      id: 75,
+      full_name: "Kansas Jayhawks",
+      name: "Jayhawks",
+      abbreviation: "KU",
+      college: "Kansas",
     },
-    {
-        rank: 10,
-        team: "Florida",
-        program: {
-            id: 277,
-            full_name: "Florida Gators",
-            name: "Gators",
-            abbreviation: "FLA",
-            college: "Florida",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "champion’s shot profile, deep rotation.",
-            },
-            {
-                label: "This week",
-                value: "took the L vs Arizona; free-throw diff stung.",
-            },
-            {
-                label: "Watch",
-                value: "D-reb% against top-20 O-glass teams.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "beat Notre Dame and Syracuse, then ran down Tennessee late.",
+      },
+      {
+        label: "Read",
+        value: "trending back toward the poll.",
+      },
+    ],
+  },
+  {
+    rank: 10,
+    team: "Tennessee",
+    program: {
+      id: 286,
+      full_name: "Tennessee Volunteers",
+      name: "Volunteers",
+      abbreviation: "TENN",
+      college: "Tennessee",
     },
-    {
-        rank: 11,
-        team: "Texas Tech",
-        program: {
-            id: 79,
-            full_name: "Texas Tech Red Raiders",
-            name: "Red Raiders",
-            abbreviation: "TTU",
-            college: "Texas Tech",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "connected defense, low-mistake offense.",
-            },
-            {
-                label: "This week",
-                value: "JT Toppin’s 31/14 vs Sam Houston on return.",
-            },
-            {
-                label: "Watch",
-                value: "opponent 3P volume suppression.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "statement win over Houston before getting clipped by KU.",
+      },
+      {
+        label: "Read",
+        value: "backcourt pressure bothers elites.",
+      },
+    ],
+  },
+  {
+    rank: 11,
+    team: "Alabama",
+    program: {
+      id: 274,
+      full_name: "Alabama Crimson Tide",
+      name: "Crimson Tide",
+      abbreviation: "ALA",
+      college: "Alabama",
     },
-    {
-        rank: 12,
-        team: "Louisville",
-        program: {
-            id: 7,
-            full_name: "Louisville Cardinals",
-            name: "Cardinals",
-            abbreviation: "LOU",
-            college: "Louisville",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "size, mid-post options, slotted roles.",
-            },
-            {
-                label: "This week",
-                value: "104–45 opener, then cruised again; bench minutes held serve.",
-            },
-            {
-                label: "Watch",
-                value: "arc defense vs spread attacks.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "bounced hard after Gonzaga loss with a demolition of UNLV and then Maryland.",
+      },
+      {
+        label: "Read",
+        value: "reset the trajectory quickly.",
+      },
+    ],
+  },
+  {
+    rank: 12,
+    team: "Louisville",
+    program: {
+      id: 7,
+      full_name: "Louisville Cardinals",
+      name: "Cardinals",
+      abbreviation: "LOU",
+      college: "Louisville",
     },
-    {
-        rank: 13,
-        team: "North Carolina",
-        program: {
-            id: 10,
-            full_name: "North Carolina Tar Heels",
-            name: "Tar Heels",
-            abbreviation: "UNC",
-            college: "North Carolina",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "tempo toggling, glass, secondary break.",
-            },
-            {
-                label: "This week",
-                value: "87–74 over No.19 Kansas; Caleb Wilson named ACC Co-POW.",
-            },
-            {
-                label: "Watch",
-                value: "turnover rate amid usage spike.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "6-0 start included a rivalry win over Kentucky.",
+      },
+      {
+        label: "Read",
+        value: "depth showing up early.",
+      },
+    ],
+  },
+  {
+    rank: 13,
+    team: "Florida",
+    program: {
+      id: 277,
+      full_name: "Florida Gators",
+      name: "Gators",
+      abbreviation: "FLA",
+      college: "Florida",
     },
-    {
-        rank: 14,
-        team: "St. John's",
-        program: {
-            id: 90,
-            full_name: "St. John's Red Storm",
-            name: "Red Storm",
-            abbreviation: "SJU",
-            college: "St. John's",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "physical 2–4, chaos→easy buckets.",
-            },
-            {
-                label: "This week",
-                value: "108–74 over Quinnipiac, then fell to Alabama at MSG.",
-            },
-            {
-                label: "Watch",
-                value: "FT% and point-of-attack containment.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "opening loss to Arizona aged fine.",
+      },
+      {
+        label: "Read",
+        value: "front-court still a matchup problem.",
+      },
+    ],
+  },
+  {
+    rank: 14,
+    team: "St. John's",
+    program: {
+      id: 90,
+      full_name: "St. John's Red Storm",
+      name: "Red Storm",
+      abbreviation: "SJU",
+      college: "St. John's",
     },
-    {
-        rank: 15,
-        team: "UCLA",
-        program: {
-            id: 127,
-            full_name: "UCLA Bruins",
-            name: "Bruins",
-            abbreviation: "UCLA",
-            college: "UCLA",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "compact defense, controlled pace, surgical sets.",
-            },
-            {
-                label: "This week",
-                value: "rugged but better vs Pepperdine after a shaky opener.",
-            },
-            {
-                label: "Watch",
-                value: "defensive rebounding consistency.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "physicality plays.",
+      },
+      {
+        label: "Read",
+        value: "tight loss to ISU doesn’t ding the ceiling.",
+      },
+    ],
+  },
+  {
+    rank: 15,
+    team: "Illinois",
+    program: {
+      id: 113,
+      full_name: "Illinois Fighting Illini",
+      name: "Fighting Illini",
+      abbreviation: "ILL",
+      college: "Illinois",
     },
-    {
-        rank: 16,
-        team: "Illinois",
-        program: {
-            id: 113,
-            full_name: "Illinois Fighting Illini",
-            name: "Fighting Illini",
-            abbreviation: "ILL",
-            college: "Illinois",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "veteran shot-making, strong D-glass.",
-            },
-            {
-                label: "This week",
-                value: "two blowouts, 113–70 over FGCU with Boswell’s 31.",
-            },
-            {
-                label: "Watch",
-                value: "opponent 3P% regression and contest rate.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "rugged, old.",
+      },
+      {
+        label: "Read",
+        value: "UConn loss is data, not indictment.",
+      },
+    ],
+  },
+  {
+    rank: 16,
+    team: "Gonzaga",
+    program: {
+      id: 354,
+      full_name: "Gonzaga Bulldogs",
+      name: "Bulldogs",
+      abbreviation: "GONZ",
+      college: "Gonzaga",
     },
-    {
-        rank: 17,
-        team: "Tennessee",
-        program: {
-            id: 286,
-            full_name: "Tennessee Volunteers",
-            name: "Volunteers",
-            abbreviation: "TENN",
-            college: "Tennessee",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "switch, contest, rebound.",
-            },
-            {
-                label: "This week",
-                value: "handled Mercer and NKU, Ament popped.",
-            },
-            {
-                label: "Watch",
-                value: "FT rate generated by guards.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "took a historic punch from Michigan.",
+      },
+      {
+        label: "Read",
+        value: "still plenty of shooting and scheme.",
+      },
+    ],
+  },
+  {
+    rank: 17,
+    team: "UCLA",
+    program: {
+      id: 127,
+      full_name: "UCLA Bruins",
+      name: "Bruins",
+      abbreviation: "UCLA",
+      college: "UCLA",
     },
-    {
-        rank: 18,
-        team: "Iowa State",
-        program: {
-            id: 74,
-            full_name: "Iowa State Cyclones",
-            name: "Cyclones",
-            abbreviation: "ISU",
-            college: "Iowa State",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "turnover factory, disciplined close-outs.",
-            },
-            {
-                label: "This week",
-                value: "2–0 with blowouts of FDU and Grambling; Jefferson/Momcilovic rolling.",
-            },
-            {
-                label: "Watch",
-                value: "live-ball TO% vs ranked guards.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "fell to Arizona earlier and got stung by Cal.",
+      },
+      {
+        label: "Read",
+        value: "upside remains with health.",
+      },
+    ],
+  },
+  {
+    rank: 18,
+    team: "Kentucky",
+    program: {
+      id: 279,
+      full_name: "Kentucky Wildcats",
+      name: "Wildcats",
+      abbreviation: "UK",
+      college: "Kentucky",
     },
-    {
-        rank: 19,
-        team: "Kansas",
-        program: {
-            id: 75,
-            full_name: "Kansas Jayhawks",
-            name: "Jayhawks",
-            abbreviation: "KU",
-            college: "Kansas",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "structure, two-way wings, high-IQ sets.",
-            },
-            {
-                label: "This week",
-                value: "second-half fade at UNC, 87–74.",
-            },
-            {
-                label: "Watch",
-                value: "defensive glass vs top-50 athletes.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "volatility high.",
+      },
+      {
+        label: "Read",
+        value: "first true road test at UNC will tell us more.",
+      },
+    ],
+  },
+  {
+    rank: 19,
+    team: "North Carolina",
+    program: {
+      id: 10,
+      full_name: "North Carolina Tar Heels",
+      name: "Tar Heels",
+      abbreviation: "UNC",
+      college: "North Carolina",
     },
-    {
-        rank: 20,
-        team: "Gonzaga",
-        program: {
-            id: 354,
-            full_name: "Gonzaga Bulldogs",
-            name: "Bulldogs",
-            abbreviation: "GONZ",
-            college: "Gonzaga",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "continuity offense, inside-out reads.",
-            },
-            {
-                label: "This week",
-                value: "98–43 TSU, then 83–68 over Oklahoma.",
-            },
-            {
-                label: "Watch",
-                value: "rim FG% allowed.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "athleticism + secondary break travel.",
+      },
+      {
+        label: "Read",
+        value: "schedule heat arrives now.",
+      },
+    ],
+  },
+  {
+    rank: 20,
+    team: "Texas Tech",
+    program: {
+      id: 79,
+      full_name: "Texas Tech Red Raiders",
+      name: "Red Raiders",
+      abbreviation: "TTU",
+      college: "Texas Tech",
     },
-    {
-        rank: 21,
-        team: "Auburn",
-        program: {
-            id: 276,
-            full_name: "Auburn Tigers",
-            name: "Tigers",
-            abbreviation: "AUB",
-            college: "Auburn",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "rim protection and vertical spacing.",
-            },
-            {
-                label: "This week",
-                value: "needed OT to escape Bethune-Cookman. Process needs polish.",
-            },
-            {
-                label: "Watch",
-                value: "whistle control while protecting the rim.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "Baha Mar runner-up.",
+      },
+      {
+        label: "Read",
+        value: "defense is real, Purdue just squeezed the life out of the offense.",
+      },
+    ],
+  },
+  {
+    rank: 21,
+    team: "Creighton",
+    program: {
+      id: 84,
+      full_name: "Creighton Bluejays",
+      name: "Bluejays",
+      abbreviation: "CREI",
+      college: "Creighton",
     },
-    {
-        rank: 22,
-        team: "Michigan State",
-        program: {
-            id: 117,
-            full_name: "Michigan State Spartans",
-            name: "Spartans",
-            abbreviation: "MSU",
-            college: "Michigan State",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "defensive spine, rebounding culture, veteran backcourt.",
-            },
-            {
-                label: "This week",
-                value: "69–66 over No.14 Arkansas. Boards and paint touches won it.",
-            },
-            {
-                label: "Watch",
-                value: "late-clock creator clarity.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "shot quality is fine.",
+      },
+      {
+        label: "Read",
+        value: "ISU’s pressure exposed ball security.",
+      },
+    ],
+  },
+  {
+    rank: 22,
+    team: "California",
+    program: {
+      id: 2,
+      full_name: "California Golden Bears",
+      name: "Golden Bears",
+      abbreviation: "CAL",
+      college: "California",
     },
-    {
-        rank: 23,
-        team: "Creighton",
-        program: {
-            id: 84,
-            full_name: "Creighton Bluejays",
-            name: "Bluejays",
-            abbreviation: "CREI",
-            college: "Creighton",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "spacing, ball security, five-man skill.",
-            },
-            {
-                label: "This week",
-                value: "92–76 over South Dakota; McDermott’s 500th D-I win.",
-            },
-            {
-                label: "Watch",
-                value: "non-starter net rating when tempo slows.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "legitimate step forward.",
+      },
+      {
+        label: "Read",
+        value: "upset UCLA at Chase Center and earned it.",
+      },
+    ],
+  },
+  {
+    rank: 23,
+    team: "Michigan State",
+    program: {
+      id: 117,
+      full_name: "Michigan State Spartans",
+      name: "Spartans",
+      abbreviation: "MSU",
+      college: "Michigan State",
     },
-    {
-        rank: 24,
-        team: "Wisconsin",
-        program: {
-            id: 130,
-            full_name: "Wisconsin Badgers",
-            name: "Badgers",
-            abbreviation: "WIS",
-            college: "Wisconsin",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "slowdown, shot quality, positioning.",
-            },
-            {
-                label: "This week",
-                value: "handled business; real tests ahead.",
-            },
-            {
-                label: "Watch",
-                value: "opponent FT rate once step-up games land.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "defense, glass, patience.",
+      },
+      {
+        label: "Read",
+        value: "offense still searching for a late-clock adult.",
+      },
+    ],
+  },
+  {
+    rank: 24,
+    team: "Wisconsin",
+    program: {
+      id: 130,
+      full_name: "Wisconsin Badgers",
+      name: "Badgers",
+      abbreviation: "WIS",
+      college: "Wisconsin",
     },
-    {
-        rank: 25,
-        team: "Arkansas",
-        program: {
-            id: 275,
-            full_name: "Arkansas Razorbacks",
-            name: "Razorbacks",
-            abbreviation: "ARK",
-            college: "Arkansas",
-        },
-        notes: [
-            {
-                label: "Identity",
-                value: "downhill guards, O-boards, free throws.",
-            },
-            {
-                label: "This week",
-                value: "69–66 loss at Michigan State; spacing and shot selection wobble.",
-            },
-            {
-                label: "Watch",
-                value: "lineup 3-point gravity.",
-            },
-        ],
+    notes: [
+      {
+        label: "This week",
+        value: "shot diet disciplined.",
+      },
+      {
+        label: "Read",
+        value: "wins will keep looking ugly and predictive models will love them.",
+      },
+    ],
+  },
+  {
+    rank: 25,
+    team: "Auburn",
+    program: {
+      id: 276,
+      full_name: "Auburn Tigers",
+      name: "Tigers",
+      abbreviation: "AUB",
+      college: "Auburn",
     },
+    notes: [
+      {
+        label: "This week",
+        value: "got blitzed by Michigan.",
+      },
+      {
+        label: "Read",
+        value: "but the athletic baseline still screams March team.",
+      },
+    ],
+  },
 ];
 const pollItems = poll
     .map(entry => {
