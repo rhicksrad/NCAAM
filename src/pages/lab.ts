@@ -46,7 +46,7 @@ function chalkboard(doc: EffDoc): Markup {
     <svg viewBox="0 0 ${CW} ${CH}" id="eff-svg" role="img" aria-label="Offense against defense for every Division I team in the chosen season">
       ${ticksX.map((t) => html`<line class="axis" x1="${cx(t)}" x2="${cx(t)}" y1="${PT}" y2="${CH - PB}"/><text x="${cx(t)}" y="${CH - 12}" text-anchor="middle">${t}</text>`)}
       ${ticksY.map((t) => html`<line class="axis" x1="${PL}" x2="${CW - PR}" y1="${cy(t)}" y2="${cy(t)}"/><text x="${PL - 8}" y="${cy(t) + 4}" text-anchor="end">${t}</text>`)}
-      <text x="${CW - PR}" y="${CH - 12}" text-anchor="end">points scored per 100 possessions →</text>
+      <text x="${CW - PR - 6}" y="${CH - PB - 10}" text-anchor="end">points scored per 100 possessions →</text>
       <text x="${PL + 6}" y="${PT + 12}">↑ stingier defense (points allowed per 100)</text>
       <text x="${CW - PR - 6}" y="${PT + 14}" text-anchor="end" style="font-size:15px;font-weight:800">CONTENDERS</text>
       <text x="${PL + 6}" y="${CH - PB - 8}" style="font-size:15px;font-weight:800">LONG WINTER</text>
@@ -170,7 +170,7 @@ function thinAir(doc: ArenaDoc): Markup {
       <div class="sheet__head"><h3>Highest home floors</h3><small>feet above sea level</small></div>
       <table><tbody>
         ${top.map(
-          (a, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${a[1] ? html`<a class="who" href="${teamHref(a[1])}">${a[0]}</a>` : a[0]}<br><small>${a[2]}</small></td><td class="hot">${a[5].toLocaleString()}</td></tr>`,
+          (a, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${a[1] ? html`<a class="who" href="${teamHref(a[1])}">${a[0]}</a>` : a[0]}<small class="sub">${a[2]}</small></td><td class="hot">${a[5].toLocaleString()}</td></tr>`,
         )}
       </tbody></table>
       <p class="sheet__note">${doc.rows.filter((a) => a[5] < 100).length} programs play within 100 feet of sea level. The lowest floor on file: ${doc.rows[doc.rows.length - 1]![0]}, at ${doc.rows[doc.rows.length - 1]![5]} ft.</p>

@@ -531,3 +531,26 @@ a.ticket:hover {
   max-width: min(22rem, 58vw);
   text-overflow: ellipsis;
 }
+
+/* Ink-stamp decal beside each page title, like a mark on the floor. */
+.page-head {
+  position: relative;
+}
+.decal {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: clamp(5rem, 16vw, 10rem);
+  height: auto;
+  transform: translateY(-50%) rotate(-7deg);
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  pointer-events: none;
+}
+@media (max-width: 560px) {
+  .decal {
+    top: 0;
+    transform: rotate(-7deg);
+    opacity: 0.5;
+  }
+}

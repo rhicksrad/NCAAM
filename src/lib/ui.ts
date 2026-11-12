@@ -23,6 +23,24 @@ export function teamColors(team: Pick<Team, "color" | "alt">): { paint: string; 
   return { paint, ink: luminance(paint) > 0.42 ? INK : LINE };
 }
 
+function rgb(hexColor: string): [number, number, number] {
+  const n = parseInt(hexColor.slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+/** Two paints for a head-to-head chart that a reader can tell apart, even
+ *  when both schools wear red. Home keeps its colour; away gives way. */
+export function rivalColors(home: Pick<Team, "color" | "alt">, away: Pick<Team, "color" | "alt">): { home: string; away: string } {
+  const h = teamColors(home).paint;
+  const far = (c: string) => {
+    const [r1, g1, b1] = rgb(h);
+    const [r2, g2, b2] = rgb(c);
+    return Math.hypot(r1 - r2, g1 - g2, b1 - b2) > 110 && luminance(c) < 0.75;
+  };
+  const candidates = [teamColors(away).paint, away.alt, "#4d5a78", INK].filter((c): c is string => Boolean(c));
+  return { home: h, away: candidates.find(far) ?? "#4d5a78" };
+}
+
 export function teamStyle(team: Pick<Team, "color" | "alt">): string {
   const { paint, ink } = teamColors(team);
   return `--team:${paint};--team-ink:${ink}`;

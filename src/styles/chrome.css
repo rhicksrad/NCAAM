@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--ink) url("../art/floor-dark.webp") 0 0 / 512px 512px;
+  background: var(--ink) url("../art/floor-dark.webp") 0 0 / 600px 600px;
   color: var(--line);
   border-bottom: var(--lane) solid var(--line);
   view-transition-name: masthead;
@@ -198,7 +198,7 @@
 /* Footer: the baseline, on dark-stained boards. */
 .baseline {
   margin-top: clamp(3rem, 8vw, 6rem);
-  background: var(--ink) url("../art/floor-dark.webp") 0 0 / 512px 512px;
+  background: var(--ink) url("../art/floor-dark.webp") 0 0 / 600px 600px;
   color: rgb(251 250 244 / 0.8);
   border-top: var(--lane) solid var(--line);
   font-size: 0.88rem;

@@ -175,7 +175,8 @@ const num = (v: unknown): number | null => {
   const n = typeof v === "number" ? v : typeof v === "string" && v.trim() !== "" ? Number(v) : NaN;
   return Number.isFinite(n) ? n : null;
 };
-const arr = (v: unknown): J[] => (Array.isArray(v) ? (v as J[]) : []);
+/** Arrays of objects only: a null or a stray number in a feed must not throw. */
+const arr = (v: unknown): J[] => (Array.isArray(v) ? (v as unknown[]).filter((x): x is J => typeof x === "object" && x !== null) : []);
 const hex = (v: unknown): string => (typeof v === "string" && /^[0-9a-f]{6}$/i.test(v) ? `#${v.toLowerCase()}` : "");
 
 export function toTeam(raw: J | null | undefined): Team {
@@ -270,7 +271,12 @@ export function normalizeScoreboard(json: J): Game[] {
 
 /** The calendar days ESPN has games on, as YYYYMMDD, when the feed lists them. */
 export function scoreboardDay(json: J): string {
-  return str(json?.day?.date).replace(/-/g, "");
+  const day = str(json?.day?.date).replace(/-/g, "");
+  if (/^\d{8}$/.test(day)) return day;
+  // The college feed often omits `day`; fall back to the Eastern date of the slate.
+  const at = Date.parse(str(json?.eventsDate?.date));
+  if (!Number.isFinite(at)) return "";
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit" }).format(at).replace(/-/g, "");
 }
 
 export function normalizeRankings(json: J): Poll[] {

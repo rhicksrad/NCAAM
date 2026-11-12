@@ -61,17 +61,19 @@ function scheduleSheet(games: ScheduleGame[]): Markup {
   </section>`;
 }
 
+const CLASS: Record<string, string> = { Freshman: "Fr", Sophomore: "So", Junior: "Jr", Senior: "Sr", Graduate: "Gr", "Redshirt Freshman": "RFr", "Redshirt Sophomore": "RSo", "Redshirt Junior": "RJr", "Redshirt Senior": "RSr" };
+
 function rosterSheet(players: RosterPlayer[]): Markup {
   if (!players.length) return html``;
   return html`<section class="sheet">
     <div class="sheet__head"><h2>Roster</h2><small>${players.length} players</small></div>
     <div class="sheet__scroll"><table>
-      <thead><tr><th class="l">#</th><th class="l">Player</th><th>Pos</th><th>Ht</th><th>Wt</th><th class="l">Class</th></tr></thead>
+      <thead><tr><th class="l">#</th><th class="l">Player</th><th>Pos</th><th>Ht</th><th>Wt</th><th class="l">Yr</th></tr></thead>
       <tbody>
         ${players.map(
           (p) => html`<tr><td class="l pos">${p.jersey}</td><td class="l"><span class="who"><span>${p.name}${
             p.from ? html` <small>${p.from}</small>` : ""
-          }</span></span></td><td>${p.pos}</td><td>${p.height}</td><td>${p.weight}</td><td class="l">${p.year}</td></tr>`,
+          }</span></span></td><td>${p.pos}</td><td>${p.height}</td><td>${p.weight}</td><td class="l">${CLASS[p.year] ?? p.year}</td></tr>`,
         )}
       </tbody>
     </table></div>

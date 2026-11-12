@@ -39,7 +39,8 @@ function shell(page, assets, aboutHtml, buildStamp) {
 <meta property="og:image" content="${SITE.url}art/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#14213a">
-<link rel="icon" href="./art/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./art/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="./art/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./${assets.css}">

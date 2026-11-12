@@ -342,7 +342,9 @@
 
 /* ---------- Game page ---------- */
 .board {
-  background: #0f1728 url("../art/scoreboard.webp") center / cover no-repeat;
+  background:
+    linear-gradient(rgb(13 20 36 / 0.8), rgb(13 20 36 / 0.8)),
+    #0f1728 url("../art/scoreboard.webp") center / cover no-repeat;
   color: var(--line);
   border: var(--lane) solid var(--line);
   padding: clamp(1rem, 3vw, 1.8rem);
@@ -481,12 +483,12 @@
 }
 .cmp {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.45rem;
   padding: 0.9rem 1rem 1rem;
 }
 .cmp__row {
   display: grid;
-  grid-template-columns: 3.4rem 1fr 3.4rem;
+  grid-template-columns: 3rem minmax(0, 1fr) 6.2rem minmax(0, 1fr) 3rem;
   gap: 0.6rem;
   align-items: center;
   font-variant-numeric: tabular-nums;
@@ -495,31 +497,23 @@
 .cmp__row > :last-child {
   text-align: right;
 }
-.cmp__bar {
-  position: relative;
-  height: 1.5rem;
-  display: flex;
-  background: var(--chalk-2);
-}
-.cmp__bar i:first-child {
-  background: var(--a);
-}
-.cmp__bar i:last-child {
-  background: var(--b);
-  margin-left: auto;
-}
-.cmp__bar span {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font: 700 0.82rem/1 var(--display);
+.cmp__row b {
+  text-align: center;
+  font: 700 0.86rem/1 var(--display);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--ink);
-  mix-blend-mode: luminosity;
-  pointer-events: none;
-  text-shadow: 0 0 3px var(--chalk), 0 0 3px var(--chalk);
+  color: var(--ink-soft);
+}
+.cmp__row i {
+  height: 1.15rem;
+}
+.cmp__a {
+  background: var(--a);
+  transform-origin: right;
+}
+.cmp__b {
+  background: var(--b);
+  transform-origin: left;
 }
 .pbp {
   list-style: none;
@@ -869,7 +863,7 @@ tr.career caption {
 .tall {
   display: flex;
   align-items: flex-end;
-  gap: 2px;
+  gap: 0;
   height: 15rem;
   padding: 1rem 1rem 0;
   border-bottom: 3px solid var(--ink);
@@ -938,4 +932,21 @@ tr.career caption {
 .split > *,
 .sheet {
   min-width: 0;
+}
+.airball {
+  position: relative;
+  min-height: 60vh;
+}
+.airball__net {
+  float: right;
+  width: clamp(9rem, 30vw, 20rem);
+  height: auto;
+  margin: 0 0 1rem 1rem;
+  border: var(--lane) solid var(--line);
+}
+
+small.sub {
+  display: block;
+  opacity: 0.7;
+  line-height: 1.2;
 }

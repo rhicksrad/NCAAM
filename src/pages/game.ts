@@ -3,7 +3,7 @@ import { feed } from "../lib/data.js";
 import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
 import { espn, type BoxTeam, type GameDetail, type Play, type Side } from "../lib/espn.js";
 import { flowChart, type FlowPoint } from "../lib/charts.js";
-import { failure, fmtDay, fmtTime, logoUrl, periodLabel, teamColors, teamHref } from "../lib/ui.js";
+import { failure, fmtDay, fmtTime, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
 const id = param("id") ?? "";
 const root = $("#game-root");
@@ -83,15 +83,15 @@ function flow(d: GameDetail): Markup {
   if (prev > 0) homeLed += end - prevT;
   else if (prev < 0) awayLed += end - prevT;
   const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
-  const home = teamColors(g.home.team).paint;
-  let away = teamColors(g.away.team).paint;
-  if (away === home) away = g.away.team.alt && g.away.team.alt !== home ? g.away.team.alt : "#4d5a78";
+  const { home, away } = rivalColors(g.home.team, g.away.team);
   const front = homeLed >= awayLed ? g.home.team.name : g.away.team.name;
   return html`<section class="flow">
     <h2>Who had it, and when</h2>
-    <p>${front} led for ${mmss(Math.max(homeLed, awayLed))}. ${changes} lead change${changes === 1 ? "" : "s"}, ${ties} tie${ties === 1 ? "" : "s"}. Biggest leads: ${
-      g.home.team.abbr
-    } by ${bigHome}, ${g.away.team.abbr} by ${bigAway}.</p>
+    <p>${front} led for ${mmss(Math.max(homeLed, awayLed))}. ${changes} lead change${changes === 1 ? "" : "s"}, ${ties} tie${ties === 1 ? "" : "s"}. ${
+      bigHome && bigAway
+        ? `Biggest leads: ${g.home.team.abbr} by ${bigHome}, ${g.away.team.abbr} by ${bigAway}.`
+        : `${bigHome ? g.away.team.name : g.home.team.name} never led; the biggest gap was ${Math.max(bigHome, bigAway)}.`
+    }</p>
     ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr)}
   </section>`;
 }
@@ -116,20 +116,21 @@ function compare(d: GameDetail): Markup {
   const h = d.box.find((b) => b.teamId === g.home.team.id)?.stats ?? {};
   const rows = CMP.filter(([key]) => a[key] && h[key]);
   if (!rows.length) return html``;
-  const ca = teamColors(g.away.team).paint;
-  let ch = teamColors(g.home.team).paint;
-  if (ca === ch) ch = "#4d5a78";
+  const { home: ch, away: ca } = rivalColors(g.home.team, g.away.team);
   return html`<section class="sheet">
-    <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.abbr} left, ${g.home.team.abbr} right</small></div>
+    <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.name} left, ${g.home.team.name} right</small></div>
     <div class="cmp" style="--a:${ca};--b:${ch}">
       ${rows.map(([key, label]) => {
         const av = parseFloat(a[key]!.value) || 0;
         const hv = parseFloat(h[key]!.value) || 0;
-        const sum = av + hv || 1;
-        return html`<div class="cmp__row"><span>${a[key]!.value}</span><div class="cmp__bar"><i style="width:calc(${((av / sum) * 100).toFixed(1)}% - 2px)"></i><i style="width:calc(${(
-          (hv / sum) *
-          100
-        ).toFixed(1)}% - 2px)"></i><span>${label}</span></div><span>${h[key]!.value}</span></div>`;
+        const max = Math.max(av, hv) || 1;
+        return html`<div class="cmp__row">
+          <span>${a[key]!.value}</span>
+          <i class="cmp__a" style="transform:scaleX(${(av / max).toFixed(3)})"></i>
+          <b>${label}</b>
+          <i class="cmp__b" style="transform:scaleX(${(hv / max).toFixed(3)})"></i>
+          <span>${h[key]!.value}</span>
+        </div>`;
       })}
     </div>
   </section>`;

@@ -61,6 +61,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-stopwatch.webp" alt="" width="160" height="160">
     <h1 class="floor-title">Scores</h1>
     <p class="page-head__sub" id="games-sub">Pick a day. Every Division I game, straight from the table.</p>
   </header>
@@ -84,6 +85,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-trophy.webp" alt="" width="160" height="160">
     <h1 class="floor-title">Rankings</h1>
     <p class="page-head__sub" id="rankings-sub">Who's hanging in the rafters this week.</p>
   </header>
@@ -99,6 +101,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-bracket.webp" alt="" width="160" height="160">
     <h1 class="floor-title">Standings</h1>
     <p class="page-head__sub" id="standings-sub">Every conference race, top to bottom.</p>
   </header>
@@ -114,6 +117,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-jersey.webp" alt="" width="160" height="160">
     <h1 class="floor-title">Teams</h1>
     <p class="page-head__sub" id="teams-sub">Every Division I program. Type to find yours.</p>
   </header>
@@ -136,6 +140,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-sneaker.webp" alt="" width="160" height="160">
     <h1 class="floor-title">Players</h1>
     <p class="page-head__sub" id="players-sub">Stat leaders and every stat line we have on file.</p>
   </header>
@@ -151,6 +156,7 @@ export const PAGES = [
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
+    <img class="decal" src="./art/icon-clipboard.webp" alt="" width="160" height="160">
     <h1 class="floor-title">The Lab</h1>
     <p class="page-head__sub">Side projects from the film room. None of this wins games.</p>
   </header>
@@ -171,6 +177,7 @@ export const PAGES = [
     description: "That page isn't here.",
     skeleton: `
 <div class="wrap page airball">
+  <img class="airball__net" src="./art/net.webp" alt="" width="360" height="360">
   <h1 class="floor-title">Air ball</h1>
   <p class="page-head__sub">Nothing but floor. That page isn't here.</p>
   <p><a class="btn" href="./index.html">Back to tonight's games</a></p>
