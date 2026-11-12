@@ -1,271 +1,93 @@
-# agents.md — Cloudflare Proxy Workflow (NCAAM)
+This codebase is yours; what it's for and how it's built are your call, and you'll keep building on it.
 
-This project **never** exposes API keys to the browser.
-All NCAA Men’s Basketball (Ball Don’t Lie NCAAB) requests must go through the **Cloudflare Worker proxy**, which securely attaches the API key on the server side.
+# Field House
 
----
+A static, no-backend site for men's college basketball, deployed to GitHub Pages at
+https://rhicksrad.github.io/NCAAM/. It exists to show off: it has to look great, load fast and
+be clever. Protect those three things in every change.
 
-## 🔒 Non-negotiables
+## The one rule about data
 
-**Absolutely required for all agents and contributors:**
+**Nothing here may depend on a paid API, a secret, or a server of ours.** The original site died
+when a paid Ball Don't Lie key lapsed. Everything now comes from:
 
-* ❌ **Never** add `Authorization` headers in client or browser code.
-* ❌ **Never** include `.env`, meta tags, or client-side credential lookups.
-* ✅ All browser fetches **must** go through the Worker endpoint:
+- **ESPN's public JSON feeds**, fetched by the visitor's browser (`src/lib/espn.ts`). No key. They
+  send `Access-Control-Allow-Origin: *`. They are undocumented, so every field is parsed
+  defensively and normalised into the small types exported from that file. Pages never touch raw
+  ESPN JSON.
+- **A baked snapshot** of those feeds (`scripts/snapshot.ts` writes `dist/data/live/*.json`). The
+  deploy workflow rebuilds it on a timer. Pages paint from the snapshot first and swap in live
+  data (`feed()` in `src/lib/data.ts`). If ESPN is down the snapshot stays up with an amber note.
+  `data/seed/` is the committed fallback used by offline builds and CI.
+- **Archives in `data/raw/`** (Sports Reference player lines, Bart Torvik efficiency, arenas,
+  mascots). `scripts/derive-data.mjs` reshapes them into compact files at build time.
 
-  * **Base Data**: `https://ncaam.hicksrch.workers.dev/v1`
-  * **Diagnostics**: `https://ncaam.hicksrch.workers.dev/diag`
-* ✅ Only use **`GET`** or **`HEAD`** requests.
-  The proxy and upstream are read-only; no `POST`, `PUT`, `PATCH`, or `DELETE` are ever allowed.
-* ✅ Keep requests idempotent and cache-friendly.
+If a feed changes shape: re-record `tests/fixtures/espn/`, fix the normaliser, run
+`pnpm snapshot --reseed`, keep the tests green.
 
----
+## Layout
 
-## ⚙️ How to call the proxy
-
-Always use the provided helper. Never call `fetch("https://api.balldontlie.io/ncaab/...")` directly.
-
-```js
-// public/assets/js/ncaam.js
-
-export const NCAAM_BASE = "https://ncaam.hicksrch.workers.dev/v1";
-
-/**
- * Fetch data from the NCAAM Cloudflare Worker proxy.
- * Automatically handles JSON, errors, and consistent headers.
- *
- * @param {string} path - The endpoint path, e.g. "/teams?per_page=100"
- * @param {object} [init] - Optional fetch configuration (no Authorization!)
- */
-export async function ncaam(path, init = {}) {
-  const url = `${NCAAM_BASE}${path.startsWith('/') ? '' : '/'}${path}`;
-  const res = await fetch(url, {
-    ...init,
-    method: 'GET',
-    headers: {
-      Accept: "application/json",
-      ...(init.headers || {})
-    },
-  });
-
-  if (!res.ok) {
-    throw new Error(`NCAAM ${res.status} ${res.statusText} for ${path}`);
-  }
-
-  return res.json();
-}
+```
+src/pages/*.ts     one entry per page (bundled by esbuild, code-split)
+src/lib/           espn (feeds + types), data (snapshot/live), ui, dom, charts, chrome
+src/styles/*.css   base, chrome (masthead/footer), parts (components), pages
+scripts/pages.mjs  every page's title, description and static skeleton markup
+scripts/build.mjs  the whole build: copy public/, derive data, snapshot, bundle, write HTML
+public/art/        generated art (WebP). Originals are not kept in the repo
+data/raw/          source archives, never served directly
+tests/             vitest unit tests + recorded ESPN fixtures
 ```
 
-### ✅ Examples
+## Commands
 
-```js
-import { ncaam } from "./assets/js/ncaam.js";
-
-// Get all teams
-const teams = await ncaam("/teams?per_page=100");
-
-// Get players (page 2)
-const players = await ncaam("/players?per_page=50&page=2");
-
-// Get standings for a specific season
-const standings = await ncaam("/standings?season=2025");
-
-// Get AP Top 25 rankings for week 3
-const rankings = await ncaam("/rankings?season=2025&week=3");
-
-// Get recent games in a date window
-const games = await ncaam("/games?start_date=2025-11-05&end_date=2025-11-10&per_page=25");
-
-// Fetch a single team by ID
-const duke = await ncaam("/teams/3");
-
-// Health check (useful for CI or debugging)
-const diag = await ncaam("/diag");
-console.log(diag.ok, diag.hasKey, diag.ts);
+```
+pnpm dev        build, serve on :4173, rebuild on change
+pnpm build      production build into dist/   (SNAPSHOT=seed to stay offline)
+pnpm check      everything CI runs: typecheck, test, build, budget, smoke
 ```
 
-> 💡 **Tip:**
-> Always prefix with `/v1/…` or `/ncaab/v1/…`.
-> The Worker normalizes both formats automatically.
+CI (`.github/workflows/ci.yml`) runs `typecheck`, `test`, `build`, `budget` and a Playwright
+`smoke` on every pull request. All five must pass before merging. Don't skip or loosen a check to
+get green; fix the cause. The budget (`scripts/check-budget.mjs`) is a feature: if a page gets
+heavier than its allowance, make it lighter.
 
----
+## Design: the field house
 
-## 🧩 Expected repository state
+The page is a gym floor. Read `src/styles/site.css` first. Three surfaces:
 
-* ✅ No `.env` files or inlined credentials.
-* ✅ No `Authorization: Bearer ...` strings in any client or build script.
-* ✅ `package.json` contains no key-injection logic.
-* ✅ CI pipelines never expose secrets.
-* ✅ Worker secret `BDL_API_KEY` is configured **only** in Cloudflare’s dashboard.
+- **floor**: headings painted straight onto the maple (`.floor-title`, multiply-blended so the
+  grain shows through), separated by white court lines.
+- **paint**: navy blocks for the masthead, scoreboard and hero, like a painted key.
+- **sheet**: chalk-white stat paper for anything tabular; game cards are ticket stubs.
 
----
+Two typefaces, self-hosted: Big Shoulders (display, uppercase, gym-signage) and Archivo (text).
+Palette: ink `#14213a`, ball `#d9541e`, maple `#e2b777`, chalk `#f3f0e6`, amber `#ffb52e`,
+bleacher green `#1e5a48`. Team pages take their paint from the team's own colours.
 
-## 🚀 Worker summary
+Keep it from looking machine-made:
 
-**Proxy behavior overview**
+- No purple/blue gradients, glassmorphism, glow, or gradient text. No rounded-card-with-soft-shadow
+  grids. No pill badges, emoji icons, or centred hero with two buttons.
+- No Inter/Roboto/system-font body text. No pure `#000` or `#fff`.
+- Structure follows content: tables for tabular things, not cards. Square corners. Shadows are
+  warm contact shadows on the wood, never grey blur.
+- One orchestrated motion per page at most (banners unfurl, dots migrate). Animate only
+  `transform` and `opacity`. Respect `prefers-reduced-motion`.
+- Copy is specific and a little dry. Say what the numbers say; no filler, no invented metrics.
+- Every image needs a flat-colour fallback underneath it, and must earn its bytes.
 
-| Aspect               | Description                                             |
-| -------------------- | ------------------------------------------------------- |
-| **Upstream**         | `https://api.balldontlie.io/ncaab`                      |
-| **Allowed methods**  | `GET`, `HEAD`, `OPTIONS` (CORS preflight only)          |
-| **Key storage**      | `env.BDL_API_KEY` (Worker secret, never client-visible) |
-| **CORS policy**      | Permissive (`*`) for `GET`, `HEAD`, and `OPTIONS`       |
-| **Diagnostics**      | `/diag` → `{ ok: true, upstream, hasKey, ts, ... }`     |
-| **Error handling**   | Returns JSON: `{ ok: false, error: "..." }`             |
-| **Cache (optional)** | Public edge cache (configurable TTL)                    |
-| **Normalization**    | `/ncaab/v1/...` → `/v1/...`                             |
-| **Fallback**         | Returns 404 JSON on unrecognized paths                  |
+## Art
 
-### 🔍 Sample responses
+Backgrounds and textures in `public/art/` were generated with Codex CLI and then cropped and
+compressed to WebP with `scripts/optimize-art.mjs`. Brief for new pieces: an old college field
+house (maple floor, painted lines, enamel scoreboard, chalk); no text, logos or faces; the palette
+above; nothing glossy or 3D.
 
-**`GET /diag`**
+## Housekeeping
 
-```json
-{
-  "ok": true,
-  "upstream": "https://api.balldontlie.io/ncaab",
-  "hasKey": true,
-  "path": "/diag",
-  "query": {},
-  "ts": "2025-10-28T16:22:51.123Z"
-}
-```
-
-**`GET /v1/teams?per_page=3`**
-
-```json
-{
-  "data": [
-    { "id": 1, "full_name": "Duke Blue Devils" },
-    { "id": 2, "full_name": "Kansas Jayhawks" },
-    { "id": 3, "full_name": "North Carolina Tar Heels" }
-  ],
-  "meta": { "total_pages": 40, "per_page": 3 }
-}
-```
-
----
-
-## 🧠 When adding features
-
-* Always use `ncaam()` helper for all requests.
-* Never fetch `https://api.balldontlie.io` directly.
-* Keep requests cache-friendly:
-
-  * Use query params for filtering and pagination.
-  * Avoid dynamic cache busters unless truly required.
-* To bypass cache temporarily:
-
-  ```js
-  await ncaam(`/games?season=2025&_=${Date.now()}`);
-  ```
-* Return only the fields needed for rendering.
-* Normalize and validate data locally before rendering.
-
----
-
-## 🚨 Common pitfalls & fixes
-
-| Problem                                        | Fix                                                  |
-| ---------------------------------------------- | ---------------------------------------------------- |
-| ❌ Requests still point to `api.balldontlie.io` | ✅ Replace with `ncaam("/...")`                       |
-| ❌ Authorization header appears in browser      | ✅ Remove. Worker adds it server-side                 |
-| ❌ CORS errors                                  | ✅ Use Worker base URL (`ncaam.hicksrch.workers.dev`) |
-| ❌ 401 from upstream                            | ✅ Rotate Worker secret                               |
-| ❌ 403 to client                                | ✅ Check origin allowlist / domain policy             |
-| ❌ 429 Too Many Requests                        | ✅ Back off, inspect rate limit config                |
-| ❌ Stale cache                                  | ✅ Add `cache=0` query param for forced refresh       |
-
----
-
-## 🧪 Testing checklist
-
-Perform these tests **after any Worker or client changes:**
-
-1. Open browser DevTools → Network tab.
-   Verify all calls to:
-   `https://ncaam.hicksrch.workers.dev/v1/...`
-2. Confirm **no** `Authorization` header on any request.
-3. Confirm no references to old `.env` or vendor keys.
-4. Validate data loads correctly:
-
-   ```bash
-   curl https://ncaam.hicksrch.workers.dev/diag
-   # → should return { ok: true, hasKey: true }
-   ```
-5. Sanity test in app console:
-
-   ```js
-   const teams = await ncaam("/teams?per_page=5");
-   console.log(teams.data.map(t => t.full_name));
-   ```
-6. Ensure pages render with **no console errors** or network failures.
-
-### 📸 Screenshot requirement
-
-For pull requests:
-
-* Attach a screenshot from DevTools showing:
-
-  * Requests to `ncaam.hicksrch.workers.dev/v1/...`
-  * Successful 200 responses
-  * Network tab visible
-* Reviewers verify proxy routing and data integrity before merge.
-
----
-
-## 🧰 CI/CD Notes
-
-* CI may hit the Worker for validation (no secrets required).
-* Keep current build steps; no API key injection in pipelines.
-* On secret rotation, **only update in Cloudflare** — no code edits.
-
----
-
-## 🔐 Operational controls (reference)
-
-| Control                         | Description                                                       |
-| ------------------------------- | ----------------------------------------------------------------- |
-| **Rate limit**                  | 60 requests/min per IP (configurable in Worker or Cloudflare WAF) |
-| **IP policy**                   | Allow/deny lists via WAF or inline `CF-Connecting-IP` checks      |
-| **Secret rotation**             | Update `BDL_API_KEY` in Worker Secrets only                       |
-| **Logging**                     | Use Cloudflare Logs or Wrangler tail for diagnostics              |
-| **Origin filtering (optional)** | Restrict to your production domain(s)                             |
-
----
-
-## 🧯 Incident playbook
-
-| Symptom                 | Action                                     |
-| ----------------------- | ------------------------------------------ |
-| **401 from upstream**   | Rotate `BDL_API_KEY`                       |
-| **403 from Worker**     | Verify origin / WAF rules                  |
-| **429 responses**       | Throttle calls, inspect client loops       |
-| **High latency or 5xx** | Check upstream status; reduce cache misses |
-| **Cache inconsistency** | Clear edge cache; confirm TTLs             |
-
----
-
-## 🧭 Final principles
-
-* Use the proxy, **never** the vendor API directly.
-* Keep secrets **server-side** only.
-* Prefer idempotent, cacheable reads.
-* Validate data before render.
-* Simplicity > complexity — the proxy exists to keep things secure, fast, and uniform.
-
-## Build Verification
-
-* Serve locally: `pnpm run dev`
-* Open http://localhost:8787/index.html
-* Provide a screenshot showing the nav and the Teams list with at least 10 items.
-* Attach the screenshot to the PR.
-
-## Build Verification
-
-- pnpm install
-- pnpm run build
-- pnpm run dev
-- Open http://localhost:8787/index.html
-- Click Teams and Players; verify populated lists
-- Attach a screenshot of Home and Teams pages in the PR
+- pnpm 9, Node 22, TypeScript strict. No runtime dependencies: everything in `package.json` is a
+  dev tool. Think hard before adding one.
+- Never commit `dist/`. Never add API keys, `.env` files or auth headers; there is nothing to
+  authenticate to.
+- Logos and team names belong to the schools. Keep the footer credit and the About page honest
+  about sources.

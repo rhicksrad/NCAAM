@@ -1,57 +1,78 @@
-name: CI
+name: Checks
 
+# The PR gate. Same-repo pull requests run on Ryan's PCs when the repository
+# variable CI_RUNNER is "local"; fork pull requests, and everything when the
+# variable is unset, run on GitHub-hosted runners. See docs/CI.md.
 on:
-  push:
-    branches: ["main", "master"]
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # Build from the committed seed so a check never depends on ESPN being up.
+  SNAPSHOT: seed
 
 jobs:
-  build-test:
-    runs-on: ubuntu-latest
+  gate:
+    name: gate (typecheck, unit, build, budget)
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    runs-on: ${{ vars.CI_RUNNER == 'local' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && fromJSON('["self-hosted","web-trusted"]') || 'ubuntu-latest' }}
+    timeout-minutes: 10
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      # Install pnpm once before setting up Node.js cache
-      - name: Setup pnpm (standalone)
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          standalone: true
-          run_install: false
+          node-version: 22
+          # Self-hosted runners keep one shared pnpm store on disk.
+          cache: ${{ runner.environment == 'github-hosted' && 'pnpm' || '' }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm run test
+      - run: pnpm run build
+      - run: pnpm run budget
+      - name: Leave the runner tidy
+        if: always() && runner.environment == 'self-hosted'
+        run: rm -rf dist .cache node_modules
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+  smoke:
+    name: smoke (every page in Chromium)
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    runs-on: ${{ vars.CI_RUNNER == 'local' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && fromJSON('["self-hosted","web-trusted","playwright"]') || 'ubuntu-latest' }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
-          cache-dependency-path: |
-            pnpm-lock.yaml
-            **/pnpm-lock.yaml
-
-      - name: Verify pnpm on PATH
-        run: |
-          pnpm -v
-          which pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile || pnpm install
-
-      - name: Typecheck
-        run: pnpm run --if-present typecheck
-
-      - name: Lint
-        run: pnpm run --if-present lint
-
-      - name: Test
-        env:
-          CI: "1"
-        run: pnpm run --if-present test
-
-      - name: Build
-        run: |
-          pnpm run clean
-          pnpm run prepare:logos
-          pnpm run build:ts
-          pnpm run build:pages
-          python3 scripts/build_site.py || true
-          pnpm run build:sitemap
+          node-version: 22
+          cache: ${{ runner.environment == 'github-hosted' && 'pnpm' || '' }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - name: Install Chromium (hosted, with system libraries)
+        if: runner.environment == 'github-hosted'
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Install Chromium (self-hosted, system libraries already present)
+        if: runner.environment == 'self-hosted'
+        run: pnpm exec playwright install chromium
+      - run: pnpm run smoke
+      - name: ESPN-is-down drill
+        run: pnpm run smoke --espn-down
+      - name: Keep the screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-screenshots
+          path: .cache/shots
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Leave the runner tidy
+        if: always() && runner.environment == 'self-hosted'
+        run: rm -rf dist .cache node_modules

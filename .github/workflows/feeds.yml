@@ -1,0 +1,39 @@
+name: Feed watch
+
+# The heavier job: once a night (and on demand) ask the real ESPN feeds for
+# everything the site reads and fail loudly if a feed has gone away or changed
+# shape. Never runs on pull requests, so it never runs a stranger's code.
+on:
+  schedule:
+    - cron: "23 9 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  live-feeds:
+    name: live ESPN contract check
+    runs-on: ${{ vars.CI_RUNNER == 'local' && fromJSON('["self-hosted","web-trusted"]') || 'ubuntu-latest' }}
+    timeout-minutes: 10
+    env:
+      SNAPSHOT: require-live
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: ${{ runner.environment == 'github-hosted' && 'pnpm' || '' }}
+      - run: pnpm install --frozen-lockfile
+      - name: Build against live ESPN (fails if any feed falls back to the seed)
+        run: pnpm run build
+      - name: Probe the per-game and per-team feeds
+        run: pnpm exec tsx scripts/probe-feeds.ts
+      - name: Leave the runner tidy
+        if: always() && runner.environment == 'self-hosted'
+        run: rm -rf dist .cache node_modules
