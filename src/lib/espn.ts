@@ -31,7 +31,6 @@ export type Team = {
   /** Primary colour as #rrggbb, or "" */
   color: string;
   alt: string;
-  logo: string;
 };
 
 export type Side = {
@@ -99,7 +98,7 @@ export type StandingRow = {
 
 export type Conference = { id: string; name: string; abbr: string; rows: StandingRow[] };
 
-export type NewsItem = { headline: string; blurb: string; url: string; published: string };
+export type NewsItem = { headline: string; url: string; published: string };
 
 export type RosterPlayer = {
   id: string;
@@ -182,7 +181,6 @@ const hex = (v: unknown): string => (typeof v === "string" && /^[0-9a-f]{6}$/i.t
 export function toTeam(raw: J | null | undefined): Team {
   const t = raw ?? {};
   const name = str(t.location) || str(t.shortDisplayName) || str(t.displayName) || str(t.name) || "TBD";
-  const logos = arr(t.logos);
   return {
     id: str(t.id),
     name,
@@ -191,7 +189,6 @@ export function toTeam(raw: J | null | undefined): Team {
     short: str(t.shortDisplayName) || name,
     color: hex(t.color),
     alt: hex(t.alternateColor),
-    logo: str(t.logo) || str(logos[0]?.href),
   };
 }
 
@@ -368,14 +365,17 @@ export function normalizeTeams(json: J): Team[] {
 }
 
 export function normalizeNews(json: J): NewsItem[] {
+  // Reported stories first; the wire's automated game previews fill the rest.
+  const weight = (a: J) => (str(a.type) === "Preview" ? 1 : 0);
   return arr(json?.articles)
+    .slice()
+    .sort((a, b) => weight(a) - weight(b))
     .map((a) => ({
       headline: str(a.headline),
-      blurb: str(a.description),
-      url: str(a.links?.web?.href),
+      url: str(a.links?.web?.href).replace(/^http:\/\//, "https://"),
       published: str(a.published),
     }))
-    .filter((a) => a.headline && /^https:\/\//.test(a.url));
+    .filter((a) => a.headline && /^https:\/\/([a-z0-9-]+\.)*espn\.com\//.test(a.url));
 }
 
 export function normalizeTeam(json: J): TeamDetail {

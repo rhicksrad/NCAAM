@@ -925,3 +925,17 @@ tr.career caption {
   border-top: 2px solid var(--ink);
   border-bottom: 0;
 }
+
+/* Grid children default to min-width:auto, which lets a wide table push the
+   page sideways on phones. Tables scroll inside their sheet instead. */
+.game-cols,
+.team-cols > *,
+.home__rail,
+.ledger {
+  grid-template-columns: minmax(0, 1fr);
+}
+.conf-grid > *,
+.split > *,
+.sheet {
+  min-width: 0;
+}

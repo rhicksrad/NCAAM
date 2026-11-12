@@ -524,3 +524,10 @@ a.ticket:hover {
   opacity: 0;
   cursor: pointer;
 }
+.field {
+  max-width: 100%;
+}
+.field select {
+  max-width: min(22rem, 58vw);
+  text-overflow: ellipsis;
+}

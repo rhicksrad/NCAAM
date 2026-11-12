@@ -1,7 +1,8 @@
 import "../lib/chrome.js";
-import { feed, snapshot, type FeedInfo } from "../lib/data.js";
+import { snapshot, type FeedInfo } from "../lib/data.js";
 import { $, html, mount, param, setParams } from "../lib/dom.js";
 import { espn, type Conference } from "../lib/espn.js";
+import { fmtStamp } from "../lib/ui.js";
 import { failure, logo, staleNote, teamHref } from "../lib/ui.js";
 
 let conferences: Conference[] = [];
@@ -56,14 +57,22 @@ function paint(): void {
   mount("#standings-root", html`${staleNote(info)}<div class="conf-grid">${shown.map(table)}</div>`);
 }
 
-feed<Conference[]>({
-  saved: () => snapshot("standings"),
-  live: () => espn.standings(),
-  render(data, meta) {
-    if (!data.length && conferences.length) return;
-    conferences = data;
-    info = meta;
+// ESPN's standings response is about 6 MB, so this page reads the snapshot the
+// deploy job bakes every half hour and only asks ESPN if that file is missing.
+snapshot("standings")
+  .then((saved) => {
+    conferences = saved.data;
+    info = { live: true, at: saved.at, stale: false };
     paint();
-  },
-  fail: (error) => mount("#standings-root", failure("the standings", error)),
-});
+    $("#standings-sub").textContent += ` As of ${fmtStamp(saved.at)}.`;
+  })
+  .catch(() =>
+    espn
+      .standings()
+      .then((data) => {
+        conferences = data;
+        info = { live: true, at: new Date().toISOString(), stale: false };
+        paint();
+      })
+      .catch((error) => mount("#standings-root", failure("the standings", error))),
+  );

@@ -19,7 +19,7 @@ function espnFixture(url) {
   const p = u.pathname;
   if (p.endsWith("/scoreboard")) return u.searchParams.get("dates") ? "scoreboard-20261111.json" : "scoreboard-today.json";
   if (p.endsWith("/rankings")) return "rankings.json";
-  if (p.endsWith("/standings")) return "standings-2026.json";
+  if (p.endsWith("/standings")) return "standings-2027.json";
   if (p.endsWith("/news")) return "news.json";
   if (p.endsWith("/summary")) return u.searchParams.get("event") === "pre" ? "summary-pre.json" : "summary-final.json";
   if (p.endsWith("/roster")) return "team-150-roster.json";

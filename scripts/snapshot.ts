@@ -71,12 +71,10 @@ async function gather(source: "live" | "fixtures") {
 
   let conferences: Conference[] = [];
   await step("standings", async () => {
-    let raw = live ? await fetchJson(ESPN_URLS.standings(season)) : await fixture(`standings-${season}.json`).catch(() => fixture("standings-2027.json"));
-    conferences = normalizeStandings(raw);
-    if (conferences.length < 20) {
+    conferences = normalizeStandings(live ? await fetchJson(ESPN_URLS.standings(season)) : await fixture("standings-2027.json"));
+    if (conferences.length < 20 && live) {
       // Before the first games are played ESPN can return an empty table.
-      raw = live ? await fetchJson(ESPN_URLS.standings(season - 1)) : await fixture("standings-2026.json");
-      conferences = normalizeStandings(raw);
+      conferences = normalizeStandings(await fetchJson(ESPN_URLS.standings(season - 1)));
     }
     if (conferences.length < 20) throw new Error(`only ${conferences.length} conferences`);
     return conferences;
