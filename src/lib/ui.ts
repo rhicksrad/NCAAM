@@ -140,6 +140,56 @@ export function ticket(game: Game): Markup {
   </a>`;
 }
 
+/** One line on why a game is the main event. Only says what the feed says. */
+export function whyWatch(game: Game): string {
+  const margin = Math.abs((game.home.score ?? 0) - (game.away.score ?? 0));
+  const ranks = [game.home.rank, game.away.rank].filter((r): r is number => Boolean(r)).sort((a, b) => a - b);
+  if (game.state === "in") {
+    if (game.period > 2) return "Overtime";
+    if (game.period === 2 && margin <= 5) return margin === 0 ? "Tied in the second half" : `A ${margin}-point game in the second half`;
+    return ranks.length ? `No. ${ranks[0]} is on the floor` : "Live now";
+  }
+  if (game.state === "post") {
+    const loser = game.home.winner ? game.away : game.home;
+    const winner = game.home.winner ? game.home : game.away;
+    if (loser.rank && (!winner.rank || winner.rank > loser.rank)) return `No. ${loser.rank} went down`;
+    if (/OT/i.test(game.detail)) return "Needed overtime";
+    if (margin <= 3) return `Decided by ${margin}`;
+    return ranks.length ? `No. ${ranks[0]} took care of it` : "Closest thing to a classic today";
+  }
+  if (ranks.length === 2) return `No. ${ranks[0]} against No. ${ranks[1]}`;
+  if (ranks.length === 1) return `No. ${ranks[0]} is in the building`;
+  return "Next to tip";
+}
+
+/** The night's biggest game, painted like centre court: away paint on the
+ *  left, home paint on the right, the clock on the line between them. */
+export function marquee(game: Game): Markup {
+  const half = (side: Side, other: Side) => {
+    let { paint, ink } = teamColors(side.team);
+    // The clock column is already ink; a school in black wears its second colour here.
+    if (paint === INK && /^#[0-9a-f]{6}$/i.test(side.team.alt) && luminance(side.team.alt) > 0.05) {
+      paint = side.team.alt;
+      ink = luminance(paint) > 0.3 ? INK : LINE;
+    }
+    const lost = game.state === "post" && !side.winner && (side.score ?? 0) < (other.score ?? 0);
+    const name = side.team.short || side.team.name;
+    return html`<div class="marquee__side" style="--paint:${paint};--on:${ink}" ${raw(lost ? "data-lost" : "")}>
+      ${logo(side.team, "logo", 160)}
+      <span class="marquee__name">${side.rank ? html`<i>${side.rank}</i>` : ""}<b class="wide">${name}</b><b class="narrow">${name.length > 9 ? side.team.abbr : name}</b></span>
+      <small>${side.record}</small>
+      ${side.score !== null && game.state !== "pre" ? html`<span class="marquee__score">${side.score}</span>` : ""}
+    </div>`;
+  };
+  const where = [game.tv, game.venue].filter(Boolean).join(" · ");
+  return html`<a class="marquee" href="${gameHref(game.id)}" data-state="${game.state}" aria-label="Main event: ${game.away.team.name} at ${game.home.team.name}, ${game.detail}">
+    ${half(game.away, game.home)}
+    <div class="marquee__mid">${stub(game)}</div>
+    ${half(game.home, game.away)}
+    <div class="marquee__foot"><b>Main event</b><span>${whyWatch(game)}</span><span>${where}${game.state === "pre" && game.odds ? html` · <em>${game.odds}</em>` : ""}</span></div>
+  </a>`;
+}
+
 /** How much a neutral fan should care right now. Bigger floats to the top. */
 export function drama(game: Game): number {
   // Any ranked team outweighs tip time; a better rank outweighs a worse one.

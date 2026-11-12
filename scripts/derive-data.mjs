@@ -17,6 +17,19 @@ function parseCsv(text) {
 
 const POST = { Champions: 7, "2ND": 6, F4: 5, E8: 4, S16: 3, R32: 2, R64: 1, R68: 1 };
 
+// The 2025 archive was cut before the bracket was played, so it has seeds but
+// no results. How far each team that won a game went, from the bracket itself;
+// every other seeded team lost its first game.
+const BRACKET_2025 = {
+  7: ["Florida"],
+  6: ["Houston"],
+  5: ["Duke", "Auburn"],
+  4: ["Texas Tech", "Alabama", "Tennessee", "Michigan St."],
+  3: ["Maryland", "Arkansas", "Arizona", "BYU", "Purdue", "Kentucky", "Michigan", "Mississippi"],
+  2: ["Creighton", "Texas A&M", "Iowa St.", "New Mexico", "Baylor", "Oregon", "Wisconsin", "Saint Mary's", "Gonzaga", "McNeese St.", "Illinois", "UCLA", "Connecticut", "Colorado St.", "Drake", "St. John's"],
+};
+const POST_2025 = new Map(Object.entries(BRACKET_2025).flatMap(([round, teams]) => teams.map((t) => [t, +round])));
+
 export async function deriveData(root, dist) {
   const raw = path.join(root, "data/raw");
   const out = path.join(dist, "data");
@@ -64,7 +77,7 @@ export async function deriveData(root, dist) {
   const push = (r, year) =>
     seasons.push([
       year, r.TEAM ?? r.Team, resolve(r.TEAM ?? r.Team), r.CONF, +r.W, +r.G, +r.ADJOE, +r.ADJDE, round(+r.BARTHAG, 3), +r.ADJ_T,
-      POST[r.POSTSEASON] ?? 0, +r.SEED || 0, round(+r["3P_O"]), round(+r.EFG_O),
+      POST[r.POSTSEASON] ?? (year === 2025 && +r.SEED ? POST_2025.get(r.TEAM ?? r.Team) ?? 1 : 0), +r.SEED || 0, round(+r["3P_O"]), round(+r.EFG_O),
     ]);
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb.csv"), "utf8"))) push(r, +r.YEAR);
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb20.csv"), "utf8"))) push(r, 2020);

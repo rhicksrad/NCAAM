@@ -51,7 +51,17 @@ export const PAGES = [
       <ul id="home-news" class="wire"></ul>
     </section>
   </aside>
-</div>`,
+</div>
+<section class="wrap lab-strip" aria-labelledby="lab-h">
+  <header class="section-head"><h2 id="lab-h">From the lab</h2><a class="more" href="lab.html">The whole film room</a></header>
+  <ol>
+    <li><a href="lab.html#chalkboard"><b>01</b><strong>Thirteen winters</strong><span>Every team since 2013 on one chalkboard. Run the tape.</span></a></li>
+    <li><a href="lab.html#thin-air"><b>02</b><strong>Thin air</strong><span>Home-court advantage, measured with an altimeter.</span></a></li>
+    <li><a href="lab.html#mascots"><b>03</b><strong>Mascot census</strong><span>372 nicknames, sorted into a taxonomy nobody asked for.</span></a></li>
+    <li><a href="lab.html#cats-dogs"><b>04</b><strong>Cats v. dogs</strong><span>Ten rivalries, one ledger, nothing settled.</span></a></li>
+    <li><a href="lab.html#tallest"><b>05</b><strong>Tall order</strong><span>Every roster by average height. It is closer than you think.</span></a></li>
+  </ol>
+</section>`,
   },
   {
     file: "games.html",

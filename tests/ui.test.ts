@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { esc, html, raw } from "../src/lib/dom";
 import type { Game } from "../src/lib/espn";
-import { drama, easternYmd, periodLabel, rivalColors, shiftYmd, teamColors } from "../src/lib/ui";
+import { drama, easternYmd, periodLabel, rivalColors, shiftYmd, teamColors, whyWatch } from "../src/lib/ui";
 
 describe("html template", () => {
   it("escapes interpolations", () => {
@@ -52,6 +52,14 @@ describe("dates and periods", () => {
 describe("drama ordering", () => {
   const side = (rank: number | null, score: number | null, winner = false) => ({ team: { id: "1", name: "A", mascot: "", abbr: "A", short: "A", color: "", alt: "" }, rank, score, winner, record: "" }) as unknown as Game["home"];
   const game = (over: Partial<Game>): Game => ({ id: "1", date: new Date().toISOString(), state: "post", detail: "Final", clock: "", period: 2, neutral: false, confGame: false, venue: "", city: "", tv: "", note: "", odds: "", home: side(null, 70, true), away: side(null, 60), ...over });
+  it("says why the main event is the main event, and nothing it can't back up", () => {
+    expect(whyWatch(game({ state: "pre", home: side(3, null), away: side(9, null) }))).toBe("No. 3 against No. 9");
+    expect(whyWatch(game({ state: "pre", home: side(null, null), away: side(23, null) }))).toBe("No. 23 is in the building");
+    expect(whyWatch(game({ state: "in", period: 2, home: side(null, 61), away: side(null, 59) }))).toBe("A 2-point game in the second half");
+    expect(whyWatch(game({ state: "in", period: 3, home: side(null, 70), away: side(null, 70) }))).toBe("Overtime");
+    expect(whyWatch(game({ home: side(null, 70, true), away: side(4, 60) }))).toBe("No. 4 went down");
+    expect(whyWatch(game({ home: side(null, 70, true), away: side(null, 68) }))).toBe("Decided by 2");
+  });
   it("puts live games above upcoming above finished", () => {
     const live = drama(game({ state: "in" }));
     const pre = drama(game({ state: "pre", home: side(1, null), away: side(2, null) }));

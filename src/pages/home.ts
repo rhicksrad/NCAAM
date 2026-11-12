@@ -2,7 +2,7 @@ import "../lib/chrome.js";
 import { feed, snapshot, type FeedInfo } from "../lib/data.js";
 import { $, html, mount, onSegment, segmented } from "../lib/dom.js";
 import { espn, type Game, type Poll } from "../lib/espn.js";
-import { drama, failure, fmtLongDay, logo, staleNote, teamHref, ticket } from "../lib/ui.js";
+import { drama, failure, fmtLongDay, logo, marquee, staleNote, teamHref, ticket } from "../lib/ui.js";
 
 type Order = "best" | "time";
 const ORDER_KEY = "fh:order";
@@ -34,11 +34,14 @@ function paintHero(): void {
 }
 
 function paintGames(): void {
-  const sorted = [...games].sort((a, b) => (order === "best" ? drama(b) - drama(a) : 0) || a.date.localeCompare(b.date));
+  const byDrama = [...games].sort((a, b) => drama(b) - drama(a) || a.date.localeCompare(b.date));
+  // The best game gets centre court; everything else is a ticket.
+  const main = games.length > 2 ? byDrama[0] : undefined;
+  const rest = (order === "best" ? byDrama : [...games].sort((a, b) => a.date.localeCompare(b.date))).filter((g) => g !== main);
   mount(
     "#home-games",
     games.length
-      ? html`${sorted.map(ticket)}`
+      ? html`${main ? marquee(main) : ""}${rest.map(ticket)}`
       : html`<div class="empty-state"><h2>No games today</h2><p>Check <a href="./games.html">the full schedule</a> for the next tip.</p></div>`,
   );
   const host = $("#home-games");

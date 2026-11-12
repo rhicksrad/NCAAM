@@ -1,9 +1,9 @@
 import "../lib/chrome.js";
-import { feed } from "../lib/data.js";
+import { feed, snapshot } from "../lib/data.js";
 import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
 import { espn, type BoxTeam, type GameDetail, type Play, type ScheduleGame, type Side } from "../lib/espn.js";
 import { flowChart, type FlowPoint } from "../lib/charts.js";
-import { failure, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
+import { failure, fmtDay, fmtShortDay, fmtStamp, fmtTime, gameHref, logo, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
 const id = param("id") ?? "";
 const root = $("#game-root");
@@ -223,7 +223,7 @@ function playByPlay(d: GameDetail): Markup {
   </section>`;
 }
 
-function paint(d: GameDetail): void {
+function paint(d: GameDetail, saved = false): void {
   const g = d.game;
   document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
   const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
@@ -238,7 +238,7 @@ function paint(d: GameDetail): void {
         ${homeBox ? boxTable(homeBox, g.home) : ""}
         ${playByPlay(d)}
         ${
-          g.state === "pre"
+          g.state === "pre" && !saved
             ? html`<div id="form-slot">${form ?? ""}</div>
                 <p class="also"><b>Not tipped yet.</b> The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p>`
             : ""
@@ -246,7 +246,7 @@ function paint(d: GameDetail): void {
         ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}
       </div>`,
   );
-  if (g.state === "pre") askForm(d);
+  if (g.state === "pre" && !saved) askForm(d);
 }
 
 root.addEventListener(
@@ -269,7 +269,20 @@ if (!/^\d+$/.test(id)) {
       if (data) paint(data);
       else mount(root, failure("that game", "ESPN returned no game for this id"));
     },
-    fail: (error) => mount(root, failure("that game", error)),
+    // ESPN is not answering. If the game is on the saved scoreboard, show what
+    // we knew about it then instead of an empty page.
+    fail: (error) =>
+      snapshot("scoreboard")
+        .then((s) => {
+          const game = s.data.games.find((g) => g.id === id);
+          if (!game) throw error;
+          paint({ game, box: [], plays: [], winProb: [], attendance: null, officials: [], periodSeconds: 1200 }, true);
+          root.insertAdjacentHTML(
+            "afterbegin",
+            String(html`<p class="notice" role="status">ESPN's feed didn't answer just now. This is the scoreboard as saved ${fmtStamp(s.at)}; the box score is not on file. <a href="">Try again</a>.</p>`),
+          );
+        })
+        .catch(() => mount(root, failure("that game", error))),
     refreshMs: (data) => (data?.game.state === "in" ? 20_000 : data?.game.state === "pre" ? 120_000 : 0),
   });
 }
