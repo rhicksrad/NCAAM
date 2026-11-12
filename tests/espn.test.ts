@@ -87,6 +87,11 @@ describe("ESPN normalisers against recorded feeds", () => {
     expect(d.game.state).toBe("post");
     expect(d.box.length).toBe(2);
     expect(d.box.every((b) => b.players.length >= 5)).toBe(true);
+    for (const b of d.box) {
+      const starters = b.players.filter((p) => p.starter);
+      expect(starters.length).toBe(5);
+      expect(starters.every((p) => !p.dnp && p.stats.length === b.labels.length)).toBe(true);
+    }
     expect(d.plays.length).toBeGreaterThan(100);
     expect(d.periodSeconds).toBe(1200);
   });

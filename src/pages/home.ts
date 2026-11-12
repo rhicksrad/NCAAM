@@ -42,10 +42,9 @@ function paintGames(): void {
       : html`<div class="empty-state"><h2>No games today</h2><p>Check <a href="./games.html">the full schedule</a> for the next tip.</p></div>`,
   );
   const host = $("#home-games");
-  host.previousElementSibling?.querySelector(".notice")?.remove();
+  host.parentElement?.querySelectorAll(":scope > .notice").forEach((n) => n.remove());
   const note = staleNote(info);
   if (note) host.insertAdjacentHTML("beforebegin", String(note));
-  document.querySelectorAll(".home__games > .notice ~ .notice").forEach((n) => n.remove());
 }
 
 function movement(rank: number, prev: number) {

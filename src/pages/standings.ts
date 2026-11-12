@@ -19,12 +19,12 @@ function table(conf: Conference) {
     <div class="sheet__head"><h2>${conf.name.replace(/ Conference$/, "")}</h2><small>${conf.rows.length} teams</small></div>
     <div class="sheet__scroll">
       <table>
-        <thead><tr><th class="l">Team</th><th>Conf</th><th>All</th><th>Home</th><th>Away</th><th>Strk</th></tr></thead>
+        <thead><tr><th class="l">Team</th><th>Conf</th><th>All</th><th class="wide">Home</th><th class="wide">Away</th><th>Strk</th></tr></thead>
         <tbody>
           ${conf.rows.map(
             (r) => html`<tr>
               <td class="l"><a class="who" href="${teamHref(r.team.id)}">${logo(r.team)}<span>${r.team.name}</span></a></td>
-              <td class="hot">${r.conf || "0-0"}</td><td>${r.overall}</td><td>${r.home}</td><td>${r.away}</td><td>${streak(r.streak)}</td>
+              <td class="hot">${r.conf || "0-0"}</td><td>${r.overall}</td><td class="wide">${r.home}</td><td class="wide">${r.away}</td><td>${streak(r.streak)}</td>
             </tr>`,
           )}
         </tbody>
