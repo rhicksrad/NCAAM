@@ -307,7 +307,11 @@ function wireTallest(doc: HeightDoc): void {
 }
 
 /** Let the browser paint and take input before the next piece of work. */
-const breathe = () => new Promise<void>((done) => setTimeout(done, 0));
+const breathe = () =>
+  new Promise<void>((done) => {
+    requestAnimationFrame(() => setTimeout(done, 0));
+    setTimeout(done, 200); // a hidden tab gets no frames
+  });
 
 async function boot(): Promise<void> {
   // The chalkboard goes up as soon as its own data is in. The other four
@@ -324,6 +328,8 @@ async function boot(): Promise<void> {
       )}</nav>
       ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. ${eff.rows.length.toLocaleString()} team-seasons from Bart Torvik's ratings.`, chalkboard(eff))}`,
   );
+  // The board is up; let it paint before chalking 360 teams onto it.
+  await breathe();
   wireChalkboard(eff);
   // Ask for all four files now; hang the exhibits in order as they arrive.
   const files = { arenas: dataset<ArenaDoc>("arenas"), mascots: dataset<MascotDoc>("mascots"), cats: dataset<CatsDoc>("cats-dogs"), heights: dataset<HeightDoc>("heights") };

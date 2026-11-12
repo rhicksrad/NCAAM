@@ -1534,7 +1534,7 @@ small.sub {
 .flow--phone text {
   font-size: 13.5px;
 }
-.game-cols > .sheet {
+.game-cols > .sheet:not(.sheet--tape) {
   content-visibility: auto;
   contain-intrinsic-size: auto 34rem;
 }

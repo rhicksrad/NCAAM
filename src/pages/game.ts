@@ -130,7 +130,7 @@ function compare(d: GameDetail): Markup {
   const rows = CMP.filter(([key]) => a[key] && h[key]);
   if (!rows.length) return html``;
   const { home: ch, away: ca } = rivalColors(g.home.team, g.away.team);
-  return html`<section class="sheet">
+  return html`<section class="sheet sheet--tape">
     <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.name} left, ${g.home.team.name} right</small></div>
     <div class="cmp" style="--a:${ca};--b:${ch}">
       ${rows.map(([key, label]) => {
@@ -226,6 +226,18 @@ function playByPlay(d: GameDetail): Markup {
   </section>`;
 }
 
+/** Run once the browser has had a chance to put the current frame on screen. */
+function afterPaint(run: () => void): void {
+  let ran = false;
+  const go = () => {
+    if (ran) return;
+    ran = true;
+    run();
+  };
+  requestAnimationFrame(() => setTimeout(go, 0));
+  setTimeout(go, 200); // a hidden tab gets no frames
+}
+
 function paint(d: GameDetail, saved = false): void {
   const g = d.game;
   shown = d;
@@ -241,9 +253,17 @@ function paint(d: GameDetail, saved = false): void {
   document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
   const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
   const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
+  const head = html`<h1 class="sr-only">${g.away.team.name} at ${g.home.team.name}</h1>${board(d)}`;
+  // First time through, the scoreboard goes up on its own and the browser gets
+  // a frame to paint it. The chart, box scores and plays are the heavy part.
+  if (!saved && !root.querySelector(".game-cols") && g.state !== "pre") {
+    mount(root, html`${head}<div class="game-cols"><p class="loading" role="status">Reading the box score…</p></div>`);
+    afterPaint(() => shown === d && paint(d));
+    return;
+  }
   mount(
     root,
-    html`<h1 class="sr-only">${g.away.team.name} at ${g.home.team.name}</h1>${board(d)}
+    html`${head}
       <div class="game-cols">
         ${flow(d)}
         ${compare(d)}

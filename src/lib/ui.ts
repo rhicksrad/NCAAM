@@ -180,7 +180,7 @@ export function marquee(game: Game): Markup {
   const half = (side: Side, other: Side) => {
     let { paint, ink } = teamColors(side.team);
     // The clock column is already ink; a school in black wears its second colour here.
-    if (paint === INK && /^#[0-9a-f]{6}$/i.test(side.team.alt) && luminance(side.team.alt) > 0.05) {
+    if (paint === INK && /^#[0-9a-f]{6}$/i.test(side.team.alt) && luminance(side.team.alt) > 0.05 && luminance(side.team.alt) < 0.7) {
       paint = side.team.alt;
       ink = luminance(paint) > 0.27 ? INK : LINE;
     }
