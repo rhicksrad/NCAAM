@@ -84,7 +84,7 @@ export function flowChart(points: FlowPoint[], total: number, periodSeconds: num
     <path d="${d}" fill="${homeColor}" clip-path="url(#flow-up)"/>
     <path d="${d}" fill="${awayColor}" clip-path="url(#flow-down)"/>
     <line x1="${padL}" x2="${W - padR}" y1="${mid}" y2="${mid}" stroke="#14213a" stroke-width="1.5"/>
-    <text x="0" y="${padT + 8}">${homeAbbr} +${up}</text>
-    <text x="0" y="${H - padB - 2}">${awayAbbr} +${down}</text>
+    ${points.some((p) => p.diff > 0) ? html`<text x="0" y="${padT + 8}">${homeAbbr} +${up}</text>` : ""}
+    ${points.some((p) => p.diff < 0) ? html`<text x="0" y="${H - padB - 2}">${awayAbbr} +${down}</text>` : ""}
   </svg>`;
 }

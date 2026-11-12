@@ -15,7 +15,7 @@ function boardTeam(side: Side): Markup {
   const { paint } = teamColors(side.team);
   return html`<a class="board__team" href="${teamHref(side.team.id)}" style="--team:${paint}">
     <img src="${logoUrl(side.team.id, 160)}" data-team="${side.team.id}" data-abbr="${side.team.abbr}" alt="" width="80" height="80">
-    <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}<span class="wide">${side.team.name}</span><span class="narrow">${side.team.short || side.team.name}</span></b>
+    <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}<span class="wide">${side.team.name}</span><span class="narrow">${side.team.name.length > 9 ? side.team.abbr || side.team.name : side.team.name}</span></b>
     <small>${side.record}</small>
   </a>`;
 }
@@ -141,7 +141,7 @@ function compare(d: GameDetail): Markup {
 /** Before the tip there is no box score, so show how each side has been playing. */
 function formSheet(side: Side, games: ScheduleGame[]): Markup {
   const done = games.filter((g) => g.won !== null).slice(-5).reverse();
-  const next = games.filter((g) => g.won === null && g.id !== id).slice(0, 2);
+  const next = games.filter((g) => g.won === null && g.id !== id).slice(0, 1);
   const wins = done.filter((g) => g.won).length;
   const where = (g: ScheduleGame) => (g.neutral ? "vs" : g.home ? "vs" : "at");
   const opp = (g: ScheduleGame) =>
