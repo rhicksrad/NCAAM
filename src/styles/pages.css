@@ -537,7 +537,7 @@
 }
 .pbp li[data-score] {
   font-weight: 600;
-  background: rgb(217 84 30 / 0.07);
+  background: rgb(200 68 15 / 0.07);
 }
 .pbp .t {
   color: var(--ink-soft);
@@ -1029,7 +1029,7 @@ small.sub {
 .sheet td.votes {
   min-width: 7rem;
   font-weight: 600;
-  background: linear-gradient(to left, rgb(217 84 30 / 0.16) var(--share), transparent 0);
+  background: linear-gradient(to left, rgb(200 68 15 / 0.16) var(--share), transparent 0);
 }
 @media (max-width: 560px) {
   .sheet td.votes {

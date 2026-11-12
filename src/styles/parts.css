@@ -131,7 +131,7 @@
 .logo--blank {
   display: inline-grid;
   place-items: center;
-  background: var(--team, var(--ink));
+  background: var(--ink);
   color: var(--line);
   font: 800 0.72rem/1 var(--display);
   border-radius: 50%;
@@ -363,7 +363,7 @@ a.ticket:hover {
 }
 .sheet td.hot {
   font-weight: 700;
-  background: rgb(217 84 30 / 0.1);
+  background: rgb(200 68 15 / 0.1);
 }
 .sheet .who {
   display: flex;
@@ -554,4 +554,10 @@ a.ticket:hover {
     transform: rotate(-7deg);
     opacity: 0.5;
   }
+}
+
+/* A notice inside a ticket grid is a line across it, not a ticket. */
+.tickets > .notice {
+  grid-column: 1 / -1;
+  justify-self: start;
 }

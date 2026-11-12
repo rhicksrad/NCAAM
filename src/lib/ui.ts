@@ -21,7 +21,8 @@ export function teamColors(team: Pick<Team, "color" | "alt">): { paint: string; 
   let paint = team.color || INK;
   if (luminance(paint) > 0.8 && team.alt && luminance(team.alt) < 0.8) paint = team.alt;
   if (luminance(paint) < 0.012) paint = INK; // a school's black reads as our navy ink
-  return { paint, ink: luminance(paint) > 0.42 ? INK : LINE };
+  // Whichever ink reads better: navy wins on anything brighter than a deep orange.
+  return { paint, ink: luminance(paint) > 0.27 ? INK : LINE };
 }
 
 function rgb(hexColor: string): [number, number, number] {
@@ -170,7 +171,7 @@ export function marquee(game: Game): Markup {
     // The clock column is already ink; a school in black wears its second colour here.
     if (paint === INK && /^#[0-9a-f]{6}$/i.test(side.team.alt) && luminance(side.team.alt) > 0.05) {
       paint = side.team.alt;
-      ink = luminance(paint) > 0.3 ? INK : LINE;
+      ink = luminance(paint) > 0.27 ? INK : LINE;
     }
     const lost = game.state === "post" && !side.winner && (side.score ?? 0) < (other.score ?? 0);
     const name = side.team.short || side.team.name;
