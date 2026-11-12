@@ -196,3 +196,18 @@ th {
     navigation: none;
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The footer starts below the fold on every page, so content arriving late
+   pushes nothing the reader can see. */
+main {
+  min-height: 100svh;
+}

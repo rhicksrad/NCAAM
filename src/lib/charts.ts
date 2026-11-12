@@ -45,8 +45,10 @@ export function historyChart(rows: HistRow[]): Markup {
 export type FlowPoint = { t: number; diff: number };
 
 /** Lead tracker: home lead above the line, away lead below. */
-export function flowChart(points: FlowPoint[], total: number, periodSeconds: number, homeColor: string, awayColor: string, homeAbbr: string, awayAbbr: string, until = total): Markup {
-  const W = 720, H = 220, padL = 34, padR = 8, padT = 12, padB = 20;
+export function flowChart(points: FlowPoint[], total: number, periodSeconds: number, homeColor: string, awayColor: string, homeAbbr: string, awayAbbr: string, until = total, narrow = false): Markup {
+  // Drawn at about one unit per pixel for the screen it is on, so the labels
+  // stay the size the stylesheet gives them instead of shrinking with the chart.
+  const W = narrow ? 380 : 1100, H = narrow ? 230 : 250, padL = narrow ? 4 : 52, padR = 8, padT = 16, padB = 20;
   // Each side gets only the room it earned: a wire-to-wire win fills the
   // chart instead of leaving half of it empty.
   const up = Math.max(4, ...points.map((p) => p.diff));

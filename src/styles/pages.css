@@ -1334,17 +1334,11 @@ small.sub {
   color: rgb(243 240 230 / 0.8);
 }
 @media (max-width: 560px) {
-  #eff-svg text {
-    font-size: 25px;
-  }
   #eff-svg .cap {
     display: none;
   }
   #eff-svg .corner {
-    font-size: 26px;
-  }
-  #eff-svg .dot {
-    r: 8px;
+    font-size: 12px;
   }
   .chalk-axes {
     display: block;
@@ -1377,10 +1371,7 @@ small.sub {
 }
 @media (max-width: 560px) {
   #eff-svg .tag {
-    font-size: 26px;
-  }
-  #eff-svg .end {
-    font-size: 20px;
+    font-size: 13px;
   }
 }
 
@@ -1439,5 +1430,93 @@ small.sub {
     gap: 0.45rem;
     font-size: 0.92rem;
     border-left-width: 5px;
+  }
+}
+
+.row-open {
+  all: unset;
+  cursor: pointer;
+  font-weight: 600;
+}
+.row-open:focus-visible {
+  outline: 3px solid var(--ball);
+  outline-offset: 2px;
+}
+
+/* Home shows the best of the slate; this strip is the door to the rest. */
+.more-games {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: var(--line);
+  border: var(--lane) solid var(--line);
+  font: 700 1.15rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+.more-games b {
+  color: var(--amber);
+  font-size: 1.5rem;
+}
+.more-games:hover {
+  background: var(--ink-2);
+  color: var(--line);
+}
+/* Hold the room for what is coming so nothing jumps when it lands. */
+#home-games:has(> .loading) {
+  min-height: 50rem;
+}
+#home-poll:has(> .loading) {
+  min-height: 63rem;
+}
+@media (max-width: 760px) {
+  #home-games:has(> .loading) {
+    min-height: 86rem;
+  }
+}
+
+/* Press row sits under the tickets, two headlines across where there is room. */
+.press {
+  margin-top: 2rem;
+}
+.press .wire {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+}
+.press .wire li {
+  border-top: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.press .wire li:nth-child(odd) {
+  border-right: 1px solid var(--rule);
+}
+.flow text {
+  paint-order: stroke;
+  stroke: var(--chalk);
+  stroke-width: 3px;
+}
+
+/* Long pages only lay out and paint what is near the screen. The size given
+   for the rest is worked out from the row count, so the scrollbar is honest. */
+.exhibit {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 52rem;
+}
+.conf-grid > .sheet {
+  content-visibility: auto;
+  contain-intrinsic-size: auto calc(5.4rem + var(--rows, 12) * 2.66rem);
+}
+.conf-block {
+  content-visibility: auto;
+  contain-intrinsic-size: auto calc(4rem + var(--n, 12) / 5 * 4.1rem);
+}
+@media (max-width: 560px) {
+  .conf-block {
+    contain-intrinsic-size: auto calc(4rem + var(--n, 12) / 2 * 3.9rem);
   }
 }

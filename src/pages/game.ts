@@ -46,7 +46,7 @@ function board(d: GameDetail): Markup {
     ${
       played && periods
         ? html`<table class="board__line">
-            <thead><tr><th></th>${Array.from({ length: periods }, (_, i) => html`<th>${periods === 2 || i < 2 ? i + 1 : i === 2 ? "OT" : `${i - 1}OT`}</th>`)}<th>T</th></tr></thead>
+            <thead><tr><td></td>${Array.from({ length: periods }, (_, i) => html`<th>${periods === 2 || i < 2 ? i + 1 : i === 2 ? "OT" : `${i - 1}OT`}</th>`)}<th>T</th></tr></thead>
             <tbody>
               ${[g.away, g.home].map(
                 (s) => html`<tr><td>${s.team.abbr}</td>${Array.from({ length: periods }, (_, i) => html`<td>${s.lines[i] ?? ""}</td>`)}<td>${s.score ?? ""}</td></tr>`,
@@ -95,7 +95,7 @@ function flow(d: GameDetail): Markup {
         ? `Biggest leads: ${g.home.team.abbr} by ${bigHome}, ${g.away.team.abbr} by ${bigAway}.`
         : `${bigHome ? g.away.team.name : g.home.team.name} ${live ? "has not led" : "never led"}; the biggest gap ${live ? "has been" : "was"} ${Math.max(bigHome, bigAway)}.`
     }</p>
-    ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr, end)}
+    ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr, end, matchMedia("(max-width: 560px)").matches)}
   </section>`;
 }
 
@@ -113,6 +113,12 @@ const CMP: Array<[key: string, label: string]> = [
   ["fastBreakPoints", "Fast break"],
 ];
 
+const ATTEMPTS: Record<string, string> = {
+  fieldGoalPct: "fieldGoalsMade-fieldGoalsAttempted",
+  threePointFieldGoalPct: "threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+  freeThrowPct: "freeThrowsMade-freeThrowsAttempted",
+};
+
 function compare(d: GameDetail): Markup {
   const g = d.game;
   const a = d.box.find((b) => b.teamId === g.away.team.id)?.stats ?? {};
@@ -124,15 +130,17 @@ function compare(d: GameDetail): Markup {
     <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.name} left, ${g.home.team.name} right</small></div>
     <div class="cmp" style="--a:${ca};--b:${ch}">
       ${rows.map(([key, label]) => {
-        const av = parseFloat(a[key]!.value) || 0;
-        const hv = parseFloat(h[key]!.value) || 0;
+        // A percentage of no attempts is not zero, it is nothing yet.
+        const tried = (stats: typeof a) => !ATTEMPTS[key] || !/-0$/.test(stats[ATTEMPTS[key]!]?.value ?? "");
+        const av = tried(a) ? parseFloat(a[key]!.value) || 0 : 0;
+        const hv = tried(h) ? parseFloat(h[key]!.value) || 0 : 0;
         const max = Math.max(av, hv) || 1;
         return html`<div class="cmp__row">
-          <span>${a[key]!.value}</span>
+          <span>${tried(a) ? a[key]!.value : "–"}</span>
           <i class="cmp__a" style="transform:scaleX(${(av / max).toFixed(3)})"></i>
           <b>${label}</b>
           <i class="cmp__b" style="transform:scaleX(${(hv / max).toFixed(3)})"></i>
-          <span>${h[key]!.value}</span>
+          <span>${tried(h) ? h[key]!.value : "–"}</span>
         </div>`;
       })}
     </div>
@@ -173,12 +181,12 @@ function askForm(d: GameDetail): void {
     .catch(() => undefined);
 }
 
-function boxTable(box: BoxTeam, side: Side): Markup {
+function boxTable(box: BoxTeam, side: Side, live: boolean): Markup {
   if (!box.players.length) return html``;
   const ptsCol = box.labels.findIndex((l) => l.toUpperCase() === "PTS");
   const row = (p: BoxTeam["players"][number]) =>
     html`<tr><td class="l"><span class="who"><span>${p.name} <small>${p.pos}</small></span></span></td>${
-      p.dnp ? html`<td class="l" colspan="${box.labels.length}"><small>Did not play</small></td>` : p.stats.map((s, i) => html`<td class="${i === ptsCol ? "hot" : ""}">${s}</td>`)
+      p.dnp ? html`<td class="l" colspan="${box.labels.length}"><small>${live ? "Not in yet" : "Did not play"}</small></td>` : p.stats.map((s, i) => html`<td class="${i === ptsCol ? "hot" : ""}">${s}</td>`)
     }</tr>`;
   const starters = box.players.filter((p) => p.starter);
   const bench = box.players.filter((p) => !p.starter);
@@ -211,7 +219,7 @@ function playByPlay(d: GameDetail): Markup {
       .map(
         ([period, plays]) => html`<details data-period="${period}" ${openPeriods?.has(period) ? html`open` : ""}>
           <summary class="pbp-sum">${periodLabel(period)} ${period <= 2 ? "half" : ""}</summary>
-          <ol class="pbp">
+          <ol class="pbp" tabindex="0" aria-label="${periodLabel(period)} ${period <= 2 ? "half" : ""} plays">
             ${[...plays].reverse().map(
               (p) => html`<li ${raw(p.scoring ? "data-score" : "")}><span class="t">${p.clock}</span><span class="s">${p.away}-${p.home}</span><span>${
                 p.teamId ? html`<b>${p.teamId === g.home.team.id ? g.home.team.abbr : g.away.team.abbr}</b> ` : ""
@@ -230,12 +238,12 @@ function paint(d: GameDetail, saved = false): void {
   const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
   mount(
     root,
-    html`${board(d)}
+    html`<h1 class="sr-only">${g.away.team.name} at ${g.home.team.name}</h1>${board(d)}
       <div class="game-cols">
         ${flow(d)}
         ${compare(d)}
-        ${awayBox ? boxTable(awayBox, g.away) : ""}
-        ${homeBox ? boxTable(homeBox, g.home) : ""}
+        ${awayBox ? boxTable(awayBox, g.away, g.state === "in") : ""}
+        ${homeBox ? boxTable(homeBox, g.home, g.state === "in") : ""}
         ${playByPlay(d)}
         ${
           g.state === "pre" && !saved
