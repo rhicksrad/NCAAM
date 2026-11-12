@@ -84,7 +84,7 @@ for (const viewport of [{ name: "desktop", width: 1360, height: 900 }, { name: "
       if (overflow > 1) errors.push(`page scrolls sideways by ${overflow}px`);
       const text = await tab.locator("main").innerText();
       if (/undefined|NaN|\[object Object\]/.test(text)) errors.push(`leaked "${/undefined|NaN|\[object Object\]/.exec(text)[0]}" into the page`);
-      await tab.screenshot({ path: path.join(shots, `${offline ? "down-" : ""}${viewport.name}-${page.url.replace(/[^a-z0-9]+/gi, "_")}.png`), fullPage: true });
+      await tab.screenshot({ path: path.join(shots, `${offline ? "down-" : ""}${viewport.name}-${page.url.replace(/[^a-z0-9]+/gi, "_")}.jpg`), type: "jpeg", quality: 70, fullPage: true });
     } catch (e) {
       errors.push(e.message.split("\n")[0]);
     }
