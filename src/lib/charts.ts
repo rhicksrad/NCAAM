@@ -45,7 +45,7 @@ export function historyChart(rows: HistRow[]): Markup {
 export type FlowPoint = { t: number; diff: number };
 
 /** Lead tracker: home lead above the line, away lead below. */
-export function flowChart(points: FlowPoint[], total: number, periodSeconds: number, homeColor: string, awayColor: string, homeAbbr: string, awayAbbr: string): Markup {
+export function flowChart(points: FlowPoint[], total: number, periodSeconds: number, homeColor: string, awayColor: string, homeAbbr: string, awayAbbr: string, until = total): Markup {
   const W = 720, H = 220, padL = 34, padR = 8, padT = 12, padB = 20;
   // Each side gets only the room it earned: a wire-to-wire win fills the
   // chart instead of leaving half of it empty.
@@ -62,7 +62,8 @@ export function flowChart(points: FlowPoint[], total: number, periodSeconds: num
     if (p.diff !== prev) d += `V${y(p.diff).toFixed(1)}`;
     prev = p.diff;
   }
-  d += `H${x(total).toFixed(1)}V${mid}Z`;
+  // A game still being played stops where the clock is, not at the horn.
+  d += `H${x(Math.min(until, total)).toFixed(1)}V${mid}Z`;
   const marks: string[] = [];
   const regulation = periodSeconds === 1200 ? 2 : 4;
   for (let i = 1; i * periodSeconds < total && i <= regulation; i++) {

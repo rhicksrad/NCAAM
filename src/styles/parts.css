@@ -549,7 +549,8 @@ a.ticket:hover {
 }
 @media (max-width: 560px) {
   .decal {
-    top: 0;
+    top: -0.4rem;
+    width: 4.25rem;
     transform: rotate(-7deg);
     opacity: 0.5;
   }
