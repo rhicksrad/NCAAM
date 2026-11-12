@@ -20,6 +20,7 @@ function luminance(hexColor: string): number {
 export function teamColors(team: Pick<Team, "color" | "alt">): { paint: string; ink: string } {
   let paint = team.color || INK;
   if (luminance(paint) > 0.8 && team.alt && luminance(team.alt) < 0.8) paint = team.alt;
+  if (luminance(paint) < 0.012) paint = INK; // a school's black reads as our navy ink
   return { paint, ink: luminance(paint) > 0.42 ? INK : LINE };
 }
 
@@ -62,11 +63,13 @@ export const gameHref = (id: string) => `./game.html?id=${encodeURIComponent(id)
 
 const timeFmt = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
 const dayFmt = new Intl.DateTimeFormat(undefined, { weekday: "short", month: "short", day: "numeric" });
+const shortDayFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" });
 const longDayFmt = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric" });
 const stampFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 
 export const fmtTime = (iso: string) => (iso ? timeFmt.format(new Date(iso)) : "");
 export const fmtDay = (iso: string) => (iso ? dayFmt.format(new Date(iso)) : "");
+export const fmtShortDay = (iso: string) => (iso ? shortDayFmt.format(new Date(iso)) : "");
 export const fmtLongDay = (d: Date) => longDayFmt.format(d);
 export const fmtStamp = (iso: string) => (iso ? stampFmt.format(new Date(iso)) : "");
 
@@ -137,7 +140,8 @@ export function ticket(game: Game): Markup {
 
 /** How much a neutral fan should care right now. Bigger floats to the top. */
 export function drama(game: Game): number {
-  const ranked = (game.home.rank ? 26 - game.home.rank : 0) + (game.away.rank ? 26 - game.away.rank : 0);
+  // Any ranked team outweighs tip time; a better rank outweighs a worse one.
+  const ranked = (game.home.rank ? 46 - game.home.rank : 0) + (game.away.rank ? 46 - game.away.rank : 0);
   const both = game.home.rank && game.away.rank ? 30 : 0;
   const margin = Math.abs((game.home.score ?? 0) - (game.away.score ?? 0));
   if (game.state === "in") {
