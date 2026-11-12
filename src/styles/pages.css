@@ -1599,3 +1599,58 @@ small.sub {
     white-space: nowrap;
   }
 }
+
+/* ---------- Round 9: nothing moves, and the phone gets its own hero ---------- */
+/* The source line is always present; quiet when things are normal. */
+.notice--live {
+  background: none;
+  color: var(--ink-soft);
+  padding-inline: 0;
+}
+@media (max-width: 700px) {
+  .hero {
+    background-image: url("../art/hero-court-sm.webp");
+    /* Tall enough for a three-line tally, so the slate below never moves. */
+    min-height: 21rem;
+  }
+}
+.poll-more {
+  display: none;
+}
+@media (max-width: 560px) {
+  /* The top ten fits a phone screen; the rest of the poll is one tap away. */
+  .poll-list li:nth-child(n + 11) {
+    display: none;
+  }
+  .poll-list li:nth-child(10) {
+    border-bottom: 0;
+  }
+  .poll-more {
+    display: flex;
+    margin-top: 0.6rem;
+  }
+  /* The lab's first board is the one that moves, so it gets the wide wall. */
+  .lab-strip li:first-child a {
+    grid-template-columns: auto 1fr;
+    column-gap: 0.9rem;
+    align-items: center;
+    padding: 0.9rem 1rem 1rem;
+  }
+  .lab-strip li:first-child b {
+    grid-row: 1 / 3;
+    font-size: 3.4rem;
+  }
+  .lab-strip li:first-child strong {
+    font-size: 1.6rem;
+    align-self: end;
+  }
+  .lab-strip li:first-child span {
+    grid-column: 2;
+    align-self: start;
+  }
+}
+@media (max-width: 560px) {
+  #home-poll:has(> .loading) {
+    min-height: 26rem;
+  }
+}

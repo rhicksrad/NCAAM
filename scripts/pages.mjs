@@ -39,6 +39,7 @@ export const PAGES = [
       <h2 id="games-h">On the floor</h2>
       <div class="segmented" id="home-sort" role="group" aria-label="Order games by"></div>
     </header>
+    <p class="notice notice--live" role="status">Reading the scorer's table…</p>
     <div id="home-games" class="tickets">${loading("Loading tonight's slate…")}</div>
     <section aria-labelledby="news-h" id="home-news-wrap" class="press" hidden>
       <header class="section-head"><h2 id="news-h">Press row</h2></header>
@@ -49,6 +50,7 @@ export const PAGES = [
     <section aria-labelledby="poll-h">
       <header class="section-head"><h2 id="poll-h">In the rafters</h2><a class="more" href="rankings.html">Full poll</a></header>
       <div id="home-poll">${loading("Hanging the banners…")}</div>
+      <a class="more-games poll-more" href="rankings.html">Nos. 11 to 25 and the coaches poll <span aria-hidden="true">→</span></a>
     </section>
   </aside>
 </div>

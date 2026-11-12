@@ -3,7 +3,7 @@ import { feed, snapshot } from "../lib/data.js";
 import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
 import { espn, type BoxTeam, type GameDetail, type Side } from "../lib/espn.js";
 import { flowChart, type FlowPoint } from "../lib/flow.js";
-import { atHalf, failure, fmtDay, fmtStamp, fmtTime, logoUrl, pctOrDash, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
+import { atHalf, failure, missing, notFound, fmtDay, fmtStamp, fmtTime, logoUrl, pctOrDash, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
 const id = param("id") ?? "";
 const root = $("#game-root");
@@ -277,11 +277,21 @@ root.addEventListener("click", (event) => {
 if (!/^\d+$/.test(id)) {
   mount(root, html`<div class="empty-state"><h2>Which game?</h2><p>Pick one from <a href="./games.html">the scoreboard</a>.</p></div>`);
 } else {
+  // The saved slate usually knows this game: put its scoreboard up at once and
+  // let the box score and plays arrive under it.
+  snapshot("scoreboard")
+    .then((s) => {
+      const game = s.data.games.find((g) => g.id === id);
+      if (game && !shown) {
+        mount(root, html`<h1 class="sr-only">${game.away.team.name} at ${game.home.team.name}</h1>${board({ game, box: [], plays: [], winProb: [], attendance: null, officials: [], periodSeconds: 1200 })}<p class="loading" role="status">Fetching the box score…</p>`);
+      }
+    })
+    .catch(() => undefined);
   feed<GameDetail | null>({
     live: () => espn.summary(id),
     render(data) {
       if (data) paint(data);
-      else mount(root, failure("that game", "ESPN returned no game for this id"));
+      else mount(root, missing("game", "./games.html", "the scoreboard"));
     },
     // ESPN is not answering. If the game is on the saved scoreboard, show what
     // we knew about it then instead of an empty page.
@@ -296,7 +306,7 @@ if (!/^\d+$/.test(id)) {
             String(html`<p class="notice" role="status">ESPN's feed didn't answer just now. This is the scoreboard as saved ${fmtStamp(s.at)}; the box score is not on file. <a href="">Try again</a>.</p>`),
           );
         })
-        .catch(() => mount(root, failure("that game", error))),
+        .catch(() => mount(root, notFound(error) ? missing("game", "./games.html", "the scoreboard") : failure("that game"))),
     refreshMs: (data) => (data?.game.state === "in" ? 20_000 : data?.game.state === "pre" ? 120_000 : 0),
   });
 }

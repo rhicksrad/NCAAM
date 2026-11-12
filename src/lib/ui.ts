@@ -220,20 +220,32 @@ export function drama(game: Game): number {
 }
 
 /** The little amber note that says when the page is not showing live data. */
-export function staleNote(info: FeedInfo): Markup | "" {
-  if (info.live) return "";
-  return html`<p class="notice" role="status">${
-    info.stale ? "ESPN's feed didn't answer just now. " : ""
-  }Showing the copy saved ${fmtStamp(info.at)}.</p>`;
+/** One line saying where the numbers on screen came from. It is always there
+ *  and always the same height, so the page does not move when the live
+ *  answer replaces the saved copy. Amber only when ESPN failed to answer. */
+export function staleNote(info: FeedInfo): Markup {
+  if (info.live) return html`<p class="notice notice--live" role="status">Live from ESPN, ${fmtStamp(info.at)}.</p>`;
+  return info.stale
+    ? html`<p class="notice" role="status">ESPN didn't answer. Saved copy from ${fmtStamp(info.at)}.</p>`
+    : html`<p class="notice notice--live" role="status">Saved copy from ${fmtStamp(info.at)}. Asking ESPN…</p>`;
 }
 
-export function failure(what: string, error: unknown): Markup {
-  const detail = error instanceof Error ? error.message : String(error);
+export function failure(what: string, _error?: unknown): Markup {
   return html`<div class="empty-state" role="alert">
     <h2>Whistle on the play</h2>
     <p>We couldn't load ${what}. ESPN's public feed may be down or blocked on your network. <a href="">Try again</a>.</p>
-    <p><small>${detail}</small></p>
   </div>`;
 }
+
+/** A link to something that does not exist is nobody's outage. */
+export function missing(what: string, href: string, where: string): Markup {
+  return html`<div class="empty-state">
+    <h2>Air ball</h2>
+    <p>There is no ${what} with that id. Try <a href="${href}">${where}</a>.</p>
+  </div>`;
+}
+
+/** ESPN says 400 or 404 for an id it has never heard of. */
+export const notFound = (error: unknown) => error instanceof Error && /answered 40[04]/.test(error.message);
 
 export const ordinal = (n: number) => `${n}${["th", "st", "nd", "rd"][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10 < 4 ? n % 10 : 0]}`;
