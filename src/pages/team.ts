@@ -3,7 +3,7 @@ import { dataset, snapshot, type TeamEntry } from "../lib/data.js";
 import { $, html, mount, param, type Markup } from "../lib/dom.js";
 import { espn, type RosterPlayer, type ScheduleGame, type TeamDetail } from "../lib/espn.js";
 import { historyChart, POST_LABEL, type HistRow } from "../lib/charts.js";
-import { failure, fmtDay, fmtTime, gameHref, logo, logoUrl, teamHref, teamStyle } from "../lib/ui.js";
+import { failure, fmtDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
 
 type Extras = { teams: Record<string, { arena?: string; elev?: number; height?: number; hist?: HistRow[] }> };
 type PlayersDoc = { season: string; rows: Array<[string, string, string, string | null, string, number, number, number, number, number, ...unknown[]]> };
@@ -52,7 +52,7 @@ function scheduleSheet(games: ScheduleGame[]): Markup {
                 ? html`<a href="${gameHref(g.id)}"><span class="${g.won ? "res-w" : "res-l"}">${g.won ? "W" : "L"}</span> ${g.us}-${g.them}</a>`
                 : g.state === "in"
                   ? html`<a href="${gameHref(g.id)}" class="down">Live ${g.us}-${g.them}</a>`
-                  : html`<a href="${gameHref(g.id)}">${/TBD/i.test(g.detail) ? "TBD" : fmtTime(g.date)}</a>${g.tv ? html` <small>${g.tv}</small>` : ""}`
+                  : html`<a href="${gameHref(g.id)}">${/TBD/i.test(g.detail) ? "TBD" : fmtTime(g.date)}</a>${g.tv ? html` <small class="wide">${g.tv}</small>` : ""}`
             }</td>
           </tr>`,
         )}
@@ -116,26 +116,47 @@ async function boot(): Promise<void> {
   const settle = <T>(p: Promise<T>) => p.then((value) => ({ value }), (error: unknown) => ({ error }));
   const entryP = snapshot("teams").then((s) => s.data.find((t) => t.id === id)).catch(() => undefined);
   const extrasP = dataset<Extras>("team-extras").then((d) => d.teams[id]).catch(() => undefined);
-  const detailP = settle(espn.team(id));
+  // ESPN's /teams/{id} sends no CORS header, so the header facts come from the
+  // baked standings and poll plus the live schedule instead.
+  const standingP = snapshot("standings")
+    .then((s) => {
+      for (const c of s.data) {
+        const i = c.rows.findIndex((r) => r.team.id === id);
+        if (i >= 0) return { row: c.rows[i]!, place: i + 1, abbr: c.abbr || c.name };
+      }
+      return undefined;
+    })
+    .catch(() => undefined);
+  const rankP = snapshot("rankings")
+    .then((s) => s.data[0]?.ranks.find((r) => r.team.id === id)?.rank ?? null)
+    .catch(() => null);
   const scheduleP = settle(espn.schedule(id));
   const rosterP = settle(espn.roster(id));
 
   // First paint from what we already hold locally.
   const [entry, extras] = await Promise.all([entryP, extrasP]);
   const facts = html`${extras?.arena ? html`<span>${extras.arena}${extras.elev ? `, ${extras.elev.toLocaleString()} ft up` : ""}</span>` : ""}${
-    extras?.height ? html`<span>Average height ${Math.floor(extras.height / 12)}′${(extras.height % 12).toFixed(1)}″</span>` : ""
+    extras?.height ? html`<span>Average height ${Math.floor(extras.height / 12)} ft ${(extras.height % 12).toFixed(1)} in</span>` : ""
   }`;
   if (entry) {
     document.title = `${entry.name} ${entry.mascot} — Field House`;
     mount(root, html`${hero(entry, undefined, facts)}<div class="wrap"><p class="loading" role="status">Opening the locker room…</p></div>`);
   }
 
-  const [detail, schedule, roster] = await Promise.all([detailP, scheduleP, rosterP]);
-  const d = "value" in detail ? detail.value : undefined;
-  if (!entry && !d) {
-    mount(root, html`<div class="wrap page">${failure("that team", "error" in detail ? detail.error : "unknown team")}</div>`);
+  const [schedule, roster, standing, rank] = await Promise.all([scheduleP, rosterP, standingP, rankP]);
+  if (!entry) {
+    mount(root, html`<div class="wrap page">${failure("that team", "unknown team")}</div>`);
     return;
   }
+  const played = "value" in schedule ? schedule.value.filter((g) => g.won !== null && g.won !== undefined) : [];
+  const d: TeamDetail = {
+    team: entry,
+    record: played.length ? `${played.filter((g) => g.won).length}-${played.filter((g) => !g.won).length}` : (standing?.row.overall ?? ""),
+    standing: standing ? `${ordinal(standing.place)} in ${standing.abbr}` : "",
+    rank,
+    confId: entry.conf,
+    venue: "",
+  };
   const name = d?.team.name ?? entry?.name ?? "";
   document.title = `${name} ${d?.team.mascot ?? entry?.mascot ?? ""} — Field House`;
   mount(

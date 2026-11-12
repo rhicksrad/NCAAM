@@ -484,7 +484,7 @@ export function normalizeSummary(json: J): GameDetail | null {
         pos: str(a.athlete?.position?.abbreviation),
         jersey: str(a.athlete?.jersey),
         starter: a.starter === true,
-        dnp: a.didNotPlay === true || arr(a.stats).length === 0,
+        dnp: a.didNotPlay === true || !Array.isArray(a.stats) || a.stats.length === 0,
         stats: (Array.isArray(a.stats) ? a.stats : []).map(str),
       })),
       totals: (Array.isArray(block.totals) ? block.totals : []).map(str),

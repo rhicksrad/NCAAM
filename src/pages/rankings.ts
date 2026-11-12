@@ -54,21 +54,21 @@ function paint(): void {
         <div class="sheet__head"><h2>${poll.name}</h2><small>${poll.updated ? `Released ${fmtStamp(poll.updated)}` : ""}</small></div>
         <div class="sheet__scroll">
           <table>
-            <thead><tr><th class="l">#</th><th class="l">Team</th><th>Record</th>${hasVotes ? raw("<th>Points</th><th>1st</th>") : ""}<th>Last wk</th><th>Move</th></tr></thead>
+            <thead><tr><th class="l">#</th><th class="l">Team</th><th>Record</th>${hasVotes ? raw('<th>Points</th><th class="wide">1st</th>') : ""}<th class="wide">Last wk</th><th>Move</th></tr></thead>
             <tbody>
               ${poll.ranks.map(
                 (r) => html`<tr>
                   <td class="l pos">${r.rank}</td>
-                  <td class="l"><a class="who" href="${teamHref(r.team.id)}">${logo(r.team)}<span>${r.team.name} <small>${r.team.mascot}</small></span></a></td>
+                  <td class="l"><a class="who" href="${teamHref(r.team.id)}">${logo(r.team)}<span>${r.team.name} <small class="wide">${r.team.mascot}</small></span></a></td>
                   <td>${r.record}</td>
                   ${
                     hasVotes
-                      ? html`<td title="${Math.round((r.points / maxPoints) * 100)}% of the leader's points">${r.points ? r.points.toLocaleString() : ""}</td><td>${
+                      ? html`<td title="${Math.round((r.points / maxPoints) * 100)}% of the leader's points">${r.points ? r.points.toLocaleString() : ""}</td><td class="wide">${
                           r.firstPlace || ""
                         }</td>`
                       : ""
                   }
-                  <td>${r.prev || "NR"}</td>
+                  <td class="wide">${r.prev || "NR"}</td>
                   <td>${move(r.rank, r.prev)}</td>
                 </tr>`,
               )}

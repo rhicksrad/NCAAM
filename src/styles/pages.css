@@ -398,7 +398,8 @@
 .board__team b {
   font: 800 clamp(1.2rem, 3.6vw, 2.1rem) / 0.95 var(--display);
   text-transform: uppercase;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .board__team small {
   color: rgb(251 250 244 / 0.7);
@@ -949,4 +950,18 @@ small.sub {
   display: block;
   opacity: 0.7;
   line-height: 1.2;
+}
+
+/* Phones: drop the columns a thumb can live without so nothing is cut off. */
+@media (max-width: 560px) {
+  .wide {
+    display: none;
+  }
+  .sheet th,
+  .sheet td {
+    padding-inline: 0.45rem;
+  }
+  .board__team b {
+    font-size: clamp(0.95rem, 4.6vw, 1.3rem);
+  }
 }

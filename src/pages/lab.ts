@@ -2,7 +2,7 @@ import "../lib/chrome.js";
 import { dataset } from "../lib/data.js";
 import { $, html, mount, raw, type Markup } from "../lib/dom.js";
 import { POST_LABEL } from "../lib/charts.js";
-import { failure, teamHref } from "../lib/ui.js";
+import { failure, ordinal, teamHref } from "../lib/ui.js";
 
 // year, team, teamId, conf, w, g, adjO, adjD, barthag, tempo, post, seed, fg3, efg
 type Eff = [number, string, string | null, string, number, number, number, number, number, number, number, number, number, number];
@@ -190,7 +190,6 @@ function wireThinAir(doc: ArenaDoc): void {
   svg.addEventListener("click", show);
 }
 
-const ordinal = (n: number) => `${n}${["th", "st", "nd", "rd"][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10 < 4 ? n % 10 : 0]}`;
 
 /* ---------- 03: mascots ---------- */
 function mascots(doc: MascotDoc): Markup {
