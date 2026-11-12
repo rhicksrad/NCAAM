@@ -3,7 +3,7 @@ import { dataset, snapshot, type TeamEntry } from "../lib/data.js";
 import { $, html, mount, param, type Markup } from "../lib/dom.js";
 import { espn, type RosterPlayer, type ScheduleGame, type TeamDetail } from "../lib/espn.js";
 import { historyChart, POST_LABEL, type HistRow } from "../lib/charts.js";
-import { failure, fmtDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
+import { failure, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
 
 type Extras = { teams: Record<string, { arena?: string; elev?: number; height?: number; hist?: HistRow[] }> };
 type PlayersDoc = { season: string; rows: Array<[string, string, string, string | null, string, number, number, number, number, number, ...unknown[]]> };
@@ -36,14 +36,14 @@ function scheduleSheet(games: ScheduleGame[]): Markup {
   if (!games.length) return html`<div class="empty-state"><h2>No schedule yet</h2><p>ESPN hasn't posted this team's games.</p></div>`;
   const wins = games.filter((g) => g.won === true).length;
   const losses = games.filter((g) => g.won === false).length;
-  return html`<section class="sheet">
+  return html`<section class="sheet sheet--wrap">
     <div class="sheet__head"><h2>Schedule</h2><small>${wins}-${losses} so far, ${games.filter((g) => g.state === "pre").length} to play</small></div>
     <div class="sheet__scroll"><table>
       <thead><tr><th class="l">Date</th><th class="l">Opponent</th><th>Result</th></tr></thead>
       <tbody>
         ${games.map(
           (g) => html`<tr>
-            <td class="l">${fmtDay(g.date)}</td>
+            <td class="l"><span class="wide">${fmtDay(g.date)}</span><span class="narrow">${fmtShortDay(g.date)}</span></td>
             <td class="l"><a class="who" href="${teamHref(g.opponent.id)}">${logo(g.opponent)}<span><small>${g.neutral ? "vs" : g.home ? "vs" : "at"}</small> ${
               g.oppRank ? html`<span class="rk">${g.oppRank}</span>` : ""
             }${g.opponent.name}</span></a></td>
@@ -68,12 +68,12 @@ function rosterSheet(players: RosterPlayer[]): Markup {
   return html`<section class="sheet">
     <div class="sheet__head"><h2>Roster</h2><small>${players.length} players</small></div>
     <div class="sheet__scroll"><table>
-      <thead><tr><th class="l">#</th><th class="l">Player</th><th>Pos</th><th>Ht</th><th>Wt</th><th class="l">Yr</th></tr></thead>
+      <thead><tr><th class="l">#</th><th class="l">Player</th><th>Pos</th><th>Ht</th><th class="wide">Wt</th><th class="l">Yr</th></tr></thead>
       <tbody>
         ${players.map(
           (p) => html`<tr><td class="l pos">${p.jersey}</td><td class="l"><span class="who"><span>${p.name}${
-            p.from ? html` <small>${p.from}</small>` : ""
-          }</span></span></td><td>${p.pos}</td><td>${p.height}</td><td>${p.weight}</td><td class="l">${CLASS[p.year] ?? p.year}</td></tr>`,
+            p.from ? html` <small class="wide">${p.from}</small>` : ""
+          }</span></span></td><td>${p.pos}</td><td>${p.height}</td><td class="wide">${p.weight}</td><td class="l">${CLASS[p.year] ?? p.year}</td></tr>`,
         )}
       </tbody>
     </table></div>
@@ -152,7 +152,8 @@ async function boot(): Promise<void> {
   const d: TeamDetail = {
     team: entry,
     record: played.length ? `${played.filter((g) => g.won).length}-${played.filter((g) => !g.won).length}` : (standing?.row.overall ?? ""),
-    standing: standing ? `${ordinal(standing.place)} in ${standing.abbr}` : "",
+    // Until league play starts everyone is 0-0 and "13th" means nothing.
+    standing: standing ? (/^0-0$|^$/.test(standing.row.conf) ? `0-0 in ${standing.abbr}` : `${standing.row.conf} in ${standing.abbr}, ${ordinal(standing.place)}`) : "",
     rank,
     confId: entry.conf,
     venue: "",

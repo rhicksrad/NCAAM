@@ -21,7 +21,7 @@ function espnFixture(url) {
   if (p.endsWith("/rankings")) return "rankings.json";
   if (p.endsWith("/standings")) return "standings-2027.json";
   if (p.endsWith("/news")) return "news.json";
-  if (p.endsWith("/summary")) return u.searchParams.get("event") === "pre" ? "summary-pre.json" : "summary-final.json";
+  if (p.endsWith("/summary")) return u.searchParams.get("event") === preId ? "summary-pre.json" : "summary-final.json";
   if (p.endsWith("/roster")) return "team-150-roster.json";
   if (p.endsWith("/schedule")) return "team-150-schedule.json";
   if (/\/teams\/\d+$/.test(p)) return "team-150.json";
@@ -30,10 +30,12 @@ function espnFixture(url) {
 }
 
 const finalId = JSON.parse(fx("summary-final.json")).header.id;
+const preId = JSON.parse(fx("summary-pre.json")).header.id;
 const PAGES = [
   { url: "index.html", wait: "#home-games .ticket", expect: ["#home-poll .poll-list li", "#hero-tally b"] },
   { url: "games.html", wait: "#games-list .ticket", expect: ["#datestrip a[aria-current=date]"] },
   { url: `game.html?id=${finalId}`, wait: ".board__score", expect: [".sheet table tbody tr", ".flow svg path", ".pbp li"] },
+  { url: `game.html?id=${preId}`, wait: ".board__teams", expect: [".form-guide .sheet tbody tr"] },
   { url: "rankings.html", wait: ".rafters .banner", expect: ["#rankings-root tbody tr:nth-child(25)"] },
   { url: "standings.html", wait: ".conf-grid .sheet", expect: [".conf-grid .sheet:nth-child(20) tbody tr"] },
   { url: "teams.html", wait: ".team-chip", expect: [".conf-block:nth-child(20)"] },

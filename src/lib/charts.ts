@@ -47,10 +47,14 @@ export type FlowPoint = { t: number; diff: number };
 /** Lead tracker: home lead above the line, away lead below. */
 export function flowChart(points: FlowPoint[], total: number, periodSeconds: number, homeColor: string, awayColor: string, homeAbbr: string, awayAbbr: string): Markup {
   const W = 720, H = 220, padL = 34, padR = 8, padT = 12, padB = 20;
-  const max = Math.max(8, ...points.map((p) => Math.abs(p.diff)));
+  // Each side gets only the room it earned: a wire-to-wire win fills the
+  // chart instead of leaving half of it empty.
+  const up = Math.max(4, ...points.map((p) => p.diff));
+  const down = Math.max(4, ...points.map((p) => -p.diff));
+  const plot = H - padT - padB;
   const x = (t: number) => padL + (t / total) * (W - padL - padR);
-  const mid = padT + (H - padT - padB) / 2;
-  const y = (d: number) => mid - (d / max) * ((H - padT - padB) / 2);
+  const mid = padT + (plot * up) / (up + down);
+  const y = (d: number) => mid - (d / (up + down)) * plot;
   let d = `M${x(0).toFixed(1)},${mid}`;
   let prev = 0;
   for (const p of points) {
@@ -80,7 +84,7 @@ export function flowChart(points: FlowPoint[], total: number, periodSeconds: num
     <path d="${d}" fill="${homeColor}" clip-path="url(#flow-up)"/>
     <path d="${d}" fill="${awayColor}" clip-path="url(#flow-down)"/>
     <line x1="${padL}" x2="${W - padR}" y1="${mid}" y2="${mid}" stroke="#14213a" stroke-width="1.5"/>
-    <text x="0" y="${padT + 8}">${homeAbbr} +${max}</text>
-    <text x="0" y="${H - padB - 2}">${awayAbbr} +${max}</text>
+    <text x="0" y="${padT + 8}">${homeAbbr} +${up}</text>
+    <text x="0" y="${H - padB - 2}">${awayAbbr} +${down}</text>
   </svg>`;
 }

@@ -343,7 +343,7 @@
 /* ---------- Game page ---------- */
 .board {
   background:
-    linear-gradient(rgb(13 20 36 / 0.8), rgb(13 20 36 / 0.8)),
+    linear-gradient(rgb(13 20 36 / 0.88), rgb(13 20 36 / 0.88)),
     #0f1728 url("../art/scoreboard.webp") center / cover no-repeat;
   color: var(--line);
   border: var(--lane) solid var(--line);
@@ -957,6 +957,18 @@ small.sub {
   .wide {
     display: none;
   }
+  .narrow {
+    display: inline;
+  }
+  .sheet--wrap td .who span {
+    white-space: normal;
+  }
+  .hero__date {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    background: var(--ink);
+    color: var(--line);
+  }
   .sheet th,
   .sheet td {
     padding-inline: 0.45rem;
@@ -964,4 +976,46 @@ small.sub {
   .board__team b {
     font-size: clamp(0.95rem, 4.6vw, 1.3rem);
   }
+}
+
+.narrow {
+  display: none;
+}
+@media (max-width: 560px) {
+  .narrow {
+    display: inline;
+  }
+}
+
+/* Pre-game form guide: two stat sheets side by side under one painted heading. */
+.form-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: start;
+}
+.form-guide__h {
+  grid-column: 1 / -1;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  mix-blend-mode: multiply;
+  padding-bottom: 0.4rem;
+  border-bottom: var(--lane) solid var(--line);
+}
+.form-guide .later td {
+  color: var(--ink-soft);
+}
+@media (max-width: 760px) {
+  .form-guide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Thin air: let the chalkboard stand as tall as the table beside it. */
+.split:has(.map) {
+  align-items: stretch;
+}
+.chalk.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

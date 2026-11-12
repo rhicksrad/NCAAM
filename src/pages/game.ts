@@ -1,19 +1,21 @@
 import "../lib/chrome.js";
 import { feed } from "../lib/data.js";
 import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
-import { espn, type BoxTeam, type GameDetail, type Play, type Side } from "../lib/espn.js";
+import { espn, type BoxTeam, type GameDetail, type Play, type ScheduleGame, type Side } from "../lib/espn.js";
 import { flowChart, type FlowPoint } from "../lib/charts.js";
-import { failure, fmtDay, fmtTime, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
+import { failure, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
 const id = param("id") ?? "";
 const root = $("#game-root");
 let openPeriods: Set<number> | null = null;
+let form: Markup | null = null;
+let formAsked = false;
 
 function boardTeam(side: Side): Markup {
   const { paint } = teamColors(side.team);
   return html`<a class="board__team" href="${teamHref(side.team.id)}" style="--team:${paint}">
     <img src="${logoUrl(side.team.id, 160)}" data-team="${side.team.id}" data-abbr="${side.team.abbr}" alt="" width="80" height="80">
-    <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}${side.team.name}</b>
+    <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}<span class="wide">${side.team.name}</span><span class="narrow">${side.team.short || side.team.name}</span></b>
     <small>${side.record}</small>
   </a>`;
 }
@@ -136,6 +138,40 @@ function compare(d: GameDetail): Markup {
   </section>`;
 }
 
+/** Before the tip there is no box score, so show how each side has been playing. */
+function formSheet(side: Side, games: ScheduleGame[]): Markup {
+  const done = games.filter((g) => g.won !== null).slice(-5).reverse();
+  const next = games.filter((g) => g.won === null && g.id !== id).slice(0, 2);
+  const wins = done.filter((g) => g.won).length;
+  const where = (g: ScheduleGame) => (g.neutral ? "vs" : g.home ? "vs" : "at");
+  const opp = (g: ScheduleGame) =>
+    html`<a class="who" href="${teamHref(g.opponent.id)}">${logo(g.opponent)}<span><small>${where(g)}</small> ${g.oppRank ? html`<span class="rk">${g.oppRank}</span>` : ""}${g.opponent.name}</span></a>`;
+  return html`<section class="sheet sheet--wrap">
+    <div class="sheet__head"><h2>${side.team.name}</h2><small>${done.length ? `${wins}-${done.length - wins} in the last ${done.length}` : "No games yet"}</small></div>
+    <table>
+      <tbody>
+        ${done.map(
+          (g) => html`<tr><td class="l">${fmtShortDay(g.date)}</td><td class="l">${opp(g)}</td><td><a href="${gameHref(g.id)}"><span class="${g.won ? "res-w" : "res-l"}">${g.won ? "W" : "L"}</span> ${g.us}-${g.them}</a></td></tr>`,
+        )}
+        ${next.map((g) => html`<tr class="later"><td class="l">${fmtShortDay(g.date)}</td><td class="l">${opp(g)}</td><td><small>up next</small></td></tr>`)}
+      </tbody>
+    </table>
+  </section>`;
+}
+
+function askForm(d: GameDetail): void {
+  if (formAsked) return;
+  formAsked = true;
+  const g = d.game;
+  Promise.all([espn.schedule(g.away.team.id), espn.schedule(g.home.team.id)])
+    .then(([a, h]) => {
+      form = html`<div class="form-guide"><h2 class="form-guide__h">Coming in</h2>${formSheet(g.away, a)}${formSheet(g.home, h)}</div>`;
+      const slot = document.querySelector("#form-slot");
+      if (slot) mount(slot, form);
+    })
+    .catch(() => undefined);
+}
+
 function boxTable(box: BoxTeam, side: Side): Markup {
   if (!box.players.length) return html``;
   const ptsCol = box.labels.findIndex((l) => l.toUpperCase() === "PTS");
@@ -202,12 +238,14 @@ function paint(d: GameDetail): void {
         ${playByPlay(d)}
         ${
           g.state === "pre"
-            ? html`<div class="empty-state"><h2>Not tipped yet</h2><p>The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p></div>`
+            ? html`<div id="form-slot">${form ?? ""}</div>
+                <p class="also"><b>Not tipped yet.</b> The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p>`
             : ""
         }
         ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}
       </div>`,
   );
+  if (g.state === "pre") askForm(d);
 }
 
 root.addEventListener(
