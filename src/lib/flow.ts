@@ -10,8 +10,12 @@ export function flowChart(points: FlowPoint[], total: number, periodSeconds: num
   const W = narrow ? 380 : 1100, H = narrow ? 230 : 250, padL = narrow ? 4 : 52, padR = 8, padT = narrow ? 20 : 16, padB = narrow ? 24 : 20;
   // Each side gets only the room it earned: a wire-to-wire win fills the
   // chart instead of leaving half of it empty.
-  const up = Math.max(4, ...points.map((p) => p.diff));
-  const down = Math.max(4, ...points.map((p) => -p.diff));
+  const hi = Math.max(4, ...points.map((p) => p.diff));
+  const lo = Math.max(4, ...points.map((p) => -p.diff));
+  // The side that never led still gets an eighth of the chart, so the zero
+  // line does not sit on the frame.
+  const up = Math.max(hi, lo / 7);
+  const down = Math.max(lo, hi / 7);
   const plot = H - padT - padB;
   const x = (t: number) => padL + (t / total) * (W - padL - padR);
   const mid = padT + (plot * up) / (up + down);
@@ -46,7 +50,7 @@ export function flowChart(points: FlowPoint[], total: number, periodSeconds: num
     <path d="${d}" fill="${homeColor}" clip-path="url(#flow-up)"/>
     <path d="${d}" fill="${awayColor}" clip-path="url(#flow-down)"/>
     <line x1="${padL}" x2="${W - padR}" y1="${mid}" y2="${mid}" stroke="#14213a" stroke-width="1.5"/>
-    ${points.some((p) => p.diff > 0) ? html`<text x="0" y="${padT + 8}">${homeAbbr} +${up}</text>` : ""}
-    ${points.some((p) => p.diff < 0) ? html`<text x="0" y="${H - padB - 2}">${awayAbbr} +${down}</text>` : ""}
+    ${points.some((p) => p.diff > 0) ? html`<text x="0" y="${padT + 8}">${homeAbbr} +${hi}</text>` : ""}
+    ${points.some((p) => p.diff < 0) ? html`<text x="0" y="${H - padB - 2}">${awayAbbr} +${lo}</text>` : ""}
   </svg>`;
 }
