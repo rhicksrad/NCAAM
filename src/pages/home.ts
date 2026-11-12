@@ -7,7 +7,8 @@ import { drama, failure, fmtLongDay, logo, marquee, staleNote, teamHref, ticket 
 type Order = "best" | "time";
 const ORDER_KEY = "fh:order";
 /** Tickets under the main event. The rest of the slate lives on Scores. */
-const SHOWN = 8;
+// A phone gets the main event and five tickets; the scoreboard page has the rest.
+const SHOWN = matchMedia("(max-width: 560px)").matches ? 5 : 8;
 let order: Order = localStorage.getItem(ORDER_KEY) === "time" ? "time" : "best";
 let games: Game[] = [];
 let info: FeedInfo = { live: false, at: "", stale: false };

@@ -31,6 +31,10 @@ export type Team = {
   /** Primary colour as #rrggbb, or "" */
   color: string;
   alt: string;
+  /** True when the feed carries logos for other teams but none for this one
+   *  (non-Division I visitors). The page then draws the lettered disc at once
+   *  instead of asking the image server for a file that is not there. */
+  noLogo?: boolean;
 };
 
 export type Side = {
@@ -179,9 +183,24 @@ const num = (v: unknown): number | null => {
 const arr = (v: unknown): J[] => (Array.isArray(v) ? (v as unknown[]).filter((x): x is J => typeof x === "object" && x !== null) : []);
 const hex = (v: unknown): string => (typeof v === "string" && /^[0-9a-f]{6}$/i.test(v) ? `#${v.toLowerCase()}` : "");
 
+/** Whether the raw record behind a team had a logo. Old saved data has no
+ *  logo keys for anyone, so absence only means something next to a presence. */
+const logoSeen = new WeakMap<Team, boolean>();
+
+function settleLogos(teams: Team[]): void {
+  if (!teams.some((t) => logoSeen.get(t))) return;
+  for (const t of teams) if (logoSeen.get(t) === false) t.noLogo = true;
+}
+
 export function toTeam(raw: J | null | undefined): Team {
   const t = raw ?? {};
   const name = str(t.location) || str(t.shortDisplayName) || str(t.displayName) || str(t.name) || "TBD";
+  const team = toTeamPlain(t, name);
+  logoSeen.set(team, Boolean(str(t.logo) || arr(t.logos).length));
+  return team;
+}
+
+function toTeamPlain(t: J, name: string): Team {
   return {
     id: str(t.id),
     name,
@@ -261,12 +280,14 @@ function toGame(event: J, comp: J): Game {
 }
 
 export function normalizeScoreboard(json: J): Game[] {
-  return arr(json?.events)
+  const games = arr(json?.events)
     .map((event) => {
       const comp = arr(event.competitions)[0];
       return comp ? toGame(event, comp) : null;
     })
     .filter((g): g is Game => g !== null && g.id !== "");
+  settleLogos(games.flatMap((g) => [g.home.team, g.away.team]));
+  return games;
 }
 
 /** The calendar days ESPN has games on, as YYYYMMDD, when the feed lists them. */
@@ -415,7 +436,7 @@ export function normalizeRoster(json: J): RosterPlayer[] {
 }
 
 export function normalizeSchedule(json: J, teamId: string): ScheduleGame[] {
-  return arr(json?.events)
+  const games = arr(json?.events)
     .map((event) => {
       const comp = arr(event.competitions)[0] ?? {};
       const competitors = arr(comp.competitors);
@@ -445,6 +466,8 @@ export function normalizeSchedule(json: J, teamId: string): ScheduleGame[] {
     })
     .filter((g) => g.id && g.date)
     .sort((a, b) => a.date.localeCompare(b.date));
+  settleLogos(games.map((g) => g.opponent));
+  return games;
 }
 
 function clockSeconds(display: string): number {
@@ -457,6 +480,7 @@ export function normalizeSummary(json: J): GameDetail | null {
   const comp = arr(json?.header?.competitions)[0];
   if (!comp) return null;
   const game = toGame({ id: json.header.id, date: comp.date, status: comp.status }, comp);
+  settleLogos([game.home.team, game.away.team]);
   const info = (json.gameInfo ?? {}) as J;
   if (!game.venue) game.venue = str(info.venue?.fullName);
   if (!game.city) {

@@ -56,8 +56,8 @@ export function logoUrl(id: string, px: number): string {
   return `https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/${encodeURIComponent(id)}.png&h=${px}&w=${px}`;
 }
 
-export function logo(team: Pick<Team, "id" | "abbr" | "name">, cls = "logo", px = 56): Markup {
-  if (!team.id) return html`<span class="${cls} logo--blank" aria-hidden="true">${team.abbr.slice(0, 3)}</span>`;
+export function logo(team: Pick<Team, "id" | "abbr" | "name" | "noLogo">, cls = "logo", px = 56): Markup {
+  if (!team.id || team.noLogo) return html`<span class="${cls} logo--blank" aria-hidden="true">${team.abbr.slice(0, 3)}</span>`;
   return html`<img class="${cls}" src="${logoUrl(team.id, px)}" data-team="${team.id}" data-abbr="${team.abbr}" alt="" width="${px / 2}" height="${px / 2}" loading="lazy" decoding="async">`;
 }
 
@@ -99,13 +99,24 @@ export function periodLabel(period: number): string {
   return period === 3 ? "OT" : `${period - 2}OT`;
 }
 
+/** ESPN keeps "0:00 1st" on the clock through the break; people say halftime. */
+export function atHalf(game: Pick<Game, "state" | "detail">): boolean {
+  return game.state === "in" && /half/i.test(game.detail) && !/\d:\d/.test(game.detail);
+}
+
+/** A percentage of no attempts is not zero, it is nothing yet. `line` is the
+ *  made-attempted pair that goes with it, like "0-0". */
+export function pctOrDash(value: string, line: string | undefined): string {
+  return line !== undefined && /-0$/.test(line.trim()) ? "–" : value;
+}
+
 function stub(game: Game): Markup {
   if (game.state === "post") {
     const extra = /\bOT\b|\d+OT/i.exec(game.detail)?.[0] ?? "";
     return html`<b>Final</b>${extra ? html`<span>${extra}</span>` : ""}`;
   }
   if (game.state === "in") {
-    if (/half/i.test(game.detail) && !/\d:\d/.test(game.detail)) return html`<b>Half</b><span>Live</span>`;
+    if (atHalf(game)) return html`<b>Half</b><span>Live</span>`;
     return html`<b>${game.clock || "Live"}</b><span>${periodLabel(game.period) || "Live"}</span>`;
   }
   if (/postponed|canceled|cancelled/i.test(game.detail)) return html`<b>Off</b><span>${game.detail.slice(0, 9)}</span>`;

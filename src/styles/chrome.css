@@ -124,7 +124,30 @@
     margin-inline: calc(var(--gutter) * -1);
     padding-inline: calc(var(--gutter) - 0.6rem);
     min-height: 2.6rem;
-    mask-image: linear-gradient(90deg, transparent, #000 1rem, #000 calc(100% - 2rem), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 1rem);
+  }
+  /* More links than fit: an arrow rides the right edge until the row runs out. */
+  .nav::after {
+    content: "›";
+    position: sticky;
+    right: 0;
+    flex: none;
+    display: grid;
+    place-items: center end;
+    width: 2.6rem;
+    margin-left: -2.6rem;
+    padding-right: 0.7rem;
+    font: 800 1.5rem/1 var(--display);
+    color: var(--amber);
+    background: linear-gradient(90deg, transparent, var(--ink) 55%);
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .nav[data-end]::after {
+    opacity: 0;
+  }
+  .nav a:last-child {
+    margin-right: 1.6rem;
   }
 }
 

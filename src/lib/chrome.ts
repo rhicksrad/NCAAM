@@ -23,6 +23,17 @@ document.addEventListener(
   true,
 );
 
+// On a phone the nav scrolls sideways. Start it on the page you are on, and
+// drop the "more this way" arrow once the last link is in view.
+const nav = document.querySelector<HTMLElement>(".nav");
+if (nav) {
+  const here = nav.querySelector<HTMLElement>('[aria-current="page"]');
+  if (here && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = here.offsetLeft - nav.offsetLeft - (nav.clientWidth - here.offsetWidth) / 2;
+  const mark = () => nav.toggleAttribute("data-end", nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 8);
+  nav.addEventListener("scroll", mark, { passive: true });
+  mark();
+}
+
 let dialog: HTMLDialogElement | null = null;
 let teams: TeamEntry[] = [];
 

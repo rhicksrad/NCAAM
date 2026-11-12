@@ -1520,3 +1520,82 @@ small.sub {
     contain-intrinsic-size: auto calc(4rem + var(--n, 12) / 2 * 3.9rem);
   }
 }
+
+/* ---------- Round 8: the game page keeps pace, the phone gets its edges ---------- */
+.board__team .logo--blank {
+  width: clamp(3rem, 9vw, 5rem);
+  height: clamp(3rem, 9vw, 5rem);
+  font-size: clamp(0.9rem, 2.6vw, 1.4rem);
+  background: var(--line);
+  color: var(--ink);
+  border-bottom: 5px solid var(--team);
+  margin-inline: auto;
+}
+.flow--phone text {
+  font-size: 13.5px;
+}
+.game-cols > .sheet {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 34rem;
+}
+.sheet__scroll:focus-visible {
+  outline: 3px solid var(--ball);
+  outline-offset: -3px;
+}
+.pbp .pbp__more {
+  display: block;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-bottom: 0;
+}
+.pbp__more button {
+  font: 700 0.95rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 1rem;
+  background: none;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+.pbp__more button:hover {
+  background: var(--ink);
+  color: var(--line);
+}
+@media (max-width: 560px) {
+  /* Five boards two-up, the first across the top: one phone screen, not two. */
+  .lab-strip ol {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .lab-strip li:first-child {
+    grid-column: 1 / -1;
+  }
+  .lab-strip li a {
+    grid-template-columns: 1fr;
+    padding: 0.6rem 0.7rem 0.75rem;
+    border-width: 5px;
+  }
+  .lab-strip li b {
+    font-size: 1.7rem;
+  }
+  .lab-strip li strong {
+    font-size: 1.15rem;
+  }
+  .lab-strip li span {
+    grid-column: 1;
+    font-size: 0.8rem;
+  }
+  .lab-strip li:not(:first-child) span {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  tr.career table {
+    font-size: 0.8rem;
+  }
+  tr.career td.l {
+    white-space: nowrap;
+  }
+}
