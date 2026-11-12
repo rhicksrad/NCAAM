@@ -30,7 +30,7 @@ export const PAGES = [
   <div class="hero__copy wrap">
     <p class="hero__date" id="hero-date"></p>
     <h1 class="floor-title" id="hero-title">Tonight</h1>
-    <p class="hero__tally" id="hero-tally">Reading the scorer's table…</p>
+    <div class="hero__tallybox"><p class="hero__tally" id="hero-tally">Reading the scorer's table…</p></div>
   </div>
 </section>
 <div class="wrap home">

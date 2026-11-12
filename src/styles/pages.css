@@ -1678,3 +1678,30 @@ small.sub {
 .airball .page-head__sub {
   max-width: 34rem;
 }
+
+/* ---------- Round 11 ---------- */
+/* The tally runs to two lines on a phone. Its box holds that room, so
+   the title above it does not ride up when the count comes in. */
+.hero__tallybox {
+  min-height: 3.9rem;
+}
+#p-conf {
+  width: 11.5rem;
+}
+@media (max-width: 700px) {
+  .hero__tallybox {
+    min-height: 5.1rem;
+  }
+  .board {
+    background-image: linear-gradient(rgb(13 20 36 / 0.88), rgb(13 20 36 / 0.88)), url("../art/scoreboard-sm.webp");
+  }
+  .chalk,
+  .lab-strip li a {
+    background-image: url("../art/chalkboard-sm.webp");
+  }
+}
+@media (max-width: 560px) {
+  .leader-strip {
+    grid-auto-columns: calc((100vw - var(--gutter, 1rem) - 1.5rem) / 2);
+  }
+}

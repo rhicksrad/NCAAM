@@ -67,7 +67,7 @@ function rosterSheet(players: RosterPlayer[]): Markup {
   if (!players.length) return html``;
   return html`<section class="sheet">
     <div class="sheet__head"><h2>Roster</h2><small>${players.length} players</small></div>
-    <div class="sheet__scroll"><table>
+    <div class="sheet__scroll" tabindex="0" role="region" aria-label="Roster"><table>
       <thead><tr><th class="l">#</th><th class="l">Player</th><th>Pos</th><th>Ht</th><th class="wide">Wt</th><th class="l">Yr</th></tr></thead>
       <tbody>
         ${players.map(
@@ -101,7 +101,7 @@ function lastYear(doc: PlayersDoc, teamId: string): Markup {
   if (!rows.length) return html``;
   return html`<section class="sheet">
     <div class="sheet__head"><h2>${doc.season} scorers</h2><small>Sports Reference</small></div>
-    <div class="sheet__scroll"><table>
+    <div class="sheet__scroll" tabindex="0" role="region" aria-label="${doc.season} scorers"><table>
       <thead><tr><th class="l">Player</th><th>GP</th><th>Pts</th><th>Reb</th><th>Ast</th></tr></thead>
       <tbody>${rows.map((r) => html`<tr><td class="l"><a class="who" href="./players.html?q=${r[1]}">${r[1]}</a></td><td>${r[5]}</td><td class="hot">${r[7].toFixed(1)}</td><td>${r[8].toFixed(1)}</td><td>${r[9].toFixed(1)}</td></tr>`)}</tbody>
     </table></div>
