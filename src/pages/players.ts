@@ -21,6 +21,8 @@ const COLS: Array<{ i: number; key: string; label: string; title: string; pct?: 
   { i: 14, key: "fg3", label: "3P%", title: "Three-point percentage", pct: true },
   { i: 15, key: "ft", label: "FT%", title: "Free throw percentage", pct: true },
 ];
+/** Games and minutes give way on a phone so the sorted stat is on screen. */
+const thin = (key: string) => ((key === "gp" || key === "mpg") && key !== sortKey ? "wide" : "");
 const HEADLINERS = ["ppg", "rpg", "apg", "spg", "bpg"];
 const PAGE = 50;
 
@@ -93,9 +95,9 @@ function paint(): void {
     "#players-root",
     html`${leaders()}
       <section class="sheet">
-        <div class="sheet__scroll"><table>
+        <div class="sheet__scroll"><table class="roll">
           <thead><tr><th class="l">#</th><th class="l">Player</th>${COLS.map(
-            (c) => html`<th ${c.key === sortKey ? html`aria-sort="${dir === -1 ? "descending" : "ascending"}"` : ""}><button type="button" data-sort="${c.key}" title="${c.title}">${c.label}</button></th>`,
+            (c) => html`<th class="${thin(c.key)}" ${c.key === sortKey ? html`aria-sort="${dir === -1 ? "descending" : "ascending"}"` : ""}><button type="button" data-sort="${c.key}" title="${c.title}">${c.label}</button></th>`,
           )}</tr></thead>
           <tbody>
             ${
@@ -104,7 +106,7 @@ function paint(): void {
                     (r, i) => html`<tr data-slug="${r[0]}" tabindex="0" aria-expanded="${open.has(r[0]) ? "true" : "false"}">
                         <td class="l pos">${page * PAGE + i + 1}</td>
                         <td class="l"><span class="who">${logo({ id: r[3] ?? "", abbr: r[2], name: r[2] })}<span>${r[1]} <small>${r[2]} · ${r[4]}</small></span></span></td>
-                        ${COLS.map((c) => html`<td class="${c.key === sortKey ? "hot" : ""}">${c.key === "gp" && r[c.i] !== null ? Math.round(r[c.i] as number) : fmt(r[c.i] as number | null, c.pct)}</td>`)}
+                        ${COLS.map((c) => html`<td class="${c.key === sortKey ? "hot" : thin(c.key)}">${c.key === "gp" && r[c.i] !== null ? Math.round(r[c.i] as number) : fmt(r[c.i] as number | null, c.pct)}</td>`)}
                       </tr>${open.has(r[0]) ? careerRow(r[0]) : ""}`,
                   )
                 : html`<tr><td class="l" colspan="${COLS.length + 2}">Nobody matches. Loosen the filters.</td></tr>`

@@ -50,7 +50,10 @@ function chalkboard(doc: EffDoc): Markup {
       <text class="cap" x="${PL + 6}" y="${PT + 12}">↑ stingier defense (points allowed per 100)</text>
       <text x="${CW - PR - 6}" y="${PT + 14}" text-anchor="end" class="corner">CONTENDERS</text>
       <text x="${PL + 6}" y="${CH - PB - 8}" class="corner">LONG WINTER</text>
+      <path id="eff-trail" class="trail" d=""/>
+      <g id="eff-ends"></g>
       <g id="eff-dots"></g>
+      <text id="eff-tag" class="tag"></text>
     </svg>
     <p class="chalk-axes">Across: points scored per 100 possessions. Up: fewer points allowed.</p>
     <p class="chalk-readout" id="eff-read">Each chalk mark is a team. Up and to the right is where you want to be. Gold is the eventual champion. Hover or tap a mark.</p>
@@ -101,6 +104,22 @@ function wireChalkboard(doc: EffDoc): void {
       dot.setAttribute("r", r[10] === 7 ? "7" : "4.5");
       dot.classList.toggle("is-on", team === follow);
       if (team === follow || r[10] === 7) layer.append(dot);
+    }
+    // A followed team leaves its road on the board: one chalk line through
+    // every season up to the one showing, so the tape draws it as it runs.
+    const road = follow ? [...byYear.keys()].sort((a, b) => a - b).flatMap((y) => (y <= year ? byYear.get(y)!.filter((r) => r[1] === follow) : [])) : [];
+    const at = (r: Eff) => [cx(Math.min(X1, Math.max(X0, r[6]))), cy(Math.min(Y1, Math.max(Y0, r[7])))] as const;
+    $("#eff-trail").setAttribute("d", road.map((r, i) => `${i ? "L" : "M"}${at(r)[0].toFixed(1)},${at(r)[1].toFixed(1)}`).join(""));
+    const ends = road.length > 1 ? [road[0]!] : [];
+    mount("#eff-ends", html`${ends.map((r) => html`<text class="end" x="${at(r)[0] + 7}" y="${at(r)[1] + 4}">’${String(r[0]).slice(2)}</text>`)}`);
+    const tag = $("#eff-tag") as unknown as SVGTextElement;
+    const here = follow ? current.get(follow) : undefined;
+    tag.textContent = here ? follow : "";
+    if (here) {
+      const [x, y] = at(here);
+      const left = x > CW - 170;
+      tag.setAttribute("text-anchor", left ? "end" : "start");
+      tag.style.transform = `translate(${(x + (left ? -11 : 11)).toFixed(1)}px, ${(y - 9).toFixed(1)}px)`;
     }
     const followed = follow ? current.get(follow) : undefined;
     if (followed) mount(read, describe(followed));
