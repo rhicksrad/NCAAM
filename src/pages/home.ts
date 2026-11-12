@@ -53,8 +53,7 @@ function paintGames(): void {
   );
   const host = $("#home-games");
   host.parentElement?.querySelectorAll(":scope > .notice").forEach((n) => n.remove());
-  const note = staleNote(info);
-  if (note) host.insertAdjacentHTML("beforebegin", String(note));
+  host.insertAdjacentHTML("beforebegin", String(staleNote(info)));
 }
 
 function movement(rank: number, prev: number) {

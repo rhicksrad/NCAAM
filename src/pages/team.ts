@@ -3,7 +3,7 @@ import { dataset, snapshot, type TeamEntry } from "../lib/data.js";
 import { $, html, mount, param, type Markup } from "../lib/dom.js";
 import { espn, type RosterPlayer, type ScheduleGame, type TeamDetail } from "../lib/espn.js";
 import { historyChart, POST_LABEL, type HistRow } from "../lib/charts.js";
-import { failure, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
+import { failure, missing, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
 
 type Extras = { teams: Record<string, { arena?: string; elev?: number; height?: number; hist?: HistRow[] }> };
 type PlayersDoc = { season: string; rows: Array<[string, string, string, string | null, string, number, number, number, number, number, ...unknown[]]> };
@@ -145,7 +145,7 @@ async function boot(): Promise<void> {
 
   const [schedule, roster, standing, rank] = await Promise.all([scheduleP, rosterP, standingP, rankP]);
   if (!entry) {
-    mount(root, html`<div class="wrap page">${failure("that team", "unknown team")}</div>`);
+    mount(root, html`<div class="wrap page">${missing("team", "./teams.html", "the team directory")}</div>`);
     return;
   }
   const played = "value" in schedule ? schedule.value.filter((g) => g.won !== null && g.won !== undefined) : [];
