@@ -6,6 +6,8 @@ import { drama, failure, fmtLongDay, logo, marquee, staleNote, teamHref, ticket 
 
 type Order = "best" | "time";
 const ORDER_KEY = "fh:order";
+/** Tickets under the main event. The rest of the slate lives on Scores. */
+const SHOWN = 8;
 let order: Order = localStorage.getItem(ORDER_KEY) === "time" ? "time" : "best";
 let games: Game[] = [];
 let info: FeedInfo = { live: false, at: "", stale: false };
@@ -41,7 +43,11 @@ function paintGames(): void {
   mount(
     "#home-games",
     games.length
-      ? html`${main ? marquee(main) : ""}${rest.map(ticket)}`
+      ? html`${main ? marquee(main) : ""}${rest.slice(0, SHOWN).map(ticket)}${
+          rest.length > SHOWN
+            ? html`<a class="more-games" href="./games.html"><b>+${rest.length - SHOWN}</b> more on the slate <span aria-hidden="true">→</span></a>`
+            : ""
+        }`
       : html`<div class="empty-state"><h2>No games today</h2><p>Check <a href="./games.html">the full schedule</a> for the next tip.</p></div>`,
   );
   const host = $("#home-games");

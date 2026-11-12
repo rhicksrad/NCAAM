@@ -28,7 +28,11 @@ const exhibit = (no: string, id: string, title: string, lede: string, body: Mark
 
 /* ---------- 01: the efficiency chalkboard ---------- */
 const X0 = 84, X1 = 132, Y0 = 82, Y1 = 126; // adjO, adjD domains
-const CW = 900, CH = 520, PL = 44, PB = 34, PT = 12, PR = 12;
+// A phone gets its own drawing, taller than it is wide, at one unit per pixel
+// so the chalk writing is the size it says it is.
+const PHONE = typeof matchMedia === "function" && matchMedia("(max-width: 560px)").matches;
+const CW = PHONE ? 400 : 900, CH = PHONE ? 440 : 520, PL = PHONE ? 30 : 44, PB = PHONE ? 28 : 34, PT = 12, PR = PHONE ? 8 : 12;
+const DOT = PHONE ? 3.4 : 4.5;
 const cx = (o: number) => PL + ((o - X0) / (X1 - X0)) * (CW - PL - PR);
 const cy = (d: number) => PT + ((d - Y0) / (Y1 - Y0)) * (CH - PT - PB);
 
@@ -44,7 +48,7 @@ function chalkboard(doc: EffDoc): Markup {
       <datalist id="eff-teams">${[...new Set(doc.rows.map((r) => r[1]))].sort().map((t) => html`<option value="${t}"></option>`)}</datalist>
     </div>
     <svg viewBox="0 0 ${CW} ${CH}" id="eff-svg" role="img" aria-label="Offense against defense for every Division I team in the chosen season">
-      ${ticksX.map((t) => html`<line class="axis" x1="${cx(t)}" x2="${cx(t)}" y1="${PT}" y2="${CH - PB}"/><text x="${cx(t)}" y="${CH - 12}" text-anchor="middle">${t}</text>`)}
+      ${ticksX.map((t) => html`<line class="axis" x1="${cx(t)}" x2="${cx(t)}" y1="${PT}" y2="${CH - PB}"/><text x="${cx(t)}" y="${CH - (PHONE ? 9 : 12)}" text-anchor="middle">${t}</text>`)}
       ${ticksY.map((t) => html`<line class="axis" x1="${PL}" x2="${CW - PR}" y1="${cy(t)}" y2="${cy(t)}"/><text x="${PL - 8}" y="${cy(t) + 4}" text-anchor="end">${t}</text>`)}
       <text class="cap" x="${CW - PR - 6}" y="${CH - PB - 10}" text-anchor="end">points scored per 100 possessions →</text>
       <text class="cap" x="${PL + 6}" y="${PT + 12}">↑ stingier defense (points allowed per 100)</text>
@@ -69,7 +73,7 @@ function wireChalkboard(doc: EffDoc): void {
   const layer = $("#eff-dots") as unknown as SVGGElement;
   const dots = teams.map(() => {
     const c = document.createElementNS(NS, "circle");
-    c.setAttribute("r", "4.5");
+    c.setAttribute("r", String(DOT));
     c.setAttribute("class", "dot");
     c.style.transition = "transform .7s cubic-bezier(.2,.7,.2,1), opacity .4s";
     layer.append(c);
@@ -82,7 +86,7 @@ function wireChalkboard(doc: EffDoc): void {
 
   const describe = (r: Eff) =>
     html`<b>${r[0] - 1}-${String(r[0]).slice(2)} ${r[1]}</b> (${r[3]}): ${r[4]}-${r[5] - r[4]}, scored ${r[6].toFixed(1)} and allowed ${r[7].toFixed(1)} per 100${
-      r[10] ? html`. ${POST_LABEL[r[10]]}${r[11] ? ` as a ${r[11]} seed` : ""}` : ""
+      r[10] ? html`. ${POST_LABEL[r[10]]}${r[11] ? ` as ${[8, 11, 18].includes(r[11]) ? "an" : "a"} ${r[11]} seed` : ""}` : ""
     }.${r[2] ? html` <a href="${teamHref(r[2])}">Team page</a>` : ""}`;
 
   const paint = () => {
@@ -101,7 +105,7 @@ function wireChalkboard(doc: EffDoc): void {
       dot.style.transform = `translate(${cx(Math.min(X1, Math.max(X0, r[6]))).toFixed(1)}px, ${cy(Math.min(Y1, Math.max(Y0, r[7]))).toFixed(1)}px)`;
       dot.dataset.team = team;
       dot.dataset.post = String(r[10]);
-      dot.setAttribute("r", r[10] === 7 ? "7" : "4.5");
+      dot.setAttribute("r", String(r[10] === 7 ? DOT * 1.55 : DOT));
       dot.classList.toggle("is-on", team === follow);
       if (team === follow || r[10] === 7) layer.append(dot);
     }
@@ -117,7 +121,7 @@ function wireChalkboard(doc: EffDoc): void {
     tag.textContent = here ? follow : "";
     if (here) {
       const [x, y] = at(here);
-      const left = x > CW - 170;
+      const left = x > CW - (PHONE ? 120 : 170);
       tag.setAttribute("text-anchor", left ? "end" : "start");
       tag.style.transform = `translate(${(x + (left ? -11 : 11)).toFixed(1)}px, ${(y - 9).toFixed(1)}px)`;
     }
@@ -276,7 +280,7 @@ function tallest(doc: HeightDoc): Markup {
   return html`<div class="split">
     <section class="sheet">
       <div class="tall" id="tall-bars">
-        ${[76, 78].map((v) => html`<div class="tall__mark" style="--at:${v}"><span>${ft(v).replace(".0", "")}</span></div>`)}
+        ${[76, 79].map((v) => html`<div class="tall__mark" style="--at:${v}"><span>${ft(v).replace(".0", "")}</span></div>`)}
         <div class="tall__mark tall__mark--mid" style="--at:${median}"><span>median ${ft(median)}</span></div>
         ${doc.rows.map((r, i) => html`<i style="--h:${r[2]}" data-i="${i}"></i>`)}
       </div>
@@ -302,30 +306,40 @@ function wireTallest(doc: HeightDoc): void {
   });
 }
 
+/** Let the browser paint and take input before the next piece of work. */
+const breathe = () => new Promise<void>((done) => setTimeout(done, 0));
+
 async function boot(): Promise<void> {
-  const [eff, arenas, masc, cats, heights] = await Promise.all([
-    dataset<EffDoc>("efficiency"),
-    dataset<ArenaDoc>("arenas"),
-    dataset<MascotDoc>("mascots"),
-    dataset<CatsDoc>("cats-dogs"),
-    dataset<HeightDoc>("heights"),
-  ]);
+  // The chalkboard goes up as soon as its own data is in. The other four
+  // exhibits follow one at a time, each in its own turn, so the page is on
+  // screen and answering taps long before the last one is built.
+  const eff = await dataset<EffDoc>("efficiency");
+  const root = $("#lab-root");
   mount(
-    "#lab-root",
+    root,
     html`<nav class="lab-nav" aria-label="Exhibits">${raw(
         [["chalkboard", "Thirteen winters"], ["thin-air", "Thin air"], ["mascots", "Mascot census"], ["cats-dogs", "Cats v. dogs"], ["tallest", "Tall order"]]
           .map(([id, label], i) => `<a href="#${id}">0${i + 1} ${label}</a>`)
           .join(""),
       )}</nav>
-      ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. ${eff.rows.length.toLocaleString()} team-seasons from Bart Torvik's ratings.`, chalkboard(eff))}
-      ${exhibit("02", "thin-air", "Thin air", "Home-court advantage you can measure with an altimeter. Every home arena, sized by how far above the sea it sits.", thinAir(arenas))}
-      ${exhibit("03", "mascots", "The mascot census", `We sorted all ${masc.rows.length} nicknames into a taxonomy nobody asked for. Pick a branch to see who's in it.`, mascots(masc))}
-      ${exhibit("04", "cats-dogs", "Cats v. dogs", "Ten long-running rivalries where a feline program meets a canine one. The all-time ledger settles nothing and we keep it anyway.", catsDogs(cats))}
-      ${exhibit("05", "tallest", "Tall order", "Average listed height of every roster. Listed heights are generous, but they're generous for everyone.", tallest(heights))}`,
+      ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. ${eff.rows.length.toLocaleString()} team-seasons from Bart Torvik's ratings.`, chalkboard(eff))}`,
   );
   wireChalkboard(eff);
+  // Ask for all four files now; hang the exhibits in order as they arrive.
+  const files = { arenas: dataset<ArenaDoc>("arenas"), mascots: dataset<MascotDoc>("mascots"), cats: dataset<CatsDoc>("cats-dogs"), heights: dataset<HeightDoc>("heights") };
+  const hang = async (piece: Markup) => {
+    await breathe();
+    root.insertAdjacentHTML("beforeend", String(piece));
+  };
+  const arenas = await files.arenas;
+  await hang(exhibit("02", "thin-air", "Thin air", "Home-court advantage you can measure with an altimeter. Every home arena, sized by how far above the sea it sits.", thinAir(arenas)));
   wireThinAir(arenas);
+  const masc = await files.mascots;
+  await hang(exhibit("03", "mascots", "The mascot census", `We sorted all ${masc.rows.length} nicknames into a taxonomy nobody asked for. Pick a branch to see who's in it.`, mascots(masc)));
   wireMascots(masc);
+  await hang(exhibit("04", "cats-dogs", "Cats v. dogs", "Ten long-running rivalries where a feline program meets a canine one. The all-time ledger settles nothing and we keep it anyway.", catsDogs(await files.cats)));
+  const heights = await files.heights;
+  await hang(exhibit("05", "tallest", "Tall order", "Average listed height of every roster. Listed heights are generous, but they're generous for everyone.", tallest(heights)));
   wireTallest(heights);
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 }

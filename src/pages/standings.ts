@@ -15,7 +15,7 @@ function streak(value: string) {
 }
 
 function table(conf: Conference) {
-  return html`<section class="sheet" id="conf-${conf.id}">
+  return html`<section class="sheet" id="conf-${conf.id}" style="--rows:${conf.rows.length}">
     <div class="sheet__head"><h2>${conf.name.replace(/ Conference$/, "")}</h2><small>${conf.rows.length} teams</small></div>
     <div class="sheet__scroll">
       <table>

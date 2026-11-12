@@ -25,7 +25,7 @@ function paint(): void {
       ? html`${[...groups.entries()]
           .sort((a, b) => a[0].localeCompare(b[0]))
           .map(
-            ([name, list]) => html`<section class="conf-block">
+            ([name, list]) => html`<section class="conf-block" style="--n:${list.length}">
               <h2>${name.replace(/ Conference$/, "")}</h2>
               <div class="team-grid">
                 ${list.map(

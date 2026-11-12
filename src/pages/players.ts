@@ -103,9 +103,9 @@ function paint(): void {
             ${
               slice.length
                 ? slice.map(
-                    (r, i) => html`<tr data-slug="${r[0]}" tabindex="0" aria-expanded="${open.has(r[0]) ? "true" : "false"}">
+                    (r, i) => html`<tr data-slug="${r[0]}">
                         <td class="l pos">${page * PAGE + i + 1}</td>
-                        <td class="l"><span class="who">${logo({ id: r[3] ?? "", abbr: r[2], name: r[2] })}<span>${r[1]} <small>${r[2]} · ${r[4]}</small></span></span></td>
+                        <td class="l"><span class="who">${logo({ id: r[3] ?? "", abbr: r[2], name: r[2] })}<span><button type="button" class="row-open" aria-expanded="${open.has(r[0]) ? "true" : "false"}">${r[1]}</button> <small>${r[2]} · ${r[4]}</small></span></span></td>
                         ${COLS.map((c) => html`<td class="${c.key === sortKey ? "hot" : thin(c.key)}">${c.key === "gp" && r[c.i] !== null ? Math.round(r[c.i] as number) : fmt(r[c.i] as number | null, c.pct)}</td>`)}
                       </tr>${open.has(r[0]) ? careerRow(r[0]) : ""}`,
                   )
@@ -195,13 +195,10 @@ function wire(): void {
       return;
     }
     const row = target.closest<HTMLElement>("tr[data-slug]");
-    if (row?.dataset.slug) toggle(row.dataset.slug);
-  });
-  root.addEventListener("keydown", (e) => {
-    const row = (e.target as Element).closest<HTMLElement>("tr[data-slug]");
-    if (row?.dataset.slug && (e.key === "Enter" || e.key === " ")) {
-      e.preventDefault();
+    if (row?.dataset.slug) {
       toggle(row.dataset.slug);
+      // The table was repainted; put the keyboard back where it was.
+      root.querySelector<HTMLElement>(`tr[data-slug="${CSS.escape(row.dataset.slug)}"] .row-open`)?.focus({ preventScroll: true });
     }
   });
 }
