@@ -1654,3 +1654,27 @@ small.sub {
     min-height: 26rem;
   }
 }
+
+/* ---------- Round 10 ---------- */
+@media (max-width: 560px) {
+  /* Two leader cards and the navy edge of a third: the cut never lands on a word. */
+  .leader-strip {
+    grid-auto-columns: calc((100vw - var(--gutter, 1rem) - 2.1rem) / 2);
+  }
+  /* Long lists: the conference picker and the team search ride along under
+     the masthead, so the way out is never 20 screens up. */
+  #standings-tools,
+  #teams-tools {
+    position: sticky;
+    top: 5.5rem;
+    z-index: 20;
+    margin-inline: calc(var(--gutter, 1rem) * -1);
+    padding: 0.5rem var(--gutter, 1rem);
+    background: var(--maple) url("../art/floor-maple.webp") 0 0 / 360px 360px;
+    border-bottom: var(--lane) solid var(--line);
+  }
+}
+/* The 404 look, reused for ids that lead nowhere. */
+.airball .page-head__sub {
+  max-width: 34rem;
+}

@@ -144,14 +144,9 @@ function toggle(slug: string): void {
 
 function wire(): void {
   const confs = [...new Set(doc.rows.map((r) => r[4]))].filter(Boolean).sort();
-  mount(
-    "#players-tools",
-    html`<div class="field"><label for="p-q">Find</label><input id="p-q" type="search" placeholder="Player or school" autocomplete="off" value="${query}"></div>
-      <div class="field"><label for="p-conf">Conference</label><select id="p-conf"><option value="">All</option>${confs.map(
-        (c) => html`<option ${c === conf ? html`selected` : ""}>${c}</option>`,
-      )}</select></div>
-      <div class="segmented" id="p-reg" role="group" aria-label="Who counts"><button type="button" data-value="1" aria-pressed="true">Regulars</button><button type="button" data-value="0" aria-pressed="false">Everyone</button></div>`,
-  );
+  // The controls are in the page's own HTML so nothing moves when the data lands.
+  ($("#p-q") as HTMLInputElement).value = query;
+  mount("#p-conf", html`<option value="">All</option>${confs.map((c) => html`<option ${c === conf ? html`selected` : ""}>${c}</option>`)}`);
   $("#p-q").addEventListener("input", (e) => {
     query = (e.target as HTMLInputElement).value;
     if (query.trim()) regulars = false;
