@@ -29,6 +29,9 @@
 .page-head__sub {
   margin-top: 0.9rem;
   max-width: 52ch;
+  /* Room for two lines: the line is rewritten once the data lands, and the
+     page under it must not move when it runs longer. */
+  min-height: 3.24rem;
   font-size: 1.08rem;
   font-weight: 500;
   color: var(--ink);
@@ -42,8 +45,16 @@
   align-items: center;
   margin-bottom: 1.2rem;
 }
-.toolbar:empty {
-  display: none;
+/* Each page's controls arrive with its data; hold their room so the sheet
+   below does not get pushed down when they do. */
+.toolbar {
+  min-height: 2rem;
+}
+#standings-tools {
+  min-height: 2.25rem;
+}
+#teams-tools {
+  min-height: 2.57rem;
 }
 .segmented {
   display: inline-flex;
@@ -424,6 +435,7 @@ a.ticket:hover {
   background: var(--chalk);
   max-width: 40rem;
 }
+.empty-state h1,
 .empty-state h2 {
   font-size: 1.8rem;
   margin-bottom: 0.4rem;

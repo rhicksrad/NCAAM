@@ -37,8 +37,11 @@ function shell(page, assets, aboutHtml, buildStamp) {
     players: ["players"],
     lab: ["efficiency"],
   };
+  // Backgrounds on elements the script builds: the parser cannot see them coming.
+  const ART = { game: ["scoreboard.webp"], lab: ["chalkboard.webp"] };
   const early = [
     ...(page.file === "404.html" ? [] : FIRST_DATA[page.entry] ?? []).map((name) => `<link rel="preload" href="./data/${name}.json" as="fetch" crossorigin>`),
+    ...(ART[page.entry] ?? []).map((name) => `<link rel="preload" href="./art/${name}" as="image" fetchpriority="high">`),
     ...(page.hero ? [
           '<link rel="preload" href="./art/hero-court-sm.webp" as="image" fetchpriority="high" media="(max-width: 700px)">',
           '<link rel="preload" href="./art/hero-court.webp" as="image" fetchpriority="high" media="(min-width: 701px)">',

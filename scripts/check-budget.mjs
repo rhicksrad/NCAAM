@@ -36,6 +36,17 @@ check("all art", art.reduce((n, f) => n + statSync(f).size, 0), 1100 * 1024);
 for (const f of art) check(`art/${path.basename(f)}`, statSync(f).size, 260 * 1024);
 check("players table (gzip)", gz(path.join(dist, "data/players.json")), 180 * 1024);
 
+// The manifest must not point at files that are not there.
+for (const icon of JSON.parse(readFileSync(path.join(dist, "manifest.webmanifest"), "utf8")).icons) {
+  let size = Infinity;
+  try {
+    size = statSync(path.join(dist, icon.src)).size;
+  } catch {
+    /* missing: stays over the limit */
+  }
+  check(`manifest ${icon.src}`, size, 260 * 1024);
+}
+
 console.log(lines.join("\n"));
 if (failures.length) {
   console.error(`\nOver budget: ${failures.join(", ")}`);

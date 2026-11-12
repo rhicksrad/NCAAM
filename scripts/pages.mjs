@@ -156,7 +156,11 @@ export const PAGES = [
     <h1 class="floor-title">Players</h1>
     <p class="page-head__sub" id="players-sub">Stat leaders and every stat line we have on file.</p>
   </header>
-  <div class="toolbar" id="players-tools"></div>
+  <div class="toolbar" id="players-tools">
+    <div class="field"><label for="p-q">Find</label><input id="p-q" type="search" placeholder="Player or school" autocomplete="off"></div>
+    <div class="field"><label for="p-conf">Conference</label><select id="p-conf"><option value="">All</option></select></div>
+    <div class="segmented" id="p-reg" role="group" aria-label="Who counts"><button type="button" data-value="1" aria-pressed="true">Regulars</button><button type="button" data-value="0" aria-pressed="false">Everyone</button></div>
+  </div>
   <div id="players-root">${loading("Tallying the stat sheet…")}</div>
 </div>`,
   },

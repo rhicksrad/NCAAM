@@ -241,8 +241,8 @@ function paint(d: GameDetail, saved = false): void {
         ${playByPlay(d)}
         ${
           g.state === "pre" && !saved
-            ? html`<div id="form-slot">${form ?? ""}</div>
-                <p class="also"><b>Not tipped yet.</b> The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p>`
+            ? html`<p class="also"><b>Not tipped yet.</b> The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p>
+                <div id="form-slot">${form ?? ""}</div>`
             : ""
         }
         ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}

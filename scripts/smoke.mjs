@@ -77,7 +77,8 @@ for (const viewport of [{ name: "desktop", width: 1360, height: 900 }, { name: "
       await tab.goto(`http://localhost:${PORT}/${page.url}`, { waitUntil: "domcontentloaded" });
       await tab.waitForSelector(page.wait, { timeout: 8000 });
       for (const selector of page.expect) {
-        if (!(await tab.locator(selector).count())) errors.push(`missing ${selector}`);
+        // Parts of a page arrive after its first paint; give each one its chance.
+        await tab.waitForSelector(selector, { state: "attached", timeout: 5000 }).catch(() => errors.push(`missing ${selector}`));
       }
       await tab.waitForTimeout(250);
       const overflow = await tab.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
