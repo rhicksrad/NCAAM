@@ -240,7 +240,7 @@ export function failure(what: string, _error?: unknown): Markup {
 /** A link to something that does not exist is nobody's outage. */
 export function missing(what: string, href: string, where: string): Markup {
   return html`<div class="empty-state">
-    <h2>Air ball</h2>
+    <h1>Air ball</h1>
     <p>There is no ${what} with that id. Try <a href="${href}">${where}</a>.</p>
   </div>`;
 }
