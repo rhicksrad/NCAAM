@@ -1,0 +1,556 @@
+/* Section heads sit on the floor, underlined by a painted line. */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.55rem;
+  margin-bottom: 1rem;
+  border-bottom: var(--lane) solid var(--line);
+}
+.section-head h2 {
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  font-weight: 900;
+  mix-blend-mode: multiply;
+}
+.more {
+  font: 700 1rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.page {
+  padding-top: clamp(1.6rem, 5vw, 3.2rem);
+}
+.page-head {
+  margin-bottom: 1.6rem;
+}
+.page-head__sub {
+  margin-top: 0.9rem;
+  max-width: 52ch;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Controls */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.9rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.toolbar:empty {
+  display: none;
+}
+.segmented {
+  display: inline-flex;
+  border: 2px solid var(--ink);
+  background: var(--chalk);
+}
+.segmented button {
+  border: 0;
+  background: transparent;
+  padding: 0.34rem 0.8rem;
+  font: 700 0.98rem/1.1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--ink);
+}
+.segmented button + button {
+  border-left: 2px solid var(--ink);
+}
+.segmented button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--line);
+}
+.segmented button:hover:not([aria-pressed="true"]) {
+  background: var(--chalk-2);
+}
+
+.field {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--ink);
+  background: var(--chalk);
+}
+.field label {
+  padding: 0 0.6rem;
+  font: 700 0.92rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+.field select,
+.field input {
+  border: 0;
+  background: transparent;
+  padding: 0.42rem 0.7rem 0.42rem 0.2rem;
+  font-weight: 600;
+  min-width: 0;
+}
+.field input {
+  width: min(18rem, 60vw);
+}
+.field select:focus-visible,
+.field input:focus-visible {
+  outline-offset: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--line);
+  font: 800 1.05rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--ball);
+  color: var(--line);
+}
+
+/* Team marks */
+.logo {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  flex: none;
+}
+.logo--lg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.logo--blank {
+  display: inline-grid;
+  place-items: center;
+  background: var(--team, var(--ink));
+  color: var(--line);
+  font: 800 0.72rem/1 var(--display);
+  border-radius: 50%;
+}
+.rk {
+  font: 700 0.78em/1 var(--display);
+  color: var(--ball-deep);
+  margin-right: 0.3em;
+}
+
+/* Tickets: one per game. Stub on the left carries the clock. */
+.tickets {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+}
+.ticket {
+  --notch: 9px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 5.4rem 1fr;
+  background: var(--chalk);
+  color: var(--ink);
+  text-decoration: none;
+  filter: drop-shadow(0 6px 5px rgb(84 48 8 / 0.28));
+  transition: transform 0.18s var(--ease), filter 0.18s var(--ease);
+  /* Punch the two half-circle notches where the stub tears off. */
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at 5.4rem 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--notch) at 5.4rem 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  mask:
+    radial-gradient(circle var(--notch) at 5.4rem 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--notch) at 5.4rem 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+}
+a.ticket:hover {
+  color: var(--ink);
+  transform: translateY(-2px) rotate(-0.35deg);
+  filter: drop-shadow(0 10px 8px rgb(84 48 8 / 0.34));
+}
+.ticket__stub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.6rem 0.3rem;
+  text-align: center;
+  border-right: 2px dashed rgb(20 33 58 / 0.35);
+  font-family: var(--display);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ticket__stub b {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.ticket__stub span {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+.ticket[data-state="in"] .ticket__stub {
+  background: var(--ball);
+  color: var(--line);
+  border-right-color: rgb(251 250 244 / 0.6);
+}
+.ticket[data-state="in"] .ticket__stub span {
+  color: var(--line);
+}
+.ticket[data-state="in"] .ticket__stub span::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 0.35em;
+  border-radius: 50%;
+  background: var(--line);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+.ticket[data-state="post"] .ticket__stub b {
+  font-size: 1.2rem;
+}
+.ticket__body {
+  padding: 0.6rem 0.85rem 0.55rem 0.8rem;
+  min-width: 0;
+}
+.side {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.2rem 0;
+}
+.side__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+.side__name small {
+  margin-left: 0.45em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.side__score {
+  font: 800 1.75rem/1 var(--display);
+  min-width: 2ch;
+  text-align: right;
+}
+.side[data-lost] .side__name,
+.side[data-lost] .side__score {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.side[data-won] .side__score::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.3rem;
+  border: 0.32rem solid transparent;
+  border-right-color: var(--ball);
+  vertical-align: 0.12em;
+}
+.ticket__foot {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.ticket__foot span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ticket__foot .tag {
+  color: var(--ball-deep);
+  font-weight: 700;
+  flex: none;
+}
+
+/* Sheets: stat paper. */
+.sheet {
+  background: var(--chalk);
+  filter: drop-shadow(0 6px 5px rgb(84 48 8 / 0.25));
+}
+.sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem 0.6rem;
+  border-bottom: 3px solid var(--ink);
+}
+.sheet__head h2,
+.sheet__head h3 {
+  font-size: 1.45rem;
+}
+.sheet__head small {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+.sheet__scroll {
+  overflow-x: auto;
+}
+.sheet table {
+  font-size: 0.93rem;
+}
+.sheet th {
+  font: 700 0.9rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  text-align: right;
+  padding: 0.6rem 0.6rem 0.45rem;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--ink);
+}
+.sheet th button {
+  all: unset;
+  cursor: pointer;
+}
+.sheet th button:hover,
+.sheet th[aria-sort] {
+  color: var(--ink);
+}
+.sheet th[aria-sort="descending"] button::after {
+  content: " ▾";
+  color: var(--ball);
+}
+.sheet th[aria-sort="ascending"] button::after {
+  content: " ▴";
+  color: var(--ball);
+}
+.sheet td {
+  padding: 0.42rem 0.6rem;
+  text-align: right;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.sheet th:first-child,
+.sheet td:first-child {
+  padding-left: 1rem;
+}
+.sheet th:last-child,
+.sheet td:last-child {
+  padding-right: 1rem;
+}
+.sheet .l {
+  text-align: left;
+}
+.sheet tbody tr:hover {
+  background: var(--chalk-2);
+}
+.sheet tr:last-child td {
+  border-bottom: 0;
+}
+.sheet td.hot {
+  font-weight: 700;
+  background: rgb(217 84 30 / 0.1);
+}
+.sheet .who {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sheet .who small {
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.sheet a.who:hover {
+  text-decoration: underline;
+}
+.sheet .pos {
+  font: 800 1.15rem/1 var(--display);
+  width: 2.2rem;
+}
+.sheet__note {
+  padding: 0.6rem 1rem 0.8rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+}
+
+.up {
+  color: var(--green);
+  font-weight: 700;
+}
+.down {
+  color: var(--ball-deep);
+  font-weight: 700;
+}
+.flat {
+  color: var(--ink-soft);
+}
+
+/* Paint: navy key blocks. */
+.paint {
+  background: var(--ink);
+  color: var(--line);
+  border: var(--lane) solid var(--line);
+}
+
+/* A note taped to the wall when we're showing saved data. */
+.notice {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.empty-state {
+  padding: 2rem 1.2rem;
+  background: var(--chalk);
+  max-width: 40rem;
+}
+.empty-state h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Press row */
+.wire {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--chalk);
+  filter: drop-shadow(0 6px 5px rgb(84 48 8 / 0.25));
+}
+.wire li + li {
+  border-top: 1px solid var(--rule);
+}
+.wire a {
+  display: block;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.wire a small {
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+/* Date strip */
+.datestrip {
+  display: flex;
+  gap: 0.35rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+.datestrip__days {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+}
+.datestrip__days::-webkit-scrollbar {
+  display: none;
+}
+.datestrip a,
+.datestrip button,
+.datestrip label {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 3.5rem;
+  padding: 0.4rem 0.5rem;
+  background: var(--chalk);
+  border: 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--display);
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+}
+.datestrip a small {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+.datestrip a b {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.datestrip a:hover {
+  background: var(--chalk-2);
+  color: var(--ink);
+}
+.datestrip a[aria-current="date"] {
+  background: var(--ball);
+  color: var(--line);
+}
+.datestrip a[aria-current="date"] small {
+  color: var(--line);
+}
+.datestrip a[data-today]:not([aria-current]) {
+  box-shadow: inset 0 -4px 0 var(--ball);
+}
+.datestrip label {
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-inline: 0.8rem;
+}
+.datestrip label input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.field {
+  max-width: 100%;
+}
+.field select {
+  max-width: min(22rem, 58vw);
+  text-overflow: ellipsis;
+}
+
+/* Ink-stamp decal beside each page title, like a mark on the floor. */
+.page-head {
+  position: relative;
+}
+.decal {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: clamp(5rem, 16vw, 10rem);
+  height: auto;
+  transform: translateY(-50%) rotate(-7deg);
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  pointer-events: none;
+}
+@media (max-width: 560px) {
+  .decal {
+    top: 0;
+    transform: rotate(-7deg);
+    opacity: 0.5;
+  }
+}

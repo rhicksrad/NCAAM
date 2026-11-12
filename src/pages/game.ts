@@ -1,398 +1,236 @@
-import { BASE } from "../lib/config.js";
-import type { PlayByPlayEvent } from "../lib/api/ncaam.js";
-import type { Game } from "../lib/sdk/ncaam.js";
-import type { GameBoxScore } from "../lib/boxscore.js";
-import { renderGameBoxScore } from "./game/GameBoxScore.js";
-import { createGameDetailStore, type GameDetailState } from "./game/store.js";
-import {
-  getTeamAccentColors,
-  getTeamLogoUrl,
-  getTeamMonogram,
-} from "../lib/ui/logos.js";
-import { requireOk } from "../lib/health.js";
+import "../lib/chrome.js";
+import { feed } from "../lib/data.js";
+import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
+import { espn, type BoxTeam, type GameDetail, type Play, type Side } from "../lib/espn.js";
+import { flowChart, type FlowPoint } from "../lib/charts.js";
+import { failure, fmtDay, fmtTime, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
-const dateFormatter = new Intl.DateTimeFormat(undefined, {
-  weekday: "short",
-  month: "short",
-  day: "numeric",
-});
-const timeFormatter = new Intl.DateTimeFormat(undefined, {
-  hour: "numeric",
-  minute: "2-digit",
-});
+const id = param("id") ?? "";
+const root = $("#game-root");
+let openPeriods: Set<number> | null = null;
 
-const STATUS_COMPLETE = /^(?:post|final|complete|completed|cancelled|canceled|postponed)$/i;
-const STATUS_SCHEDULED = /^(?:pre|scheduled)$/i;
-const LIVE_STATUS = /(?:live|inprogress|halftime)/i;
-
-function escapeAttr(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+function boardTeam(side: Side): Markup {
+  const { paint } = teamColors(side.team);
+  return html`<a class="board__team" href="${teamHref(side.team.id)}" style="--team:${paint}">
+    <img src="${logoUrl(side.team.id, 160)}" data-team="${side.team.id}" data-abbr="${side.team.abbr}" alt="" width="80" height="80">
+    <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}${side.team.name}</b>
+    <small>${side.record}</small>
+  </a>`;
 }
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function isNumber(value: number | null | undefined): value is number {
-  return typeof value === "number" && Number.isFinite(value);
-}
-
-function formatScore(value: number | null | undefined): string {
-  return isNumber(value) ? String(value) : "—";
-}
-
-function formatDateLabel(dateString: string | null): string {
-  if (!dateString) {
-    return "";
-  }
-  const timestamp = Date.parse(dateString);
-  if (Number.isNaN(timestamp)) {
-    return "";
-  }
-  const value = new Date(timestamp);
-  return `${dateFormatter.format(value)} • ${timeFormatter.format(value)}`;
-}
-
-function formatPeriod(period: number | null | undefined): string | null {
-  if (!isNumber(period) || period <= 0) {
-    return null;
-  }
-  if (period === 1) return "1st";
-  if (period === 2) return "2nd";
-  if (period === 3) return "3rd";
-  if (period === 4) return "4th";
-  if (period > 4) {
-    const overtime = period - 4;
-    return overtime === 1 ? "OT" : `${overtime}OT`;
-  }
-  return null;
-}
-
-function describeStatus(game: Game): { label: string; variant?: string } {
-  const rawStatus = game.status ?? "";
-  const status = rawStatus.toLowerCase();
-  if (STATUS_COMPLETE.test(status)) {
-    return { label: "Final" };
-  }
-  if (status === "halftime") {
-    return { label: "Halftime", variant: "arc" };
-  }
-  if (LIVE_STATUS.test(status)) {
-    const period = formatPeriod(game.period);
-    return { label: period ? `Live • ${period}` : "Live", variant: "arc" };
-  }
-  if (STATUS_SCHEDULED.test(status)) {
-    return { label: "Scheduled" };
-  }
-  if (!rawStatus) {
-    return { label: "" };
-  }
-  return { label: rawStatus.replace(/\b\w/g, char => char.toUpperCase()) };
-}
-
-function buildLineScore(game: Game) {
-  const segments = [
-    { label: "H1", away: game.away_score_h1, home: game.home_score_h1 },
-    { label: "H2", away: game.away_score_h2, home: game.home_score_h2 },
-  ];
-  if (isNumber(game.away_score_ot) || isNumber(game.home_score_ot)) {
-    segments.push({ label: "OT", away: game.away_score_ot, home: game.home_score_ot });
-  }
-  return segments.filter(segment => isNumber(segment.away) || isNumber(segment.home));
-}
-
-function renderTeamLogo(team: Game["home_team"]): string {
-  const label = team.full_name ?? team.name ?? "Team";
-  const logoUrl = getTeamLogoUrl(team);
-  if (logoUrl) {
-    const safeUrl = escapeAttr(logoUrl);
-    const alt = escapeAttr(`${label} logo`);
-    return `<span class="game-card__team-logo">
-      <img class="game-card__team-logo-image" src="${safeUrl}" alt="${alt}" loading="lazy" decoding="async">
-    </span>`;
-  }
-
-  const [accentPrimary, accentSecondary] = getTeamAccentColors(team);
-  const monogram = getTeamMonogram(team);
-  const safeLabel = escapeAttr(`${label} logo`);
-  const style = escapeAttr(
-    `--team-accent-primary: ${accentPrimary}; --team-accent-secondary: ${accentSecondary};`,
-  );
-  return `<span class="game-card__team-logo game-card__team-logo--fallback" role="img" aria-label="${safeLabel}" style="${style}">${monogram}</span>`;
-}
-
-function renderTeamRow(
-  team: Game["home_team"],
-  score: number | null | undefined,
-  isLeading: boolean,
-  side: "home" | "away",
-): string {
-  const name = team.full_name ?? team.name;
-  const abbr = team.abbreviation ?? (side === "home" ? "HOME" : "AWAY");
-  return `<div class="game-card__team game-card__team--${side}${isLeading ? " is-leading" : ""}">
-    ${renderTeamLogo(team)}
-    <span class="game-card__team-abbr" aria-hidden="true">${abbr}</span>
-    <span class="game-card__team-name">${name}</span>
-    <span class="game-card__team-score">${formatScore(score)}</span>
-  </div>`;
-}
-
-function renderLineScore(game: Game): string {
-  const segments = buildLineScore(game);
-  if (segments.length === 0) {
-    return "";
-  }
-  const awayLabel = game.visitor_team.abbreviation ?? "Away";
-  const homeLabel = game.home_team.abbreviation ?? "Home";
-  const rows = segments
-    .map(
-      segment => `<div class="game-card__line-score-row">
-      <span>${segment.label}</span>
-      <span>${formatScore(segment.away)}</span>
-      <span>${formatScore(segment.home)}</span>
-    </div>`,
-    )
-    .join("");
-  return `<div class="game-card__line-score" role="presentation">
-    <div class="game-card__line-score-row game-card__line-score-row--labels">
-      <span></span>
-      <span>${awayLabel}</span>
-      <span>${homeLabel}</span>
+function board(d: GameDetail): Markup {
+  const g = d.game;
+  const played = g.state !== "pre";
+  const lead = (g.home.score ?? 0) - (g.away.score ?? 0);
+  const periods = Math.max(g.home.lines.length, g.away.lines.length);
+  const status =
+    g.state === "pre" ? `${fmtDay(g.date)} · ${fmtTime(g.date)}` : g.state === "in" ? `${g.clock} ${periodLabel(g.period)}`.trim() || g.detail : g.detail;
+  const meta = [g.venue, g.city, g.tv, d.attendance ? `${d.attendance.toLocaleString()} in the building` : "", g.odds].filter(Boolean);
+  return html`<section class="board" aria-label="Scoreboard">
+    <p class="board__status" ${raw(g.state === "in" ? "data-live" : "")}>${status}</p>
+    <div class="board__teams">
+      ${boardTeam(g.away)}
+      <div class="board__score" aria-label="${g.away.team.name} ${g.away.score ?? ""}, ${g.home.team.name} ${g.home.score ?? ""}">
+        ${
+          played
+            ? html`<span class="${g.state === "post" && lead > 0 ? "dim" : ""}">${g.away.score ?? 0}</span><i>–</i><span class="${
+                g.state === "post" && lead < 0 ? "dim" : ""
+              }">${g.home.score ?? 0}</span>`
+            : html`<i>at</i>`
+        }
+      </div>
+      ${boardTeam(g.home)}
     </div>
-    ${rows}
-  </div>`;
-}
-
-function parseGameId(): number | null {
-  if (typeof location === "undefined") {
-    return null;
-  }
-  const params = new URLSearchParams(location.search);
-  const raw = params.get("game_id");
-  if (!raw) {
-    return null;
-  }
-  const value = Number.parseInt(raw, 10);
-  return Number.isFinite(value) ? value : null;
-}
-
-function updateHero(game: Game): void {
-  if (typeof document === "undefined") {
-    return;
-  }
-  const heroHeading = document.querySelector<HTMLElement>(".hero h1");
-  const heroLede = document.querySelector<HTMLElement>(".hero__lede");
-  const awayName = game.visitor_team.full_name ?? game.visitor_team.name ?? "Away";
-  const homeName = game.home_team.full_name ?? game.home_team.name ?? "Home";
-  if (heroHeading) {
-    heroHeading.textContent = `${awayName} at ${homeName}`;
-  }
-  if (heroLede) {
-    const status = describeStatus(game).label;
-    const dateLabel = formatDateLabel(game.date);
-    const summaryParts = [status, dateLabel].filter(part => part && part.length > 0);
-    heroLede.textContent = summaryParts.join(" • ") || "Live scoring and possession breakdown.";
-  }
-}
-
-function updateDocumentTitle(game: Game): void {
-  if (typeof document === "undefined") {
-    return;
-  }
-  const awayName = game.visitor_team.full_name ?? game.visitor_team.name ?? "Away";
-  const homeName = game.home_team.full_name ?? game.home_team.name ?? "Home";
-  const status = describeStatus(game).label;
-  const titleParts = [`${awayName} at ${homeName}`, status, "NCAAM Hub"];
-  document.title = titleParts.filter(Boolean).join(" · ");
-}
-
-const app = document.getElementById("app");
-if (!app) {
-  throw new Error("Missing game app container");
-}
-
-await requireOk("data/division-one-programs.json", "Game");
-
-app.innerHTML = `<div class="game-detail stack" data-gap="lg" aria-live="polite" aria-busy="true"></div>`;
-
-const containerNode = app.querySelector(".game-detail");
-if (!(containerNode instanceof HTMLDivElement)) {
-  throw new Error("Missing game detail container");
-}
-const container = containerNode;
-
-function setBusy(isBusy: boolean) {
-  container.setAttribute("aria-busy", isBusy ? "true" : "false");
-}
-
-function renderStatusCard(title: string, message: string) {
-  container.innerHTML = `<section class="card stack" data-gap="sm">
-    <h2 class="section-title">${escapeHtml(title)}</h2>
-    <p class="section-summary">${escapeHtml(message)}</p>
-  </section>`;
-}
-
-function renderLoading() {
-  renderStatusCard("Loading game", "Fetching live data from the worker proxy…");
-}
-
-function renderInvalidSelection() {
-  renderStatusCard("Select a game", "Use the games page to choose a matchup and view its live recap.");
-}
-
-function renderNotFound() {
-  renderStatusCard("Game unavailable", "We couldn't find that matchup. Try returning to the games page and picking a different game.");
-}
-
-function renderError() {
-  renderStatusCard("Something went wrong", "We hit a snag while loading this game. Please try again in a moment.");
-}
-
-function renderScoreboard(game: Game): string {
-  const headerLabel = formatDateLabel(game.date);
-  const status = describeStatus(game);
-  const homeScore = game.home_score;
-  const awayScore = game.away_score;
-  const hasScores = isNumber(homeScore) && isNumber(awayScore);
-  const homeLeading = hasScores ? (homeScore ?? 0) > (awayScore ?? 0) : false;
-  const awayLeading = hasScores ? (awayScore ?? 0) > (homeScore ?? 0) : false;
-  const badge = status.label
-    ? `<span class="badge"${status.variant ? ` data-variant="${status.variant}"` : ""}>${status.label}</span>`
-    : "";
-  return `<section class="card game-card" data-status="${game.status ?? ""}">
-    <div class="game-card__header">
-      <span class="game-card__time">${headerLabel}</span>
-      ${badge}
-    </div>
-    <div class="game-card__body">
-      ${renderTeamRow(game.visitor_team, awayScore, awayLeading, "away")}
-      ${renderTeamRow(game.home_team, homeScore, homeLeading, "home")}
-    </div>
-    ${renderLineScore(game)}
-  </section>`;
-}
-
-function renderPlayItem(play: PlayByPlayEvent, awayLabel: string, homeLabel: string): string {
-  const metaSegments: string[] = [];
-  const period = formatPeriod(play.period);
-  if (period) {
-    metaSegments.push(`<span>${escapeHtml(period)}</span>`);
-  }
-  const clock = typeof play.clock === "string" ? play.clock.trim() : "";
-  if (clock) {
-    metaSegments.push(`<span class="play-feed__clock">${escapeHtml(clock)}</span>`);
-  }
-  const teamAbbr = play.team?.abbreviation ?? play.team?.name ?? "";
-  if (teamAbbr) {
-    metaSegments.push(`<span class="play-feed__team">${escapeHtml(teamAbbr)}</span>`);
-  }
-  const meta = metaSegments.length ? `<div class="play-feed__meta">${metaSegments.join("")}</div>` : "";
-  const description = play.description ? escapeHtml(play.description) : "Play update unavailable.";
-  const hasScore = isNumber(play.homeScore) || isNumber(play.awayScore);
-  const score = hasScore
-    ? `<div class="play-feed__score" aria-label="Score">${escapeHtml(
-        `${awayLabel} ${formatScore(play.awayScore)} – ${formatScore(play.homeScore)} ${homeLabel}`,
-      )}</div>`
-    : "";
-  const scoringAttr = play.isScoringPlay ? " data-scoring-play=\"true\"" : "";
-  return `<li class="play-feed__item"${scoringAttr}>
-    ${meta}
-    <p class="play-feed__text">${description}</p>
-    ${score}
-  </li>`;
-}
-
-function renderPlaysSection(game: Game, plays: PlayByPlayEvent[]): string {
-  const awayLabel = game.visitor_team.abbreviation ?? game.visitor_team.name ?? "Away";
-  const homeLabel = game.home_team.abbreviation ?? game.home_team.name ?? "Home";
-  if (plays.length === 0) {
-    return `<section class="card play-feed">
-      <header class="play-feed__header">
-        <h2 class="section-title">Play-by-play</h2>
-        <p class="section-summary">Play-by-play data isn't available for this matchup yet.</p>
-      </header>
-      <p class="play-feed__empty">Check back once the game tips off for a live possession log.</p>
-    </section>`;
-  }
-  const items = plays.map(play => renderPlayItem(play, awayLabel, homeLabel)).join("");
-  return `<section class="card play-feed">
-    <header class="play-feed__header">
-      <h2 class="section-title">Play-by-play</h2>
-      <p class="section-summary">Possession-by-possession updates direct from the Cloudflare worker proxy.</p>
-    </header>
-    <ol class="play-feed__list">${items}</ol>
-  </section>`;
-}
-
-function renderGame(
-  game: Game,
-  plays: PlayByPlayEvent[],
-  boxScore: GameBoxScore | null,
-  isBoxScoreLoading: boolean,
-  boxScoreError: string | null,
-): void {
-  const backHref = escapeAttr(`${BASE}games.html`);
-  const boxScoreSection = renderGameBoxScore({
-    game,
-    boxScore,
-    isLoading: isBoxScoreLoading,
-    error: boxScoreError,
-  });
-  container.innerHTML = `<a class="game-detail__back-link" href="${backHref}">← Back to games</a>
-    ${renderScoreboard(game)}
-    ${boxScoreSection}
-    ${renderPlaysSection(game, plays)}`;
-}
-
-const store = createGameDetailStore();
-
-store.subscribe((state: GameDetailState) => {
-  setBusy(state.isLoading);
-  if (state.status === "idle") {
-    renderLoading();
-    return;
-  }
-
-  if (state.status === "error" && !state.game) {
-    if (state.error && /not found/i.test(state.error)) {
-      renderNotFound();
-    } else {
-      renderError();
+    ${
+      played && periods
+        ? html`<table class="board__line">
+            <thead><tr><th></th>${Array.from({ length: periods }, (_, i) => html`<th>${periods === 2 || i < 2 ? i + 1 : i === 2 ? "OT" : `${i - 1}OT`}</th>`)}<th>T</th></tr></thead>
+            <tbody>
+              ${[g.away, g.home].map(
+                (s) => html`<tr><td>${s.team.abbr}</td>${Array.from({ length: periods }, (_, i) => html`<td>${s.lines[i] ?? ""}</td>`)}<td>${s.score ?? ""}</td></tr>`,
+              )}
+            </tbody>
+          </table>`
+        : ""
     }
-    return;
-  }
+    ${meta.length ? html`<p class="board__meta">${meta.join(" · ")}</p>` : ""}
+  </section>`;
+}
 
-  if (!state.game) {
-    renderLoading();
-    return;
+function flow(d: GameDetail): Markup {
+  const scoring = d.plays.filter((p) => p.scoring);
+  if (scoring.length < 4) return html``;
+  const g = d.game;
+  const points: FlowPoint[] = scoring.map((p) => ({ t: p.t, diff: p.home - p.away }));
+  const lastT = d.plays[d.plays.length - 1]?.t ?? 0;
+  const regulation = d.periodSeconds === 1200 ? 2400 : d.periodSeconds * 4;
+  const total = Math.max(regulation, lastT);
+  let changes = 0, ties = 0, homeLed = 0, awayLed = 0, prev = 0, prevT = 0, bigHome = 0, bigAway = 0, lastLeader = 0;
+  for (const p of points) {
+    const span = p.t - prevT;
+    if (prev > 0) homeLed += span;
+    else if (prev < 0) awayLed += span;
+    if (p.diff === 0 && prev !== 0) ties++;
+    const leader = Math.sign(p.diff);
+    if (leader !== 0 && lastLeader !== 0 && leader !== lastLeader) changes++;
+    if (leader !== 0) lastLeader = leader;
+    bigHome = Math.max(bigHome, p.diff);
+    bigAway = Math.max(bigAway, -p.diff);
+    prev = p.diff;
+    prevT = p.t;
   }
+  const end = g.state === "post" ? total : lastT;
+  if (prev > 0) homeLed += end - prevT;
+  else if (prev < 0) awayLed += end - prevT;
+  const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
+  const { home, away } = rivalColors(g.home.team, g.away.team);
+  const front = homeLed >= awayLed ? g.home.team.name : g.away.team.name;
+  return html`<section class="flow">
+    <h2>Who had it, and when</h2>
+    <p>${front} led for ${mmss(Math.max(homeLed, awayLed))}. ${changes} lead change${changes === 1 ? "" : "s"}, ${ties} tie${ties === 1 ? "" : "s"}. ${
+      bigHome && bigAway
+        ? `Biggest leads: ${g.home.team.abbr} by ${bigHome}, ${g.away.team.abbr} by ${bigAway}.`
+        : `${bigHome ? g.away.team.name : g.home.team.name} never led; the biggest gap was ${Math.max(bigHome, bigAway)}.`
+    }</p>
+    ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr)}
+  </section>`;
+}
 
-  const boxScoreError = state.boxScoreError ?? (state.status === "error" ? state.error ?? null : null);
-  renderGame(
-    state.game,
-    state.playByPlay,
-    state.boxScore,
-    state.isLoading && !state.boxScore,
-    boxScoreError,
+const CMP: Array<[key: string, label: string]> = [
+  ["fieldGoalPct", "FG%"],
+  ["threePointFieldGoalPct", "3PT%"],
+  ["freeThrowPct", "FT%"],
+  ["totalRebounds", "Rebounds"],
+  ["offensiveRebounds", "Off. boards"],
+  ["assists", "Assists"],
+  ["turnovers", "Turnovers"],
+  ["steals", "Steals"],
+  ["blocks", "Blocks"],
+  ["pointsInPaint", "Paint pts"],
+  ["fastBreakPoints", "Fast break"],
+];
+
+function compare(d: GameDetail): Markup {
+  const g = d.game;
+  const a = d.box.find((b) => b.teamId === g.away.team.id)?.stats ?? {};
+  const h = d.box.find((b) => b.teamId === g.home.team.id)?.stats ?? {};
+  const rows = CMP.filter(([key]) => a[key] && h[key]);
+  if (!rows.length) return html``;
+  const { home: ch, away: ca } = rivalColors(g.home.team, g.away.team);
+  return html`<section class="sheet">
+    <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.name} left, ${g.home.team.name} right</small></div>
+    <div class="cmp" style="--a:${ca};--b:${ch}">
+      ${rows.map(([key, label]) => {
+        const av = parseFloat(a[key]!.value) || 0;
+        const hv = parseFloat(h[key]!.value) || 0;
+        const max = Math.max(av, hv) || 1;
+        return html`<div class="cmp__row">
+          <span>${a[key]!.value}</span>
+          <i class="cmp__a" style="transform:scaleX(${(av / max).toFixed(3)})"></i>
+          <b>${label}</b>
+          <i class="cmp__b" style="transform:scaleX(${(hv / max).toFixed(3)})"></i>
+          <span>${h[key]!.value}</span>
+        </div>`;
+      })}
+    </div>
+  </section>`;
+}
+
+function boxTable(box: BoxTeam, side: Side): Markup {
+  if (!box.players.length) return html``;
+  const ptsCol = box.labels.findIndex((l) => l.toUpperCase() === "PTS");
+  const row = (p: BoxTeam["players"][number]) =>
+    html`<tr><td class="l"><span class="who"><span>${p.name} <small>${p.pos}</small></span></span></td>${
+      p.dnp ? html`<td class="l" colspan="${box.labels.length}"><small>Did not play</small></td>` : p.stats.map((s, i) => html`<td class="${i === ptsCol ? "hot" : ""}">${s}</td>`)
+    }</tr>`;
+  const starters = box.players.filter((p) => p.starter);
+  const bench = box.players.filter((p) => !p.starter);
+  return html`<section class="sheet">
+    <div class="sheet__head"><h2>${side.team.name}</h2><small>${side.record}</small></div>
+    <div class="sheet__scroll"><table>
+      <thead><tr><th class="l">Starters</th>${box.labels.map((l) => html`<th>${l}</th>`)}</tr></thead>
+      <tbody>${starters.map(row)}</tbody>
+      ${bench.length ? html`<thead><tr><th class="l">Bench</th>${box.labels.map((l) => html`<th>${l}</th>`)}</tr></thead><tbody>${bench.map(row)}</tbody>` : ""}
+      ${box.totals.length ? html`<tfoot><tr><td class="l"><b>Team</b></td>${box.totals.map((t) => html`<td><b>${t}</b></td>`)}</tr></tfoot>` : ""}
+    </table></div>
+  </section>`;
+}
+
+function playByPlay(d: GameDetail): Markup {
+  if (!d.plays.length) return html``;
+  const byPeriod = new Map<number, Play[]>();
+  for (const p of d.plays) {
+    const list = byPeriod.get(p.period) ?? [];
+    list.push(p);
+    byPeriod.set(p.period, list);
+  }
+  const latest = Math.max(...byPeriod.keys());
+  openPeriods ??= new Set([latest]);
+  const g = d.game;
+  return html`<section class="sheet" id="pbp">
+    <div class="sheet__head"><h2>Play by play</h2><small>${d.plays.length} plays, newest first</small></div>
+    ${[...byPeriod.entries()]
+      .sort((a, b) => b[0] - a[0])
+      .map(
+        ([period, plays]) => html`<details data-period="${period}" ${openPeriods?.has(period) ? html`open` : ""}>
+          <summary class="pbp-sum">${periodLabel(period)} ${period <= 2 ? "half" : ""}</summary>
+          <ol class="pbp">
+            ${[...plays].reverse().map(
+              (p) => html`<li ${raw(p.scoring ? "data-score" : "")}><span class="t">${p.clock}</span><span class="s">${p.away}-${p.home}</span><span>${
+                p.teamId ? html`<b>${p.teamId === g.home.team.id ? g.home.team.abbr : g.away.team.abbr}</b> ` : ""
+              }${p.text}</span></li>`,
+            )}
+          </ol>
+        </details>`,
+      )}
+  </section>`;
+}
+
+function paint(d: GameDetail): void {
+  const g = d.game;
+  document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
+  const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
+  const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
+  mount(
+    root,
+    html`${board(d)}
+      <div class="game-cols">
+        ${flow(d)}
+        ${compare(d)}
+        ${awayBox ? boxTable(awayBox, g.away) : ""}
+        ${homeBox ? boxTable(homeBox, g.home) : ""}
+        ${playByPlay(d)}
+        ${
+          g.state === "pre"
+            ? html`<div class="empty-state"><h2>Not tipped yet</h2><p>The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p></div>`
+            : ""
+        }
+        ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}
+      </div>`,
   );
-  updateHero(state.game);
-  updateDocumentTitle(state.game);
-});
+}
 
-const gameId = parseGameId();
-if (gameId === null) {
-  setBusy(false);
-  renderInvalidSelection();
+root.addEventListener(
+  "toggle",
+  (event) => {
+    const el = event.target as HTMLDetailsElement;
+    if (!el.dataset.period || !openPeriods) return;
+    if (el.open) openPeriods.add(Number(el.dataset.period));
+    else openPeriods.delete(Number(el.dataset.period));
+  },
+  true,
+);
+
+if (!/^\d+$/.test(id)) {
+  mount(root, html`<div class="empty-state"><h2>Which game?</h2><p>Pick one from <a href="./games.html">the scoreboard</a>.</p></div>`);
 } else {
-  renderLoading();
-  void store.load(gameId);
+  feed<GameDetail | null>({
+    live: () => espn.summary(id),
+    render(data) {
+      if (data) paint(data);
+      else mount(root, failure("that game", "ESPN returned no game for this id"));
+    },
+    fail: (error) => mount(root, failure("that game", error)),
+    refreshMs: (data) => (data?.game.state === "in" ? 20_000 : data?.game.state === "pre" ? 120_000 : 0),
+  });
 }

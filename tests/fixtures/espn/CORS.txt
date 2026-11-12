@@ -1,0 +1,41 @@
+CORS check - 2026-11-12T18:08:38Z - request header: Origin: https://rhicksrad.github.io
+
+URL: https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS,HEAD
+Access-Control-Expose-Headers: content-length,location
+
+URL: https://site.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?season=2027
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS,HEAD
+Access-Control-Expose-Headers: content-length,location
+
+URL: https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401925702
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS,HEAD
+Access-Control-Expose-Headers: content-length,location
+
+URL: https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/statistics/byathlete?region=us&lang=en&contentorigin=espn&isqualified=true&page=1&limit=50&sort=offensive.avgPoints%3Adesc&season=2026&seasontype=2
+HTTP/1.1 200 OK
+access-control-allow-origin: *
+access-control-allow-methods: GET,PUT,POST,DELETE,OPTIONS,HEAD
+access-control-expose-headers: content-length,location
+
+FETCH STATUS (file http_code bytes url)
+scoreboard-20261111.json 200 1229432 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261111&groups=50&limit=400
+scoreboard-today.json 200 514369 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=50&limit=400
+rankings.json 200 301384 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings
+teams.json 200 1484842 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=500&groups=50
+team-150.json 200 16791 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150
+team-150-roster.json 200 59303 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster
+team-150-schedule.json 200 322939 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/schedule
+news.json 200 80844 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/news?limit=12
+standings-2027.json 200 6130567 https://site.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?season=2027
+standings-2026.json 200 6179504 https://site.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?season=2026
+leaders-2026.json 200 328227 https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/statistics/byathlete?region=us&lang=en&contentorigin=espn&isqualified=true&page=1&limit=50&sort=offensive.avgPoints%3Adesc&season=2026&seasontype=2
+summary-final.json 200 464072 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401925702
+summary-pre.json 200 128770 https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401920073
+athlete-overview.json 200 204507 https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/5454779/overview

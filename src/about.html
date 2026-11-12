@@ -1,0 +1,26 @@
+<div class="wrap page">
+  <header class="page-head">
+    <img class="decal" src="./art/icon-whistle.webp" alt="" width="160" height="160">
+    <h1 class="floor-title">About</h1>
+    <p class="page-head__sub">A fan-made scorer's table for men's college basketball. No account, no paywall, no API key.</p>
+  </header>
+  <article class="prose">
+    <h2>What this is</h2>
+    <p>Field House is Ryan Hicks's college hoops side project: scores, polls, standings, every Division I team, and a lab of charts that exist because they were fun to build. It is a static site. There is no server of ours between you and the data.</p>
+
+    <h2>Where the numbers come from</h2>
+    <ul>
+      <li><strong>Live scores, polls, standings, rosters and box scores</strong> come straight from ESPN's public JSON feeds, read by your browser. They need no key. They are also undocumented, so if a page looks odd, that feed probably changed shape.</li>
+      <li><strong>A saved snapshot</strong> of those feeds is baked in every time the site deploys. Pages paint from the snapshot first and swap in live numbers a moment later. If ESPN doesn't answer, you keep the snapshot and an amber note tells you how old it is.</li>
+      <li><strong>Player stat lines</strong> (2024-25 and earlier) were collected from Sports Reference.</li>
+      <li><strong>Efficiency history</strong> (2013 to 2025) comes from Bart Torvik's T-Rank archive.</li>
+      <li><strong>Arena locations and elevations, mascot categories and the cats-versus-dogs ledger</strong> were compiled by hand from school releases and public records.</li>
+    </ul>
+
+    <h2>How it got here</h2>
+    <p>The first version ran on a paid Ball Don't Lie subscription behind a Cloudflare Worker. When the subscription ended, the site was rebuilt to stand on free public sources and its own archives. Earlier versions were built with OpenAI Codex; this one was rebuilt with Claude. The floor, scoreboard and chalkboard art was generated with Codex.</p>
+
+    <h2>The fine print</h2>
+    <p>This is an unofficial, non-commercial fan project. It is not affiliated with or endorsed by the NCAA, ESPN, any conference or any school. Team names, logos and marks belong to their owners and appear here only to identify the teams. If you own something shown here and want it removed, write to <a href="mailto:hicksrch@gmail.com">hicksrch@gmail.com</a> and it will come down.</p>
+  </article>
+</div>

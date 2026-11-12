@@ -1,1 +1,0 @@
-import "./pages/standings.js";
