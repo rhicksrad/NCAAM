@@ -26,7 +26,7 @@ export function historyChart(rows: HistRow[]): Markup {
     }"/>${
       r[6]
         ? `<circle cx="${(x + band * 0.36).toFixed(1)}" cy="${(m >= 0 ? y - 8 : zero - 8).toFixed(1)}" r="${r[6] >= 5 ? 5 : 3.2}" fill="${
-            r[6] === 7 ? "#ffb52e" : r[6] >= 5 ? "#d9541e" : "none"
+            r[6] === 7 ? "#ffb52e" : r[6] >= 5 ? "#c8440f" : "none"
           }" stroke="${r[6] >= 5 ? "none" : "#ffb52e"}" stroke-width="1.6"/>`
         : ""
     }</g>`;

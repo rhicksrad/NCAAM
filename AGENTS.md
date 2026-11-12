@@ -60,8 +60,14 @@ The page is a gym floor. Read `src/styles/site.css` first. Three surfaces:
 - **paint**: navy blocks for the masthead, scoreboard and hero, like a painted key.
 - **sheet**: chalk-white stat paper for anything tabular; game cards are ticket stubs.
 
+The home page gives the day's best game centre court (`marquee` in `src/lib/ui.ts`): the two teams'
+paint either side of the clock. Its one line of copy (`whyWatch`) only says what the feed says.
+
+Text on colour must pass WCAG AA. `teamColors` picks navy or chalk ink for a school's paint by
+luminance; the ball orange is as light as it can be with chalk text on it.
+
 Two typefaces, self-hosted: Big Shoulders (display, uppercase, gym-signage) and Archivo (text).
-Palette: ink `#14213a`, ball `#d9541e`, maple `#e2b777`, chalk `#f3f0e6`, amber `#ffb52e`,
+Palette: ink `#14213a`, ball `#c8440f`, maple `#e2b777`, chalk `#f3f0e6`, amber `#ffb52e`,
 bleacher green `#1e5a48`. Team pages take their paint from the team's own colours.
 
 Keep it from looking machine-made:
