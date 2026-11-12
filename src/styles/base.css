@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "Big Shoulders";
+  src: url("./fonts/big-shoulders.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("./fonts/archivo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --ink: #14213a;
+  --ink-2: #22345a;
+  --ink-soft: #4d5a78;
+  --ball: #d9541e;
+  --ball-deep: #a83c0d;
+  --maple: #e2b777;
+  --maple-lite: #efd6a8;
+  --maple-deep: #9c6b2f;
+  --chalk: #f3f0e6;
+  --chalk-2: #e6e1d1;
+  --rule: rgb(20 33 58 / 0.14);
+  --amber: #ffb52e;
+  --green: #1e5a48;
+  --line: #fbfaf4;
+  --team: var(--ink);
+  --team-ink: var(--line);
+
+  --display: "Big Shoulders", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --text: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --wrap: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --lane: 4px; /* width of a painted court line */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font: 400 1rem/1.5 var(--text);
+  color: var(--ink);
+  background: var(--maple) url("../art/floor-maple.webp") 0 0 / 512px 512px;
+}
+
+main {
+  flex: 1;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.005em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  color: var(--ball-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ball);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.num,
+td,
+th {
+  font-variant-numeric: tabular-nums;
+}
+
+.wrap {
+  width: min(100% - 2 * var(--gutter), var(--wrap));
+  margin-inline: auto;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ball);
+  color: var(--line);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip:focus {
+  left: 0;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Lettering painted on the floor: the grain shows through the paint. */
+.floor-title {
+  font-size: clamp(3.6rem, 13vw, 10rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  mix-blend-mode: multiply;
+  opacity: 0.93;
+  margin-left: -0.04em;
+}
+
+.loading {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.7;
+  padding: 2rem 0;
+}
+.loading::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-left: 0.5em;
+  border-radius: 50%;
+  background: var(--ball);
+  animation: dribble 0.7s var(--ease) infinite alternate;
+}
+@keyframes dribble {
+  to {
+    transform: translateY(-0.55em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  @view-transition {
+    navigation: none;
+  }
+}
