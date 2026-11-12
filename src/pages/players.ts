@@ -103,8 +103,8 @@ function paint(): void {
                 ? slice.map(
                     (r, i) => html`<tr data-slug="${r[0]}" tabindex="0" aria-expanded="${open.has(r[0]) ? "true" : "false"}">
                         <td class="l pos">${page * PAGE + i + 1}</td>
-                        <td class="l"><span class="who">${r[3] ? logo({ id: r[3], abbr: "", name: r[2] }) : ""}<span>${r[1]} <small>${r[2]} · ${r[4]}</small></span></span></td>
-                        ${COLS.map((c) => html`<td class="${c.key === sortKey ? "hot" : ""}">${fmt(r[c.i] as number | null, c.pct)}</td>`)}
+                        <td class="l"><span class="who">${logo({ id: r[3] ?? "", abbr: r[2], name: r[2] })}<span>${r[1]} <small>${r[2]} · ${r[4]}</small></span></span></td>
+                        ${COLS.map((c) => html`<td class="${c.key === sortKey ? "hot" : ""}">${c.key === "gp" && r[c.i] !== null ? Math.round(r[c.i] as number) : fmt(r[c.i] as number | null, c.pct)}</td>`)}
                       </tr>${open.has(r[0]) ? careerRow(r[0]) : ""}`,
                   )
                 : html`<tr><td class="l" colspan="${COLS.length + 2}">Nobody matches. Loosen the filters.</td></tr>`

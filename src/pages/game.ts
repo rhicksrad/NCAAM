@@ -81,6 +81,7 @@ function flow(d: GameDetail): Markup {
     prev = p.diff;
     prevT = p.t;
   }
+  const live = g.state === "in";
   const end = g.state === "post" ? total : lastT;
   if (prev > 0) homeLed += end - prevT;
   else if (prev < 0) awayLed += end - prevT;
@@ -88,13 +89,13 @@ function flow(d: GameDetail): Markup {
   const { home, away } = rivalColors(g.home.team, g.away.team);
   const front = homeLed >= awayLed ? g.home.team.name : g.away.team.name;
   return html`<section class="flow">
-    <h2>Who had it, and when</h2>
-    <p>${front} led for ${mmss(Math.max(homeLed, awayLed))}. ${changes} lead change${changes === 1 ? "" : "s"}, ${ties} tie${ties === 1 ? "" : "s"}. ${
+    <h2>${live ? "Who has it, and since when" : "Who had it, and when"}</h2>
+    <p>${front} ${live ? "has led" : "led"} for ${mmss(Math.max(homeLed, awayLed))}. ${changes} lead change${changes === 1 ? "" : "s"}, ${ties} tie${ties === 1 ? "" : "s"}. ${
       bigHome && bigAway
         ? `Biggest leads: ${g.home.team.abbr} by ${bigHome}, ${g.away.team.abbr} by ${bigAway}.`
-        : `${bigHome ? g.away.team.name : g.home.team.name} never led; the biggest gap was ${Math.max(bigHome, bigAway)}.`
+        : `${bigHome ? g.away.team.name : g.home.team.name} ${live ? "has not led" : "never led"}; the biggest gap ${live ? "has been" : "was"} ${Math.max(bigHome, bigAway)}.`
     }</p>
-    ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr)}
+    ${flowChart(points, total, d.periodSeconds, home, away, g.home.team.abbr, g.away.team.abbr, end)}
   </section>`;
 }
 

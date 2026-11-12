@@ -1031,3 +1031,59 @@ small.sub {
     min-width: 0;
   }
 }
+
+.ledger__total .ledger__bar i + i {
+  background: var(--chalk);
+  color: var(--ink);
+}
+
+/* About: the prose on stat paper, the numbers painted on a navy panel beside it. */
+.about-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 44rem) minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.4rem);
+  align-items: start;
+}
+.tally {
+  position: sticky;
+  top: 5rem;
+  background: var(--ink) url("../art/floor-dark.webp") 0 0 / 600px 600px;
+  color: var(--line);
+  border: var(--lane) solid var(--line);
+  padding: clamp(1.1rem, 3vw, 1.8rem);
+}
+.tally h2 {
+  font-size: 1.5rem;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+.tally dl {
+  margin: 0;
+  display: grid;
+}
+.tally dl > div {
+  display: grid;
+  grid-template-columns: 5.2rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgb(251 250 244 / 0.18);
+}
+.tally dt {
+  font: 900 2.6rem/0.9 var(--display);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.tally dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgb(251 250 244 / 0.82);
+}
+@media (max-width: 900px) {
+  .about-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tally {
+    position: static;
+  }
+}

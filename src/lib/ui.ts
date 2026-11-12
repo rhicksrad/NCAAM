@@ -38,7 +38,9 @@ export function rivalColors(home: Pick<Team, "color" | "alt">, away: Pick<Team, 
     const [r2, g2, b2] = rgb(c);
     return Math.hypot(r1 - r2, g1 - g2, b1 - b2) > 110 && luminance(c) < 0.75;
   };
-  const candidates = [teamColors(away).paint, away.alt, "#4d5a78", INK].filter((c): c is string => Boolean(c));
+  const candidates = [teamColors(away).paint, away.alt, "#4d5a78", INK]
+    .filter((c): c is string => Boolean(c))
+    .map((c) => (luminance(c) < 0.012 ? INK : c)); // no pure black on the page
   return { home: h, away: candidates.find(far) ?? "#4d5a78" };
 }
 
