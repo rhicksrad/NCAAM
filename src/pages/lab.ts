@@ -2,7 +2,7 @@ import "../lib/chrome.js";
 import { dataset } from "../lib/data.js";
 import { $, html, mount, raw, type Markup } from "../lib/dom.js";
 import { POST_LABEL } from "../lib/charts.js";
-import { failure, ordinal, teamHref } from "../lib/ui.js";
+import { failure, fmtShortDay, ordinal, teamHref } from "../lib/ui.js";
 
 // year, team, teamId, conf, w, g, adjO, adjD, barthag, tempo, post, seed, fg3, efg
 type Eff = [number, string, string | null, string, number, number, number, number, number, number, number, number, number, number];
@@ -46,12 +46,13 @@ function chalkboard(doc: EffDoc): Markup {
     <svg viewBox="0 0 ${CW} ${CH}" id="eff-svg" role="img" aria-label="Offense against defense for every Division I team in the chosen season">
       ${ticksX.map((t) => html`<line class="axis" x1="${cx(t)}" x2="${cx(t)}" y1="${PT}" y2="${CH - PB}"/><text x="${cx(t)}" y="${CH - 12}" text-anchor="middle">${t}</text>`)}
       ${ticksY.map((t) => html`<line class="axis" x1="${PL}" x2="${CW - PR}" y1="${cy(t)}" y2="${cy(t)}"/><text x="${PL - 8}" y="${cy(t) + 4}" text-anchor="end">${t}</text>`)}
-      <text x="${CW - PR - 6}" y="${CH - PB - 10}" text-anchor="end">points scored per 100 possessions →</text>
-      <text x="${PL + 6}" y="${PT + 12}">↑ stingier defense (points allowed per 100)</text>
-      <text x="${CW - PR - 6}" y="${PT + 14}" text-anchor="end" style="font-size:15px;font-weight:800">CONTENDERS</text>
-      <text x="${PL + 6}" y="${CH - PB - 8}" style="font-size:15px;font-weight:800">LONG WINTER</text>
+      <text class="cap" x="${CW - PR - 6}" y="${CH - PB - 10}" text-anchor="end">points scored per 100 possessions →</text>
+      <text class="cap" x="${PL + 6}" y="${PT + 12}">↑ stingier defense (points allowed per 100)</text>
+      <text x="${CW - PR - 6}" y="${PT + 14}" text-anchor="end" class="corner">CONTENDERS</text>
+      <text x="${PL + 6}" y="${CH - PB - 8}" class="corner">LONG WINTER</text>
       <g id="eff-dots"></g>
     </svg>
+    <p class="chalk-axes">Across: points scored per 100 possessions. Up: fewer points allowed.</p>
     <p class="chalk-readout" id="eff-read">Each chalk mark is a team. Up and to the right is where you want to be. Gold is the eventual champion. Hover or tap a mark.</p>
   </div>`;
 }
@@ -252,15 +253,20 @@ function tallest(doc: HeightDoc): Markup {
   const ft = (inches: number) => `${Math.floor(inches / 12)}′${(inches % 12).toFixed(1)}″`;
   const top = doc.rows.slice(0, 8);
   const low = doc.rows[doc.rows.length - 1]!;
+  const median = doc.rows[Math.floor(doc.rows.length / 2)]![2];
   return html`<div class="split">
     <section class="sheet">
-      <div class="tall" id="tall-bars">${doc.rows.map((r, i) => html`<i style="--h:${r[2]}" data-i="${i}"></i>`)}</div>
+      <div class="tall" id="tall-bars">
+        ${[76, 78].map((v) => html`<div class="tall__mark" style="--at:${v}"><span>${ft(v).replace(".0", "")}</span></div>`)}
+        <div class="tall__mark tall__mark--mid" style="--at:${median}"><span>median ${ft(median)}</span></div>
+        ${doc.rows.map((r, i) => html`<i style="--h:${r[2]}" data-i="${i}"></i>`)}
+      </div>
       <p class="sheet__note" id="tall-read">Every roster, tallest on the left. The whole sport fits inside ${(doc.rows[0]![2] - low[2]).toFixed(1)} inches: ${doc.rows[0]![0]} at ${ft(
         doc.rows[0]![2],
       )} down to ${low[0]} at ${ft(low[2])}.</p>
     </section>
     <section class="sheet">
-      <div class="sheet__head"><h3>Tallest on average</h3><small>as of ${doc.asOf.slice(0, 10)}</small></div>
+      <div class="sheet__head"><h3>Tallest on average</h3><small>rosters as of ${fmtShortDay(doc.asOf)}, ${doc.asOf.slice(0, 4)}</small></div>
       <table><tbody>${top.map(
         (r, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${r[1] ? html`<a class="who" href="${teamHref(r[1])}">${r[0]}</a>` : r[0]}</td><td class="hot">${ft(r[2])}</td></tr>`,
       )}</tbody></table>

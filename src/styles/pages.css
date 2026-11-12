@@ -197,11 +197,15 @@
 }
 
 /* ---------- Standings ---------- */
+/* Columns, not a grid: leagues are 8 to 18 teams deep, and a grid would leave
+   a hole under every short one. */
 .conf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 27rem), 1fr));
-  gap: 1.4rem;
-  align-items: start;
+  columns: 27rem 2;
+  column-gap: 1.4rem;
+}
+.conf-grid > * {
+  break-inside: avoid;
+  margin-bottom: 1.4rem;
 }
 
 /* ---------- Teams directory ---------- */
@@ -862,6 +866,7 @@ tr.career caption {
   color: rgb(251 250 244 / 0.7);
 }
 .tall {
+  position: relative;
   display: flex;
   align-items: flex-end;
   gap: 0;
@@ -1085,5 +1090,263 @@ small.sub {
   }
   .tally {
     position: static;
+  }
+}
+
+/* Main event: centre court. Away paint left, home paint right, the clock on
+   the line between them. */
+.marquee {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  color: var(--line);
+  text-decoration: none;
+  border: var(--lane) solid var(--line);
+  box-shadow: 0 8px 6px rgb(84 48 8 / 0.3);
+  transition: transform 0.18s var(--ease);
+}
+.marquee:hover {
+  transform: translateY(-2px);
+}
+.marquee__side {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.35rem;
+  padding: clamp(1rem, 3vw, 1.6rem) 0.8rem;
+  background: var(--paint);
+  color: var(--on);
+  text-align: center;
+  min-width: 0;
+  overflow: hidden;
+}
+/* Half of the centre circle on each side of the line. */
+.marquee__side::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: clamp(7rem, 22vw, 9rem);
+  aspect-ratio: 1;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.22;
+  transform: translate(50%, -50%);
+  right: 0;
+  pointer-events: none;
+}
+.marquee__mid + .marquee__side::before {
+  right: auto;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.marquee__side .logo {
+  width: clamp(3.2rem, 8vw, 4.6rem);
+  height: clamp(3.2rem, 8vw, 4.6rem);
+  background: var(--line);
+  border-radius: 50%;
+  padding: 0.45rem;
+  object-fit: contain;
+  position: relative;
+}
+.marquee__name {
+  position: relative;
+  font: 800 clamp(1.3rem, 3.4vw, 2.2rem) / 0.95 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+.marquee__name i {
+  font-style: normal;
+  font-size: 0.6em;
+  margin-right: 0.35em;
+  opacity: 0.8;
+  vertical-align: 0.25em;
+}
+.marquee__side small {
+  position: relative;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.marquee__score {
+  position: relative;
+  font: 900 clamp(2.4rem, 7vw, 4rem) / 0.9 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.marquee__side[data-lost] .marquee__score,
+.marquee__side[data-lost] .marquee__name {
+  opacity: 0.6;
+}
+.marquee__mid {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.2rem;
+  padding: 0 clamp(0.7rem, 2.4vw, 1.4rem);
+  background: var(--ink);
+  color: var(--amber);
+  border-inline: var(--lane) solid var(--line);
+  text-transform: uppercase;
+}
+.marquee__mid b {
+  font: 900 clamp(1.5rem, 4.4vw, 2.6rem) / 1 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.marquee__mid span {
+  font: 700 0.85rem/1 var(--display);
+  letter-spacing: 0.1em;
+  color: var(--line);
+}
+.marquee[data-state="in"] .marquee__mid span::before {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-right: 0.45em;
+  border-radius: 50%;
+  background: var(--ball);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.marquee__foot {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  align-items: baseline;
+  padding: 0.55rem 0.9rem;
+  background: var(--ink);
+  border-top: var(--lane) solid var(--line);
+  font-size: 0.85rem;
+}
+.marquee__foot b {
+  font: 800 1rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+}
+.marquee__foot span:last-child {
+  margin-left: auto;
+  color: rgb(251 250 244 / 0.75);
+}
+.marquee__foot em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--amber);
+}
+@media (max-width: 560px) {
+  .marquee__foot span:last-child {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}
+
+/* Tall order: height lines behind the bars, like marks on a door frame. */
+.tall__mark {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: calc((var(--at) - 74) / 7 * (100% - 1rem));
+  border-top: 1px dashed rgb(20 33 58 / 0.3);
+  pointer-events: none;
+}
+.tall__mark span {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  font: 700 0.8rem/1 var(--display);
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+.tall__mark--mid {
+  border-top: 2px solid var(--ball);
+}
+.tall__mark--mid span {
+  color: var(--ball-deep, var(--ball));
+}
+
+/* Home: a row of chalkboards pointing at the lab. */
+.lab-strip {
+  padding-top: clamp(1.5rem, 4vw, 2.6rem);
+}
+.lab-strip ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+.lab-strip li a {
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
+  height: 100%;
+  padding: 0.9rem 1rem 1.1rem;
+  background: var(--green) url("../art/chalkboard.webp") center / cover;
+  border: 6px solid #6b4a1e;
+  color: var(--line);
+  text-decoration: none;
+  transition: transform 0.18s var(--ease);
+}
+.lab-strip li a:hover {
+  transform: translateY(-3px) rotate(-0.6deg);
+}
+.lab-strip li b {
+  font: 900 2.2rem/0.9 var(--display);
+  color: var(--amber);
+}
+.lab-strip li strong {
+  font: 800 1.35rem/1 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.lab-strip li span {
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: rgb(251 250 244 / 0.82);
+}
+@media (max-width: 1000px) {
+  .lab-strip ol {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .lab-strip li a {
+    grid-template-columns: auto 1fr;
+    column-gap: 0.8rem;
+    align-items: baseline;
+    padding: 0.7rem 0.9rem 0.8rem;
+  }
+  .lab-strip li span {
+    grid-column: 2;
+  }
+}
+
+/* Chalkboard labels: the drawing shrinks on a phone, so the writing grows. */
+.chalk .corner {
+  font-size: 15px;
+  font-weight: 800;
+}
+.chalk-axes {
+  display: none;
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  color: rgb(243 240 230 / 0.8);
+}
+@media (max-width: 560px) {
+  #eff-svg text {
+    font-size: 25px;
+  }
+  #eff-svg .cap {
+    display: none;
+  }
+  #eff-svg .corner {
+    font-size: 26px;
+  }
+  #eff-svg .dot {
+    r: 8px;
+  }
+  .chalk-axes {
+    display: block;
   }
 }
