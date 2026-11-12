@@ -189,6 +189,8 @@ function boxTable(box: BoxTeam, side: Side, live: boolean): Markup {
  *  is 500 rows; laying all of them out was most of this page's load. */
 const FIRST_PLAYS = 40;
 let shown: GameDetail | null = null;
+/** This game as the saved slate knew it. */
+let slate: GameDetail["game"] | null = null;
 const fullPeriods = new Set<number>();
 
 function periodPlays(d: GameDetail, period: number): Markup {
@@ -227,6 +229,15 @@ function playByPlay(d: GameDetail): Markup {
 function paint(d: GameDetail, saved = false): void {
   const g = d.game;
   shown = d;
+  // The summary feed leaves out the broadcast and the line that the slate
+  // carries. Keep them, so the scoreboard says the same thing (and stands the
+  // same height) before and after the live answer.
+  if (slate) {
+    g.tv ||= slate.tv;
+    g.venue ||= slate.venue;
+    g.city ||= slate.city;
+    if (g.state === "pre") g.odds ||= slate.odds;
+  }
   document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
   const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
   const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
@@ -242,10 +253,12 @@ function paint(d: GameDetail, saved = false): void {
         ${
           g.state === "pre" && !saved
             ? html`<p class="also"><b>Not tipped yet.</b> The box score and play-by-play fill in here once the ball goes up. This page refreshes itself.</p>
+                ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}
                 <div id="form-slot">${form ?? ""}</div>`
-            : ""
+            : d.officials.length
+              ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>`
+              : ""
         }
-        ${d.officials.length ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>` : ""}
       </div>`,
   );
   if (g.state === "pre" && !saved) askForm(d);
@@ -282,6 +295,7 @@ if (!/^\d+$/.test(id)) {
   snapshot("scoreboard")
     .then((s) => {
       const game = s.data.games.find((g) => g.id === id);
+      slate = game ?? null;
       if (game && !shown) {
         mount(root, html`<h1 class="sr-only">${game.away.team.name} at ${game.home.team.name}</h1>${board({ game, box: [], plays: [], winProb: [], attendance: null, officials: [], periodSeconds: 1200 })}<p class="loading" role="status">Fetching the box score…</p>`);
       }
