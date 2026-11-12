@@ -25,6 +25,21 @@ function shell(page, assets, aboutHtml, buildStamp) {
   const preloads = (assets.preload[page.entry] ?? [])
     .map((href) => `<link rel="modulepreload" href="./${href}">`)
     .join("\n");
+  // Start the page's first data (and the hero photo) downloading with the
+  // HTML, instead of after the script has loaded and asked for it.
+  const FIRST_DATA = {
+    home: ["live/scoreboard", "live/rankings"],
+    games: ["live/scoreboard"],
+    rankings: ["live/rankings"],
+    standings: ["live/standings"],
+    teams: ["live/teams"],
+    players: ["players"],
+    lab: ["efficiency"],
+  };
+  const early = [
+    ...(page.file === "404.html" ? [] : FIRST_DATA[page.entry] ?? []).map((name) => `<link rel="preload" href="./data/${name}.json" as="fetch" crossorigin>`),
+    ...(page.hero ? ['<link rel="preload" href="./art/hero-court.webp" as="image" fetchpriority="high">'] : []),
+  ].join("\n");
   const skeleton = page.skeleton ?? aboutHtml;
   return `<!doctype html>
 <html lang="en">
@@ -45,6 +60,7 @@ function shell(page, assets, aboutHtml, buildStamp) {
 <link rel="preload" href="./assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./${assets.css}">
 ${preloads}
+${early}
 <script type="module" src="./${assets.js[page.entry]}"></script>
 </head>
 <body data-page="${page.entry}"${page.hero ? ' class="has-hero"' : ""}>
