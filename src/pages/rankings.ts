@@ -63,7 +63,7 @@ function paint(): void {
                   <td>${r.record}</td>
                   ${
                     hasVotes
-                      ? html`<td title="${Math.round((r.points / maxPoints) * 100)}% of the leader's points">${r.points ? r.points.toLocaleString() : ""}</td><td class="wide">${
+                      ? html`<td class="votes" style="--share:${((r.points / maxPoints) * 100).toFixed(1)}%" title="${Math.round((r.points / maxPoints) * 100)}% of the leader's points">${r.points ? r.points.toLocaleString() : ""}</td><td class="wide">${
                           r.firstPlace || ""
                         }</td>`
                       : ""

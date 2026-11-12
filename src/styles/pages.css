@@ -1019,3 +1019,15 @@ small.sub {
   flex-direction: column;
   justify-content: center;
 }
+
+/* Poll points as a tally: the cell fills in proportion to the leader's haul. */
+.sheet td.votes {
+  min-width: 7rem;
+  font-weight: 600;
+  background: linear-gradient(to left, rgb(217 84 30 / 0.16) var(--share), transparent 0);
+}
+@media (max-width: 560px) {
+  .sheet td.votes {
+    min-width: 0;
+  }
+}
