@@ -1,9 +1,9 @@
 import "../lib/chrome.js";
 import { feed, snapshot } from "../lib/data.js";
 import { $, html, mount, param, raw, type Markup } from "../lib/dom.js";
-import { espn, type BoxTeam, type GameDetail, type Play, type ScheduleGame, type Side } from "../lib/espn.js";
-import { flowChart, type FlowPoint } from "../lib/charts.js";
-import { failure, fmtDay, fmtShortDay, fmtStamp, fmtTime, gameHref, logo, logoUrl, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
+import { espn, type BoxTeam, type GameDetail, type Side } from "../lib/espn.js";
+import { flowChart, type FlowPoint } from "../lib/flow.js";
+import { atHalf, failure, fmtDay, fmtStamp, fmtTime, logoUrl, pctOrDash, periodLabel, rivalColors, teamColors, teamHref } from "../lib/ui.js";
 
 const id = param("id") ?? "";
 const root = $("#game-root");
@@ -14,7 +14,11 @@ let formAsked = false;
 function boardTeam(side: Side): Markup {
   const { paint } = teamColors(side.team);
   return html`<a class="board__team" href="${teamHref(side.team.id)}" style="--team:${paint}">
-    <img src="${logoUrl(side.team.id, 160)}" data-team="${side.team.id}" data-abbr="${side.team.abbr}" alt="" width="80" height="80">
+    ${
+      side.team.noLogo
+        ? html`<span class="logo--blank" aria-hidden="true">${side.team.abbr.slice(0, 3)}</span>`
+        : html`<img src="${logoUrl(side.team.id, 160)}" data-team="${side.team.id}" data-abbr="${side.team.abbr}" alt="" width="80" height="80">`
+    }
     <b>${side.rank ? html`<span class="rk">${side.rank}</span>` : ""}<span class="wide">${side.team.name}</span><span class="narrow">${side.team.name.length > 9 ? side.team.abbr || side.team.name : side.team.name}</span></b>
     <small>${side.record}</small>
   </a>`;
@@ -26,7 +30,7 @@ function board(d: GameDetail): Markup {
   const lead = (g.home.score ?? 0) - (g.away.score ?? 0);
   const periods = Math.max(g.home.lines.length, g.away.lines.length);
   const status =
-    g.state === "pre" ? `${fmtDay(g.date)} · ${fmtTime(g.date)}` : g.state === "in" ? `${g.clock} ${periodLabel(g.period)}`.trim() || g.detail : g.detail;
+    g.state === "pre" ? `${fmtDay(g.date)} · ${fmtTime(g.date)}` : atHalf(g) ? "Halftime" : g.state === "in" ? `${g.clock} ${periodLabel(g.period)}`.trim() || g.detail : g.detail;
   const meta = [g.venue, g.city, g.tv, d.attendance ? `${d.attendance.toLocaleString()} in the building` : "", g.odds].filter(Boolean);
   return html`<section class="board" aria-label="Scoreboard">
     <p class="board__status" ${raw(g.state === "in" ? "data-live" : "")}>${status}</p>
@@ -130,51 +134,31 @@ function compare(d: GameDetail): Markup {
     <div class="sheet__head"><h2>Tale of the tape</h2><small>${g.away.team.name} left, ${g.home.team.name} right</small></div>
     <div class="cmp" style="--a:${ca};--b:${ch}">
       ${rows.map(([key, label]) => {
-        // A percentage of no attempts is not zero, it is nothing yet.
-        const tried = (stats: typeof a) => !ATTEMPTS[key] || !/-0$/.test(stats[ATTEMPTS[key]!]?.value ?? "");
-        const av = tried(a) ? parseFloat(a[key]!.value) || 0 : 0;
-        const hv = tried(h) ? parseFloat(h[key]!.value) || 0 : 0;
+        const show = (stats: typeof a) => (ATTEMPTS[key] ? pctOrDash(stats[key]!.value, stats[ATTEMPTS[key]!]?.value) : stats[key]!.value);
+        const av = parseFloat(show(a)) || 0;
+        const hv = parseFloat(show(h)) || 0;
         const max = Math.max(av, hv) || 1;
         return html`<div class="cmp__row">
-          <span>${tried(a) ? a[key]!.value : "–"}</span>
+          <span>${show(a)}</span>
           <i class="cmp__a" style="transform:scaleX(${(av / max).toFixed(3)})"></i>
           <b>${label}</b>
           <i class="cmp__b" style="transform:scaleX(${(hv / max).toFixed(3)})"></i>
-          <span>${tried(h) ? h[key]!.value : "–"}</span>
+          <span>${show(h)}</span>
         </div>`;
       })}
     </div>
   </section>`;
 }
 
-/** Before the tip there is no box score, so show how each side has been playing. */
-function formSheet(side: Side, games: ScheduleGame[]): Markup {
-  const done = games.filter((g) => g.won !== null).slice(-5).reverse();
-  const next = games.filter((g) => g.won === null && g.id !== id).slice(0, 1);
-  const wins = done.filter((g) => g.won).length;
-  const where = (g: ScheduleGame) => (g.neutral ? "vs" : g.home ? "vs" : "at");
-  const opp = (g: ScheduleGame) =>
-    html`<a class="who" href="${teamHref(g.opponent.id)}">${logo(g.opponent)}<span><small>${where(g)}</small> ${g.oppRank ? html`<span class="rk">${g.oppRank}</span>` : ""}${g.opponent.name}</span></a>`;
-  return html`<section class="sheet sheet--wrap">
-    <div class="sheet__head"><h2>${side.team.name}</h2><small>${done.length ? `${wins}-${done.length - wins} in the last ${done.length}` : "No games yet"}</small></div>
-    <table>
-      <tbody>
-        ${done.map(
-          (g) => html`<tr><td class="l">${fmtShortDay(g.date)}</td><td class="l">${opp(g)}</td><td><a href="${gameHref(g.id)}"><span class="${g.won ? "res-w" : "res-l"}">${g.won ? "W" : "L"}</span> ${g.us}-${g.them}</a></td></tr>`,
-        )}
-        ${next.map((g) => html`<tr class="later"><td class="l">${fmtShortDay(g.date)}</td><td class="l">${opp(g)}</td><td><small>up next</small></td></tr>`)}
-      </tbody>
-    </table>
-  </section>`;
-}
-
+/** Before the tip there is no box score, so show how each side has been
+ *  playing. Only a game that has not started pays for this code. */
 function askForm(d: GameDetail): void {
   if (formAsked) return;
   formAsked = true;
-  const g = d.game;
-  Promise.all([espn.schedule(g.away.team.id), espn.schedule(g.home.team.id)])
-    .then(([a, h]) => {
-      form = html`<div class="form-guide"><h2 class="form-guide__h">Coming in</h2>${formSheet(g.away, a)}${formSheet(g.home, h)}</div>`;
+  import("../lib/form-guide.js")
+    .then((m) => m.formGuide(d.game, id))
+    .then((markup) => {
+      form = markup;
       const slot = document.querySelector("#form-slot");
       if (slot) mount(slot, form);
     })
@@ -192,7 +176,7 @@ function boxTable(box: BoxTeam, side: Side, live: boolean): Markup {
   const bench = box.players.filter((p) => !p.starter);
   return html`<section class="sheet">
     <div class="sheet__head"><h2>${side.team.name}</h2><small>${side.record}</small></div>
-    <div class="sheet__scroll"><table>
+    <div class="sheet__scroll" tabindex="0" role="region" aria-label="${side.team.name} box score"><table>
       <thead><tr><th class="l">Starters</th>${box.labels.map((l) => html`<th>${l}</th>`)}</tr></thead>
       <tbody>${starters.map(row)}</tbody>
       ${bench.length ? html`<thead><tr><th class="l">Bench</th>${box.labels.map((l) => html`<th>${l}</th>`)}</tr></thead><tbody>${bench.map(row)}</tbody>` : ""}
@@ -201,38 +185,48 @@ function boxTable(box: BoxTeam, side: Side, live: boolean): Markup {
   </section>`;
 }
 
+/** How many plays a period shows before it is asked for the rest. A full game
+ *  is 500 rows; laying all of them out was most of this page's load. */
+const FIRST_PLAYS = 40;
+let shown: GameDetail | null = null;
+const fullPeriods = new Set<number>();
+
+function periodPlays(d: GameDetail, period: number): Markup {
+  const g = d.game;
+  const plays = d.plays.filter((p) => p.period === period).reverse();
+  const cut = fullPeriods.has(period) ? plays : plays.slice(0, FIRST_PLAYS);
+  return html`${cut.map(
+    (p) => html`<li ${raw(p.scoring ? "data-score" : "")}><span class="t">${p.clock}</span><span class="s">${p.away}-${p.home}</span><span>${
+      p.teamId ? html`<b>${p.teamId === g.home.team.id ? g.home.team.abbr : g.away.team.abbr}</b> ` : ""
+    }${p.text}</span></li>`,
+  )}${
+    plays.length > cut.length
+      ? html`<li class="pbp__more"><button type="button" data-more="${period}">Show the other ${plays.length - cut.length} plays</button></li>`
+      : ""
+  }`;
+}
+
 function playByPlay(d: GameDetail): Markup {
   if (!d.plays.length) return html``;
-  const byPeriod = new Map<number, Play[]>();
-  for (const p of d.plays) {
-    const list = byPeriod.get(p.period) ?? [];
-    list.push(p);
-    byPeriod.set(p.period, list);
-  }
-  const latest = Math.max(...byPeriod.keys());
-  openPeriods ??= new Set([latest]);
-  const g = d.game;
+  const periods = [...new Set(d.plays.map((p) => p.period))].sort((a, b) => b - a);
+  openPeriods ??= new Set([periods[0]!]);
   return html`<section class="sheet" id="pbp">
     <div class="sheet__head"><h2>Play by play</h2><small>${d.plays.length} plays, newest first</small></div>
-    ${[...byPeriod.entries()]
-      .sort((a, b) => b[0] - a[0])
-      .map(
-        ([period, plays]) => html`<details data-period="${period}" ${openPeriods?.has(period) ? html`open` : ""}>
-          <summary class="pbp-sum">${periodLabel(period)} ${period <= 2 ? "half" : ""}</summary>
-          <ol class="pbp" tabindex="0" aria-label="${periodLabel(period)} ${period <= 2 ? "half" : ""} plays">
-            ${[...plays].reverse().map(
-              (p) => html`<li ${raw(p.scoring ? "data-score" : "")}><span class="t">${p.clock}</span><span class="s">${p.away}-${p.home}</span><span>${
-                p.teamId ? html`<b>${p.teamId === g.home.team.id ? g.home.team.abbr : g.away.team.abbr}</b> ` : ""
-              }${p.text}</span></li>`,
-            )}
-          </ol>
-        </details>`,
-      )}
+    ${periods.map(
+      (period) => html`<details data-period="${period}" ${openPeriods?.has(period) ? html`open` : ""}>
+        <summary class="pbp-sum">${periodLabel(period)} ${period <= 2 ? "half" : ""}</summary>
+        <ol class="pbp" tabindex="0" aria-label="${periodLabel(period)} ${period <= 2 ? "half" : ""} plays">${
+          // A closed period costs nothing until someone opens it.
+          openPeriods?.has(period) ? periodPlays(d, period) : ""
+        }</ol>
+      </details>`,
+    )}
   </section>`;
 }
 
 function paint(d: GameDetail, saved = false): void {
   const g = d.game;
+  shown = d;
   document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
   const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
   const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
@@ -262,11 +256,23 @@ root.addEventListener(
   (event) => {
     const el = event.target as HTMLDetailsElement;
     if (!el.dataset.period || !openPeriods) return;
-    if (el.open) openPeriods.add(Number(el.dataset.period));
-    else openPeriods.delete(Number(el.dataset.period));
+    const period = Number(el.dataset.period);
+    if (el.open) openPeriods.add(period);
+    else openPeriods.delete(period);
+    const list = el.querySelector("ol");
+    if (el.open && list && !list.childElementCount && shown) mount(list, periodPlays(shown, period));
   },
   true,
 );
+
+root.addEventListener("click", (event) => {
+  const more = (event.target as Element).closest<HTMLElement>("[data-more]");
+  const list = more?.closest("ol");
+  if (!more || !list || !shown) return;
+  fullPeriods.add(Number(more.dataset.more));
+  mount(list, periodPlays(shown, Number(more.dataset.more)));
+  list.focus(); // the button is gone; keep the keyboard in the list it was in
+});
 
 if (!/^\d+$/.test(id)) {
   mount(root, html`<div class="empty-state"><h2>Which game?</h2><p>Pick one from <a href="./games.html">the scoreboard</a>.</p></div>`);

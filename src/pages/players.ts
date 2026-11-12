@@ -76,7 +76,7 @@ function careerRow(slug: string): Markup {
       <thead><tr><th class="l">Season</th><th class="l">Team</th><th>GP</th><th>GS</th><th>Min</th><th>Pts</th><th>Reb</th><th>Ast</th><th>Stl</th><th>Blk</th><th>TO</th><th>FG%</th><th>3P%</th><th>FT%</th></tr></thead>
       <tbody>
         ${career.seasons.map(
-          (s) => html`<tr><td class="l">${s[0]}</td><td class="l">${s[1]} <small>${s[2]}</small></td><td>${s[3]}</td><td>${s[4] ?? "–"}</td>${s
+          (s) => html`<tr><td class="l">${s[0]}</td><td class="l">${s[1]} <small class="wide">${s[2]}</small></td><td>${s[3]}</td><td>${s[4] ?? "–"}</td>${s
             .slice(5)
             .map((v, i) => html`<td>${fmt(v as number | null, i >= 7)}</td>`)}</tr>`,
         )}

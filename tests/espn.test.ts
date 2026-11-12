@@ -114,3 +114,21 @@ describe("ESPN normalisers against recorded feeds", () => {
     }
   });
 });
+
+describe("logos", () => {
+  const ev = (id: string, a: object, b: object) => ({
+    id,
+    date: "2026-11-12T00:00Z",
+    competitions: [{ competitors: [{ homeAway: "home", team: { id: "150", location: "Duke", ...a } }, { homeAway: "away", team: { id: "353", location: "Johnson & Wales", ...b } }] }],
+  });
+  it("flags a team without a logo only when the feed has logos for others", () => {
+    const [g] = normalizeScoreboard({ events: [ev("1", { logo: "https://x/150.png" }, {})] });
+    expect(g!.home.team.noLogo).toBeUndefined();
+    expect(g!.away.team.noLogo).toBe(true);
+  });
+  it("leaves old saved data, which has no logo keys at all, alone", () => {
+    const [g] = normalizeScoreboard({ events: [ev("1", {}, {})] });
+    expect(g!.home.team.noLogo).toBeUndefined();
+    expect(g!.away.team.noLogo).toBeUndefined();
+  });
+});

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { esc, html, raw } from "../src/lib/dom";
 import type { Game } from "../src/lib/espn";
-import { drama, easternYmd, periodLabel, rivalColors, shiftYmd, teamColors, whyWatch } from "../src/lib/ui";
+import { atHalf, drama, easternYmd, pctOrDash, periodLabel, rivalColors, shiftYmd, teamColors, whyWatch } from "../src/lib/ui";
 
 describe("html template", () => {
   it("escapes interpolations", () => {
@@ -71,5 +71,19 @@ describe("drama ordering", () => {
     expect(drama(game({ home: side(null, 70, true), away: side(null, 69) }))).toBeGreaterThan(drama(game({})));
     expect(drama(game({ home: side(5, 70, true), away: side(null, 60) }))).toBeGreaterThan(drama(game({})));
     expect(drama(game({ detail: "Final/OT" }))).toBeGreaterThan(drama(game({})));
+  });
+});
+
+describe("small honesties", () => {
+  it("shows a dash, not 0.0, for a percentage of no attempts", () => {
+    expect(pctOrDash("0.0", "0-0")).toBe("–");
+    expect(pctOrDash("0.0", "0-3")).toBe("0.0");
+    expect(pctOrDash("50.0", "5-10")).toBe("50.0");
+    expect(pctOrDash("41.2", undefined)).toBe("41.2");
+  });
+  it("calls the break halftime even though the feed's clock says 0:00 1st", () => {
+    expect(atHalf({ state: "in", detail: "Halftime" })).toBe(true);
+    expect(atHalf({ state: "in", detail: "12:44 - 2nd Half" })).toBe(false);
+    expect(atHalf({ state: "post", detail: "Final" })).toBe(false);
   });
 });
