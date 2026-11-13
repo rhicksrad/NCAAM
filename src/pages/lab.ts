@@ -27,6 +27,8 @@ const exhibit = (no: string, id: string, title: string, lede: string, body: Mark
 </section>`;
 
 /* ---------- 01: the efficiency chalkboard ---------- */
+// The newest season in the efficiency archive; the board paints before its data.
+const LAST = 2026;
 const X0 = 84, X1 = 132, Y0 = 82, Y1 = 126; // adjO, adjD domains
 // A phone gets its own drawing, taller than it is wide, at one unit per pixel
 // so the chalk writing is the size it says it is.
@@ -41,9 +43,9 @@ function chalkboard(): Markup {
   const ticksY = [90, 100, 110, 120];
   return html`<div class="chalk">
     <div class="chalk-ctl">
-      <output id="eff-year" for="eff-range">2025</output>
+      <output id="eff-year" for="eff-range">${LAST}</output>
       <button class="btn" id="eff-play" type="button" aria-pressed="false">Run the tape</button>
-      <input id="eff-range" type="range" min="2013" max="2025" step="1" value="2025" aria-label="Season">
+      <input id="eff-range" type="range" min="2013" max="${LAST}" step="1" value="${LAST}" aria-label="Season">
       <input id="eff-find" type="search" placeholder="Follow a team" list="eff-teams" aria-label="Follow a team">
       <datalist id="eff-teams"></datalist>
     </div>
@@ -79,7 +81,9 @@ function wireChalkboard(doc: EffDoc): void {
     layer.append(c);
     return c;
   });
-  let year = 2025;
+  const last = doc.rows.reduce((m, r) => Math.max(m, r[0]), 0) || LAST;
+  let year = last;
+  ($("#eff-range") as HTMLInputElement).max = String(last);
   let follow = "";
   let current = new Map<string, Eff>();
   const read = $("#eff-read");
@@ -165,12 +169,12 @@ function wireChalkboard(doc: EffDoc): void {
     if (timer) return stop();
     play.textContent = "Stop";
     play.setAttribute("aria-pressed", "true");
-    if (year >= 2025) year = 2012;
+    if (year >= last) year = 2012;
     const step = () => {
       year += 1;
       ($("#eff-range") as HTMLInputElement).value = String(year);
       paint();
-      if (year >= 2025) stop();
+      if (year >= last) stop();
     };
     step();
     timer = window.setInterval(step, 1100);
@@ -323,11 +327,11 @@ async function boot(): Promise<void> {
   mount(
     root,
     html`<nav class="lab-nav" aria-label="Exhibits">${raw(
-        [["chalkboard", "Thirteen winters"], ["thin-air", "Thin air"], ["mascots", "Mascot census"], ["cats-dogs", "Cats v. dogs"], ["tallest", "Tall order"]]
+        [["chalkboard", "Fourteen winters"], ["thin-air", "Thin air"], ["mascots", "Mascot census"], ["cats-dogs", "Cats v. dogs"], ["tallest", "Tall order"]]
           .map(([id, label], i) => `<a href="#${id}">0${i + 1} ${label}</a>`)
           .join(""),
       )}</nav>
-      ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. Thirteen seasons of Bart Torvik's ratings.`, chalkboard())}`,
+      ${exhibit("01", "chalkboard", "Fourteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. Fourteen seasons of Bart Torvik's ratings.`, chalkboard())}`,
   );
   const eff = await effFile;
   // The board is up; let it paint before chalking 360 teams onto it.
