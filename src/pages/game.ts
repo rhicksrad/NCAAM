@@ -238,6 +238,25 @@ function afterPaint(run: () => void): void {
   setTimeout(go, 200); // a hidden tab gets no frames
 }
 
+let built = false;
+
+/** Put the scoreboard and the column under it on the page. If a scoreboard is
+ *  already up (from the saved slate, or the last refresh) it is refilled where
+ *  it stands, not swapped for a new one. */
+function setBoard(d: GameDetail, cols: Markup): void {
+  const g = d.game;
+  const old = root.querySelector(":scope > .board");
+  const colsEl = root.querySelector(":scope > .game-cols");
+  if (!old || !colsEl) {
+    mount(root, html`<h1 class="sr-only">${g.away.team.name} at ${g.home.team.name}</h1>${board(d)}<div class="game-cols">${cols}</div>`);
+    return;
+  }
+  const next = document.createElement("template");
+  next.innerHTML = String(board(d));
+  old.replaceChildren(...next.content.firstElementChild!.childNodes);
+  mount(colsEl, cols);
+}
+
 function paint(d: GameDetail, saved = false): void {
   const g = d.game;
   shown = d;
@@ -253,18 +272,18 @@ function paint(d: GameDetail, saved = false): void {
   document.title = `${g.away.team.name} ${g.away.score ?? ""} at ${g.home.team.name} ${g.home.score ?? ""} — Field House`.replace(/\s+/g, " ");
   const awayBox = d.box.find((b) => b.teamId === g.away.team.id);
   const homeBox = d.box.find((b) => b.teamId === g.home.team.id);
-  const head = html`<h1 class="sr-only">${g.away.team.name} at ${g.home.team.name}</h1>${board(d)}`;
   // First time through, the scoreboard goes up on its own and the browser gets
   // a frame to paint it. The chart, box scores and plays are the heavy part.
-  if (!saved && !root.querySelector(".game-cols") && g.state !== "pre") {
-    mount(root, html`${head}<div class="game-cols"><p class="loading" role="status">Reading the box score…</p></div>`);
+  if (!saved && !built && g.state !== "pre") {
+    built = true;
+    setBoard(d, html`<p class="loading" role="status">Reading the box score…</p>`);
     afterPaint(() => shown === d && paint(d));
     return;
   }
-  mount(
-    root,
-    html`${head}
-      <div class="game-cols">
+  built = true;
+  setBoard(
+    d,
+    html`
         ${flow(d)}
         ${compare(d)}
         ${awayBox ? boxTable(awayBox, g.away, g.state === "in") : ""}
@@ -278,8 +297,7 @@ function paint(d: GameDetail, saved = false): void {
             : d.officials.length
               ? html`<p class="also"><b>Officials:</b> ${d.officials.join(", ")}</p>`
               : ""
-        }
-      </div>`,
+        }`,
   );
   if (g.state === "pre" && !saved) askForm(d);
 }
@@ -317,7 +335,7 @@ if (!/^\d+$/.test(id)) {
       const game = s.data.games.find((g) => g.id === id);
       slate = game ?? null;
       if (game && !shown) {
-        mount(root, html`<h1 class="sr-only">${game.away.team.name} at ${game.home.team.name}</h1>${board({ game, box: [], plays: [], winProb: [], attendance: null, officials: [], periodSeconds: 1200 })}<p class="loading" role="status">Fetching the box score…</p>`);
+        setBoard({ game, box: [], plays: [], winProb: [], attendance: null, officials: [], periodSeconds: 1200 }, html`<p class="loading" role="status">Reading the box score…</p>`);
       }
     })
     .catch(() => undefined);
