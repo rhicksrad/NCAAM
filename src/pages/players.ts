@@ -1,12 +1,13 @@
 import "../lib/chrome.js";
-import { dataset } from "../lib/data.js";
+import { dataset, snapshot, type PlayerRow } from "../lib/data.js";
 import { $, html, mount, param, setParams, type Markup } from "../lib/dom.js";
 import { playerSlug } from "../lib/slug.js";
-import { failure, logo } from "../lib/ui.js";
+import { failure, fmtStamp, logo } from "../lib/ui.js";
 
-// slug, name, team, teamId, conf, gp, mpg, ppg, rpg, apg, spg, bpg, tov, fg, fg3, ft, seasons
-type Row = [string, string, string, string | null, string, number, number, number, number, number, number, number, number, number | null, number | null, number | null, number];
-type Doc = { season: string; rows: Row[] };
+// Keys are expanded on load, so every row's first cell is a career file name.
+type Row = [string, ...PlayerRow extends [unknown, ...infer R] ? R : never];
+// The season in progress comes from ESPN and carries a time; the archive does not.
+type Doc = { season: string; rows: Row[]; at?: string; past?: string };
 type Career = { name: string; seasons: Array<[string, string, string, number, number, ...Array<number | null>]> };
 
 const COLS: Array<{ i: number; key: string; label: string; title: string; pct?: boolean }> = [
@@ -28,6 +29,9 @@ const HEADLINERS = ["ppg", "rpg", "apg", "spg", "bpg"];
 const PAGE = 50;
 
 let doc: Doc;
+let now: Doc | undefined;
+let past: Doc | undefined;
+let floor = (_r: Row) => 15;
 let sortKey = COLS.some((c) => c.key === param("sort")) ? (param("sort") as string) : "ppg";
 let dir: 1 | -1 = -1;
 let query = param("q") ?? "";
@@ -41,7 +45,7 @@ const fmt = (v: number | null, pct?: boolean) => (v === null || v === undefined 
 const col = (key: string) => COLS.find((c) => c.key === key)!;
 
 function qualified(r: Row): boolean {
-  return !regulars || (r[5] >= 15 && r[6] >= 15);
+  return !regulars || (r[5] >= floor(r) && r[6] >= 15);
 }
 
 function filtered(): Row[] {
@@ -56,7 +60,7 @@ function leaders(): Markup {
   return html`<div class="leader-strip">
     ${HEADLINERS.map((key) => {
       const c = col(key);
-      const top = doc.rows.filter((r) => r[5] >= 15).sort((a, b) => (b[c.i] as number) - (a[c.i] as number))[0];
+      const top = doc.rows.filter((r) => r[5] >= floor(r)).sort((a, b) => (b[c.i] as number) - (a[c.i] as number))[0];
       if (!top) return "";
       return html`<button class="leader" type="button" data-sort="${key}">
         <span class="leader__stat">${c.title}</span>
@@ -91,7 +95,9 @@ function paint(): void {
   const pages = Math.max(1, Math.ceil(rows.length / PAGE));
   page = Math.min(page, pages - 1);
   const slice = rows.slice(page * PAGE, (page + 1) * PAGE);
-  $("#players-sub").textContent = `${doc.season} stat sheet: ${doc.rows.length.toLocaleString()} players on file. Tap a row for a player's whole career.`;
+  $("#players-sub").textContent = doc.at
+    ? `${doc.season} so far: ${doc.rows.length.toLocaleString()} players have played. Tap a row for a player's whole career.`
+    : `${doc.season} stat sheet: ${doc.rows.length.toLocaleString()} players on file. Tap a row for a player's whole career.`;
   mount(
     "#players-root",
     html`${leaders()}
@@ -119,7 +125,11 @@ function paint(): void {
           <span>${rows.length.toLocaleString()} players · page ${page + 1} of ${pages}</span>
           <button type="button" data-page="1" ${page >= pages - 1 ? html`disabled` : ""}>Next</button>
         </div>
-        <p class="sheet__note">Per-game numbers from Sports Reference for ${doc.season}. The current season isn't in a free feed yet; live rosters are on each team page.</p>
+        <p class="sheet__note">${
+          doc.at
+            ? `Per-game averages from ESPN as of ${fmtStamp(doc.at)}, refreshed every few hours. "Regulars" have played half their team's games, at 15 minutes or more. Earlier seasons in each career are from Sports Reference.`
+            : `Per-game numbers from Sports Reference for ${doc.season}.`
+        }</p>
       </section>`,
   );
 }
@@ -143,11 +153,37 @@ function toggle(slug: string): void {
   paint();
 }
 
+/** Show one season's sheet: the floor for "Regulars" is half the games the
+ *  player's team has played, capped at 15, so it works in November too. */
+function use(d: Doc): void {
+  doc = d;
+  const most = new Map<string, number>();
+  for (const r of d.rows) most.set(r[2], Math.max(most.get(r[2]) ?? 0, r[5]));
+  floor = (r) => Math.min(15, Math.ceil((most.get(r[2]) ?? 0) / 2));
+  const confs = [...new Set(d.rows.map((r) => r[4]))].filter(Boolean).sort();
+  // A conference from a link or the other season may not exist in this one.
+  if (!confs.includes(conf)) conf = "";
+  mount("#p-conf", html`<option value="">All</option>${confs.map((c) => html`<option ${c === conf ? html`selected` : ""}>${c}</option>`)}`);
+  for (const b of document.querySelectorAll<HTMLButtonElement>("#p-season button")) {
+    const mine = b.dataset.value === "now" ? now : past;
+    b.textContent = b.dataset.value === "now" ? (now?.season ?? b.textContent) : (past?.season ?? now?.past ?? b.textContent);
+    b.setAttribute("aria-pressed", String(mine === d));
+  }
+  setParams({ conf: conf || null, season: d === past && now ? d.season : null });
+  page = 0;
+  open.clear();
+}
+
+const archive = (): Promise<Doc> =>
+  dataset<Doc>("players").then((d) => {
+    // The common slug (name-1) is left out of the files to keep them light.
+    for (const r of d.rows) r[0] ||= playerSlug(r[1]);
+    return (past = d);
+  });
+
 function wire(): void {
-  const confs = [...new Set(doc.rows.map((r) => r[4]))].filter(Boolean).sort();
   // The controls are in the page's own HTML so nothing moves when the data lands.
   ($("#p-q") as HTMLInputElement).value = query;
-  mount("#p-conf", html`<option value="">All</option>${confs.map((c) => html`<option ${c === conf ? html`selected` : ""}>${c}</option>`)}`);
   $("#p-q").addEventListener("input", (e) => {
     query = (e.target as HTMLInputElement).value;
     if (query.trim()) regulars = false;
@@ -169,6 +205,21 @@ function wire(): void {
     syncReg();
     page = 0;
     paint();
+  });
+  const seasons = $("#p-season");
+  // Last season's file is only fetched when someone asks for it.
+  seasons.addEventListener("pointerenter", () => void archive().catch(() => undefined), { once: true });
+  seasons.addEventListener("click", (e) => {
+    const b = (e.target as Element).closest<HTMLButtonElement>("button[data-value]");
+    if (!b) return;
+    const want = b.dataset.value === "now" ? Promise.resolve(now) : past ? Promise.resolve(past) : archive();
+    want
+      .then((d) => {
+        if (!d || d === doc) return;
+        use(d);
+        paint();
+      })
+      .catch((error) => mount("#players-root", failure("last season's stat sheet", error)));
   });
   const root = $("#players-root");
   root.addEventListener("click", (e) => {
@@ -203,14 +254,24 @@ function syncReg(): void {
   for (const b of document.querySelectorAll<HTMLButtonElement>("#p-reg button")) b.setAttribute("aria-pressed", String((b.dataset.value === "1") === regulars));
 }
 
-dataset<Doc>("players")
-  .then((d) => {
-    // The common slug (name-1) is left out of the file to keep it light.
-    for (const r of d.rows) r[0] ||= playerSlug(r[1]);
-    doc = d;
-    if (query.trim()) regulars = false;
-    wire();
-    syncReg();
-    paint();
-  })
-  .catch((error) => mount("#players-root", failure("the stat sheet", error)));
+async function boot(): Promise<void> {
+  // This season first (baked from ESPN at each deploy); last season's archive
+  // when a link asks for it or this season has no games yet.
+  now = await snapshot("averages")
+    .then((s) => {
+      for (const r of s.data.rows) r[0] ||= playerSlug(r[1]);
+      return { season: s.data.season, past: s.data.past, at: s.at, rows: s.data.rows as Row[] };
+    })
+    .catch(() => undefined);
+  if (now && (!now.rows.length || now.season === now.past)) now = undefined;
+  const asked = param("season");
+  const first = now && (!asked || asked === now.season) ? now : await archive();
+  ($("#p-season") as HTMLElement).hidden = !now;
+  if (query.trim()) regulars = false;
+  wire();
+  use(first);
+  syncReg();
+  paint();
+}
+
+boot().catch((error) => mount("#players-root", failure("the stat sheet", error)));

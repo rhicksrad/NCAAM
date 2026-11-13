@@ -20,11 +20,13 @@ export function historyChart(rows: HistRow[]): Markup {
     const x = padL + (r[0] - first) * band + band * 0.14;
     const h = Math.max(1, Math.abs(m) * scale);
     const y = m >= 0 ? zero - h : zero;
-    const title = `${r[0] - 1}-${String(r[0]).slice(2)}: ${r[1]}-${r[2] - r[1]}, margin ${m >= 0 ? "+" : ""}${m.toFixed(1)}${r[6] ? `, ${POST_LABEL[r[6]]}` : ""}`;
-    return `<g><title>${title}</title><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(band * 0.72).toFixed(1)}" height="${h.toFixed(1)}" fill="${
-      m >= 0 ? "#f3f0e6" : "rgba(243,240,230,.45)"
-    }"/>${
-      r[6]
+    // post -1: the season in progress, drawn as an open chalk outline.
+    const open = r[6] < 0;
+    const title = `${r[0] - 1}-${String(r[0]).slice(2)}${open ? " so far" : ""}: ${r[1]}-${r[2] - r[1]}, margin ${m >= 0 ? "+" : ""}${m.toFixed(1)}${r[6] > 0 ? `, ${POST_LABEL[r[6]]}` : ""}`;
+    return `<g><title>${title}</title><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(band * 0.72).toFixed(1)}" height="${h.toFixed(1)}" ${
+      open ? `fill="none" stroke="#f3f0e6" stroke-width="1.5" stroke-dasharray="3 3"` : `fill="${m >= 0 ? "#f3f0e6" : "rgba(243,240,230,.45)"}"`
+    }/>${
+      r[6] > 0
         ? `<circle cx="${(x + band * 0.36).toFixed(1)}" cy="${(m >= 0 ? y - 8 : zero - 8).toFixed(1)}" r="${r[6] >= 5 ? 5 : 3.2}" fill="${
             r[6] === 7 ? "#ffb52e" : r[6] >= 5 ? "#c8440f" : "none"
           }" stroke="${r[6] >= 5 ? "none" : "#ffb52e"}" stroke-width="1.6"/>`

@@ -34,7 +34,7 @@ function shell(page, assets, aboutHtml, buildStamp) {
     rankings: ["live/rankings"],
     standings: ["live/standings"],
     teams: ["live/teams"],
-    players: ["players"],
+    players: ["live/averages"],
     lab: ["efficiency"],
   };
   // Backgrounds on elements the script builds: the parser cannot see them coming.
@@ -96,7 +96,7 @@ ${early}
 <footer class="baseline">
   <div class="wrap baseline__in">
     <p class="baseline__mark">Field House</p>
-    <p>An unofficial fan project by Ryan Hicks. Live scores, polls and standings come from ESPN's public feeds; season archives from Sports Reference and Bart Torvik. Team names and logos belong to their schools. <a href="./about.html">About this site</a>.</p>
+    <p>An unofficial fan project by Ryan Hicks. Scores, polls, standings and this season's player averages come from ESPN's public feeds; efficiency ratings from Bart Torvik; past player seasons from Sports Reference. Team names and logos belong to their schools. <a href="./about.html">About this site</a>.</p>
     <p class="baseline__stamp">Snapshot built <time datetime="${buildStamp}" id="build-stamp">${buildStamp.slice(0, 16).replace("T", " ")} UTC</time></p>
   </div>
 </footer>
@@ -162,8 +162,9 @@ async function buildAll() {
   await mkdir(dist, { recursive: true });
   await cp(path.join(root, "public"), dist, { recursive: true });
   await copyFonts();
-  await deriveData(root, dist);
+  // The snapshot first: derive folds the season in progress into the archives.
   runSnapshot();
+  await deriveData(root, dist);
   const assets = await bundle();
   const aboutHtml = await readFile(path.join(root, "src/about.html"), "utf8");
   const stamp = new Date().toISOString();

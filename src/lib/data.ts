@@ -6,12 +6,20 @@ import type { Conference, Game, NewsItem, Poll, Team } from "./espn.js";
 export type Stamped<T> = { at: string; data: T };
 export type TeamEntry = Team & { conf: string; confName: string };
 
+/** One player's season: career key (a Sports Reference slug, 0 for
+ *  playerSlug(name), or "e" + ESPN id), name, school, ESPN team id, conference,
+ *  then games, minutes, points, rebounds, assists, steals, blocks, turnovers
+ *  per game and FG/3P/FT as fractions. */
+export type PlayerRow = [string | 0, string, string, string | null, string, number, number, number, number, number, number, number, number, number | null, number | null, number | null, number?];
+
 export type SnapshotShapes = {
   scoreboard: { day: string; games: Game[] };
   rankings: Poll[];
   standings: Conference[];
   teams: TeamEntry[];
   news: NewsItem[];
+  // Baked only (never refetched): this season's averages, and the archived season's label.
+  averages: { year: number; season: string; past?: string; rows: PlayerRow[] };
 };
 
 const base = (path: string) => new URL(path, document.baseURI).toString();

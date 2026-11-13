@@ -19,11 +19,20 @@ when a paid Ball Don't Lie key lapsed. Everything now comes from:
   deploy workflow rebuilds it on a timer. Pages paint from the snapshot first and swap in live
   data (`feed()` in `src/lib/data.ts`). If ESPN is down the snapshot stays up with an amber note.
   `data/seed/` is the committed fallback used by offline builds and CI.
+- **Two build-only feeds** (`scripts/feeds.ts`), baked into the same snapshot but never fetched by
+  the browser: ESPN's season averages for every player (about 80 MB across 8 pages, so once per
+  deploy, not per visit) and Bart Torvik's ratings for the season in progress (his CSVs send no
+  CORS header). A copy from the last deploy under a few hours old is reused instead of
+  recrawling; a failed crawl keeps the last deploy's copy, dated, before falling back to the seed.
 - **Archives in `data/raw/`** (Sports Reference player lines, Bart Torvik efficiency, arenas,
-  mascots). `scripts/derive-data.mjs` reshapes them into compact files at build time.
+  mascots). `scripts/derive-data.mjs` reshapes them into compact files at build time, after the
+  snapshot, and folds the season in progress in beside them: this season's line joins a player's
+  career when name and school match one on file (`linkCareers`), and Torvik's current ratings
+  join the chalkboard and team histories as an open, unfinished season.
 
-If a feed changes shape: re-record `tests/fixtures/espn/`, fix the normaliser, run
-`pnpm snapshot --reseed`, keep the tests green.
+If a feed changes shape: re-record `tests/fixtures/espn/` (or `tests/fixtures/torvik/`), fix the
+normaliser, run `pnpm snapshot --reseed`, keep the tests green. Each season, bump `LAST` and the
+"Fifteen winters" copy in the lab when a new season's ratings arrive.
 
 ## Layout
 
