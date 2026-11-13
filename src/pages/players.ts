@@ -1,6 +1,7 @@
 import "../lib/chrome.js";
 import { dataset } from "../lib/data.js";
 import { $, html, mount, param, setParams, type Markup } from "../lib/dom.js";
+import { playerSlug } from "../lib/slug.js";
 import { failure, logo } from "../lib/ui.js";
 
 // slug, name, team, teamId, conf, gp, mpg, ppg, rpg, apg, spg, bpg, tov, fg, fg3, ft, seasons
@@ -204,6 +205,8 @@ function syncReg(): void {
 
 dataset<Doc>("players")
   .then((d) => {
+    // The common slug (name-1) is left out of the file to keep it light.
+    for (const r of d.rows) r[0] ||= playerSlug(r[1]);
     doc = d;
     if (query.trim()) regulars = false;
     wire();

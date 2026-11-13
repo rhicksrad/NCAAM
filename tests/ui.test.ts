@@ -107,3 +107,16 @@ describe("every school's paint", () => {
     expect(failing).toEqual([]);
   });
 });
+
+describe("player slugs", () => {
+  it("are computed the same way by the build and the page", async () => {
+    const { playerSlug } = await import("../src/lib/slug");
+    // @ts-expect-error plain JS build helper
+    const build = await import("../scripts/derive-data.mjs");
+    for (const name of ["AJ Dybantsa", "Aa'reyon Jones", "Juan Cranford Jr.", "José Pérez", "Kel'el Ware", "Jean-Marc Ollie"]) {
+      expect(playerSlug(name)).toBe(build.playerSlug(name));
+    }
+    expect(playerSlug("AJ Dybantsa")).toBe("aj-dybantsa-1");
+    expect(playerSlug("Aa'reyon Jones")).toBe("aareyon-jones-1");
+  });
+});

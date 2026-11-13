@@ -8,6 +8,10 @@ import { feature, mesh } from "topojson-client";
 import { loadResolver } from "./team-keys.mjs";
 
 const round = (n, d = 1) => (n == null || Number.isNaN(n) ? null : Math.round(n * 10 ** d) / 10 ** d);
+// Sports Reference's usual player slug; the stat sheet stores 0 for a slug that
+// matches it. Must match playerSlug() in src/lib/slug.ts.
+export const playerSlug = (name) =>
+  `${name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/[\s-]+/g, "-")}-1`;
 const readJson = async (file) => JSON.parse(await readFile(file, "utf8"));
 
 function parseCsv(text) {
@@ -35,7 +39,9 @@ export async function deriveData(root, dist) {
   const out = path.join(dist, "data");
   await mkdir(path.join(out, "players"), { recursive: true });
   const seedTeamsPath = path.join(root, "data/seed/teams.json");
-  const espnTeams = existsSync(seedTeamsPath) ? (await readJson(seedTeamsPath)).teams : [];
+  const seedTeams = existsSync(seedTeamsPath) ? await readJson(seedTeamsPath) : {};
+  // The seed is saved as { at, data }; the ESPN list in it is what every spelling resolves to.
+  const espnTeams = seedTeams.data ?? seedTeams.teams ?? [];
   const { resolve } = loadResolver(path.join(raw, "logos/metadata.json"), espnTeams);
   const write = (name, value) => writeFile(path.join(out, name), JSON.stringify(value));
 
@@ -46,21 +52,40 @@ export async function deriveData(root, dist) {
   });
   const localLogos = (await readdir(path.join(raw, "logos"))).filter((f) => f.endsWith(".png")).map((f) => f.slice(0, -4));
 
-  // Players: one compact table for 2024-25, plus a minified career file each.
+  // Players: one compact table for the latest finished season, plus a
+  // minified career file each. The per-player archive was scraped through
+  // 2024-25; later seasons arrive as one file of per-game lines per season
+  // (data/raw/players-YYYY-YY.json) and are folded into each career here.
   const files = (await readdir(path.join(raw, "players"))).filter((f) => f.endsWith(".json"));
-  const SEASON = "2024-25";
-  const rows = [];
+  const docs = new Map();
   for (const file of files) {
     const doc = await readJson(path.join(raw, "players", file));
+    docs.set(file.slice(0, -5), doc);
+  }
+  let SEASON = "2024-25";
+  const extra = (await readdir(raw)).map((f) => /^players-(\d{4}-\d{2})\.json$/.exec(f)?.[1]).filter(Boolean).sort();
+  for (const season of extra) {
+    for (const line of await readJson(path.join(raw, `players-${season}.json`))) {
+      if (!line.slug || !line.gp) continue;
+      const doc = docs.get(line.slug) ?? { slug: line.slug, name: line.name, seasons: [] };
+      docs.set(line.slug, doc);
+      doc.seasons = (doc.seasons ?? []).filter((s) => !(s.season === season && s.team === line.team));
+      doc.seasons.push({ ...line, season });
+    }
+    SEASON = season;
+  }
+  const rows = [];
+  for (const [slug, doc] of docs) {
     const seasons = (doc.seasons ?? []).map((s) => [
       s.season, s.team, s.conf, s.gp, s.gs, round(s.mp_g), round(s.pts_g), round(s.trb_g), round(s.ast_g),
       round(s.stl_g), round(s.blk_g), round(s.tov_g), round(s.fg_pct, 3), round(s.fg3_pct, 3), round(s.ft_pct, 3),
     ]);
-    await writeFile(path.join(out, "players", file), JSON.stringify({ name: doc.name, seasons }));
-    const cur = (doc.seasons ?? []).find((s) => s.season === SEASON);
+    await writeFile(path.join(out, "players", `${slug}.json`), JSON.stringify({ name: doc.name, seasons }));
+    // A player who moved mid-season has a line per school; the table shows the one he played most for.
+    const cur = (doc.seasons ?? []).filter((s) => s.season === SEASON).sort((a, b) => (b.gp ?? 0) - (a.gp ?? 0))[0];
     if (!cur || !cur.gp) continue;
     rows.push([
-      doc.slug, doc.name, cur.team, resolve(cur.team), cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
+      slug === playerSlug(doc.name) ? 0 : slug, doc.name, cur.team, resolve(cur.team), cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
       round(cur.ast_g), round(cur.stl_g), round(cur.blk_g), round(cur.tov_g), round(cur.fg_pct, 3), round(cur.fg3_pct, 3),
       round(cur.ft_pct, 3), seasons.length,
     ]);
@@ -68,11 +93,13 @@ export async function deriveData(root, dist) {
   rows.sort((a, b) => (b[7] ?? 0) - (a[7] ?? 0));
   await write("players.json", {
     season: SEASON,
+    // slug 0 means playerSlug(name).
     cols: ["slug", "name", "team", "teamId", "conf", "gp", "mpg", "ppg", "rpg", "apg", "spg", "bpg", "tov", "fg", "fg3", "ft", "seasons"],
     rows,
   });
 
-  // Efficiency archive (Bart Torvik): every team-season 2013-2025.
+  // Efficiency archive (Bart Torvik): every team-season from 2013. Seasons
+  // after 2025 arrive one file each (cbb26.csv, ...) with their results.
   const seasons = [];
   const push = (r, year) =>
     seasons.push([
@@ -82,6 +109,8 @@ export async function deriveData(root, dist) {
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb.csv"), "utf8"))) push(r, +r.YEAR);
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb20.csv"), "utf8"))) push(r, 2020);
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb25.csv"), "utf8"))) push(r, 2025);
+  for (let yy = 26; existsSync(path.join(raw, `cbb/cbb${yy}.csv`)); yy++)
+    for (const r of parseCsv(await readFile(path.join(raw, `cbb/cbb${yy}.csv`), "utf8"))) push(r, 2000 + yy);
   seasons.sort((a, b) => a[0] - b[0] || b[8] - a[8]);
   await write("efficiency.json", {
     cols: ["year", "team", "teamId", "conf", "w", "g", "adjO", "adjD", "barthag", "tempo", "post", "seed", "fg3", "efg"],

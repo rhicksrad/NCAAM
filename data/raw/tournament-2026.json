@@ -1,0 +1,1796 @@
+{
+  "season": "2025-26",
+  "year": 2026,
+  "source": "ESPN public scoreboard API (site.api.espn.com, seasontype=3, tournamentId 22)",
+  "champion": {
+    "name": "Michigan",
+    "espnName": "Michigan Wolverines",
+    "espnId": "130",
+    "seed": 1
+  },
+  "runnerUp": {
+    "name": "Connecticut",
+    "espnName": "UConn Huskies",
+    "espnId": "41",
+    "seed": 2
+  },
+  "final": {
+    "score": "Michigan 69, Connecticut 63",
+    "date": "2026-04-07T00:50Z",
+    "venue": "Lucas Oil Stadium, Indianapolis, IN"
+  },
+  "finalFour": [
+    {
+      "name": "Connecticut",
+      "espnName": "UConn Huskies",
+      "espnId": "41",
+      "seed": 2,
+      "region": "East"
+    },
+    {
+      "name": "Illinois",
+      "espnName": "Illinois Fighting Illini",
+      "espnId": "356",
+      "seed": 3,
+      "region": "South"
+    },
+    {
+      "name": "Arizona",
+      "espnName": "Arizona Wildcats",
+      "espnId": "12",
+      "seed": 1,
+      "region": "West"
+    },
+    {
+      "name": "Michigan",
+      "espnName": "Michigan Wolverines",
+      "espnId": "130",
+      "seed": 1,
+      "region": "Midwest"
+    }
+  ],
+  "games": [
+    {
+      "round": "First Four",
+      "region": "Midwest",
+      "date": "2026-03-17T22:40Z",
+      "espnEventId": "401856435",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - First Four",
+      "venue": "UD Arena, Dayton, OH",
+      "teams": [
+        {
+          "name": "Howard",
+          "espnName": "Howard Bison",
+          "espnId": "47",
+          "seed": 16,
+          "score": 86,
+          "winner": true
+        },
+        {
+          "name": "UMBC",
+          "espnName": "UMBC Retrievers",
+          "espnId": "2378",
+          "seed": 16,
+          "score": 83,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "First Four",
+      "region": "West",
+      "date": "2026-03-18T01:29Z",
+      "espnEventId": "401856434",
+      "headline": "NCAA Men's Basketball Championship - West Region - First Four",
+      "venue": "UD Arena, Dayton, OH",
+      "teams": [
+        {
+          "name": "N.C. State",
+          "espnName": "NC State Wolfpack",
+          "espnId": "152",
+          "seed": 11,
+          "score": 66,
+          "winner": false
+        },
+        {
+          "name": "Texas",
+          "espnName": "Texas Longhorns",
+          "espnId": "251",
+          "seed": 11,
+          "score": 68,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "First Four",
+      "region": "South",
+      "date": "2026-03-18T22:40Z",
+      "espnEventId": "401856437",
+      "headline": "NCAA Men's Basketball Championship - South Region - First Four",
+      "venue": "UD Arena, Dayton, OH",
+      "teams": [
+        {
+          "name": "Lehigh",
+          "espnName": "Lehigh Mountain Hawks",
+          "espnId": "2329",
+          "seed": 16,
+          "score": 55,
+          "winner": false
+        },
+        {
+          "name": "Prairie View A&M",
+          "espnName": "Prairie View A&M Panthers",
+          "espnId": "2504",
+          "seed": 16,
+          "score": 67,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "First Four",
+      "region": "Midwest",
+      "date": "2026-03-19T01:15Z",
+      "espnEventId": "401856436",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - First Four",
+      "venue": "UD Arena, Dayton, OH",
+      "teams": [
+        {
+          "name": "SMU",
+          "espnName": "SMU Mustangs",
+          "espnId": "2567",
+          "seed": 11,
+          "score": 79,
+          "winner": false
+        },
+        {
+          "name": "Miami OH",
+          "espnName": "Miami (OH) RedHawks",
+          "espnId": "193",
+          "seed": 11,
+          "score": 89,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-19T16:15Z",
+      "espnEventId": "401856479",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "Ohio St.",
+          "espnName": "Ohio State Buckeyes",
+          "espnId": "194",
+          "seed": 8,
+          "score": 64,
+          "winner": false
+        },
+        {
+          "name": "TCU",
+          "espnName": "TCU Horned Frogs",
+          "espnId": "2628",
+          "seed": 9,
+          "score": 66,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-19T16:40Z",
+      "espnEventId": "401856489",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Nebraska",
+          "espnName": "Nebraska Cornhuskers",
+          "espnId": "158",
+          "seed": 4,
+          "score": 76,
+          "winner": true
+        },
+        {
+          "name": "Troy",
+          "espnName": "Troy Trojans",
+          "espnId": "2653",
+          "seed": 13,
+          "score": 47,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-19T17:30Z",
+      "espnEventId": "401856482",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Louisville",
+          "espnName": "Louisville Cardinals",
+          "espnId": "97",
+          "seed": 6,
+          "score": 83,
+          "winner": true
+        },
+        {
+          "name": "South Florida",
+          "espnName": "South Florida Bulls",
+          "espnId": "58",
+          "seed": 11,
+          "score": 79,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-19T17:50Z",
+      "espnEventId": "401856480",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "Wisconsin",
+          "espnName": "Wisconsin Badgers",
+          "espnId": "275",
+          "seed": 5,
+          "score": 82,
+          "winner": false
+        },
+        {
+          "name": "High Point",
+          "espnName": "High Point Panthers",
+          "espnId": "2272",
+          "seed": 12,
+          "score": 83,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-19T19:00Z",
+      "espnEventId": "401856478",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "Duke",
+          "espnName": "Duke Blue Devils",
+          "espnId": "150",
+          "seed": 1,
+          "score": 71,
+          "winner": true
+        },
+        {
+          "name": "Siena",
+          "espnName": "Siena Saints",
+          "espnId": "2561",
+          "seed": 16,
+          "score": 65,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-19T19:15Z",
+      "espnEventId": "401856488",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Vanderbilt",
+          "espnName": "Vanderbilt Commodores",
+          "espnId": "238",
+          "seed": 5,
+          "score": 78,
+          "winner": true
+        },
+        {
+          "name": "McNeese St.",
+          "espnName": "McNeese Cowboys",
+          "espnId": "2377",
+          "seed": 12,
+          "score": 68,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-19T20:27Z",
+      "espnEventId": "401856481",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "Arkansas",
+          "espnName": "Arkansas Razorbacks",
+          "espnId": "8",
+          "seed": 4,
+          "score": 97,
+          "winner": true
+        },
+        {
+          "name": "Hawaii",
+          "espnName": "Hawai'i Rainbow Warriors",
+          "espnId": "62",
+          "seed": 13,
+          "score": 78,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-19T20:27Z",
+      "espnEventId": "401856483",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Michigan St.",
+          "espnName": "Michigan State Spartans",
+          "espnId": "127",
+          "seed": 3,
+          "score": 92,
+          "winner": true
+        },
+        {
+          "name": "North Dakota St.",
+          "espnName": "North Dakota State Bison",
+          "espnId": "2449",
+          "seed": 14,
+          "score": 67,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-19T22:50Z",
+      "espnEventId": "401856490",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "North Carolina",
+          "espnName": "North Carolina Tar Heels",
+          "espnId": "153",
+          "seed": 6,
+          "score": 78,
+          "winner": false
+        },
+        {
+          "name": "VCU",
+          "espnName": "VCU Rams",
+          "espnId": "2670",
+          "seed": 11,
+          "score": 82,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-19T23:30Z",
+      "espnEventId": "401856486",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 101,
+          "winner": true
+        },
+        {
+          "name": "Howard",
+          "espnName": "Howard Bison",
+          "espnId": "47",
+          "seed": 16,
+          "score": 80,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-19T23:35Z",
+      "espnEventId": "401856484",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "BYU",
+          "espnName": "BYU Cougars",
+          "espnId": "252",
+          "seed": 6,
+          "score": 71,
+          "winner": false
+        },
+        {
+          "name": "Texas",
+          "espnName": "Texas Longhorns",
+          "espnId": "251",
+          "seed": 11,
+          "score": 79,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-19T23:35Z",
+      "espnEventId": "401856492",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Saint Mary's",
+          "espnName": "Saint Mary's Gaels",
+          "espnId": "2608",
+          "seed": 7,
+          "score": 50,
+          "winner": false
+        },
+        {
+          "name": "Texas A&M",
+          "espnName": "Texas A&M Aggies",
+          "espnId": "245",
+          "seed": 10,
+          "score": 63,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-20T01:55Z",
+      "espnEventId": "401856491",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "Illinois",
+          "espnName": "Illinois Fighting Illini",
+          "espnId": "356",
+          "seed": 3,
+          "score": 105,
+          "winner": true
+        },
+        {
+          "name": "Penn",
+          "espnName": "Pennsylvania Quakers",
+          "espnId": "219",
+          "seed": 14,
+          "score": 70,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T02:10Z",
+      "espnEventId": "401856487",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Georgia",
+          "espnName": "Georgia Bulldogs",
+          "espnId": "61",
+          "seed": 8,
+          "score": 77,
+          "winner": false
+        },
+        {
+          "name": "Saint Louis",
+          "espnName": "Saint Louis Billikens",
+          "espnId": "139",
+          "seed": 9,
+          "score": 102,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-20T02:15Z",
+      "espnEventId": "401856493",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Houston",
+          "espnName": "Houston Cougars",
+          "espnId": "248",
+          "seed": 2,
+          "score": 78,
+          "winner": true
+        },
+        {
+          "name": "Idaho",
+          "espnName": "Idaho Vandals",
+          "espnId": "70",
+          "seed": 15,
+          "score": 47,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-20T02:24Z",
+      "espnEventId": "401856485",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "Gonzaga",
+          "espnName": "Gonzaga Bulldogs",
+          "espnId": "2250",
+          "seed": 3,
+          "score": 73,
+          "winner": true
+        },
+        {
+          "name": "Kennesaw St.",
+          "espnName": "Kennesaw State Owls",
+          "espnId": "338",
+          "seed": 14,
+          "score": 64,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T16:15Z",
+      "espnEventId": "401856525",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Kentucky",
+          "espnName": "Kentucky Wildcats",
+          "espnId": "96",
+          "seed": 7,
+          "score": 89,
+          "winner": true
+        },
+        {
+          "name": "Santa Clara",
+          "espnName": "Santa Clara Broncos",
+          "espnId": "2541",
+          "seed": 10,
+          "score": 84,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T16:40Z",
+      "espnEventId": "401856520",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Texas Tech",
+          "espnName": "Texas Tech Red Raiders",
+          "espnId": "2641",
+          "seed": 5,
+          "score": 91,
+          "winner": true
+        },
+        {
+          "name": "Akron",
+          "espnName": "Akron Zips",
+          "espnId": "2006",
+          "seed": 12,
+          "score": 71,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-20T17:35Z",
+      "espnEventId": "401856529",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "Arizona",
+          "espnName": "Arizona Wildcats",
+          "espnId": "12",
+          "seed": 1,
+          "score": 92,
+          "winner": true
+        },
+        {
+          "name": "LIU",
+          "espnName": "Long Island University Sharks",
+          "espnId": "112358",
+          "seed": 16,
+          "score": 58,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T17:50Z",
+      "espnEventId": "401856526",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "Virginia",
+          "espnName": "Virginia Cavaliers",
+          "espnId": "258",
+          "seed": 3,
+          "score": 82,
+          "winner": true
+        },
+        {
+          "name": "Wright St.",
+          "espnName": "Wright State Raiders",
+          "espnId": "2750",
+          "seed": 14,
+          "score": 73,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T19:07Z",
+      "espnEventId": "401856524",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Iowa St.",
+          "espnName": "Iowa State Cyclones",
+          "espnId": "66",
+          "seed": 2,
+          "score": 108,
+          "winner": true
+        },
+        {
+          "name": "Tennessee St.",
+          "espnName": "Tennessee State Tigers",
+          "espnId": "2634",
+          "seed": 15,
+          "score": 74,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T19:15Z",
+      "espnEventId": "401856521",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Alabama",
+          "espnName": "Alabama Crimson Tide",
+          "espnId": "333",
+          "seed": 4,
+          "score": 90,
+          "winner": true
+        },
+        {
+          "name": "Hofstra",
+          "espnName": "Hofstra Pride",
+          "espnId": "2275",
+          "seed": 13,
+          "score": 70,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-20T20:10Z",
+      "espnEventId": "401856528",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "Villanova",
+          "espnName": "Villanova Wildcats",
+          "espnId": "222",
+          "seed": 8,
+          "score": 76,
+          "winner": false
+        },
+        {
+          "name": "Utah St.",
+          "espnName": "Utah State Aggies",
+          "espnId": "328",
+          "seed": 9,
+          "score": 86,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "Midwest",
+      "date": "2026-03-20T20:25Z",
+      "espnEventId": "401856527",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 1st Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "Tennessee",
+          "espnName": "Tennessee Volunteers",
+          "espnId": "2633",
+          "seed": 6,
+          "score": 78,
+          "winner": true
+        },
+        {
+          "name": "Miami OH",
+          "espnName": "Miami (OH) RedHawks",
+          "espnId": "193",
+          "seed": 11,
+          "score": 56,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-20T22:50Z",
+      "espnEventId": "401856522",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Clemson",
+          "espnName": "Clemson Tigers",
+          "espnId": "228",
+          "seed": 8,
+          "score": 61,
+          "winner": false
+        },
+        {
+          "name": "Iowa",
+          "espnName": "Iowa Hawkeyes",
+          "espnId": "2294",
+          "seed": 9,
+          "score": 67,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-20T23:25Z",
+      "espnEventId": "401856494",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "St. John's",
+          "espnName": "St. John's Red Storm",
+          "espnId": "2599",
+          "seed": 5,
+          "score": 79,
+          "winner": true
+        },
+        {
+          "name": "Northern Iowa",
+          "espnName": "Northern Iowa Panthers",
+          "espnId": "2460",
+          "seed": 12,
+          "score": 53,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-20T23:31Z",
+      "espnEventId": "401856496",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "UCLA",
+          "espnName": "UCLA Bruins",
+          "espnId": "26",
+          "seed": 7,
+          "score": 75,
+          "winner": true
+        },
+        {
+          "name": "UCF",
+          "espnName": "UCF Knights",
+          "espnId": "2116",
+          "seed": 10,
+          "score": 71,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-20T23:35Z",
+      "espnEventId": "401856519",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Purdue",
+          "espnName": "Purdue Boilermakers",
+          "espnId": "2509",
+          "seed": 2,
+          "score": 104,
+          "winner": true
+        },
+        {
+          "name": "Queens",
+          "espnName": "Queens University Royals",
+          "espnId": "2511",
+          "seed": 15,
+          "score": 71,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "South",
+      "date": "2026-03-21T01:25Z",
+      "espnEventId": "401856523",
+      "headline": "NCAA Men's Basketball Championship - South Region - 1st Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Florida",
+          "espnName": "Florida Gators",
+          "espnId": "57",
+          "seed": 1,
+          "score": 114,
+          "winner": true
+        },
+        {
+          "name": "Prairie View A&M",
+          "espnName": "Prairie View A&M Panthers",
+          "espnId": "2504",
+          "seed": 16,
+          "score": 55,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-21T02:07Z",
+      "espnEventId": "401856495",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "Kansas",
+          "espnName": "Kansas Jayhawks",
+          "espnId": "2305",
+          "seed": 4,
+          "score": 68,
+          "winner": true
+        },
+        {
+          "name": "Cal Baptist",
+          "espnName": "California Baptist Lancers",
+          "espnId": "2856",
+          "seed": 13,
+          "score": 60,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "West",
+      "date": "2026-03-21T02:07Z",
+      "espnEventId": "401856518",
+      "headline": "NCAA Men's Basketball Championship - West Region - 1st Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Miami FL",
+          "espnName": "Miami Hurricanes",
+          "espnId": "2390",
+          "seed": 7,
+          "score": 80,
+          "winner": true
+        },
+        {
+          "name": "Missouri",
+          "espnName": "Missouri Tigers",
+          "espnId": "142",
+          "seed": 10,
+          "score": 66,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 64",
+      "region": "East",
+      "date": "2026-03-21T02:31Z",
+      "espnEventId": "401856497",
+      "headline": "NCAA Men's Basketball Championship - East Region - 1st Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 82,
+          "winner": true
+        },
+        {
+          "name": "Furman",
+          "espnName": "Furman Paladins",
+          "espnId": "231",
+          "seed": 15,
+          "score": 71,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "Midwest",
+      "date": "2026-03-21T16:10Z",
+      "espnEventId": "401856532",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 2nd Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 95,
+          "winner": true
+        },
+        {
+          "name": "Saint Louis",
+          "espnName": "Saint Louis Billikens",
+          "espnId": "139",
+          "seed": 9,
+          "score": 72,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "East",
+      "date": "2026-03-21T18:45Z",
+      "espnEventId": "401856531",
+      "headline": "NCAA Men's Basketball Championship - East Region - 2nd Round",
+      "venue": "KeyBank Center, Buffalo, NY",
+      "teams": [
+        {
+          "name": "Michigan St.",
+          "espnName": "Michigan State Spartans",
+          "espnId": "127",
+          "seed": 3,
+          "score": 77,
+          "winner": true
+        },
+        {
+          "name": "Louisville",
+          "espnName": "Louisville Cardinals",
+          "espnId": "97",
+          "seed": 6,
+          "score": 69,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "East",
+      "date": "2026-03-21T21:25Z",
+      "espnEventId": "401856530",
+      "headline": "NCAA Men's Basketball Championship - East Region - 2nd Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "Duke",
+          "espnName": "Duke Blue Devils",
+          "espnId": "150",
+          "seed": 1,
+          "score": 81,
+          "winner": true
+        },
+        {
+          "name": "TCU",
+          "espnName": "TCU Horned Frogs",
+          "espnId": "2628",
+          "seed": 9,
+          "score": 58,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "South",
+      "date": "2026-03-21T22:10Z",
+      "espnEventId": "401856535",
+      "headline": "NCAA Men's Basketball Championship - South Region - 2nd Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Houston",
+          "espnName": "Houston Cougars",
+          "espnId": "248",
+          "seed": 2,
+          "score": 88,
+          "winner": true
+        },
+        {
+          "name": "Texas A&M",
+          "espnName": "Texas A&M Aggies",
+          "espnId": "245",
+          "seed": 10,
+          "score": 57,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "West",
+      "date": "2026-03-21T23:10Z",
+      "espnEventId": "401856537",
+      "headline": "NCAA Men's Basketball Championship - West Region - 2nd Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "Gonzaga",
+          "espnName": "Gonzaga Bulldogs",
+          "espnId": "2250",
+          "seed": 3,
+          "score": 68,
+          "winner": false
+        },
+        {
+          "name": "Texas",
+          "espnName": "Texas Longhorns",
+          "espnId": "251",
+          "seed": 11,
+          "score": 74,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "South",
+      "date": "2026-03-22T00:15Z",
+      "espnEventId": "401856533",
+      "headline": "NCAA Men's Basketball Championship - South Region - 2nd Round",
+      "venue": "Bon Secours Wellness Arena, Greenville, SC",
+      "teams": [
+        {
+          "name": "Illinois",
+          "espnName": "Illinois Fighting Illini",
+          "espnId": "356",
+          "seed": 3,
+          "score": 76,
+          "winner": true
+        },
+        {
+          "name": "VCU",
+          "espnName": "VCU Rams",
+          "espnId": "2670",
+          "seed": 11,
+          "score": 55,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "South",
+      "date": "2026-03-22T01:02Z",
+      "espnEventId": "401856534",
+      "headline": "NCAA Men's Basketball Championship - South Region - 2nd Round",
+      "venue": "Paycom Center, Oklahoma City, OK",
+      "teams": [
+        {
+          "name": "Nebraska",
+          "espnName": "Nebraska Cornhuskers",
+          "espnId": "158",
+          "seed": 4,
+          "score": 74,
+          "winner": true
+        },
+        {
+          "name": "Vanderbilt",
+          "espnName": "Vanderbilt Commodores",
+          "espnId": "238",
+          "seed": 5,
+          "score": 72,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "West",
+      "date": "2026-03-22T01:45Z",
+      "espnEventId": "401856536",
+      "headline": "NCAA Men's Basketball Championship - West Region - 2nd Round",
+      "venue": "Moda Center, Portland, OR",
+      "teams": [
+        {
+          "name": "Arkansas",
+          "espnName": "Arkansas Razorbacks",
+          "espnId": "8",
+          "seed": 4,
+          "score": 94,
+          "winner": true
+        },
+        {
+          "name": "High Point",
+          "espnName": "High Point Panthers",
+          "espnId": "2272",
+          "seed": 12,
+          "score": 88,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "West",
+      "date": "2026-03-22T16:10Z",
+      "espnEventId": "401856564",
+      "headline": "NCAA Men's Basketball Championship - West Region - 2nd Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Purdue",
+          "espnName": "Purdue Boilermakers",
+          "espnId": "2509",
+          "seed": 2,
+          "score": 79,
+          "winner": true
+        },
+        {
+          "name": "Miami FL",
+          "espnName": "Miami Hurricanes",
+          "espnId": "2390",
+          "seed": 7,
+          "score": 69,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "Midwest",
+      "date": "2026-03-22T18:45Z",
+      "espnEventId": "401856561",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 2nd Round",
+      "venue": "Enterprise Center, St. Louis, MO",
+      "teams": [
+        {
+          "name": "Iowa St.",
+          "espnName": "Iowa State Cyclones",
+          "espnId": "66",
+          "seed": 2,
+          "score": 82,
+          "winner": true
+        },
+        {
+          "name": "Kentucky",
+          "espnName": "Kentucky Wildcats",
+          "espnId": "96",
+          "seed": 7,
+          "score": 63,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "East",
+      "date": "2026-03-22T21:15Z",
+      "espnEventId": "401856558",
+      "headline": "NCAA Men's Basketball Championship - East Region - 2nd Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "Kansas",
+          "espnName": "Kansas Jayhawks",
+          "espnId": "2305",
+          "seed": 4,
+          "score": 65,
+          "winner": false
+        },
+        {
+          "name": "St. John's",
+          "espnName": "St. John's Red Storm",
+          "espnId": "2599",
+          "seed": 5,
+          "score": 67,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "Midwest",
+      "date": "2026-03-22T22:10Z",
+      "espnEventId": "401856562",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 2nd Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "Virginia",
+          "espnName": "Virginia Cavaliers",
+          "espnId": "258",
+          "seed": 3,
+          "score": 72,
+          "winner": false
+        },
+        {
+          "name": "Tennessee",
+          "espnName": "Tennessee Volunteers",
+          "espnId": "2633",
+          "seed": 6,
+          "score": 79,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "South",
+      "date": "2026-03-22T23:10Z",
+      "espnEventId": "401856563",
+      "headline": "NCAA Men's Basketball Championship - South Region - 2nd Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Florida",
+          "espnName": "Florida Gators",
+          "espnId": "57",
+          "seed": 1,
+          "score": 72,
+          "winner": false
+        },
+        {
+          "name": "Iowa",
+          "espnName": "Iowa Hawkeyes",
+          "espnId": "2294",
+          "seed": 9,
+          "score": 73,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "West",
+      "date": "2026-03-23T00:11Z",
+      "espnEventId": "401856565",
+      "headline": "NCAA Men's Basketball Championship - West Region - 2nd Round",
+      "venue": "Viejas Arena, San Diego, CA",
+      "teams": [
+        {
+          "name": "Arizona",
+          "espnName": "Arizona Wildcats",
+          "espnId": "12",
+          "seed": 1,
+          "score": 78,
+          "winner": true
+        },
+        {
+          "name": "Utah St.",
+          "espnName": "Utah State Aggies",
+          "espnId": "328",
+          "seed": 9,
+          "score": 66,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "East",
+      "date": "2026-03-23T01:10Z",
+      "espnEventId": "401856559",
+      "headline": "NCAA Men's Basketball Championship - East Region - 2nd Round",
+      "venue": "Xfinity Mobile Arena, Philadelphia, PA",
+      "teams": [
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 73,
+          "winner": true
+        },
+        {
+          "name": "UCLA",
+          "espnName": "UCLA Bruins",
+          "espnId": "26",
+          "seed": 7,
+          "score": 57,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Round of 32",
+      "region": "Midwest",
+      "date": "2026-03-23T02:08Z",
+      "espnEventId": "401856560",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - 2nd Round",
+      "venue": "Benchmark International Arena, Tampa, FL",
+      "teams": [
+        {
+          "name": "Alabama",
+          "espnName": "Alabama Crimson Tide",
+          "espnId": "333",
+          "seed": 4,
+          "score": 90,
+          "winner": true
+        },
+        {
+          "name": "Texas Tech",
+          "espnName": "Texas Tech Red Raiders",
+          "espnId": "2641",
+          "seed": 5,
+          "score": 65,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "West",
+      "date": "2026-03-26T23:10Z",
+      "espnEventId": "401856568",
+      "headline": "NCAA Men's Basketball Championship - West Region - Sweet 16",
+      "venue": "SAP Center at San Jose, San Jose, CA",
+      "teams": [
+        {
+          "name": "Purdue",
+          "espnName": "Purdue Boilermakers",
+          "espnId": "2509",
+          "seed": 2,
+          "score": 79,
+          "winner": true
+        },
+        {
+          "name": "Texas",
+          "espnName": "Texas Longhorns",
+          "espnId": "251",
+          "seed": 11,
+          "score": 77,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "South",
+      "date": "2026-03-26T23:30Z",
+      "espnEventId": "401856567",
+      "headline": "NCAA Men's Basketball Championship - South Region - Sweet 16",
+      "venue": "Toyota Center (Houston), Houston, TX",
+      "teams": [
+        {
+          "name": "Nebraska",
+          "espnName": "Nebraska Cornhuskers",
+          "espnId": "158",
+          "seed": 4,
+          "score": 71,
+          "winner": false
+        },
+        {
+          "name": "Iowa",
+          "espnName": "Iowa Hawkeyes",
+          "espnId": "2294",
+          "seed": 9,
+          "score": 77,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "South",
+      "date": "2026-03-27T02:05Z",
+      "espnEventId": "401856566",
+      "headline": "NCAA Men's Basketball Championship - South Region - Sweet 16",
+      "venue": "Toyota Center (Houston), Houston, TX",
+      "teams": [
+        {
+          "name": "Houston",
+          "espnName": "Houston Cougars",
+          "espnId": "248",
+          "seed": 2,
+          "score": 55,
+          "winner": false
+        },
+        {
+          "name": "Illinois",
+          "espnName": "Illinois Fighting Illini",
+          "espnId": "356",
+          "seed": 3,
+          "score": 65,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "West",
+      "date": "2026-03-27T02:06Z",
+      "espnEventId": "401856569",
+      "headline": "NCAA Men's Basketball Championship - West Region - Sweet 16",
+      "venue": "SAP Center at San Jose, San Jose, CA",
+      "teams": [
+        {
+          "name": "Arizona",
+          "espnName": "Arizona Wildcats",
+          "espnId": "12",
+          "seed": 1,
+          "score": 109,
+          "winner": true
+        },
+        {
+          "name": "Arkansas",
+          "espnName": "Arkansas Razorbacks",
+          "espnId": "8",
+          "seed": 4,
+          "score": 88,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "East",
+      "date": "2026-03-27T23:10Z",
+      "espnEventId": "401856570",
+      "headline": "NCAA Men's Basketball Championship - East Region - Sweet 16",
+      "venue": "Capital One Arena, Washington, DC",
+      "teams": [
+        {
+          "name": "Duke",
+          "espnName": "Duke Blue Devils",
+          "espnId": "150",
+          "seed": 1,
+          "score": 80,
+          "winner": true
+        },
+        {
+          "name": "St. John's",
+          "espnName": "St. John's Red Storm",
+          "espnId": "2599",
+          "seed": 5,
+          "score": 75,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "Midwest",
+      "date": "2026-03-27T23:35Z",
+      "espnEventId": "401856572",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - Sweet 16",
+      "venue": "United Center, Chicago, IL",
+      "teams": [
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 90,
+          "winner": true
+        },
+        {
+          "name": "Alabama",
+          "espnName": "Alabama Crimson Tide",
+          "espnId": "333",
+          "seed": 4,
+          "score": 77,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "East",
+      "date": "2026-03-28T01:55Z",
+      "espnEventId": "401856571",
+      "headline": "NCAA Men's Basketball Championship - East Region - Sweet 16",
+      "venue": "Capital One Arena, Washington, DC",
+      "teams": [
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 67,
+          "winner": true
+        },
+        {
+          "name": "Michigan St.",
+          "espnName": "Michigan State Spartans",
+          "espnId": "127",
+          "seed": 3,
+          "score": 63,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Sweet 16",
+      "region": "Midwest",
+      "date": "2026-03-28T02:35Z",
+      "espnEventId": "401856573",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - Sweet 16",
+      "venue": "United Center, Chicago, IL",
+      "teams": [
+        {
+          "name": "Iowa St.",
+          "espnName": "Iowa State Cyclones",
+          "espnId": "66",
+          "seed": 2,
+          "score": 62,
+          "winner": false
+        },
+        {
+          "name": "Tennessee",
+          "espnName": "Tennessee Volunteers",
+          "espnId": "2633",
+          "seed": 6,
+          "score": 76,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Elite Eight",
+      "region": "South",
+      "date": "2026-03-28T22:09Z",
+      "espnEventId": "401856574",
+      "headline": "NCAA Men's Basketball Championship - South Region - Elite 8",
+      "venue": "Toyota Center (Houston), Houston, TX",
+      "teams": [
+        {
+          "name": "Illinois",
+          "espnName": "Illinois Fighting Illini",
+          "espnId": "356",
+          "seed": 3,
+          "score": 71,
+          "winner": true
+        },
+        {
+          "name": "Iowa",
+          "espnName": "Iowa Hawkeyes",
+          "espnId": "2294",
+          "seed": 9,
+          "score": 59,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Elite Eight",
+      "region": "West",
+      "date": "2026-03-29T00:59Z",
+      "espnEventId": "401856575",
+      "headline": "NCAA Men's Basketball Championship - West Region - Elite 8",
+      "venue": "SAP Center at San Jose, San Jose, CA",
+      "teams": [
+        {
+          "name": "Arizona",
+          "espnName": "Arizona Wildcats",
+          "espnId": "12",
+          "seed": 1,
+          "score": 79,
+          "winner": true
+        },
+        {
+          "name": "Purdue",
+          "espnName": "Purdue Boilermakers",
+          "espnId": "2509",
+          "seed": 2,
+          "score": 64,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Elite Eight",
+      "region": "Midwest",
+      "date": "2026-03-29T18:15Z",
+      "espnEventId": "401856576",
+      "headline": "NCAA Men's Basketball Championship - Midwest Region - Elite 8",
+      "venue": "United Center, Chicago, IL",
+      "teams": [
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 95,
+          "winner": true
+        },
+        {
+          "name": "Tennessee",
+          "espnName": "Tennessee Volunteers",
+          "espnId": "2633",
+          "seed": 6,
+          "score": 62,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Elite Eight",
+      "region": "East",
+      "date": "2026-03-29T21:05Z",
+      "espnEventId": "401856577",
+      "headline": "NCAA Men's Basketball Championship - East Region - Elite 8",
+      "venue": "Capital One Arena, Washington, DC",
+      "teams": [
+        {
+          "name": "Duke",
+          "espnName": "Duke Blue Devils",
+          "espnId": "150",
+          "seed": 1,
+          "score": 72,
+          "winner": false
+        },
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 73,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "Final Four",
+      "region": null,
+      "date": "2026-04-04T22:09Z",
+      "espnEventId": "401856598",
+      "headline": "NCAA Men's Basketball Championship - Final Four",
+      "venue": "Lucas Oil Stadium, Indianapolis, IN",
+      "teams": [
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 71,
+          "winner": true
+        },
+        {
+          "name": "Illinois",
+          "espnName": "Illinois Fighting Illini",
+          "espnId": "356",
+          "seed": 3,
+          "score": 62,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "round": "Final Four",
+      "region": null,
+      "date": "2026-04-05T01:19Z",
+      "espnEventId": "401856599",
+      "headline": "NCAA Men's Basketball Championship - Final Four",
+      "venue": "Lucas Oil Stadium, Indianapolis, IN",
+      "teams": [
+        {
+          "name": "Arizona",
+          "espnName": "Arizona Wildcats",
+          "espnId": "12",
+          "seed": 1,
+          "score": 73,
+          "winner": false
+        },
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 91,
+          "winner": true
+        }
+      ]
+    },
+    {
+      "round": "National Championship",
+      "region": null,
+      "date": "2026-04-07T00:50Z",
+      "espnEventId": "401856600",
+      "headline": "NCAA Men's Basketball Championship - National Championship",
+      "venue": "Lucas Oil Stadium, Indianapolis, IN",
+      "teams": [
+        {
+          "name": "Michigan",
+          "espnName": "Michigan Wolverines",
+          "espnId": "130",
+          "seed": 1,
+          "score": 69,
+          "winner": true
+        },
+        {
+          "name": "Connecticut",
+          "espnName": "UConn Huskies",
+          "espnId": "41",
+          "seed": 2,
+          "score": 63,
+          "winner": false
+        }
+      ]
+    }
+  ]
+}

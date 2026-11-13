@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 // @ts-expect-error plain JS build helper
-import { norm } from "../scripts/team-keys.mjs";
+import { loadResolver, norm } from "../scripts/team-keys.mjs";
 
 describe("seed data", () => {
   const seed = (n: string) => JSON.parse(readFileSync(new URL(`../data/seed/${n}.json`, import.meta.url), "utf8"));
@@ -16,5 +16,17 @@ describe("seed data", () => {
     expect(norm("Ohio St.")).toBe(norm("ohio state"));
     expect(norm("San José State")).toBe("san jose state");
     expect(norm("Texas A&M")).toBe(norm("texas a&m"));
+  });
+  it("resolves Torvik and NCAA shorthand to the right ESPN program", () => {
+    const teams = seed("teams").data;
+    const { resolve } = loadResolver(new URL("../data/raw/logos/metadata.json", import.meta.url).pathname, teams);
+    const name = (n: string) => teams.find((t: { id: string }) => t.id === resolve(n))?.name;
+    expect(name("Northern Ariz.")).toBe("Northern Arizona");
+    expect(name("Fla. Atlantic")).toBe("Florida Atlantic");
+    expect(name("N.C. A&T")).toBe("North Carolina A&T");
+    expect(name("Utah Valley")).toBe("Utah Valley");
+    expect(name("USC Upstate")).toBe("South Carolina Upstate");
+    expect(name("Marquette")).toBe("Marquette");
+    expect(name("Michigan St.")).toBe("Michigan State");
   });
 });
