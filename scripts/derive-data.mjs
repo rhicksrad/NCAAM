@@ -8,6 +8,10 @@ import { feature, mesh } from "topojson-client";
 import { loadResolver } from "./team-keys.mjs";
 
 const round = (n, d = 1) => (n == null || Number.isNaN(n) ? null : Math.round(n * 10 ** d) / 10 ** d);
+// Sports Reference's usual player slug; the stat sheet stores 0 for a slug that
+// matches it. Must match playerSlug() in src/lib/slug.ts.
+export const playerSlug = (name) =>
+  `${name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/[\s-]+/g, "-")}-1`;
 const readJson = async (file) => JSON.parse(await readFile(file, "utf8"));
 
 function parseCsv(text) {
@@ -81,7 +85,7 @@ export async function deriveData(root, dist) {
     const cur = (doc.seasons ?? []).filter((s) => s.season === SEASON).sort((a, b) => (b.gp ?? 0) - (a.gp ?? 0))[0];
     if (!cur || !cur.gp) continue;
     rows.push([
-      slug, doc.name, cur.team, resolve(cur.team), cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
+      slug === playerSlug(doc.name) ? 0 : slug, doc.name, cur.team, resolve(cur.team), cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
       round(cur.ast_g), round(cur.stl_g), round(cur.blk_g), round(cur.tov_g), round(cur.fg_pct, 3), round(cur.fg3_pct, 3),
       round(cur.ft_pct, 3), seasons.length,
     ]);
@@ -89,6 +93,7 @@ export async function deriveData(root, dist) {
   rows.sort((a, b) => (b[7] ?? 0) - (a[7] ?? 0));
   await write("players.json", {
     season: SEASON,
+    // slug 0 means playerSlug(name).
     cols: ["slug", "name", "team", "teamId", "conf", "gp", "mpg", "ppg", "rpg", "apg", "spg", "bpg", "tov", "fg", "fg3", "ft", "seasons"],
     rows,
   });
