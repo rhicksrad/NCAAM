@@ -35,7 +35,9 @@ export async function deriveData(root, dist) {
   const out = path.join(dist, "data");
   await mkdir(path.join(out, "players"), { recursive: true });
   const seedTeamsPath = path.join(root, "data/seed/teams.json");
-  const espnTeams = existsSync(seedTeamsPath) ? (await readJson(seedTeamsPath)).teams : [];
+  const seedTeams = existsSync(seedTeamsPath) ? await readJson(seedTeamsPath) : {};
+  // The seed is saved as { at, data }; the ESPN list in it is what every spelling resolves to.
+  const espnTeams = seedTeams.data ?? seedTeams.teams ?? [];
   const { resolve } = loadResolver(path.join(raw, "logos/metadata.json"), espnTeams);
   const write = (name, value) => writeFile(path.join(out, name), JSON.stringify(value));
 

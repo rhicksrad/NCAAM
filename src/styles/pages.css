@@ -1714,3 +1714,56 @@ small.sub {
 .hero__date:empty {
   visibility: hidden;
 }
+
+/* Thin air: a card beside the hovered arena, with the school's mark. */
+.map-stage {
+  position: relative;
+}
+.map-tip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 17rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.5rem;
+  background: var(--chalk);
+  color: var(--ink);
+  border-left: 4px solid var(--ball);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.35);
+  transform: translate(12px, calc(-100% - 10px));
+  pointer-events: none;
+  white-space: nowrap;
+}
+.map-tip--left {
+  transform: translate(calc(-100% - 12px), calc(-100% - 10px));
+}
+.map-tip--below {
+  transform: translate(12px, 12px);
+}
+.map-tip--left.map-tip--below {
+  transform: translate(calc(-100% - 12px), 12px);
+}
+.map-tip[hidden] {
+  display: none;
+}
+.map-tip > span {
+  display: grid;
+  line-height: 1.2;
+}
+.map-tip b {
+  font: 800 1rem/1.1 var(--display);
+  text-transform: uppercase;
+}
+.map-tip small {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.map-tip em {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--ball-deep);
+}

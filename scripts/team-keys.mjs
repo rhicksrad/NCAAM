@@ -3,7 +3,7 @@
 import { readFileSync } from "node:fs";
 
 const MANUAL = {
-  "albany ny": "Albany", "ualbany": "Albany", "army west point": "Army", "a&m-commerce": "East Texas A&M",
+  "albany ny": "UAlbany", "albany": "UAlbany", "uni": "Northern Iowa", "uiw": "Incarnate Word", "alcorn": "Alcorn State", "army west point": "Army", "a&m-commerce": "East Texas A&M",
   "texas a&m commerce": "East Texas A&M", "a&m-corpus christi": "Texas A&M-Corpus Christi",
   "texas a&m corpus chris": "Texas A&M-Corpus Christi", "uconn": "UConn", "connecticut": "UConn",
   "ole miss": "Ole Miss", "mississippi": "Ole Miss", "miami fl": "Miami", "miami (fl)": "Miami",
@@ -55,6 +55,15 @@ const MANUAL = {
   "cal state fullerton": "Cal State Fullerton", "cal state northridge": "Cal State Northridge", "csun": "Cal State Northridge", "long beach st.": "Long Beach State",
 };
 
+// Torvik and the NCAA shorten state names ("Northern Ariz.", "Fla. Atlantic").
+const SHORT = {
+  ariz: "Arizona", colo: "Colorado", wash: "Washington", caro: "Carolina", ky: "Kentucky", ill: "Illinois",
+  mich: "Michigan", tenn: "Tennessee", ala: "Alabama", mo: "Missouri", ark: "Arkansas", conn: "Connecticut",
+  fla: "Florida", la: "Louisiana", miss: "Mississippi", ga: "Georgia", ind: "Indiana", okla: "Oklahoma",
+  "n.c": "North Carolina", "s.c": "South Carolina", col: "College", u: "University",
+};
+const expand = (name) => String(name ?? "").replace(/(^|[\s(-])(n\.c|s\.c|[a-z]+)\.(?=[\s)-]|$)/gi, (m, pre, w) => (SHORT[w.toLowerCase()] ? pre + SHORT[w.toLowerCase()] : m));
+
 export function norm(value) {
   return String(value ?? "")
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -79,17 +88,29 @@ export function loadResolver(metadataPath, espnTeams = []) {
     }
   }
   const d1 = espnTeams.length ? new Set(espnTeams.map((t) => t.id)) : null;
-  for (const [id, entry] of Object.entries(meta.logos)) {
-    if (d1 && !d1.has(id)) continue;
-    names.set(id, entry.name);
-    for (const alias of [entry.name, ...(entry.aliases ?? [])]) {
-      if (!alias || alias.length < 4 && alias === alias.toUpperCase() && !/^(BYU|LSU|TCU|SMU|VCU|UCF|UAB|USC|FIU|LIU|UIC)$/.test(alias)) continue;
-      const key = norm(alias);
-      if (key && !byKey.has(key)) byKey.set(key, id);
+  // Current Division I programs first, then schools that have since left it
+  // (their old seasons still deserve a logo), never overriding a D-I spelling.
+  const entries = Object.entries(meta.logos);
+  for (const pass of [true, false]) {
+    for (const [id, entry] of entries) {
+      if (d1 && d1.has(id) !== pass) continue;
+      if (!d1 && !pass) continue;
+      names.set(id, entry.name);
+      for (const alias of [entry.name, ...(entry.aliases ?? [])]) {
+        if (!alias || alias.length < 4 && alias === alias.toUpperCase() && !/^(BYU|LSU|TCU|SMU|VCU|UCF|UAB|USC|FIU|LIU|UIC)$/.test(alias)) continue;
+        const key = norm(alias);
+        if (key && !byKey.has(key)) byKey.set(key, id);
+      }
     }
   }
   const manual = new Map(Object.entries(MANUAL).map(([k, v]) => [norm(k), norm(v)]));
   function resolve(name) {
+    const hit = lookup(name);
+    if (hit) return hit;
+    const long = expand(name);
+    return long !== name ? lookup(long) : null;
+  }
+  function lookup(name) {
     const key = norm(name);
     if (!key) return null;
     const viaManual = manual.get(key);

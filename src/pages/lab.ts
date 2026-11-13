@@ -2,7 +2,7 @@ import "../lib/chrome.js";
 import { dataset } from "../lib/data.js";
 import { $, html, mount, raw, type Markup } from "../lib/dom.js";
 import { POST_LABEL } from "../lib/charts.js";
-import { failure, fmtShortDay, ordinal, teamHref } from "../lib/ui.js";
+import { failure, fmtShortDay, logo, ordinal, teamHref } from "../lib/ui.js";
 
 // year, team, teamId, conf, w, g, adjO, adjD, barthag, tempo, post, seed, fg3, efg
 type Eff = [number, string, string | null, string, number, number, number, number, number, number, number, number, number, number];
@@ -183,22 +183,27 @@ function wireChalkboard(doc: EffDoc): void {
 }
 
 /* ---------- 02: thin air ---------- */
+const mark = (id: string | null, name: string) => logo({ id: id ?? "", abbr: name.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase(), name });
+
 function thinAir(doc: ArenaDoc): Markup {
   const top = doc.rows.slice(0, 10);
   const r = (elev: number) => 2.2 + Math.sqrt(Math.max(0, elev)) / 11;
   return html`<div class="split">
     <div class="chalk map">
-      <svg viewBox="0 0 ${doc.width} ${doc.height}" role="img" aria-label="Map of Division I home arenas sized by elevation">
-        <path class="land" d="${doc.nation}"/><path class="borders" d="${doc.borders}"/>
-        ${[...doc.rows].reverse().map((a, i) => html`<circle cx="${a[3]}" cy="${a[4]}" r="${r(a[5]).toFixed(1)}" data-i="${doc.rows.length - 1 - i}"/>`)}
-      </svg>
+      <div class="map-stage">
+        <svg viewBox="0 0 ${doc.width} ${doc.height}" role="img" aria-label="Map of Division I home arenas sized by elevation">
+          <path class="land" d="${doc.nation}"/><path class="borders" d="${doc.borders}"/>
+          ${[...doc.rows].reverse().map((a, i) => html`<circle cx="${a[3]}" cy="${a[4]}" r="${r(a[5]).toFixed(1)}" data-i="${doc.rows.length - 1 - i}"/>`)}
+        </svg>
+        <div class="map-tip" id="air-tip" hidden></div>
+      </div>
       <p class="chalk-readout" id="air-read">Bigger mark, higher gym. Hover or tap one.</p>
     </div>
     <section class="sheet">
       <div class="sheet__head"><h3>Highest home floors</h3><small>feet above sea level</small></div>
       <table><tbody>
         ${top.map(
-          (a, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${a[1] ? html`<a class="who" href="${teamHref(a[1])}">${a[0]}</a>` : a[0]}<small class="sub">${a[2]}</small></td><td class="hot">${a[5].toLocaleString()}</td></tr>`,
+          (a, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${a[1] ? html`<a class="who" href="${teamHref(a[1])}">${mark(a[1], a[0])}<span>${a[0]}<small class="sub">${a[2]}</small></span></a>` : html`<span class="who">${mark(a[1], a[0])}<span>${a[0]}<small class="sub">${a[2]}</small></span></span>`}</td><td class="hot">${a[5].toLocaleString()}</td></tr>`,
         )}
       </tbody></table>
       <p class="sheet__note">${doc.rows.filter((a) => a[5] < 100).length} programs play within 100 feet of sea level. The lowest floor on file: ${doc.rows[doc.rows.length - 1]![0]}, at ${doc.rows[doc.rows.length - 1]![5]} ft.</p>
@@ -208,14 +213,38 @@ function thinAir(doc: ArenaDoc): Markup {
 
 function wireThinAir(doc: ArenaDoc): void {
   const read = $("#air-read");
+  const tip = $("#air-tip");
+  const svg = $("#thin-air svg") as unknown as SVGSVGElement;
+  let on: SVGElement | null = null;
   const show = (e: Event) => {
-    const i = (e.target as SVGElement).dataset?.i;
+    const dot = e.target as SVGElement;
+    const i = dot.dataset?.i;
     const a = i !== undefined ? doc.rows[Number(i)] : undefined;
-    if (a) mount(read, html`<b>${a[0]}</b> plays at ${a[2]}, ${a[5].toLocaleString()} ft up. That's the ${ordinal(Number(i) + 1)}-highest floor of ${doc.rows.length}.`);
+    if (!a) return;
+    on?.classList.remove("is-on");
+    on = dot;
+    dot.classList.add("is-on");
+    mount(read, html`<b>${a[0]}</b> plays at ${a[2]}, ${a[5].toLocaleString()} ft up. That's the ${ordinal(Number(i) + 1)}-highest floor of ${doc.rows.length}.`);
+    // A card by the mark itself, so the eye never leaves the map.
+    mount(tip, html`${mark(a[1], a[0])}<span><b>${a[0]}</b><small>${a[2]}</small><em>${a[5].toLocaleString()} ft</em></span>`);
+    const scale = svg.clientWidth / doc.width;
+    const x = a[3] * scale, y = a[4] * scale;
+    tip.hidden = false;
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+    tip.classList.toggle("map-tip--left", x > svg.clientWidth * 0.62);
+    tip.classList.toggle("map-tip--below", y < 70);
   };
-  const svg = $("#thin-air svg");
+  const hide = () => {
+    tip.hidden = true;
+    on?.classList.remove("is-on");
+    on = null;
+  };
   svg.addEventListener("pointerover", show);
   svg.addEventListener("click", show);
+  svg.addEventListener("pointerleave", (e) => {
+    if ((e as PointerEvent).pointerType === "mouse") hide();
+  });
 }
 
 
@@ -295,7 +324,7 @@ function tallest(doc: HeightDoc): Markup {
     <section class="sheet">
       <div class="sheet__head"><h3>Tallest on average</h3><small>rosters as of ${fmtShortDay(doc.asOf)}, ${doc.asOf.slice(0, 4)}</small></div>
       <table><tbody>${top.map(
-        (r, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${r[1] ? html`<a class="who" href="${teamHref(r[1])}">${r[0]}</a>` : r[0]}</td><td class="hot">${ft(r[2])}</td></tr>`,
+        (r, i) => html`<tr><td class="l pos">${i + 1}</td><td class="l">${r[1] ? html`<a class="who" href="${teamHref(r[1])}">${mark(r[1], r[0])}<span>${r[0]}</span></a>` : html`<span class="who">${mark(r[1], r[0])}<span>${r[0]}</span></span>`}</td><td class="hot">${ft(r[2])}</td></tr>`,
       )}</tbody></table>
     </section>
   </div>`;
