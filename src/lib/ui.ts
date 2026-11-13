@@ -21,8 +21,24 @@ export function teamColors(team: Pick<Team, "color" | "alt">): { paint: string; 
   let paint = team.color || INK;
   if (luminance(paint) > 0.8 && team.alt && luminance(team.alt) < 0.8) paint = team.alt;
   if (luminance(paint) < 0.012) paint = INK; // a school's black reads as our navy ink
-  // Whichever ink reads better: navy wins on anything brighter than a deep orange.
-  return { paint, ink: luminance(paint) > 0.27 ? INK : LINE };
+  return readable(paint);
+}
+
+const contrast = (a: string, b: string) => (Math.max(luminance(a), luminance(b)) + 0.05) / (Math.min(luminance(a), luminance(b)) + 0.05);
+
+/** Pair a paint with whichever ink reads better on it. A band of mid-bright
+ *  reds, oranges and greens passes WCAG AA with neither navy nor chalk; those
+ *  are deepened a shade at a time until chalk does. */
+function readable(paint: string): { paint: string; ink: string } {
+  const ink = contrast(paint, INK) > contrast(paint, LINE) ? INK : LINE;
+  if (contrast(paint, ink) >= 4.5) return { paint, ink };
+  let [r, g, b] = rgb(paint);
+  let deep = paint;
+  for (let i = 0; i < 12 && contrast(deep, LINE) < 4.5; i++) {
+    [r, g, b] = [r * 0.95, g * 0.95, b * 0.95];
+    deep = `#${[r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("")}`;
+  }
+  return { paint: deep, ink: LINE };
 }
 
 function rgb(hexColor: string): [number, number, number] {
@@ -181,8 +197,7 @@ export function marquee(game: Game): Markup {
     let { paint, ink } = teamColors(side.team);
     // The clock column is already ink; a school in black wears its second colour here.
     if (paint === INK && /^#[0-9a-f]{6}$/i.test(side.team.alt) && luminance(side.team.alt) > 0.05 && luminance(side.team.alt) < 0.7) {
-      paint = side.team.alt;
-      ink = luminance(paint) > 0.27 ? INK : LINE;
+      ({ paint, ink } = readable(side.team.alt));
     }
     const lost = game.state === "post" && !side.winner && (side.score ?? 0) < (other.score ?? 0);
     const name = side.team.short || side.team.name;

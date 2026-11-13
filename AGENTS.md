@@ -63,8 +63,8 @@ The page is a gym floor. Read `src/styles/site.css` first. Three surfaces:
 The home page gives the day's best game centre court (`marquee` in `src/lib/ui.ts`): the two teams'
 paint either side of the clock. Its one line of copy (`whyWatch`) only says what the feed says.
 
-Text on colour must pass WCAG AA. `teamColors` picks navy or chalk ink for a school's paint by
-luminance; the ball orange is as light as it can be with chalk text on it.
+Text on colour must pass WCAG AA. `teamColors` picks whichever of navy or chalk reads better on a
+school's paint, and deepens the few paints that pass with neither (a test checks all of Division I); the ball orange is as light as it can be with chalk text on it.
 
 Two typefaces, self-hosted: Big Shoulders (display, uppercase, gym-signage) and Archivo (text).
 Palette: ink `#14213a`, ball `#c8440f`, maple `#e2b777`, chalk `#f3f0e6`, amber `#ffb52e`,
