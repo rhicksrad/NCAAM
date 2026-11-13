@@ -1705,3 +1705,12 @@ small.sub {
     grid-auto-columns: calc((100vw - var(--gutter, 1rem) - 1.5rem) / 2);
   }
 }
+
+/* The date is written in by the script. Hold its line so "Tonight" does not
+   ride up when it arrives. */
+.hero__date {
+  min-height: 1em;
+}
+.hero__date:empty {
+  visibility: hidden;
+}

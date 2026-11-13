@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { esc, html, raw } from "../src/lib/dom";
 import type { Game } from "../src/lib/espn";
@@ -85,5 +86,24 @@ describe("small honesties", () => {
     expect(atHalf({ state: "in", detail: "Halftime" })).toBe(true);
     expect(atHalf({ state: "in", detail: "12:44 - 2nd Half" })).toBe(false);
     expect(atHalf({ state: "post", detail: "Final" })).toBe(false);
+  });
+});
+
+describe("every school's paint", () => {
+  const lum = (hexColor: string) => {
+    const n = parseInt(hexColor.slice(1), 16);
+    const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => {
+      const c = v / 255;
+      return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+    }) as [number, number, number];
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (a: string, b: string) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+
+  it("takes ink that passes WCAG AA for small text, for all of Division I", () => {
+    const teams = JSON.parse(readFileSync(new URL("../data/seed/teams.json", import.meta.url), "utf8")).data as Array<{ name: string; color: string; alt: string }>;
+    expect(teams.length).toBeGreaterThan(300);
+    const failing = teams.map((t) => ({ t, ...teamColors(t) })).filter(({ paint, ink }) => ratio(paint, ink) < 4.5).map(({ t, paint, ink }) => `${t.name} ${paint} on ${ink}`);
+    expect(failing).toEqual([]);
   });
 });
