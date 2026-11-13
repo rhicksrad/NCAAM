@@ -1725,7 +1725,7 @@ small.sub {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  max-width: 17rem;
+  max-width: min(17rem, 70vw);
   padding: 0.45rem 0.7rem 0.45rem 0.5rem;
   background: var(--chalk);
   color: var(--ink);

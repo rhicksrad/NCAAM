@@ -232,8 +232,8 @@ function wireThinAir(doc: ArenaDoc): void {
     tip.hidden = false;
     tip.style.left = `${x}px`;
     tip.style.top = `${y}px`;
-    tip.classList.toggle("map-tip--left", x > svg.clientWidth * 0.62);
-    tip.classList.toggle("map-tip--below", y < 70);
+    tip.classList.toggle("map-tip--left", x + 16 + tip.offsetWidth > svg.clientWidth);
+    tip.classList.toggle("map-tip--below", y < tip.offsetHeight + 14);
   };
   const hide = () => {
     tip.hidden = true;
