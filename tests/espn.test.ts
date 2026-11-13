@@ -132,3 +132,11 @@ describe("logos", () => {
     expect(g!.away.team.noLogo).toBeUndefined();
   });
 });
+
+describe("early summary fetch", () => {
+  it("asks for the same URL from the page head as the module does later", async () => {
+    const { ESPN_URLS } = await import("../src/lib/espn");
+    const build = readFileSync(new URL("../scripts/build.mjs", import.meta.url), "utf8");
+    expect(build).toContain(`"${ESPN_URLS.summary("")}"+i`);
+  });
+});

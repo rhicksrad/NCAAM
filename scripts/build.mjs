@@ -39,7 +39,10 @@ function shell(page, assets, aboutHtml, buildStamp) {
   };
   // Backgrounds on elements the script builds: the parser cannot see them coming.
   const ART = { game: ["scoreboard"], lab: ["chalkboard"] };
+  // Must build the same URL as ESPN_URLS.summary in src/lib/espn.ts.
+  const earlySummary = `<script>{const i=new URLSearchParams(location.search).get("id");if(/^\\d+$/.test(i||"")){const u="https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event="+i,j=fetch(u,{headers:{Accept:"application/json"}}).then(r=>{if(!r.ok)throw new Error("ESPN answered "+r.status);return r.json()});j.catch(()=>{});window.__early={url:u,json:j}}}</script>`;
   const early = [
+    ...(page.entry === "game" ? [earlySummary] : []),
     ...(page.file === "404.html" ? [] : FIRST_DATA[page.entry] ?? []).map((name) => `<link rel="preload" href="./data/${name}.json" as="fetch" crossorigin>`),
     ...(ART[page.entry] ?? []).flatMap((name) => [
       `<link rel="preload" href="./art/${name}-sm.webp" as="image" fetchpriority="high" media="(max-width: 700px)">`,

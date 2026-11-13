@@ -36,7 +36,7 @@ const DOT = PHONE ? 3.4 : 4.5;
 const cx = (o: number) => PL + ((o - X0) / (X1 - X0)) * (CW - PL - PR);
 const cy = (d: number) => PT + ((d - Y0) / (Y1 - Y0)) * (CH - PT - PB);
 
-function chalkboard(doc: EffDoc): Markup {
+function chalkboard(): Markup {
   const ticksX = [90, 100, 110, 120, 130];
   const ticksY = [90, 100, 110, 120];
   return html`<div class="chalk">
@@ -45,7 +45,7 @@ function chalkboard(doc: EffDoc): Markup {
       <button class="btn" id="eff-play" type="button" aria-pressed="false">Run the tape</button>
       <input id="eff-range" type="range" min="2013" max="2025" step="1" value="2025" aria-label="Season">
       <input id="eff-find" type="search" placeholder="Follow a team" list="eff-teams" aria-label="Follow a team">
-      <datalist id="eff-teams">${[...new Set(doc.rows.map((r) => r[1]))].sort().map((t) => html`<option value="${t}"></option>`)}</datalist>
+      <datalist id="eff-teams"></datalist>
     </div>
     <svg viewBox="0 0 ${CW} ${CH}" id="eff-svg" role="img" aria-label="Offense against defense for every Division I team in the chosen season">
       ${ticksX.map((t) => html`<line class="axis" x1="${cx(t)}" x2="${cx(t)}" y1="${PT}" y2="${CH - PB}"/><text x="${cx(t)}" y="${CH - (PHONE ? 9 : 12)}" text-anchor="middle">${t}</text>`)}
@@ -317,7 +317,8 @@ async function boot(): Promise<void> {
   // The chalkboard goes up as soon as its own data is in. The other four
   // exhibits follow one at a time, each in its own turn, so the page is on
   // screen and answering taps long before the last one is built.
-  const eff = await dataset<EffDoc>("efficiency");
+  // The board itself needs no data, so it is on the wall before the ratings land.
+  const effFile = dataset<EffDoc>("efficiency");
   const root = $("#lab-root");
   mount(
     root,
@@ -326,10 +327,12 @@ async function boot(): Promise<void> {
           .map(([id, label], i) => `<a href="#${id}">0${i + 1} ${label}</a>`)
           .join(""),
       )}</nav>
-      ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. ${eff.rows.length.toLocaleString()} team-seasons from Bart Torvik's ratings.`, chalkboard(eff))}`,
+      ${exhibit("01", "chalkboard", "Thirteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. Thirteen seasons of Bart Torvik's ratings.`, chalkboard())}`,
   );
+  const eff = await effFile;
   // The board is up; let it paint before chalking 360 teams onto it.
   await breathe();
+  mount("#eff-teams", html`${[...new Set(eff.rows.map((r) => r[1]))].sort().map((t) => html`<option value="${t}"></option>`)}`);
   wireChalkboard(eff);
   // Ask for all four files now; hang the exhibits in order as they arrive.
   const files = { arenas: dataset<ArenaDoc>("arenas"), mascots: dataset<MascotDoc>("mascots"), cats: dataset<CatsDoc>("cats-dogs"), heights: dataset<HeightDoc>("heights") };

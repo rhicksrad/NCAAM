@@ -557,6 +557,13 @@ export function normalizeSummary(json: J): GameDetail | null {
 }
 
 async function getJson(url: string, signal?: AbortSignal): Promise<J> {
+  // The game page asks for its summary from an inline script in the head,
+  // before this module has loaded. Use that answer once if it is the same ask.
+  const early = (globalThis as { __early?: { url: string; json: Promise<J> } }).__early;
+  if (early?.url === url) {
+    delete (globalThis as { __early?: unknown }).__early;
+    return early.json;
+  }
   const res = await fetch(url, { signal, headers: { Accept: "application/json" } });
   if (!res.ok) throw new Error(`ESPN answered ${res.status}`);
   return (await res.json()) as J;
