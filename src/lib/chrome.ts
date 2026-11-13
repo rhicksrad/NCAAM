@@ -70,7 +70,7 @@ function openFinder(): void {
               (t, i) =>
                 html`<li role="option" aria-selected="${i === selected ? "true" : "false"}"><a href="${teamHref(t.id)}">${logo(t)}<span>${t.name} ${t.mascot}</span><small>${t.conf}</small></a></li>`,
             )}`
-          : html`<li class="empty">${input.value.trim() ? "No school by that name." : teams.length ? "362 Division I programs. Start typing." : "Loading the directory…"}</li>`,
+          : html`<li class="empty">${input.value.trim() ? "No school by that name." : teams.length ? `${teams.length} Division I programs. Start typing.` : "Loading the directory…"}</li>`,
       );
     };
     input.addEventListener("input", () => {

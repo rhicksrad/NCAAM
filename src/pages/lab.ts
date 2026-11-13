@@ -6,7 +6,8 @@ import { failure, fmtShortDay, logo, ordinal, teamHref } from "../lib/ui.js";
 
 // year, team, teamId, conf, w, g, adjO, adjD, barthag, tempo, post, seed, fg3, efg
 type Eff = [number, string, string | null, string, number, number, number, number, number, number, number, number, number, number];
-type EffDoc = { rows: Eff[] };
+// live: the season still being played (no postseason yet) and when its ratings were read.
+type EffDoc = { rows: Eff[]; live?: { year: number; at: string } };
 type Arena = [team: string, teamId: string | null, arena: string, x: number, y: number, elev: number, kind: string];
 type ArenaDoc = { width: number; height: number; nation: string; borders: string; rows: Arena[] };
 type MascotDoc = {
@@ -28,7 +29,7 @@ const exhibit = (no: string, id: string, title: string, lede: string, body: Mark
 
 /* ---------- 01: the efficiency chalkboard ---------- */
 // The newest season in the efficiency archive; the board paints before its data.
-const LAST = 2026;
+const LAST = 2027;
 const X0 = 84, X1 = 132, Y0 = 82, Y1 = 126; // adjO, adjD domains
 // A phone gets its own drawing, taller than it is wide, at one unit per pixel
 // so the chalk writing is the size it says it is.
@@ -83,13 +84,17 @@ function wireChalkboard(doc: EffDoc): void {
   });
   const last = doc.rows.reduce((m, r) => Math.max(m, r[0]), 0) || LAST;
   let year = last;
-  ($("#eff-range") as HTMLInputElement).max = String(last);
+  const range = $("#eff-range") as HTMLInputElement;
+  range.max = range.value = String(last);
+  const live = doc.live?.year;
+  const sofar = (y: number) => (y === live ? " so far" : "");
   let follow = "";
   let current = new Map<string, Eff>();
   const read = $("#eff-read");
+  const intro = read.textContent ?? "";
 
   const describe = (r: Eff) =>
-    html`<b>${r[0] - 1}-${String(r[0]).slice(2)} ${r[1]}</b> (${r[3]}): ${r[4]}-${r[5] - r[4]}, scored ${r[6].toFixed(1)} and allowed ${r[7].toFixed(1)} per 100${
+    html`<b>${r[0] - 1}-${String(r[0]).slice(2)} ${r[1]}</b> (${r[3]})${sofar(r[0])}: ${r[4]}-${r[5] - r[4]}, scored ${r[6].toFixed(1)} and allowed ${r[7].toFixed(1)} per 100${
       r[10] ? html`. ${POST_LABEL[r[10]]}${r[11] ? ` as ${[8, 11, 18].includes(r[11]) ? "an" : "a"} ${r[11]} seed` : ""}` : ""
     }.${r[2] ? html` <a href="${teamHref(r[2])}">Team page</a>` : ""}`;
 
@@ -132,6 +137,11 @@ function wireChalkboard(doc: EffDoc): void {
     const followed = follow ? current.get(follow) : undefined;
     if (followed) mount(read, describe(followed));
     else if (follow) mount(read, html`<b>${follow}</b> has no ${year} season on file.`);
+    else if (year === live) {
+      // Early ratings still lean on preseason projections; say how early it is.
+      const g = (byYear.get(year) ?? []).map((r) => r[5]).sort((a, b) => a - b);
+      mount(read, html`<b>${year - 1}-${String(year).slice(2)} so far</b>: Torvik's ratings as of ${fmtShortDay(doc.live!.at)}, a median ${g[g.length >> 1] ?? 0} games in, so they still lean on his preseason projections. No gold until April. Hover or tap a mark.`);
+    } else mount(read, intro);
   };
 
   $("#eff-range").addEventListener("input", (e) => {
@@ -356,11 +366,11 @@ async function boot(): Promise<void> {
   mount(
     root,
     html`<nav class="lab-nav" aria-label="Exhibits">${raw(
-        [["chalkboard", "Fourteen winters"], ["thin-air", "Thin air"], ["mascots", "Mascot census"], ["cats-dogs", "Cats v. dogs"], ["tallest", "Tall order"]]
+        [["chalkboard", "Fifteen winters"], ["thin-air", "Thin air"], ["mascots", "Mascot census"], ["cats-dogs", "Cats v. dogs"], ["tallest", "Tall order"]]
           .map(([id, label], i) => `<a href="#${id}">0${i + 1} ${label}</a>`)
           .join(""),
       )}</nav>
-      ${exhibit("01", "chalkboard", "Fourteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. Fourteen seasons of Bart Torvik's ratings.`, chalkboard())}`,
+      ${exhibit("01", "chalkboard", "Fifteen winters on one chalkboard", `Every Division I team since 2013, placed by how well it scores and how well it stops you, adjusted for schedule. Drag the year, or run the tape and watch programs rise and sink. Fourteen finished seasons of Bart Torvik's ratings, and this one so far.`, chalkboard())}`,
   );
   const eff = await effFile;
   // The board is up; let it paint before chalking 360 teams onto it.

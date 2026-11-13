@@ -1,5 +1,7 @@
 // Turn the raw archives in data/raw into the small, purpose-built JSON files
-// the pages actually fetch. Everything here is deterministic and offline.
+// the pages actually fetch. Everything here is offline: the season in progress
+// arrives as files snapshot.ts has already baked into dist/data/live (ESPN's
+// player averages, Torvik's ratings), and is folded in next to the archives.
 import { cp, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -13,6 +15,45 @@ const round = (n, d = 1) => (n == null || Number.isNaN(n) ? null : Math.round(n 
 export const playerSlug = (name) =>
   `${name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/[\s-]+/g, "-")}-1`;
 const readJson = async (file) => JSON.parse(await readFile(file, "utf8"));
+
+/** A name with the noise taken out, for matching ESPN's spelling to Sports
+ *  Reference's: "Patrick Ngongba II" and "Patrick Ngongba" are one player. */
+export const nameKey = (name) =>
+  String(name)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’.]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/ (jr|sr|ii|iii|iv|v)$/, "");
+
+/** Which archived career (if any) each of this season's players continues.
+ *  current: [{ key, teamId }], archive: [{ slug, key, teamId, seasons }] from
+ *  the last archived season. Same name at the same school is the same player.
+ *  A player who moved is matched only when the name is unique on both sides
+ *  and the archived player could still be playing (fewer than five seasons):
+ *  a freshman must never inherit a namesake's career. Returns a slug or null
+ *  per current player. */
+export function linkCareers(current, archive) {
+  const byKey = new Map();
+  for (const a of archive) (byKey.get(a.key) ?? byKey.set(a.key, []).get(a.key)).push(a);
+  const links = current.map(() => null);
+  const claimed = new Set();
+  current.forEach((c, i) => {
+    const same = (byKey.get(c.key) ?? []).filter((a) => a.teamId && a.teamId === c.teamId);
+    if (same.length === 1 && !claimed.has(same[0].slug)) (links[i] = same[0].slug), claimed.add(same[0].slug);
+  });
+  const left = new Map();
+  current.forEach((c, i) => links[i] || left.set(c.key, (left.get(c.key) ?? 0) + 1));
+  current.forEach((c, i) => {
+    const pool = byKey.get(c.key) ?? [];
+    if (links[i] || left.get(c.key) !== 1 || pool.length !== 1) return;
+    const [a] = pool;
+    if (!claimed.has(a.slug) && a.seasons < 5) (links[i] = a.slug), claimed.add(a.slug);
+  });
+  return links;
+}
 
 function parseCsv(text) {
   const [head, ...rows] = text.trim().split(/\r?\n/).map((line) => line.split(","));
@@ -75,20 +116,52 @@ export async function deriveData(root, dist) {
     SEASON = season;
   }
   const rows = [];
+  const lastSeason = [];
+  for (const [slug, doc] of docs) {
+    // A player who moved mid-season has a line per school; the table shows the one he played most for.
+    const cur = (doc.seasons ?? []).filter((s) => s.season === SEASON).sort((a, b) => (b.gp ?? 0) - (a.gp ?? 0))[0];
+    if (!cur || !cur.gp) continue;
+    const teamId = resolve(cur.team);
+    lastSeason.push({ slug, key: nameKey(doc.name), teamId, seasons: new Set((doc.seasons ?? []).filter((s) => s.gp).map((s) => s.season)).size });
+    rows.push([
+      slug === playerSlug(doc.name) ? 0 : slug, doc.name, cur.team, teamId, cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
+      round(cur.ast_g), round(cur.stl_g), round(cur.blk_g), round(cur.tov_g), round(cur.fg_pct, 3), round(cur.fg3_pct, 3),
+      round(cur.ft_pct, 3), (doc.seasons ?? []).length,
+    ]);
+  }
+
+  // The season in progress (ESPN, via snapshot.ts). Each row is keyed by its
+  // ESPN id ("e123"); a player whose career is on file gets that slug instead
+  // (0 when it is playerSlug of his ESPN name), and this season is added to the
+  // end of the career. Everyone else gets a one-season file under the id.
+  const averagesPath = path.join(out, "live/averages.json");
+  const averages = existsSync(averagesPath) ? await readJson(averagesPath) : null;
+  if (averages?.data?.rows?.length) {
+    const { season: label, rows: now } = averages.data;
+    const isId = (k) => typeof k === "string" && /^e\d+$/.test(k);
+    const links = linkCareers(now.map((r) => ({ key: nameKey(r[1]), teamId: r[3] })), lastSeason);
+    now.forEach((r, i) => {
+      // A copy kept from the last deploy was linked then; keep its slug.
+      const slug = isId(r[0]) ? links[i] : r[0] === 0 ? playerSlug(r[1]) : r[0];
+      const line = {
+        season: label, team: r[2], conf: r[4], gp: r[5], gs: null, mp_g: r[6], pts_g: r[7], trb_g: r[8], ast_g: r[9],
+        stl_g: r[10], blk_g: r[11], tov_g: r[12], fg_pct: r[13], fg3_pct: r[14], ft_pct: r[15],
+      };
+      const doc = slug && docs.get(slug);
+      if (doc) {
+        doc.seasons ??= [];
+        if (!doc.seasons.some((s) => s.season === label)) doc.seasons.push(line);
+        r[0] = slug === playerSlug(r[1]) ? 0 : slug;
+      } else docs.set(isId(r[0]) ? r[0] : slug, { name: r[1], seasons: [line] });
+    });
+    await writeFile(averagesPath, JSON.stringify({ at: averages.at, data: { ...averages.data, past: SEASON, rows: now } }));
+  }
   for (const [slug, doc] of docs) {
     const seasons = (doc.seasons ?? []).map((s) => [
       s.season, s.team, s.conf, s.gp, s.gs, round(s.mp_g), round(s.pts_g), round(s.trb_g), round(s.ast_g),
       round(s.stl_g), round(s.blk_g), round(s.tov_g), round(s.fg_pct, 3), round(s.fg3_pct, 3), round(s.ft_pct, 3),
     ]);
     await writeFile(path.join(out, "players", `${slug}.json`), JSON.stringify({ name: doc.name, seasons }));
-    // A player who moved mid-season has a line per school; the table shows the one he played most for.
-    const cur = (doc.seasons ?? []).filter((s) => s.season === SEASON).sort((a, b) => (b.gp ?? 0) - (a.gp ?? 0))[0];
-    if (!cur || !cur.gp) continue;
-    rows.push([
-      slug === playerSlug(doc.name) ? 0 : slug, doc.name, cur.team, resolve(cur.team), cur.conf, cur.gp, round(cur.mp_g), round(cur.pts_g), round(cur.trb_g),
-      round(cur.ast_g), round(cur.stl_g), round(cur.blk_g), round(cur.tov_g), round(cur.fg_pct, 3), round(cur.fg3_pct, 3),
-      round(cur.ft_pct, 3), seasons.length,
-    ]);
   }
   rows.sort((a, b) => (b[7] ?? 0) - (a[7] ?? 0));
   await write("players.json", {
@@ -111,9 +184,20 @@ export async function deriveData(root, dist) {
   for (const r of parseCsv(await readFile(path.join(raw, "cbb/cbb25.csv"), "utf8"))) push(r, 2025);
   for (let yy = 26; existsSync(path.join(raw, `cbb/cbb${yy}.csv`)); yy++)
     for (const r of parseCsv(await readFile(path.join(raw, `cbb/cbb${yy}.csv`), "utf8"))) push(r, 2000 + yy);
+  // The season in progress, from Torvik's own files (baked by snapshot.ts). An
+  // archived season always wins; this one has no postseason yet.
+  const torvikPath = path.join(out, "live/torvik.json");
+  const torvik = existsSync(torvikPath) ? await readJson(torvikPath) : null;
+  let liveYear = 0;
+  if (torvik?.data?.rows?.length && !seasons.some((s) => s[0] === torvik.data.year)) {
+    liveYear = torvik.data.year;
+    for (const [team, conf, w, g, o, d, b, t, fg3, efg] of torvik.data.rows) seasons.push([liveYear, team, resolve(team), conf, w, g, o, d, b, t, 0, 0, fg3, efg]);
+  }
   seasons.sort((a, b) => a[0] - b[0] || b[8] - a[8]);
   await write("efficiency.json", {
     cols: ["year", "team", "teamId", "conf", "w", "g", "adjO", "adjD", "barthag", "tempo", "post", "seed", "fg3", "efg"],
+    // The season still being played, and when Torvik's numbers were read.
+    ...(liveYear ? { live: { year: liveYear, at: torvik.at } } : {}),
     rows: seasons,
   });
 
@@ -169,6 +253,7 @@ export async function deriveData(root, dist) {
     const id = resolve(h.team);
     if (id && h.average_height_inches) at(id).height = h.average_height_inches;
   }
-  for (const s of seasons) if (s[2]) (at(s[2]).hist ??= []).push([s[0], s[4], s[5], s[6], s[7], s[8], s[10], s[11]]);
+  // post -1 marks the season still being played.
+  for (const s of seasons) if (s[2]) (at(s[2]).hist ??= []).push([s[0], s[4], s[5], s[6], s[7], s[8], s[0] === liveYear ? -1 : s[10], s[11]]);
   await write("team-extras.json", { histCols: ["year", "w", "g", "adjO", "adjD", "barthag", "post", "seed"], teams: extras, logos: localLogos });
 }

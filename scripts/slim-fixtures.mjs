@@ -48,7 +48,8 @@ function slim(value, key) {
   return value;
 }
 
-for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+// The by-athlete stats page keeps its stats in `categories`: it is cut by hand instead.
+for (const file of readdirSync(dir).filter((f) => f.endsWith(".json") && !f.startsWith("player-stats"))) {
   const full = path.join(dir, file);
   const before = readFileSync(full, "utf8");
   const json = slim(JSON.parse(before));

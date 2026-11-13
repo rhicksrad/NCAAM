@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   live-feeds:
-    name: live ESPN contract check
+    name: live ESPN and Torvik contract check
     runs-on: ${{ vars.CI_RUNNER == 'local' && fromJSON('["self-hosted","web-trusted"]') || 'ubuntu-latest' }}
     timeout-minutes: 10
     env:
@@ -34,7 +34,7 @@ jobs:
           node-version: 22
           cache: ${{ runner.environment == 'github-hosted' && 'pnpm' || '' }}
       - run: pnpm install --frozen-lockfile
-      - name: Build against live ESPN (fails if any feed falls back to the seed)
+      - name: Build against live ESPN and Torvik (fails if any feed falls back)
         run: pnpm run build
       - name: Probe the per-game and per-team feeds
         run: pnpm exec tsx scripts/probe-feeds.ts

@@ -35,6 +35,8 @@ const art = files("art", () => true);
 check("all art", art.reduce((n, f) => n + statSync(f).size, 0), 1100 * 1024);
 for (const f of art) check(`art/${path.basename(f)}`, statSync(f).size, 260 * 1024);
 check("players table (gzip)", gz(path.join(dist, "data/players.json")), 180 * 1024);
+// This season's sheet: the seed in CI, the full crawl on a deploy.
+check("this season's players (gzip)", gz(path.join(dist, "data/live/averages.json")), 180 * 1024);
 
 // The manifest must not point at files that are not there.
 for (const icon of JSON.parse(readFileSync(path.join(dist, "manifest.webmanifest"), "utf8")).icons) {

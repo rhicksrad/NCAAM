@@ -10,6 +10,9 @@ describe("seed data", () => {
     expect(seed("standings").data.length).toBeGreaterThanOrEqual(30);
     expect(seed("rankings").data[0].ranks.length).toBe(25);
     expect(seed("scoreboard").data.games.length).toBeGreaterThan(0);
+    expect(seed("averages").data).toMatchObject({ year: 2027, season: "2026-27" });
+    expect(seed("averages").data.rows.length).toBeGreaterThan(0);
+    expect(seed("torvik").data.rows.length).toBeGreaterThan(0);
   });
   it("normalises school name spellings to one key", () => {
     expect(norm("Saint Mary's (CA)")).toBe("saint mary s ca");
@@ -28,5 +31,6 @@ describe("seed data", () => {
     expect(name("USC Upstate")).toBe("South Carolina Upstate");
     expect(name("Marquette")).toBe("Marquette");
     expect(name("Michigan St.")).toBe("Michigan State");
+    for (const [team] of seed("torvik").data.rows) expect(resolve(team), team).toBeTruthy();
   });
 });

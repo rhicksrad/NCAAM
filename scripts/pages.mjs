@@ -17,6 +17,10 @@ export const NAV = [
 ];
 
 const loading = (label) => `<p class="loading" role="status">${label}</p>`;
+// Seasons are named by the year they end (2027 is 2026-27). The players page
+// relabels its season buttons from the data; these are just the first paint.
+const NOW = ((d) => (d.getUTCMonth() >= 9 ? d.getUTCFullYear() + 1 : d.getUTCFullYear()))(new Date());
+const season = (y) => `${y - 1}-${String(y).slice(2)}`;
 
 export const PAGES = [
   {
@@ -57,7 +61,7 @@ export const PAGES = [
 <section class="wrap lab-strip" aria-labelledby="lab-h">
   <header class="section-head"><h2 id="lab-h">From the lab</h2><a class="more" href="lab.html">The whole film room</a></header>
   <ol>
-    <li><a href="lab.html#chalkboard"><b>01</b><strong>Fourteen winters</strong><span>Every team since 2013 on one chalkboard. Run the tape.</span></a></li>
+    <li><a href="lab.html#chalkboard"><b>01</b><strong>Fifteen winters</strong><span>Every team since 2013 on one chalkboard, this season included. Run the tape.</span></a></li>
     <li><a href="lab.html#thin-air"><b>02</b><strong>Thin air</strong><span>Home-court advantage, measured with an altimeter.</span></a></li>
     <li><a href="lab.html#mascots"><b>03</b><strong>Mascot census</strong><span>372 nicknames, sorted into a taxonomy nobody asked for.</span></a></li>
     <li><a href="lab.html#cats-dogs"><b>04</b><strong>Cats v. dogs</strong><span>Ten rivalries, one ledger, nothing settled.</span></a></li>
@@ -148,7 +152,7 @@ export const PAGES = [
     file: "players.html",
     entry: "players",
     title: "Players — Field House",
-    description: "Division I stat leaders and a searchable index of 4,000+ player stat lines.",
+    description: "This season's Division I stat leaders and every player's per-game line, plus last season and careers on file.",
     skeleton: `
 <div class="wrap page">
   <header class="page-head">
@@ -159,6 +163,7 @@ export const PAGES = [
   <div class="toolbar" id="players-tools">
     <div class="field"><label for="p-q">Find</label><input id="p-q" type="search" placeholder="Player or school" autocomplete="off"></div>
     <div class="field"><label for="p-conf">Conference</label><select id="p-conf"><option value="">All</option></select></div>
+    <div class="segmented" id="p-season" role="group" aria-label="Season"><button type="button" data-value="now" aria-pressed="true">${season(NOW)}</button><button type="button" data-value="past" aria-pressed="false">${season(NOW - 1)}</button></div>
     <div class="segmented" id="p-reg" role="group" aria-label="Who counts"><button type="button" data-value="1" aria-pressed="true">Regulars</button><button type="button" data-value="0" aria-pressed="false">Everyone</button></div>
   </div>
   <div id="players-root">${loading("Tallying the stat sheet…")}</div>

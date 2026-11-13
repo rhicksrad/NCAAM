@@ -13,8 +13,9 @@
     <ul>
       <li><strong>Live scores, polls, standings, rosters and box scores</strong> come straight from ESPN's public JSON feeds, read by your browser. They need no key. They are also undocumented, so if a page looks odd, that feed probably changed shape.</li>
       <li><strong>A saved snapshot</strong> of those feeds is baked in every time the site deploys. Pages paint from the snapshot first and swap in live numbers a moment later. If ESPN doesn't answer, you keep the snapshot and an amber note tells you how old it is.</li>
-      <li><strong>Player stat lines</strong> (2025-26 and earlier) were collected from Sports Reference.</li>
-      <li><strong>Efficiency history</strong> (2013 to 2026) comes from Bart Torvik's T-Rank archive.</li>
+      <li><strong>This season's player averages</strong> come from ESPN's stats feed. That feed is a few dozen megabytes, so your browser never asks for it: the deploy reads it every few hours and bakes in the result.</li>
+      <li><strong>Earlier player stat lines</strong> (2025-26 and before) were collected from Sports Reference. This season's line is added to a player's career when the name and school match it to one on file.</li>
+      <li><strong>Efficiency ratings</strong> come from Bart Torvik's T-Rank: the archive from 2013 to 2026, and this season read from his site at each deploy.</li>
       <li><strong>Arena locations and elevations, mascot categories and the cats-versus-dogs ledger</strong> were compiled by hand from school releases and public records.</li>
     </ul>
 
@@ -30,7 +31,7 @@
       <div><dt>0</dt><dd>API keys, accounts or servers of our own</dd></div>
       <div><dt>$0</dt><dd>a month to keep the lights on</dd></div>
       <div><dt>365</dt><dd>Division I programs, each with a page</dd></div>
-      <div><dt>13</dt><dd>seasons of efficiency ratings on the chalkboard</dd></div>
+      <div><dt>15</dt><dd>seasons of efficiency ratings on the chalkboard, this one included</dd></div>
       <div><dt>30</dt><dd>minutes, at most, between snapshot refreshes</dd></div>
       <div><dt>2</dt><dd>typefaces, both served from here</dd></div>
     </dl>

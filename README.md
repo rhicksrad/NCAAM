@@ -12,7 +12,10 @@ The first version needed a paid Ball Don't Lie key behind a Cloudflare Worker. T
 - Live data comes from ESPN's public JSON feeds, fetched by the visitor's browser.
 - Each deploy bakes a snapshot of those feeds, so pages paint instantly and keep working if ESPN
   is unreachable. The deploy runs every 30 minutes.
-- Player stat lines, a decade of efficiency ratings, arenas and mascots are archives in
+- This season's player averages (ESPN) and efficiency ratings (Bart Torvik) are read at deploy
+  time only: one is too big to fetch per visit, the other sends no CORS header. A fresh copy
+  from the last deploy is reused, and a committed seed stands in when both sources fail.
+- Earlier player stat lines, a decade of efficiency ratings, arenas and mascots are archives in
   `data/raw/`, reshaped at build time.
 
 ## Develop
@@ -31,5 +34,5 @@ self-hosted runner setup.
 
 ## Credits
 
-Built by Ryan Hicks. Scores and standings: ESPN. Player archives: Sports Reference. Efficiency
-ratings: Bart Torvik. Unofficial and non-commercial; team names and logos belong to their schools.
+Built by Ryan Hicks. Scores, standings and this season's player averages: ESPN. Player archives:
+Sports Reference. Efficiency ratings: Bart Torvik. Unofficial and non-commercial; team names and logos belong to their schools.

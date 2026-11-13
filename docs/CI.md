@@ -8,7 +8,7 @@ Built to the plan in `rhicksrad/Pharaoh` `docs/CI_RUNNERS.md` (part 2, NCAAM).
 | --- | --- | --- | --- |
 | `ci.yml` Checks | **gate**: install, typecheck, unit tests, build, size budget | every pull request push (not drafts), manual | local, hosted fallback |
 | `ci.yml` Checks | **smoke**: every page in Chromium against recorded ESPN answers, then again with ESPN "down" | same | local `playwright` runners, hosted fallback |
-| `feeds.yml` Feed watch | **live ESPN contract check**: build with live feeds required, probe box score, roster and schedule feeds | nightly 09:23 UTC, manual. Never on PRs | local, hosted fallback |
+| `feeds.yml` Feed watch | **live ESPN and Torvik contract check**: build with live feeds required (including a full player-averages crawl and Torvik's CSVs, never a reused copy), probe box score, roster and schedule feeds | nightly 09:23 UTC, manual. Never on PRs | local, hosted fallback |
 | `pages.yml` Deploy | **build** | push to main, every 30 minutes, manual | local, hosted fallback |
 | `pages.yml` Deploy | **deploy** | after build | always hosted, so the Pages token stays off the PCs |
 

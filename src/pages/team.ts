@@ -1,12 +1,12 @@
 import "../lib/chrome.js";
-import { dataset, snapshot, type TeamEntry } from "../lib/data.js";
+import { dataset, snapshot, type PlayerRow, type TeamEntry } from "../lib/data.js";
 import { $, html, mount, param, type Markup } from "../lib/dom.js";
 import { espn, type RosterPlayer, type ScheduleGame, type TeamDetail } from "../lib/espn.js";
 import { historyChart, POST_LABEL, type HistRow } from "../lib/charts.js";
 import { failure, missing, fmtDay, fmtShortDay, fmtTime, gameHref, logo, logoUrl, ordinal, teamHref, teamStyle } from "../lib/ui.js";
 
 type Extras = { teams: Record<string, { arena?: string; elev?: number; height?: number; hist?: HistRow[] }> };
-type PlayersDoc = { season: string; rows: Array<[string, string, string, string | null, string, number, number, number, number, number, ...unknown[]]> };
+type PlayersDoc = { season: string; rows: PlayerRow[] };
 
 const id = param("id") ?? "";
 const root = $("#team-root");
@@ -82,28 +82,28 @@ function rosterSheet(players: RosterPlayer[]): Markup {
 
 function historyBlock(hist: HistRow[] | undefined, name: string): Markup {
   if (!hist || hist.length < 3) return html``;
-  const best = [...hist].sort((a, b) => b[6] - a[6] || b[5] - a[5])[0]!;
-  const trips = hist.filter((r) => r[6] > 0).length;
+  // post -1 is the season still being played: on the chart, not in the tallies.
+  const done = hist.filter((r) => r[6] >= 0);
+  const best = [...done].sort((a, b) => b[6] - a[6] || b[5] - a[5])[0]!;
+  const trips = done.filter((r) => r[6] > 0).length;
   return html`<section>
     <div class="chalk">
       <h2 style="font-size:1.5rem;margin-bottom:.3rem">Since ${hist[0]![0] - 1}</h2>
-      <p style="font-size:.9rem;margin-bottom:.6rem">Points better (or worse) than an average team per 100 possessions. Rings mark NCAA tournament trips; filled dots are Final Fours.</p>
+      <p style="font-size:.9rem;margin-bottom:.6rem">Points better (or worse) than an average team per 100 possessions. Rings mark NCAA tournament trips; filled dots are Final Fours.${done.length < hist.length ? " The open bar is this season so far." : ""}</p>
       ${historyChart(hist)}
-      <p class="chalk-readout">${name} made the tournament in <b>${trips}</b> of ${hist.length} seasons on file. High-water mark: <b>${best[0] - 1}-${String(best[0]).slice(2)}</b>, ${
+      <p class="chalk-readout">${name} made the tournament in <b>${trips}</b> of ${done.length} seasons on file. High-water mark: <b>${best[0] - 1}-${String(best[0]).slice(2)}</b>, ${
         best[1]
-      }-${best[2] - best[1]}${best[6] ? html`, ${POST_LABEL[best[6]]}${best[7] ? ` as a ${best[7]} seed` : ""}` : ""}.</p>
+      }-${best[2] - best[1]}${best[6] ? html`, ${POST_LABEL[best[6]]}${best[7] ? ` as ${[8, 11, 18].includes(best[7]) ? "an" : "a"} ${best[7]} seed` : ""}` : ""}.</p>
     </div>
   </section>`;
 }
 
-function lastYear(doc: PlayersDoc, teamId: string): Markup {
-  const rows = doc.rows.filter((r) => r[3] === teamId).sort((a, b) => b[7] - a[7]).slice(0, 6);
-  if (!rows.length) return html``;
+function scorers(season: string, source: string, rows: PlayerRow[], link: string): Markup {
   return html`<section class="sheet">
-    <div class="sheet__head"><h2>${doc.season} scorers</h2><small>Sports Reference</small></div>
-    <div class="sheet__scroll" tabindex="0" role="region" aria-label="${doc.season} scorers"><table>
+    <div class="sheet__head"><h2>${season} scorers</h2><small>${source}</small></div>
+    <div class="sheet__scroll" tabindex="0" role="region" aria-label="${season} scorers"><table>
       <thead><tr><th class="l">Player</th><th>GP</th><th>Pts</th><th>Reb</th><th>Ast</th></tr></thead>
-      <tbody>${rows.map((r) => html`<tr><td class="l"><a class="who" href="./players.html?q=${r[1]}">${r[1]}</a></td><td>${r[5]}</td><td class="hot">${r[7].toFixed(1)}</td><td>${r[8].toFixed(1)}</td><td>${r[9].toFixed(1)}</td></tr>`)}</tbody>
+      <tbody>${rows.map((r) => html`<tr><td class="l"><a class="who" href="./players.html?q=${r[1]}${link}">${r[1]}</a></td><td>${r[5]}</td><td class="hot">${r[7].toFixed(1)}</td><td>${r[8].toFixed(1)}</td><td>${r[9].toFixed(1)}</td></tr>`)}</tbody>
     </table></div>
   </section>`;
 }
@@ -168,12 +168,29 @@ async function boot(): Promise<void> {
         <div>
           ${historyBlock(extras?.hist, name)}
           ${"value" in roster ? rosterSheet(roster.value) : ""}
-          <div id="team-last-year"></div>
+          <div id="team-scorers"></div>
         </div>
       </div>`,
   );
-  dataset<PlayersDoc>("players")
-    .then((doc) => mount("#team-last-year", lastYear(doc, id)))
+  // Top six by points. This season's sheet counts only players with half the
+  // team's games (no one-game cameos); before the first game, last season's.
+  const top = (rows: PlayerRow[], now: boolean) => {
+    const mine = rows.filter((r) => r[3] === id);
+    const most = Math.max(0, ...mine.map((r) => r[5]));
+    return mine.filter((r) => !now || r[5] >= most / 2).sort((a, b) => b[7] - a[7]).slice(0, 6);
+  };
+  snapshot("averages")
+    .then((s) => {
+      const rows = top(s.data.rows, true);
+      if (!rows.length) throw new Error("no games yet");
+      mount("#team-scorers", scorers(s.data.season, "ESPN, so far", rows, ""));
+    })
+    .catch(() =>
+      dataset<PlayersDoc>("players").then((doc) => {
+        const rows = top(doc.rows, false);
+        if (rows.length) mount("#team-scorers", scorers(doc.season, "Sports Reference", rows, `&season=${doc.season}`));
+      }),
+    )
     .catch(() => undefined);
 }
 
