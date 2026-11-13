@@ -5,7 +5,7 @@ import { readFileSync } from "node:fs";
 const MANUAL = {
   "albany ny": "UAlbany", "albany": "UAlbany", "uni": "Northern Iowa", "uiw": "Incarnate Word", "alcorn": "Alcorn State", "army west point": "Army", "a&m-commerce": "East Texas A&M",
   "texas a&m commerce": "East Texas A&M", "a&m-corpus christi": "Texas A&M-Corpus Christi",
-  "texas a&m corpus chris": "Texas A&M-Corpus Christi", "uconn": "UConn", "connecticut": "UConn",
+  "texas a&m corpus chris": "Texas A&M-Corpus Christi", "tamucc": "Texas A&M-Corpus Christi", "uconn": "UConn", "connecticut": "UConn",
   "ole miss": "Ole Miss", "mississippi": "Ole Miss", "miami fl": "Miami", "miami (fl)": "Miami",
   "miami oh": "Miami (OH)", "nc state": "NC State", "north carolina state": "NC State", "n.c. state": "NC State",
   "pitt": "Pittsburgh", "umass": "Massachusetts", "massachusetts": "UMass", "saint mary's ca": "Saint Mary's",
